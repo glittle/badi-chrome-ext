@@ -672,9 +672,6 @@
     "message": "Nenhuma",
     "description": "in dropdown list, for when no other action is chosen"
   },
-  "sampleFootnote": {
-    "message": "Data Gregorianas mudam antes/depois por-do-sol"
-  },
   "shoghiExample": {
     "message": "Este é o dia {bDayNamePri}, da semana {bWeekdayNamePri}, do mês {bMonthNamePri}, do ano {bYearInVahidNamePri}, do {bVahidOrdinalName} {VahidLabelPri}, do {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
