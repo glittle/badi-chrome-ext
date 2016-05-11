@@ -410,9 +410,6 @@
     "message": "local (தமிழ்)",
     "description": "put your language here, in your script"
   },
-  "sampleFootnote": {
-    "message": "கிரேகோரிய திததிகள் அஸ்தமனத்திற்கு முன்/பின் மாறும்"
-  },
   "shoghiExample": {
     "message": "இது {bWeekdayNamePri} வாரநாள், {bDayNamePri} மாதநாள், {bMonthNamePri} மாதம், {bYearInVahidNamePri} வருடம், {bVahidOrdinalName} வஹீட், {bKullishayOrdinalName} குல்-இ-ஷே.",
     "description": "Example given by Shoghi Effendi"
