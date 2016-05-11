@@ -1,1283 +1,1109 @@
 {
-  "translation": {
-    "message": "nl",
-    "description": "Onno Vinkhuyzen, omv@xs4all.nl"
-  },
-  "sampleGroup1_9": {
-    "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
-    "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
-  },
-  "dayStartedPast": {
-    "message": "is begonnen",
-    "description": ""
-  },
-  "gCombinedY_2": {
-    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort} {frag1Year}",
-    "description": "with year"
-  },
-  "Month": {
-    "message": "Maand",
-    "description": ""
-  },
-  "YearOfEraFormat": {
-    "message": "{bYear}",
-    "description": ""
-  },
-  "YearOfVahid": {
-    "message": "Jaar van de {VahidLabelPri}",
-    "description": ""
-  },
-  "future_Delta": {
-    "message": "zal over {numUnits} zijn",
-    "description": ""
-  },
-  "exporterItemDescGeneralTime": {
-    "message": "Gathering may start at any time on this Badí' day.",
-    "description": "For when a Holy Day as a particular time"
-  },
-  "reminder_actions": {
-    "message": "Extra actie",
-    "description": "prompt for other actions"
-  },
-  "eventTimeHeading2": {
-    "message": "Tijd bijeenkomst/herdenking",
-    "description": "heading in Events listing (if showing Holy Days)"
-  },
-  "HolyDay_Covenant": {
-    "message": "Dag van het Verbond",
-    "description": ""
-  },
-  "startedWithSunset": {
-    "message": "Begonnen met zonsondergang om {0}",
-    "description": ""
-  },
-  "exportOption_Sun": {
-    "message": "From sunset to sunset <em>(about 24 hours)</em>",
-    "description": ""
-  },
-  "exportGregYear1": {
-    "message": "Gregorian year - {0} A.D.",
-    "description": ""
-  },
-  "btnCustomBuilderCancel": {
-    "message": "Cancel / New",
-    "description": ""
-  },
-  "iftttKey": {
-    "message": "IFTTT Maker Channel Key",
-    "description": "Key' for IFTTT Maker channel"
-  },
-  "gotoNow": {
-    "message": "Nu",
-    "description": ""
-  },
-  "showPointer": {
-    "message": "Toon huidige dag",
-    "description": ""
-  },
-  "customSelectForFrontPage": {
-    "message": "Tick box to show on {0} page.",
-    "description": ""
-  },
-  "reminderAction_zapier": {
-    "message": "trigger Zapier Webhook",
-    "description": "in dropdown list, to choose to use Zapier"
+  "1day": {
+    "message": "over {0} dag"
   },
   "actionSpeakDesc": {
     "message": "De herinnering wordt hardop voorgelezen met deze Chrome stem:",
     "description": "in edit area when asking for a relative time"
   },
-  "reminderList_onload": {
-    "message": "{num} {units} na",
-    "description": "in list of defined reminders"
-  },
-  "sampleGroup1_2": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "Jamal 4, 172"
-  },
-  "btnEveOrDay": {
-    "message": "Voor / na zonsondergang",
-    "description": ""
-  },
-  "reminderTriggerGroup_time": {
-    "message": "Tijd van de dag",
-    "description": "a group of triggers - sunset sunrise noon midnight"
-  },
-  "eraLong": {
-    "message": "Bahá'í tijdperk",
-    "description": ""
-  },
-  "bMonthMeaning": {
-    "message": "Schrikkeldagen,Pracht,Heerlijkheid,Schoonheid,Grootheid,Licht,Barmhartigheid,woorden,Volmaaktheid,Namen,Macht,Wil,Kennis,Kracht,Spraak,Vragen,Eer,Soevereiniteit,Heerschappij,Verhevenheid",
-    "description": "Names of days/months, with first one being Ayyam-i-ha"
-  },
-  "customDefined": {
-    "message": "Custom Date Formats",
-    "description": ""
-  },
-  "reminderBefore": {
-    "message": "voor",
-    "description": ""
-  },
-  "reminderList_bday": {
-    "message": "dag {num} om {triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "reminderTrigger_holyday": {
-    "message": "Heilige dag",
-    "description": "what this reminder is triggered on"
-  },
-  "exportBadiYear1": {
-    "message": "Badí' year - {0} B.E.",
-    "description": ""
-  },
-  "exportQuickPicks": {
-    "message": "Recommended sets of Events",
-    "description": ""
-  },
-  "exportCalendarDescription": {
-    "message": "Datums in de Badí'-kalender voor {location}",
-    "description": "title on page"
-  },
-  "sampleGroup1_23": {
-    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
-    "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
-  },
-  "bYearInVahidMeaning": {
-    "message": ",A,B,Vader,D,Poort,V,Eeuwigheid,Grootmoedigheid,Pracht,Liefde,Heerlijk,Antwoord,Enige,Milddadig,Genegenheid,Oorsprong,Lichtend,Lichtendste,Eenheid",
-    "description": "Vahid names, with leading , "
-  },
-  "tips": {
-    "message": "Tips",
-    "description": "hints of how to use the tool"
-  },
-  "meaning": {
-    "message": "Betekenis",
-    "description": "on List page - table heading"
-  },
-  "HolyDay_AscBaha": {
-    "message": "Hemelvaart van Bahá'u'lláh",
-    "description": ""
-  },
-  "btnJumpTo": {
-    "message": "Ga",
-    "description": ""
-  },
-  "past_StartTime": {
-    "message": "begonnen om {time}",
-    "description": ""
-  },
-  "HolyDay_NawRuz": {
-    "message": "Naw Rúz",
-    "description": ""
-  },
-  "timeFormat12": {
-    "message": "{time} {ampm}",
-    "description": "used when use24HourClock is set to false"
-  },
-  "monthNames": {
-    "message": "Naam van de maand/dag",
-    "description": "on List page - table caption"
-  },
-  "pressKeyOrClick": {
-    "message": "Druk op de toets of klik {0}.",
-    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
-  },
-  "numUnits": {
-    "message": "{num} {units}",
-    "description": "eg. 5 days, 1 minute, 3 hours"
-  },
-  "customUseAsSample": {
-    "message": "Use as Sample?",
-    "description": ""
-  },
-  "specialTime_1200S": {
-    "message": "Middaguur (Standaard Tijd)",
-    "description": "Martyrdom of the Bab"
-  },
-  "reminder_nullAction": {
-    "message": "Geen",
-    "description": "in dropdown list, for when no other action is chosen"
-  },
-  "HolyDay_BirthBaha": {
-    "message": "Geboortedag van Bahá'u'lláh",
-    "description": ""
-  },
-  "eventTimeHeading1": {
-    "message": "Tijd van de bijeenkomst",
-    "description": "heading in Events listing (if not showing Holy Days)"
-  },
-  "customIntroClick": {
-    "message": "Click Copy to copy formatted date to the clipboard.",
-    "description": ""
-  },
-  "eraAbbrev": {
-    "message": "B.E.",
-    "description": ""
-  },
-  "exportOption_Sunset": {
-    "message": "At sunset only",
-    "description": ""
-  },
-  "pick_pageEvents": {
-    "message": "Gebeurtenissen",
-    "description": "showing Feast and Holy Days"
-  },
-  "gTopDayDisplay": {
-    "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}, {currentRelationToSunset}",
-    "description": "top right corner"
-  },
-  "reminderDayDetailsTest": {
-    "message": "{eventTime} op {eventDay} {eventMonthShort}",
-    "description": ""
-  },
-  "exportOption_Fast": {
-    "message": "Fast Days <em>(19 days)</em>",
-    "description": ""
-  },
-  "reminderNum_days": {
-    "message": "dag/dagen",
-    "description": "unknown number of days"
-  },
-  "exportDayFromSunset": {
-    "message": "Start of {0}",
-    "description": ""
-  },
-  "exportBadiYear0": {
-    "message": "Badí' year - {0} B.E.",
-    "description": ""
-  },
-  "sampleGroup1_7": {
-    "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
-    "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
-  },
-  "MonthFormatNormal": {
-    "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})",
-    "description": ""
-  },
-  "nearestSunsetEve": {
-    "message": "{dayStarted} met zonsondergang om {startingSunsetDesc}",
-    "description": ""
-  },
-  "DayOfMonthFormat": {
-    "message": "{bDay} - {bDayNamePri} ({bDayNameSec})",
-    "description": ""
-  },
-  "reminderTrigger_sunrise": {
-    "message": "Zonsopkomst",
-    "description": "what this reminder is triggered on"
-  },
-  "exportIncludeLocation": {
-    "message": "Location Information",
-    "description": ""
-  },
-  "pick_pageCustom": {
-    "message": "Custom",
-    "description": "page tab name and page title"
-  },
-  "upcomingTitle": {
-    "message": "Komende feesten, heilige dagen en andere gebeurtenissen",
-    "description": ""
-  },
-  "past_Day": {
-    "message": "begonnen om {time}",
-    "description": "shown after midnight of the day"
-  },
-  "dayEndedFuture": {
-    "message": "eindigt",
-    "description": ""
-  },
-  "exporterDateRange": {
-    "message": "<u>R</u>ange of dates to Export (based on currently selected year)",
-    "description": ""
-  },
-  "pick_pageExporter": {
-    "message": "Exporteren",
-    "description": "page tab name and page title"
-  },
-  "shoghiExample": {
-    "message": "Deze dag heet {bWeekdayNamePri}, de dag {bDayNamePri} van de maand {bMonthNamePri}, van het jaar {bYearInVahidNamePri}, van de {bVahidOrdinalName} {VahidLabelPri}, van de {bKullishayOrdinalName} {KullishayLabelPri}.",
-    "description": "Example given by Shoghi Effendi"
-  },
-  "specialTime_0100S": {
-    "message": "1:00 (Standaard Tijd)",
-    "description": "Martyrdom of the Bab"
-  },
-  "reminderType": {
-    "message": "Gebeurtenis",
-    "description": "in front of the trigger selector"
-  },
-  "exportOption_SunriseToSunset": {
-    "message": "Event from sunrise to sunset <em>(about 12 hours)</em>",
-    "description": ""
-  },
-  "sampleGroup1_1": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "3 Jamál 172"
-  },
-  "gMonthLong": {
-    "message": "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december",
-    "description": ""
-  },
-  "nextRefreshAlarm": {
-    "message": "Next refresh scheduled after {0}: {1}",
-    "description": "only shown in the debug console"
-  },
-  "arabic": {
-    "message": "Naam",
-    "description": "on List page - table heading"
-  },
-  "exportAlert_B30": {
-    "message": "30 minutes before",
-    "description": ""
-  },
-  "past_Time": {
-    "message": "was om {time}",
-    "description": ""
-  },
-  "pick_pageCal1": {
-    "message": "Jaar",
-    "description": ""
-  },
-  "exportAlert_B10": {
-    "message": "10 minutes before",
-    "description": ""
-  },
-  "exportOption_Start": {
-    "message": "Event at designated observation time or usual meeting time",
-    "description": ""
-  },
-  "reminderSelectTrigger": {
-    "message": "Stel een herinnering in...",
-    "description": "in dropdown, when no trigger is selected"
-  },
-  "prevYear": {
-    "message": "Jaar terug",
-    "description": "hold Shift and press left arrow key"
-  },
-  "reminderTrigger_noon": {
-    "message": "Middaguur",
-    "description": "what this reminder is triggered on"
-  },
-  "btnJumpToTitle": {
-    "message": "Ga dit aantal dagen voor- of achteruit",
-    "description": "tooltip"
-  },
-  "exportOption_BeginningSunset": {
-    "message": "At beginning sunset only",
-    "description": ""
-  },
-  "equiv": {
-    "message": "Equivalent",
-    "description": "on List page - table heading"
-  },
-  "customBuilderEcho": {
-    "message": "Results (for currently selected day - see Tips & Keys to change day)",
-    "description": ""
-  },
-  "reminderTrigger_feast": {
-    "message": "19-Daagsfeestdag",
-    "description": "what this reminder is triggered on"
-  },
-  "midnight": {
-    "message": "12:00 's nachts",
-    "description": "nice way to say midnight"
-  },
-  "sunriseFastHeading": {
-    "message": "Zonsopkomst",
-    "description": "heading in Fast days listing"
-  },
-  "nextYearTitle": {
-    "message": "Toets shift + pijl naar rechts in om het volgend jaar te zien",
-    "description": "hold Shift and press right arrow key"
-  },
-  "reminderAlarm": {
-    "message": "Om {triggerTimeDisplay} --> {messageBody}",
-    "description": "used when showing list of alarms scheduled today"
-  },
-  "reminderNum_minutes": {
-    "message": "minuut/minuten",
-    "description": ""
-  },
-  "FestivalRidvan": {
-    "message": "Ridvánfeest",
-    "description": ""
-  },
-  "reminderBDay": {
-    "message": "Dag {num} van de Badí' maand",
-    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
-  },
-  "Intercalary": {
-    "message": "Schrikkeldagen",
-    "description": ""
-  },
-  "prevYearTitle": {
-    "message": "Toets shift + pijl naar links in om het voorgaand jaar te zien",
-    "description": "hold Shift and press left arrow key"
-  },
-  "beforeSunset": {
-    "message": "dag - voor zonsondergang",
-    "description": ""
-  },
-  "sampleGroup1_15": {
-    "message": "{bYear}.{bMonth00}.{bDay00}",
-    "description": "172.03.13"
-  },
-  "customBuilder": {
-    "message": "Build a Custom Date Format",
-    "description": ""
-  },
-  "eventTime": {
-    "message": "{eventTime} {eventWeekdayShort} {eventDay} {eventMonthShort} {eventYear}",
-    "description": "show start time in Events listing"
-  },
-  "suggestionsTitle": {
-    "message": "Klik hier en geef uw ideeën (in het Engels) hoe deze uitbreiding verbeterd kan worden!",
-    "description": ""
-  },
-  "gDatePickerTitle": {
-    "message": "Gregoriaanse Datum",
-    "description": ""
-  },
-  "pm": {
-    "message": "nm",
-    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
-  },
-  "includeThese": {
-    "message": "Toon",
-    "description": "choosing what to include in the listing"
-  },
-  "reminderTrigger_sunset": {
-    "message": "Zonsondergang",
-    "description": "what this reminder is triggered on"
-  },
-  "exportWhatTitle": {
-    "message": "Select what should be exported.",
-    "description": ""
-  },
-  "noLocationAvailable": {
-    "message": "(Locatie onbekend - zonsondergangtijd 18:30)",
-    "description": "If the system does not know the location of this computer."
-  },
-  "nextYear": {
-    "message": "Jaar verder",
-    "description": "hold Shift and press right arrow key"
-  },
-  "exporterItemDescDay": {
-    "message": "A day in the Badí' calendar.",
-    "description": "Included as the description in every calendar entry"
-  },
-  "specialDaysTitle": {
-    "message": "Feesten en heilige dagen in {bYear}",
-    "description": ""
-  },
-  "future_Day": {
-    "message": "begint om {time}",
-    "description": "shown in the eve of the day"
-  },
-  "dayEndedPast": {
-    "message": "is geëindigt",
-    "description": ""
-  },
-  "reminderAction_ifttt": {
-    "message": "trigger IFTTT recipe",
-    "description": "in dropdown list, to choose to use IFTTT"
-  },
-  "KullishayFormat": {
-    "message": "{bKullishay}",
-    "description": ""
+  "afterSunset": {
+    "message": "avond - na zonsondergang"
   },
   "am": {
     "message": "vm",
     "description": "displayed in 'timeFormat12' if not using 24 hours clock"
   },
-  "exportOption_Date": {
-    "message": "Badí'-dagen <em>(365/366 dagen)</em>",
-    "description": ""
-  },
-  "gCombined_3": {
-    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
-    "description": "day spanning different gregorian years"
-  },
-  "includeHolyDays": {
-    "message": "<u>H</u>eilige dagen",
-    "description": "choosing what to include in the listing"
-  },
-  "title": {
-    "message": "Badí' kalender",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "exportAlert_B5": {
-    "message": "5 minutes before",
-    "description": ""
-  },
-  "prev": {
-    "message": "&larr; Vorig",
-    "description": ""
-  },
-  "sampleGroup1_10": {
-    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
-    "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
-  },
-  "exportQuickDesc": {
-    "message": "Export each set, then load them all into the same calendar!",
-    "description": ""
-  },
-  "exporterFastStart": {
-    "message": "Fast Starts",
-    "description": "when the fast starts at sunrise"
-  },
-  "sampleGroup1_3": {
-    "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
-    "description": "Jamal 4, 172 -> 7:55pm"
-  },
-  "HolyDay_Ridvan1": {
-    "message": "Eerste dag van Ridván",
-    "description": ""
-  },
-  "exportAlert_B0": {
-    "message": "When it starts",
-    "description": ""
-  },
-  "MonthFormatAyyam": {
-    "message": "{bMonthNamePri} ({bMonthNameSec})",
-    "description": ""
-  },
-  "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
-    "description": "Arabic names of years in a Vahid, with leading , "
-  },
-  "exportQuickPickClearText": {
-    "message": "Reset options",
-    "description": ""
-  },
-  "reminderDayWhen": {
-    "message": "Wanneer {num} dag(en) {beforeAfter} ieder(e) {event}",
-    "description": "in list of defined reminders"
-  },
-  "sampleGroup1_8": {
-    "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDay} {bMonthNamePri} {bYear}",
-    "description": "Jamál / Bahá, 1st ‘Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
-  },
-  "reminderTrigger_load": {
-    "message": "Bij het laden",
-    "description": "what this reminder is triggered on"
-  },
-  "gWeekdayLong": {
-    "message": "zondag,maandag,dinsdag,woensdag,donderdag,vrijdag,zaterdag",
-    "description": "start with Sunday"
-  },
-  "past_DeltaTime": {
-    "message": "was {numUnits} geleden om {time}",
-    "description": ""
-  },
-  "ordinal": {
-    "message": "th,st,nd,rd",
-    "description": "x,1,2,3"
-  },
-  "future_Time": {
-    "message": "zal om {time} zijn",
-    "description": ""
-  },
-  "btnReminderSave": {
-    "message": "<u>O</u>pslaan",
-    "description": "Save the changes and close the edit area"
-  },
-  "currentFocus": {
-    "message": "Huidige dag",
-    "description": "in wheel, points to today, or whatever day is currently selected"
-  },
-  "btnReminderTest": {
-    "message": "Nu testen",
-    "description": "show a sample of the reminder now"
-  },
-  "dayStartedFuture": {
-    "message": "begint",
-    "description": ""
-  },
-  "btnReminderEdit": {
-    "message": "Wijzig",
-    "description": "shown next to each reminder. Click to edit the reminder."
-  },
-  "past_Delta": {
-    "message": "was {numUnits} geleden",
-    "description": ""
-  },
-  "reminderNum_seconds_1_more": {
-    "message": "seconde;seconden",
-    "description": ""
-  },
-  "num": {
-    "message": "#",
+  "arabic": {
+    "message": "Naam",
     "description": "on List page - table heading"
-  },
-  "reminderCalcTypeRelative": {
-    "message": "in relatie tot <span class=modelTriggerEcho></span>",
-    "description": "in dropdown"
-  },
-  "upcomingDateFormat": {
-    "message": "{bDay} {bMonthNamePri} ({gCombined})",
-    "description": "upcoming list"
-  },
-  "noon": {
-    "message": "12:00 middag",
-    "description": "nice way to say noon"
-  },
-  "exportWhatToInclude": {
-    "message": "Options",
-    "description": ""
-  },
-  "exporterItemDescSpecialTime": {
-    "message": "{SpecialTime}.",
-    "description": "For when a Holy Day as a particular time"
-  },
-  "reminderNum_hours": {
-    "message": "uur/uren",
-    "description": ""
-  },
-  "reminderShowAt": {
-    "message": "Laat zien om",
-    "description": "in front of time of day input"
-  },
-  "example2": {
-    "message": "{bDay} {bMonthNamePri} {dayStartedLower} bij zonsondergang (ongeveer {startingSunsetDesc}) op {frag1WeekdayLong} {frag1Day} {frag1MonthShort} en {dayEndedLower} bij zonsondergang (ongeveer {endingSunsetDesc}) op {frag2WeekdayLong} {frag2Day} {frag2MonthShort}.",
-    "description": ""
-  },
-  "suggestions": {
-    "message": "Suggesties?",
-    "description": ""
-  },
-  "reminderNum_days_1_more": {
-    "message": "dag;dagen",
-    "description": "single;plural"
-  },
-  "startTimeOption": {
-    "message": "Gebruikelijke begintijd: ",
-    "description": "above Events listing"
-  },
-  "exporterFastEnd": {
-    "message": "Fast Ends",
-    "description": "when the fast ends at sunset"
-  },
-  "version": {
-    "message": "Versie {0}",
-    "description": ""
-  },
-  "reminderDayOfMonth": {
-    "message": "Op dag {num} van de Badí' maand",
-    "description": "in list of defined reminders"
-  },
-  "future_StartDeltaTime": {
-    "message": "zal over {numUnits} beginnen om {time}",
-    "description": ""
-  },
-  "jumpTo": {
-    "message": "<u>S</u>pring ± dagen",
-    "description": "user can enter a day after/before currently selected day"
-  },
-  "exportQuickPick3Text": {
-    "message": "Sunset, with an alert.",
-    "description": ""
-  },
-  "exportOption_Usual": {
-    "message": "Event at usual meeting time (see Events page)",
-    "description": ""
-  },
-  "exportOption_Feast": {
-    "message": "Feesten <em>(19-daags)</em>",
-    "description": ""
-  },
-  "YearOfEra": {
-    "message": "Jaar van het Bahá'í tijdperk",
-    "description": ""
-  },
-  "webstore": {
-    "message": "Chrome Web Store",
-    "description": ""
-  },
-  "reminderHolyDay": {
-    "message": "De Heilige dag \"{0}",
-    "description": ""
-  },
-  "specialTime_SS2": {
-    "message": "Ongeveer twee uur na zonsondergang",
-    "description": "Declaration of the Bab"
-  },
-  "endingWithSunset": {
-    "message": "Eindigt met zonsondergang om {0}",
-    "description": ""
-  },
-  "btnReminderCancel": {
-    "message": "Annuleer",
-    "description": "cancel changes and close the edit area"
-  },
-  "Vahid": {
-    "message": "Váḥid",
-    "description": ""
-  },
-  "shortcutKeyTitle": {
-    "message": "Druk deze toetscombinatie in om de kalender op ieder gewenst moment binnen Chrome te openen.",
-    "description": ""
-  },
-  "copied": {
-    "message": "Gekopiëerd!",
-    "description": "short message that replaces sample format button text when button is clicked"
-  },
-  "VahidFormat": {
-    "message": "{bVahid}",
-    "description": ""
-  },
-  "exportIncludeAlert": {
-    "message": "Add an alert to each event (may not load into Google calendar)",
-    "description": ""
-  },
-  "weekDayNames": {
-    "message": "Namen van de weekdagen",
-    "description": "on List page - table caption"
-  },
-  "reminderTitle": {
-    "message": "{0} Herinnering",
-    "description": "displayed as the title of each reminder shown"
-  },
-  "exporterTitle": {
-    "message": "Exporteer de Badí' kalender",
-    "description": "title on page"
-  },
-  "reminderList_timeAbsolute": {
-    "message": "kondig om {triggerTimeRawDisplay} aan",
-    "description": "in list of defined reminders"
-  },
-  "reminderFeast": {
-    "message": "Het feest van {ar}, {meaning},",
-    "description": ""
-  },
-  "btnReminderSaveNew": {
-    "message": "Opslaan als een nieuwe herinnering",
-    "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
-  },
-  "exportQuickPick1Text": {
-    "message": "Display each Badí' day, along with Holy Days and Feast times. No alerts.",
-    "description": ""
-  },
-  "bDatePickerTitle": {
-    "message": "Kies een <u>B</u>adí' datum",
-    "description": "added <u></u> - should have one letter between <u> and </u>"
-  },
-  "eraShort": {
-    "message": "BE",
-    "description": ""
-  },
-  "reminderNum_hours_1_more": {
-    "message": "uur;uren",
-    "description": ""
-  },
-  "sampleGroup1_6": {
-    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
-    "description": "1 Jamal (Beauty) 172"
-  },
-  "reminderTrigger_midnight": {
-    "message": "Middernacht",
-    "description": "what this reminder is triggered on"
-  },
-  "messageBody": {
-    "message": "{triggerDisplayName} {desc}",
-    "description": ""
-  },
-  "customBtnCopy": {
-    "message": "Copy",
-    "description": ""
-  },
-  "reminderList_timeRelative": {
-    "message": "{num} {units} {deltaText}",
-    "description": "in list of defined reminders"
-  },
-  "fastDaysTitle": {
-    "message": "Tijden van de vasten in {bYear}",
-    "description": ""
-  },
-  "exporterItemDescFast": {
-    "message": "Times for the annual Bahá'í Fast.",
-    "description": "Included as the description in every calendar entry"
-  },
-  "exporterItemDescShared": {
-    "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
-    "description": "Be sure the URL is not translated!"
-  },
-  "exportQuickPick2Text": {
-    "message": "Sunrise, with an alert just before it.",
-    "description": ""
-  },
-  "exportIntro": {
-    "message": "Belangrijk! Kijk op <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/chrome-extension/exporting\">deze web pagina</a> voor informatie en waarschuwingen!",
-    "description": "Be sure the URL remains in English, to find the webpage!"
-  },
-  "includeFeasts": {
-    "message": "<u>F</u>eesten",
-    "description": "choosing what to include in the listing"
-  },
-  "exportName": {
-    "message": "Title for Exported Calendar (may not be used)",
-    "description": ""
-  },
-  "next": {
-    "message": "Volg &rarr;",
-    "description": ""
-  },
-  "exportOption_Sunrise": {
-    "message": "At sunrise only",
-    "description": ""
-  },
-  "reminderTestTagline": {
-    "message": "(om te worden getoond om {when})",
-    "description": "shown on the bottom of popoup when tested"
-  },
-  "gregorianDateDisplay": {
-    "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}",
-    "description": "in left panel"
-  },
-  "HolyDay_AscAbdul": {
-    "message": "Heengaan van `Abdu'l-Bahá",
-    "description": ""
-  },
-  "exportNumToInclude": {
-    "message": "Number of calendar entries that will be created (approximately):",
-    "description": ""
-  },
-  "pressToCopy": {
-    "message": "Druk toets om geformatteerde datum naar klembord te kopiëren:",
-    "description": "Can click button with mouse, or press matching key on keyboard"
-  },
-  "HolyDay_Ridvan12": {
-    "message": "Twaalfde dag van Ridván",
-    "description": ""
-  },
-  "btnReminderDelete": {
-    "message": "Verwijder",
-    "description": "delete a reminder"
-  },
-  "reminderTagline": {
-    "message": "(getoond om {when})",
-    "description": "shown on the bottom of each reminder popoup"
-  },
-  "suspendWorkHeading": {
-    "message": "Vrij van werk",
-    "description": "heading in Events listing"
-  },
-  "use24HourClock": {
-    "message": "true",
-    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
-  },
-  "tipsText": {
-    "message": "Gebruik PgUp/PgDn toetsen om tussen pagina's te wisselen.\nGebruik pijl naar rechts/links om van dag te veranderen.\nGebruik / te wisselen tussen voor/na zonsondergang.",
-    "description": ""
-  },
-  "customTitle": {
-    "message": "Date Format Builder",
-    "description": ""
-  },
-  "remindersDefined": {
-    "message": "Uw herinneringen",
-    "description": "title on right side"
-  },
-  "bWeekDayMeaning": {
-    "message": ",Heerlijkheid,Schoonheid,Volmaaktheid,Genade,Gerechtigheid,Majesteit,Onafhankelijkheid",
-    "description": "start with Saturday"
-  },
-  "noReminders": {
-    "message": "Toon voorbeeld herinneringen",
-    "description": "shown if there are no reminders"
-  },
-  "otherDays": {
-    "message": "over {0} dagen",
-    "description": ""
-  },
-  "reminderCalcTypeAbsolute": {
-    "message": "op een bepaald tijdstip",
-    "description": "in dropdown"
-  },
-  "browserMenuOpen": {
-    "message": "Open in een nieuw tabblad",
-    "description": "shown as menu item when right-clicking on the browser icon "
-  },
-  "bWeekdayNameAr": {
-    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
-    "description": "weekday names, with leading , "
-  },
-  "zapierKey": {
-    "message": "Zapier Webhook",
-    "description": "url for Zapier"
-  },
-  "exportQuickPick2": {
-    "message": "2. Fast Time - Morning",
-    "description": ""
-  },
-  "customPartsList": {
-    "message": "Available Date Parts",
-    "description": ""
-  },
-  "exportAlert_B1": {
-    "message": "1 minute before",
-    "description": ""
-  },
-  "HolyDay_DeclBab": {
-    "message": "Verkondiging van de Báb",
-    "description": ""
-  },
-  "past_StartDeltaTime": {
-    "message": "is {numUnits} geleden begonnen om time}",
-    "description": ""
-  },
-  "dateHeading": {
-    "message": "Dag",
-    "description": "heading in Events listing"
-  },
-  "fastGDate": {
-    "message": "Datum",
-    "description": "heading in Fast days listing"
-  },
-  "reminderNum_seconds": {
-    "message": "seconde/seconden",
-    "description": ""
-  },
-  "DayOfWeekFormat": {
-    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})",
-    "description": ""
-  },
-  "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Azamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sultán,Mulk,`Alá’",
-    "description": "month names, start with Ayyam-i-Ha"
-  },
-  "exportRangeFullRange": {
-    "message": "Export all calendar entries. (If not checked, only export a sample set.)",
-    "description": ""
-  },
-  "sunsetFastHeading": {
-    "message": "Zonsondergang",
-    "description": "heading in Fast days listing"
-  },
-  "reminderAction_speak": {
-    "message": "Lees voor",
-    "description": "in dropdown list, to choose to read the alert"
-  },
-  "noLocationName": {
-    "message": "(Current Location)",
-    "description": "If the internet is not available, to get the name of the current location."
-  },
-  "pick_pageDay": {
-    "message": "Dag",
-    "description": ""
-  },
-  "FeastOf": {
-    "message": "Feest van {0}",
-    "description": "The localized name of the Feast will be put into {0}"
-  },
-  "pick_pageCalWheel": {
-    "message": "Rad",
-    "description": "tab name"
-  },
-  "exportOtherSettings": {
-    "message": "Other Settings",
-    "description": ""
-  },
-  "YearOfVahidFormat": {
-    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})",
-    "description": ""
-  },
-  "gMonthDayYear": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": ""
-  },
-  "exportTest": {
-    "message": "Display for copying",
-    "description": ""
-  },
-  "exportHideTest": {
-    "message": "Hide",
-    "description": ""
-  },
-  "nearestSunsetDay": {
-    "message": "{dayEnded} met zonsondergang om {endingSunsetDesc}",
-    "description": ""
-  },
-  "sampleGroup1_24": {
-    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
-    "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
-  },
-  "HolyDay_BirthBab": {
-    "message": "Geboortedag van de Báb",
-    "description": ""
-  },
-  "reminderList_dayEvent": {
-    "message": "{num} dag(en) {deltaText}, om {triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "Tonight": {
-    "message": "Vanavond",
-    "description": "Shown in the upcoming dates area"
-  },
-  "zapierInfo": {
-    "message": "Voor details of om in te schrijven, zie <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. De Zap zal de volgende velden omvatten: title, body, tag, time",
-    "description": "info and link to Zapier"
-  },
-  "pick_pageReminders": {
-    "message": "Herinneringen",
-    "description": "page tab name and page title"
-  },
-  "reminderTriggerGroup_load": {
-    "message": "Andere gebeurtenissen",
-    "description": "a group of triggers - for other types of events"
-  },
-  "remindersScheduled": {
-    "message": "Vandaag uit te voeren tussen {time} en middernacht",
-    "description": "title on left side"
-  },
-  "formatIconToolTip": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "text when mouse is over the extension icon"
-  },
-  "ordinalNames": {
-    "message": ",eerste,tweede,derde,vierde,vijfde,zesde,zevende,achtste,negende,tiende,elfde,twaalfde,dertiende,veertiende,vijftiende,zestiende,zeventiende,achttiende,negentiende",
-    "description": ""
-  },
-  "googlePlus": {
-    "message": "Google+",
-    "description": "ALT for icon at bottom of page"
-  },
-  "sampleFootnote": {
-    "message": "De Gregoriaanse datum wijzigt met zonsondergang",
-    "description": ""
-  },
-  "sampleGroup1_20": {
-    "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
-    "description": "172.03.13 Sep 3 -- OneNote tabs"
-  },
-  "sunsetHeading": {
-    "message": "Begin van de Badí' Dag",
-    "description": "heading in Events listing"
-  },
-  "HolyDay_Ridvan9": {
-    "message": "Negende dag van Ridván",
-    "description": ""
-  },
-  "specialTime_0300S": {
-    "message": "3:00 (Standaard Tijd)",
-    "description": "Ascension of Baha'u'llah"
-  },
-  "exportOption_Hd": {
-    "message": "Heilige dagen <em>(11 dagen)</em>",
-    "description": ""
-  },
-  "browserActionTitle": {
-    "message": "Wordt geladen...",
-    "description": "Shown until the dynamic tip is created"
-  },
-  "Kullishay": {
-    "message": "Kull-i-<u>Sh</u>ay’",
-    "description": ""
-  },
-  "future_StartTime": {
-    "message": "zal om {time} beginnen",
-    "description": ""
-  },
-  "afterSunset": {
-    "message": "avond - na zonsondergang",
-    "description": ""
-  },
-  "bTopDayDisplay": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "top right corner"
   },
   "ayyamIs0": {
     "message": "(J M D) 0 = Ayyám-i-Há",
     "description": "(updated) in Badi date picker area"
   },
-  "exportOption_AllDay": {
-    "message": "All-day' event from midnight <em>(1 day long)</em>",
-    "description": ""
+  "bDatePickerTitle": {
+    "message": "Kies een <u>B</u>adí' datum",
+    "description": "added <u></u> - should have one letter between <u> and </u>"
   },
-  "gCombinedY_3": {
-    "message": "{frag1Day} {frag1MonthShort} {frag1Year}/{frag2Day} {frag2MonthShort} {frag2Year}",
-    "description": "with year"
+  "beforeSunset": {
+    "message": "dag - voor zonsondergang"
   },
-  "keyToOpenInTab": {
-    "message": "T",
-    "description": "Press Shift+(this letter) to open into a tab"
+  "bMonthMeaning": {
+    "message": "Schrikkeldagen,Pracht,Heerlijkheid,Schoonheid,Grootheid,Licht,Barmhartigheid,woorden,Volmaaktheid,Namen,Macht,Wil,Kennis,Kracht,Spraak,Vragen,Eer,Soevereiniteit,Heerschappij,Verhevenheid",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
-  "reminderTriggerGroup_day": {
-    "message": "Bijzondere dagen",
-    "description": "a group of triggers - feast, holy day, Badi day"
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Azamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sultán,Mulk,`Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
   },
-  "evePartOfDay": {
-    "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1Day} {frag1MonthShort} {frag1Year}",
-    "description": "show start time in Events listing"
+  "browserActionTitle": {
+    "message": "Wordt geladen...",
+    "description": "Shown until the dynamic tip is created"
   },
-  "reminderTrigger_bday": {
-    "message": "Badí' dag",
-    "description": "what this reminder is triggered on"
+  "browserMenuOpen": {
+    "message": "Open in een nieuw tabblad",
+    "description": "shown as menu item when right-clicking on the browser icon "
   },
-  "gWeekdayShort": {
-    "message": "zo,ma,di,wo,do,vr,za",
-    "description": "start with Sun"
+  "btnCustomBuilderCancel": {
+    "message": "Cancel / New"
   },
-  "exportAlert_B15": {
-    "message": "15 minutes before",
-    "description": ""
+  "btnEveOrDay": {
+    "message": "Voor / na zonsondergang"
   },
-  "exportQuickPick3": {
-    "message": "3. Fast Time - Evening",
-    "description": ""
+  "btnJumpTo": {
+    "message": "Ga"
   },
-  "future_DeltaTime": {
-    "message": "zal over {numUnits} zijn om {time}",
-    "description": ""
+  "btnJumpToTitle": {
+    "message": "Ga dit aantal dagen voor- of achteruit",
+    "description": "tooltip"
+  },
+  "btnReminderCancel": {
+    "message": "Annuleer",
+    "description": "cancel changes and close the edit area"
+  },
+  "btnReminderDelete": {
+    "message": "Verwijder",
+    "description": "delete a reminder"
+  },
+  "btnReminderEdit": {
+    "message": "Wijzig",
+    "description": "shown next to each reminder. Click to edit the reminder."
+  },
+  "btnReminderSave": {
+    "message": "<u>O</u>pslaan",
+    "description": "Save the changes and close the edit area"
+  },
+  "btnReminderSaveNew": {
+    "message": "Opslaan als een nieuwe herinnering",
+    "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+  },
+  "btnReminderTest": {
+    "message": "Nu testen",
+    "description": "show a sample of the reminder now"
+  },
+  "bTopDayDisplay": {
+    "message": "{bDay} {bMonthNamePri} {bYear}",
+    "description": "top right corner"
+  },
+  "bWeekDayMeaning": {
+    "message": ",Heerlijkheid,Schoonheid,Volmaaktheid,Genade,Gerechtigheid,Majesteit,Onafhankelijkheid",
+    "description": "start with Saturday"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
+  },
+  "bYearInVahidMeaning": {
+    "message": ",A,B,Vader,D,Poort,V,Eeuwigheid,Grootmoedigheid,Pracht,Liefde,Heerlijk,Antwoord,Enige,Milddadig,Genegenheid,Oorsprong,Lichtend,Lichtendste,Eenheid",
+    "description": "Vahid names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
+  "Chrome_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "description": "about page"
+  },
+  "Chrome_WebStore": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+    "description": "link to Webstore when running in Chrome"
+  },
+  "Chrome_WebStoreSupport": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+    "description": "link to Webstore support link when running in Chrome"
+  },
+  "copied": {
+    "message": "Gekopiëerd!",
+    "description": "short message that replaces sample format button text when button is clicked"
+  },
+  "currentFocus": {
+    "message": "Huidige dag",
+    "description": "in wheel, points to today, or whatever day is currently selected"
+  },
+  "customBtnCopy": {
+    "message": "Copy"
+  },
+  "customBuilder": {
+    "message": "Build a Custom Date Format"
+  },
+  "customBuilderEcho": {
+    "message": "Results (for currently selected day - see Tips & Keys to change day)"
+  },
+  "customBuilderIntro": {
+    "message": "Type the format into this box. Click any 'Add' in the Available Date Parts to add that date part in the current location. Hints: 'frag1' = sunset to midnight; 'frag2' = midnight to sunset."
+  },
+  "customDefined": {
+    "message": "Custom Date Formats"
+  },
+  "customIntroClick": {
+    "message": "Click Copy to copy formatted date to the clipboard."
+  },
+  "customLoadLetters": {
+    "message": "Click to start from a standard format: "
+  },
+  "customPartsList": {
+    "message": "Available Date Parts"
+  },
+  "customSelectForFrontPage": {
+    "message": "Tick box to show on {0} page."
+  },
+  "customTitle": {
+    "message": "Date Format Builder"
+  },
+  "customUseAsSample": {
+    "message": "Use as Sample?"
+  },
+  "dateHeading": {
+    "message": "Dag",
+    "description": "heading in Events listing"
+  },
+  "dayEndedFuture": {
+    "message": "eindigt"
+  },
+  "dayEndedPast": {
+    "message": "is geëindigt"
   },
   "DayOfMonth": {
-    "message": "Dag van de maand",
-    "description": ""
+    "message": "Dag van de maand"
   },
-  "reminderTimeInputStructure": {
-    "message": "Laat {num} {units} {delta} zien",
-    "description": "in edit area when asking for a relative time"
+  "DayOfMonthFormat": {
+    "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+  },
+  "DayOfWeek": {
+    "message": "Weekdag"
+  },
+  "DayOfWeekFormat": {
+    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+  },
+  "dayStartedFuture": {
+    "message": "begint"
+  },
+  "dayStartedPast": {
+    "message": "is begonnen"
+  },
+  "elements": {
+    "message": "Vuur,Lucht,Water,Aarde",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
   },
   "Ended": {
     "message": "beëindigd",
     "description": "Shown in the upcoming dates area"
   },
-  "customLoadLetters": {
-    "message": "Click to start from a standard format: ",
-    "description": ""
+  "endingWithSunset": {
+    "message": "Eindigt met zonsondergang om {0}"
+  },
+  "equiv": {
+    "message": "Equivalent",
+    "description": "on List page - table heading"
+  },
+  "eraAbbrev": {
+    "message": "B.E."
+  },
+  "eraLong": {
+    "message": "Bahá'í tijdperk"
+  },
+  "eraShort": {
+    "message": "BE"
+  },
+  "eventTime": {
+    "message": "{eventTime} {eventWeekdayShort} {eventDay} {eventMonthShort} {eventYear}",
+    "description": "show start time in Events listing"
+  },
+  "eventTimeHeading1": {
+    "message": "Tijd van de bijeenkomst",
+    "description": "heading in Events listing (if not showing Holy Days)"
+  },
+  "eventTimeHeading2": {
+    "message": "Tijd bijeenkomst/herdenking",
+    "description": "heading in Events listing (if showing Holy Days)"
+  },
+  "evePartOfDay": {
+    "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1Day} {frag1MonthShort} {frag1Year}",
+    "description": "show start time in Events listing"
+  },
+  "example2": {
+    "message": "{bDay} {bMonthNamePri} {dayStartedLower} bij zonsondergang (ongeveer {startingSunsetDesc}) op {frag1WeekdayLong} {frag1Day} {frag1MonthShort} en {dayEndedLower} bij zonsondergang (ongeveer {endingSunsetDesc}) op {frag2WeekdayLong} {frag2Day} {frag2MonthShort}."
+  },
+  "exportAlert_B0": {
+    "message": "When it starts"
+  },
+  "exportAlert_B1": {
+    "message": "1 minute before"
+  },
+  "exportAlert_B10": {
+    "message": "10 minutes before"
+  },
+  "exportAlert_B15": {
+    "message": "15 minutes before"
+  },
+  "exportAlert_B30": {
+    "message": "30 minutes before"
+  },
+  "exportAlert_B5": {
+    "message": "5 minutes before"
+  },
+  "exportAlert_B60": {
+    "message": "60 minutes before"
+  },
+  "exportBadiYear0": {
+    "message": "Badí' year - {0} B.E."
+  },
+  "exportBadiYear1": {
+    "message": "Badí' year - {0} B.E."
+  },
+  "exportCalendarDescription": {
+    "message": "Datums in de Badí'-kalender voor {location}",
+    "description": "title on page"
+  },
+  "exportDayFromSunset": {
+    "message": "Start of {0}"
+  },
+  "exporterDateRange": {
+    "message": "<u>R</u>ange of dates to Export (based on currently selected year)"
+  },
+  "exporterFastEnd": {
+    "message": "Fast Ends",
+    "description": "when the fast ends at sunset"
+  },
+  "exporterFastStart": {
+    "message": "Fast Starts",
+    "description": "when the fast starts at sunrise"
+  },
+  "exporterFastUntil": {
+    "message": "Fast until {endingSunsetDesc}"
+  },
+  "exporterItemDescDay": {
+    "message": "A day in the Badí' calendar.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescFast": {
+    "message": "Times for the annual Bahá'í Fast.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescGeneralTime": {
+    "message": "Gathering may start at any time on this Badí' day.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterItemDescShared": {
+    "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
+    "description": "Be sure the URL is not translated!"
+  },
+  "exporterItemDescSpecialTime": {
+    "message": "{SpecialTime}.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterTitle": {
+    "message": "Exporteer de Badí' kalender",
+    "description": "title on page"
+  },
+  "exportFile": {
+    "message": "Download iCalendar file (.ics)"
+  },
+  "exportGregYear0": {
+    "message": "Gregorian year - {0} A.D."
+  },
+  "exportGregYear1": {
+    "message": "Gregorian year - {0} A.D."
+  },
+  "exportHideTest": {
+    "message": "Hide"
+  },
+  "exportIncludeAlert": {
+    "message": "Add an alert to each event (may not load into Google calendar)"
+  },
+  "exportIncludeLocation": {
+    "message": "Location Information"
+  },
+  "exportIntro": {
+    "message": "Belangrijk! Kijk op <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/chrome-extension/exporting\">deze web pagina</a> voor informatie en waarschuwingen!",
+    "description": "Be sure the URL remains in English, to find the webpage!"
+  },
+  "exportName": {
+    "message": "Title for Exported Calendar (may not be used)"
+  },
+  "exportNumToInclude": {
+    "message": "Number of calendar entries that will be created (approximately):"
+  },
+  "exportOption_AllDay": {
+    "message": "All-day' event from midnight <em>(1 day long)</em>"
+  },
+  "exportOption_BeginningSunset": {
+    "message": "At beginning sunset only"
+  },
+  "exportOption_Date": {
+    "message": "Badí'-dagen <em>(365/366 dagen)</em>"
+  },
+  "exportOption_Fast": {
+    "message": "Fast Days <em>(19 days)</em>"
+  },
+  "exportOption_Feast": {
+    "message": "Feesten <em>(19-daags)</em>"
+  },
+  "exportOption_Hd": {
+    "message": "Heilige dagen <em>(11 dagen)</em>"
+  },
+  "exportOption_Start": {
+    "message": "Event at designated observation time or usual meeting time"
+  },
+  "exportOption_Sun": {
+    "message": "From sunset to sunset <em>(about 24 hours)</em>"
+  },
+  "exportOption_Sunrise": {
+    "message": "At sunrise only"
+  },
+  "exportOption_SunriseToSunset": {
+    "message": "Event from sunrise to sunset <em>(about 12 hours)</em>"
+  },
+  "exportOption_Sunset": {
+    "message": "At sunset only"
+  },
+  "exportOption_Usual": {
+    "message": "Event at usual meeting time (see Events page)"
+  },
+  "exportOtherSettings": {
+    "message": "Other Settings"
+  },
+  "exportQuickDesc": {
+    "message": "Export each set, then load them all into the same calendar!"
+  },
+  "exportQuickPick1": {
+    "message": "1. Full Calendar"
+  },
+  "exportQuickPick1Text": {
+    "message": "Display each Badí' day, along with Holy Days and Feast times. No alerts."
+  },
+  "exportQuickPick2": {
+    "message": "2. Fast Time - Morning"
+  },
+  "exportQuickPick2Text": {
+    "message": "Sunrise, with an alert just before it."
+  },
+  "exportQuickPick3": {
+    "message": "3. Fast Time - Evening"
+  },
+  "exportQuickPick3Text": {
+    "message": "Sunset, with an alert."
+  },
+  "exportQuickPickClearText": {
+    "message": "Reset options"
+  },
+  "exportQuickPicks": {
+    "message": "Recommended sets of Events"
+  },
+  "exportRangeFullRange": {
+    "message": "Export all calendar entries. (If not checked, only export a sample set.)"
+  },
+  "exportTest": {
+    "message": "Display for copying"
+  },
+  "exportWhatTitle": {
+    "message": "Select what should be exported."
+  },
+  "exportWhatToInclude": {
+    "message": "Options"
+  },
+  "facebook": {
+    "message": "Facebook",
+    "description": "ALT for icon at bottom of page"
+  },
+  "fastDaysTitle": {
+    "message": "Tijden van de vasten in {bYear}"
+  },
+  "fastGDate": {
+    "message": "Datum",
+    "description": "heading in Fast days listing"
+  },
+  "FeastOf": {
+    "message": "Feest van {0}",
+    "description": "The localized name of the Feast will be put into {0}"
+  },
+  "FestivalRidvan": {
+    "message": "Ridvánfeest"
+  },
+  "Firefox_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "description": "about page"
+  },
+  "Firefox_WebStore": {
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "description": "link to Webstore when running in Firefox"
+  },
+  "Firefox_WebStoreSupport": {
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "description": "link to Webstore support link when running in Firefox"
+  },
+  "formatIconClick": {
+    "message": "(klik voor details)"
+  },
+  "formatIconToolTip": {
+    "message": "{bDay} {bMonthNamePri} {bYear}",
+    "description": "text when mouse is over the extension icon"
+  },
+  "future_Day": {
+    "message": "begint om {time}",
+    "description": "shown in the eve of the day"
+  },
+  "future_Delta": {
+    "message": "zal over {numUnits} zijn"
+  },
+  "future_DeltaTime": {
+    "message": "zal over {numUnits} zijn om {time}"
+  },
+  "future_StartDeltaTime": {
+    "message": "zal over {numUnits} beginnen om {time}"
+  },
+  "future_StartTime": {
+    "message": "zal om {time} beginnen"
+  },
+  "future_Time": {
+    "message": "zal om {time} zijn"
+  },
+  "gCombinedY_1": {
+    "message": "{frag1Day}/{frag2Day} {frag1MonthShort} {frag1Year}",
+    "description": "with year"
+  },
+  "gCombinedY_2": {
+    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort} {frag1Year}",
+    "description": "with year"
+  },
+  "gCombinedY_3": {
+    "message": "{frag1Day} {frag1MonthShort} {frag1Year}/{frag2Day} {frag2MonthShort} {frag2Year}",
+    "description": "with year"
+  },
+  "gCombined_1": {
+    "message": "{frag1Day}/{frag2Day} {frag1MonthShort}",
+    "description": "day in same gregorian month"
+  },
+  "gCombined_2": {
+    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
+    "description": "day spanning different gregorian months"
+  },
+  "gCombined_3": {
+    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
+    "description": "day spanning different gregorian years"
+  },
+  "gDatePickerTitle": {
+    "message": "Gregoriaanse Datum"
+  },
+  "gDatePickerTitle2": {
+    "message": "Kies een <u>G</u>regoriaanse Datum",
+    "description": "changed in 1.1.2"
+  },
+  "gMonthDayYear": {
+    "message": "{bDay} {bMonthNamePri} {bYear}"
+  },
+  "gMonthLong": {
+    "message": "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december"
+  },
+  "gMonthShort": {
+    "message": "jan,feb,maa,apr,mei,jun,jul,aug,sep,okt,nov,dec"
+  },
+  "googlePlus": {
+    "message": "Google+",
+    "description": "ALT for icon at bottom of page"
+  },
+  "gotoNow": {
+    "message": "Nu"
+  },
+  "gregorianDateDisplay": {
+    "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}",
+    "description": "in left panel"
+  },
+  "gTopDayDisplay": {
+    "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}, {currentRelationToSunset}",
+    "description": "top right corner"
+  },
+  "gWeekdayLong": {
+    "message": "zondag,maandag,dinsdag,woensdag,donderdag,vrijdag,zaterdag",
+    "description": "start with Sunday"
+  },
+  "gWeekdayShort": {
+    "message": "zo,ma,di,wo,do,vr,za",
+    "description": "start with Sun"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Heengaan van `Abdu'l-Bahá"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Hemelvaart van Bahá'u'lláh"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Geboortedag van de Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Geboortedag van Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Dag van het Verbond"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Verkondiging van de Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Marteldood van de Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw Rúz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Eerste dag van Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Twaalfde dag van Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Negende dag van Ridván"
+  },
+  "iftttEvent": {
+    "message": "IFTTT Event Name",
+    "description": "name of 'Event' for IFTTT Maker channel"
+  },
+  "iftttInfo": {
+    "message": "Voot details of om in te schrijven, zie <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. De gebeurtenis bevat de volgende velden: title, body, tag",
+    "description": "info and link to ifttt page"
+  },
+  "iftttKey": {
+    "message": "IFTTT Maker Channel Key",
+    "description": "Key' for IFTTT Maker channel"
+  },
+  "includeFeasts": {
+    "message": "<u>F</u>eesten",
+    "description": "choosing what to include in the listing"
+  },
+  "includeHolyDays": {
+    "message": "<u>H</u>eilige dagen",
+    "description": "choosing what to include in the listing"
+  },
+  "includeThese": {
+    "message": "Toon",
+    "description": "choosing what to include in the listing"
+  },
+  "Intercalary": {
+    "message": "Schrikkeldagen"
+  },
+  "jumpTo": {
+    "message": "<u>S</u>pring ± dagen",
+    "description": "user can enter a day after/before currently selected day"
+  },
+  "keyToOpenInTab": {
+    "message": "T",
+    "description": "Press Shift+(this letter) to open into a tab"
+  },
+  "Kullishay": {
+    "message": "Kull-i-<u>Sh</u>ay’"
+  },
+  "KullishayFormat": {
+    "message": "{bKullishay}"
+  },
+  "locationError": {
+    "message": "Niet mogelijk uw huidige locatie te bepalen.\n\nDe extensie zal voor iedere dag 18:30 gebruiken.",
+    "description": "If the system cannot determine the location, this is shown in an alert window."
+  },
+  "mainPartOfDay": {
+    "message": "{frag2WeekdayShort} {frag2Day} {frag2MonthShort} {frag2Year}",
+    "description": "show start time in Events listing"
+  },
+  "meaning": {
+    "message": "Betekenis",
+    "description": "on List page - table heading"
+  },
+  "messageBody": {
+    "message": "{triggerDisplayName} {desc}"
+  },
+  "midnight": {
+    "message": "12:00 's nachts",
+    "description": "nice way to say midnight"
+  },
+  "Month": {
+    "message": "Maand"
+  },
+  "MonthFormatAyyam": {
+    "message": "{bMonthNamePri} ({bMonthNameSec})"
+  },
+  "MonthFormatNormal": {
+    "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+  },
+  "monthNames": {
+    "message": "Naam van de maand/dag",
+    "description": "on List page - table caption"
+  },
+  "nearestSunsetDay": {
+    "message": "{dayEnded} met zonsondergang om {endingSunsetDesc}"
+  },
+  "nearestSunsetEve": {
+    "message": "{dayStarted} met zonsondergang om {startingSunsetDesc}"
+  },
+  "next": {
+    "message": "Volg &rarr;"
+  },
+  "nextRefreshAlarm": {
+    "message": "Next refresh scheduled after {0}: {1}",
+    "description": "only shown in the debug console"
+  },
+  "nextYear": {
+    "message": "Jaar verder",
+    "description": "hold Shift and press right arrow key"
+  },
+  "nextYearTitle": {
+    "message": "Toets shift + pijl naar rechts in om het volgend jaar te zien",
+    "description": "hold Shift and press right arrow key"
+  },
+  "noLocationAvailable": {
+    "message": "(Locatie onbekend - zonsondergangtijd 18:30)",
+    "description": "If the system does not know the location of this computer."
+  },
+  "noLocationName": {
+    "message": "(Current Location)",
+    "description": "If the internet is not available, to get the name of the current location."
+  },
+  "noon": {
+    "message": "12:00 middag",
+    "description": "nice way to say noon"
+  },
+  "noReminders": {
+    "message": "Toon voorbeeld herinneringen",
+    "description": "shown if there are no reminders"
+  },
+  "Now": {
+    "message": "Nu",
+    "description": "Shown in the upcoming dates area"
+  },
+  "num": {
+    "message": "#",
+    "description": "on List page - table heading"
+  },
+  "numUnits": {
+    "message": "{num} {units}",
+    "description": "eg. 5 days, 1 minute, 3 hours"
+  },
+  "ordinal": {
+    "message": "th,st,nd,rd",
+    "description": "x,1,2,3"
+  },
+  "ordinalNames": {
+    "message": ",eerste,tweede,derde,vierde,vijfde,zesde,zevende,achtste,negende,tiende,elfde,twaalfde,dertiende,veertiende,vijftiende,zestiende,zeventiende,achttiende,negentiende"
+  },
+  "otherDays": {
+    "message": "over {0} dagen"
+  },
+  "past_Day": {
+    "message": "begonnen om {time}",
+    "description": "shown after midnight of the day"
+  },
+  "past_Delta": {
+    "message": "was {numUnits} geleden"
+  },
+  "past_DeltaTime": {
+    "message": "was {numUnits} geleden om {time}"
+  },
+  "past_StartDeltaTime": {
+    "message": "is {numUnits} geleden begonnen om time}"
+  },
+  "past_StartTime": {
+    "message": "begonnen om {time}"
+  },
+  "past_Time": {
+    "message": "was om {time}"
+  },
+  "pick_pageCal1": {
+    "message": "Jaar"
+  },
+  "pick_pageCalGreg": {
+    "message": "Gregoriaans jaar",
+    "description": "tab name"
+  },
+  "pick_pageCalWheel": {
+    "message": "Rad",
+    "description": "tab name"
+  },
+  "pick_pageCustom": {
+    "message": "Custom",
+    "description": "page tab name and page title"
+  },
+  "pick_pageDay": {
+    "message": "Dag"
+  },
+  "pick_pageEvents": {
+    "message": "Gebeurtenissen",
+    "description": "showing Feast and Holy Days"
+  },
+  "pick_pageExporter": {
+    "message": "Exporteren",
+    "description": "page tab name and page title"
+  },
+  "pick_pageFast": {
+    "message": "Vasten"
+  },
+  "pick_pageLists": {
+    "message": "Lijsten"
+  },
+  "pick_pageReminders": {
+    "message": "Herinneringen",
+    "description": "page tab name and page title"
+  },
+  "pm": {
+    "message": "nm",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "pressKeyOrClick": {
+    "message": "Druk op de toets of klik {0}.",
+    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+  },
+  "pressToCopy": {
+    "message": "Druk toets om geformatteerde datum naar klembord te kopiëren:",
+    "description": "Can click button with mouse, or press matching key on keyboard"
+  },
+  "prev": {
+    "message": "&larr; Vorig"
+  },
+  "prevYear": {
+    "message": "Jaar terug",
+    "description": "hold Shift and press left arrow key"
+  },
+  "prevYearTitle": {
+    "message": "Toets shift + pijl naar links in om het voorgaand jaar te zien",
+    "description": "hold Shift and press left arrow key"
+  },
+  "rbDefLang_Local": {
+    "message": "local (Nederlands)",
+    "description": "put your language here, in your script"
+  },
+  "reminderAction_ifttt": {
+    "message": "trigger IFTTT recipe",
+    "description": "in dropdown list, to choose to use IFTTT"
+  },
+  "reminderAction_speak": {
+    "message": "Lees voor",
+    "description": "in dropdown list, to choose to read the alert"
+  },
+  "reminderAction_zapier": {
+    "message": "trigger Zapier Webhook",
+    "description": "in dropdown list, to choose to use Zapier"
   },
   "reminderAddEdit": {
     "message": "Stel een herinnering in of wijzig deze",
     "description": "title on left side"
   },
   "reminderAfter": {
-    "message": "na",
-    "description": ""
+    "message": "na"
   },
-  "reminderDayDetails": {
-    "message": "{eventTime} op {eventWeekdayLong} {eventDay} {eventMonthLong}.",
-    "description": ""
+  "reminderAlarm": {
+    "message": "Om {triggerTimeDisplay} --> {messageBody}",
+    "description": "used when showing list of alarms scheduled today"
   },
-  "titleDesc": {
-    "message": "Laat de huidige datum zien in de Badí'-kalender, de officiële kalender van het Bahá'í-geloof.",
-    "description": "Used in the manifest"
+  "reminderBDay": {
+    "message": "Dag {num} van de Badí' maand",
+    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
   },
-  "exporterFastUntil": {
-    "message": "Fast until {endingSunsetDesc}",
-    "description": ""
-  },
-  "pick_pageCalGreg": {
-    "message": "Gregoriaans jaar",
-    "description": "tab name"
-  },
-  "Now": {
-    "message": "Nu",
-    "description": "Shown in the upcoming dates area"
-  },
-  "iftttEvent": {
-    "message": "IFTTT Event Name",
-    "description": "name of 'Event' for IFTTT Maker channel"
+  "reminderBefore": {
+    "message": "voor"
   },
   "reminderCalcType": {
     "message": "laat herinnering {calcTypeInput} zien",
     "description": "in edit area when asking when to show the reminder"
   },
-  "customBuilderIntro": {
-    "message": "Type the format into this box. Click any 'Add' in the Available Date Parts to add that date part in the current location. Hints: 'frag1' = sunset to midnight; 'frag2' = midnight to sunset.",
-    "description": ""
+  "reminderCalcTypeAbsolute": {
+    "message": "op een bepaald tijdstip",
+    "description": "in dropdown"
   },
-  "mainPartOfDay": {
-    "message": "{frag2WeekdayShort} {frag2Day} {frag2MonthShort} {frag2Year}",
-    "description": "show start time in Events listing"
+  "reminderCalcTypeRelative": {
+    "message": "in relatie tot <span class=modelTriggerEcho></span>",
+    "description": "in dropdown"
   },
-  "exportQuickPick1": {
-    "message": "1. Full Calendar",
-    "description": ""
+  "reminderDayDetails": {
+    "message": "{eventTime} op {eventWeekdayLong} {eventDay} {eventMonthLong}."
   },
-  "gCombined_2": {
-    "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
-    "description": "day spanning different gregorian months"
+  "reminderDayDetailsTest": {
+    "message": "{eventTime} op {eventDay} {eventMonthShort}"
   },
-  "exportGregYear0": {
-    "message": "Gregorian year - {0} A.D.",
-    "description": ""
+  "reminderDayOfMonth": {
+    "message": "Op dag {num} van de Badí' maand",
+    "description": "in list of defined reminders"
+  },
+  "reminderDayWhen": {
+    "message": "Wanneer {num} dag(en) {beforeAfter} ieder(e) {event}",
+    "description": "in list of defined reminders"
+  },
+  "reminderFeast": {
+    "message": "Het feest van {ar}, {meaning},"
+  },
+  "reminderHolyDay": {
+    "message": "De Heilige dag \"{0}"
+  },
+  "reminderList_bday": {
+    "message": "dag {num} om {triggerTimeRawDisplay}",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_dayEvent": {
+    "message": "{num} dag(en) {deltaText}, om {triggerTimeRawDisplay}",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_onload": {
+    "message": "{num} {units} na",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_timeAbsolute": {
+    "message": "kondig om {triggerTimeRawDisplay} aan",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_timeRelative": {
+    "message": "{num} {units} {deltaText}",
+    "description": "in list of defined reminders"
+  },
+  "reminderNum_days": {
+    "message": "dag/dagen",
+    "description": "unknown number of days"
+  },
+  "reminderNum_days_1_more": {
+    "message": "dag;dagen",
+    "description": "single;plural"
+  },
+  "reminderNum_hours": {
+    "message": "uur/uren"
+  },
+  "reminderNum_hours_1_more": {
+    "message": "uur;uren"
+  },
+  "reminderNum_minutes": {
+    "message": "minuut/minuten"
   },
   "reminderNum_minutes_1_more": {
-    "message": "minuut;minuten",
-    "description": ""
+    "message": "minuut;minuten"
   },
-  "pick_pageFast": {
-    "message": "Vasten",
-    "description": ""
+  "reminderNum_seconds": {
+    "message": "seconde/seconden"
   },
-  "exportAlert_B60": {
-    "message": "60 minutes before",
-    "description": ""
+  "reminderNum_seconds_1_more": {
+    "message": "seconde;seconden"
   },
-  "pick_pageLists": {
-    "message": "Lijsten",
-    "description": ""
+  "remindersDefined": {
+    "message": "Uw herinneringen",
+    "description": "title on right side"
   },
-  "1day": {
-    "message": "over {0} dag",
-    "description": ""
+  "reminderSelectTrigger": {
+    "message": "Stel een herinnering in...",
+    "description": "in dropdown, when no trigger is selected"
   },
-  "iftttInfo": {
-    "message": "Voot details of om in te schrijven, zie <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. De gebeurtenis bevat de volgende velden: title, body, tag",
-    "description": "info and link to ifttt page"
+  "reminderShowAt": {
+    "message": "Laat zien om",
+    "description": "in front of time of day input"
   },
-  "gCombinedY_1": {
-    "message": "{frag1Day}/{frag2Day} {frag1MonthShort} {frag1Year}",
-    "description": "with year"
+  "remindersScheduled": {
+    "message": "Vandaag uit te voeren tussen {time} en middernacht",
+    "description": "title on left side"
   },
-  "DayOfWeek": {
-    "message": "Weekdag",
-    "description": ""
+  "reminderTagline": {
+    "message": "(getoond om {when})",
+    "description": "shown on the bottom of each reminder popoup"
   },
-  "gDatePickerTitle2": {
-    "message": "Kies een <u>G</u>regoriaanse Datum",
-    "description": "changed in 1.1.2"
+  "reminderTestTagline": {
+    "message": "(om te worden getoond om {when})",
+    "description": "shown on the bottom of popoup when tested"
   },
-  "HolyDay_Martyrdom": {
-    "message": "Marteldood van de Báb",
-    "description": ""
+  "reminderTimeInputStructure": {
+    "message": "Laat {num} {units} {delta} zien",
+    "description": "in edit area when asking for a relative time"
   },
-  "elements": {
-    "message": "Vuur,Lucht,Water,Aarde",
-    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  "reminderTitle": {
+    "message": "{0} Herinnering",
+    "description": "displayed as the title of each reminder shown"
   },
-  "facebook": {
-    "message": "Facebook",
-    "description": "ALT for icon at bottom of page"
+  "reminderTriggerGroup_day": {
+    "message": "Bijzondere dagen",
+    "description": "a group of triggers - feast, holy day, Badi day"
   },
-  "locationError": {
-    "message": "Niet mogelijk uw huidige locatie te bepalen.\n\nDe extensie zal voor iedere dag 18:30 gebruiken.",
-    "description": "If the system cannot determine the location, this is shown in an alert window."
+  "reminderTriggerGroup_load": {
+    "message": "Andere gebeurtenissen",
+    "description": "a group of triggers - for other types of events"
   },
-  "gCombined_1": {
-    "message": "{frag1Day}/{frag2Day} {frag1MonthShort}",
-    "description": "day in same gregorian month"
+  "reminderTriggerGroup_time": {
+    "message": "Tijd van de dag",
+    "description": "a group of triggers - sunset sunrise noon midnight"
   },
-  "gMonthShort": {
-    "message": "jan,feb,maa,apr,mei,jun,jul,aug,sep,okt,nov,dec",
-    "description": ""
+  "reminderTrigger_bday": {
+    "message": "Badí' dag",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_feast": {
+    "message": "19-Daagsfeestdag",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_holyday": {
+    "message": "Heilige dag",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_load": {
+    "message": "Bij het laden",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_midnight": {
+    "message": "Middernacht",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_noon": {
+    "message": "Middaguur",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_sunrise": {
+    "message": "Zonsopkomst",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderTrigger_sunset": {
+    "message": "Zonsondergang",
+    "description": "what this reminder is triggered on"
+  },
+  "reminderType": {
+    "message": "Gebeurtenis",
+    "description": "in front of the trigger selector"
+  },
+  "reminder_actions": {
+    "message": "Extra actie",
+    "description": "prompt for other actions"
+  },
+  "reminder_nullAction": {
+    "message": "Geen",
+    "description": "in dropdown list, for when no other action is chosen"
+  },
+  "sampleFootnote": {
+    "message": "De Gregoriaanse datum wijzigt met zonsondergang"
+  },
+  "shoghiExample": {
+    "message": "Deze dag heet {bWeekdayNamePri}, de dag {bDayNamePri} van de maand {bMonthNamePri}, van het jaar {bYearInVahidNamePri}, van de {bVahidOrdinalName} {VahidLabelPri}, van de {bKullishayOrdinalName} {KullishayLabelPri}.",
+    "description": "Example given by Shoghi Effendi"
+  },
+  "shortcutKeyTitle": {
+    "message": "Druk deze toetscombinatie in om de kalender op ieder gewenst moment binnen Chrome te openen."
+  },
+  "showPointer": {
+    "message": "Toon huidige dag"
+  },
+  "specialDaysTitle": {
+    "message": "Feesten en heilige dagen in {bYear}"
+  },
+  "specialTime_0100S": {
+    "message": "1:00 (Standaard Tijd)",
+    "description": "Martyrdom of the Bab"
+  },
+  "specialTime_0300S": {
+    "message": "3:00 (Standaard Tijd)",
+    "description": "Ascension of Baha'u'llah"
+  },
+  "specialTime_1200S": {
+    "message": "Middaguur (Standaard Tijd)",
+    "description": "Martyrdom of the Bab"
   },
   "specialTime_1500S": {
     "message": "15:00 (Standaard Tijd)",
     "description": "First day of Ridvan"
   },
-  "exportFile": {
-    "message": "Download iCalendar file (.ics)",
-    "description": ""
+  "specialTime_SS2": {
+    "message": "Ongeveer twee uur na zonsondergang",
+    "description": "Declaration of the Bab"
   },
-  "formatIconClick": {
-    "message": "(klik voor details)",
-    "description": ""
+  "startedWithSunset": {
+    "message": "Begonnen met zonsondergang om {0}"
   },
-  "rbDefLang_Local": {
-    "message": "local (Nederlands)",
-    "description": "put your language here, in your script"
+  "startTimeOption": {
+    "message": "Gebruikelijke begintijd: ",
+    "description": "above Events listing"
+  },
+  "suggestions": {
+    "message": "Suggesties?"
+  },
+  "suggestionsTitle": {
+    "message": "Klik hier en geef uw ideeën (in het Engels) hoe deze uitbreiding verbeterd kan worden!"
+  },
+  "sunriseFastHeading": {
+    "message": "Zonsopkomst",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetFastHeading": {
+    "message": "Zonsondergang",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetHeading": {
+    "message": "Begin van de Badí' Dag",
+    "description": "heading in Events listing"
+  },
+  "suspendWorkHeading": {
+    "message": "Vrij van werk",
+    "description": "heading in Events listing"
+  },
+  "timeFormat12": {
+    "message": "{time} {ampm}",
+    "description": "used when use24HourClock is set to false"
+  },
+  "tips": {
+    "message": "Tips",
+    "description": "hints of how to use the tool"
+  },
+  "tipsText": {
+    "message": "Gebruik PgUp/PgDn toetsen om tussen pagina's te wisselen.\nGebruik pijl naar rechts/links om van dag te veranderen.\nGebruik / te wisselen tussen voor/na zonsondergang."
+  },
+  "title": {
+    "message": "Badí' kalender",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "Laat de huidige datum zien in de Badí'-kalender, de officiële kalender van het Bahá'í-geloof.",
+    "description": "Used in the manifest"
+  },
+  "Tonight": {
+    "message": "Vanavond",
+    "description": "Shown in the upcoming dates area"
+  },
+  "translation": {
+    "message": "nl"
+  },
+  "upcomingDateFormat": {
+    "message": "{bDay} {bMonthNamePri} ({gCombined})",
+    "description": "upcoming list"
+  },
+  "upcomingTitle": {
+    "message": "Komende feesten, heilige dagen en andere gebeurtenissen"
+  },
+  "use24HourClock": {
+    "message": "true",
+    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+  },
+  "Vahid": {
+    "message": "Váḥid"
+  },
+  "VahidFormat": {
+    "message": "{bVahid}"
+  },
+  "version": {
+    "message": "Versie {0}"
+  },
+  "webstore": {
+    "message": "Chrome Web Store"
+  },
+  "weekDayNames": {
+    "message": "Namen van de weekdagen",
+    "description": "on List page - table caption"
+  },
+  "YearOfEra": {
+    "message": "Jaar van het Bahá'í tijdperk"
+  },
+  "YearOfEraFormat": {
+    "message": "{bYear}"
+  },
+  "YearOfVahid": {
+    "message": "Jaar van de {VahidLabelPri}"
+  },
+  "YearOfVahidFormat": {
+    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "yearWithEra": {
+    "message": "{bYear} {bEraAbbrev}"
+  },
+  "zapierInfo": {
+    "message": "Voor details of om in te schrijven, zie <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. De Zap zal de volgende velden omvatten: title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "Zapier Webhook",
+    "description": "url for Zapier"
   }
-
 }
