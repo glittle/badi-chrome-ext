@@ -438,9 +438,6 @@
     "message": "{num} {units} {deltaText}",
     "description": "in list of defined reminders"
   },
-  "sampleFootnote": {
-    "message": "Les jours grégoriens changeront au coucher du soleil : "
-  },
   "shoghiExample": {
     "message": "Aujourd'hui est le jour de {bWeekdayNamePri}, jour de {bDayNamePri}, du mois de {bMonthNamePri}, de l'année {bYearInVahidNamePri}, du {bVahidOrdinalName} {VahidLabelPri}, du {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
