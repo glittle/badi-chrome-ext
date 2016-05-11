@@ -1086,9 +1086,6 @@
     "message": "none",
     "description": "in dropdown list, for when no other action is chosen"
   },
-  "sampleFootnote": {
-    "message": "Gregorian dates change before/after sunset"
-  },
   "sampleGroup1_1": {
     "message": "{bDay} {bMonthNamePri} {bYear}",
     "description": "3 Jamál 172"
