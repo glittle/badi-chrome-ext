@@ -445,9 +445,6 @@
     "message": "local (Español)",
     "description": "put your language here, in your script"
   },
-  "sampleFootnote": {
-    "message": "El calendario Gregoriano cambia antes/despues del ocaso"
-  },
   "shoghiExample": {
     "message": "este es el dia de {bWeekdayNamePri}, El dia de {bDayNamePri}, del mes de {bMonthNamePri}, del año {bYearInVahidNamePri}, del {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
