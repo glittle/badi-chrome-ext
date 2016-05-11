@@ -965,9 +965,6 @@
     "message": "Geen",
     "description": "in dropdown list, for when no other action is chosen"
   },
-  "sampleFootnote": {
-    "message": "De Gregoriaanse datum wijzigt met zonsondergang"
-  },
   "shoghiExample": {
     "message": "Deze dag heet {bWeekdayNamePri}, de dag {bDayNamePri} van de maand {bMonthNamePri}, van het jaar {bYearInVahidNamePri}, van de {bVahidOrdinalName} {VahidLabelPri}, van de {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
