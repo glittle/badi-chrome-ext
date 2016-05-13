@@ -58,7 +58,7 @@
     "description": "tooltip"
   },
   "btnPlannerExportCsv": {
-    "message": "Export CSV",
+    "message": "Export to Excel",
     "description": "button - export to Comma Separated Value format for import in to Excel"
   },
   "btnPlannerExportICal": {
