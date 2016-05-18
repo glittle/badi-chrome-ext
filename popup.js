@@ -93,6 +93,7 @@ function attachHandlers() {
 function ApplyLanguage() {
   UpdateLanguageBtn();
   setStorage('useArNames', settings.useArNames);
+  tracker.sendEvent('useArabic', settings.useArNames);
   knownDateInfos = {};
   resetForLanguageChange();
   refreshDateInfoAndShow();
@@ -227,8 +228,9 @@ function showPage(id) {
   var pageExporter = '#yearSelector, .iconArea, #otherPageTitle';
   var pagePlanner = '.iconArea, #otherPageTitle';
   var pageCustom = '#yearSelector, .JumpDays, #show, #gDay, .iconArea, #otherPageTitle';
+  var pageSetup = '#show, #gDay, .iconArea';
 
-  $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageLists, pageFast, pageReminders, pageExporter, pagePlanner].join(',')).hide();
+  $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageLists, pageFast, pageReminders, pageExporter, pagePlanner, pageSetup].join(',')).hide();
 
   _currentPageId = id;
   btns.each(function (i, el) {
@@ -322,6 +324,13 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
+      break;
+
+    case 'pageSetup':
+      $(pageSetup).show();
+      _enableSampleKeys = false;
+      _enableDayKeysLR = false;
+      _enableDayKeysUD = false;
       break;
 
 
@@ -696,6 +705,7 @@ function keyPressed(ev) {
       if (ev.shiftKey && ev.ctrlKey) {
         settings.useArNames = !settings.useArNames;
         ApplyLanguage();
+        return;
       }
       break;
 
@@ -770,65 +780,69 @@ function keyPressed(ev) {
       toggleEveOrDay(!_di.bNow.eve);
       ev.preventDefault();
       return;
-
-    default:
-      //log(ev.which);
-
-      if (_enableSampleKeys && !ev.ctrlKey) {
-        try {
-          var sample = $('#key' + key);
-          if (sample.length) {
-            sample.trigger('click'); // effective if a used letter is typed
-            ev.preventDefault();
-          }
-        } catch (ex) {
-          // ignore jquery error
-        }
-      }
-
-      if (_currentPageId == 'pageEvents') {
-        // don't require ALT...
-        try {
-          $('input[accessKey=' + key + ']', '#pageEvents').click();
-          $('select[accessKey=' + key + ']', '#pageEvents').click();
-        } catch (e) {
-          // key may have odd symbol in it
-        }
-      }
-
-      if (key == getMessage('keyToOpenInTab') && ev.shiftKey) {
-        openInTab();
-      }
-
-      if (ev.target.tagName !== 'INPUT' && ev.target.tagName !== 'TEXTAREA') {
-        var pageNum = +key;
-        var validPagePicker = key == pageNum; // don't use ===
-        if (!validPagePicker) {
-          if (key >= 'a' && key <= 'i') {
-            pageNum = key.charCodeAt(0) - 96;
-            validPagePicker = true;
-          }
-          if (ev.which === 189) {
-            // -  (next after 8,9,0...)
-            pageNum = 11;
-            validPagePicker = true;
-          }
-        }
-
-        if (validPagePicker) {
-          if (pageNum === 0) {
-            pageNum = 10;
-          }
-          var pageButtons = $('.selectPages button').filter(':visible');
-          if (pageNum > 0 && pageNum <= pageButtons.length) {
-            var id = pageButtons.eq(pageNum - 1).data('page');
-            showPage(id);
-          }
-        }
-      }
-
-      return;
   }
+
+  //log(ev.which);
+  if (_enableSampleKeys && !ev.ctrlKey) {
+    try {
+      var sample = $('#key' + key);
+      if (sample.length) {
+        sample.trigger('click'); // effective if a used letter is typed
+        ev.preventDefault();
+      }
+    } catch (ex) {
+      // ignore jquery error
+    }
+  }
+
+  if (_currentPageId == 'pageEvents') {
+    // don't require ALT...
+    try {
+      $('input[accessKey=' + key + ']', '#pageEvents').click();
+      $('select[accessKey=' + key + ']', '#pageEvents').click();
+    } catch (e) {
+      // key may have odd symbol in it
+    }
+  }
+
+  if (key == getMessage('keyToOpenInTab') && ev.shiftKey) {
+    openInTab();
+  }
+
+  if (ev.target.tagName !== 'INPUT' && ev.target.tagName !== 'TEXTAREA') {
+    var pageNum = +key;
+    var validPagePicker = key == pageNum; // don't use ===
+    if (!validPagePicker) {
+      if (key >= 'a' && key <= 'i') {
+        pageNum = key.charCodeAt(0) - 96;
+        validPagePicker = true;
+      }
+      if (ev.which === 189) {
+        // -  (next after 8,9,0...)
+        pageNum = 11;
+        validPagePicker = true;
+      }
+      if (ev.which === 187) {
+        // =  (next after 8,9,0...)
+        pageNum = 12;
+        validPagePicker = true;
+      }
+      //log(ev.which);
+    }
+
+    if (validPagePicker) {
+      if (pageNum === 0) {
+        pageNum = 10;
+      }
+      var pageButtons = $('.selectPages button').filter(':visible');
+      if (pageNum > 0 && pageNum <= pageButtons.length) {
+        var id = pageButtons.eq(pageNum - 1).data('page');
+        showPage(id);
+      }
+    }
+  }
+
+  return;
 }
 
 function addSample(info, format, group) {
@@ -991,6 +1005,24 @@ function changeDay(ev, delta) {
   }
 
   showInfo(_di);
+}
+
+function fillSetup() {
+  var optedOut = settings.optedOutOfGoogleAnalytics === true;
+  var cb = $('#setupOptOut');
+  cb.prop('checked', optedOut);
+  cb.on('change', function () {
+    var optingOut = cb.prop('checked');
+    if (optingOut) {
+      tracker.sendEvent('optOut', optingOut);
+    }
+    setStorage('optOutGa', optingOut);
+    settings.optedOutOfGoogleAnalytics = optingOut;
+
+    if (!optingOut) {
+      tracker.sendEvent('optOut', optingOut);
+    }
+  });
 }
 
 function fillStatic() {
@@ -1414,6 +1446,9 @@ function prepare2() {
   prepareAnalytics();
   updateLoadProgress();
 
+  tracker.sendEvent('opened');
+  tracker.sendAppView(_currentPageId);
+
   if (getStorage('firstPopup', false)) {
     // first time popup is opened after upgrading to newest version
     $('.buttons')
@@ -1426,6 +1461,9 @@ function prepare2() {
   updateLoadProgress();
 
   fillStatic();
+  updateLoadProgress();
+
+  fillSetup();
   updateLoadProgress();
 
   localizeHtml('#pageLists');

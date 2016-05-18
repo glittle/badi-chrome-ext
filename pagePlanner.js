@@ -248,12 +248,13 @@ var PagePlanner = function() {
       addLine();
     });
 
-    // done... now download
+    // done... now download csv file
     // https://tools.ietf.org/html/rfc4180
     downloadAsFile(lines, getMessage('pick_pagePlanner') + '.csv', 'text/csv');
   }
 
   function downloadAsFile(lines, filename, mimeType) {
+    //works great in Chrome. Should be okay in FF. If not, try https://github.com/glittle/download
     var element = document.createElement('a');
 
     var rawText = encodeURIComponent(lines.join('\r\n'));

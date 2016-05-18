@@ -55,7 +55,7 @@ body {
   flex-direction: column;
 }
 
-#pageDay, #pageEvents, #pageFast, #pageLists, #pageCal1, #pageReminders, #pageExporter, #pageCustom, #pagePlanner {
+#pageDay, #pageEvents, #pageFast, #pageLists, #pageCal1, #pageReminders, #pageExporter, #pageSetup, #pageCustom, #pagePlanner {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -206,6 +206,17 @@ body {
 
   #btnReminderCancel {
     margin-right: 20px;
+  }
+}
+
+#pageSetup {
+  > div {
+    border: 1px solid @green;
+    border-radius: 3px;
+    margin-left: 4px;
+    justify-content: flex-end;
+    flex: 0 1 100%;
+    padding: 10px;
   }
 }
 
@@ -560,13 +571,14 @@ body {
 
     > ol {
       -webkit-padding-start: 13px;
-      li{
+
+      li {
         margin: 0 0 5px 0;
       }
     }
   }
 
-  #plannerResultsDiv{
+  #plannerResultsDiv {
     max-height: 450px;
     overflow: auto;
   }
@@ -597,7 +609,8 @@ body {
       &.plannerNewYear {
         font-weight: bold;
       }
-      &.plannerDate{
+
+      &.plannerDate {
         white-space: nowrap;
       }
     }
