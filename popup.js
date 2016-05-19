@@ -817,12 +817,28 @@ function keyPressed(ev) {
         pageNum = key.charCodeAt(0) - 96;
         validPagePicker = true;
       }
-      if (ev.which === 189) {
+
+      var extraKeys;
+      switch (browserHostType) {
+        case browser.Chrome:
+          extraKeys = {
+            dash: 189,
+            equal: 187
+          };
+          break;
+        case browser.Firefox:
+          extraKeys = {
+            dash: 173,
+            equal: 61
+          };
+          break;
+      }
+      if (ev.which === extraKeys.dash) {
         // -  (next after 8,9,0...)
         pageNum = 11;
         validPagePicker = true;
       }
-      if (ev.which === 187) {
+      if (ev.which === extraKeys.equal) {
         // =  (next after 8,9,0...)
         pageNum = 12;
         validPagePicker = true;
@@ -1514,10 +1530,5 @@ function updateLoadProgress() {
 $('#windowTitle').text(getMessage('title'));
 
 $(function () {
-  if (browserHostType === browser.Firefox) {
-    //    openInTab();
-    prepare1();
-  } else {
-    prepare1();
-  }
+  prepare1();
 });

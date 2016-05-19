@@ -71,6 +71,14 @@ var BackgroundModule = function () {
       chrome.runtime.onInstalled.addListener(installed);
     }
 
+    if (browserHostType === browser.Firefox) {
+      chrome.browserAction.onClicked.addListener(function() {
+        chrome.tabs.create({
+          "url": chrome.extension.getURL("popup.html")
+        });
+      });
+    }
+
     chrome.contextMenus.create({
       'id': 'openInTab',
       'title': getMessage('browserMenuOpen'),
