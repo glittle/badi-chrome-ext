@@ -3,7 +3,7 @@
     "message": "تا {0} روز دیگر"
   },
   "bMonthNameAr": {
-    "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
+    "message": "ایام هاء, بهاء, جلال, جمال, عظمة, نور, رحمة, کلمات, کمال, اسماء, عزّة, مشیّة, علم, قدرة, قول, مسائل, شرف, سلطان, ملک, علا",
     "description": "month names, start with Ayyam-i-Ha"
   },
   "browserActionTitle": {
@@ -30,7 +30,7 @@
     "message": "نتایج (برای روزی که انتخاب کرده اید. برای تغییر روز به قسمت کلید ها و راهنمائی مراجعه کنید)"
   },
   "customLoadLetters": {
-    "message": "برای شروع از یک شکل استاندارد، کلیک کنید"
+    "message": "برای شروع از یک شکل استاندارد, کلیک کنید"
   },
   "dayEndedPast": {
     "message": "پایان یافت"
@@ -82,7 +82,7 @@
     "message": "تقویم کامل "
   },
   "exportRangeFullRange": {
-    "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
+    "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده, فقط یک نمونه را اکسپورت کنید)"
   },
   "Firefox_History": {
     "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
@@ -107,7 +107,7 @@
     "description": "in left panel"
   },
   "gWeekdayLong": {
-    "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
+    "message": "یکشنبه, دوشنبه, سه شنبه,  چهارشنبه, پنجشنبه, جمعه, شنبه",
     "description": "start with Sunday"
   },
   "HolyDay_AscAbdul": {
@@ -162,7 +162,7 @@
     "message": "{eventTime} در {eventMonthShort}{eventDay}"
   },
   "reminderList_dayEvent": {
-    "message": "{num} روز(ها) {deltaText}، در{triggerTimeRawDisplay}",
+    "message": "{num} روز(ها) {deltaText}, در{triggerTimeRawDisplay}",
     "description": "in list of defined reminders"
   },
   "reminderList_onload": {
@@ -196,7 +196,7 @@
     "message": "سال دَور بهائی"
   },
   "zapierInfo": {
-    "message": "برای توضیح بیشتر و عضو شدن این را ببینید <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>  زپ این ها را خواهد داشت: عنوان، متن، تگ، زمان",
+    "message": "برای توضیح بیشتر و عضو شدن این را ببینید <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>  زپ این ها را خواهد داشت: عنوان, متن, تگ, زمان",
     "description": "info and link to Zapier"
   }
 }
