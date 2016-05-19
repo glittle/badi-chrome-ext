@@ -1,0 +1,202 @@
+{
+  "1day": {
+    "message": "تا {0} روز دیگر"
+  },
+  "bMonthNameAr": {
+    "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "browserActionTitle": {
+    "message": "بارگذاری",
+    "description": "Shown until the dynamic tip is created"
+  },
+  "btnPlannerExportICal": {
+    "message": "تقویم iCal را اکسپورت کنید",
+    "description": "button - export to iCalendar format"
+  },
+  "btnPlannerHelperFeasts": {
+    "message": "ضیافات ",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD2": {
+    "message": "همه ی ایام محرمه ",
+    "description": "helper button"
+  },
+  "Chrome_WebStore": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+    "description": "link to Webstore when running in Chrome"
+  },
+  "customBuilderEcho": {
+    "message": "نتایج (برای روزی که انتخاب کرده اید. برای تغییر روز به قسمت کلید ها و راهنمائی مراجعه کنید)"
+  },
+  "customLoadLetters": {
+    "message": "برای شروع از یک شکل استاندارد، کلیک کنید"
+  },
+  "dayEndedPast": {
+    "message": "پایان یافت"
+  },
+  "DayOfMonth": {
+    "message": "روز ماه"
+  },
+  "DayOfWeek": {
+    "message": "روز هفته"
+  },
+  "dayStartedPast": {
+    "message": "آغاز شد"
+  },
+  "endingWithSunset": {
+    "message": "با غروب در {0} پایان می یابد"
+  },
+  "example2": {
+    "message": "{bMonthNamePri}{bDay}{dayStartedLower} از غروب (تقریباً) {startingSunsetDesc} در {frag1WeekdayLong}{frag1MonthShort}{frag1Day} و {dayEndedLower} غروب تقریباً {endingSunsetDesc} در {frag2WeekdayLong}{frag2MonthShort}{frag2Day}"
+  },
+  "exportAlert_B15": {
+    "message": "پانزده دقیقه قبل از "
+  },
+  "exportAlert_B5": {
+    "message": "پنج دقیقه قبل از "
+  },
+  "exportBadiYear1": {
+    "message": "سال {0} بدیع"
+  },
+  "exporterFastStart": {
+    "message": "روزه آغاز می شود ",
+    "description": "when the fast starts at sunrise"
+  },
+  "exportFile": {
+    "message": "فایل (iCalendar(.ics را دانلود کنید"
+  },
+  "exportIncludeAlert": {
+    "message": "به هر جلسه یک اخطار اضافه کنید (ممکن است در تقویم گوگل نیاید)"
+  },
+  "exportOption_Date": {
+    "message": "روز های تقیم بدیع <em>(365/366 days)</em><em>(365/366 days)</em>"
+  },
+  "exportOption_Feast": {
+    "message": "ضیافات <em>(19 days)</em>"
+  },
+  "exportOption_Usual": {
+    "message": "جلسه در همان موقع معمولی جلسه (به صفحه ی جلسه مراجعه کنید)"
+  },
+  "exportQuickPick1": {
+    "message": "تقویم کامل "
+  },
+  "exportRangeFullRange": {
+    "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
+  },
+  "Firefox_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "description": "about page"
+  },
+  "formatIconToolTip": {
+    "message": "{bDay}{bMonthNamePri}{bYear}",
+    "description": "text when mouse is over the extension icon"
+  },
+  "future_Time": {
+    "message": "در{time} خواهد بود"
+  },
+  "gDatePickerTitle": {
+    "message": "تاریخ میلادی"
+  },
+  "googlePlus": {
+    "message": "گوگل پلاس",
+    "description": "ALT for icon at bottom of page"
+  },
+  "gregorianDateDisplay": {
+    "message": "{currentWeekdayLong}{currentDay}{currentMonthLong}{currentYear}",
+    "description": "in left panel"
+  },
+  "gWeekdayLong": {
+    "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
+    "description": "start with Sunday"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "صعود حضرت عبدالبهاء"
+  },
+  "HolyDay_DeclBab": {
+    "message": "اظهار امر حضرت باب"
+  },
+  "Kullishay": {
+    "message": "کلشیئ"
+  },
+  "KullishayLocal": {
+    "message": "کل شيئ",
+    "description": "Transalation of Kull-i-Shay"
+  },
+  "noLocationAvailable": {
+    "message": "(مکان نا معلوم - ۶:۳۰ بعد از ظهر ساعات غروب)",
+    "description": "If the system does not know the location of this computer."
+  },
+  "past_Day": {
+    "message": "در{time} آغاز شد",
+    "description": "shown after midnight of the day"
+  },
+  "pick_pageCustom": {
+    "message": "دل خواه",
+    "description": "page tab name and page title"
+  },
+  "planFromWhenNextYear": {
+    "message": "شروع سال بعدی بديع ",
+    "description": "answer for planFromWhen"
+  },
+  "plannerShowWhat": {
+    "message": "چه چیزی را نشان بدهد؟ ",
+    "description": "First question in inputs"
+  },
+  "rbDefLang_Ar": {
+    "message": "عربی",
+    "description": "Shown on the main page (see screenshot in PhraseApp)"
+  },
+  "reminderAction_zapier": {
+    "message": "زاپیر وبهوک را تریگر شروع کنید",
+    "description": "in dropdown list, to choose to use Zapier"
+  },
+  "reminderAfter": {
+    "message": "بعد از"
+  },
+  "reminderCalcTypeAbsolute": {
+    "message": "در زمان مشخص و معین",
+    "description": "in dropdown"
+  },
+  "reminderDayDetailsTest": {
+    "message": "{eventTime} در {eventMonthShort}{eventDay}"
+  },
+  "reminderList_dayEvent": {
+    "message": "{num} روز(ها) {deltaText}، در{triggerTimeRawDisplay}",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_onload": {
+    "message": "{num}{units} بعد از",
+    "description": "in list of defined reminders"
+  },
+  "reminderNum_seconds": {
+    "message": "ثانیه(ها)"
+  },
+  "sampleGroup1_14": {
+    "message": "{bDay}{bMonth}{bYearInVahid}{bVahid}{bKullishay}",
+    "description": "1.10.1.3.13"
+  },
+  "sampleGroup1_6": {
+    "message": "{bDay}{bMonthNamePri}{bMonthNameSec}{bYear}",
+    "description": "1 Jamal (Beauty) 172"
+  },
+  "title": {
+    "message": "تقویم بدیع",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "دسترسی داشته باشید",
+    "description": "Used in the manifest"
+  },
+  "translation": {
+    "message": "fa",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "YearOfEra": {
+    "message": "سال دَور بهائی"
+  },
+  "zapierInfo": {
+    "message": "برای توضیح بیشتر و عضو شدن این را ببینید <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>  زپ این ها را خواهد داشت: عنوان، متن، تگ، زمان",
+    "description": "info and link to Zapier"
+  }
+}
