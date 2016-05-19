@@ -57,6 +57,38 @@
     "message": "Ga dit aantal dagen voor- of achteruit",
     "description": "tooltip"
   },
+  "btnPlannerExportCsv": {
+    "message": "Exporteer als CSV",
+    "description": "button - export to Comma Separated Value format for import into Excel"
+  },
+  "btnPlannerExportICal": {
+    "message": "Exporteer als ICAL",
+    "description": "button - export to iCalendar format"
+  },
+  "btnPlannerHelperFeasts": {
+    "message": "feesten",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD1": {
+    "message": "Heilige dagen (vrij van werk)",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD2": {
+    "message": "Alle heilige dagen",
+    "description": "helper button"
+  },
+  "btnPlannerHelperNone": {
+    "message": "Geen",
+    "description": "helper button"
+  },
+  "btnPlannerHelperRid": {
+    "message": "Ridván",
+    "description": "helper button"
+  },
+  "btnPlannerHelperTHB": {
+    "message": "Tweeling geboortedagen",
+    "description": "helper button"
+  },
   "btnReminderCancel": {
     "message": "Annuleer",
     "description": "cancel changes and close the edit area"
@@ -80,6 +112,9 @@
   "btnReminderTest": {
     "message": "Nu testen",
     "description": "show a sample of the reminder now"
+  },
+  "btnRetry2": {
+    "message": "Nu opnieuw laden"
   },
   "bTopDayDisplay": {
     "message": "{bDay} {bMonthNamePri} {bYear}",
@@ -596,6 +631,10 @@
   "KullishayFormat": {
     "message": "{bKullishay}"
   },
+  "KullishayLocal": {
+    "message": "Alle dingen",
+    "description": "Transalation of Kull-i-Shay"
+  },
   "locationError": {
     "message": "Niet mogelijk uw huidige locatie te bepalen.\n\nDe extensie zal voor iedere dag 18:30 gebruiken.",
     "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -738,9 +777,45 @@
   "pick_pageLists": {
     "message": "Lijsten"
   },
+  "pick_pagePlanner": {
+    "message": "Planner",
+    "description": "tab"
+  },
   "pick_pageReminders": {
     "message": "Herinneringen",
     "description": "page tab name and page title"
+  },
+  "planFromWhen": {
+    "message": "Met ingang van?",
+    "description": "another input"
+  },
+  "planFromWhenNextYear": {
+    "message": "Begin van het volgende Badí'-jaar",
+    "description": "answer for planFromWhen"
+  },
+  "planFromWhenThisYear": {
+    "message": "Begin van dit Badé'-jaar",
+    "description": "answer for planFromWhen"
+  },
+  "planFromWhenToday": {
+    "message": "Vandaag",
+    "description": "answer for planFromWhen"
+  },
+  "plannerShowWhat": {
+    "message": "Wat tonen?",
+    "description": "First question in inputs"
+  },
+  "plannerWhatManyEvents": {
+    "message": "Meer heilige dagen en feesten",
+    "description": "answer to first question"
+  },
+  "plannerWhatOneEvent": {
+    "message": "Een heilige dag of negentiendaagsfeest",
+    "description": "answer to first question"
+  },
+  "planUntilWhen": {
+    "message": "Tot wanneer?",
+    "description": "another question"
   },
   "pm": {
     "message": "nm",
@@ -764,6 +839,13 @@
   "prevYearTitle": {
     "message": "Toets shift + pijl naar links in om het voorgaand jaar te zien",
     "description": "hold Shift and press left arrow key"
+  },
+  "rbDefLangText": {
+    "message": "Taal voor maanden, enz."
+  },
+  "rbDefLang_Ar": {
+    "message": "Arabisch",
+    "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
     "message": "local (Nederlands)",
@@ -1035,6 +1117,12 @@
     "message": "Tips",
     "description": "hints of how to use the tool"
   },
+  "tipsAbout": {
+    "message": "Accuraatheid?"
+  },
+  "tipsAboutText": {
+    "message": "Tot 221 B.E. (2064 n.C.) staan de datums vast. Daarna zijn er mogelijk wijzigingen omdat de astronomische waarnemingen verbeteren. Het wordt aangeraden deze extensie of app niet te gebruiken om plannen vast te leggen n het jaar 221 B.E.."
+  },
   "tipsText": {
     "message": "Gebruik PgUp/PgDn toetsen om tussen pagina's te wisselen.\nGebruik pijl naar rechts/links om van dag te veranderen.\nGebruik / te wisselen tussen voor/na zonsondergang."
   },
@@ -1051,7 +1139,8 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "nl"
+    "message": "nl",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "upcomingDateFormat": {
     "message": "{bDay} {bMonthNamePri} ({gCombined})",
@@ -1069,6 +1158,9 @@
   },
   "VahidFormat": {
     "message": "{bVahid}"
+  },
+  "VahidLocal": {
+    "message": "Eenheid"
   },
   "version": {
     "message": "Versie {0}"
