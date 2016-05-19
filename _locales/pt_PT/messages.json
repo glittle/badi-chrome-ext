@@ -754,7 +754,8 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "pt_PT"
+    "message": "pt_PT",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "upcomingDateFormat": {
     "message": "{bMonthNamePri} {bDay} ({gCombined})",
