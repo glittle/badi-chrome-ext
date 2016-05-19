@@ -58,8 +58,8 @@
     "description": "tooltip"
   },
   "btnPlannerExportCsv": {
-    "message": "Export CSV",
-    "description": "button - export to Comma Separated Value format for import in to Excel"
+    "message": "Export to Excel",
+    "description": "button - export to Comma Separated Value format for import into Excel"
   },
   "btnPlannerExportICal": {
     "message": "Export ICAL",
@@ -785,6 +785,10 @@
     "message": "Reminders",
     "description": "page tab name and page title"
   },
+  "pick_pageSetup": {
+    "message": "Setup",
+    "description": "page for setup information"
+  },
   "planFromWhen": {
     "message": "Starting from when?",
     "description": "another input"
@@ -826,7 +830,7 @@
     "description": "First question in inputs"
   },
   "plannerStartSunsetForLocation": {
-    "message": "Start Sunset at {0}",
+    "message": "Starting Sunset at {0}",
     "description": "title in results table - sunset at location"
   },
   "plannerTitle": {
@@ -884,7 +888,8 @@
     "message": "Language for months, etc."
   },
   "rbDefLang_Ar": {
-    "message": "Arabic"
+    "message": "Arabic",
+    "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
     "message": "local (English)",
@@ -1138,6 +1143,26 @@
     "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
     "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
   },
+  "setupAboutPara": {
+    "message": "<p>This Web Extension is designed to provide current information about the Badí' calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
+    "description": "explanation of "
+  },
+  "setupAboutTitle": {
+    "message": "About",
+    "description": "title for the About section"
+  },
+  "setupOptOut": {
+    "message": "Opt out?",
+    "description": "label for checkbox"
+  },
+  "setupOptOutPara": {
+    "message": "To help understand how this Web Extension is being used, statistics are recorded whenever you switch between pages or do other major actions. This is anonymous, and the associated reports can be viewed by Glen Little. If you wish to opt out and turn this off, you may check this box:",
+    "description": "explanation of opting out of Google Analytics"
+  },
+  "setupOptOutTitle": {
+    "message": "Analytics",
+    "description": "title for setup section about opting out of Google Analytics"
+  },
   "shoghiExample": {
     "message": "This is the weekday of {bWeekdayNamePri}, the day of {bDayNamePri}, of the month of {bMonthNamePri}, of the year {bYearInVahidNamePri}, of the {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
@@ -1230,7 +1255,8 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "en"
+    "message": "en",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "upcomingDateFormat": {
     "message": "{bMonthNamePri} {bDay} ({gCombined})",
