@@ -1,7 +1,8 @@
-/* Code by Glen Little */
+﻿/* Code by Glen Little */
 /* global HolyDays */
 /* global moment */
 var ObjectConstant = '$****$';
+var splitSeparator = /[,،]+/;
 
 var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
 
@@ -32,14 +33,14 @@ var _firstPopup = false;
 settings.useArNames = getStorage('useArNames', true);
 
 // see messages.json for translations and local names
-var bMonthNameAr = getMessage("bMonthNameAr").split(',');
-var bMonthMeaning = getMessage("bMonthMeaning").split(',');
+var bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
+var bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
 
-var bWeekdayNameAr = getMessage("bWeekdayNameAr").split(','); // from Saturday
-var bWeekdayMeaning = getMessage("bWeekdayMeaning").split(',');
+var bWeekdayNameAr = getMessage("bWeekdayNameAr").split(splitSeparator); // from Saturday
+var bWeekdayMeaning = getMessage("bWeekdayMeaning").split(splitSeparator);
 
-var bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(',');
-var bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(',');
+var bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(splitSeparator);
+var bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(splitSeparator);
 
 var bMonthNamePri;
 var bMonthNameSec;
@@ -50,14 +51,14 @@ var bYearInVahidNameSec;
 
 setupLanguageChoice();
 
-var gWeekdayLong = getMessage("gWeekdayLong").split(',');
-var gWeekdayShort = getMessage("gWeekdayShort").split(',');
-var gMonthLong = getMessage("gMonthLong").split(',');
-var gMonthShort = getMessage("gMonthShort").split(',');
+var gWeekdayLong = getMessage("gWeekdayLong").split(splitSeparator);
+var gWeekdayShort = getMessage("gWeekdayShort").split(splitSeparator);
+var gMonthLong = getMessage("gMonthLong").split(splitSeparator);
+var gMonthShort = getMessage("gMonthShort").split(splitSeparator);
 
-var ordinal = getMessage('ordinal').split(',');
-var ordinalNames = getMessage('ordinalNames').split(',');
-var elements = getMessage('elements').split(',');
+var ordinal = getMessage('ordinal').split(splitSeparator);
+var ordinalNames = getMessage('ordinalNames').split(splitSeparator);
+var elements = getMessage('elements').split(splitSeparator);
 
 var use24HourClock = getMessage('use24HourClock') == 'true';
 
@@ -873,7 +874,7 @@ function localizeHtml(host, fnOnEach) {
     var info = el.data('msg');
     var accessKeyFor = null;
     var text = '';
-    var parts = info.split(',');
+    var parts = info.split(splitSeparator);
     for (var i = 0; i < parts.length; i++) {
       var part = parts[i];
       var detail = part.split(':');
