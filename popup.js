@@ -4,6 +4,7 @@
 /* global knownDateInfos */
 /* global di */
 /* global _initialDiStamp */
+/* global _currentPageId */
 /* global chrome */
 /* global _languageCode */
 /* global $ */
@@ -22,7 +23,6 @@ var _enableDayKeysLR = true;
 var _enableDayKeysUD = true;
 var _upDownKeyDelta = 0;
 var _pageHitTimeout = null;
-var _currentPageId = null;
 var _initialStartupDone = false;
 var _loadingNum = 0;
 var _inTab = false;
@@ -97,6 +97,11 @@ function ApplyLanguage() {
   knownDateInfos = {};
   resetForLanguageChange();
   refreshDateInfoAndShow();
+
+  // find and update some html
+  $('*[data-msg-di]').each(function (i, el) {
+    localizeHtml($(el).parent());
+  });
 }
 
 var sampleNum = 0;
@@ -234,13 +239,13 @@ function showPage(id) {
 
   _currentPageId = id;
   btns.each(function (i, el) {
-    if ($(el).data('page') == id) {
+    if ($(el).data('page') === id) {
       _currentPageNum = i;
       return false;
     }
   });
 
-  if (thisPage.data('diStamp') != _di.stamp) {
+  if (thisPage.data('diStamp') !== _di.stamp) {
     updatePageContent(_currentPageId, _di);
     thisPage.data('diStamp', _di.stamp);
   }
@@ -535,7 +540,7 @@ function changeInVahid(ev) {
 
   ev.cancelBubble = true;
   ev.stopPropagation();
-  if (ev.type == 'keydown') {
+  if (ev.type === 'keydown') {
     return; // wait for keypress
   }
 
@@ -625,7 +630,7 @@ function changeToBDate(ev) {
   }
   ev.cancelBubble = true;
   ev.stopPropagation();
-  if (ev.type == 'keydown') {
+  if (ev.type === 'keydown') {
     return; // wait for keypress
   }
 
@@ -705,6 +710,7 @@ function keyPressed(ev) {
       if (ev.shiftKey && ev.ctrlKey) {
         settings.useArNames = !settings.useArNames;
         ApplyLanguage();
+        ev.preventDefault();
         return;
       }
       break;
@@ -795,7 +801,7 @@ function keyPressed(ev) {
     }
   }
 
-  if (_currentPageId == 'pageEvents') {
+  if (_currentPageId === 'pageEvents') {
     // don't require ALT...
     try {
       $('input[accessKey=' + key + ']', '#pageEvents').click();
@@ -805,7 +811,7 @@ function keyPressed(ev) {
     }
   }
 
-  if (key == getMessage('keyToOpenInTab') && ev.shiftKey) {
+  if (key === getMessage('keyToOpenInTab') && ev.shiftKey) {
     openInTab();
   }
 
@@ -1056,7 +1062,7 @@ function fillStatic() {
   nameList = [];
   for (i = 1; i < bWeekdayNameAr.length; i++) {
     var gDay = i < 2 ? 5 + i : i - 2;
-    var eveDay = gDay == 0 ? 6 : gDay - 1;
+    var eveDay = gDay === 0 ? 6 : gDay - 1;
     nameList.push({
       num: i,
       arabic: bWeekdayNameAr[i],
@@ -1104,7 +1110,7 @@ function SetFiltersForSpecialDaysTable(ev) {
     if (ev) {
       // both turned off?  turn on one
       var clicked = $(ev.target).closest('input').attr('id');
-      $(clicked == 'includeFeasts' ? '#includeHolyDays' : '#includeFeasts').prop('checked', true);
+      $(clicked === 'includeFeasts' ? '#includeHolyDays' : '#includeFeasts').prop('checked', true);
     } else {
       //default to holy days
       $('#includeHolyDays').prop('checked', true);
@@ -1135,7 +1141,7 @@ function BuildSpecialDaysTable(di) {
   SetFiltersForSpecialDaysTable();
 
   dayInfos.forEach(function (dayInfo, i) {
-    if (dayInfo.Type == 'Today') {
+    if (dayInfo.Type === 'Today') {
       // an old version... remove Today from list
       dayInfos.splice(i, 1);
       i--;
@@ -1179,12 +1185,12 @@ function BuildSpecialDaysTable(di) {
       dayInfo.FastSunrise = sunrise ? showTime(sunrise) : '?';
       dayInfo.FastSunset = sunrise ? showTime(targetDi.frag2SunTimes.sunset) : '?';
       dayInfo.FastDay = getMessage('mainPartOfDay', targetDi);
-      if (targetDi.frag2Weekday == 6) {
+      if (targetDi.frag2Weekday === 6) {
         dayInfo.RowClass = 'FastSat';
       }
     }
 
-    if (targetTime == 'SS2') {
+    if (targetTime === 'SS2') {
       tempDate = new Date(dayInfo.di.frag1SunTimes.sunset.getTime());
       tempDate.setHours(tempDate.getHours() + 2);
       // about 2 hours after sunset
@@ -1192,10 +1198,14 @@ function BuildSpecialDaysTable(di) {
       minutes = minutes > 30 ? 30 : 0; // start 1/2 hour before
       tempDate.setMinutes(minutes);
       dayInfo.Event = { time: tempDate };
+
+      dayInfo.StartTime = showTime(dayInfo.Event.time);
+      addEventTime(dayInfo.Event);
+      dayInfo.EventTime = getMessage('eventTime', dayInfo.Event);
     }
     else if (targetTime) {
       var adjustDTtoST = 0;
-      if (targetTime.slice(-1) == 'S') {
+      if (targetTime.slice(-1) === 'S') {
         targetTime = targetTime.slice(0, 4);
         adjustDTtoST = inStandardTime(targetDi.frag1) ? 0 : 1;
       }
@@ -1204,7 +1214,6 @@ function BuildSpecialDaysTable(di) {
       var timeMin = targetTime.slice(-2);
       tempDate.setHours(timeHour + adjustDTtoST);
       tempDate.setMinutes(timeMin);
-
 
       if (targetDi.frag1SunTimes.sunset.getTime() < tempDate.getTime()) {
         //dayInfo.isEve = " *";
@@ -1229,7 +1238,7 @@ function BuildSpecialDaysTable(di) {
 
     dayInfo.date = getMessage('upcomingDateFormat', targetDi);
 
-    if (dayInfo.Type.substring(0, 1) == 'H') {
+    if (dayInfo.Type.substring(0, 1) === 'H') {
       dayInfo.TypeShort = ' H';
     }
   });
@@ -1257,7 +1266,7 @@ function BuildSpecialDaysTable(di) {
 
   $('#fastListBody')
     .html(fastRowTemplate.join('')
-    .filledWithEach(dayInfos.filter(function (el) { return el.Type == 'Fast' })));
+    .filledWithEach(dayInfos.filter(function (el) { return el.Type === 'Fast' })));
 
   $('#fastDaysTitle').html(getMessage('fastDaysTitle', di));
 }
@@ -1511,7 +1520,7 @@ function prepare2() {
   $('#linkWebStore').attr('href', getMessage(browserHostType + "_WebStore"));
   $('#linkWebStoreSupport').attr('href', getMessage(browserHostType + "_WebStoreSupport"));
 
-  if (_currentPageId != 'pageDay') {
+  if (_currentPageId !== 'pageDay') {
     adjustHeight();
     $('#initialCover').hide();
   }

@@ -3,6 +3,7 @@
 /* global moment */
 var ObjectConstant = '$****$';
 var splitSeparator = /[,،]+/;
+var _currentPageId = null;
 
 var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
 
@@ -18,7 +19,7 @@ var settings = {
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _languageCode = getMessage('translation');
-var _languageDir = ',fa'.search(_languageCode) != -1 ? 'rtl' : 'ltr';
+var _languageDir = ',fa'.search(_languageCode) !== -1 ? 'rtl' : 'ltr';
 
 var _locationLat = localStorage.lat;
 var _locationLong = localStorage.long;
@@ -60,7 +61,7 @@ var ordinal = getMessage('ordinal').split(splitSeparator);
 var ordinalNames = getMessage('ordinalNames').split(splitSeparator);
 var elements = getMessage('elements').split(splitSeparator);
 
-var use24HourClock = getMessage('use24HourClock') == 'true';
+var use24HourClock = getMessage('use24HourClock') === 'true';
 
 
 function setupLanguageChoice() {
@@ -240,13 +241,13 @@ function getDateInfo(currentTime, onlyStamp) {
 
   // di.bMonthDayYear = getMessage('gMonthDayYear', di);
 
-  if (di.frag1Year != di.frag2Year) {
+  if (di.frag1Year !== di.frag2Year) {
     // Dec 31/Jan 1
     // Dec 31, 2015/Jan 1, 2015
     di.gCombined = getMessage('gCombined_3', di);
     di.gCombinedY = getMessage('gCombinedY_3', di);
   } else
-    if (di.frag1Month != di.frag2Month) {
+    if (di.frag1Month !== di.frag2Month) {
       // Mar 31/Apr 1
       // Mar 31/Apr 1, 2015
       di.gCombined = getMessage('gCombined_2', di);
@@ -316,8 +317,9 @@ function showIcon() {
     });
     _iconPrepared = true;
   } catch (e) {
-    // fails in Firefox
+    // fails in Firefox unless in the popup
     log('icon failed');
+    log(e);
     _iconPrepared = false;
   }
 
@@ -325,36 +327,32 @@ function showIcon() {
 
 function draw(line1, line2, line2Alignment) {
   var canvas = document.createElement('canvas');
-  canvas.width = 19;
-  canvas.height = 19;
+  var size = 19;
+  canvas.width = size;
+  canvas.height = size;
 
   var context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   var fontName = 'Tahoma';
 
-  if (browserHostType === browser.Firefox) {
-    context.fillStyle = 'white';
-    //fontName = 'sans-serif';
-  }
-
-  context.font = "9px " + fontName;
+  context.font = (size / 2 - 1) + "px " + fontName;
   context.fillText(line1, 0, 7);
 
-  context.font = "11px " + fontName;
+  context.font = (size / 2 + 1) + "px " + fontName;
   context.textAlign = line2Alignment;
   var x = 0;
   switch (line2Alignment) {
     case 'center':
-      x = 10;
+      x = size / 2;
       break;
-    case 'end':
-      x = 19;
-      break;
+//    case 'end':
+//      x = size;
+//      break;
   }
-  context.fillText(line2, x, 19);
+  context.fillText(line2, x, size);
 
-  return context.getImageData(0, 0, 19, 19);
+  return context.getImageData(0, 0, size, size);
 }
 
 function startGettingLocation() {
@@ -392,7 +390,7 @@ function getUpcoming(di) {
     }
     dayInfo.date = getMessage('upcomingDateFormat', targetDi);
 
-    var sameDay = di.stampDay == targetDi.stampDay;
+    var sameDay = di.stampDay === targetDi.stampDay;
     var targetMoment = moment(dayInfo.GDate);
     dayInfo.away = determineDaysAway(di, today, targetMoment, sameDay);
 
@@ -459,7 +457,7 @@ var findName = function (typeName, results, getLastMatch) {
   var match = null;
   for (var r = 0; r < results.length; r++) {
     var result = results[r];
-    if (result.types.indexOf(typeName) != -1) {
+    if (result.types.indexOf(typeName) !== -1) {
       match = result.formatted_address;
       if (!getLastMatch) return match;
     }
@@ -473,7 +471,7 @@ function startGetLocationName() {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
+    if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
       localStorage.locationName =
                findName('neighborhood', data.results, true)
@@ -667,7 +665,7 @@ function setStorage(key, value) {
 function getStorage(key, defaultValue) {
   /// <summary>Get a value from storage.</summary>
   var checkForObject = function (obj) {
-    if (obj.substring(0, ObjectConstant.length) == ObjectConstant) {
+    if (obj.substring(0, ObjectConstant.length) === ObjectConstant) {
       obj = $.parseJSON(obj.substring(ObjectConstant.length));
     }
     return obj;
@@ -761,7 +759,7 @@ String.prototype.filledWith = function () {
   var result = replaceTokens(this);
 
   var lastResult = '';
-  while (lastResult != result) {
+  while (lastResult !== result) {
     lastResult = result;
     result = replaceTokens(result);
   }
@@ -804,21 +802,25 @@ String.prototype.filledWithEach = function (arr) {
 function getMessage(key, obj, defaultValue) {
   var rawMsg = chrome.i18n.getMessage(key);
   var msg = rawMsg || defaultValue || '{' + key + '}';
-  if (typeof obj === 'undefined') {
-    return msg;
-  } else {
-    var before = msg;
-    var repeats = 0;
-    while (repeats < 5) { // failsafe
-      msg = msg.filledWith(obj);
-      if (msg == before) {
-        return msg;
-      }
-      before = msg;
-      repeats++;
-    }
+  if (obj === null || typeof obj === 'undefined' ||  msg.search(/{/) === -1) {
     return msg;
   }
+
+  var before = msg;
+  var repeats = 0;
+  while (repeats < 5) { // failsafe
+    msg = msg.filledWith(obj);
+    if (msg === before) {
+      return msg;
+    }
+    if (msg.search(/{/) === -1) {
+      return msg;
+    }
+    before = msg;
+    repeats++;
+  }
+  return msg;
+
 }
 
 function digitPad2(num) {
@@ -872,6 +874,7 @@ function localizeHtml(host, fnOnEach) {
     var el = $(dom);
     var children = el.children();
     var info = el.data('msg');
+    var useDateInfo = el.data('msg-di');
     var accessKeyFor = null;
     var text = '';
     var parts = info.split(splitSeparator);
@@ -883,10 +886,10 @@ function localizeHtml(host, fnOnEach) {
         var key = detail[0];
         var key2 = key === '_id_' ? el.attr('id') : key;
         target = 'html';
-        value = getMessage(key2);
+        value = getMessage(key2, useDateInfo ? _di : null);
       }
       if (detail.length === 2) {
-        if (detail[0] == 'extractAccessKeyFor') {
+        if (detail[0] === 'extractAccessKeyFor') {
           accessKeyFor = detail[1];
           continue;
         }
@@ -1030,8 +1033,8 @@ function prepareAnalytics() {
 if (!Array.prototype.includes) {
   Array.prototype.includes = function (searchElement /*, fromIndex*/) {
     'use strict';
-    var O = Object(this);
-    var len = parseInt(O.length) || 0;
+    var o = Object(this);
+    var len = parseInt(o.length) || 0;
     if (len === 0) {
       return false;
     }
@@ -1045,7 +1048,7 @@ if (!Array.prototype.includes) {
     }
     var currentElement;
     while (k < len) {
-      currentElement = O[k];
+      currentElement = o[k];
       if (searchElement === currentElement ||
          (searchElement !== searchElement && currentElement !== currentElement)) { // NaN !== NaN
         return true;

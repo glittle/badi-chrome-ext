@@ -1,7 +1,15 @@
 /* Code by Glen Little */
 
+/*
+ * Notes...
+ * Firefox does not support canvas or geolocation in the background. Must open the tab to work.
+ * 
+ */
+
+
 var _isBackgroundPage = true;
 var _backgroundReminderEngine = {};
+var popupUrl = chrome.extension.getURL('popup.html');
 
 var BackgroundModule = function () {
 
@@ -57,8 +65,14 @@ var BackgroundModule = function () {
       log(msg);
     }
   }
-  function prepare() {
 
+  function makeTab() {
+    chrome.tabs.create({ url: popupUrl }, function (newTab) {
+      setStorage('tabId', newTab.id);
+    });
+  };
+
+  function prepare() {
     startGettingLocation();
 
     if (_notificationsEnabled) {
@@ -74,7 +88,7 @@ var BackgroundModule = function () {
     if (browserHostType === browser.Firefox) {
       chrome.browserAction.onClicked.addListener(function() {
         chrome.tabs.create({
-          "url": chrome.extension.getURL("popup.html")
+          "url": popupUrl
         });
       });
     }
@@ -98,14 +112,6 @@ var BackgroundModule = function () {
         //  break;
 
         case 'openInTab':
-          var url = chrome.extension.getURL('popup.html');
-
-          var makeTab = function () {
-            chrome.tabs.create({ url: url }, function (newTab) {
-              setStorage('tabId', newTab.id);
-            });
-          };
-
           var afterUpdate = function (updatedTab) {
             if (!updatedTab) {
               makeTab();
@@ -117,7 +123,7 @@ var BackgroundModule = function () {
 
           switch (browserHostType) {
             case browser.Chrome:
-              chrome.tabs.query({ url: url }, function (foundTabs) {
+              chrome.tabs.query({ url: popupUrl }, function (foundTabs) {
                 switch (foundTabs.length) {
                   case 1:
                     // resuse
@@ -167,6 +173,10 @@ var BackgroundModule = function () {
     });
 
     log('prepared background');
+
+    if (browserHostType === browser.Firefox) {
+      makeTab();
+    }
   }
 
   return {
