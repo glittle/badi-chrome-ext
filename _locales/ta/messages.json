@@ -496,7 +496,8 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "ta"
+    "message": "ta",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "upcomingDateFormat": {
     "message": "{bMonthNamePri} {bDay} ({gCombined})",
