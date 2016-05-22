@@ -1,6 +1,6 @@
 {
   "1day": {
-    "message": "en {0} dia TEST"
+    "message": "en {0} dia"
   },
   "afterSunset": {
     "message": "al anochecer - depues de la caida del sol"

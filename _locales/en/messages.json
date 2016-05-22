@@ -826,7 +826,7 @@
     "description": "First question in inputs"
   },
   "plannerStartSunsetForLocation": {
-    "message": "Starting Sunset at {0}",
+    "message": "Test Start Sunset at {0}",
     "description": "title in results table - sunset at location"
   },
   "plannerTitle": {
