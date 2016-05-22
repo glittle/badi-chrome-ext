@@ -85,7 +85,7 @@
     "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
   },
   "Firefox_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
   },
   "formatIconToolTip": {
