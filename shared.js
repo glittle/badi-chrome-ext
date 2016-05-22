@@ -336,6 +336,10 @@ function draw(line1, line2, line2Alignment) {
 
   var fontName = 'Tahoma';
 
+  if (browserHostType === browser.Firefox) {
+    context.fillStyle = 'grey'; // background may be white or black, or anything else!
+  }
+
   context.font = (size / 2 - 1) + "px " + fontName;
   context.fillText(line1, 0, 7);
 

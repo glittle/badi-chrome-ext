@@ -10,6 +10,21 @@
 
   pull:
     targets:
-    - file: "./_locales/<locale_code>/messages.json" 
+    - file: "./_locales/es/messages.json" 
       params:
-        locale_id: <locale_code>
+        locale_id: es
+    - file: "./_locales/fa/messages.json" 
+      params:
+        locale_id: fa
+    - file: "./_locales/fr/messages.json" 
+      params:
+        locale_id: fr
+    - file: "./_locales/nl/messages.json" 
+      params:
+        locale_id: nl
+    - file: "./_locales/pt_PT/messages.json" 
+      params:
+        locale_id: pt_PT
+    - file: "./_locales/ta/messages.json" 
+      params:
+        locale_id: ta

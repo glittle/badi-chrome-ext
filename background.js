@@ -86,10 +86,23 @@ var BackgroundModule = function () {
     }
 
     if (browserHostType === browser.Firefox) {
-      chrome.browserAction.onClicked.addListener(function() {
-        chrome.tabs.create({
-          "url": popupUrl
-        });
+      chrome.browserAction.onClicked.addListener(function () {
+        var oldTabId = +getStorage('tabId', 0);
+        if (oldTabId) {
+          chrome.tabs.update(oldTabId, {
+            active: true
+          }, function (updatedTab) {
+            if (!updatedTab) {
+              makeTab();
+            }
+            if (chrome.runtime.lastError) {
+              log(chrome.runtime.lastError.message);
+            }
+          });
+        } else {
+          makeTab();
+        }
+
       });
     }
 
