@@ -137,7 +137,7 @@
     "description": "Arabic names of years in a Vahid, with leading , "
   },
   "Chrome_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
   },
   "Chrome_WebStore": {
@@ -351,7 +351,7 @@
     "message": "Location Information"
   },
   "exportIntro": {
-    "message": "Important! See <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/chrome-extension/exporting\">this web page</a> for information and cautions!",
+    "message": "Important! See <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">this web page</a> for information and cautions!",
     "description": "Be sure the URL remains in English, to find the webpage!"
   },
   "exportName": {
@@ -457,7 +457,7 @@
     "message": "Festival of Ridván"
   },
   "Firefox_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
   },
   "Firefox_WebStore": {
