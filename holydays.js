@@ -64,8 +64,10 @@ var HolyDays = function () {
         dateInfo.BMonthDayTo = splitToBMonthDay(dateInfo.BDateCodeTo);
       }
 
+      var bm = makeBMonthDay(dateInfo.MonthNum, 1);
+
       if (dateInfo.Type === 'M') {
-        var bm = dateInfo.BMonthDay = makeBMonthDay(dateInfo.MonthNum, 1);
+        dateInfo.BMonthDay = bm;
         dateInfo.BMonthDayTo = makeBMonthDay(dateInfo.MonthNum, 19);
       }
 
@@ -78,9 +80,9 @@ var HolyDays = function () {
             var firstDayCode = _twinHolyBirthdays[bYear];
             if (firstDayCode) {
               dateInfo.BMonthDay = splitToBMonthDay(firstDayCode);
-              if (specialPartB == '2') {
+              if (specialPartB === '2') {
                 dateInfo.BMonthDay.d++;
-                if (dateInfo.BMonthDay.d == 20) {
+                if (dateInfo.BMonthDay.d === 20) {
                   dateInfo.BMonthDay.m++;
                   dateInfo.BMonthDay.d = 1;
                 }
@@ -96,14 +98,14 @@ var HolyDays = function () {
           case 'AYYAM':
             dateInfo.BMonthDay = makeBMonthDay(0, 1);
 
-            var firstAyyamiHa = new Date(getGDateYMD(bYear, 18, 19).getTime());
-            firstAyyamiHa.setDate(firstAyyamiHa.getDate() + 1);
+            var firstDayOfAyyamiHa = new Date(getGregorianDate(bYear, 18, 19).getTime());
+            firstDayOfAyyamiHa.setDate(firstDayOfAyyamiHa.getDate() + 1);
 
-            var lastAyyamiHa = new Date(getGDateYMD(bYear, 19, 1).getTime());
-            lastAyyamiHa.setDate(lastAyyamiHa.getDate() - 1);
+            var lastDayOfAyyamiHa = new Date(getGregorianDate(bYear, 19, 1).getTime());
+            lastDayOfAyyamiHa.setDate(lastDayOfAyyamiHa.getDate() - 1);
             //log('last #2')
             //log(lastAyyamiHa);
-            var numDaysInAyyamiHa = 1 + Math.round(Math.abs((firstAyyamiHa.getTime() - lastAyyamiHa.getTime()) / _msInDay));
+            var numDaysInAyyamiHa = 1 + Math.round(Math.abs((firstDayOfAyyamiHa.getTime() - lastDayOfAyyamiHa.getTime()) / _msInDay));
             dateInfo.BMonthDayTo = makeBMonthDay(0, numDaysInAyyamiHa);
 
             dateInfo.GYearOffset = 1;
@@ -111,17 +113,17 @@ var HolyDays = function () {
             break;
 
           case 'JAN1':
-            var jan1 = getGDateYMD(bYear, 17, 1); // start with a date just after jan1
+            var jan1 = getGregorianDate(bYear, 17, 1); // start with a date just after jan1
             jan1.setDate(1);
             dateInfo.GDate = jan1;
             dateInfo.GYearOffset = 1;
 
-            var sharaf1 = getGDateYMD(bYear, 16, 1);
+            var sharaf1 = getGregorianDate(bYear, 16, 1);
             if (sharaf1 < jan1) {
               var day = 33 - sharaf1.getDate();
               dateInfo.BMonthDay = makeBMonthDay(16, day);
             }
-            else if (sharaf1.getTime() == jan1.getTime()) {
+            else if (sharaf1.getTime() === jan1.getTime()) {
               dateInfo.BMonthDay = makeBMonthDay(16, 1);
             }
             else {
@@ -153,7 +155,7 @@ var HolyDays = function () {
         dateInfo.BDateCode = bm.m + '.' + bm.d;
       }
 
-      dateInfo.Sort = (dateInfo.BMonthDay.m == 0 ? 1850 : dateInfo.BMonthDay.m * 100) + dateInfo.BMonthDay.d;
+      dateInfo.Sort = (dateInfo.BMonthDay.m === 0 ? 1850 : dateInfo.BMonthDay.m * 100) + dateInfo.BMonthDay.d;
     }
 
     _dateInfos.sort(function (a, b) {
@@ -180,18 +182,18 @@ var HolyDays = function () {
       }
 
       // same date
-      if (a.Type == 'M') {
+      if (a.Type === 'M') {
         // month first
         return -1;
       }
-      if (b.Type == 'M') {
+      if (b.Type === 'M') {
         // month first
         return 1;
       }
-      if (a.Type == 'OtherRange') {
+      if (a.Type === 'OtherRange') {
         return -1;
       }
-      if (b.Type == 'OtherRange') {
+      if (b.Type === 'OtherRange') {
         return 1;
       }
       return 0;
@@ -203,7 +205,7 @@ var HolyDays = function () {
 
   function getUpcoming(di, numToAdd) {
     var targetDate = moment(moment(di.frag1).format('YYYY-MM-DD')).toDate();//clone and lose timezone
-    if (_dateInfosForYear != di.bYear) {
+    if (_dateInfosForYear !== di.bYear) {
       prepareDateInfos(di.bYear);
     }
     var added = 0;
@@ -295,7 +297,7 @@ var HolyDays = function () {
     { Type: 'HS', FromYear: 172, Special: 'THB.2', NameEn: "HolyDay_BirthBaha" },
 
     { Type: 'HO', BDateCode: '14.4', NameEn: 'HolyDay_Covenant' },
-    { Type: 'HO', BDateCode: '14.6', NameEn: "HolyDay_AscAbdul", Time: '0100S', TimeReason: '1 am Standard time' },
+    { Type: 'HO', BDateCode: '14.6', NameEn: "HolyDay_AscAbdul", Time: '0100S', TimeReason: '1 am Standard time' }
 
     //{ Type: 'OtherRange', BDateCode: '2.13', BDateCodeTo: '3.5', NameEn: 'FestivalRidvan' },
     //{ Type: 'OtherRange', Special: 'AYYAM.Intercalary', NameAr: 'Ayyám-i-Há', NameEn: 'Intercalary' },
@@ -320,26 +322,26 @@ var HolyDays = function () {
     if (!bMonthDay || !bMonthDay.d) {
       return '?3?';
     }
-    return getGDateYMD(bYear, bMonthDay.m, bMonthDay.d);
+    return getGregorianDate(bYear, bMonthDay.m, bMonthDay.d);
   };
-  function getGDateYMD(bYear, bMonth, bDay, fix) {
+  function getGregorianDate(bYear, bMonth, bDay, autoFix) {
     // convert bDate to gDate
     if (bMonth < 0 || typeof bMonth == 'undefined') {
-      if (fix) {
+      if (autoFix) {
         bMonth = 1;
       } else {
         throw 'invalid Badi date';
       }
     }
     if (bMonth > 19) {
-      if (fix) {
+      if (autoFix) {
         bMonth = 19;
       } else {
         throw 'invalid Badi date';
       }
     }
     if (bDay < 1 || !bDay) {
-      if (fix) {
+      if (autoFix) {
         bDay = 1;
       }
       else {
@@ -347,58 +349,69 @@ var HolyDays = function () {
       }
     }
     if (bDay > 19) {
-      if (fix) {
+      if (autoFix) {
         bDay = 19;
       }
       else {
         throw 'invalid Badi date';
       }
     }
-    var gYear = bYear + 1843;
-    var nawRuz = new Date(gYear, 2, 21 + (_nawRuzOffsetFrom21[bYear] || 0));
-    var answer = new Date(nawRuz.getTime());
-    answer.setDate(answer.getDate() + (bMonth - 1) * 19 + (bDay - 1));
+    var answer;
 
-    if (bMonth == 0 || bMonth == 19) {
-      var nextNawRuz = new Date(gYear + 1, 2, 21 + (_nawRuzOffsetFrom21[bYear + 1] || 0));
-      var startOfAla = new Date(nextNawRuz.getTime());
-      startOfAla.setDate(startOfAla.getDate() - 19);
-      if (bMonth == 19) {
-        answer = startOfAla;
-        answer.setDate(answer.getDate() + (bDay - 1));
-      }
-      else {
-        var firstAyyamiHa = new Date(getGDateYMD(bYear, 18, 19).getTime());
-        firstAyyamiHa.setDate(firstAyyamiHa.getDate() + 1);
-        var lastAyyamiHa = new Date(getGDateYMD(bYear, 19, 1).getTime());
-        lastAyyamiHa.setDate(lastAyyamiHa.getDate() - 1);
-        //log('first ' + firstAyyamiHa);
-        //log('last #1')
-        //log('last ' + lastAyyamiHa);
-        var numDaysInAyyamiHa = daysBetween(firstAyyamiHa, lastAyyamiHa);
-        //log(numDaysInAyyamiHa);
-        //debugger;
-        if (bDay > numDaysInAyyamiHa) {
-          if (fix) {
-            bDay = numDaysInAyyamiHa;
-          } else {
-            throw 'invalid Badi date';
+    var gYear = bYear + 1843;
+
+    switch (bMonth) {
+      case 0:
+        if (bMonth === 0) {
+          var numDaysInAyyamiHa = daysInAyyamiHa(bYear);
+          if (bDay > numDaysInAyyamiHa) {
+            if (autoFix) {
+              bDay = numDaysInAyyamiHa;
+            } else {
+              throw 'invalid Badi date';
+            }
           }
         }
-        answer = firstAyyamiHa;
-        answer.setDate(answer.getDate() + (bDay - 1));
-      }
+        answer = copyAndAddDays(getGregorianDate(bYear, 18, 19), bDay);
+        break;
+
+      case 19:
+        var nextNawRuz = getNawRuz(gYear + 1, true);
+        var firstDayOfLoftiness = copyAndAddDays(nextNawRuz, -19);
+
+        answer = copyAndAddDays(firstDayOfLoftiness, bDay - 1);
+        break;
+
+      default:
+        var nawRuz = getNawRuz(gYear, true);
+        //var beforeMidnightOffset = relationToMidnight == RelationToMidnight.bDay_BeforeSunset_Frag2 ? 1 : 0;
+        answer = copyAndAddDays(nawRuz, (bMonth - 1) * 19 + bDay - 1);
+        break;
     }
+
+    //    if (typeof sunCalculator != 'undefined') {
+    //      var eveSunset = new Date(answer);
+    //      answer = sunCalculator.getTimes(eveSunset, _locationLat, _locationLong).sunset;
+    //    }
+
+    // answer has no time, and is for the frag2 part of the Badi day
+
     return answer;
   };
-  var getBDate = function (d) {
-    var afterNawRuz = isAfterNawRuz(d);
-    var afterSunset = 0;
+
+
+  function daysInAyyamiHa(bYear) {
+    var firstDayOfAyyamiHa = copyAndAddDays(getGregorianDate(bYear, 18, 19), 1);
+    var lastDayOfAyyamiHa = copyAndAddDays(getGregorianDate(bYear, 19, 1), -1);
+
+    return daysBetween(firstDayOfAyyamiHa, lastDayOfAyyamiHa);
+  }
+
+
+  var getBDate = function (gSourceDate) {
+
     var sunCalcReady = typeof sunCalculator != 'undefined';
-    //var latReady = _locationLat != 0;
-
-    var pmSunset = new Date(d);
-
+    var pmSunset = new Date(gSourceDate);
     if (sunCalcReady) {
       pmSunset.setHours(12);
       pmSunset = sunCalculator.getTimes(pmSunset, _locationLat, _locationLong).sunset;
@@ -407,50 +420,53 @@ var HolyDays = function () {
     //      log('unknown sunset - ' + sunCalcReady + ' ' + latReady);
     //      pmSunset.setHours(18,30,0,0);
     //    }
-    if (d.getTime() > pmSunset.getTime()) {
-      afterSunset = 1;
+    var afterSunset = false;
+    if (gSourceDate.getTime() >= pmSunset.getTime()) {
+      afterSunset = true;
+    }
+    // strip off the time
+    gSourceDate.setHours(12, 0, 0, 0, 0);
+    if (afterSunset) {
+      // after sunset? do for following day
+      gSourceDate.setDate(gSourceDate.getDate() + 1);
+    }
+    var gYear = gSourceDate.getFullYear();
+    var gDayOfNawRuz = getNawRuz(gYear, true);
+    var gDayLoftiness1 = copyAndAddDays(gDayOfNawRuz, -19);
+
+    var bYear = gYear - (gSourceDate >= gDayOfNawRuz ? 1843 : 1844);
+    var bMonth, bDay;
+
+    var isBeforeLoftiness = gSourceDate < gDayLoftiness1;
+    if (isBeforeLoftiness) {
+      // back: Jan --> end of AyyamiHa
+      var gDayLoftiness1LastYear = copyAndAddDays(getNawRuz(gYear - 1, true), -19);
+
+      var daysAfterLoftiness1LastYear = Math.round((gSourceDate - gDayLoftiness1LastYear) / 864e5);
+      var numMonthsFromLoftinessLastYear = Math.floor(daysAfterLoftiness1LastYear / 19);
+
+      bDay = 1 + daysAfterLoftiness1LastYear - numMonthsFromLoftinessLastYear * 19;
+      bMonth = numMonthsFromLoftinessLastYear;
+
+      if (bMonth === 19) {
+        bMonth = 0;
+      }
+    } else {
+      // forward: Loftiness --> Dec
+      var bDaysAfterLoftiness1 = Math.round((gSourceDate - gDayLoftiness1) / 864e5);
+      var bNumMonthsFromLoftiness = Math.floor(bDaysAfterLoftiness1 / 19);
+
+      bDay = 1 + bDaysAfterLoftiness1 - bNumMonthsFromLoftiness * 19;
+      bMonth = bNumMonthsFromLoftiness;
+
+      if (bMonth === 0) {
+        bMonth = 19;
+      }
     }
 
-    var year = getBadiYear(d);
-    var days, month, day;
-    if (afterNawRuz) {
-      var nawRuz = getNawRuzFromDate(d);
-      days = dayOfYear(d) - dayOfYear(nawRuz) + afterSunset;
-      month = Math.floor(days / 19) + 1;
-      day = days % 19;
-      if (day == 0) {
-        day = 19;
-        month--;
-      }
-    }
-    else { // before
-      var lastDec31 = new Date(d.getFullYear(), 0, 0, 12);
-      var lastNawRuz = getNawRuzFromDate(lastDec31);
-      days = dayOfYear(d) + (dayOfYear(lastDec31) - dayOfYear(lastNawRuz)) + afterSunset;
-      month = Math.floor(days / 19) + 1;
-      day = days % 19;
-      if (day == 0) {
-        day = 19;
-        month--;
-      }
-      if (month >= 19) {
-        var lastAyyamiHa = new Date(getGDateYMD(year, 19, 1).getTime());
-        lastAyyamiHa.setDate(lastAyyamiHa.getDate() - 1);
-        if (dayOfYear(d) + afterSunset > dayOfYear(lastAyyamiHa)) {
-          month = 19;
-          day = dayOfYear(d) - dayOfYear(lastAyyamiHa) + afterSunset;
-        }
-        else {
-          month = 0;
-        }
-      }
-    }
+    return { y: bYear, m: bMonth, d: bDay, eve: afterSunset };
+  };
 
-    return { y: year, m: month, d: day, eve: afterSunset == 1 };
-  };
-  function daysBetween(d1, d2) {
-    return 1 + Math.round(Math.abs((d1.getTime() - d2.getTime()) / _msInDay));
-  };
 
   // =============================================================  
   // table of Naw Ruz dates
@@ -2133,28 +2149,39 @@ var HolyDays = function () {
 
   // =============================================================  
 
-  function getNawRuz(gYear) {
+  function getNawRuz(gYear, frag2DateOnly) {
     // get NawRuz for this gregorian year
-    var bYear = gYear - 1843;
-    var nawRuz = new Date(gYear,
-      2,
-      20 + (_nawRuzOffsetFrom21[bYear] || 0),
-      18, // default to 6:30pm
-      30);
+    var nawRuz = new Date(
+      gYear,
+      2, // 0 based
+      (frag2DateOnly ? 21 : 20) + (_nawRuzOffsetFrom21[gYear - 1843] || 0),
+      12, // default to noon
+      0,
+      0,
+      0
+      );
 
+    if (frag2DateOnly) {
+      return nawRuz;
+    }
+
+    var eveSunset = new Date(nawRuz);
     if (typeof sunCalculator != 'undefined') {
-      var eveSunset = new Date(nawRuz);
       nawRuz = sunCalculator.getTimes(eveSunset, _locationLat, _locationLong).sunset;
+    } else {
+      // default to 6:30pm
+      eveSunset.setHours(18, 30, 0, 0);
     }
     return nawRuz;
-  }; // make these available to the browser
+  };
 
+  // make these available to the browser
   return {
     getNawRuz: getNawRuz,
     getUpcoming: getUpcoming,
-    getGDate: getGDateYMD,
+    getGDate: getGregorianDate,
     getBDate: getBDate,
-    prepareDateInfos: prepareDateInfos,
+    prepareDateInfos: prepareDateInfos
   };
 };
 
@@ -2163,7 +2190,7 @@ function getNawRuzFromDate(d) {
   return holyDays.getNawRuz(d.getFullYear());
 };
 function isAfterNawRuz(d) {
-  return d.getTime() > holyDays.getNawRuz(d.getFullYear()).getTime();
+  return d.getTime() >= holyDays.getNawRuz(d.getFullYear()).getTime();
 };
 function getBadiYear(d) {
   return d.getFullYear() - 1843 - (isAfterNawRuz(d) ? 0 : 1);
@@ -2177,3 +2204,16 @@ function inStandardTime(d) {
   var jan = new Date(d.getFullYear(), 0, 1);
   return jan.getTimezoneOffset() === d.getTimezoneOffset();
 };
+
+function copyAndAddDays(oldDate, daysOffset) {
+  var d = new Date(oldDate);
+  d.setDate(d.getDate() + daysOffset);
+  return d;
+}
+function daysBetween(d1, d2) {
+  return 1 + Math.round(Math.abs((d1.getTime() - d2.getTime()) / 864e5));
+};
+
+function addDays(d, days) {
+  d.setDate(d.getDate() + days);
+}

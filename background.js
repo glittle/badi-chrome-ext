@@ -113,7 +113,7 @@ var BackgroundModule = function () {
     }, showErrors);
     //chrome.contextMenus.create({
     //  'id': 'paste',
-    //  'title': 'Insert Badí Date',
+    //  'title': 'Insert Badï¿½ Date',
     //  'contexts': ['editable']
     //}, showErrors);
 
@@ -193,7 +193,8 @@ var BackgroundModule = function () {
   }
 
   return {
-    prepare: prepare
+    prepare: prepare,
+    makeTab: makeTab
   };
 }
 

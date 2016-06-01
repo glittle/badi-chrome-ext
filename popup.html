@@ -6,6 +6,7 @@
   <title id="windowTitle"></title>
   <link href="popup.css" rel=stylesheet>
   <link href="cal1.css" rel=stylesheet>
+  <link href="cal2.css" rel=stylesheet>
   <link href="calWheel.css" rel=stylesheet>
   <link href="calGreg.css" rel=stylesheet>
   <script src="jquery-2.1.3.min.js"></script>
@@ -195,8 +196,11 @@
         <div class="months">
         </div>
       </div>
+      <div id="pageCal2" class="fullPage page">
+        <div class="calendar">
+        </div>
+      </div>
       <div id="pageCalGreg" class="fullPage page">
-        <!--<div class="calendar2"></div>-->
         <div class="calendar">
         </div>
       </div>
@@ -619,9 +623,10 @@
         <div class=buttons>
           <button data-page="pageDay" data-msg=pick_pageDay></button>
           <button data-page="pageEvents" data-msg=pick_pageEvents></button>
-          <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
-          <button data-page="pageCal1" data-msg=pick_pageCal1></button>
           <button data-page="pageCalWheel" data-msg=pick_pageCalWheel></button>
+          <button data-page="pageCal1" data-msg=pick_pageCal1></button>
+          <button data-page="pageCal2" data-msg=pick_pageCal2></button>
+          <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
           <button data-page="pageFast" data-msg=pick_pageFast></button>
           <button data-page="pageLists" data-msg=pick_pageLists></button>
           <button data-page="pageReminders" data-msg=pick_pageReminders id="btnPageReminders"></button>
@@ -676,6 +681,7 @@
   <script src="shared.js"></script>
   <script src="popup.js"></script>
   <script src="cal1.js"></script>
+  <script src="cal2.js"></script>
   <script src="calWheel.js"></script>
   <script src="calGreg.js"></script>
   <script src="pageReminders.js"></script>

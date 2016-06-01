@@ -1,0 +1,227 @@
+@import "colors.less";
+
+@borderWidth: 3px;
+
+#pageCal2 {
+
+  .calendar {
+    margin-left: 5px;
+    overflow: auto;
+    max-height: 497px;
+    position: relative;
+  }
+
+  @dayWidth: 126px;
+
+  .month {
+    position: relative;
+    margin: 30px 3px;
+    padding: 0 3px;
+    width: @dayWidth * 6;
+  }
+
+  .monthDays {
+    display: table;
+    border-collapse: collapse;
+  }
+
+  .caption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+
+  .placeName {
+    margin-top: .5em;
+    font-style: italic;
+    font-size: 80%;
+    max-width: 150px;
+  }
+
+  .monthInfo {
+    font-size: 11pt;
+  }
+
+  .monthNames {
+    font-size: 17pt;
+    font-weight: bold;
+  }
+
+  .dayRow {
+    margin: 4px 0;
+    display: table-row;
+  }
+
+  .dayGroup0 {
+    .dayCell {
+      background-color: @lightAyyamiHa;
+      width: 90px;
+    }
+  }
+
+  .dayGroup1 {
+    .dayCell {
+      background-color: @lightFire;
+    }
+  }
+
+  .dayGroup2 {
+    .dayCell {
+      background-color: @lightAir;
+    }
+  }
+
+  .dayGroup3 {
+    .dayCell {
+      background-color: @lightWater;
+    }
+  }
+
+  .dayGroup4 {
+    .dayCell {
+      background-color: @lightEarth;
+    }
+  }
+
+  .mGroup1 {
+    background-color: @lightFire; /* fire of God */
+  }
+
+  .mGroup2 {
+    background-color: @lightAir; /* air of eternity */
+  }
+
+  .mGroup3 {
+    background-color: @lightWater; /* water of Divine Unity */
+  }
+
+  .mGroup4 {
+    background-color: @lightEarth; /* earth */
+  }
+
+  .dayCell {
+    display: table-cell;
+    width: @dayWidth;
+    height: 90px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+
+    > div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .night {
+    text-align: right;
+    padding-right: 1px;
+    background-color: rgba(0,0,0,0.25); // do gradient??
+    //span{
+    //  border-top: 1px solid #000;
+    //  padding: 0;
+    //}
+  }
+
+  .hdName {
+    color: darkblue;
+    font-weight: bold;
+    padding: 0 4px;
+  }
+
+  .top {
+    line-height: 14px;
+    padding: 0 0 0 3px;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.1); // do gradient??
+  }
+
+  .day {
+    position: relative;
+  }
+
+  .sunrise {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+  }
+
+  .sunsetEnd {
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+  }
+
+  .sunset {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+  }
+
+
+  .sunset, .sunrise, .sunsetEnd {
+    font-size: 80%;
+    color: #888;
+  }
+
+  .hdHS, .hdHO {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url(./star12c.gif);
+    margin: 0 1px 0 0;
+  }
+
+  .hdHO {
+    background: url(star12b.gif);
+  }
+}
+
+body[data-pageid=pageCal2].inTab {
+  #pageCal2 {
+    .calendar {
+      max-height: none;
+    }
+  }
+
+  overflow-y: auto;
+}
+
+@media screen {
+  #pageCal2 {
+    .dayCell {
+      &.selected {
+        border-width: 2px;
+        font-weight: bold;
+        border-color: green;
+      }
+    }
+  }
+}
+
+@media print {
+  @page {
+    margin: 15mm 15mm;
+  }
+
+  #pageCal2 {
+    border: none;
+
+    .calendar {
+      max-height: none;
+    }
+
+    .month {
+      margin: 0 auto 0 auto;
+      page-break-inside: avoid;
+      page-break-after: always;
+    }
+  }
+
+  body[data-pageid="pageCal2"] {
+    .mainTop {
+      display: none;
+    }
+  }
+}

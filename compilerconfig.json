@@ -5,6 +5,11 @@
     "options": { "sourceMap": true }
   },
   {
+    "outputFile": "cal2.css",
+    "inputFile": "cal2.less",
+    "options": { "sourceMap": true }
+  },
+  {
     "outputFile": "calWheel.css",
     "inputFile": "calWheel.less",
     "options": { "sourceMap": true }

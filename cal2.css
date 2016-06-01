@@ -1,0 +1,171 @@
+﻿/* fire of God */
+/* air of eternity */
+/* water of Divine Unity */
+/* earth */
+#pageCal2 .calendar {
+  margin-left: 5px;
+  overflow: auto;
+  max-height: 497px;
+  position: relative;
+}
+#pageCal2 .month {
+  position: relative;
+  margin: 30px 3px;
+  padding: 0 3px;
+  width: 756px;
+}
+#pageCal2 .monthDays {
+  display: table;
+  border-collapse: collapse;
+}
+#pageCal2 .caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+#pageCal2 .placeName {
+  margin-top: .5em;
+  font-style: italic;
+  font-size: 80%;
+  max-width: 150px;
+}
+#pageCal2 .monthInfo {
+  font-size: 11pt;
+}
+#pageCal2 .monthNames {
+  font-size: 17pt;
+  font-weight: bold;
+}
+#pageCal2 .dayRow {
+  margin: 4px 0;
+  display: table-row;
+}
+#pageCal2 .dayGroup0 .dayCell {
+  background-color: #fff;
+  width: 90px;
+}
+#pageCal2 .dayGroup1 .dayCell {
+  background-color: #ffe6e6;
+}
+#pageCal2 .dayGroup2 .dayCell {
+  background-color: #fafafa;
+}
+#pageCal2 .dayGroup3 .dayCell {
+  background-color: #e6e6ff;
+}
+#pageCal2 .dayGroup4 .dayCell {
+  background-color: #e6ffe6;
+}
+#pageCal2 .mGroup1 {
+  background-color: #ffe6e6;
+  /* fire of God */
+}
+#pageCal2 .mGroup2 {
+  background-color: #fafafa;
+  /* air of eternity */
+}
+#pageCal2 .mGroup3 {
+  background-color: #e6e6ff;
+  /* water of Divine Unity */
+}
+#pageCal2 .mGroup4 {
+  background-color: #e6ffe6;
+  /* earth */
+}
+#pageCal2 .dayCell {
+  display: table-cell;
+  width: 126px;
+  height: 90px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+#pageCal2 .dayCell > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#pageCal2 .night {
+  text-align: right;
+  padding-right: 1px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+#pageCal2 .hdName {
+  color: darkblue;
+  font-weight: bold;
+  padding: 0 4px;
+}
+#pageCal2 .top {
+  line-height: 14px;
+  padding: 0 0 0 3px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#pageCal2 .day {
+  position: relative;
+}
+#pageCal2 .sunrise {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+}
+#pageCal2 .sunsetEnd {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+}
+#pageCal2 .sunset {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+}
+#pageCal2 .sunset,
+#pageCal2 .sunrise,
+#pageCal2 .sunsetEnd {
+  font-size: 80%;
+  color: #888;
+}
+#pageCal2 .hdHS,
+#pageCal2 .hdHO {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: url(star12c.gif);
+  margin: 0 1px 0 0;
+}
+#pageCal2 .hdHO {
+  background: url(star12b.gif);
+}
+body[data-pageid=pageCal2].inTab {
+  overflow-y: auto;
+}
+body[data-pageid=pageCal2].inTab #pageCal2 .calendar {
+  max-height: none;
+}
+@media screen {
+  #pageCal2 .dayCell.selected {
+    border-width: 2px;
+    font-weight: bold;
+    border-color: green;
+  }
+}
+@media print {
+  @page {
+    margin: 15mm 15mm;
+  }
+  #pageCal2 {
+    border: none;
+  }
+  #pageCal2 .calendar {
+    max-height: none;
+  }
+  #pageCal2 .month {
+    margin: 0 auto 0 auto;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+  body[data-pageid="pageCal2"] .mainTop {
+    display: none;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,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 */

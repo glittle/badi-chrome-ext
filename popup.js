@@ -12,6 +12,7 @@ var _showingInfo = false;
 var _changingBDate = false;
 var _currentPageNum = 0;
 var _cal1 = null;
+var _cal2 = null;
 var _calWheel = null;
 var _calGreg = null;
 var _pageReminders = null;
@@ -227,6 +228,7 @@ function showPage(id) {
   var pageCal1 = '#yearSelector, .JumpDays, #show, #gDay';
   var pageCalWheel = '#yearSelector, #show, #gDay, #special, .iconArea';
   var pageCalGreg = '#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea';
+  var pageCal2 = '#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea';
   var pageLists = '#gDay, #show, .iconArea, #special';
   var pageFast = '#yearSelector, .iconArea';
   var pageReminders = '.iconArea, #otherPageTitle';
@@ -235,7 +237,7 @@ function showPage(id) {
   var pageCustom = '#yearSelector, .JumpDays, #show, #gDay, .iconArea, #otherPageTitle';
   var pageSetup = '#show, #gDay, .iconArea';
 
-  $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageLists, pageFast, pageReminders, pageExporter, pagePlanner, pageSetup].join(',')).hide();
+  $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageCal2, pageLists, pageFast, pageReminders, pageExporter, pagePlanner, pageSetup].join(',')).hide();
 
   _currentPageId = id;
   btns.each(function (i, el) {
@@ -287,6 +289,14 @@ function showPage(id) {
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
       _upDownKeyDelta = 7;
+      break;
+
+    case 'pageCal2':
+      $(pageCal2).show();
+      _enableSampleKeys = false;
+      _enableDayKeysLR = true;
+      _enableDayKeysUD = true;
+      _upDownKeyDelta = 6;
       break;
 
     case 'pageLists':
@@ -383,6 +393,12 @@ function updatePageContentWhenVisible(id, di) {
       }
       break;
 
+    case 'pageCal2':
+      if (_cal2) {
+        _cal2.scrollToMonth(di.bMonth);
+      }
+      break;
+
     case 'pageReminders':
       $('#otherPageTitle').html(getMessage('pick_pageReminders'));
       if (_pageReminders) {
@@ -421,6 +437,11 @@ function resetPageForLanguageChange(id) {
     case 'pageCalGreg':
       if (_calGreg) {
         _calGreg.resetPageForLanguageChange();
+      }
+      break;
+    case 'pageCal2':
+      if (_cal2) {
+        _cal2.resetPageForLanguageChange();
       }
       break;
     case 'pagePlanner':
@@ -486,6 +507,12 @@ function updatePageContent(id, di) {
     case 'pageCalGreg':
       if (_calGreg) {
         _calGreg.showCalendar(di);
+      }
+      break;
+
+    case 'pageCal2':
+      if (_cal2) {
+        _cal2.showCalendar(di);
       }
       break;
 
@@ -1504,6 +1531,10 @@ function prepare2() {
 
   _calGreg = CalGreg();
   _calGreg.showCalendar(_di);
+  updateLoadProgress();
+
+  _cal2 = Cal2();
+  _cal2.showCalendar(_di);
   updateLoadProgress();
 
   if (_remindersEnabled) {
