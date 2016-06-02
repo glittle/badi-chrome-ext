@@ -197,11 +197,11 @@ var Cal2 = function () {
       di.classesOuter = di.classesOuter.join(' ');
 
       dayCells.push([
-        '<div class="bDay{bDay} dayCell {classesOuter}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
+        '<div class="bDay{bDay} dayCell {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
           '<div>',
             '<span class=sunset>{startingSunsetDesc}</span>',
             '<div class="top" style="height:{eveSize}px"><span class=dayNum>{bDay}</span> {^holyDayAftStar}</div>',
-            '<div class="night" style="height:{mornSize}px"><span>{frag2WeekdayShort}, {frag2MonthShort} {frag2Day}</span></div>',
+            '<div class="night" style="height:{mornSize}px"><span><span class=wd>{frag2WeekdayShort}</span>, {frag2MonthShort} {frag2Day}</span></div>',
             '<div class="day" style="height:{aftSize}px">',
               '{^sunriseDesc}',
               '{^holyDayAftName}',
