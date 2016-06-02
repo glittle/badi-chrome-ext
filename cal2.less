@@ -11,32 +11,34 @@
     position: relative;
   }
 
-  @dayWidth: 126px;
+  @dayWidth: 122px;
 
   .month {
     position: relative;
-    margin: 30px 3px;
-    padding: 0 3px;
+    margin: 30px 0;
+    padding: 5px 6px;
     width: @dayWidth * 6;
+    border-radius: 4px;
   }
 
   .monthDays {
     display: table;
-    border-collapse: collapse;
+    //border-collapse: collapse;
   }
 
   .caption {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 6px;
     text-align: right;
   }
 
   .placeName {
-    margin-top: .5em;
     font-style: italic;
     font-size: 80%;
     max-width: 150px;
+    float: right;
+    clear: right;
   }
 
   .monthInfo {
@@ -49,8 +51,7 @@
   }
 
   .dayRow {
-    margin: 4px 0;
-    display: table-row;
+    margin: 1px 0;
   }
 
   .dayGroup0 {
@@ -83,21 +84,32 @@
       background-color: @lightEarth;
     }
   }
-
-  .mGroup1 {
+  //.dayGroup0, .dayGroup1, .dayGroup2, .dayGroup3 {
+  //  .dayCell:last-child {
+  //    border-top-right-radius: 3px;
+  //  }
+  //}
+  .mGroup1 .monthInfo2 {
     background-color: @lightFire; /* fire of God */
   }
 
-  .mGroup2 {
+  .mGroup2 .monthInfo2 {
     background-color: @lightAir; /* air of eternity */
   }
 
-  .mGroup3 {
+  .mGroup3 .monthInfo2 {
     background-color: @lightWater; /* water of Divine Unity */
   }
 
-  .mGroup4 {
+  .mGroup4 .monthInfo2 {
     background-color: @lightEarth; /* earth */
+  }
+
+  .monthInfo2 {
+    float: right;
+    padding: 1px 10px 3px 12px;
+    border-radius: 7px;
+    margin: 3px 0;
   }
 
   .dayCell {
@@ -116,8 +128,8 @@
 
   .night {
     text-align: right;
-    padding-right: 1px;
-    background-color: rgba(0,0,0,0.25); // do gradient??
+    padding-right: 2px;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,.7) 1%, rgba(0,0,0,0.4) 3%, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.25) 90%, rgba(0,0,0,0.1) 100%);
     //span{
     //  border-top: 1px solid #000;
     //  padding: 0;
@@ -134,7 +146,7 @@
     line-height: 14px;
     padding: 0 0 0 3px;
     font-weight: bold;
-    background-color: rgba(0,0,0,0.1); // do gradient??
+    background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.3) 1%, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.1));
   }
 
   .day {
@@ -161,8 +173,8 @@
 
 
   .sunset, .sunrise, .sunsetEnd {
-    font-size: 80%;
-    color: #888;
+    font-size: 75%;
+    color: #7F4444;
   }
 
   .hdHS, .hdHO {
@@ -176,6 +188,15 @@
   .hdHO {
     background: url(star12b.gif);
   }
+
+  //.monthNameDay {
+  //  .dayNum {
+  //    border-bottom: 1px solid gray;
+  //    padding: 0 3px 0px 2px;
+  //    border-right: 1px solid gray;
+  //    margin-left: -3px;
+  //  }
+  //}
 }
 
 body[data-pageid=pageCal2].inTab {
@@ -191,8 +212,10 @@ body[data-pageid=pageCal2].inTab {
 @media screen {
   #pageCal2 {
     .dayCell {
+      cursor: pointer;
+
       &.selected {
-        border-width: 2px;
+        border-width: 1px 2px 2px 2px;
         font-weight: bold;
         border-color: green;
       }

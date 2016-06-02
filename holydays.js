@@ -2181,6 +2181,7 @@ var HolyDays = function () {
     getUpcoming: getUpcoming,
     getGDate: getGregorianDate,
     getBDate: getBDate,
+    daysInAyyamiHa: daysInAyyamiHa,
     prepareDateInfos: prepareDateInfos
   };
 };

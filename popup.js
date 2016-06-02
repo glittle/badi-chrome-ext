@@ -22,7 +22,7 @@ var _pageCustom = null;
 var _enableSampleKeys = true;
 var _enableDayKeysLR = true;
 var _enableDayKeysUD = true;
-var _upDownKeyDelta = 0;
+var _upDownKeyDelta = null;
 var _pageHitTimeout = null;
 var _initialStartupDone = false;
 var _loadingNum = 0;
@@ -273,7 +273,7 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = 19;
+      _upDownKeyDelta = function () { return 19; }
       break;
 
     case 'pageCalWheel':
@@ -288,7 +288,7 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = 7;
+      _upDownKeyDelta = function () { return 7; }
       break;
 
     case 'pageCal2':
@@ -296,7 +296,49 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = 6;
+      _upDownKeyDelta = function (direction) {
+        var bDay = _di.bDay;
+        var bMonth = _di.bMonth;
+        if (bMonth === 0) {
+          if (direction === -1) {
+            return 6;
+          }
+          log(holyDays.daysInAyyamiHa(_di.bYear));
+          return holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? (1 + holyDays.daysInAyyamiHa(_di.bYear) - bDay) : 0);
+        }
+        switch (direction) {
+          case -1: // up
+            if (bDay <= 3) {
+              if (bMonth === 19) {
+                return holyDays.daysInAyyamiHa(_di.bYear);
+              }
+              return 6;
+            }
+            if (bDay <= 6) {
+              return 3;
+            }
+            if (bDay <= 11) {
+              return 4;
+            }
+            if (bDay <= 12) {
+              return 5;
+            }
+            return 6;
+
+          case 1: // down
+            if (bDay <= 3) {
+              return 3;
+            }
+            if (bDay <= 7) {
+              return 4;
+            }
+            if (bDay <= 16) {
+              return 6;
+            }
+            return (19 + (bMonth === 18 ? holyDays.daysInAyyamiHa(_di.bYear) : 3)) - bDay;
+        }
+        return 0;
+      }
       break;
 
     case 'pageLists':
@@ -781,7 +823,7 @@ function keyPressed(ev) {
     case 38: //up
       if (_enableDayKeysUD) {
         if (_upDownKeyDelta) {
-          changeDay(null, 0 - _upDownKeyDelta);
+          changeDay(null, 0 - _upDownKeyDelta(-1));
           ev.preventDefault();
         }
       }
@@ -789,7 +831,7 @@ function keyPressed(ev) {
     case 40: //down
       if (_enableDayKeysUD) {
         if (_upDownKeyDelta) {
-          changeDay(null, _upDownKeyDelta);
+          changeDay(null, _upDownKeyDelta(1));
           ev.preventDefault();
         }
       }
@@ -1025,14 +1067,19 @@ function changeYear(ev, delta, targetYear) {
 }
 
 function changeDay(ev, delta) {
-
   delta = ev ? +$(ev.target).data('delta') : +delta;
+
   if (delta === 0) {
     // reset to real time
     setStorage('focusTimeIsEve', null);
     setFocusTime(new Date());
   } else {
     var time = getFocusTime();
+    if (_di.bNow.eve) {
+      time.setHours(21, 0, 0, 0);
+    } else {
+      time.setHours(12, 0, 0, 0);
+    }
     time.setDate(time.getDate() + delta);
     setFocusTime(time);
   }
@@ -1048,7 +1095,7 @@ function changeDay(ev, delta) {
   }
 
   if (_di.bNow.eve) {
-    _focusTime.setHours(23, 59, 0, 0);
+    _focusTime.setHours(21, 0, 0, 0);
   } else {
     _focusTime.setHours(12, 0, 0, 0);
   }
