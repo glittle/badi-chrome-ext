@@ -69,9 +69,9 @@ var Cal2 = function () {
     }
 
     function scrollToMonth(bMonth, force) {
-        if (_scrollToMonth === bMonth && !force) {
-            return;
-        }
+//        if (_scrollToMonth === bMonth && !force) {
+//            return;
+//        }
 
         _scrollToMonth = bMonth;
         var month = _calendarDiv.find('#cal2_m{0}'.filledWith(bMonth));
@@ -80,19 +80,28 @@ var Cal2 = function () {
             return;
         }
 
+        // do the animate, then directly set it...
+        // animate doesn't work if not visible, and sometimes even when visible
         var monthTop = month.position().top - 50; // move a bit higher
-        if (force) {
-            if (_inTab) {
-                $("html, body").stop().scrollTop(monthTop + _calendarDiv.position().top);
-            } else {
-                _calendarDiv.stop().scrollTop(_calendarDiv.scrollTop() + monthTop);
-            }
+        var top;
+        if (_inTab) {
+            top = monthTop + _calendarDiv.position().top;
+            $("html, body").stop().animate({
+                scrollTop: top + "px"
+            }, {
+                always: function () {
+                    $("html, body").stop().scrollTop(top);
+                }
+            });
         } else {
-            if (_inTab) {
-                $("html, body").stop().animate({ scrollTop: (monthTop + _calendarDiv.position().top) + "px" });
-            } else {
-                _calendarDiv.stop().animate({ scrollTop: (_calendarDiv.scrollTop() + monthTop) + "px" });
-            }
+            top = _calendarDiv.scrollTop() + monthTop;
+            _calendarDiv.stop().animate({
+                scrollTop: top + "px"
+            }, {
+                always: function () {
+                    _calendarDiv.stop().scrollTop(top);
+                }
+            });
         }
     }
 

@@ -66,7 +66,7 @@
                 <div class="normal place"></div>
                 <!--<div id=gDayWithSunset></div>-->
                 <div id=locationErrorHolder>
-                    <button class=btnRetry><span class="btnRetryImg"></span></button>
+                    <button type="button" class=btnRetry><span class="btnRetryImg"></span></button>
                     <span id=locationError data-msg="_id_"></span>
                 </div>
             </div>
@@ -610,12 +610,17 @@
                 <div>
                     <h3 data-msg="setupOptOutTitle"></h3>
                     <p data-msg="setupOptOutPara"></p>
-                    <div>
+                    <div class="pageSetupInput">
                         <label>
                             <span data-msg="setupOptOut"></span>
                             <input type="checkbox" id="setupOptOut" />
                         </label>
                     </div>
+                    <h3 data-msg="exportIncludeLocation"></h3>
+                    <p class="setupPlace">
+                        <button type="button" class="btnRetry"><span class="btnRetryImg"></span></button>
+                        <span class="place"></span>
+                    </p>
                 </div>
             </div>
 
@@ -628,9 +633,9 @@
                     <button data-page="pageCalWheel" data-msg=pick_pageCalWheel></button>
                     <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
                     <button data-page="pageFast" data-msg=pick_pageFast></button>
+                    <button data-page="pagePlanner" data-msg=pick_pagePlanner></button>
                     <button data-page="pageLists" data-msg=pick_pageLists></button>
                     <button data-page="pageReminders" data-msg=pick_pageReminders id="btnPageReminders"></button>
-                    <button data-page="pagePlanner" data-msg=pick_pagePlanner></button>
                     <button data-page="pageExporter" data-msg=pick_pageExporter></button>
                     <button data-page="pageCustom" data-msg=pick_pageCustom></button>
                     <button data-page="pageSetup" data-msg=pick_pageSetup></button>

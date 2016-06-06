@@ -54,11 +54,10 @@ function attachHandlers() {
     $('.includeThis').on('change, click', SetFiltersForSpecialDaysTable);
 
     $('.btnRetry').on('click', function () {
-        $('.btnRetry').addClass('active');
+        $('.setupPlace .place').text(''); //blank the copy on the setup page
+        $('.btnRetry').addClass('active').blur();
         startGettingLocation();
-        setTimeout(function () {
-            $('.btnRetry').removeClass('active');
-        }, 1000);
+        
     });
     $('#datePicker').on('keydown', function (ev) {
         ev.stopPropagation();
@@ -996,7 +995,7 @@ function toggleEveOrDay(toEve) {
     setFocusTime(getFocusTime());
     toEve = typeof toEve === 'boolean' ? toEve : !_di.bNow.eve;
     if (toEve) {
-        _focusTime.setHours(23, 59, 0, 0);
+        _focusTime.setHours(23, 55, 0, 0);
     } else {
         _focusTime.setHours(12, 0, 0, 0);
     }
@@ -1037,7 +1036,7 @@ function moveDays(ev) {
         return;
     }
     var target = new Date(_di.currentTime);
-    target.setTime(target.getTime() + days * 86400000);
+    target.setTime(target.getTime() + days * 864e5);
     setFocusTime(target);
     refreshDateInfo();
     showInfo(_di);
@@ -1076,7 +1075,7 @@ function changeDay(ev, delta) {
     } else {
         var time = getFocusTime();
         if (_di.bNow.eve) {
-            time.setHours(21, 0, 0, 0);
+            time.setHours(23, 55, 0, 0);
         } else {
             time.setHours(12, 0, 0, 0);
         }
@@ -1095,7 +1094,7 @@ function changeDay(ev, delta) {
     }
 
     if (_di.bNow.eve) {
-        _focusTime.setHours(21, 0, 0, 0);
+        _focusTime.setHours(23, 55, 0, 0);
     } else {
         _focusTime.setHours(12, 0, 0, 0);
     }

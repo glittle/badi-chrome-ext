@@ -72,12 +72,13 @@
     }
 
     @gradientEnd: 30px;
+    @endColor: rgba(255,255,255,0);
 
     .dayGroup1 {
         width: @dayWidth * 3;
 
         .dayCell {
-            background: linear-gradient(@lightFire, #fff @gradientEnd);
+            background: linear-gradient(@lightFire, @endColor @gradientEnd);
         }
     }
 
@@ -85,7 +86,7 @@
         width: @dayWidth * 4;
 
         .dayCell {
-            background: linear-gradient(@lightAir, #fff @gradientEnd);
+            background: linear-gradient(@lightAir, @endColor @gradientEnd);
         }
     }
 
@@ -93,7 +94,7 @@
         width: @dayWidth * 6;
 
         .dayCell {
-            background: linear-gradient(@lightWater, #fff @gradientEnd);
+            background: linear-gradient(@lightWater, @endColor @gradientEnd);
         }
     }
 
@@ -101,7 +102,7 @@
         width: @dayWidth * 6;
 
         .dayCell {
-            background: linear-gradient(@lightEarth, #fff @gradientEnd);
+            background: linear-gradient(@lightEarth, @endColor @gradientEnd);
         }
     }
 
@@ -252,6 +253,7 @@ body[data-pageid=pageCal2].inTab {
         .selected {
             .dayCell {
                 border: 1px solid #000;
+                background-color: #EAEAEA;
             }
         }
     }
