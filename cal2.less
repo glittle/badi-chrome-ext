@@ -4,252 +4,281 @@
 
 #pageCal2 {
 
-  .calendar {
-    margin-left: 5px;
-    overflow: auto;
-    max-height: 497px;
-    position: relative;
-  }
+    .calendar {
+        margin-left: 5px;
+        overflow: auto;
+        max-height: 497px;
+        position: relative;
+    }
 
-  @dayWidth: 122px;
+    @dayWidth: 124px;
 
-  .month {
-    position: relative;
-    margin: 30px 0;
-    padding: 5px 6px;
-    width: @dayWidth * 6;
-    border-radius: 4px;
-  }
+    .month {
+        position: relative;
+        margin: 30px 0;
+        padding: 5px 6px;
+        border-radius: 4px;
+    }
 
-  .monthDays {
-    display: table;
-    //border-collapse: collapse;
-  }
+    .monthDays {
+    }
 
-  .caption {
-    position: absolute;
-    top: 0;
-    right: 6px;
-    text-align: right;
-  }
+    .caption {
+        position: absolute;
+        top: 0;
+        right: 6px;
+        text-align: right;
+    }
 
-  .placeName {
-    font-style: italic;
-    font-size: 80%;
-    max-width: 150px;
-    float: right;
-    clear: right;
-  }
+    .placeName {
+        font-style: italic;
+        font-size: 80%;
+        max-width: 150px;
+        float: right;
+        clear: right;
+    }
 
-  .monthInfo {
-    font-size: 11pt;
-  }
+    .monthInfo {
+        font-size: 11pt;
+    }
 
-  .monthNames {
-    font-size: 17pt;
-    font-weight: bold;
-  }
+    .monthNames {
+        font-size: 17pt;
+        font-weight: bold;
+    }
 
-  .dayRow {
-    margin: 1px 0;
-  }
+    .dayRow {
+        table-layout: fixed;
+        border-spacing: 0;
+        border: 1px solid #ddd;
+        border-left: none;
+        margin-top: -1px;
 
-  .dayGroup0 {
+        td {
+            border-left: 1px solid #ddd;
+            padding: 0;
+        }
+    }
+
+    .dayGroup0 {
+        .dayCell {
+            //border-color: @lightAyyamiHa;
+            width: 100px;
+        }
+
+        .dayName {
+            display: none;
+        }
+    }
+
+    @gradientEnd: 30px;
+
+    .dayGroup1 {
+        width: @dayWidth * 3;
+
+        .dayCell {
+            background: linear-gradient(@lightFire, #fff @gradientEnd);
+        }
+    }
+
+    .dayGroup2 {
+        width: @dayWidth * 4;
+
+        .dayCell {
+            background: linear-gradient(@lightAir, #fff @gradientEnd);
+        }
+    }
+
+    .dayGroup3 {
+        width: @dayWidth * 6;
+
+        .dayCell {
+            background: linear-gradient(@lightWater, #fff @gradientEnd);
+        }
+    }
+
+    .dayGroup4 {
+        width: @dayWidth * 6;
+
+        .dayCell {
+            background: linear-gradient(@lightEarth, #fff @gradientEnd);
+        }
+    }
+
+    .mGroup1 .monthInfo2 {
+        background-color: @lightFire; 
+    }
+
+    .mGroup2 .monthInfo2 {
+        background-color: @lightAir;  
+    }
+
+    .mGroup3 .monthInfo2 {
+        background-color: @lightWater;
+    }
+
+    .mGroup4 .monthInfo2 {
+        background-color: @lightEarth;
+    }
+
+    .monthInfo2 {
+        float: right;
+        padding: 1px 10px 3px 12px;
+        border-radius: 5px;
+        margin: 3px 0;
+    }
+
     .dayCell {
-      background-color: @lightAyyamiHa;
-      width: 90px;
+        position: relative;
+        height: 100px;
+        box-sizing: border-box;
     }
-  }
 
-  .dayGroup1 {
-    .dayCell {
-      background-color: @lightFire;
+    .night {
+        position: relative;
+        text-align: right;
+
+        .gStart {
+            display: inline-block;
+            font-size: .55rem;
+            text-align: left;
+            margin: 4px 2px 0 0;
+            padding: 2px 3px 3px 4px;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-top-left-radius: 5px;
+        }
     }
-  }
 
-  .dayGroup2 {
-    .dayCell {
-      background-color: @lightAir;
+    .hdName {
+        color: darkblue;
+        font-weight: bold;
+        padding: 0 4px;
     }
-  }
 
-  .dayGroup3 {
-    .dayCell {
-      background-color: @lightWater;
+    .top {
+        line-height: 14px;
+        height: @gradientEnd - 10;
+        text-align: center;
+
+        .dayNum {
+            font-weight: bold;
+            position: absolute;
+            left: 3px;
+        }
     }
-  }
 
-  .dayGroup4 {
-    .dayCell {
-      background-color: @lightEarth;
+    .day {
+        position: relative;
     }
-  }
-  //.dayGroup0, .dayGroup1, .dayGroup2, .dayGroup3 {
-  //  .dayCell:last-child {
-  //    border-top-right-radius: 3px;
-  //  }
-  //}
-  .mGroup1 .monthInfo2 {
-    background-color: @lightFire; /* fire of God */
-  }
 
-  .mGroup2 .monthInfo2 {
-    background-color: @lightAir; /* air of eternity */
-  }
-
-  .mGroup3 .monthInfo2 {
-    background-color: @lightWater; /* water of Divine Unity */
-  }
-
-  .mGroup4 .monthInfo2 {
-    background-color: @lightEarth; /* earth */
-  }
-
-  .monthInfo2 {
-    float: right;
-    padding: 1px 10px 3px 12px;
-    border-radius: 7px;
-    margin: 3px 0;
-  }
-
-  .dayCell {
-    display: table-cell;
-    width: @dayWidth;
-    height: 90px;
-    border: 1px solid gray;
-    box-sizing: border-box;
-
-    > div {
-      position: relative;
-      width: 100%;
-      height: 100%;
+    .sunrise {
+        margin: 3px 2px 0 0;
     }
-  }
 
-  .night {
-    text-align: right;
-    padding-right: 2px;
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,.7) 1%, rgba(0,0,0,0.4) 3%, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.25) 90%, rgba(0,0,0,0.1) 100%);
-    //span{
-    //  border-top: 1px solid #000;
-    //  padding: 0;
-    //}
-  }
-
-  .hdName {
-    color: darkblue;
-    font-weight: bold;
-    padding: 0 4px;
-  }
-
-  .top {
-    line-height: 14px;
-    padding: 0 0 0 3px;
-    font-weight: bold;
-    background-image: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.3) 1%, rgba(0,0,0,0.2) 10%, rgba(0,0,0,0.1));
-  }
-
-  .day {
-    position: relative;
-  }
-
-  .sunrise {
-    position: absolute;
-    right: 1px;
-    top: 1px;
-  }
-
-  .sunsetEnd {
-    position: absolute;
-    right: 1px;
-    bottom: 1px;
-  }
-
-  .sunset {
-    position: absolute;
-    top: 1px;
-    right: 2px;
-  }
-
-
-  .sunset, .sunrise, .sunsetEnd {
-    font-size: 75%;
-    color: #7F4444;
-  }
-
-  .hdHS, .hdHO {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: url(./star12c.gif);
-    margin: 0 1px 0 0;
-  }
-
-  .hdHO {
-    background: url(star12b.gif);
-  }
-
-  .wd6 {
-    .wd {
-      font-weight: bold;
+    .sunsetEnd {
+        position: absolute;
+        right: 2px;
+        bottom: 1px;
     }
-  }
-  //.monthNameDay {
-  //  .dayNum {
-  //    border-bottom: 1px solid gray;
-  //    padding: 0 3px 0px 2px;
-  //    border-right: 1px solid gray;
-  //    margin-left: -3px;
-  //  }
-  //}
+
+    .sunsetStart {
+        margin-left: 5px;
+        font-weight: normal;
+        vertical-align: text-top;
+    }
+
+    .dayName, .bWeekDay, .sunrise, .sunsetStart, .sunsetEnd {
+        color: #7F4444;
+        font-size: .55rem;
+    }
+
+    .dayName {
+        position: absolute;
+        top: @gradientEnd * .9;
+        left: 3px;
+    }
+
+    .monthNameDay {
+        .dayName {
+            padding: 1px 5px 3px 4px;
+            border: 1px solid #999;
+            margin-top: -2px;
+            border-radius: 7px;
+        }
+    }
+
+    .hdHS, .hdHO {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url(./star12c.gif);
+        margin: 0 3px 0 0;
+        background-position: 0 1px;
+    }
+
+    .hdHO {
+        background: url(star12b.gif);
+    }
+
+    .wd6 {
+        .wd {
+            font-weight: bold;
+        }
+
+        .gStart {
+            background-color: #f5f5f5;
+            border-color: #333;
+        }
+    }
 }
 
 body[data-pageid=pageCal2].inTab {
-  #pageCal2 {
-    .calendar {
-      max-height: none;
+    #pageCal2 {
+        .calendar {
+            max-height: none;
+        }
     }
-  }
 
-  overflow-y: auto;
+    overflow-y: auto;
 }
 
 @media screen {
-  #pageCal2 {
-    .dayCell {
-      cursor: pointer;
+    #pageCal2 {
+        .dayCell {
+            cursor: pointer;
+        }
 
-      &.selected {
-        border-width: 1px 2px 2px 2px;
-        font-weight: bold;
-        border-color: green;
-      }
+        .selected {
+            .dayCell {
+                border: 1px solid #000;
+            }
+        }
     }
-  }
 }
 
 @media print {
-  @page {
-    margin: 15mm 15mm;
-  }
-
-  #pageCal2 {
-    border: none;
-
-    .calendar {
-      max-height: none;
+    @page {
+        margin: 15mm 15mm;
     }
 
-    .month {
-      margin: 0 auto 0 auto;
-      page-break-inside: avoid;
-      page-break-after: always;
-    }
-  }
+    #pageCal2 {
+        border: none;
 
-  body[data-pageid="pageCal2"] {
-    .mainTop {
-      display: none;
+        .calendar {
+            max-height: none;
+        }
+
+        .month {
+            margin: 0 auto 0 auto;
+            page-break-inside: avoid;
+            page-break-after: always;
+        }
     }
-  }
+
+    body[data-pageid="pageCal2"] {
+        .mainTop {
+            display: none;
+        }
+    }
 }

@@ -746,10 +746,13 @@
     "message": "was at {time}"
   },
   "pick_pageCal1": {
-    "message": "Year"
+    "message": "Calendar - Compact"
+  },
+  "pick_pageCal2": {
+    "message": "Calendar"
   },
   "pick_pageCalGreg": {
-    "message": "Gregorian Year",
+    "message": "Calendar - Gregorian",
     "description": "tab name"
   },
   "pick_pageCalWheel": {
