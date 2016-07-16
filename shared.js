@@ -148,6 +148,9 @@ function getDateInfo(currentTime, onlyStamp) {
         frag1SunTimes: frag1SunTimes,
         frag2SunTimes: frag2SunTimes,
 
+        sunriseDesc12: showTime(frag2SunTimes.sunrise),
+        sunriseDesc24: showTime(frag2SunTimes.sunrise, 24),
+
         bNow: bNow,
         bDay: bNow.d,
         bWeekday: 1 + (frag2Noon.getDay() + 1) % 7,
@@ -214,6 +217,7 @@ function getDateInfo(currentTime, onlyStamp) {
 
     di.startingSunsetDesc = use24HourClock ? di.startingSunsetDesc24 : di.startingSunsetDesc12;
     di.endingSunsetDesc = use24HourClock ? di.endingSunsetDesc24 : di.endingSunsetDesc12;
+    di.sunriseDesc = use24HourClock ? di.sunriseDesc24 : di.sunriseDesc12;
 
     di.frag1MonthLong = gMonthLong[di.frag1Month];
     di.frag1MonthShort = gMonthShort[di.frag1Month];
