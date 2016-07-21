@@ -78,7 +78,7 @@ var CalGreg = function (di, host) {
     _yearShown = gYear;
 
     var gMonth = _di.frag2Month;
-    //log(_yearShown + ' ' + gYear + ' ' + gMonth);
+    //    log(_yearShown + ' ' + gYear + ' ' + gMonth);
 
     _calendarDiv.html('');
 
@@ -91,13 +91,34 @@ var CalGreg = function (di, host) {
 
   function scrollToMonth(gMonth) {
     _scrollToMonth = gMonth;
-    var monthTop = _calendarDiv.find('#m{0}'.filledWith(gMonth)).position().top;
-    var scrollContainer;
-    if (_inTab) {
-      $('body').scrollTop(monthTop + _calendarDiv.position().top);
-    } else {
-      _calendarDiv.scrollTop(_calendarDiv.scrollTop() + monthTop);
-    }
+    //log(gMonth);
+    var month = _calendarDiv.find('#m{0}'.filledWith(gMonth));
+
+    _calendarDiv.find('.month').hide();
+    month.show();
+    return;
+    //
+    //    var monthTop = month.position().top - 50; // move a bit higher
+    //    var top;
+    //    if (_inTab) {
+    //      top = monthTop + _calendarDiv.position().top;
+    //      $("html, body").stop().animate({
+    //        scrollTop: top + "px"
+    //      }, {
+    //        always: function () {
+    //          $("html, body").stop().scrollTop(top);
+    //        }
+    //      });
+    //    } else {
+    //      top = _calendarDiv.scrollTop() + monthTop;
+    //      _calendarDiv.stop().animate({
+    //        scrollTop: top + "px"
+    //      }, {
+    //        always: function () {
+    //          _calendarDiv.stop().scrollTop(top);
+    //        }
+    //      });
+    //    }
   }
 
   function buildMonth(gYear, gMonth) {
@@ -191,7 +212,7 @@ var CalGreg = function (di, host) {
       var total = hourFactor * 24;
 
       var mornSize = +(sunriseHr * hourFactor).toFixed(3);
-      var eveSize = Math.max(0, +((24 - sunsetHr) * hourFactor).toFixed(3));
+      var eveSize = Math.max(15, +((24 - sunsetHr) * hourFactor).toFixed(3));
       var aftSize = total - eveSize - mornSize; //  +((sunsetHr - sunriseHr) * hourFactor).toFixed(3);
 
       $.extend(thisDayInfo, {
@@ -207,12 +228,12 @@ var CalGreg = function (di, host) {
         tomorrowMonth: tomorrowDayInfo.bMonth,
         tomorrowDay: tomorrowDayInfo.bDay,
         monthName: tomorrowDayInfo.bDay == 1 ? tomorrowDayInfo.bMonthNamePri : (gDay == 1 ? thisDayInfo.bMonthNamePri : ''),
-        isFirst: tomorrowDayInfo.bDay == 1 ? 'first' : ''
+        isFirst: tomorrowDayInfo.bDay == 1 ? 'first' : (gDay === 1 ? 'continuing' : '')
       });
 
       if (thisDayInfo.bMonth == 19) {
         $.extend(thisDayInfo, {
-          sunriseDesc: '<span class=sunrise>{0}</span>'.filledWith(showTime(sunrise))
+          sunriseDiv: '<span class=sunrise>{0}</span>'.filledWith(showTime(sunrise))
         });
       }
 
@@ -249,9 +270,9 @@ var CalGreg = function (di, host) {
         week.push([
           '<div class="{classesOuter}" id=i{cellId}><div class="dayCell {classesInner}">', '<div class="morn bMonth{bMonth} bDay{bDay}" style="height:{mornSize}px">'
           + '<span class=bDay>{^holyDayAftStar}{bDay}</span>'
-          + '<span class=gDay>{frag2Day}</span></div>' 
+          + '<span class=gDay>{frag2Day}</span></div>'
           + '<div class="aft bMonth{bMonth} bDay{bDay}" style="height:{aftSize}px">'
-          + '{^sunriseDesc}'
+          + '{^sunriseDiv}'
           + '{^holyDayAftName}'
           + '<div>'
           + '<span class="monthName {isFirst}">{^monthName}</span>'

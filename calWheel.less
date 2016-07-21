@@ -1,5 +1,7 @@
 
 #pageCalWheel {
+  position: relative;
+  padding-bottom: 15px;
 
   #templateSlice {
     display: none;
@@ -32,7 +34,7 @@
 
   #wheelYear {
     font-size: 24pt;
-    font-weight: 500;
+    font-weight: 500; 
     fill: #999;
   }
 
@@ -184,8 +186,10 @@
   }
 
   #askShowPointer {
-    float: right;
-    margin: 2px 5px 0 0;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
   }
 }
 

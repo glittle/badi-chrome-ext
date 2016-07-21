@@ -1,698 +1,703 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <!--<link href="jquery-ui.min.css" rel=stylesheet>-->
-    <title id="windowTitle"></title>
-    <link href="popup.css" rel=stylesheet>
-    <link href="cal1.css" rel=stylesheet>
-    <link href="cal2.css" rel=stylesheet>
-    <link href="calWheel.css" rel=stylesheet>
-    <link href="calGreg.css" rel=stylesheet>
-    <script src="jquery-2.1.3.min.js"></script>
-    <script src="suncalc.js"></script>
-    <script src="moment.js"></script>
+  <meta charset="utf-8" />
+  <!--<link href="jquery-ui.min.css" rel=stylesheet>-->
+  <title id="windowTitle"></title>
+  <link href="popup.css" rel=stylesheet>
+  <link href="cal1.css" rel=stylesheet>
+  <link href="cal2.css" rel=stylesheet>
+  <link href="calWheel.css" rel=stylesheet>
+  <link href="calGreg.css" rel=stylesheet>
+  <script src="jquery-2.1.3.min.js"></script>
+  <script src="suncalc.js"></script>
+  <script src="moment.js"></script>
 </head>
 <body>
-    <div id="mainBody">
-        <div id="initialCover">
-            <div class="initialMsgArea">
-                <span id="loadingMsg"></span><span id="loadingCount"></span>
-            </div>
-        </div>
-        <div class="mainTop">
-            <div id=showUpcoming>
-                <div id=upcomingTitle data-msg="_id_"></div>
-                <table id=upcoming></table>
-            </div>
-            <div id="yearSelector">
-                <div class="vahidInputs">
-                    <div>
-                        <span data-msg="Kullishay,extractAccessKeyFor:kullishayPicker"></span>
-                        <input class=bKullishayPicker id="kullishayPicker" type=number min=1 max=3>
-                    </div>
-                    <div>
-                        <span data-msg="Vahid"></span>
-                        <input class=bVahidPicker type=number max=20 min=0>
-                    </div>
-                    <div>
-                        <span data-msg="YearOfVahid" data-msg-di="true"></span>
-                        <input class=bYearInVahidPicker type=number max=20 min=0>
-                    </div>
-                </div>
-
-                <div class="JumpDays">
-                    <div data-msg="jumpTo,extractAccessKeyFor:jumpTo"></div>
-                    <input class=jumpTo id="jumpTo" type=number min=-9999 max=9999>
-                    <button type=button class="btnJumpTo button" data-msg="btnJumpTo,title:btnJumpToTitle"></button>
-                </div>
-
-                <div class="yearPicker">
-                    <button type=button class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
-                    <input class=bYearPicker type=number max=1000 min=1>
-                    <button type=button class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
-                </div>
-            </div>
-            <div id="specialDaysTitle"></div>
-            <div id="otherPageTitle"></div>
-            <div id=show>
-                <div id=day></div>
-                <div id=special>
-                    <span id=special1></span>
-                    <span id=special2></span>
-                </div>
-                <div id=sunset class="normal"></div>
-                <div id=gDay></div>
-                <div class="normal place"></div>
-                <!--<div id=gDayWithSunset></div>-->
-                <div id=locationErrorHolder>
-                    <button type="button" class=btnRetry><span class="btnRetryImg"></span></button>
-                    <span id=locationError data-msg="_id_"></span>
-                </div>
-            </div>
-        </div>
-        <div class="mainMiddle">
-            <div class="page" id=pageDay>
-                <div id=gDatePicker>
-                    <div id=gDatePickerTitle data-msg="_id_"></div>
-                    <div id=gDate></div>
-                    <div id=gDateDesc></div>
-                    <div id=gDatePickerTitle2 data-msg="_id_,extractAccessKeyFor:datePicker"></div>
-                    <input type="date" id=datePicker min="1844-03-21" max="2843-03-19">
-                    <div class=gDateButtons>
-                        <button type=button class="button btnChangeDay" data-delta="-1" data-msg="prev"></button>
-                        <button type=button class="button btnChangeDay today" data-delta="0" data-msg="gotoNow"></button>
-                        <button type=button class="button btnChangeDay" data-delta="1" data-msg="next"></button>
-                        <button type=button id="btnEveOrDay" class="button" data-msg="_id_"></button>
-                    </div>
-                    <div class=DatePickerTitle data-msg="bDatePickerTitle,extractAccessKeyFor:bYearPicker"></div>
-                    <div class=bDatePickerInputs>
-                        <input class=bYearPicker id="bYearPicker" type=number max=1000 min=1>
-                        <input id=bMonthPicker type=number max=19 min=0>
-                        <input id=bDayPicker type=number max=19 min=1>
-                        <div class=comment id=ayyamIs0></div>
-                    </div>
-
-                    <div class=DatePickerTitle data-msg="rbDefLangText"></div>
-                    <div class="setupLangOption">
-                        <input type="radio" name="language" value="Local" id="rbDefLang_Local" /> <label for="rbDefLang_Local" data-msg="rbDefLang_Local"></label>
-                    </div>
-                    <div class="setupLangOption">
-                        <input type="radio" name="language" value="Ar" id="rbDefLang_Ar" /> <label for="rbDefLang_Ar" data-msg="rbDefLang_Ar"></label>
-                    </div>
-                </div>
-                <div id=dayDetails></div>
-                <div id=samples>
-                    <div id=sampleTitle data-msg="pressToCopy"></div>
-                    <div id=sampleList1></div>
-                    <div id=sampleList2></div>
-                </div>
-            </div>
-            <div class="page" id=pageEvents>
-                <div id=specialLists>
-                    <div id=eventStartHolder>
-                        <span id=includeWhat>
-                            <span data-msg=includeThese></span>
-
-                            <label><input type=checkbox class=includeThis id=includeFeasts><span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span></label>
-                            <label><input type=checkbox class=includeThis id=includeHolyDays><span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span></label>
-                        </span>
-
-                        <span data-msg="startTimeOption"></span>
-                        <select id=eventStart></select>
-                    </div>
-                    <table id=specialListsTable>
-                        <thead>
-                            <tr>
-                                <th data-msg=dateHeading></th>
-                                <th data-msg=arabic></th>
-                                <th data-msg=suspendWorkHeading class=forHD></th>
-                                <!--<th data-msg=specialTimeHeading class=forHD></th>-->
-                                <th data-msg=eventTimeHeading1 class=forFeast></th>
-                                <th data-msg=eventTimeHeading2 class=forHD></th>
-                                <th data-msg=sunsetHeading></th>
-                            </tr>
-                        </thead>
-                        <tbody id=specialListBody></tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="page" id=pageFast>
-                <div id=fastList>
-                    <table id=fastListTable>
-                        <caption>
-                            <div id=fastDaysTitle></div>
-                            <div class=place></div>
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th data-msg=dateHeading></th>
-                                <th data-msg=sunriseFastHeading></th>
-                                <th data-msg=sunsetFastHeading></th>
-                                <th data-msg=fastGDate></th>
-                            </tr>
-                        </thead>
-                        <tbody id=fastListBody></tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="page" id=pageLists>
-                <table>
-                    <caption data-msg="weekDayNames"></caption>
-                    <thead>
-                        <tr>
-                            <th data-msg=num></th>
-                            <th data-msg=arabic></th>
-                            <th data-msg=meaning></th>
-                            <th data-msg=equiv></th>
-                        </tr>
-                    </thead>
-                    <tbody id=weekdayListBody></tbody>
-                </table>
-                <table>
-                    <caption data-msg="monthNames"></caption>
-                    <thead>
-                        <tr>
-                            <th data-msg=num></th>
-                            <th data-msg=arabic></th>
-                            <th data-msg=meaning></th>
-                        </tr>
-                    </thead>
-                    <tbody id=monthListBody></tbody>
-                </table>
-                <table>
-                    <caption data-msg="YearOfVahid" data-msg-di="true"></caption>
-                    <thead>
-                        <tr>
-                            <th data-msg=num></th>
-                            <th data-msg=arabic></th>
-                            <th data-msg=meaning></th>
-                        </tr>
-                    </thead>
-                    <tbody id=yearListBody></tbody>
-                </table>
-            </div>
-            <div id="pageCal1" class="fullPage page">
-                <div class="months">
-                </div>
-            </div>
-            <div id="pageCal2" class="fullPage page version1">
-                <div class="calendar">
-                </div>
-            </div>
-            <div id="pageCalGreg" class="fullPage page">
-                <div class="calendar">
-                </div>
-            </div>
-            <div id="pageCalWheel" class="fullPage page">
-                <div id="askShowPointer">
-                    <label><input type="checkbox" id="cbShowPointer" /> <span data-msg="showPointer"></span></label>
-                </div>
-                <div id="wheelHolder">
-                    <div id="wheel"></div>
-                    <svg id="wheelYearHolder" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                         width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
-                         preserveAspectRatio="xMidYMid meet">
-                        <text x="520" y="480" text-anchor="middle" id="wheelYear"></text>
-                    </svg>
-
-                    <svg id="pointerToday" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                         width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
-                         preserveAspectRatio="xMidYMid meet">
-                        <!--<text x="155" y="480" text-anchor="end" data-msg="currentFocus"></text>
-                        <line x1="160" y1="472" y2="472" x2="185" stroke-width="1" />
-                        <line x1="179" y1="469" y2="472" x2="185" stroke-width="1" />
-                        <line x1="179" y1="476" y2="472" x2="185" stroke-width="1" />-->
-
-                        <line x1="549" y1="472" y2="472" x2="570" stroke-width="1" />
-                        <text x="575" y="480" text-anchor="start" id="wheelDay"></text>
-                    </svg>
-
-                </div>
-                <svg id="templateSlice" class="slice" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                     width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
-                     preserveAspectRatio="xMidYMid meet">
-                    <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)"
-                       fill="#000000"
-                       stroke="#FFC107" stroke-width="65px">
-                        <path d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z" />
-                    </g>
-                    <text x="65" y="320" class="monthNum"></text>
-                    <text x="75" y="260" class="monthNameAr" transform="rotate(-95 75 260) translate(0 -10)"></text>
-                    <text x="75" y="260" class="monthName" transform="rotate(-85 75 260) translate(0 10)"></text>
-
-                    <text x="65" y="39" class="firstDayWk"></text>
-                    <text x="65" y="64" class="firstDayG"></text>
-                    <text x="65" y="87" class="firstDayYr"></text>
-                    <!--<circle cx="65" cy="350" r="10" fill="#f55" />-->
-                    <!--<line x1="65" y1="0" x2="65" y2="470" stroke="black" stroke-width="1" />-->
-                </svg>
-            </div>
-            <div id="pageReminders" class="fullPage page">
-                <div>
-                    <h2 data-msg="reminderAddEdit"></h2>
-                    <form class="reminderEdit">
-                        <div>
-                            <span data-msg="reminderType"></span>
-                            <select id="reminder_trigger" name="x1" data-default="">
-                                <option value="" data-msg="reminderSelectTrigger"></option>
-
-                                <optgroup label="x" data-msg="label:reminderTriggerGroup_time">
-                                    <option value="sunset" data-msg="reminderTrigger_sunset" data-model="sun"></option>
-                                    <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun"></option>
-                                    <option value="noon" data-msg="reminderTrigger_noon" data-model="time"></option>
-                                    <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time"></option>
-                                </optgroup>
-                                <optgroup label="x" data-msg="label:reminderTriggerGroup_day">
-                                    <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday"></option>
-                                    <option value="feast" data-model="day" data-msg="reminderTrigger_feast"></option>
-                                    <option value="bday" data-model="bday" data-msg="reminderTrigger_bday"></option>
-
-                                </optgroup>
-                                <optgroup label="x" data-msg="label:reminderTriggerGroup_load">
-                                    <option value="load" data-model="load" data-msg="reminderTrigger_load"></option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="reminderEditInputs">
-                            <div id="model_sun" class="reminderModel">
-                                <div data-msg="reminderCalcType">
-                                    <select data-child="calcTypeInput" class="reminder_calcType" name="x3a" data-default="Relative">
-                                        <option value="Relative" data-msg="reminderCalcTypeRelative"></option>
-                                        <option value="Absolute" data-msg="reminderCalcTypeAbsolute"></option>
-                                    </select>
-                                </div>
-                                <div id="reminderCalcTypeAbsolute" class="reminderCalcType">
-                                    <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
-                                </div>
-                                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure" class="reminderCalcType">
-                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
-                                    <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
-                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
-                                        <option value="hours" data-msg="reminderNum_hours"></option>
-                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
-                                    </select>
-                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
-                                        <option value="-1" data-msg="reminderBefore"></option>
-                                        <option value="1" data-msg="reminderAfter"></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div id="model_time" class="reminderModel">
-                                <input type="hidden" class="reminder_calcType" name="x3b" data-default="Relative">
-                                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure">
-                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
-                                    <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
-                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
-                                        <option value="hours" data-msg="reminderNum_hours"></option>
-                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
-                                    </select>
-                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
-                                        <option value="-1" data-msg="reminderBefore"></option>
-                                        <option value="1" data-msg="reminderAfter"></option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div id="model_day" class="reminderModel">
-                                <input type="hidden" class="reminder_units" name="x3" data-default="days">
-
-                                <div data-msg="reminderDayWhen">
-                                    <input data-child="num" type="number" name="x5" class="reminder_num" min="0" max="365" step="1" value="1" data-type="num" data-default="3" required />
-                                    <select data-child="beforeAfter" class="reminder_delta" name="x6" data-type="num" data-default="-1">
-                                        <option value="-1" data-msg="reminderBefore"></option>
-                                        <option value="1" data-msg="reminderAfter"></option>
-                                    </select>
-                                    <span data-child="event" class="modelTriggerEcho"></span>
-                                </div>
-                                <div>
-                                    <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
-                                </div>
-                            </div>
-                            <div id="model_bday" class="reminderModel">
-                                <div>
-                                    <span data-msg="reminderDayOfMonth">
-                                        <input data-child="num" type="number" class="reminder_num" name="x8" min="1" max="19" step="1" value="1" data-type="num" data-default="1" required />
-                                    </span>
-                                </div>
-                                <div>
-                                    <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" value="10:00" name="x9" data-default="10:00" type="time" required />
-                                </div>
-                            </div>
-                            <div id="model_load" class="reminderModel">
-                                <div>
-                                    <input type="number" class="reminder_num" name="x10" min="1" max="59" step="1" value="1" data-type="num" data-default="3" required />
-                                    <select class="reminder_units" data-default="seconds" name="x11">
-                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
-                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
-                                        <option value="hours" data-msg="reminderNum_hours"></option>
-                                    </select>
-                                    after
-                                    <span class="modelTriggerEcho"></span>
-                                </div>
-                            </div>
-                            <div class="reminderShared">
-                                <div>
-                                    <span data-msg="reminder_actions"></span>
-                                    <select id="reminder_action" data-default="" name="x13">
-                                        <option value="" data-msg="reminder_nullAction"></option>
-                                        <option value="speak" data-msg="reminderAction_speak"></option>
-                                        <option value="ifttt" data-msg="reminderAction_ifttt"></option>
-                                        <option value="zapier" data-msg="reminderAction_zapier"></option>
-                                    </select>
-                                </div>
-                                <div id="reminderAction_ifttt" class="reminderAction">
-                                    <div>
-                                        <span data-msg="iftttKey"></span>
-                                        <input type="text" name="if1" class="reminder_iftttKey" required>
-                                    </div>
-                                    <div>
-                                        <span data-msg="iftttEvent"></span>
-                                        <input type="text" name="if2" class="reminder_iftttEvent" required>
-                                    </div>
-                                    <div class="reminderComment" data-msg="iftttInfo"></div>
-                                </div>
-                                <div id="reminderAction_zapier" class="reminderAction">
-                                    <div>
-                                        <span data-msg="zapierKey"></span>
-                                        <input type="text" name="zap1" class="reminder_zapierWebhook" required>
-                                    </div>
-                                    <div class="reminderComment" data-msg="zapierInfo"></div>
-                                </div>
-                                <div id="reminderAction_speak" class="reminderAction">
-                                    <div>
-                                        <span data-msg="actionSpeakDesc"></span>
-                                        <select id="speakVoice" name="speakVoice" class="reminder_speakVoice" required></select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="reminderSaveBtns">
-                                <button type="submit" class="button" id="btnReminderSave" data-msg="_id_,extractAccessKeyFor:btnReminderSave"></button>
-                                <button type="submit" class="button" id="btnReminderSaveNew" data-msg="_id_"></button>
-                                <button type="button" class="button btnCancel" id="btnReminderCancel" data-msg="_id_"></button>
-                                <button type="submit" class="button" id="btnReminderTest" data-msg="_id_"></button>
-                                <button type="button" class="button btnDelete" id="btnReminderDelete" data-msg="_id_"></button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <h2 id="remindersScheduled"></h2>
-                    <ul class="alarms"></ul>
-                </div>
-                <div>
-                    <h2 data-msg="remindersDefined"></h2>
-                    <div class="reminders">
-                    </div>
-                </div>
-            </div>
-            <div id="pageExporter" class="fullPage page">
-                <div>
-                    <div>
-                        <label data-msg="exportWhatTitle"></label>
-                        <div class="exportOptionList"></div>
-
-                    </div>
-                    <div class="exportOtherSettings">
-                        <p data-msg="exportIntro"></p>
-
-                        <div class="QuickPickTitle" data-msg="exportQuickPicks"></div>
-                        <div class="QuickPickDesc" data-msg="exportQuickDesc"></div>
-                        <div class="QuickPicks">
-                            <div>
-                                <button type="button" class="button" data-msg="exportQuickPick1" id="btnQuickPick1"></button>
-                                <span data-msg="exportQuickPick1text"></span>
-                            </div>
-                            <div>
-                                <button type="button" class="button" data-msg="exportQuickPick2" id="btnQuickPick2"></button>
-                                <span data-msg="exportQuickPick2text"></span>
-                            </div>
-                            <div>
-                                <button type="button" class="button" data-msg="exportQuickPick3" id="btnQuickPick3"></button>
-                                <span data-msg="exportQuickPick3text"></span>
-                            </div>
-                        </div>
-
-                        <label for="exporterName" data-msg="exportName"></label>
-                        <input id="exporterName" type="text" />
-
-                        <label for="exporterDateRange" data-msg="exporterDateRange,extractAccessKeyFor:exporterDateRange"></label>
-                        <select id="exporterDateRange">
-                            <option id="exportRange_Badi_0"></option>
-                            <option id="exportRange_Badi_1"></option>
-                            <option id="exportRange_Greg_0"></option>
-                            <option id="exportRange_Greg_1"></option>
-                        </select>
-
-                        <label data-msg="exportWhatToInclude"></label>
-                        <div>
-                            <label class="exportIncludeAlert">
-                                <input id="exporterIncludeAlert" type="checkbox" value="location" />
-                                <span data-msg="exportIncludeAlert"></span>
-                            </label>
-                            <select id="exporterIncludeAlertMin"></select>
-                        </div>
-
-                        <div>
-                            <button type="button" class="button" data-msg="exportQuickPickCleartext" id="btnQuickPickClear"></button>
-                        </div>
-
-                        <div class="exportNum">
-                            <span data-msg="exportNumToInclude"></span>
-                            <span id="exportNum"></span>
-                        </div>
-
-                        <div class="exporterButtons">
-                            <button type="button" class="button" id="btnExportFile" data-msg="exportFile"></button>
-                            <button type="button" class="button" id="btnHideSample" data-msg="exportHideTest"></button>
-                            <button accesskey="S" type="button" class="button" id="btnExportTest" data-msg="exportTest"></button>
-                            <textarea id="exporterTest"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="pageCustom" class="fullPage page">
-                <div class="customPartsListDiv">
-                    <h2 data-msg="customPartsList"></h2>
-                    <div id=partsList></div>
-                </div>
-                <div>
-                    <h2 data-msg="customBuilder"></h2>
-                    <div id=customBuilder>
-                        <p data-msg="customBuilderIntro"></p>
-                        <div id=customBuilderInputDiv>
-                            <input id="customBuilderInput" />
-                        </div>
-
-                        <p data-msg="customBuilderEcho"></p>
-                        <div id=customBuilderEcho></div>
-
-                        <div class=customBuilderButtons>
-                            <button id=btnCustomBuilderSave type=button class=button data-msg="btnReminderSave,extractAccessKeyFor:btnCustomBuilderSave"></button>
-                            <button id=btnCustomBuilderCancel type=button class="button btnCancel" data-msg="btnCustomBuilderCancel"></button>
-                            <button id=btnCustomBuilderDelete type=button class="button btnDelete" data-msg="btnReminderDelete"></button>
-                        </div>
-                    </div>
-
-                    <div class="customDefinedTitleDiv">
-                        <h2 data-msg="customDefined"></h2>
-                        <div class="customIntroSelectSome">
-                            <div class="customIntroClick" data-msg="customIntroClick"></div>
-                            <div class="customSelect"></div>
-                        </div>
-                    </div>
-                    <div class="customFormats">
-                    </div>
-                    <div class="customLoadLettersDiv">
-                        <span data-msg="customLoadLetters"></span>
-                        <span class="customLettersFromFirstPage"></span>
-                    </div>
-                </div>
-                <div id="customSampleTemplate">
-                    <div class="customFormatDiv">
-                        <div class=customFormatsButtons>
-                            <button class="button btnEdit" type=button data-msg="btnReminderEdit"></button>
-                        </div>
-                        <div class="customSampleContent">
-                            <div class=customSample data-part="{f}"></div>
-                            <div class=customFormat>{f}</div>
-                        </div>
-                        <div class="customFormatInfo">
-                            <label class="customIsSample">
-                                <span></span>
-                                <input class="cbIsSample" type="checkbox" value="Y" data-x="" />
-                            </label>
-                            <button class="button btnCopy" type=button data-msg="customBtnCopy"></button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div id="pagePlanner" class="fullPage page">
-                <div class="plannerInputs">
-                    <h2 data-msg="plannerTitle2"></h2>
-                    <ol>
-                        <li>
-                            <div>
-                                <span data-msg="plannerShowWhat"></span>
-                                <select id="planWhat">
-                                    <option value="event1" data-msg="plannerWhatOneEvent"></option>
-                                    <option value="event2" data-msg="plannerWhatManyEvents"></option>
-                                </select>
-                            </div>
-                            <div id="plannerWhatEventDiv">
-                                <span data-msg="plannerWhatEvent"></span>
-                                <div class="plannerWhatHelpers">
-                                    <button type="button" class="button" id="btnPlannerHelperHD1" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperHD2" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperRid" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperTHB" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperFeasts" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperNone" data-msg="_id_"></button>
-                                </div>
-                                <select id="plannerWhatEvents">
-                                    <optgroup label="Holy Days" id="planWhatHdGroup"></optgroup>
-                                    <optgroup label="Feasts" id="planWhatFeastGroup"></optgroup>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <span data-msg="planFromWhen"></span>
-                            <select id="planFromWhen">
-                                <option value="today" data-msg="planFromWhenToday"></option>
-                                <option value="by0" data-msg="planFromWhenThisYear"></option>
-                                <option value="by1" data-msg="planFromWhenNextYear"></option>
-                            </select>
-                        </li>
-                        <li>
-                            <div>
-                                <span data-msg="planUntilWhen"></span>
-                                <select id="planUntilNum"></select>
-                                <select id="planUntilUnits">
-                                    <option value="y" data-msg="planUntilUnitsYears"></option>
-                                </select>
-                            </div>
-                        </li>
-                        <li>
-                            <span data-msg="planIncludeWhat"></span>
-                            <select id="plannerShowWhat">
-                                <option value="frag2" data-msg="planIncludeWhatDay"></option>
-                                <option value="both" data-msg="planIncludeWhatBoth"></option>
-                                <option value="frag1" data-msg="planIncludeWhatEve"></option>
-                            </select>
-                        </li>
-                    </ol>
-                    <!--<button class="button" type="button" id="btnPlanGenerate">Refresh</button>-->
-
-                </div>
-                <div>
-                    <div class="plannerResultButtons">
-                        <button class="button" type="button" id="btnPlannerExportCsv" data-msg="_id_"></button>
-                        <!--<button class="button" type="button" id="btnPlannerExportICal" data-msg="_id_"></button>-->
-                    </div>
-                    <h2 class="NoPrint" data-msg="plannerResults"></h2>
-                    <div id="plannerResultsDiv">
-                        <table class="plannerResults">
-                            <thead id="plannerResultsHead"></thead>
-                            <tbody id="plannerResultsBody"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div id="pageSetup" class="fullPage page">
-                <div>
-                    <h3 data-msg="setupAboutTitle"></h3>
-                    <p data-msg="setupAboutPara"></p>
-                    <p data-msg="tipsAboutText"></p>
-                </div>
-                <div>
-                    <h3 data-msg="setupOptOutTitle"></h3>
-                    <p data-msg="setupOptOutPara"></p>
-                    <div class="pageSetupInput">
-                        <label>
-                            <span data-msg="setupOptOut"></span>
-                            <input type="checkbox" id="setupOptOut" />
-                        </label>
-                    </div>
-                    <h3 data-msg="exportIncludeLocation"></h3>
-                    <p class="setupPlace">
-                        <button type="button" class="btnRetry"><span class="btnRetryImg"></span></button>
-                        <span class="place"></span>
-                    </p>
-                </div>
-            </div>
-
-            <div class=selectPages>
-                <div class=buttons>
-                    <button data-page="pageDay" data-msg=pick_pageDay></button>
-                    <button data-page="pageEvents" data-msg=pick_pageEvents></button>
-                    <button data-page="pageCal2" data-msg=pick_pageCal2></button>
-                    <button data-page="pageCal1" data-msg=pick_pageCal1></button>
-                    <button data-page="pageCalWheel" data-msg=pick_pageCalWheel></button>
-                    <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
-                    <button data-page="pageFast" data-msg=pick_pageFast></button>
-                    <button data-page="pagePlanner" data-msg=pick_pagePlanner></button>
-                    <button data-page="pageLists" data-msg=pick_pageLists></button>
-                    <button data-page="pageReminders" data-msg=pick_pageReminders id="btnPageReminders"></button>
-                    <button data-page="pageExporter" data-msg=pick_pageExporter></button>
-                    <button data-page="pageCustom" data-msg=pick_pageCustom></button>
-                    <button data-page="pageSetup" data-msg=pick_pageSetup></button>
-                </div>
-            </div>
-        </div>
-        <div class="mainBottom">
-            <div id=explain class="explains"></div>
-            <div id=explain2 class="explains"></div>
-            <textarea id=sampleCopy></textarea>
-            <div class="iconArea">
-                <div id=tips>
-                    <span data-msg="tips,title:tipsText"></span>
-                    <span data-msg="tipsAbout,title:tipsAboutText"></span>
-                </div>
-
-                <a id=version class=textLink href="" target="version"></a>
-
-                <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools"
-                   rel="publisher" style="text-decoration: none;">
-                    <img src="fb-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
-                </a>
-
-                <a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png"></a>
-
-                <a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3"
-                   rel="publisher" style="text-decoration: none;">
-                    <img src="gplus-16.png" data-msg="alt:googlePlus" style="border: 0; width: 16px; height: 16px;" />
-                </a>
-
-
-                <a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
-
-
-                <img id="btnOpen" src="popout.png" />
-                <img id="btnPrint" src="print.png" />
-
-                <span id=shortcutKeys data-msg="title:shortcutKeyTitle"></span>
-
-            </div>
-
-
-        </div>
+  <div id="mainBody">
+    <div id="initialCover">
+      <div class="initialMsgArea">
+        <span id="loadingMsg"></span><span id="loadingCount"></span>
+      </div>
     </div>
-    <script src="jquery-ui.min.js"></script>
-    <script src="holydays.js"></script>
-    <script src="sharedBrowser.js"></script>
-    <script src="shared.js"></script>
-    <script src="popup.js"></script>
-    <script src="cal1.js"></script>
-    <script src="cal2.js"></script>
-    <script src="calWheel.js"></script>
-    <script src="calGreg.js"></script>
-    <script src="pageReminders.js"></script>
-    <script src="pagePlanner.js"></script>
-    <script src="pageExporter.js"></script>
-    <script src="pageCustom.js"></script>
-    <script src="misc/moment-timezone-with-data.min.js"></script>
+    <div class="mainTop">
+      <div id=showUpcoming>
+        <div id=upcomingTitle data-msg="_id_"></div>
+        <table id=upcoming></table>
+      </div>
+      <div id="yearSelector">
+        <div class="vahidInputs">
+          <div>
+            <span data-msg="Kullishay,extractAccessKeyFor:kullishayPicker"></span>
+            <input class=bKullishayPicker id="kullishayPicker" type=number min=1 max=3>
+          </div>
+          <div>
+            <span data-msg="Vahid"></span>
+            <input class=bVahidPicker type=number max=20 min=0>
+          </div>
+          <div>
+            <span data-msg="YearOfVahid" data-msg-di="true"></span>
+            <input class=bYearInVahidPicker type=number max=20 min=0>
+          </div>
+        </div>
+
+        <div class="JumpDays">
+          <div data-msg="jumpTo,extractAccessKeyFor:jumpTo"></div>
+          <input class=jumpTo id="jumpTo" type=number min=-9999 max=9999>
+          <button type=button class="btnJumpTo button" data-msg="btnJumpTo,title:btnJumpToTitle"></button>
+        </div>
+
+        <div class="yearPicker">
+          <button type=button class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
+          <input class=bYearPicker type=number max=1000 min=1>
+          <button type=button class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
+        </div>
+      </div>
+      <div id="specialDaysTitle"></div>
+      <div id="otherPageTitle"></div>
+      <div id=show>
+        <div id=day></div>
+        <div id=special>
+          <span id=special1></span>
+          <span id=special2></span>
+        </div>
+        <div id=sunset class="normal"></div>
+        <div id=gDay></div>
+        <div class="normal place"></div>
+        <!--<div id=gDayWithSunset></div>-->
+        <div id=locationErrorHolder>
+          <button type="button" class=btnRetry><span class="btnRetryImg"></span></button>
+          <span id=locationError data-msg="_id_"></span>
+        </div>
+      </div>
+    </div>
+    <div class="mainMiddle">
+      <div class="page" id=pageDay>
+        <div id=gDatePicker>
+          <div id=gDatePickerTitle data-msg="_id_"></div>
+          <div id=gDate></div>
+          <div id=gDateDesc></div>
+          <div id=gDatePickerTitle2 data-msg="_id_,extractAccessKeyFor:datePicker"></div>
+          <input type="date" id=datePicker min="1844-03-21" max="2843-03-19">
+          <div class=gDateButtons>
+            <button type=button class="button btnChangeDay" data-delta="-1" data-msg="prev"></button>
+            <button type=button class="button btnChangeDay today" data-delta="0" data-msg="gotoNow"></button>
+            <button type=button class="button btnChangeDay" data-delta="1" data-msg="next"></button>
+            <button type=button id="btnEveOrDay" class="button" data-msg="_id_"></button>
+          </div>
+          <div class=DatePickerTitle data-msg="bDatePickerTitle,extractAccessKeyFor:bYearPicker"></div>
+          <div class=bDatePickerInputs>
+            <input class=bYearPicker id="bYearPicker" type=number max=1000 min=1>
+            <input id=bMonthPicker type=number max=19 min=0>
+            <input id=bDayPicker type=number max=19 min=1>
+            <div class=comment id=ayyamIs0></div>
+          </div>
+
+          <div class=DatePickerTitle data-msg="rbDefLangText"></div>
+          <div class="setupLangOption">
+            <input type="radio" name="language" value="Local" id="rbDefLang_Local" /> <label for="rbDefLang_Local" data-msg="rbDefLang_Local"></label>
+          </div>
+          <div class="setupLangOption">
+            <input type="radio" name="language" value="Ar" id="rbDefLang_Ar" /> <label for="rbDefLang_Ar" data-msg="rbDefLang_Ar"></label>
+          </div>
+        </div>
+        <div id=dayDetails></div>
+        <div id=samples>
+          <div id=sampleTitle data-msg="pressToCopy"></div>
+          <div id=sampleList1></div>
+          <div id=sampleList2></div>
+        </div>
+      </div>
+      <div class="page" id=pageEvents>
+        <div id=specialLists>
+          <div id=eventStartHolder>
+            <span id=includeWhat>
+              <span data-msg=includeThese></span>
+
+              <label><input type=checkbox class=includeThis id=includeFeasts><span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span></label>
+              <label><input type=checkbox class=includeThis id=includeHolyDays><span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span></label>
+            </span>
+
+            <span data-msg="startTimeOption"></span>
+            <select id=eventStart></select>
+          </div>
+          <table id=specialListsTable>
+            <thead>
+              <tr>
+                <th data-msg=dateHeading></th>
+                <th data-msg=arabic></th>
+                <th data-msg=suspendWorkHeading class=forHD></th>
+                <!--<th data-msg=specialTimeHeading class=forHD></th>-->
+                <th data-msg=eventTimeHeading1 class=forFeast></th>
+                <th data-msg=eventTimeHeading2 class=forHD></th>
+                <th data-msg=sunsetHeading></th>
+              </tr>
+            </thead>
+            <tbody id=specialListBody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="page" id=pageFast>
+        <div id=fastList>
+          <table id=fastListTable>
+            <caption>
+              <div id=fastDaysTitle></div>
+              <div class=place></div>
+            </caption>
+            <thead>
+              <tr>
+                <th data-msg=dateHeading></th>
+                <th data-msg=sunriseFastHeading></th>
+                <th data-msg=sunsetFastHeading></th>
+                <th data-msg=fastGDate></th>
+              </tr>
+            </thead>
+            <tbody id=fastListBody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="page" id=pageLists>
+        <table>
+          <caption data-msg="weekDayNames"></caption>
+          <thead>
+            <tr>
+              <th data-msg=num></th>
+              <th data-msg=arabic></th>
+              <th data-msg=meaning></th>
+              <th data-msg=equiv></th>
+            </tr>
+          </thead>
+          <tbody id=weekdayListBody></tbody>
+        </table>
+        <table>
+          <caption data-msg="monthNames"></caption>
+          <thead>
+            <tr>
+              <th data-msg=num></th>
+              <th data-msg=arabic></th>
+              <th data-msg=meaning></th>
+            </tr>
+          </thead>
+          <tbody id=monthListBody></tbody>
+        </table>
+        <table>
+          <caption data-msg="YearOfVahid" data-msg-di="true"></caption>
+          <thead>
+            <tr>
+              <th data-msg=num></th>
+              <th data-msg=arabic></th>
+              <th data-msg=meaning></th>
+            </tr>
+          </thead>
+          <tbody id=yearListBody></tbody>
+        </table>
+      </div>
+      <div id="pageCal1" class="fullPage page">
+        <div class="months">
+        </div>
+      </div>
+      <div id="pageCal2" class="fullPage page version1">
+        <div id="cal2options">
+          <label><input type="checkbox" id="cbShowTimes" checked /> <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span></label>
+          <label><input type="checkbox" id="cbCal2Darker" /> <span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span></label>
+        </div>
+        <div class="calendar showTimes">
+        </div>
+      </div>
+      <div id="pageCalGreg" class="fullPage page">
+        <div class="calendar">
+        </div>
+      </div>
+      <div id="pageCalWheel" class="fullPage page">
+        <div id="askShowPointer">
+          <label><input type="checkbox" id="cbShowPointer" /> <span data-msg="showPointer"></span></label>
+        </div>
+        <div id="wheelHolder">
+          <div id="wheel"></div>
+          <svg id="wheelYearHolder" version="1.0" xmlns="http://www.w3.org/2000/svg"
+               width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
+               preserveAspectRatio="xMidYMid meet">
+            <text x="520" y="480" text-anchor="middle" id="wheelYear"></text>
+          </svg>
+
+          <svg id="pointerToday" version="1.0" xmlns="http://www.w3.org/2000/svg"
+               width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
+               preserveAspectRatio="xMidYMid meet">
+            <!--<text x="155" y="480" text-anchor="end" data-msg="currentFocus"></text>
+            <line x1="160" y1="472" y2="472" x2="185" stroke-width="1" />
+            <line x1="179" y1="469" y2="472" x2="185" stroke-width="1" />
+            <line x1="179" y1="476" y2="472" x2="185" stroke-width="1" />-->
+
+            <line x1="549" y1="472" y2="472" x2="570" stroke-width="1" />
+            <text x="575" y="480" text-anchor="start" id="wheelDay"></text>
+          </svg>
+
+        </div>
+        <svg id="templateSlice" class="slice" version="1.0" xmlns="http://www.w3.org/2000/svg"
+             width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550"
+             preserveAspectRatio="xMidYMid meet">
+          <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)"
+             fill="#000000"
+             stroke="#FFC107" stroke-width="65px">
+            <path d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z" />
+          </g>
+          <text x="65" y="320" class="monthNum"></text>
+          <text x="75" y="260" class="monthNameAr" transform="rotate(-95 75 260) translate(0 -10)"></text>
+          <text x="75" y="260" class="monthName" transform="rotate(-85 75 260) translate(0 10)"></text>
+
+          <text x="65" y="39" class="firstDayWk"></text>
+          <text x="65" y="64" class="firstDayG"></text>
+          <text x="65" y="87" class="firstDayYr"></text>
+          <!--<circle cx="65" cy="350" r="10" fill="#f55" />-->
+          <!--<line x1="65" y1="0" x2="65" y2="470" stroke="black" stroke-width="1" />-->
+        </svg>
+      </div>
+      <div id="pageReminders" class="fullPage page">
+        <div>
+          <h2 data-msg="reminderAddEdit"></h2>
+          <form class="reminderEdit">
+            <div>
+              <span data-msg="reminderType"></span>
+              <select id="reminder_trigger" name="x1" data-default="">
+                <option value="" data-msg="reminderSelectTrigger"></option>
+
+                <optgroup label="x" data-msg="label:reminderTriggerGroup_time">
+                  <option value="sunset" data-msg="reminderTrigger_sunset" data-model="sun"></option>
+                  <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun"></option>
+                  <option value="noon" data-msg="reminderTrigger_noon" data-model="time"></option>
+                  <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time"></option>
+                </optgroup>
+                <optgroup label="x" data-msg="label:reminderTriggerGroup_day">
+                  <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday"></option>
+                  <option value="feast" data-model="day" data-msg="reminderTrigger_feast"></option>
+                  <option value="bday" data-model="bday" data-msg="reminderTrigger_bday"></option>
+
+                </optgroup>
+                <optgroup label="x" data-msg="label:reminderTriggerGroup_load">
+                  <option value="load" data-model="load" data-msg="reminderTrigger_load"></option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="reminderEditInputs">
+              <div id="model_sun" class="reminderModel">
+                <div data-msg="reminderCalcType">
+                  <select data-child="calcTypeInput" class="reminder_calcType" name="x3a" data-default="Relative">
+                    <option value="Relative" data-msg="reminderCalcTypeRelative"></option>
+                    <option value="Absolute" data-msg="reminderCalcTypeAbsolute"></option>
+                  </select>
+                </div>
+                <div id="reminderCalcTypeAbsolute" class="reminderCalcType">
+                  <span data-msg="reminderShowAt"></span>
+                  <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
+                </div>
+                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure" class="reminderCalcType">
+                  <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
+                  <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
+                    <option value="minutes" data-msg="reminderNum_minutes"></option>
+                    <option value="hours" data-msg="reminderNum_hours"></option>
+                    <option value="seconds" data-msg="reminderNum_seconds"></option>
+                  </select>
+                  <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
+                    <option value="-1" data-msg="reminderBefore"></option>
+                    <option value="1" data-msg="reminderAfter"></option>
+                  </select>
+                </div>
+              </div>
+              <div id="model_time" class="reminderModel">
+                <input type="hidden" class="reminder_calcType" name="x3b" data-default="Relative">
+                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure">
+                  <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
+                  <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
+                    <option value="minutes" data-msg="reminderNum_minutes"></option>
+                    <option value="hours" data-msg="reminderNum_hours"></option>
+                    <option value="seconds" data-msg="reminderNum_seconds"></option>
+                  </select>
+                  <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
+                    <option value="-1" data-msg="reminderBefore"></option>
+                    <option value="1" data-msg="reminderAfter"></option>
+                  </select>
+                </div>
+              </div>
+              <div id="model_day" class="reminderModel">
+                <input type="hidden" class="reminder_units" name="x3" data-default="days">
+
+                <div data-msg="reminderDayWhen">
+                  <input data-child="num" type="number" name="x5" class="reminder_num" min="0" max="365" step="1" value="1" data-type="num" data-default="3" required />
+                  <select data-child="beforeAfter" class="reminder_delta" name="x6" data-type="num" data-default="-1">
+                    <option value="-1" data-msg="reminderBefore"></option>
+                    <option value="1" data-msg="reminderAfter"></option>
+                  </select>
+                  <span data-child="event" class="modelTriggerEcho"></span>
+                </div>
+                <div>
+                  <span data-msg="reminderShowAt"></span>
+                  <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
+                </div>
+              </div>
+              <div id="model_bday" class="reminderModel">
+                <div>
+                  <span data-msg="reminderDayOfMonth">
+                    <input data-child="num" type="number" class="reminder_num" name="x8" min="1" max="19" step="1" value="1" data-type="num" data-default="1" required />
+                  </span>
+                </div>
+                <div>
+                  <span data-msg="reminderShowAt"></span>
+                  <input id="reminder_triggerTimeRaw" value="10:00" name="x9" data-default="10:00" type="time" required />
+                </div>
+              </div>
+              <div id="model_load" class="reminderModel">
+                <div>
+                  <input type="number" class="reminder_num" name="x10" min="1" max="59" step="1" value="1" data-type="num" data-default="3" required />
+                  <select class="reminder_units" data-default="seconds" name="x11">
+                    <option value="seconds" data-msg="reminderNum_seconds"></option>
+                    <option value="minutes" data-msg="reminderNum_minutes"></option>
+                    <option value="hours" data-msg="reminderNum_hours"></option>
+                  </select>
+                  after
+                  <span class="modelTriggerEcho"></span>
+                </div>
+              </div>
+              <div class="reminderShared">
+                <div>
+                  <span data-msg="reminder_actions"></span>
+                  <select id="reminder_action" data-default="" name="x13">
+                    <option value="" data-msg="reminder_nullAction"></option>
+                    <option value="speak" data-msg="reminderAction_speak"></option>
+                    <option value="ifttt" data-msg="reminderAction_ifttt"></option>
+                    <option value="zapier" data-msg="reminderAction_zapier"></option>
+                  </select>
+                </div>
+                <div id="reminderAction_ifttt" class="reminderAction">
+                  <div>
+                    <span data-msg="iftttKey"></span>
+                    <input type="text" name="if1" class="reminder_iftttKey" required>
+                  </div>
+                  <div>
+                    <span data-msg="iftttEvent"></span>
+                    <input type="text" name="if2" class="reminder_iftttEvent" required>
+                  </div>
+                  <div class="reminderComment" data-msg="iftttInfo"></div>
+                </div>
+                <div id="reminderAction_zapier" class="reminderAction">
+                  <div>
+                    <span data-msg="zapierKey"></span>
+                    <input type="text" name="zap1" class="reminder_zapierWebhook" required>
+                  </div>
+                  <div class="reminderComment" data-msg="zapierInfo"></div>
+                </div>
+                <div id="reminderAction_speak" class="reminderAction">
+                  <div>
+                    <span data-msg="actionSpeakDesc"></span>
+                    <select id="speakVoice" name="speakVoice" class="reminder_speakVoice" required></select>
+                  </div>
+                </div>
+              </div>
+              <div class="reminderSaveBtns">
+                <button type="submit" class="button" id="btnReminderSave" data-msg="_id_,extractAccessKeyFor:btnReminderSave"></button>
+                <button type="submit" class="button" id="btnReminderSaveNew" data-msg="_id_"></button>
+                <button type="button" class="button btnCancel" id="btnReminderCancel" data-msg="_id_"></button>
+                <button type="submit" class="button" id="btnReminderTest" data-msg="_id_"></button>
+                <button type="button" class="button btnDelete" id="btnReminderDelete" data-msg="_id_"></button>
+              </div>
+            </div>
+          </form>
+
+          <h2 id="remindersScheduled"></h2>
+          <ul class="alarms"></ul>
+        </div>
+        <div>
+          <h2 data-msg="remindersDefined"></h2>
+          <div class="reminders">
+          </div>
+        </div>
+      </div>
+      <div id="pageExporter" class="fullPage page">
+        <div>
+          <div>
+            <label data-msg="exportWhatTitle"></label>
+            <div class="exportOptionList"></div>
+
+          </div>
+          <div class="exportOtherSettings">
+            <p data-msg="exportIntro"></p>
+
+            <div class="QuickPickTitle" data-msg="exportQuickPicks"></div>
+            <div class="QuickPickDesc" data-msg="exportQuickDesc"></div>
+            <div class="QuickPicks">
+              <div>
+                <button type="button" class="button" data-msg="exportQuickPick1" id="btnQuickPick1"></button>
+                <span data-msg="exportQuickPick1text"></span>
+              </div>
+              <div>
+                <button type="button" class="button" data-msg="exportQuickPick2" id="btnQuickPick2"></button>
+                <span data-msg="exportQuickPick2text"></span>
+              </div>
+              <div>
+                <button type="button" class="button" data-msg="exportQuickPick3" id="btnQuickPick3"></button>
+                <span data-msg="exportQuickPick3text"></span>
+              </div>
+            </div>
+
+            <label for="exporterName" data-msg="exportName"></label>
+            <input id="exporterName" type="text" />
+
+            <label for="exporterDateRange" data-msg="exporterDateRange,extractAccessKeyFor:exporterDateRange"></label>
+            <select id="exporterDateRange">
+              <option id="exportRange_Badi_0"></option>
+              <option id="exportRange_Badi_1"></option>
+              <option id="exportRange_Greg_0"></option>
+              <option id="exportRange_Greg_1"></option>
+            </select>
+
+            <label data-msg="exportWhatToInclude"></label>
+            <div>
+              <label class="exportIncludeAlert">
+                <input id="exporterIncludeAlert" type="checkbox" value="location" />
+                <span data-msg="exportIncludeAlert"></span>
+              </label>
+              <select id="exporterIncludeAlertMin"></select>
+            </div>
+
+            <div>
+              <button type="button" class="button" data-msg="exportQuickPickCleartext" id="btnQuickPickClear"></button>
+            </div>
+
+            <div class="exportNum">
+              <span data-msg="exportNumToInclude"></span>
+              <span id="exportNum"></span>
+            </div>
+
+            <div class="exporterButtons">
+              <button type="button" class="button" id="btnExportFile" data-msg="exportFile"></button>
+              <button type="button" class="button" id="btnHideSample" data-msg="exportHideTest"></button>
+              <button accesskey="S" type="button" class="button" id="btnExportTest" data-msg="exportTest"></button>
+              <textarea id="exporterTest"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="pageCustom" class="fullPage page">
+        <div class="customPartsListDiv">
+          <h2 data-msg="customPartsList"></h2>
+          <div id=partsList></div>
+        </div>
+        <div>
+          <h2 data-msg="customBuilder"></h2>
+          <div id=customBuilder>
+            <p data-msg="customBuilderIntro"></p>
+            <div id=customBuilderInputDiv>
+              <input id="customBuilderInput" />
+            </div>
+
+            <p data-msg="customBuilderEcho"></p>
+            <div id=customBuilderEcho></div>
+
+            <div class=customBuilderButtons>
+              <button id=btnCustomBuilderSave type=button class=button data-msg="btnReminderSave,extractAccessKeyFor:btnCustomBuilderSave"></button>
+              <button id=btnCustomBuilderCancel type=button class="button btnCancel" data-msg="btnCustomBuilderCancel"></button>
+              <button id=btnCustomBuilderDelete type=button class="button btnDelete" data-msg="btnReminderDelete"></button>
+            </div>
+          </div>
+
+          <div class="customDefinedTitleDiv">
+            <h2 data-msg="customDefined"></h2>
+            <div class="customIntroSelectSome">
+              <div class="customIntroClick" data-msg="customIntroClick"></div>
+              <div class="customSelect"></div>
+            </div>
+          </div>
+          <div class="customFormats">
+          </div>
+          <div class="customLoadLettersDiv">
+            <span data-msg="customLoadLetters"></span>
+            <span class="customLettersFromFirstPage"></span>
+          </div>
+        </div>
+        <div id="customSampleTemplate">
+          <div class="customFormatDiv">
+            <div class=customFormatsButtons>
+              <button class="button btnEdit" type=button data-msg="btnReminderEdit"></button>
+            </div>
+            <div class="customSampleContent">
+              <div class=customSample data-part="{f}"></div>
+              <div class=customFormat>{f}</div>
+            </div>
+            <div class="customFormatInfo">
+              <label class="customIsSample">
+                <span></span>
+                <input class="cbIsSample" type="checkbox" value="Y" data-x="" />
+              </label>
+              <button class="button btnCopy" type=button data-msg="customBtnCopy"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id="pagePlanner" class="fullPage page">
+        <div class="plannerInputs">
+          <h2 data-msg="plannerTitle2"></h2>
+          <ol>
+            <li>
+              <div>
+                <span data-msg="plannerShowWhat"></span>
+                <select id="planWhat">
+                  <option value="event1" data-msg="plannerWhatOneEvent"></option>
+                  <option value="event2" data-msg="plannerWhatManyEvents"></option>
+                </select>
+              </div>
+              <div id="plannerWhatEventDiv">
+                <span data-msg="plannerWhatEvent"></span>
+                <div class="plannerWhatHelpers">
+                  <button type="button" class="button" id="btnPlannerHelperHD1" data-msg="_id_"></button>
+                  <button type="button" class="button" id="btnPlannerHelperHD2" data-msg="_id_"></button>
+                  <button type="button" class="button" id="btnPlannerHelperRid" data-msg="_id_"></button>
+                  <button type="button" class="button" id="btnPlannerHelperTHB" data-msg="_id_"></button>
+                  <button type="button" class="button" id="btnPlannerHelperFeasts" data-msg="_id_"></button>
+                  <button type="button" class="button" id="btnPlannerHelperNone" data-msg="_id_"></button>
+                </div>
+                <select id="plannerWhatEvents">
+                  <optgroup label="Holy Days" id="planWhatHdGroup"></optgroup>
+                  <optgroup label="Feasts" id="planWhatFeastGroup"></optgroup>
+                </select>
+              </div>
+            </li>
+            <li>
+              <span data-msg="planFromWhen"></span>
+              <select id="planFromWhen">
+                <option value="today" data-msg="planFromWhenToday"></option>
+                <option value="by0" data-msg="planFromWhenThisYear"></option>
+                <option value="by1" data-msg="planFromWhenNextYear"></option>
+              </select>
+            </li>
+            <li>
+              <div>
+                <span data-msg="planUntilWhen"></span>
+                <select id="planUntilNum"></select>
+                <select id="planUntilUnits">
+                  <option value="y" data-msg="planUntilUnitsYears"></option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <span data-msg="planIncludeWhat"></span>
+              <select id="plannerShowWhat">
+                <option value="frag2" data-msg="planIncludeWhatDay"></option>
+                <option value="both" data-msg="planIncludeWhatBoth"></option>
+                <option value="frag1" data-msg="planIncludeWhatEve"></option>
+              </select>
+            </li>
+          </ol>
+          <!--<button class="button" type="button" id="btnPlanGenerate">Refresh</button>-->
+
+        </div>
+        <div>
+          <div class="plannerResultButtons">
+            <button class="button" type="button" id="btnPlannerExportCsv" data-msg="_id_"></button>
+            <!--<button class="button" type="button" id="btnPlannerExportICal" data-msg="_id_"></button>-->
+          </div>
+          <h2 class="NoPrint" data-msg="plannerResults"></h2>
+          <div id="plannerResultsDiv">
+            <table class="plannerResults">
+              <thead id="plannerResultsHead"></thead>
+              <tbody id="plannerResultsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="pageSetup" class="fullPage page">
+        <div>
+          <h3 data-msg="setupAboutTitle"></h3>
+          <p data-msg="setupAboutPara"></p>
+          <p data-msg="tipsAboutText"></p>
+        </div>
+        <div>
+          <h3 data-msg="setupOptOutTitle"></h3>
+          <p data-msg="setupOptOutPara"></p>
+          <div class="pageSetupInput">
+            <label>
+              <span data-msg="setupOptOut"></span>
+              <input type="checkbox" id="setupOptOut" />
+            </label>
+          </div>
+          <h3 data-msg="exportIncludeLocation"></h3>
+          <p class="setupPlace">
+            <button type="button" class="btnRetry"><span class="btnRetryImg"></span></button>
+            <span class="place"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class=selectPages>
+        <div class=buttons>
+          <button data-page="pageDay" data-msg=pick_pageDay></button>
+          <button data-page="pageEvents" data-msg=pick_pageEvents></button>
+          <button data-page="pageCal2" data-msg=pick_pageCal2></button>
+          <button data-page="pageCal1" data-msg=pick_pageCal1></button>
+          <button data-page="pageCalWheel" data-msg=pick_pageCalWheel></button>
+          <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
+          <button data-page="pageFast" data-msg=pick_pageFast></button>
+          <button data-page="pagePlanner" data-msg=pick_pagePlanner></button>
+          <button data-page="pageLists" data-msg=pick_pageLists></button>
+          <button data-page="pageReminders" data-msg=pick_pageReminders id="btnPageReminders"></button>
+          <button data-page="pageExporter" data-msg=pick_pageExporter></button>
+          <button data-page="pageCustom" data-msg=pick_pageCustom></button>
+          <button data-page="pageSetup" data-msg=pick_pageSetup></button>
+        </div>
+      </div>
+    </div>
+    <div class="mainBottom">
+      <div id=explain class="explains"></div>
+      <div id=explain2 class="explains"></div>
+      <textarea id=sampleCopy></textarea>
+      <div class="iconArea">
+        <div id=tips>
+          <span data-msg="tips,title:tipsText"></span>
+          <span data-msg="tipsAbout,title:tipsAboutText"></span>
+        </div>
+
+        <a id=version class=textLink href="" target="version"></a>
+
+        <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools"
+           rel="publisher" style="text-decoration: none;">
+          <img src="fb-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
+        </a>
+
+        <a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png"></a>
+
+        <a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3"
+           rel="publisher" style="text-decoration: none;">
+          <img src="gplus-16.png" data-msg="alt:googlePlus" style="border: 0; width: 16px; height: 16px;" />
+        </a>
+
+
+        <a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
+
+
+        <img id="btnOpen" src="popout.png" />
+        <img id="btnPrint" src="print.png" />
+
+        <span id=shortcutKeys data-msg="title:shortcutKeyTitle"></span>
+
+      </div>
+
+
+    </div>
+  </div>
+  <script src="jquery-ui.min.js"></script>
+  <script src="holydays.js"></script>
+  <script src="sharedBrowser.js"></script>
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+  <script src="cal1.js"></script>
+  <script src="cal2.js"></script>
+  <script src="calWheel.js"></script>
+  <script src="calGreg.js"></script>
+  <script src="pageReminders.js"></script>
+  <script src="pagePlanner.js"></script>
+  <script src="pageExporter.js"></script>
+  <script src="pageCustom.js"></script>
+  <script src="misc/moment-timezone-with-data.min.js"></script>
+  <!--<script src="presenteer.js"></script>-->
 </body>
 </html>

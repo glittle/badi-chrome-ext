@@ -33,7 +33,7 @@
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
   "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Azamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sultán,Mulk,`Alá’",
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Raḥmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sulṭán,Mulk,`Alá’",
     "description": "month names, start with Ayyam-i-Ha"
   },
   "browserActionTitle": {
@@ -746,7 +746,7 @@
     "message": "was at {time}"
   },
   "pick_pageCal1": {
-    "message": "Calendar - Compact"
+    "message": "Year View"
   },
   "pick_pageCal2": {
     "message": "Calendar"
@@ -1225,7 +1225,7 @@
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Shows today's date in the Badí' calendar, the official calendar of the Bahá'í Faith.",
+    "message": "Shows today's date in the Wondrous (Badí') calendar, the official calendar of the Bahá'í Faith.",
     "description": "Used in the manifest"
   },
   "Tonight": {
@@ -1311,5 +1311,13 @@
   "setupAboutPara": {
     "message": "<p>This Web Extension is designed to provide current information about the Badí' calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
     "description": "explanation of "
+  },
+  "cal2ShowTimes": {
+    "message": "Show <u>t</u>imes",
+    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+  },
+  "cal2DarkerColors": {
+    "message": "Darker <u>c</u>olors",
+    "description": "a check box on the calendar. If checked, darker colors are used."
   }
 }

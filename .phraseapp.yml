@@ -25,6 +25,9 @@
     - file: "./_locales/pt_PT/messages.json" 
       params:
         locale_id: pt_PT
+    - file: "./_locales/de/messages.json" 
+      params:
+        locale_id: de
     - file: "./_locales/ta/messages.json" 
       params:
         locale_id: ta
