@@ -33,7 +33,7 @@
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
   "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Raḥmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sulṭán,Mulk,`Alá’",
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
     "description": "month names, start with Ayyam-i-Ha"
   },
   "browserActionTitle": {
