@@ -1,3 +1,4 @@
 extension.*.zip
-ChromeBadiExtension.sln.DotSettings.user
-.vs/ChromeBadiExtension/v14/.suo
+*.suo
+*.zip
+*.user
