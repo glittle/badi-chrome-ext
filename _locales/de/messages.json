@@ -1,0 +1,714 @@
+{
+  "1day": {
+    "message": ""
+  },
+  "actionSpeakDesc": {
+    "message": "Die Erinnerung wird in dieser Stimme vorgelesen:",
+    "description": "in edit area when asking for a relative time"
+  },
+  "afterSunset": {
+    "message": "Abend - nach Sonnenuntergang"
+  },
+  "arabic": {
+    "message": "",
+    "description": "on List page - table heading"
+  },
+  "bDatePickerTitle": {
+    "message": "Zum <u>B</u>adí' Datum springen",
+    "description": "added <u></u> - should have one letter between <u> and </u>"
+  },
+  "beforeSunset": {
+    "message": "Tag - vor Sonnenuntergang"
+  },
+  "bMonthMeaning": {
+    "message": "Eingeschobene Tage,Herrlichkeit,Ruhm,Schönheit,Größe,Licht,Barmherzigkeit,Worte,Vollkommenheit,Namen,Macht,Wille,Wissen,Kraft,Sprache,Fragen,Ehre,Souveränität,Herrschaft,Erhabenheit",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "browserActionTitle": {
+    "message": "Lädt",
+    "description": "Shown until the dynamic tip is created"
+  },
+  "browserMenuOpen": {
+    "message": "In einem Tab öffnen",
+    "description": "shown as menu item when right-clicking on the browser icon "
+  },
+  "btnCustomBuilderCancel": {
+    "message": "Abbrechen / Neu"
+  },
+  "btnEveOrDay": {
+    "message": "Vor / Nach Sonnenuntergang"
+  },
+  "btnJumpTo": {
+    "message": "Los"
+  },
+  "btnJumpToTitle": {
+    "message": "So viele Tage vorwärts oder rückwärts springen",
+    "description": "tooltip"
+  },
+  "btnPlannerExportCsv": {
+    "message": "Zu Excel exportieren",
+    "description": "button - export to Comma Separated Value format for import into Excel"
+  },
+  "btnPlannerExportICal": {
+    "message": "iCal exportieren",
+    "description": "button - export to iCalendar format"
+  },
+  "btnPlannerHelperFeasts": {
+    "message": "19-Tage-Feste",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD1": {
+    "message": "Feiertage (arbeitsfrei)",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD2": {
+    "message": "All Feiertage",
+    "description": "helper button"
+  },
+  "btnPlannerHelperNone": {
+    "message": "Keines",
+    "description": "helper button"
+  },
+  "btnPlannerHelperRid": {
+    "message": "Riḍván",
+    "description": "helper button"
+  },
+  "btnPlannerHelperTHB": {
+    "message": "Zwillingsgeburtstage",
+    "description": "helper button"
+  },
+  "btnReminderCancel": {
+    "message": "Abbrechen",
+    "description": "cancel changes and close the edit area"
+  },
+  "btnReminderDelete": {
+    "message": "Löschen",
+    "description": "delete a reminder"
+  },
+  "btnReminderEdit": {
+    "message": "Bearbeiten",
+    "description": "shown next to each reminder. Click to edit the reminder."
+  },
+  "btnReminderSave": {
+    "message": "<u>S</u>peichern",
+    "description": "Save the changes and close the edit area"
+  },
+  "btnReminderSaveNew": {
+    "message": "Als Erinnerung Speichern",
+    "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+  },
+  "btnReminderTest": {
+    "message": "Jetzt testen",
+    "description": "show a sample of the reminder now"
+  },
+  "btnRetry2": {
+    "message": "Jetzt neu laden"
+  },
+  "bWeekDayMeaning": {
+    "message": ",Ruhm,Schönheit,Vollkommenheit,Gnade,Gerechtigkeit,Majestät,Unabhängigkeit",
+    "description": "start with Saturday"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
+  },
+  "bYearInVahidMeaning": {
+    "message": ",A,B,Vater,D,Tor,V,Ewigkeit,Edelmut,Herrlichkeit,Liebe,Entzückend,Antwort,Einzig,Mildtätig,Zuneigung,Anfang,Strahlend,Überaus Strahlend,Einheit",
+    "description": "Vahid names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
+  "Chrome_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history?hl=de",
+    "description": "about page"
+  },
+  "Chrome_WebStore": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/?hl=de",
+    "description": "link to Webstore when running in Chrome"
+  },
+  "Chrome_WebStoreSupport": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support?hl=de",
+    "description": "link to Webstore support link when running in Chrome"
+  },
+  "copied": {
+    "message": "Kopiert!",
+    "description": "short message that replaces sample format button text when button is clicked"
+  },
+  "currentFocus": {
+    "message": "Aktueller Tag",
+    "description": "in wheel, points to today, or whatever day is currently selected"
+  },
+  "customBtnCopy": {
+    "message": "Kopieren"
+  },
+  "customBuilder": {
+    "message": "Benutzerdefiniertes Datumsformat erstellen"
+  },
+  "customBuilderIntro": {
+    "message": "Geben Sie das Format in dieses Feld ein. <span class=customHint title='...NamePri = in der Primärsprache\n...NameSec = in der Sekundärsprache\nfrag1... = Sonnenuntergang bis Mitternacht\nfrag2... = Mitternacht bis Sonnenuntergang'>(Hinweise Anzeigen)</span><br>Klicken Sie auf den \"Hinzufügen\" Button bei einem verfügbaren Datumssegment um es an der aktuellen Cursorposition einzufügen."
+  },
+  "customDefined": {
+    "message": "Benutzerdefinierte Datumsformate"
+  },
+  "customIntroClick": {
+    "message": "\"Kopieren\" kopiert das formatierte Datum in die Zwischenablage"
+  },
+  "customLoadLetters": {
+    "message": "Wählen Sie eines der Standardformate aus:"
+  },
+  "customPartsList": {
+    "message": "Verfügbare Datumssegmente"
+  },
+  "customSelectForFrontPage": {
+    "message": "Box anklicken, um ein Benutzerdefiniertes Format auf der {0} Seite anzuzeigen."
+  },
+  "customTitle": {
+    "message": "Datumsformatkonfiguration"
+  },
+  "customUseAsSample": {
+    "message": "Als Beispiel verwenden?"
+  },
+  "dateHeading": {
+    "message": "Tag",
+    "description": "heading in Events listing"
+  },
+  "dayEndedFuture": {
+    "message": "Endet"
+  },
+  "dayEndedPast": {
+    "message": "Endete"
+  },
+  "DayOfMonth": {
+    "message": "Tag im Monat"
+  },
+  "DayOfMonthFormat": {
+    "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+  },
+  "DayOfWeek": {
+    "message": "Wochentag"
+  },
+  "DayOfWeekFormat": {
+    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+  },
+  "dayStartedFuture": {
+    "message": "Beginnt"
+  },
+  "dayStartedPast": {
+    "message": "Begann"
+  },
+  "elements": {
+    "message": "Feuer,Luft,Wasser,Erde",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "Ended": {
+    "message": "Endete",
+    "description": "Shown in the upcoming dates area"
+  },
+  "endingWithSunset": {
+    "message": "Endet mit Sonnenuntergang um {0}"
+  },
+  "equiv": {
+    "message": "Equivalent",
+    "description": "on List page - table heading"
+  },
+  "eraAbbrev": {
+    "message": "B.E."
+  },
+  "eraLong": {
+    "message": "Bahá'í Ära"
+  },
+  "eraShort": {
+    "message": "BE"
+  },
+  "exportAlert_B1": {
+    "message": "1 Minute vor"
+  },
+  "exportDayFromSunset": {
+    "message": ""
+  },
+  "exporterDateRange": {
+    "message": "Export-Datumsspanne (laut aktuell gewähltem Jahr)"
+  },
+  "exporterFastEnd": {
+    "message": "Fastenzeit endet",
+    "description": "when the fast ends at sunset"
+  },
+  "exporterFastStart": {
+    "message": "Fastenzeit beginnt",
+    "description": "when the fast starts at sunrise"
+  },
+  "exporterFastUntil": {
+    "message": "Fasten bis {endingSunsetDesc}"
+  },
+  "exporterItemDescDay": {
+    "message": "Ein Tag im Badí' Kalender.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescFast": {
+    "message": "Zeiten für die jährliche Bahá'í-Fastenzeit.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescGeneralTime": {
+    "message": "Versammlung kann zu jeder Zeit an diesem Badí' Tag beginnen.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterItemDescShared": {
+    "message": "Sonnenauf- und untergangszeiten für {location}. Generiert mit http://bit.ly/BadiChrome.",
+    "description": "Be sure the URL is not translated!"
+  },
+  "exporterTitle": {
+    "message": "Badí' Kalender Exporter",
+    "description": "title on page"
+  },
+  "exportFile": {
+    "message": "iCalender Datei (.ics) herunterladen"
+  },
+  "exportGregYear0": {
+    "message": "Gregorianisches Jahr - {0} n. Chr."
+  },
+  "exportGregYear1": {
+    "message": "Gregorianisches Jahr - {0} n. Chr."
+  },
+  "exportHideTest": {
+    "message": "Verstecken"
+  },
+  "exportIncludeAlert": {
+    "message": "Einen Alarm zu jedem Ereignis hinzufügen (funktioniert möglicherweise nicht mit Google calendar)"
+  },
+  "exportIncludeLocation": {
+    "message": "Standortsinformation"
+  },
+  "exportIntro": {
+    "message": "Wichtig! Informationen und Warnungen auf <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">dieser Webseite</a>!",
+    "description": "Be sure the URL remains in English, to find the webpage!"
+  },
+  "exportName": {
+    "message": "Title für den exportierten Kalender (wird möglicherweise nicht verwendet)"
+  },
+  "exportNumToInclude": {
+    "message": "Anzahl der Kalendereinträge die erstellt werden (ungefähr):"
+  },
+  "exportQuickPick3": {
+    "message": "3. Fastenzeit - Abend"
+  },
+  "exportQuickPick3Text": {
+    "message": "Sonnenuntergang, mit Alarm."
+  },
+  "exportQuickPickClearText": {
+    "message": "Einstellungen zurücksetzen"
+  },
+  "exportQuickPicks": {
+    "message": "Empfohlene Ereignissets."
+  },
+  "exportRangeFullRange": {
+    "message": "Alle Kalendereinträge exportieren (Andernfalls wird nur eine Beispielsauswahl exportiert)."
+  },
+  "exportTest": {
+    "message": "Zum Kopieren anzeigen"
+  },
+  "exportWhatTitle": {
+    "message": "Auswählen, was exportiert werden soll."
+  },
+  "exportWhatToInclude": {
+    "message": "Optionen"
+  },
+  "facebook": {
+    "message": "Facebook",
+    "description": "ALT for icon at bottom of page"
+  },
+  "fastDaysTitle": {
+    "message": "Fastenzeit im Jahr {bYear}"
+  },
+  "fastGDate": {
+    "message": "Datum",
+    "description": "heading in Fast days listing"
+  },
+  "FeastOf": {
+    "message": "19-Tagefest {0}",
+    "description": "The localized name of the Feast will be put into {0}"
+  },
+  "FestivalRidvan": {
+    "message": "Riḍván-Fest"
+  },
+  "Firefox_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history?hl=de",
+    "description": "about page"
+  },
+  "Firefox_WebStore": {
+    "message": "https://addons.mozilla.org/de/firefox/addon/bad%C3%AD-calendar/",
+    "description": "link to Webstore when running in Firefox"
+  },
+  "Firefox_WebStoreSupport": {
+    "message": "https://addons.mozilla.org/de/firefox/addon/bad%C3%AD-calendar/",
+    "description": "link to Webstore support link when running in Firefox"
+  },
+  "formatIconClick": {
+    "message": "(weitere Details)"
+  },
+  "future_Day": {
+    "message": "Beginnt um {time}",
+    "description": "shown in the eve of the day"
+  },
+  "future_Delta": {
+    "message": "in {numUnits}"
+  },
+  "future_DeltaTime": {
+    "message": "in {numUnits} um {time}"
+  },
+  "gWeekdayShort": {
+    "message": "So,Mo,Di,Mi,Do,Fr,Sa",
+    "description": "start with Sun"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Hinscheiden `Abdu’l-Bahás"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Hinscheiden Bahá’u’lláhs"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Geburt des Báb"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Geburt Bahá’u’lláhs"
+  },
+  "HolyDay_Covenant": {
+    "message": "Tag des Bundes"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Erklärung des Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Märtyrertod des Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw-Rúz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Erster Riḍván-Tag"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Zwölfter Riḍván-Tag"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Neunter Riḍván-Tag"
+  },
+  "includeFeasts": {
+    "message": "19-Tage<u>f</u>este",
+    "description": "choosing what to include in the listing"
+  },
+  "includeHolyDays": {
+    "message": "Feiertage",
+    "description": "choosing what to include in the listing"
+  },
+  "includeThese": {
+    "message": "Anzeigen",
+    "description": "choosing what to include in the listing"
+  },
+  "Intercalary": {
+    "message": "Eingeschobene Tage"
+  },
+  "jumpTo": {
+    "message": "Tage springen",
+    "description": "user can enter a day after/before currently selected day"
+  },
+  "keyToOpenInTab": {
+    "message": "T",
+    "description": "Press Shift+(this letter) to open into a tab"
+  },
+  "Kullishay": {
+    "message": "Kull-i-<u>Sh</u>ay’"
+  },
+  "KullishayFormat": {
+    "message": "{bKullishay}"
+  },
+  "MonthFormatAyyam": {
+    "message": "{bMonthNamePri} ({bMonthNameSec})"
+  },
+  "noLocationName": {
+    "message": "(Aktueller Standort)",
+    "description": "If the internet is not available, to get the name of the current location."
+  },
+  "noReminders": {
+    "message": "Beispielserinnerung hinzufügen",
+    "description": "shown if there are no reminders"
+  },
+  "Now": {
+    "message": "Jetzt",
+    "description": "Shown in the upcoming dates area"
+  },
+  "num": {
+    "message": "#",
+    "description": "on List page - table heading"
+  },
+  "numUnits": {
+    "message": "{num} {units}",
+    "description": "eg. 5 days, 1 minute, 3 hours"
+  },
+  "past_Delta": {
+    "message": "war vor {numUnits}"
+  },
+  "past_DeltaTime": {
+    "message": "war vor {numUnits} um {time}"
+  },
+  "past_StartDeltaTime": {
+    "message": "begann vor {numUnits} um {time}"
+  },
+  "past_StartTime": {
+    "message": "begann um {time}"
+  },
+  "past_Time": {
+    "message": "war um {time}"
+  },
+  "pick_pageCal1": {
+    "message": "Jahr"
+  },
+  "pick_pageCalGreg": {
+    "message": "Gregorianisches Jahr",
+    "description": "tab name"
+  },
+  "pick_pageCalWheel": {
+    "message": "Rad",
+    "description": "tab name"
+  },
+  "pick_pageCustom": {
+    "message": "Benutzerdefiniert",
+    "description": "page tab name and page title"
+  },
+  "pick_pageDay": {
+    "message": "Tag"
+  },
+  "pick_pageEvents": {
+    "message": "Ereignisse",
+    "description": "showing Feast and Holy Days"
+  },
+  "pick_pageExporter": {
+    "message": "Export",
+    "description": "page tab name and page title"
+  },
+  "pick_pageFast": {
+    "message": "Fastenzeit"
+  },
+  "plannerTitle2": {
+    "message": "Auswahl",
+    "description": "title over inputs"
+  },
+  "plannerWhatEvent": {
+    "message": "Welche?",
+    "description": "which event or events?"
+  },
+  "plannerWhatManyEvents": {
+    "message": "mehrere Feiertage und 19-Tagefeste",
+    "description": "answer to first question"
+  },
+  "plannerWhatOneEvent": {
+    "message": "ein Feiertag oder 19-Tagefest",
+    "description": "answer to first question"
+  },
+  "planUntilUnitsYears": {
+    "message": "Jahre",
+    "description": "answer to planUntilWhen"
+  },
+  "planUntilWhen": {
+    "message": "Für wie lange?",
+    "description": "another question"
+  },
+  "pressKeyOrClick": {
+    "message": "Button anklicken oder {0} eingeben.",
+    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+  },
+  "pressToCopy": {
+    "message": "Taste drücken um das formatierte Datum in die Zwischenablage zu kopieren:",
+    "description": "Can click button with mouse, or press matching key on keyboard"
+  },
+  "prevYear": {
+    "message": "Voriges Jahr",
+    "description": "hold Shift and press left arrow key"
+  },
+  "prevYearTitle": {
+    "message": "Umschalttaste + linke Pfeiltaste drücken um das voriger Jahr anzuzeigen",
+    "description": "hold Shift and press left arrow key"
+  },
+  "rbDefLangText": {
+    "message": "Sprache für Monate etc."
+  },
+  "rbDefLang_Ar": {
+    "message": "Arabisch",
+    "description": "Shown on the main page (see screenshot in PhraseApp)"
+  },
+  "rbDefLang_Local": {
+    "message": "",
+    "description": "put your language here, in your script"
+  },
+  "reminderAction_speak": {
+    "message": "Laut vorlesen",
+    "description": "in dropdown list, to choose to read the alert"
+  },
+  "reminderHolyDay": {
+    "message": "Der Feiertag, \"{0}\","
+  },
+  "reminderList_bday": {
+    "message": "Tag {num} um {triggerTimeRawDisplay}",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_onload": {
+    "message": "{num} {units} nach",
+    "description": "in list of defined reminders"
+  },
+  "reminderList_timeAbsolute": {
+    "message": "um {triggerTimeRawDisplay} ankündigen",
+    "description": "in list of defined reminders"
+  },
+  "reminderNum_days": {
+    "message": "Tag(e)",
+    "description": "unknown number of days"
+  },
+  "reminderNum_days_1_more": {
+    "message": "Tag;Tage",
+    "description": "single;plural"
+  },
+  "reminderNum_hours": {
+    "message": "Stunde(n)"
+  },
+  "reminderNum_hours_1_more": {
+    "message": "Stunde;Stunden"
+  },
+  "reminderNum_minutes": {
+    "message": "Minute(n)"
+  },
+  "reminderNum_minutes_1_more": {
+    "message": "Minute;Minuten"
+  },
+  "reminderNum_seconds": {
+    "message": "Sekunde(n)"
+  },
+  "reminderNum_seconds_1_more": {
+    "message": "Sekunde;Sekunden"
+  },
+  "remindersDefined": {
+    "message": "Ihre Erinnerungen",
+    "description": "title on right side"
+  },
+  "reminderSelectTrigger": {
+    "message": "Erinnerung hinzufügen...",
+    "description": "in dropdown, when no trigger is selected"
+  },
+  "reminderShowAt": {
+    "message": "Anzeigen um",
+    "description": "in front of time of day input"
+  },
+  "remindersScheduled": {
+    "message": "Heute von {time} bis Mitternacht",
+    "description": "title on left side"
+  },
+  "reminderTagline": {
+    "message": "(angezeigt um {when})",
+    "description": "shown on the bottom of each reminder popoup"
+  },
+  "reminderTestTagline": {
+    "message": "(angezeigt um {when})",
+    "description": "shown on the bottom of popoup when tested"
+  },
+  "sampleGroup1_10": {
+    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+    "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+  },
+  "sampleGroup1_24": {
+    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+    "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+  },
+  "sampleGroup1_3": {
+    "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+    "description": "Jamal 4, 172 -> 7:55pm"
+  },
+  "startedWithSunset": {
+    "message": "Begann mit dem Sonnenuntergang um {0}"
+  },
+  "suggestions": {
+    "message": "Vorschläge?"
+  },
+  "suggestionsTitle": {
+    "message": "Bitte klicken Sie hier für Vorschläge zum Verbessern dieser Extension!"
+  },
+  "sunriseFastHeading": {
+    "message": "Sonnenaufgang",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetFastHeading": {
+    "message": "Sonnenuntergang",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetHeading": {
+    "message": "Beginn des Badí'-Tages",
+    "description": "heading in Events listing"
+  },
+  "suspendWorkHeading": {
+    "message": "arbeitsfrei",
+    "description": "heading in Events listing"
+  },
+  "tipsAbout": {
+    "message": "Genauigkeit?"
+  },
+  "tipsAboutText": {
+    "message": "Daten bis 221 B.E. (2064 n. Chr.) sind bekannt. Danach sind möglicherweise Updates erforderlich basierend auf genaueren Astronomischen Berechnungen. Bitte benutzen sie diese Extension nicht für Pläne mehr als 50 Jahre in der Zukunft. Mehr Details auf der Webseite."
+  },
+  "tipsText": {
+    "message": "Bild hoch/Bild runter um Unterseite auszuwählen.\nPfeil rechts/links um das Datum zu ändern.\n\"/\" um zwischen vor und nach Sonnenuntergang umzustellen.\nPos 1 um zum heutigen Tag zurückzuschalten!\nStrg+Umschalt+A um die Sprache zu ändern."
+  },
+  "title": {
+    "message": "Badí' Kalender",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "Zeigt das heutige Datum im Badí' Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
+    "description": "Used in the manifest"
+  },
+  "Tonight": {
+    "message": "Heute nacht",
+    "description": "Shown in the upcoming dates area"
+  },
+  "translation": {
+    "message": "de",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "upcomingTitle": {
+    "message": "Zukünftige Feste, Feiertage und andere Ereignisse"
+  },
+  "use24HourClock": {
+    "message": "nein",
+    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+  },
+  "Vahid": {
+    "message": "Váḥid"
+  },
+  "VahidFormat": {
+    "message": "{bVahid}"
+  },
+  "VahidLocal": {
+    "message": "Einheit"
+  },
+  "version": {
+    "message": "Version {0}"
+  },
+  "webstore": {
+    "message": "Webstore"
+  },
+  "weekDayNames": {
+    "message": "Namen der Wochentage",
+    "description": "on List page - table caption"
+  },
+  "YearOfEra": {
+    "message": "Jahr der Bahá'í Ära"
+  },
+  "YearOfEraFormat": {
+    "message": "{bYear}"
+  },
+  "YearOfVahid": {
+    "message": "Jahr im {VahidLabelPri}"
+  }
+}
