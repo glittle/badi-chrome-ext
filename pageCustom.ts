@@ -78,13 +78,18 @@ var PageCustom = () => {
 
     var startPos = rawInput.selectionStart;
     var endPos = rawInput.selectionEnd;
+    if (endPos === rawInput.value.length && endPos > 0) {
+      template = ' ' + template; // if at the end of the input, add a space
+    }
+
     var before = rawInput.value.substring(0, startPos);
     rawInput.value = before + template + rawInput.value.substring(endPos, rawInput.value.length);
 
     input.focus().trigger('change');
 
-    rawInput.selectionStart = startPos;
-    rawInput.selectionEnd = startPos + template.length;
+    rawInput.selectionStart = 
+      rawInput.selectionEnd = startPos + template.length;
+
   }
 
   function saveEdits() {
@@ -304,10 +309,10 @@ var PageCustom = () => {
 
 
   function loadFormatsFromSync() {
-    var localLoad = function() {
+    var localLoad = function () {
       chrome.storage.local.get({
         customFormats: []
-      }, function(info: any) {
+      }, function (info: any) {
         if (chrome.runtime.lastError) {
           log(chrome.runtime.lastError);
         }
@@ -326,7 +331,7 @@ var PageCustom = () => {
 
       chrome.storage.sync.get({
         customFormats: []
-      }, function(info: any) {
+      }, function (info: any) {
         if (chrome.runtime.lastError) {
           log(chrome.runtime.lastError);
         }

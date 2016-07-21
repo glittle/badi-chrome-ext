@@ -1,7 +1,7 @@
 *.zip
+*.xpi
 *.sln
 *.user
-*.xpi
 *.cmd
 *.ts
 *.map
@@ -13,6 +13,5 @@
 .vscode
 MakeZip*
 Readme.md
-.vscode
 tsconfig*
 compilerconfig*

@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: Geneva, 'Segoe UI';
   font-size: 9pt;
-  overflow: hidden;
 }
 
 #mainBody {
@@ -55,7 +54,7 @@ body {
   flex-direction: column;
 }
 
-#pageDay, #pageEvents, #pageFast, #pageLists, #pageCal1, #pageReminders, #pageExporter, #pageCustom, #pagePlanner {
+#pageDay, #pageEvents, #pageFast, #pageLists, #pageCal1, #pageReminders, #pageExporter, #pageSetup, #pageCustom, #pagePlanner {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -206,6 +205,17 @@ body {
 
   #btnReminderCancel {
     margin-right: 20px;
+  }
+}
+
+#pageSetup {
+  > div {
+    border: 1px solid @green;
+    border-radius: 3px;
+    margin-left: 4px;
+    justify-content: flex-end;
+    flex: 0 1 100%;
+    padding: 10px;
   }
 }
 
@@ -560,13 +570,14 @@ body {
 
     > ol {
       -webkit-padding-start: 13px;
-      li{
+
+      li {
         margin: 0 0 5px 0;
       }
     }
   }
 
-  #plannerResultsDiv{
+  #plannerResultsDiv {
     max-height: 450px;
     overflow: auto;
   }
@@ -597,7 +608,8 @@ body {
       &.plannerNewYear {
         font-weight: bold;
       }
-      &.plannerDate{
+
+      &.plannerDate {
         white-space: nowrap;
       }
     }
@@ -1079,15 +1091,15 @@ body.pt_PT #sampleTitle {
   white-space: normal;
 }
 
-#specialListsTable tr.SpecialTime td.eventTime {
+/*#specialListsTable tr.SpecialTime td.eventTime {
   color: blue;
   font-style: italic;
   padding-left: 20px;
-}
+}*/
 
 #specialListsTable .forHD.time {
-  font-style: normal;
-  margin-left: -20px;
+  font-style: italic;
+  margin-left: 25px;
   display: block;
 }
 

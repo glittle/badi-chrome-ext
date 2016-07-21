@@ -35,7 +35,7 @@
             <input class=bVahidPicker type=number max=20 min=0>
           </div>
           <div>
-            <span data-msg="YearOfVahid"></span>
+            <span data-msg="YearOfVahid" data-msg-di="true"></span>
             <input class=bYearInVahidPicker type=number max=20 min=0>
           </div>
         </div>
@@ -180,7 +180,7 @@
           <tbody id=monthListBody></tbody>
         </table>
         <table>
-          <caption data-msg="YearOfVahid"></caption>
+          <caption data-msg="YearOfVahid" data-msg-di="true"></caption>
           <thead>
             <tr>
               <th data-msg=num></th>
@@ -585,7 +585,7 @@
         <div>
           <div class="plannerResultButtons">
             <button class="button" type="button" id="btnPlannerExportCsv" data-msg="_id_"></button>
-            <button class="button" type="button" id="btnPlannerExportICal" data-msg="_id_"></button>
+            <!--<button class="button" type="button" id="btnPlannerExportICal" data-msg="_id_"></button>-->
           </div>
           <h2 class="NoPrint" data-msg="plannerResults"></h2>
           <div id="plannerResultsDiv">
@@ -593,6 +593,24 @@
               <thead id="plannerResultsHead"></thead>
               <tbody id="plannerResultsBody"></tbody>
             </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="pageSetup" class="fullPage page">
+        <div>
+          <h3 data-msg="setupAboutTitle"></h3>
+          <p data-msg="setupAboutPara"></p>
+          <p data-msg="tipsAboutText"></p>
+        </div>
+        <div>
+          <h3 data-msg="setupOptOutTitle"></h3>
+          <p data-msg="setupOptOutPara"></p>
+          <div>
+            <label>
+              <span data-msg="setupOptOut"></span>
+              <input type="checkbox" id="setupOptOut" />
+            </label>
           </div>
         </div>
       </div>
@@ -610,6 +628,7 @@
           <button data-page="pagePlanner" data-msg=pick_pagePlanner></button>
           <button data-page="pageExporter" data-msg=pick_pageExporter></button>
           <button data-page="pageCustom" data-msg=pick_pageCustom></button>
+          <button data-page="pageSetup" data-msg=pick_pageSetup></button>
         </div>
       </div>
     </div>
@@ -652,7 +671,6 @@
     </div>
   </div>
   <script src="jquery-ui.min.js"></script>
-  <script src="google-analytics-bundle.js"></script>
   <script src="holydays.js"></script>
   <script src="sharedBrowser.js"></script>
   <script src="shared.js"></script>

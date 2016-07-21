@@ -62,11 +62,14 @@ var PageCustom = () => {
         var rawInput = input[0];
         var startPos = rawInput.selectionStart;
         var endPos = rawInput.selectionEnd;
+        if (endPos === rawInput.value.length && endPos > 0) {
+            template = ' ' + template; // if at the end of the input, add a space
+        }
         var before = rawInput.value.substring(0, startPos);
         rawInput.value = before + template + rawInput.value.substring(endPos, rawInput.value.length);
         input.focus().trigger('change');
-        rawInput.selectionStart = startPos;
-        rawInput.selectionEnd = startPos + template.length;
+        rawInput.selectionStart =
+            rawInput.selectionEnd = startPos + template.length;
     }
     function saveEdits() {
         var editInput = $('#customBuilderInput');

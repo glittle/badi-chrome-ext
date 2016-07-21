@@ -47,6 +47,12 @@
   "endingWithSunset": {
     "message": "با غروب در {0} پایان می یابد"
   },
+  "eraLong": {
+    "message": "دور بهائی"
+  },
+  "eraShort": {
+    "message": "بدیع"
+  },
   "example2": {
     "message": "{bMonthNamePri}{bDay}{dayStartedLower} از غروب (تقریباً) {startingSunsetDesc} در {frag1WeekdayLong}{frag1MonthShort}{frag1Day} و {dayEndedLower} غروب تقریباً {endingSunsetDesc} در {frag2WeekdayLong}{frag2MonthShort}{frag2Day}"
   },
@@ -85,7 +91,7 @@
     "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
   },
   "Firefox_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/chrome-extension/history",
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
   },
   "formatIconToolTip": {
@@ -109,6 +115,10 @@
   "gWeekdayLong": {
     "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
     "description": "start with Sunday"
+  },
+  "gWeekdayShort": {
+    "message": "یکشنبه،دوشنبه،سه شنبه،چهار شنبه،پنجشنبه،جمعه،شنبه",
+    "description": "start with Sun"
   },
   "HolyDay_AscAbdul": {
     "message": "صعود حضرت عبدالبهاء"
@@ -142,6 +152,10 @@
   "plannerShowWhat": {
     "message": "چه چیزی را نشان بدهد؟ ",
     "description": "First question in inputs"
+  },
+  "pressToCopy": {
+    "message": "برای کُپی کردن تاریخ به کلیپبورد کمه را فشار دهید",
+    "description": "Can click button with mouse, or press matching key on keyboard"
   },
   "rbDefLang_Ar": {
     "message": "عربی",
@@ -179,6 +193,9 @@
   "sampleGroup1_6": {
     "message": "{bDay}{bMonthNamePri}{bMonthNameSec}{bYear}",
     "description": "1 Jamal (Beauty) 172"
+  },
+  "suggestions": {
+    "message": "پیشنهاد ها"
   },
   "title": {
     "message": "تقویم بدیع",

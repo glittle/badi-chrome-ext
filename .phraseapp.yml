@@ -1,10 +1,15 @@
 ﻿phraseapp:
-  access_token: "2eee0bce0d34b2a71200e8041fc119af4a9a3e21"
   project_id: "ff27c47569442cc984f4a9a522013c90"
   file_format: "json" 
   push:
     sources:
-    - file: "./_locales/<locale_name>/messages.json"
+    - file: "./_locales/en/messages.json"
+      params:
+        locale_id: en
+        update_translations: true
+
   pull:
     targets:
-    - file: "./_locales/<locale_name>/messages.json" 
+    - file: "./_locales/<locale_code>/messages.json" 
+      params:
+        locale_id: <locale_code>
