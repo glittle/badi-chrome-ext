@@ -542,7 +542,7 @@
     "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
-    "message": "",
+    "message": "Deutsche",
     "description": "put your language here, in your script"
   },
   "reminderAction_speak": {
