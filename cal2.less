@@ -3,382 +3,386 @@
 @borderWidth: 3px;
 
 #pageCal2 {
-  position: relative;
-  padding-bottom: 16px;
-  padding-top: 7px;
-
-
-  .placeName {
-    display: none;
-  }
-
-  .sunsetEnd, .sunsetStart span, .sunrise {
-    display: none;
-  }
-
-  .calendar {
-    margin-left: 5px;
-    overflow: auto;
-    max-height: 497px;
     position: relative;
+    padding-bottom: 16px;
+    padding-top: 7px;
 
-    &.showTimes {
-      .placeName {
-        display: block;
-        font-style: italic;
-        font-size: 80%;
-        max-width: 220px;
-        margin-top: 5px;
-      }
 
-      .sunsetEnd, .sunsetStart span {
-        display: inline;
-      }
-
-      .sunrise {
-        display: block;
-      }
-    }
-  }
-
-  @dayWidth: 124px;
-
-  .month {
-    position: relative;
-    margin: 10px 0px 11px 6px;
-    padding: 5px 6px;
-    border-radius: 4px;
-    width: @dayWidth * 6;
-  }
-
-  .monthDays {
-  }
-
-  .caption {
-    position: absolute;
-    top: 0;
-    right: 6px;
-    text-align: right;
-  }
-
-  .bMonthInfo {
-    font-size: 11pt;
-  }
-
-  .gMonthInfo {
-    font-size: 11pt;
-  }
-
-  .monthNames {
-    font-size: 17pt;
-    font-weight: bold;
-  }
-
-  .dayRow {
-    table-layout: fixed;
-    border-spacing: 0;
-    margin-top: -1px;
-
-    td {
-      padding: 0;
-    }
-  }
-
-  .dayGroup0 {
-
-    .dayCell {
-      background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
-      width: 100px;
+    .placeName {
+        display: none;
     }
 
-    .dayName {
-      display: none;
-    }
-  }
-
-  @gradientEnd: 30px;
-  @endColor: rgba(255,255,255,0);
-
-  .dayGroup1 {
-    width: @dayWidth * 3;
-
-    .dayCell {
-      background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
-    }
-  }
-
-  .dayGroup2 {
-    width: @dayWidth * 4;
-
-    .dayCell {
-      background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
-    }
-  }
-
-  .dayGroup3 {
-    width: @dayWidth * 6;
-
-    .dayCell {
-      background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
-    }
-  }
-
-  .dayGroup4 {
-    width: @dayWidth * 6;
-
-    .dayCell {
-      background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
-    }
-  }
-
-  .mGroup0 {
-    height: 390px; // keep it big
-  }
-
-  .mGroup1 .monthElement {
-    background-color: @lightFire;
-  }
-
-  .mGroup2 .monthElement {
-    background-color: @lightAir;
-  }
-
-  .mGroup3 .monthElement {
-    background-color: @lightWater;
-  }
-
-  .mGroup4 .monthElement {
-    background-color: @lightEarth;
-  }
-
-  .monthElement {
-    display: inline-block;
-    margin: 0 0 0 10px;
-    padding: 1px 10px 3px 10px;
-    border-radius: 5px;
-  }
-
-  .dayCell {
-    position: relative;
-    height: 100px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    margin: 0 0 0 -1px;
-  }
-
-  .night {
-    position: relative;
-    text-align: right;
-
-    .gStart {
-      display: inline-block;
-      font-size: .55rem;
-      text-align: right;
-      margin: 4px 2px 0 0;
-      padding: 2px 3px 3px 4px;
-      border-top: 1px solid #ddd;
-      border-left: 1px solid #ddd;
-      border-top-left-radius: 5px;
-    }
-  }
-
-  .hdName {
-    color: darkblue;
-    font-weight: bold;
-    padding: 0 4px;
-  }
-
-  .top {
-    line-height: 14px;
-    height: @gradientEnd - 10;
-    text-align: right;
-
-    .dayNum {
-      font-weight: bold;
-      position: absolute;
-      left: 3px;
-    }
-  }
-
-  .day {
-    position: relative;
-  }
-
-  .sunrise {
-    margin: 3px 2px 0 0;
-  }
-
-  .sunsetEnd {
-    position: absolute;
-    right: 3px;
-    bottom: 3px;
-  }
-
-  .sunsetStart {
-    padding: 2px 3px 0 0;
-    display: block;
-    font-weight: normal;
-    vertical-align: text-top;
-  }
-
-  .bWeekDay {
-    text-align: left;
-  }
-
-  .dayName, .bWeekDay, .sunrise, .sunsetStart, .sunsetEnd {
-    color: #7F4444;
-    font-size: .55rem;
-  }
-
-  .dayName {
-    position: absolute;
-    top: @gradientEnd * .9;
-    left: 3px;
-  }
-
-  .monthNameDay {
-    .dayName {
-      padding: 1px 5px 3px 4px;
-      border: 1px solid #999;
-      margin-top: -2px;
-      border-radius: 7px;
-    }
-  }
-
-  .hdHS, .hdHO {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: url(./star12c.gif);
-    margin: 0 3px 0 0;
-    background-position: 0 1px;
-  }
-
-  .hdHO {
-    background: url(star12b.gif);
-  }
-
-  .wd6 {
-    .wd {
-      font-weight: bold;
+    .sunsetEnd, .sunsetStart span, .sunrise {
+        display: none;
     }
 
-    .gStart {
-      background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-      border-color: #333;
+    .calendar {
+        margin-left: 5px;
+        overflow: auto;
+        max-height: 497px;
+        position: relative;
+
+        &.showTimes {
+            .placeName {
+                display: block;
+                font-style: italic;
+                font-size: 80%;
+                max-width: 220px;
+                margin-top: 5px;
+            }
+
+            .sunsetEnd, .sunsetStart span {
+                display: inline;
+            }
+
+            .sunrise {
+                display: block;
+            }
+        }
     }
-  }
 
-  #cal2options {
-    position: absolute;
-    right: 20px;
-    bottom: 4px;
-    z-index: 1;
-  }
+    @dayWidth: 124px;
 
-  &.darkerColors {
+    .month {
+        position: relative;
+        margin: 10px 0px 11px 6px;
+        padding: 5px 6px;
+        border-radius: 4px;
+        width: @dayWidth * 6;
+    }
+
+    .monthDays {
+    }
+
+    .caption {
+        position: absolute;
+        top: 0;
+        right: 6px;
+        text-align: right;
+    }
+
+    .bMonthInfo {
+        font-size: 11pt;
+    }
+
+    .gMonthInfo {
+        font-size: 11pt;
+    }
+
+    .monthNames {
+        font-size: 17pt;
+        font-weight: bold;
+    }
+
+    .dayRow {
+        table-layout: fixed;
+        border-spacing: 0;
+        margin-top: -1px;
+
+        td {
+            padding: 0;
+        }
+    }
+
     .dayGroup0 {
-      .dayCell {
-        background-image: linear-gradient(@darkAyyamiHa, @endColor @gradientEnd);
-      }
+
+        .dayCell {
+            background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
+            width: 100px;
+        }
+
+        .dayName {
+            display: none;
+        }
     }
+
+    @gradientEnd: 30px;
+    @endColor: rgba(255,255,255,0);
 
     .dayGroup1 {
-      .dayCell {
-        background-image: linear-gradient(@darkFire, @endColor @gradientEnd);
-      }
+        width: @dayWidth * 3;
+
+        .dayCell {
+            background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+        }
     }
 
     .dayGroup2 {
-      .dayCell {
-        background-image: linear-gradient(@darkAir, @endColor @gradientEnd);
-      }
+        width: @dayWidth * 4;
+
+        .dayCell {
+            background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+        }
     }
 
     .dayGroup3 {
-      .dayCell {
-        background-image: linear-gradient(@darkWater, @endColor @gradientEnd);
-      }
+        width: @dayWidth * 6;
+
+        .dayCell {
+            background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+        }
     }
 
     .dayGroup4 {
-      .dayCell {
-        background-image: linear-gradient(@darkEarth, @endColor @gradientEnd);
-      }
+        width: @dayWidth * 6;
+
+        .dayCell {
+            background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+        }
+    }
+
+    .mGroup0 {
+        height: 390px; // keep it big
     }
 
     .mGroup1 .monthElement {
-      background-color: @darkFire;
+        background-color: @lightFire;
     }
 
     .mGroup2 .monthElement {
-      background-color: @darkAir;
+        background-color: @lightAir;
     }
 
     .mGroup3 .monthElement {
-      background-color: @darkWater;
+        background-color: @lightWater;
     }
 
     .mGroup4 .monthElement {
-      background-color: @darkEarth;
+        background-color: @lightEarth;
     }
-  }
+
+    .monthElement {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        padding: 1px 10px 3px 10px;
+        border-radius: 5px;
+    }
+
+    .dayCell {
+        position: relative;
+        height: 100px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        margin: 0 0 0 -1px;
+    }
+
+    .night {
+        position: relative;
+        text-align: right;
+
+        .gStart {
+            display: inline-block;
+            font-size: .55rem;
+            text-align: right;
+            margin: 4px 2px 0 0;
+            padding: 2px 3px 3px 4px;
+            border-top: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-top-left-radius: 5px;
+        }
+    }
+
+    .hdName {
+        color: darkblue;
+        font-weight: bold;
+        padding: 0 4px;
+    }
+
+    .top {
+        line-height: 14px;
+        height: @gradientEnd - 10;
+        text-align: right;
+
+        .dayNum {
+            font-weight: bold;
+            position: absolute;
+            left: 3px;
+        }
+    }
+
+    .day {
+        position: relative;
+    }
+
+    .sunrise {
+        margin: 3px 2px 0 0;
+    }
+
+    .sunsetEnd {
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+    }
+
+    .sunsetStart {
+        padding: 2px 3px 0 0;
+        display: block;
+        font-weight: normal;
+        vertical-align: text-top;
+    }
+
+    .bWeekDay {
+        text-align: left;
+    }
+
+    .dayName, .bWeekDay, .sunrise, .sunsetStart, .sunsetEnd {
+        color: #7F4444;
+        font-size: .55rem;
+    }
+
+    .dayName {
+        position: absolute;
+        top: @gradientEnd * .9;
+        left: 3px;
+    }
+
+    .monthNameDay {
+        .dayName {
+            padding: 1px 5px 3px 4px;
+            border: 1px solid #999;
+            margin-top: -2px;
+            border-radius: 7px;
+        }
+    }
+
+    .hdHS, .hdHO {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url(./star12c.gif);
+        margin: 0 3px 0 0;
+        background-position: 0 1px;
+    }
+
+    .hdHO {
+        background: url(star12b.gif);
+    }
+
+    .wd6 {
+        .wd {
+            font-weight: bold;
+        }
+
+        .gStart {
+            background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
+            border-color: #333;
+        }
+    }
+
+    #cal2options {
+        position: absolute;
+        right: 20px;
+        bottom: 4px;
+        z-index: 1;
+    }
+
+    &.darkerColors {
+        .dayGroup0 {
+            .dayCell {
+                background-image: linear-gradient(@darkAyyamiHa, @endColor @gradientEnd);
+            }
+        }
+
+        .dayGroup1 {
+            .dayCell {
+                background-image: linear-gradient(@darkFire, @endColor @gradientEnd);
+            }
+        }
+
+        .dayGroup2 {
+            .dayCell {
+                background-image: linear-gradient(@darkAir, @endColor @gradientEnd);
+            }
+        }
+
+        .dayGroup3 {
+            .dayCell {
+                background-image: linear-gradient(@darkWater, @endColor @gradientEnd);
+            }
+        }
+
+        .dayGroup4 {
+            .dayCell {
+                background-image: linear-gradient(@darkEarth, @endColor @gradientEnd);
+            }
+        }
+
+        .mGroup1 .monthElement {
+            background-color: @darkFire;
+        }
+
+        .mGroup2 .monthElement {
+            background-color: @darkAir;
+        }
+
+        .mGroup3 .monthElement {
+            background-color: @darkWater;
+        }
+
+        .mGroup4 .monthElement {
+            background-color: @darkEarth;
+        }
+    }
 }
 
 body[data-pageid=pageCal2].inTab {
-  #pageCal2 {
-    .calendar {
-      max-height: none;
+    #pageCal2 {
+        .calendar {
+            max-height: none;
+        }
     }
-  }
 
-  overflow-y: auto;
+    overflow-y: auto;
 }
 
 @media screen {
-  #pageCal2 {
-    .dayCell {
-      cursor: pointer;
-    }
+    #pageCal2 {
+        .dayCell {
+            cursor: pointer;
+        }
 
-    .selected {
-      .dayCell {
-        border: 1px solid #000;
-        background-color: #EAEAEA;
-        z-index: 1;
-      }
+        .calendar {
+            &.showTimes {
+                .selected {
+                    .dayCell {
+                        border: 1px solid #000;
+                        background-color: #EAEAEA;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
     }
-  }
 }
 
 @media print {
-  @page {
-    margin: 15mm 15mm;
-  }
-
-  #pageCal2 {
-    border: none;
-    padding: 0;
-
-    #cal2options {
-      display: none;
+    @page {
+        margin: 15mm 15mm;
     }
 
-    .calendar {
-      max-height: none;
+    #pageCal2 {
+        border: none;
+        padding: 0;
+
+        #cal2options {
+            display: none;
+        }
+
+        .calendar {
+            max-height: none;
+        }
+
+        .month {
+            margin: 0 auto 0 auto;
+            page-break-inside: avoid;
+            page-break-after: always;
+            display: block !important;
+        }
     }
 
-    .month {
-      margin: 0 auto 0 auto;
-      page-break-inside: avoid;
-      page-break-after: always;
-      display: block !important;
+    body[data-pageid="pageCal2"] {
+        .mainTop {
+            display: none;
+        }
     }
-  }
-
-  body[data-pageid="pageCal2"] {
-    .mainTop {
-      display: none;
-    }
-  }
 }
