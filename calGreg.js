@@ -39,6 +39,21 @@ var CalGreg = function (di, host) {
       refreshDateInfo();
       showInfo(_di);
     });
+
+    $(document).on('click', 'body[data-pageid=pageCalGreg] .btnChangeMonth', changeMonth);
+  }
+
+  function changeMonth(ev) {
+    var delta = +$(ev.target).closest('button').data('delta') || 0;
+
+    // rough... if 29,30,31 may skip two months...
+    var gDate = new Date(_di.currentTime);
+    gDate.setMonth(gDate.getMonth() + delta);
+
+    setFocusTime(gDate);
+    refreshDateInfo();
+
+    showInfo(_di);
   }
 
   function showCalendar(newDi) {
@@ -145,9 +160,12 @@ var CalGreg = function (di, host) {
     var activeBadiYear = 0;
     var bYear = 0;
 
-    while (true) {
+    while (!isNaN(gDate)) {
       var desiredDay = gDay;
       gDate = new Date(gYear, gMonth, gDay);
+      if (isNaN(gDate)) {
+        debugger;
+      }
       gYear = gDate.getFullYear();
       gMonth = gDate.getMonth();
       gDay = gDate.getDate();
@@ -202,17 +220,19 @@ var CalGreg = function (di, host) {
 
       if (!outside) {
         // record badi month
-        if (tomorrowDayInfo.bDay == 1) {
+        if (tomorrowDayInfo.bDay === 1) {
           fnRecordMonth(tomorrowDayInfo);
-        } else if (gDay == 1) {
+        } else if (gDay === 1) {
           fnRecordMonth(thisDayInfo);
         }
       }
 
       var total = hourFactor * 24;
 
-      var mornSize = +(sunriseHr * hourFactor).toFixed(3);
-      var eveSize = Math.max(15, +((24 - sunsetHr) * hourFactor).toFixed(3));
+      //      var mornSize = +(sunriseHr * hourFactor).toFixed(3);
+      //      var eveSize = Math.max(15, +((24 - sunsetHr) * hourFactor).toFixed(3));
+      var mornSize = .28 * total;
+      var eveSize = .28 * total;
       var aftSize = total - eveSize - mornSize; //  +((sunsetHr - sunriseHr) * hourFactor).toFixed(3);
 
       $.extend(thisDayInfo, {
@@ -227,7 +247,7 @@ var CalGreg = function (di, host) {
         eveSize: eveSize,
         tomorrowMonth: tomorrowDayInfo.bMonth,
         tomorrowDay: tomorrowDayInfo.bDay,
-        monthName: tomorrowDayInfo.bDay == 1 ? tomorrowDayInfo.bMonthNamePri : (gDay == 1 ? thisDayInfo.bMonthNamePri : ''),
+        monthName: tomorrowDayInfo.bDay == 1 ? (tomorrowDayInfo.bMonthNamePri + '<span>{0}</span>'.filledWith(tomorrowDayInfo.bMonth)) : (gDay === 1 ? thisDayInfo.bMonthNamePri : ''),
         isFirst: tomorrowDayInfo.bDay == 1 ? 'first' : (gDay === 1 ? 'continuing' : '')
       });
 
@@ -275,9 +295,10 @@ var CalGreg = function (di, host) {
           + '{^sunriseDiv}'
           + '{^holyDayAftName}'
           + '<div>'
-          + '<span class="monthName {isFirst}">{^monthName}</span>'
           + '<span class=sunset>{endingSunsetDesc}</span>'
-          + '</div>', '</div><div class="eve bMonth{tomorrowMonth} bDay{tomorrowDay}" style="height:{eveSize}px; z-index:{zIndex}">'
+          + '</div>'
+          + '</div><div class="eve bMonth{tomorrowMonth} bDay{tomorrowDay}" style="height:{eveSize}px; z-index:{zIndex}">'
+          + '<span class="monthName {isFirst}">{^monthName}</span>'
           + '<span class="bDay">{^holyDayEveStar}{tomorrowDay}</span>'
           + '</div>', '</div></div>'
         ].join('').filledWith(thisDayInfo));

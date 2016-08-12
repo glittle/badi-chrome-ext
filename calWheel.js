@@ -50,7 +50,7 @@ var CalWheel = function () {
         {
           transform: 'rotate(' + angle + 'deg)',
           transformOrigin: '39px 335px' //x + ' ' + y
-      } : {
+        } : {
           transform: 'rotate(' + angle + 'deg)',
           transformOrigin: '39px 335px' //x + ' ' + y
         };
@@ -61,16 +61,16 @@ var CalWheel = function () {
 
         inner.attr('id', 'slice' + bm);
 
-        slice.find('.monthNum').text(bm);
-        slice.find('.monthNameAr').text(bMonthNamePri[bm]);
+        slice.find('.monthNum').html(bm);
+        slice.find('.monthNameAr').html(forSvg(bMonthNamePri[bm]));
         //log(bMonthNamePri[bm] + ' - ' + settings.useArNames + ' - ' + bMonthNameSec[bm]);
-        slice.find('.monthName').text(bMonthNameSec[bm]);
+        slice.find('.monthName').html(forSvg(bMonthNameSec[bm]));
 
         var gd = holyDays.getGDate(di.bYear, bm, 1, false);
 
-        slice.find('.firstDayG').text(gMonthShort[gd.getMonth()] + ' ' + gd.getDate());
-        slice.find('.firstDayWk').text(gWeekdayShort[gd.getDay()]);
-        slice.find('.firstDayYr').text(gd.getFullYear());
+        slice.find('.firstDayG').html(forSvg(gMonthShort[gd.getMonth()] + ' ' + gd.getDate()));
+        slice.find('.firstDayWk').html(forSvg(gWeekdayShort[gd.getDay()]));
+        slice.find('.firstDayYr').html(gd.getFullYear());
 
         wheel.append(slice);
       }
@@ -78,7 +78,7 @@ var CalWheel = function () {
 
     var offsetAngle = 0;
     if (showPointer) {
-      $('#wheelDay').html('{bDay} {^bMonthNamePri}'.filledWith(di));
+      $('#wheelDay').html(forSvg('{bDay} {^bMonthNamePri}'.filledWith(di)));
 
       var dayOfYear = (di.bMonth - 1) * 19 + di.bDay - 1;
       if (di.bMonth === 0) {
@@ -124,14 +124,18 @@ var CalWheel = function () {
 
     } else {
       _lastAngle = null;
-      wheel.css({ transform: 'rotate(0deg)' })
+      wheel.css({ transform: 'rotate(0deg)' });
       wheel.removeClass('rotating');
     }
   }
 
-  function toHex(d) {
-    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase();
+  function forSvg(s) {
+    return s.replace('<u>', '<tspan class=u>').replace('</u>', '</tspan>');
   }
+
+//  function toHex(d) {
+//    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase();
+//  }
 
   function gotoYear(year) {
     year = year || 173;
@@ -158,8 +162,7 @@ var CalWheel = function () {
       showCalendar(di);
       gDate.setDate(gDate.getDate() + 1);
       _rotating = setTimeout(show, speed);
-    }
-
+    };
     show();
   }
 

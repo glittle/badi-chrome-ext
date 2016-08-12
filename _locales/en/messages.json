@@ -183,9 +183,6 @@
   "customSelectForFrontPage": {
     "message": "Tick box to show on {0} page."
   },
-  "customTitle": {
-    "message": "Date Format Builder"
-  },
   "customUseAsSample": {
     "message": "Use as Sample?"
   },
@@ -430,7 +427,7 @@
     "message": "Export all calendar entries. (If not checked, only export a sample set.)"
   },
   "exportTest": {
-    "message": "Display for copying"
+    "message": "Di<u>s</u>play for copying"
   },
   "exportWhatTitle": {
     "message": "Select what should be exported."
@@ -1319,5 +1316,13 @@
   "cal2DarkerColors": {
     "message": "Darker <u>c</u>olors",
     "description": "a check box on the calendar. If checked, darker colors are used."
+  },
+  "nextMonth": {
+    "message": "Next <u>M</u>onth",
+    "description": "button to move to next month (gregorian or badi)"
+  },
+  "prevMonth": {
+    "message": "Prev Mo<u>n</u>th",
+    "description": "button to move to previous month (gregorian or badi)"
   }
 }

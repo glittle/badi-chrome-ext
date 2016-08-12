@@ -34,7 +34,7 @@
 
   #wheelYear {
     font-size: 24pt;
-    font-weight: 500; 
+    font-weight: 500;
     fill: #999;
   }
 
@@ -53,6 +53,10 @@
 
   #pointerToday line {
     stroke: #333;
+  }
+
+  .u {
+    text-decoration: underline;
   }
 
   .slice {
@@ -190,6 +194,22 @@
     right: 5px;
     bottom: 5px;
     z-index: 1;
+  }
+}
+
+body.rtl {
+  #pageCalWheel {
+    svg {
+      .monthNameAr, .monthName {
+        text-anchor: end;
+      }
+    }
+
+    #pointerToday {
+      text {
+        text-anchor: end;
+      }
+    }
   }
 }
 

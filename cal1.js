@@ -91,18 +91,7 @@ var Cal1 = function (di, host) {
       }
 
       var monthGroup = [];
-      var mGroup = 1;
-      //  1, 2, 3
-      //  4, 5, 6, 7
-      //  8, 9,10,11,12,13
-      // 14,15,16,17,18,19
-      if (bm >= 4 && bm <= 7) {
-        mGroup = 2;
-      } else if (bm >= 8 && bm <= 13) {
-        mGroup = 3;
-      } else if (bm >= 14 && bm <= 19 || bm === 0) {
-        mGroup = 4;
-      }
+      var mGroup = getElementNum(bm);
 
       // outer
       monthGroup.push('<div class="month">'.filledWith(bm));
@@ -110,7 +99,7 @@ var Cal1 = function (di, host) {
       var bMonthHtml = [];
       var gMonthHtml = [];
 
-      if (mGroup != lastMGroup) {
+      if (mGroup && mGroup !== lastMGroup) {
         lastMGroup = mGroup;
         monthGroup.push('<div class="element mGroup{1}">{0}</div>'.filledWith(host.elements[mGroup - 1], mGroup));
       }
@@ -187,10 +176,10 @@ var Cal1 = function (di, host) {
 
       monthGroup.push('</div>');
 
-      html.push(monthGroup.join('\n'));
+      html.push(monthGroup.join(''));
     }
 
-    $('#pageCal1 .months').html(html.join('\n'));
+    $('#pageCal1 .months').html(html.join(''));
   }
 
   function getHolyDay(m, d) {

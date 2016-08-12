@@ -1,3 +1,5 @@
+@import "colors.less";
+
 body[data-pageid=pageCalGreg].inTab {
   #pageCalGreg {
     .calendar {
@@ -49,7 +51,7 @@ body[data-pageid=pageCalGreg].inTab {
     overflow: auto;
     max-height: 497px;
     position: relative;
-    padding: 20px 0 20px 9px;
+    padding: 5px 0 12px 9px;
   }
 
 
@@ -200,13 +202,36 @@ body[data-pageid=pageCalGreg].inTab {
             right: 1px;
             font-size: 6pt;
           }
+        }
+
+        .eve {
+          background-image: linear-gradient(to top, rgba(200,200,200, 0) 60%, rgba(255,255,255, 1) 100%);
+          border: 1px solid #ccc;
+          border-bottom-left-radius: 2px;
+          border-bottom-right-radius: 2px;
+          border-top: none;
 
           .monthName {
             //float: left;
             position: absolute;
-            bottom: 0;
+            bottom: 1px;
+            color: #fff;
             left: 2px;
             font-size: 9pt;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 85%;
+
+            span {
+              font-size: .75em;
+              display: inline-block;
+              margin-left: 1px;
+              font-weight: normal;
+
+              &:before {
+                content: '\02026';
+              }
+            }
 
             &.first {
               font-weight: bold;
@@ -220,14 +245,6 @@ body[data-pageid=pageCalGreg].inTab {
               content: ')';
             }
           }
-        }
-
-        .eve {
-          background-image: linear-gradient(to top, rgba(200,200,200, 0) 60%, rgba(255,255,255, 1) 100%);
-          border: 1px solid #ccc;
-          border-bottom-left-radius: 2px;
-          border-bottom-right-radius: 2px;
-          border-top: none;
 
           .sunset {
             position: absolute;
@@ -243,6 +260,7 @@ body[data-pageid=pageCalGreg].inTab {
             font-size: 8pt;
             bottom: 0;
             right: 2px;
+            z-index: 1;
           }
         }
       }
@@ -287,104 +305,84 @@ body[data-pageid=pageCalGreg].inTab {
   }
 
   .bMonth0, .bMonth {
-    background-color: #eee;
+    background-color: #fcfcfc;
 
     span {
-      color: #333 !important;
+      color: #4B0A66 !important;
       // lighter yellow? dark text
     }
   }
-
-  .bMonth1 {
-    background-color: #ED312F;
+  //fire
+  .bMonth1, .bMonth3 {
+    background-color: @darkFire;
 
     .gDay {
       color: #333 !important;
     }
-  }
-
-  .bMonth11 {
-    background-color: #ee732f;
   }
 
   .bMonth2 {
-    background-color: #f7ae23;
+    background-color: @darkFire2;
+
+    .bDay, .monthName {
+      color: #111 !important;
+    }
+
+    .gDay {
+      color: #666 !important;
+    }
+  }
+  //air
+  .bMonth4, .bMonth6 {
+    background-color: @darkAir;
+
+    .bDay, .monthName {
+      color: #000 !important;
+    }
+
+    .gDay {
+      color: #888 !important;
+    }
   }
 
-  .bMonth12 {
-    background-color: #fce32b;
-  }
+  .bMonth5, .bMonth7 {
+    background-color: @darkAir2;
 
-  .bMonth3 {
-    background-color: #dade27;
-  }
+    .bDay, .monthName {
+      color: #000 !important;
+    }
 
-  .bMonth13 {
-    background-color: #98c546;
+    .gDay {
+      color: #777 !important;
+    }
   }
-
-  .bMonth4 {
-    background-color: #42b04d;
-  }
-
-  .bMonth14 {
-    background-color: #01a256;
+  //water
+  .bMonth8, .bMonth10, .bMonth12 {
+    background-color: @darkWater;
 
     .gDay {
       color: #333 !important;
     }
   }
 
-  .bMonth5 {
-    background-color: #00a16f;
+  .bMonth9, .bMonth11, .bMonth13 {
+    background-color: @darkWater2;
   }
-
-  .bMonth15 {
-    background-color: #01a29a;
-  }
-
-  .bMonth6 {
-    background-color: #00a4b8;
-  }
-
-  .bMonth16 {
-    background-color: #02a7df;
-  }
-
-  .bMonth7 {
-    background-color: #0097d0;
-  }
-
-  .bMonth17 {
-    background-color: #1165ab;
+  //earth
+  .bMonth14, .bMonth16, .bMonth18 {
+    background-color: @darkEarth;
 
     .gDay {
-      color: #ccc !important;
+      color: #ddd !important;
     }
   }
 
-  .bMonth8 {
-    background-color: #2f4197;
+  .bMonth15, .bMonth17, .bMonth19 {
+    background-color: @darkEarth2;
 
     .gDay {
-      color: #ccc !important;
+      color: #333 !important;
     }
-  }
-
-  .bMonth18 {
-    background-color: #45328e;
-  }
-
-  .bMonth9 {
-    background-color: #74338d;
-  }
-
-  .bMonth19 {
-    background-color: #a12b8b;
-  }
-
-  .bMonth10 {
-    background-color: #ce2688;
   }
 }
 
@@ -401,9 +399,10 @@ body[data-pageid=pageCalGreg].inTab {
 
     .month {
       .gd {
+        @bdayBorderColor: #ef6321;
 
         .today {
-          @todayBorderColor: #ccc;
+          @todayBorderColor: lighten(@bdayBorderColor, 15%);
 
           &.morn {
             .mornBorder(@todayBorderColor);
@@ -420,7 +419,14 @@ body[data-pageid=pageCalGreg].inTab {
         }
 
         .selected {
-          @bdayBorderColor: green;
+
+          span {
+            color: #fff !important;
+          }
+
+          span.gDay {
+            color: #ccc !important;
+          }
 
           &.morn {
             .mornBorder(@bdayBorderColor);
@@ -432,6 +438,10 @@ body[data-pageid=pageCalGreg].inTab {
 
           &.aft {
             .aftBorder(@bdayBorderColor);
+
+            span {
+              color: #000 !important;
+            }
           }
 
           &.eve {
@@ -467,6 +477,7 @@ body[data-pageid=pageCalGreg].inTab {
     .month {
       margin: 0 auto 0 auto;
       page-break-inside: avoid;
+      display: flex !important;
     }
   }
 

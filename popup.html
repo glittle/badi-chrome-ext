@@ -47,10 +47,21 @@
           <button type=button class="btnJumpTo button" data-msg="btnJumpTo,title:btnJumpToTitle"></button>
         </div>
 
-        <div class="yearPicker">
-          <button type=button class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
-          <input class=bYearPicker type=number max=1000 min=1>
-          <button type=button class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
+        <div>
+          <div class="yearPicker">
+            <button type=button class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
+            <input class=bYearPicker type=number max=1000 min=1>
+            <button type=button class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
+          </div>
+
+          <div class="monthNav">
+            <button type=button class="btnChangeMonth button" data-delta="-1" id="changeMonthPrev" data-msg="prevMonth,extractAccessKeyFor:changeMonthPrev"></button>
+            <button type=button class="btnChangeMonth button" data-delta="1" id="changeMonthNext" data-msg="nextMonth,extractAccessKeyFor:changeMonthNext"></button>
+          </div>
+        </div>
+
+        <div class="JumpDays">
+          <button type=button class="btnJumpToday button" data-msg="planFromWhenToday"></button>
         </div>
       </div>
       <div id="specialDaysTitle"></div>
@@ -201,7 +212,11 @@
           <label><input type="checkbox" id="cbShowTimes" checked /> <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span></label>
           <label><input type="checkbox" id="cbCal2Darker" /> <span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span></label>
         </div>
-        <div class="calendar showTimes">
+        <!--<div class="cal2NavButtons">
+          <button type="button" class="button" id="btnShowYear">Zoom Year</button>
+          <button type="button" class="button" id="btnShowMonth">Zoom Month</button>
+        </div>-->
+        <div class="calendar showTimes zoomM">
         </div>
       </div>
       <div id="pageCalGreg" class="fullPage page">
@@ -470,7 +485,7 @@
             <div class="exporterButtons">
               <button type="button" class="button" id="btnExportFile" data-msg="exportFile"></button>
               <button type="button" class="button" id="btnHideSample" data-msg="exportHideTest"></button>
-              <button accesskey="S" type="button" class="button" id="btnExportTest" data-msg="exportTest"></button>
+              <button type="button" class="button" id="btnExportTest" data-msg="exportTest,extractAccessKeyFor:btnExportTest"></button>
               <textarea id="exporterTest"></textarea>
             </div>
           </div>
@@ -660,7 +675,7 @@
 
         <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools"
            rel="publisher" style="text-decoration: none;">
-          <img src="fb-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
+          <img src="FB-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
         </a>
 
         <a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png"></a>
