@@ -524,7 +524,7 @@ function updatePageContent(id, di) {
 
       $('#gDate').html(getMessage('gregorianDateDisplay', di));
       $('#gDateDesc').html('({^currentRelationToSunset})'.filledWith(di));
-      $('button.today').toggleClass('notToday', di.stamp !== _initialDiStamp);
+      $('button.today').toggleClass('notToday', di.stamp !== _initialDiStamp.stamp);
       $('#datePicker').val(di.currentDateString);
 
       addSamples(di);
@@ -1091,7 +1091,7 @@ function changeDay(ev, delta) {
 
   refreshDateInfo();
 
-  if (_di.stamp === _initialDiStamp) {
+  if (_di.stamp === _initialDiStamp.stamp) {
     setStorage('focusTimeIsEve', null);
   }
 
@@ -1455,7 +1455,7 @@ function prepare1() {
   .attr('lang', _languageCode)
   .attr('dir', _languageDir);
 
-  _initialDiStamp = getDateInfo(new Date(), true).stamp;
+  _initialDiStamp = getDateInfo(new Date(), true);
 
   recallFocusAndSettings();
 
@@ -1605,13 +1605,14 @@ function prepare2() {
     $('#initialCover').hide();
   }
 
-  if (_di.stamp !== _initialDiStamp) {
+  if (_di.stamp !== _initialDiStamp.stamp) {
     highlightGDay();
   }
 }
 
 function updateLoadProgress() {
   _loadingNum++;
+  log(_loadingNum);
   $('#loadingCount').text(new Array(_loadingNum + 1).join('.'));
 }
 

@@ -312,16 +312,17 @@
 
   .hdHS, .hdHO {
     display: inline-block;
-    width: 12px;
+    width: 13px;
     height: 12px;
-    background: url(./star12c.gif);
+    background: url(./star12e.png);
     margin: 0 0 0 3px;
-    background-position: 0 1px;
   }
 
 
   .hdHO {
     background: url(star12b.gif);
+    background-position: 0 1px;
+    width: 12px;
   }
 
   .wd6 {
@@ -389,6 +390,25 @@
       background-color: @darkEarth;
     }
   }
+
+  .todayTime {
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 1px;
+    background-image: linear-gradient(to right, @bdayBorderColor, @bdayBorderColor 3px, transparent 100%);
+
+    &:before {
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      border-left: 3px solid @bdayBorderColor;
+      display: block;
+      content: '';
+      width: 0;
+      height: 0;
+      transform: translate(0, -1.5px);
+    }
+  }
 }
 
 body[data-pageid=pageCal2] {
@@ -420,12 +440,16 @@ body.rtl {
     }
 
     .calendar {
-      &.showTimes {
-        .selected.dayCell {
-          border: 1px solid #000;
-          background-color: #EAEAEA;
-          z-index: 1;
-        }
+
+      .today.dayCell {
+        border: 1px solid lighten(@todayBorderColor, 10%);
+        z-index: 1;
+      }
+
+      .selected.dayCell {
+        border: 1px solid @bdayBorderColor;
+        background-color: #EAEAEA;
+        z-index: 1;
       }
     }
   }
@@ -441,7 +465,7 @@ body.rtl {
     border: none;
     padding: 0;
 
-    .cal2NavButtons, #cal2options {
+    .todayTime, .cal2NavButtons, #cal2options {
       display: none;
     }
 

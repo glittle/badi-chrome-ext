@@ -98,7 +98,8 @@ function getDateInfo(currentTime, onlyStamp) {
   var bNow = holyDays.getBDate(currentTime);
   if (onlyStamp) {
     return {
-      stamp: JSON.stringify(bNow)
+      stamp: JSON.stringify(bNow),
+      stampDay: '{y}.{m}.{d}'.filledWith(bNow)
     };
   }
 
@@ -995,9 +996,11 @@ function shallowCloneOf(obj) {
 
 function log() {
   // add a timestamp to console log entries
-  var a = [];
-  a.push(new moment().format('DD H:mm:ss'));
-  a.push('\n ');
+//  var a = ['%c'];
+//  a.push('display: block; text-align: right;');
+//  a.push(new moment().format('DD H:mm:ss'));
+//  a.push('\n');
+  var a = ['\n'];
   for (var x in log.arguments) {
     if (log.arguments.hasOwnProperty(x)) {
       a.push(log.arguments[x]);

@@ -221,6 +221,7 @@ var Cal2 = function () {
             '<div class=day>{^holyDayAftName}</div>',
             '<div class=dayName>{bDayNamePri}</div>',
             '{^sunsetDesc}',
+            '{^todayTime}',
         '</div>'
     ].join('');
 
@@ -312,6 +313,23 @@ var Cal2 = function () {
         di.classesOuter.push('monthNameDay');
       }
 
+      if (di.stampDay === _initialDiStamp.stampDay) {
+        var start = moment(di.frag1SunTimes.sunset);
+        var end = moment(di.frag2SunTimes.sunset);
+        var now = moment();
+        log(start.format());
+        log(end.format());
+        log(now.format());
+        log(end.diff(start));
+        log(now.diff(start));
+        var pct = now.diff(start) / end.diff(start) * 100;
+        // redraw every minute? No - will be redrawn if day changes, and on every display. Not critical to be absolutely correct.
+        di.todayTime = '<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm'));
+        di.classesOuter.push('today');
+      } else {
+        di.todayTime = '';
+      }
+
       // add holy days
       if (!_specialDays[bYear]) {
         _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
@@ -341,7 +359,7 @@ var Cal2 = function () {
     };
 
     var monthElement = (bMonth === 0 ? '' : '<div class=monthElement>{element}</div>'.filledWith(day1Di));
-    var bMonthInfo = (bMonth === 0 ? '{bMonthNameSec}' : '{bMonthNameSec} &ndash; {bMonth}').filledWith(day1Di) +
+    var bMonthInfo = (bMonth === 0 ? '{bMonthNameSec}' : '{bMonth} &#8230; {bMonthNameSec}').filledWith(day1Di) +
       monthElement;
     var gMonthInfo = gMonths.join(', ') + ' ' + gYear;
 
