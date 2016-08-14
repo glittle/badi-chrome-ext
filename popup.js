@@ -26,6 +26,8 @@ var _upDownKeyDelta = null;
 var _pageHitTimeout = null;
 var _initialStartupDone = false;
 var _loadingNum = 0;
+var _lastLoadingTime = null;
+var _lastLoadingComment = null;
 var _inTab = false;
 var _pageIdList = [];
 var _inPopupPage = true;
@@ -112,8 +114,11 @@ var showInfoDelay = null;
 
 function showInfo(di) {
   _showingInfo = true;
-
+  log('show');
   clearTimeout(showInfoDelay);
+
+  getUpcoming(di);
+  updateSpecial(di);
 
   // show current page first, then the others
   updatePageContent(_currentPageId, di);
@@ -139,6 +144,21 @@ function resetForLanguageChange() {
   });
 }
 
+function updateSpecial(di) {
+  $('#special1').hide();
+  $('#special2').hide();
+  if (di.special1) {
+    $('#special1').html(di.special1).show();
+    log('special')
+    $('#day').addClass('withSpecial');
+    if (di.special2) {
+      $('#special2').html(' - ' + di.special2).show();
+    }
+  } else {
+    $('#day').removeClass('withSpecial');
+  }
+}
+
 function updateSharedContent(di) {
   $('#day').html(getMessage('bTopDayDisplay', di));
   $('#sunset').html(di.nearestSunset);
@@ -152,19 +172,7 @@ function updateSharedContent(di) {
     $('.bVahidPicker').val(di.bVahid);
     $('.bYearInVahidPicker').val(di.bYearInVahid);
   }
-
-  $('#special1').hide();
-  $('#special2').hide();
-  if (di.special1) {
-    $('#special1').html(di.special1).show();
-    $('#day').addClass('withSpecial');
-    if (di.special2) {
-      $('#special2').html(' - ' + di.special2).show();
-    }
-  } else {
-    $('#day').removeClass('withSpecial');
-  }
-
+  
   var manifest = chrome.runtime.getManifest();
   $('#version').text(getMessage('version', manifest.version));
 
@@ -227,7 +235,7 @@ function showPage(id) {
   var other = '.vahidInputs'; // don't fit on any page... likely need to remove it
   var pageDay = '#gDay, #showUpcoming, .explains, .normal, #show, .iconArea, #special';
   var pageEvents = '#yearSelector, .iconArea, #specialDaysTitle';
-  var pageCal1 = '#yearSelector, .JumpDays, #show, #gDay';
+  var pageCal1 = '#yearSelector, .JumpDays, #show, #gDay, #special';
   var pageCalWheel = '#yearSelector, #show, #gDay, #special, .iconArea';
   var pageCalGreg = '#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav';
   var pageCal2 = '#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav';
@@ -236,8 +244,8 @@ function showPage(id) {
   var pageReminders = '.iconArea, #otherPageTitle';
   var pageExporter = '#yearSelector, .iconArea, #otherPageTitle';
   var pagePlanner = '.iconArea, #otherPageTitle';
-  var pageCustom = '#yearSelector, .JumpDays, #show, #gDay, .iconArea';
-  var pageSetup = '#show, #gDay, .iconArea';
+  var pageCustom = '#yearSelector, .JumpDays, #show, #gDay, .iconArea, #special';
+  var pageSetup = '#otherPageTitle, .iconArea';
 
   $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageCal2, pageLists, pageFast, pageReminders, pageExporter, pagePlanner, pageSetup].join(',')).hide();
 
@@ -305,7 +313,7 @@ function showPage(id) {
           if (direction === -1) {
             return 6;
           }
-          log(holyDays.daysInAyyamiHa(_di.bYear));
+          //log(holyDays.daysInAyyamiHa(_di.bYear));
           return holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? (1 + holyDays.daysInAyyamiHa(_di.bYear) - bDay) : 0);
         }
         switch (direction) {
@@ -514,7 +522,6 @@ function updatePageContent(id, di) {
       var explain1 = getMessage('shoghiExample', di);
       var explain2 = getMessage('example2', di);
 
-      getUpcoming(di);
       $('#upcoming').html(di.upcomingHtml);
 
       $('#explain').html(explain1);
@@ -1459,9 +1466,12 @@ function prepare1() {
 
   recallFocusAndSettings();
 
-  updateLoadProgress();
+  updateLoadProgress('refresh date info');
 
   UpdateLanguageBtn();
+
+  updateLoadProgress('defaults');
+  prepareDefaults();
 
   if (_iconPrepared) {
     refreshDateInfo();
@@ -1474,37 +1484,33 @@ function prepare1() {
     toggleEveOrDay(isEve);
   }
 
-  updateLoadProgress();
-
+  updateLoadProgress('localize');
   localizeHtml();
-  updateLoadProgress();
 
+  updateLoadProgress('page custom');
   _pageCustom = PageCustom();
-  updateLoadProgress();
 
-  prepareDefaults();
-  updateLoadProgress();
-
+  updateLoadProgress('showInfo');
   showInfo(_di);
-  updateLoadProgress();
 
+  updateLoadProgress('showPage');
   showPage();
-  updateLoadProgress();
 
+  updateLoadProgress('shortcut keys');
   showShortcutKeys();
-  updateLoadProgress();
 
+  updateLoadProgress('handlers');
   attachHandlers();
-  updateLoadProgress();
 
+  updateLoadProgress('btn open');
   showBtnOpen();
-  updateLoadProgress();
 
+  updateLoadProgress('tab names');
   updateTabNames();
-  updateLoadProgress();
 
-  // delay if viewing first page
-  setTimeout(prepare2, _currentPageId === 'pageDay' ? 1000 : 0);
+  updateLoadProgress('prepare2 soon');
+
+  setTimeout(prepare2, 0);
 
   // if viewing first page, show now
   if (_currentPageId === 'pageDay') {
@@ -1544,9 +1550,10 @@ function prepare2() {
 
   _initialStartupDone = true;
 
+  updateLoadProgress('prepare2 start');
   prepareAnalytics();
-  updateLoadProgress();
 
+  updateLoadProgress('send event');
   tracker.sendEvent('opened');
   tracker.sendAppView(_currentPageId);
 
@@ -1558,44 +1565,45 @@ function prepare2() {
     setTimeout(finishFirstPopup, 4000);
   }
 
+  updateLoadProgress('fill eventStart');
   fillEventStart();
-  updateLoadProgress();
 
+  updateLoadProgress('fill static');
   fillStatic();
-  updateLoadProgress();
 
+  updateLoadProgress('fill setup');
   fillSetup();
-  updateLoadProgress();
 
+  updateLoadProgress('localize');
   localizeHtml('#pageLists');
-  updateLoadProgress();
 
+  updateLoadProgress('cal1');
   _cal1 = Cal1(_di);
   _cal1.showCalendar(_di);
-  updateLoadProgress();
 
+  updateLoadProgress('calWheel');
   _calWheel = CalWheel();
   _calWheel.showCalendar(_di);
-  updateLoadProgress();
 
+  updateLoadProgress('calGreg');
   _calGreg = CalGreg();
   _calGreg.showCalendar(_di);
-  updateLoadProgress();
 
+  updateLoadProgress('cal2');
   _cal2 = Cal2();
   _cal2.showCalendar(_di);
-  updateLoadProgress();
 
   if (_remindersEnabled) {
+    updateLoadProgress('reminders');
     _pageReminders = PageReminders();
-    updateLoadProgress();
   }
   $('#btnPageReminders').toggle(_remindersEnabled);
 
+  updateLoadProgress('export & planner');
   _pageExporter = PageExporter();
   _pagePlanner = PagePlanner();
-  updateLoadProgress();
 
+  updateLoadProgress('finish');
   $('#version').attr('href', getMessage(browserHostType + "_History"));
   $('#linkWebStore').attr('href', getMessage(browserHostType + "_WebStore"));
   $('#linkWebStoreSupport').attr('href', getMessage(browserHostType + "_WebStoreSupport"));
@@ -1610,9 +1618,17 @@ function prepare2() {
   }
 }
 
-function updateLoadProgress() {
+function updateLoadProgress(comment) {
   _loadingNum++;
-  log(_loadingNum);
+  //  var time = new Date().getTime();
+  //  if (_lastLoadingTime) {
+  //    var elapsed = `${_lastLoadingComment} (${time - _lastLoadingTime})`;
+  //
+  //    log(_loadingNum, elapsed);
+  //  }
+  //  _lastLoadingTime = new Date().getTime();
+  //  _lastLoadingComment = comment;
+
   $('#loadingCount').text(new Array(_loadingNum + 1).join('.'));
 }
 

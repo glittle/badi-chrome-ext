@@ -7,7 +7,7 @@
     "description": "in edit area when asking for a relative time"
   },
   "afterSunset": {
-    "message": "Evening - After sunset"
+    "message": "Evening (After Sunset)"
   },
   "am": {
     "message": "am",
@@ -26,7 +26,7 @@
     "description": "added <u></u> - should have one letter between <u> and </u>"
   },
   "beforeSunset": {
-    "message": "Day - Before sunset"
+    "message": "Day (Before Sunset)"
   },
   "bMonthMeaning": {
     "message": "Intercalary Days,Splendor,Glory,Beauty,Grandeur,Light,Mercy,Words,Perfection,Names,Might,Will,Knowledge,Power,Speech,Questions,Honor,Sovereignty,Dominion,Loftiness",
@@ -543,7 +543,7 @@
     "description": "in left panel"
   },
   "gTopDayDisplay": {
-    "message": "{currentRelationToSunset} - {currentWeekdayLong} - {currentDay} {currentMonthLong} {currentYear}",
+    "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
     "description": "top right corner"
   },
   "gWeekdayLong": {

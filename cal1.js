@@ -115,16 +115,16 @@ var Cal1 = function (di, host) {
       gMonthHtml.push('<div class="gmInitial gma0">{0}</div>'.filledWith(gMonthName));
 
       for (var bd = 1; bd <= 19; bd++) {
-        try {
-          gd = holyDays.getGDate(di.bYear, bm, bd, false);
-        }
-        catch (e) {
-          if (bm === 0 && e == 'invalid Badi date') {
-            break;
-          }
-          else {
-            throw e;
-          }
+        //try {
+        gd = holyDays.getGDate(di.bYear, bm, bd, false);
+        //}
+        if (!gd) {
+          //          if (bm === 0 && e == 'invalid Badi date') {
+          break;
+          //          }
+          //          else {
+          //            throw e;
+          //          }
         }
         var holyDay = getHolyDay(bm, bd);
         var holyDayMarker = '';

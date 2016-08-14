@@ -1,17 +1,20 @@
 
 #pageCalWheel {
   position: relative;
-  padding-bottom: 15px;
+  overflow: hidden;
 
   #templateSlice {
     display: none;
   }
 
   #wheelHolder {
-    position: relative;
-    transform: scale(0.75);
     width: 685px;
-    margin: -48px auto 0 auto;
+    position: absolute;
+    transform: scale(0.75);
+    transform-origin: top;
+    width: 685px;
+    left: 0;
+    top: 0;
   }
 
 

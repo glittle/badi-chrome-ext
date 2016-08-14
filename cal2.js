@@ -62,16 +62,16 @@ var Cal2 = function () {
       currentYear++;
     }
 
-    try {
-      var gDate = holyDays.getGDate(currentYear, currentMonth, _di.bDay, true);
+    //    try {
+    var gDate = holyDays.getGDate(currentYear, currentMonth, _di.bDay, true);
 
-      setFocusTime(gDate);
-      refreshDateInfo();
+    setFocusTime(gDate);
+    refreshDateInfo();
 
-      showInfo(_di);
-    } catch (error) {
-      log(error);
-    }
+    showInfo(_di);
+    //    } catch (error) {
+    //      log('Error: ' + error);
+    //    }
 
 
   }
@@ -234,18 +234,21 @@ var Cal2 = function () {
     for (var bDay = 1; bDay <= 19; bDay++) {
       var bDateCode = bMonth + '.' + bDay;
       var gDate;
-      try {
-        gDate = holyDays.getGDate(bYear, bMonth, bDay, false);
-        gDate.setHours(12, 0, 0, 0); // set to noon to avoid DST issues
+      //      try {
+      gDate = holyDays.getGDate(bYear, bMonth, bDay, false);
+      if (!gDate) {
+        break;
       }
-      catch (e) {
-        if (bMonth === 0 && e === 'invalid Badi date') {
-          break;
-        }
-        else {
-          throw e;
-        }
-      }
+      gDate.setHours(12, 0, 0, 0); // set to noon to avoid DST issues
+      //      }
+      //      catch (e) {
+      //        if (bMonth === 0 && e === 'invalid Badi date') {
+      //          break;
+      //        }
+      //        else {
+      //          throw e;
+      //        }
+      //      }
       var dayGroup;
       var di = getDateInfo(gDate);
       if (bDay === 1) {
@@ -317,13 +320,16 @@ var Cal2 = function () {
         var start = moment(di.frag1SunTimes.sunset);
         var end = moment(di.frag2SunTimes.sunset);
         var now = moment();
-        log(start.format());
-        log(end.format());
-        log(now.format());
-        log(end.diff(start));
-        log(now.diff(start));
+        //        log(start.format());
+        //        log(end.format());
+        //        log(now.format());
+        //        log(end.diff(start));
+        //        log(now.diff(start));
         var pct = now.diff(start) / end.diff(start) * 100;
         // redraw every minute? No - will be redrawn if day changes, and on every display. Not critical to be absolutely correct.
+        // don't show too close to the edge... looks better
+        if (pct < 1) pct = 1;
+        if (pct > 99) pct = 99;
         di.todayTime = '<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm'));
         di.classesOuter.push('today');
       } else {

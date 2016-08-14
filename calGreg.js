@@ -153,7 +153,6 @@ var CalGreg = function (di, host) {
 
     var weeks = [];
     var week = ['<tr>'];
-    var days = [];
     var weekNum = 0;
     var inFinalWeek = false;
     var bMonthsInMonth = [];
@@ -163,9 +162,6 @@ var CalGreg = function (di, host) {
     while (!isNaN(gDate)) {
       var desiredDay = gDay;
       gDate = new Date(gYear, gMonth, gDay);
-      if (isNaN(gDate)) {
-        debugger;
-      }
       gYear = gDate.getFullYear();
       gMonth = gDate.getMonth();
       gDay = gDate.getDate();

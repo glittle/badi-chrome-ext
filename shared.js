@@ -4,6 +4,8 @@
 var ObjectConstant = '$****$';
 var splitSeparator = /[,،]+/;
 var _currentPageId = null;
+var _cachedMessages = {};
+var _cachedMessageUseCount = 0;
 
 var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
 
@@ -566,8 +568,7 @@ function recallFocusAndSettings() {
 
       if (!isNaN(time)) {
         var changing = now.toDateString() !== time.toDateString();
-
-        log('reuse focus time: ' + time);
+//        log('reuse focus time: ' + time);
 
         setFocusTime(time);
 
@@ -708,7 +709,7 @@ String.prototype.filledWith = function () {
 
   var values = typeof arguments[0] === 'object' && arguments.length === 1 ? arguments[0] : arguments;
 
-  var testForFunc = /^#/; // simple test for "#"
+  //  var testForFunc = /^#/; // simple test for "#"
   var testForElementAttribute = /^\*/; // simple test for "#"
   var testDoNotEscapeHtml = /^\^/; // simple test for "^"
   var testDoNotEscpaeHtmlButToken = /^-/; // simple test for "-"
@@ -717,67 +718,70 @@ String.prototype.filledWith = function () {
   var extractTokens = /{([^{]+?)}/g;
 
   var replaceTokens = function (input) {
-    return input.replace(extractTokens,
-        function () {
-          var token = arguments[1];
-          var value = undefined;
-          try {
-            if (token[0] === ' ') {
-              // if first character is a space, do not process
-              value = '{' + token + '}';
-            } else if (values === null) {
-              value = '';
-            }
-              //else if (testForFunc.test(token)) {
-              //  try {
-              //    debugger;
-              //    log('eval... ' + token);
-              //    value = eval(token.substring(1));
-              //  }
-              //  catch (e) {
-              //    // if the token cannot be executed, then pass it through intact
-              //    value = '{' + token + '}';
-              //  }
-              //}
-            else if (testForElementAttribute.test(token)) {
-              value = quoteattr(values[token.substring(1)]);
-            } else if (testDoNotEscpaeHtmlButToken.test(token)) {
-              value = values[token.substring(1)].replace(/{/g, '&#123;');
-            } else if (testDoNotEscpaeHtmlButSinglQuote.test(token)) {
-              value = values[token.substring(1)].replace(/'/g, "%27");
-            } else if (testDoNotEscapeHtml.test(token)) {
-              value = values[token.substring(1)];
-            } else {
-              if (values.hasOwnProperty(token)) {
-                var toEscape = values[token];
-                //value = typeof toEscape == 'undefined' || toEscape === null ? '' : ('' + toEscape).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/{/g, '&#123;');
-                //Never escape HTML in this Chrome Extension
-                value = toEscape === 0 ? 0 : (toEscape || '');
-              } else {
-                if (_nextFilledWithEach_UsesExactMatchOnly) {
-                  value = '{' + token + '}';
-                } else {
-                  log('missing property for filledWith: ' + token);
-                  //debugger;
-                  value = '';
-                }
-              }
-            }
-          } catch (err) {
-            log('filledWithError:\n' +
-                err +
-                '\ntoken:' +
-                token +
-                '\nvalue:' +
-                value +
-                '\ntemplate:' +
-                input +
-                '\nall values:\n');
-            log(values);
-            throw 'Error in Filled With';
+    return input.replace(extractTokens, function () {
+      var token = arguments[1];
+      var value;
+      //try {
+      if (token[0] === ' ') {
+        // if first character is a space, do not process
+        value = '{' + token + '}';
+      } else if (values === null) {
+        value = '';
+      }
+        //else if (testForFunc.test(token)) {
+        //  try {
+        //    debugger;
+        //    log('eval... ' + token);
+        //    value = eval(token.substring(1));
+        //  }
+        //  catch (e) {
+        //    // if the token cannot be executed, then pass it through intact
+        //    value = '{' + token + '}';
+        //  }
+        //}
+      else if (testForElementAttribute.test(token)) {
+        value = quoteattr(values[token.substring(1)]);
+      } else if (testDoNotEscpaeHtmlButToken.test(token)) {
+        value = values[token.substring(1)].replace(/{/g, '&#123;');
+      } else if (testDoNotEscpaeHtmlButSinglQuote.test(token)) {
+        value = values[token.substring(1)].replace(/'/g, "%27");
+      } else if (testDoNotEscapeHtml.test(token)) {
+        value = values[token.substring(1)];
+      } else {
+        if (values.hasOwnProperty(token)) {
+          var toEscape = values[token];
+          //value = typeof toEscape == 'undefined' || toEscape === null ? '' : ('' + toEscape).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&#39;').replace(/"/g, '&quot;').replace(/{/g, '&#123;');
+          //Never escape HTML in this Chrome Extension
+          value = toEscape === 0 ? 0 : (toEscape || '');
+        } else {
+          if (_nextFilledWithEach_UsesExactMatchOnly) {
+            value = '{' + token + '}';
+          } else {
+            log('missing property for filledWith: ' + token);
+            //debugger;
+            value = '';
           }
-          return (typeof value == 'undefined' || value == null ? '' : ('' + value));
-        });
+        }
+      }
+
+
+      //REMOVE try... catch to optimize in this project... not dealing with unknown and untested input
+
+      //          } catch (err) {
+      //            log('filledWithError:\n' +
+      //                err +
+      //                '\ntoken:' +
+      //                token +
+      //                '\nvalue:' +
+      //                value +
+      //                '\ntemplate:' +
+      //                input +
+      //                '\nall values:\n');
+      //            log(values);
+      //            throw 'Error in Filled With';
+      //          }
+      return (typeof value == 'undefined' || value == null ? '' : ('' + value));
+    });
   };
 
   var result = replaceTokens(this);
@@ -823,8 +827,17 @@ String.prototype.filledWithEach = function (arr) {
   return result.join('');
 };
 
+
 function getMessage(key, obj, defaultValue) {
-  var rawMsg = chrome.i18n.getMessage(key);
+  var rawMsg = _cachedMessages[key];
+  if (!rawMsg) {
+    rawMsg = chrome.i18n.getMessage(key);
+    _cachedMessages[key] = rawMsg;
+  } else {
+    // _cachedMessageUseCount++; --> good for testing
+    //    console.log(_cachedMessageUseCount + ' ' + key);
+  }
+
   var msg = rawMsg || defaultValue || '{' + key + '}';
   if (obj === null || typeof obj === 'undefined' || msg.search(/{/) === -1) {
     return msg;
@@ -882,7 +895,7 @@ function getFocusTime() {
   }
 
   if (isNaN(_focusTime)) {
-    debugger;
+    log('unexpected 1: ', _focusTime);
     _focusTime = new Date();
   }
 
@@ -892,7 +905,7 @@ function getFocusTime() {
 function setFocusTime(t) {
   _focusTime = t;
   if (isNaN(_focusTime)) {
-    debugger;
+    log('unexpected 2: ', _focusTime);
   }
   setStorage('focusTime', t.getTime());
   setStorage('focusTimeAsOf', new Date().getTime());
@@ -996,10 +1009,10 @@ function shallowCloneOf(obj) {
 
 function log() {
   // add a timestamp to console log entries
-//  var a = ['%c'];
-//  a.push('display: block; text-align: right;');
-//  a.push(new moment().format('DD H:mm:ss'));
-//  a.push('\n');
+  //  var a = ['%c'];
+  //  a.push('display: block; text-align: right;');
+  //  a.push(new moment().format('DD H:mm:ss'));
+  //  a.push('\n');
   var a = ['\n'];
   for (var x in log.arguments) {
     if (log.arguments.hasOwnProperty(x)) {

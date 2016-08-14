@@ -688,7 +688,7 @@ body {
 #pageEvents {
   display: flex;
   align-items: flex-start;
-  max-height: 500px;
+  max-height: 509px;
   overflow: auto;
 }
 
@@ -710,12 +710,13 @@ body.inTab #pageEvents {
 #day {
   font-size: 13.5pt;
   display: inline-block;
-  margin-top: 2px;
+  margin-top: 9px;
   margin-bottom: 9px;
 }
 
 #day.withSpecial {
-  margin-top: 1px;
+  font-size: 12pt;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -724,7 +725,7 @@ body.inTab #pageEvents {
 }
 
 #special1 {
-  font-size: 12.75pt;
+  font-size: 12pt;
   color: blue;
   display: none;
 }
@@ -1551,6 +1552,11 @@ body[data-pageid="pageSetup"] {
 }
 
 @media print {
+  @page {
+    margin: 15mm 15mm;
+    size: portrait;
+  }
+
   #yearSelector, .selectPages, .iconArea, .NoPrint {
     display: none !important;
   }
@@ -1664,4 +1670,9 @@ body.Firefox {
   .setupLangOption input {
     vertical-align: bottom;
   }
+}
+
+@page myLandscape {
+  size: landscape;
+  background-color: red;
 }
