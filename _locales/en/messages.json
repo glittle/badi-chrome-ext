@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "in {0} day"
+    "message": "in {0} day",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future " 
   },
   "actionSpeakDesc": {
     "message": "The reminder will be read aloud using this voice: ",
