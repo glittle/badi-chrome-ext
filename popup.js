@@ -114,7 +114,6 @@ var showInfoDelay = null;
 
 function showInfo(di) {
   _showingInfo = true;
-  log('show');
   clearTimeout(showInfoDelay);
 
   getUpcoming(di);
@@ -133,6 +132,8 @@ function showInfo(di) {
     });
   }, 500);
 
+  $('#day, #gDay').toggleClass('notToday', _di.stamp !== _initialDiStamp.stamp);
+
   _showingInfo = false;
 }
 
@@ -149,7 +150,6 @@ function updateSpecial(di) {
   $('#special2').hide();
   if (di.special1) {
     $('#special1').html(di.special1).show();
-    log('special')
     $('#day').addClass('withSpecial');
     if (di.special2) {
       $('#special2').html(' - ' + di.special2).show();

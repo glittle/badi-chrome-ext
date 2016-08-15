@@ -586,12 +586,13 @@ function recallFocusAndSettings() {
 }
 
 function highlightGDay() {
-  if (typeof $().effect !== 'undefined') {
-    setTimeout(function () {
-      $('#day, #gDay').effect("highlight", 6000);
-    },
-        150);
-  }
+//  log('highlight');
+//  if (typeof $().effect !== 'undefined') {
+//    setTimeout(function () {
+//      $('#day, #gDay').effect("highlight", 6000);
+//    },
+//        150);
+//  }
 }
 
 function refreshDateInfoAndShow(resetToNow) {
