@@ -1,7 +1,7 @@
 {
   "1day": {
     "message": "in {0} day",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future " 
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future (see otherDays)" 
   },
   "actionSpeakDesc": {
     "message": "The reminder will be read aloud using this voice: ",
@@ -722,7 +722,8 @@
     "message": ",first,second,third,fourth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelfth,thirteenth,fourteenth,fifteenth,sixteenth,seventeenth,eighteenth,nineteenth"
   },
   "otherDays": {
-    "message": "in {0} days"
+    "message": "in {0} days",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
   },
   "past_Day": {
     "message": "started at {time}",
