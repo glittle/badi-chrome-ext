@@ -31,3 +31,6 @@
     - file: "./_locales/ta/messages.json" 
       params:
         locale_id: ta
+    - file: "./_locales/th/messages.json" 
+      params:
+        locale_id: th
