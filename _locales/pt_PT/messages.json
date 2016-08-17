@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "dentro de {0} dia"
+    "message": "dentro de {0} dia",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "afterSunset": {
     "message": "noite - após pôr-do-sol"
@@ -420,7 +421,8 @@
     "message": ",primeiro,segundo,terceiro,quarto,quinto,sexto,sétimo,oitavo,nono,décimo,décimo primeiro,décimo segundo,décimo terceiro,décimo quarto,décimo quinto,décimo sexto,décimo sétimo,décimo oitavo,décimo nono"
   },
   "otherDays": {
-    "message": "dentro de {0} dias"
+    "message": "dentro de {0} dias",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
   },
   "past_Day": {
     "message": "iniciou-se às {time}",

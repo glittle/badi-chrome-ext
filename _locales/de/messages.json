@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": ""
+    "message": "",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "actionSpeakDesc": {
     "message": "Die Erinnerung wird in dieser Stimme vorgelesen:",
@@ -168,9 +169,6 @@
   "customSelectForFrontPage": {
     "message": "Box anklicken, um ein Benutzerdefiniertes Format auf der {0} Seite anzuzeigen."
   },
-  "customTitle": {
-    "message": "Datumsformatkonfiguration"
-  },
   "customUseAsSample": {
     "message": "Als Beispiel verwenden?"
   },
@@ -225,6 +223,9 @@
   },
   "eraShort": {
     "message": "BE"
+  },
+  "example2": {
+    "message": "{bMonthNamePri} {bDay} {dayStartedLower} bei Sonnenuntergang (etwa {startingSunsetDesc}) auf {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} und {dayEndedLower} bei Sonnenuntergang (etwa {endingSunsetDesc}) auf {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
   },
   "exportAlert_B1": {
     "message": "1 Minute vor"
@@ -351,6 +352,10 @@
   "formatIconClick": {
     "message": "(weitere Details)"
   },
+  "formatIconToolTip": {
+    "message": "{bMonthNamePri} {bDay}, {bYear}",
+    "description": "text when mouse is over the extension icon"
+  },
   "future_Day": {
     "message": "Beginnt um {time}",
     "description": "shown in the eve of the day"
@@ -360,6 +365,13 @@
   },
   "future_DeltaTime": {
     "message": "in {numUnits} um {time}"
+  },
+  "gDatePickerTitle": {
+    "message": "Gregorian Datum"
+  },
+  "gWeekdayLong": {
+    "message": "Sonntag,Montag,Dienstag,Mittwoch,Donnerstag,Freitag,Samstag",
+    "description": "start with Sunday"
   },
   "gWeekdayShort": {
     "message": "So,Mo,Di,Mi,Do,Fr,Sa",
@@ -429,6 +441,10 @@
   },
   "MonthFormatAyyam": {
     "message": "{bMonthNamePri} ({bMonthNameSec})"
+  },
+  "noLocationAvailable": {
+    "message": "(Unbekannt Ort - 06.30 Sonnenuntergang mal)",
+    "description": "If the system does not know the location of this computer."
   },
   "noLocationName": {
     "message": "(Aktueller Standort)",

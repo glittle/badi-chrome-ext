@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "over {0} dag"
+    "message": "over {0} dag",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "actionSpeakDesc": {
     "message": "De herinnering wordt hardop voorgelezen met deze Chrome stem:",
@@ -182,9 +183,6 @@
   },
   "customSelectForFrontPage": {
     "message": "Tick box to show on {0} page."
-  },
-  "customTitle": {
-    "message": "Date Format Builder"
   },
   "customUseAsSample": {
     "message": "Use as Sample?"
@@ -724,7 +722,8 @@
     "message": ",eerste,tweede,derde,vierde,vijfde,zesde,zevende,achtste,negende,tiende,elfde,twaalfde,dertiende,veertiende,vijftiende,zestiende,zeventiende,achttiende,negentiende"
   },
   "otherDays": {
-    "message": "over {0} dagen"
+    "message": "over {0} dagen",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
   },
   "past_Day": {
     "message": "begonnen om {time}",

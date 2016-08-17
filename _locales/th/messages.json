@@ -1,0 +1,48 @@
+{
+  "am": {
+    "message": "น",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "beforeSunset": {
+    "message": "ก่อนพระอาทิตย์ตกดิน"
+  },
+  "Ended": {
+    "message": "จบสิ้น",
+    "description": "Shown in the upcoming dates area"
+  },
+  "FeastOf": {
+    "message": "ฉลองบุญ",
+    "description": "The localized name of the Feast will be put into {0}"
+  },
+  "meaning": {
+    "message": "ความหมาย",
+    "description": "on List page - table heading"
+  },
+  "Month": {
+    "message": "เดือน"
+  },
+  "nextYear": {
+    "message": "ปีหน้า",
+    "description": "hold Shift and press right arrow key"
+  },
+  "noon": {
+    "message": "เที่ยง",
+    "description": "nice way to say noon"
+  },
+  "pm": {
+    "message": "น",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "prevYear": {
+    "message": "ปีก่อน",
+    "description": "hold Shift and press left arrow key"
+  },
+  "title": {
+    "message": "หัวข้อ",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "แปลว่า",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  }
+}
