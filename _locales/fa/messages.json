@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "تا {0} روز دیگر"
+    "message": "تا {0} روز دیگر",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "bMonthNameAr": {
     "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
