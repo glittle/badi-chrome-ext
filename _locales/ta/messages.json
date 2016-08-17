@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "{0} நாளில்"
+    "message": "{0} நாளில்",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "afterSunset": {
     "message": "மாலை - அஸ்தமனத்திற்குப் பிறகு"
@@ -357,7 +358,8 @@
     "message": ",முதல்,இரண்டாம்,மூன்றாம்,நான்காம்,ஐந்தாம்,ஆறாம்,ஏழாம்,எட்டாம்,ஒன்பதாம்,பத்தாம்,பதினொன்றாம்,பன்னிரண்டாம்,பதிமூன்றாம்,பதிநான்காம்,பதினைந்தாம்,பதினேழாம்,பதினெட்டாம்,பத்தொன்பதாம்"
   },
   "otherDays": {
-    "message": "{0} நாள்களில்"
+    "message": "{0} நாள்களில்",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
   },
   "pick_pageCal1": {
     "message": "வருடம்"
