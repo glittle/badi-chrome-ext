@@ -1,6 +1,7 @@
 {
   "1day": {
-    "message": "dans {0} jour"
+    "message": "dans {0} jour",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "afterSunset": {
     "message": "soir - après le coucher du soleil"
@@ -385,7 +386,8 @@
     "message": ",premier,deuxième,troisième,quatrième,cinquième,sixième,septième,huitième,neuvième,dixième,onzième,douzième,treizième,quatorzième,quinzième,seizième,dix-septième,dix-huitième,dix-neuvième"
   },
   "otherDays": {
-    "message": "dans {0} jours"
+    "message": "dans {0} jours",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
   },
   "pick_pageCal1": {
     "message": "Année"
