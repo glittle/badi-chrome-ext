@@ -612,6 +612,7 @@ function refreshDateInfoAndShow(resetToNow) {
   if (typeof showInfo !== 'undefined') {
     // are we inside the open popup?
     showInfo(di);
+    showWhenResetToNow();
   }
 
   if (browserHostType === browser.Chrome) {
@@ -910,6 +911,7 @@ function setFocusTime(t) {
   }
   setStorage('focusTime', t.getTime());
   setStorage('focusTimeAsOf', new Date().getTime());
+
 }
 
 function localizeHtml(host, fnOnEach) {

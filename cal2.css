@@ -1,4 +1,4 @@
-﻿/* fire of God */
+/* fire of God */
 /* air of eternity */
 /* water of Divine Unity */
 /* earth */
@@ -35,6 +35,27 @@
 }
 #pageCal2 .calendar.showTimes .sunrise {
   display: block;
+}
+#pageCal2 .calendar.showTimes .todayTime {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 15px;
+  height: 1px;
+  background-image: linear-gradient(to right, #5b439a, #5b439a 3px, transparent 100%);
+}
+#pageCal2 .calendar.showTimes .todayTime:before {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid #5b439a;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  transform: translate(0, -1.5px);
+}
+#pageCal2 .calendar .todayTime {
+  display: none;
 }
 #pageCal2 .cal2NavButtons {
   position: absolute;
@@ -74,23 +95,23 @@
   display: inline-block;
 }
 #pageCal2 .dayRow.elementNum0 .dayCell {
-  background-image: linear-gradient(rgba(255, 20, 147, 0.2), rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(rgba(255, 20, 147, 0.2), rgba(255, 255, 255, 0) 40px);
   width: 100px;
 }
 #pageCal2 .dayRow.elementNum0 .dayName {
   display: none;
 }
 #pageCal2 .dayRow.elementNum1 .dayCell {
-  background-image: linear-gradient(#ffe6e6, rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(#ffe6e6, rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2 .dayRow.elementNum2 .dayCell {
-  background-image: linear-gradient(#fafafa, rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(#fafafa, rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2 .dayRow.elementNum3 .dayCell {
-  background-image: linear-gradient(#e8e8ff, rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(#e8e8ff, rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2 .dayRow.elementNum4 .dayCell {
-  background-image: linear-gradient(#e6ffe6, rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(#e6ffe6, rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2 .monthRow {
   white-space: nowrap;
@@ -141,7 +162,7 @@
   display: inline-block;
   font-size: .55rem;
   text-align: right;
-  margin: 4px 0 0 0;
+  margin: 3px 0 0 0;
   padding: 2px 3px 3px 4px;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
@@ -155,7 +176,7 @@
 }
 #pageCal2 .top {
   line-height: 14px;
-  height: 20px;
+  height: 23px;
   text-align: right;
 }
 #pageCal2 .top .dayNum {
@@ -191,16 +212,27 @@
   color: #7F4444;
   font-size: .55rem;
 }
+#pageCal2 .bWeekDay {
+  color: #d8b7b7;
+  font-size: .55rem;
+}
 #pageCal2 .dayName {
   position: absolute;
-  top: 27px;
+  top: 15px;
+  left: 3px;
+}
+#pageCal2 .bWeekDay {
+  position: absolute;
+  top: 29px;
   left: 3px;
 }
 #pageCal2 .monthNameDay .dayName {
-  padding: 1px 5px 3px 4px;
+  padding: 1px 3px 2px 3px;
   border: 1px solid #999;
-  margin-top: -2px;
-  border-radius: 7px;
+  border-radius: 4px;
+}
+#pageCal2 .monthNameDay .bWeekDay {
+  top: 33px;
 }
 #pageCal2 .hdHS,
 #pageCal2 .hdHO {
@@ -218,6 +250,10 @@
 #pageCal2 .wd6 .wd {
   font-weight: bold;
 }
+#pageCal2 .wd6 .bWeekDay {
+  font-weight: bold;
+  color: #7F4444;
+}
 #pageCal2 .wd6 .gStart {
   background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
   border-color: #333;
@@ -229,19 +265,19 @@
   z-index: 1;
 }
 #pageCal2.darkerColors .dayRow.elementNum0 .dayCell {
-  background-image: linear-gradient(rgba(255, 20, 147, 0.6), rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(rgba(255, 20, 147, 0.6), rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2.darkerColors .dayRow.elementNum1 .dayCell {
-  background-image: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2.darkerColors .dayRow.elementNum2 .dayCell {
-  background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2.darkerColors .dayRow.elementNum3 .dayCell {
-  background-image: linear-gradient(rgba(0, 0, 255, 0.6), rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(rgba(0, 0, 255, 0.6), rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2.darkerColors .dayRow.elementNum4 .dayCell {
-  background-image: linear-gradient(#009600, rgba(255, 255, 255, 0) 30px);
+  background-image: linear-gradient(#009600, rgba(255, 255, 255, 0) 40px);
 }
 #pageCal2.darkerColors .month.elementNum1 .monthElement {
   background-color: rgba(255, 0, 0, 0.6);
@@ -254,23 +290,6 @@
 }
 #pageCal2.darkerColors .month.elementNum4 .monthElement {
   background-color: #009600;
-}
-#pageCal2 .todayTime {
-  position: absolute;
-  left: 0;
-  width: 15px;
-  height: 1px;
-  background-image: linear-gradient(to right, #5b439a, #5b439a 3px, transparent 100%);
-}
-#pageCal2 .todayTime:before {
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  border-left: 3px solid #5b439a;
-  display: block;
-  content: '';
-  width: 0;
-  height: 0;
-  transform: translate(0, -1.5px);
 }
 body[data-pageid=pageCal2].inTab {
   overflow-y: auto;
@@ -306,7 +325,7 @@ body.rtl #pageCal2 .caption {
   #pageCal2 .todayTime,
   #pageCal2 .cal2NavButtons,
   #pageCal2 #cal2options {
-    display: none;
+    display: none !important;
   }
   #pageCal2 .calendar {
     page: myLandscape;
@@ -326,4 +345,3 @@ body.rtl #pageCal2 .caption {
     display: none;
   }
 }
-/*# sourceMappingURL=data:application/json;base64,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 */

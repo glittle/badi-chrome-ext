@@ -1109,6 +1109,17 @@ function changeDay(ev, delta) {
   }
 
   showInfo(_di);
+
+  if (delta===0) {
+    showWhenResetToNow();
+  }
+}
+
+function showWhenResetToNow() {
+  _initialDiStamp = getDateInfo(new Date(), true);
+  if (_cal2) {
+    _cal2.showTodayTime();
+  }
 }
 
 function fillSetup() {

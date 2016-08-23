@@ -11,6 +11,7 @@ var Cal2 = function () {
   var _page = $('#pageCal2');
   var _calendarDiv = _page.find('.calendar');
   var _initialScrollDone = false;
+  var _timeoutTime = null;
 
   function preparePage() {
     attachHandlers();
@@ -128,6 +129,10 @@ var Cal2 = function () {
     setTimeout(function () {
       scrollToMonth(di.bMonth);
     }, 0);
+
+    if (di.stampDay === _initialDiStamp.stampDay) {
+      showTodayTime();
+    }
   }
 
   function buildCalendar() {
@@ -164,6 +169,8 @@ var Cal2 = function () {
     }
 
     _calendarDiv.html(html.join('') + newRowEnd);
+
+    showTodayTime();
 
     scrollToMonth(bMonth);
   }
@@ -214,14 +221,13 @@ var Cal2 = function () {
             '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart>{frag1WeekdayShort}<span> {startingSunsetDesc}</span></span></div>',
                 '<div class=night>',
                     '<div class=gStart><span class=wd>{frag2WeekdayShort}</span>, {frag2MonthShort} {frag2Day}',
-                    '<div class=bWeekDay>{bWeekdayNamePri}</div>',
                 '</div>',
                 '{^sunriseDiv}',
             '</div>',
             '<div class=day>{^holyDayAftName}</div>',
             '<div class=dayName>{bDayNamePri}</div>',
+            '<div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>',
             '{^sunsetDesc}',
-            '{^todayTime}',
         '</div>'
     ].join('');
 
@@ -303,7 +309,7 @@ var Cal2 = function () {
       });
 
       $.extend(di, {
-        sunsetDesc: '<span class=sunsetEnd>{0}</span>'.filledWith(showTime(di.frag2SunTimes.sunset))
+        sunsetDesc: '<span class=sunsetEnd>{1} {0}</span>'.filledWith(showTime(di.frag2SunTimes.sunset), di.frag2WeekdayShort)
       });
 
       if (di.bMonth === 19) {
@@ -314,26 +320,6 @@ var Cal2 = function () {
 
       if (bDay === bMonth) {
         di.classesOuter.push('monthNameDay');
-      }
-
-      if (di.stampDay === _initialDiStamp.stampDay) {
-        var start = moment(di.frag1SunTimes.sunset);
-        var end = moment(di.frag2SunTimes.sunset);
-        var now = moment();
-        //        log(start.format());
-        //        log(end.format());
-        //        log(now.format());
-        //        log(end.diff(start));
-        //        log(now.diff(start));
-        var pct = now.diff(start) / end.diff(start) * 100;
-        // redraw every minute? No - will be redrawn if day changes, and on every display. Not critical to be absolutely correct.
-        // don't show too close to the edge... looks better
-        if (pct < 1) pct = 1;
-        if (pct > 99) pct = 99;
-        di.todayTime = '<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm'));
-        di.classesOuter.push('today');
-      } else {
-        di.todayTime = '';
       }
 
       // add holy days
@@ -350,7 +336,7 @@ var Cal2 = function () {
         di.holyDayAftName = '<div class="hdName">{0}</div>'.filledWith(getMessage(holyDayInfo[0].NameEn));
         di.classesOuter.push('hdDay' + holyDayInfo[0].Type);
       }
-
+      di.DayOfWeek = getMessage('DayOfWeek');
       di.classesOuter = di.classesOuter.join(' ');
 
       dayCells.push(dayCellTemplate.filledWith(di));
@@ -386,6 +372,42 @@ var Cal2 = function () {
     return html;
   }
 
+  function showTodayTime() {
+    _calendarDiv.find('.today').removeClass('today');
+    _calendarDiv.find('.todayTime').remove();
+
+    //    log(_initialDiStamp.stampDay);
+
+    var stamp = _initialDiStamp.stampDay.split('.');
+    var month = stamp[1];
+    var day = stamp[2];
+
+    var sel = _calendarDiv.find('#cal2_igd{0}_{1}'.filledWith(month, day));
+    sel.addClass('today');
+
+    var start = moment(di.frag1SunTimes.sunset);
+    var end = moment(di.frag2SunTimes.sunset);
+    var now = moment(new Date()); // moment seems to cache the time when the page loads
+
+    //    log('start ' + start.format());
+    //    log('end ' + end.format());
+    //
+    //    log('now ' + now.format());
+    //    log('end->start ' + end.diff(start));
+    //    log('now->start '  + now.diff(start));
+
+    var pct = now.diff(start) / end.diff(start) * 100;
+    // redraw every minute? No - will be redrawn if day changes, and on every display. Not critical to be absolutely correct.
+    // don't show too close to the edge... looks better
+    if (pct < 1) pct = 1;
+    if (pct > 99) pct = 99;
+
+    sel.append('<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm')));
+
+    clearTimeout(_timeoutTime);
+    _timeoutTime = setTimeout(showTodayTime, 10 * 60 * 1000);  // 10 minutes
+  }
+
   preparePage();
 
   return {
@@ -394,6 +416,7 @@ var Cal2 = function () {
       _yearShown = -1;
     },
     di: _di,
+    showTodayTime: showTodayTime,
     scrollToMonth: scrollToMonth
   };
 }

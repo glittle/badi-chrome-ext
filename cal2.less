@@ -38,6 +38,30 @@
       .sunrise {
         display: block;
       }
+
+      .todayTime {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 15px;
+        height: 1px;
+        background-image: linear-gradient(to right, @bdayBorderColor, @bdayBorderColor 3px, transparent 100%);
+
+        &:before {
+          border-top: 2px solid transparent;
+          border-bottom: 2px solid transparent;
+          border-left: 3px solid @bdayBorderColor;
+          display: block;
+          content: '';
+          width: 0;
+          height: 0;
+          transform: translate(0, -1.5px);
+        }
+      }
+    }
+
+    .todayTime {
+      display: none;
     }
     //&.zoomY {
     //  //      width: 440px;
@@ -140,7 +164,7 @@
     }
   }
 
-  @gradientEnd: 30px;
+  @gradientEnd: 40px;
   @endColor: rgba(255,255,255,0);
 
   .dayRow.elementNum1 {
@@ -238,7 +262,7 @@
       display: inline-block;
       font-size: .55rem;
       text-align: right;
-      margin: 4px 0 0 0;
+      margin: 3px 0 0 0;
       padding: 2px 3px 3px 4px;
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
@@ -255,7 +279,7 @@
 
   .top {
     line-height: 14px;
-    height: @gradientEnd - 10;
+    height: 23px;// @gradientEnd - 15;
     text-align: right;
 
     .dayNum {
@@ -295,18 +319,31 @@
     font-size: .55rem;
   }
 
+  .bWeekDay {
+    color: lighten(#7F4444, 40%);
+    font-size: .55rem;
+  }
+
   .dayName {
     position: absolute;
-    top: @gradientEnd * .9;
+    top: 15px; //@gradientEnd * .9;
+    left: 3px;
+  }
+
+  .bWeekDay {
+    position: absolute;
+    top: 29px; //@gradientEnd * .9;
     left: 3px;
   }
 
   .monthNameDay {
     .dayName {
-      padding: 1px 5px 3px 4px;
+      padding: 1px 3px 2px 3px;
       border: 1px solid #999;
-      margin-top: -2px;
-      border-radius: 7px;
+      border-radius: 4px;
+    }
+    .bWeekDay {
+      top: 33px;
     }
   }
 
@@ -330,10 +367,16 @@
       font-weight: bold;
     }
 
+    .bWeekDay{
+      font-weight: bold;
+      color: #7F4444;
+    }
+
     .gStart {
       background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
       border-color: #333;
     }
+   
   }
 
   #cal2options {
@@ -390,25 +433,6 @@
       background-color: @darkEarth;
     }
   }
-
-  .todayTime {
-    position: absolute;
-    left: 0;
-    width: 15px;
-    height: 1px;
-    background-image: linear-gradient(to right, @bdayBorderColor, @bdayBorderColor 3px, transparent 100%);
-
-    &:before {
-      border-top: 2px solid transparent;
-      border-bottom: 2px solid transparent;
-      border-left: 3px solid @bdayBorderColor;
-      display: block;
-      content: '';
-      width: 0;
-      height: 0;
-      transform: translate(0, -1.5px);
-    }
-  }
 }
 
 body[data-pageid=pageCal2] {
@@ -462,7 +486,7 @@ body.rtl {
     padding: 0;
 
     .todayTime, .cal2NavButtons, #cal2options {
-      display: none;
+      display: none !important;
     }
 
     .calendar {
