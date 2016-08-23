@@ -130,9 +130,6 @@ var Cal2 = function () {
       scrollToMonth(di.bMonth);
     }, 0);
 
-    if (di.stampDay === _initialDiStamp.stampDay) {
-      showTodayTime();
-    }
   }
 
   function buildCalendar() {
@@ -376,36 +373,34 @@ var Cal2 = function () {
     _calendarDiv.find('.today').removeClass('today');
     _calendarDiv.find('.todayTime').remove();
 
-    //    log(_initialDiStamp.stampDay);
+    var currentTime = new Date();
+    var nowDi = getDateInfo(currentTime);
+    
+    var dayCell = _calendarDiv.find('#cal2_igd{bMonth}_{bDay}'.filledWith(nowDi));
+    dayCell.addClass('today');
 
-    var stamp = _initialDiStamp.stampDay.split('.');
-    var month = stamp[1];
-    var day = stamp[2];
+    var start = moment(nowDi.frag1SunTimes.sunset);
+    var end = moment(nowDi.frag2SunTimes.sunset);
+    var now = moment(currentTime); // moment seems to cache the time when the page loads
 
-    var sel = _calendarDiv.find('#cal2_igd{0}_{1}'.filledWith(month, day));
-    sel.addClass('today');
-
-    var start = moment(di.frag1SunTimes.sunset);
-    var end = moment(di.frag2SunTimes.sunset);
-    var now = moment(new Date()); // moment seems to cache the time when the page loads
-
-    //    log('start ' + start.format());
-    //    log('end ' + end.format());
-    //
-    //    log('now ' + now.format());
-    //    log('end->start ' + end.diff(start));
-    //    log('now->start '  + now.diff(start));
+//    log('------');
+//    log('start ' + start.format());
+//    log('end ' + end.format());
+//
+//    log('now ' + now.format());
+//    log('end->start ' + start.diff(now));
+//    log('now->start ' + now.diff(start));
 
     var pct = now.diff(start) / end.diff(start) * 100;
-    // redraw every minute? No - will be redrawn if day changes, and on every display. Not critical to be absolutely correct.
+
     // don't show too close to the edge... looks better
     if (pct < 1) pct = 1;
     if (pct > 99) pct = 99;
 
-    sel.append('<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm')));
+    dayCell.append('<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm')));
 
     clearTimeout(_timeoutTime);
-    _timeoutTime = setTimeout(showTodayTime, 10 * 60 * 1000);  // 10 minutes
+    _timeoutTime = setTimeout(showTodayTime, 15 * 60 * 1000);  // 15 minutes
   }
 
   preparePage();
