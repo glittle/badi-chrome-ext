@@ -1,5 +1,5 @@
 ﻿// popup
-declare function addSamples(di:any): void;
+declare function addSamples(di: any): void;
 
 // shared
 declare var _di: any;
@@ -11,6 +11,7 @@ declare function log(a: any): void;
 declare function setStorage(key: string, value: any): void;
 declare function getStorage<T>(key: string, defaultValue?: T): T;
 declare function getMessage(key: string, obj?: any, defaultValue?: string): string;
+declare function showIcon();
 
 interface String {
   filledWithEach(a: Array<any>): string;

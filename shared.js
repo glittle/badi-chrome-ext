@@ -293,25 +293,39 @@ function getElementNum(num) {
   return element;
 }
 
+function getToolTipMessageTemplate(lineNum) {
+  // can be overwritten in the custom page
+  switch (lineNum) {
+  case 1:
+    return getStorage('formatToolTip1', getMessage('formatIconToolTip'));
+  case 2:
+    return getStorage('formatToolTip2', '{nearestSunset}');
+  }
+  return '';
+}
+
+
 function showIcon() {
   var dateInfo = getDateInfo(new Date());
   var tipLines = [];
-
-  tipLines.push(getMessage('formatIconToolTip', dateInfo));
+  
+  tipLines.push(getToolTipMessageTemplate(1).filledWith(dateInfo));
+  tipLines.push(getToolTipMessageTemplate(2).filledWith(dateInfo));
+  tipLines.push('');
 
   if (dateInfo.special1) {
     tipLines.push(dateInfo.special1);
     if (dateInfo.special2) {
       tipLines.push(dateInfo.special2);
     }
+    tipLines.push('');
   }
 
   if (dateInfo.bMonth === 19) {
     tipLines.push(getMessage('sunriseFastHeading') + ' - ' + showTime(dateInfo.frag2SunTimes.sunrise));
+    tipLines.push('');
   }
 
-  tipLines.push(dateInfo.nearestSunset);
-  tipLines.push('');
   tipLines.push(getMessage('formatIconClick'));
 
   chrome.browserAction.setTitle({ title: tipLines.join('\n') });

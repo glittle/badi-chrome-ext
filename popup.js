@@ -160,7 +160,7 @@ function updateSpecial(di) {
 }
 
 function updateSharedContent(di) {
-  $('#day').html(getMessage('bTopDayDisplay', di));
+  $('#day').html(getStorage('formatTopDay', getMessage('bTopDayDisplay')).filledWith(di));
   $('#sunset').html(di.nearestSunset);
   $('#gDay').html(getMessage('gTopDayDisplay', di));
 

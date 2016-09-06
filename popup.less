@@ -424,6 +424,25 @@ body {
     }
   }
 
+  .customLoadDefaults {
+    margin: 3px 0 0 5px;
+
+    > span {
+      margin: 1px 0;
+      display: block;
+    }
+
+    > div {
+      display: flex;
+      margin: 0 0 0 25px;
+    }
+
+    select {
+      max-width: 80%;
+      margin: 1px 0 0 5px;
+    }
+  }
+
   p {
     margin: 0;
   }
@@ -504,8 +523,9 @@ body {
 
   .customFormats {
     clear: both;
-    max-height: 238px;
+    max-height: 168px;
     overflow: auto;
+    border-bottom: 1px solid #eee;
 
     .customFormatDiv {
       margin: 1px 0;
@@ -517,7 +537,7 @@ body {
       justify-content: space-between;
 
       &.inEdit {
-        background-color: #eee;
+        background-color: #efe;
       }
 
       .customFormatInfo {
@@ -921,6 +941,7 @@ div.selectPages {
 #day, #gDay {
   padding: 0 3px;
   border-radius: 3px;
+
   &.notToday {
     background-color: rgba(255, 255, 0, 0.25);
   }

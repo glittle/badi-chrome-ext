@@ -1,7 +1,7 @@
 {
   "1day": {
     "message": "in {0} day",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future (see otherDays)" 
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future (see otherDays)"
   },
   "actionSpeakDesc": {
     "message": "The reminder will be read aloud using this voice: ",
@@ -173,10 +173,10 @@
     "message": "Custom Date Formats"
   },
   "customIntroClick": {
-    "message": "Click Copy to copy formatted date to the clipboard."
+    "message": "Click 'Copy' to copy formatted date to the clipboard."
   },
   "customLoadLetters": {
-    "message": "Click to start from a standard format: "
+    "message": "Click to copy from a standard format: "
   },
   "customPartsList": {
     "message": "Available Date Parts"
@@ -1326,5 +1326,41 @@
   "prevMonth": {
     "message": "Prev Mo<u>n</u>th",
     "description": "button to move to previous month (gregorian or badi)"
-  }
+  },
+  "btnCal2Y": {
+    "message": "Zoom to Year",
+    "description": "on button"
+  },
+  "btnCal2M": {
+    "message": "Zoom to Month",
+    "description": "on button"
+  },
+  "customLoadDefaultToolTip": {
+    "message": "Format to show in the Chrome icon tooltip:",
+    "description": ""
+  },
+  "customLoadDefaultToolTip1": {
+    "message": "Line 1",
+    "description": ""
+  },
+  "customLoadDefaultToolTip2": {
+    "message": "Line 2",
+    "description": ""
+  },
+  "customLoadDefaultTopDay": {
+    "message": "Format to show at the top of most pages:",
+    "description": ""
+  },
+  "defaultFormat": {
+    "message": "(Default) ",
+    "description":  "in the list of formats at the bottom of of the 'Custom' page"  
+  },
+  "standardFormats": {
+    "message": "Standard Formats",
+    "description":  "in the list of formats at the bottom of of the 'Custom' page"  
+  },
+  "customFormats": {
+    "message": "Custom Formats",
+    "description":  "in the list of formats at the bottom of of the 'Custom' page"  
+  } 
 }

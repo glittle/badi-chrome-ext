@@ -63,43 +63,25 @@
     .todayTime {
       display: none;
     }
-    //&.zoomY {
-    //  //      width: 440px;
-    //  //      height: 360px;
-    //  overflow: visible;
-    //  //      transform: scale(0.14, 0.2);
-    //  transform-origin: 10px 10px;
-    //
-    //  .dayCell {
-    //    * {
-    //      display: none;
-    //    }
-    //  }
-    //
-    //  .bMonthInfo, .gMonthInfo, .placeName {
-    //    display: none;
-    //  }
-    //
-    //  #cal2_m0 {
-    //    display: none !important;
-    //  }
-    //
-    //  .caption {
-    //    left: 0;
-    //    right: auto;
-    //    z-index: 1;
-    //  }
-    //
-    //  .monthNames {
-    //    transform: scale(4.5);
-    //    transform-origin: top left;
-    //
-    //    .year {
-    //      display: none;
-    //    }
-    //  }
-    //}
+
     transition: all 1s;
+  }
+
+  &.zoomY {
+    #btnCal2Y {
+      display: none;
+    }
+
+    .month {
+      transition: all 1s;
+      opacity: 0;
+    }
+  }
+
+  &.zoomM {
+    #btnCal2M {
+      display: none;
+    }
   }
 
   .cal2NavButtons {
@@ -107,6 +89,7 @@
     right: 22px;
     top: 160px;
     z-index: 1;
+    display: none; // not ready yet
   }
 
   @dayWidth: 124px;
@@ -115,9 +98,31 @@
     position: relative;
     margin: 10px 0px 11px 6px;
     padding: 5px 6px;
-    border-radius: 4px;
     width: @dayWidth * 6;
     display: inline-block;
+  }
+
+  .monthShell {
+    width: 738px;
+    height: 395px;
+    position: absolute;
+    border: 1px solid red;
+    top: 14px;
+    left: 11px;
+    transition: all ease-in-out 1s;
+    opacity: 0;
+    z-index: -1;
+
+    &.sizeY {
+      width: 122px;
+      height: 98px;
+      transition: all ease-in-out 1s;
+      z-index: 1;
+    }
+
+    .monthNum {
+      font-size: 2em;
+    }
   }
 
   .monthDays {
@@ -173,10 +178,18 @@
     }
   }
 
+  .monthShell.elementNum1 {
+    background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+  }
+
   .dayRow.elementNum2 {
     .dayCell {
       background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
     }
+  }
+
+  .monthShell.elementNum2 {
+    background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
   }
 
   .dayRow.elementNum3 {
@@ -185,10 +198,18 @@
     }
   }
 
+  .monthShell.elementNum3 {
+    background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+  }
+
   .dayRow.elementNum4 {
     .dayCell {
       background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
     }
+  }
+
+  .monthShell.elementNum4 {
+    background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
   }
 
   .monthRow {
@@ -201,6 +222,13 @@
 
   .monthNameDay {
     .dayName {
+      padding: 1px 3px 2px 3px;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+
+    .bWeekDay {
+      top: 33px;
     }
   }
 
@@ -279,7 +307,7 @@
 
   .top {
     line-height: 14px;
-    height: 23px;// @gradientEnd - 15;
+    height: 23px; // @gradientEnd - 15;
     text-align: right;
 
     .dayNum {
@@ -310,17 +338,8 @@
     vertical-align: text-top;
   }
 
-  .bWeekDay {
-    text-align: left;
-  }
-
   .dayName, .bWeekDay, .sunrise, .sunsetStart, .sunsetEnd {
     color: #7F4444;
-    font-size: .55rem;
-  }
-
-  .bWeekDay {
-    color: lighten(#7F4444, 40%);
     font-size: .55rem;
   }
 
@@ -331,20 +350,12 @@
   }
 
   .bWeekDay {
+    color: lighten(#7F4444, 40%);
+    text-align: left;
+    font-size: .55rem;
     position: absolute;
     top: 29px; //@gradientEnd * .9;
     left: 3px;
-  }
-
-  .monthNameDay {
-    .dayName {
-      padding: 1px 3px 2px 3px;
-      border: 1px solid #999;
-      border-radius: 4px;
-    }
-    .bWeekDay {
-      top: 33px;
-    }
   }
 
   .hdHS, .hdHO {
@@ -367,7 +378,7 @@
       font-weight: bold;
     }
 
-    .bWeekDay{
+    .bWeekDay {
       font-weight: bold;
       color: #7F4444;
     }
@@ -376,7 +387,6 @@
       background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
       border-color: #333;
     }
-   
   }
 
   #cal2options {

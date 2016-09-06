@@ -12,9 +12,11 @@ var Cal2 = function () {
   var _calendarDiv = _page.find('.calendar');
   var _initialScrollDone = false;
   var _timeoutTime = null;
+  var _currentZoom = null;
 
   function preparePage() {
     attachHandlers();
+    zoomTo('M');
   }
 
   function attachHandlers() {
@@ -35,12 +37,12 @@ var Cal2 = function () {
       _page.toggleClass('darkerColors', !!_page.find('#cbCal2Darker').prop('checked'));
       // _calendarDiv.find('#cbCal2Darker').blur();
     });
-    //    _page.find('#btnShowYear').click(function () {
-    //      zoomTo('Y');
-    //    });
-    //    _page.find('#btnShowMonth').click(function () {
-    //      zoomTo('M');
-    //    });
+    _page.find('#btnCal2Y').click(function () {
+      zoomTo('Y');
+    });
+    _page.find('#btnCal2M').click(function () {
+      zoomTo('M');
+    });
     $(document).on('click', 'body[data-pageid=pageCal2] .btnChangeMonth', changeMonth);
   }
 
@@ -75,6 +77,109 @@ var Cal2 = function () {
     //    }
 
 
+  }
+
+  function zoomTo(level) {
+    if (_currentZoom === level) {
+      return;
+    }
+
+    _page.removeClass('zoomM zoomY zoomV zoomK').addClass('zoom' + level);
+
+    var leftOffset = 11;
+    var topOffset = 14;
+
+    var monthShells = $('.monthShell');
+
+    switch (level) {
+      case 'Y':
+        // replace month detail with month shell
+//        var currentMonth = _di.bMonth;
+//        monthShell.css({
+//          left: (leftOffset + getCol(currentMonth) * 123) + 'px',
+//          top: (topOffset + getRow(currentMonth) * 99) + 'px',
+//          width: '122px',
+//          height: '98px'
+//        });
+
+        // make shell small
+        monthShells.addClass('sizeY');
+
+        monthShells.each(function (i, el) {
+          var monthNum = +el.id.replace('monthCell', '');
+          $(el).css({
+            left: (leftOffset + getCol(monthNum) * 123) + 'px',
+            top: (topOffset + getRow(monthNum) * 99) + 'px',
+            opacity: 1
+          });
+        });
+
+        // show other months around it
+
+        break;
+
+      case 'M':
+        var currentMonth = _di.bMonth;
+        monthShells.hide();
+        $('#monthCell' + currentMonth).show();
+
+        // zoom shell to full size
+        monthShells.removeClass('sizeY');
+        
+        monthShells.css({
+          left: leftOffset + 'px',
+          top: topOffset + 'px',
+          opacity: 0
+        });
+
+        monthShells.show();
+
+        // show month detail
+
+        break;
+
+    }
+
+    _currentZoom = level;
+  }
+
+  function getCol(month) {
+    log(month);
+    switch (month) {
+      case 1:
+      case 4:
+      case 8:
+      case 14:
+        return 0;
+      case 2:
+      case 5:
+      case 9:
+      case 15:
+        return 1;
+      case 3:
+      case 6:
+      case 10:
+      case 16:
+        return 2;
+      case 7:
+      case 11:
+      case 17:
+        return 3;
+      case 12:
+      case 18:
+        return 4;
+      case 13:
+      case 19:
+        return 5;
+    }
+    return null;
+  }
+
+  function getRow(month) {
+    if (month <= 3) return 0;
+    if (month <= 7) return 1;
+    if (month <= 13) return 2;
+    return 3;
   }
 
   //  function zoomTo(level) {
@@ -165,7 +270,13 @@ var Cal2 = function () {
       Array.prototype.push.apply(html, buildMonth(bYear, m));
     }
 
-    _calendarDiv.html(html.join('') + newRowEnd);
+    html.push(newRowEnd);
+
+    for (var i = 1; i <= 19; i++) {
+      html.push('<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(i, getElementNum(i)));
+    }
+
+    _calendarDiv.html(html.join(''));
 
     showTodayTime();
 
@@ -375,7 +486,7 @@ var Cal2 = function () {
 
     var currentTime = new Date();
     var nowDi = getDateInfo(currentTime);
-    
+
     var dayCell = _calendarDiv.find('#cal2_igd{bMonth}_{bDay}'.filledWith(nowDi));
     dayCell.addClass('today');
 
@@ -383,13 +494,13 @@ var Cal2 = function () {
     var end = moment(nowDi.frag2SunTimes.sunset);
     var now = moment(currentTime); // moment seems to cache the time when the page loads
 
-//    log('------');
-//    log('start ' + start.format());
-//    log('end ' + end.format());
-//
-//    log('now ' + now.format());
-//    log('end->start ' + start.diff(now));
-//    log('now->start ' + now.diff(start));
+    //    log('------');
+    //    log('start ' + start.format());
+    //    log('end ' + end.format());
+    //
+    //    log('now ' + now.format());
+    //    log('end->start ' + start.diff(now));
+    //    log('now->start ' + now.diff(start));
 
     var pct = now.diff(start) / end.diff(start) * 100;
 
