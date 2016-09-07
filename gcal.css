@@ -1,5 +1,14 @@
 ﻿div.month-row .bDay {
   float: right;
-  display: block;
+  font-style: italic;
+  font-size: .75em;
+  background-color: aliceblue;
+  padding: 0 5px 0 3px;
+  border-radius: 3px;
+  cursor: pointer;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdjYWwubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxHQUFHLFVBQ0Q7RUFDRSxZQUFBO0VBQ0EsY0FBQSIsImZpbGUiOiJ1bmRlZmluZWQifQ== */
+div.month-row .bDay.firstBDay {
+  background-color: brown;
+  color: #fff;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdjYWwubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxHQUFHLFVBQ0Q7RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7O0FBRUEsR0FWRCxVQUNELE1BU0c7RUFDQyx1QkFBQTtFQUNBLFdBQUEiLCJmaWxlIjoidW5kZWZpbmVkIn0= */

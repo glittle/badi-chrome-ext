@@ -53,13 +53,15 @@ function reload() {
   }
 
   addToAllDays(selector, layout, dateTopFormat, dayRegEx);
+
 }
 
 function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
   //  console.log($('.calHeaderSpace').eq(1).text());
 
   let dateTopText = $('.date-top').text();
-  var firstDate = moment.utc(dateTopText, dateTopFormat);
+  var firstDate = moment(dateTopText, dateTopFormat);
+//  var firstDate = moment.utc(dateTopText, dateTopFormat);
 
   var lastDate = null;
   var startedMonth = false;
@@ -69,6 +71,7 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
       var span = $(el);
 
       var thisDate = moment(firstDate);
+      thisDate.hour(12); // move to noon
 
       var monthOffset = 0;
       let inMonth = span.closest('td').hasClass('st-dtitle-nonmonth');
@@ -123,10 +126,19 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
       span.addClass('gDay');
       switch (layout) {
         case 'month':
-          $('<span/>',
+          let label = [];
+          if (di.bDay === 1) {
+            label.push(di.bMonthMeaning);
+          } else {
+            label.push(di.bMonthMeaning);
+//            label.push(di.bMonthMeaning.substring(0, 3) + '.');
+          }
+          label.push(di.bDay);
+
+          $('<div/>',
           {
-            html: '{^bMonthMeaning} {bDay}'.filledWith(di),
-            'class': 'bDay',
+            html: label.join(' '),
+            'class': 'bDay' + (di.bDay === 1 ? ' firstBDay' : ''),
             title: thisDate.format()
           }).insertAfter(span);
           break;
@@ -142,5 +154,32 @@ $(window).bind('hashchange', function () {
 
 setTimeout(function () {
   // need a better way to trigger after calendar is fully displayed!
-  reload();
+//  reload();
 }, 100);
+
+var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+var list = document.querySelector('.st-dtitle');
+
+var observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    if (mutation.type === 'childList') {
+      var list_values = [].slice.call(list.children)
+          .map(function (node) { return node.innerHTML; })
+          .filter(function (s) {
+            if (s === '<br />') {
+              return false;
+            }
+            else {
+              return true;
+            }
+          });
+      console.log(list_values);
+    }
+  });
+});
+
+observer.observe(list, {
+  attributes: true,
+  childList: true,
+  characterData: true
+});
