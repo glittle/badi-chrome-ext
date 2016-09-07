@@ -116,7 +116,21 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
 
       lastDate = thisDate;
 
-      console.log(thisDate.format('ll'));
+      var di = getDateInfo(thisDate.toDate());
+
+      console.log(thisDate.format('ll') + ' ' + di.bDay);
+
+      span.addClass('gDay');
+      switch (layout) {
+        case 'month':
+          $('<span/>',
+          {
+            html: '{^bMonthMeaning} {bDay}'.filledWith(di),
+            'class': 'bDay',
+            title: thisDate.format()
+          }).insertAfter(span);
+          break;
+      }
     });
 }
 
@@ -126,4 +140,7 @@ $(window).bind('hashchange', function () {
   reload();
 });
 
-reload();
+setTimeout(function () {
+  // need a better way to trigger after calendar is fully displayed!
+  reload();
+}, 100);

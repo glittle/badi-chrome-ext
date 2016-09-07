@@ -23,5 +23,10 @@
     "outputFile": "calGreg.css",
     "inputFile": "calGreg.less",
     "options": { "sourceMap": true }
+  },
+  {
+    "outputFile": "gcal.css",
+    "inputFile": "gcal.less",
+    "options": { "sourceMap": true }
   }
 ]
