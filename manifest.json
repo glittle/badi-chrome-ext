@@ -11,13 +11,13 @@
     "persistent": false,
     "scripts": [
       "jquery-2.1.3.min.js",
+      "background.js",
       "sharedBrowser.js",
       "suncalc.js",
       "holydays.js",
       "moment.js",
       "shared.js",
-      "backgroundReminderModule.js",
-      "background.js"
+      "backgroundReminderModule.js"
     ]
   },
   "permissions": [

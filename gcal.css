@@ -1,14 +1,57 @@
-﻿div.month-row .bDay {
-  float: right;
-  font-style: italic;
-  font-size: .75em;
-  background-color: aliceblue;
-  padding: 0 5px 0 3px;
+﻿/* fire of God */
+/* air of eternity */
+/* water of Divine Unity */
+/* earth */
+.bDay {
   border-radius: 3px;
-  cursor: pointer;
+  color: #555;
+  padding: 0 3px 0 3px;
+  width: auto;
+  cursor: default;
 }
-div.month-row .bDay.firstBDay {
-  background-color: brown;
+.bDay.element1 {
+  background-color: #ffe6e6;
+}
+.bDay.element2 {
+  background-color: #fafafa;
+}
+.bDay.element3 {
+  background-color: #e8e8ff;
+}
+.bDay.element4 {
+  background-color: #e6ffe6;
+}
+.bDay.firstBDay {
   color: #fff;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdjYWwubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxHQUFHLFVBQ0Q7RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLDJCQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7O0FBRUEsR0FWRCxVQUNELE1BU0c7RUFDQyx1QkFBQTtFQUNBLFdBQUEiLCJmaWxlIjoidW5kZWZpbmVkIn0= */
+.bDay.firstBDay.element1 {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.bDay.firstBDay.element2 {
+  background-color: rgba(100, 100, 100, 0.4);
+}
+.bDay.firstBDay.element3 {
+  background-color: rgba(0, 0, 255, 0.6);
+}
+.bDay.firstBDay.element4 {
+  background-color: #009600;
+}
+div.month-row .bDay {
+  float: right;
+  font-size: .9em;
+  line-height: 1.3em;
+  margin: 2px -2px 0 0;
+}
+.lv-datecell .bDay {
+  font-weight: normal;
+}
+.lv-datecell .bDay.firstBDay {
+  font-weight: bold;
+}
+.wk-dayname .bDay {
+  font-weight: normal;
+}
+.wk-dayname .bDay.firstBDay {
+  font-weight: bold;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdjYWwubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBRUE7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxvQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBOztBQUVBLEtBQUM7RUFDQyx5QkFBQTs7QUFHRixLQUFDO0VBQ0MseUJBQUE7O0FBR0YsS0FBQztFQUNDLHlCQUFBOztBQUdGLEtBQUM7RUFDQyx5QkFBQTs7QUFJRixLQUFDO0VBQ0MsV0FBQTs7QUFFQSxLQUhELFVBR0U7RUFDQyxzQ0FBQTs7QUFHRixLQVBELFVBT0U7RUFDQywwQ0FBQTs7QUFHRixLQVhELFVBV0U7RUFDQyxzQ0FBQTs7QUFHRixLQWZELFVBZUU7RUFDQyx5QkFBQTs7QUFNTixHQUFHLFVBQ0Q7RUFDRSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0VBQ0Esb0JBQUE7O0FBSUosWUFDRTtFQUNFLG1CQUFBOztBQUVBLFlBSEYsTUFHRztFQUNDLGlCQUFBOztBQU1OLFdBQ0U7RUFDRSxtQkFBQTs7QUFFQSxXQUhGLE1BR0c7RUFDQyxpQkFBQSIsImZpbGUiOiJ1bmRlZmluZWQifQ== */

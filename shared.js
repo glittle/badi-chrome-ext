@@ -195,7 +195,8 @@ function getDateInfo(currentTime, onlyStamp) {
   di.bWeekdayNamePri = settings.useArNames ? di.bWeekdayNameAr : di.bWeekdayMeaning;
   di.bWeekdayNameSec = !settings.useArNames ? di.bWeekdayNameAr : di.bWeekdayMeaning;
 
-  di.element = elements[getElementNum(bNow.m) - 1];
+  di.elementNum = getElementNum(bNow.m);
+  di.element = elements[di.elementNum - 1];
 
   di.bDayOrdinal = di.bDay + getOrdinal(di.bDay);
   di.bVahidOrdinal = di.bVahid + getOrdinal(di.bVahid);
@@ -296,10 +297,10 @@ function getElementNum(num) {
 function getToolTipMessageTemplate(lineNum) {
   // can be overwritten in the custom page
   switch (lineNum) {
-  case 1:
-    return getStorage('formatToolTip1', getMessage('formatIconToolTip'));
-  case 2:
-    return getStorage('formatToolTip2', '{nearestSunset}');
+    case 1:
+      return getStorage('formatToolTip1', getMessage('formatIconToolTip'));
+    case 2:
+      return getStorage('formatToolTip2', '{nearestSunset}');
   }
   return '';
 }
@@ -308,7 +309,7 @@ function getToolTipMessageTemplate(lineNum) {
 function showIcon() {
   var dateInfo = getDateInfo(new Date());
   var tipLines = [];
-  
+
   tipLines.push(getToolTipMessageTemplate(1).filledWith(dateInfo));
   tipLines.push(getToolTipMessageTemplate(2).filledWith(dateInfo));
   tipLines.push('');
@@ -498,7 +499,7 @@ function startGetLocationName() {
   xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
-    log('new state ' + xhr.readState);
+    //    log('new state ' + xhr.readState);
     if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
       localStorage.locationName =
@@ -582,7 +583,7 @@ function recallFocusAndSettings() {
 
       if (!isNaN(time)) {
         var changing = now.toDateString() !== time.toDateString();
-//        log('reuse focus time: ' + time);
+        //        log('reuse focus time: ' + time);
 
         setFocusTime(time);
 
@@ -600,13 +601,13 @@ function recallFocusAndSettings() {
 }
 
 function highlightGDay() {
-//  log('highlight');
-//  if (typeof $().effect !== 'undefined') {
-//    setTimeout(function () {
-//      $('#day, #gDay').effect("highlight", 6000);
-//    },
-//        150);
-//  }
+  //  log('highlight');
+  //  if (typeof $().effect !== 'undefined') {
+  //    setTimeout(function () {
+  //      $('#day, #gDay').effect("highlight", 6000);
+  //    },
+  //        150);
+  //  }
 }
 
 function refreshDateInfoAndShow(resetToNow) {
@@ -1135,3 +1136,28 @@ function createGuid() {
         return v.toString(16);
       });
 }
+
+
+chrome.runtime.onMessage.addListener(
+  function (payload, sender, callback) {
+    if (!callback) {
+      callback = function () { }; // make it optional
+    }
+    switch (payload.cmd) {
+      case 'getInfo':
+        // layout, targetDay
+        // can adjust per layout
+        var di = getDateInfo(new Date(payload.targetDay));
+        callback({
+          label: getStorage('gCalLabel', '{bMonthNamePri} {bDay}').filledWith(di),
+          title: getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{element} {bYear}').filledWith(di),
+          classes:
+            (di.bDay === 1 ? ' firstBDay' : '')
+          + (' element' + di.elementNum)
+        });
+        break;
+      default:
+        callback();
+        break;
+    }
+  });

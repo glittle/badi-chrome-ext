@@ -1,4 +1,6 @@
-﻿console.log('loaded gcal');
+﻿///<reference path='gcalsetup.js'/>
+///<reference path='shared.js'/>
+
 
 /*
  * This code is very specific to the normal English Google calendar layout and formats!
@@ -7,8 +9,7 @@
  * 
  */
 
-
-function reload() {
+function fillCalendar() {
   var hash = location.hash;
   var parts = hash.split(/%7C|,|-/g);
   var layout = parts.length > 1 ? parts[1] : 'month';
@@ -53,7 +54,6 @@ function reload() {
   }
 
   addToAllDays(selector, layout, dateTopFormat, dayRegEx);
-
 }
 
 function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
@@ -61,10 +61,12 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
 
   let dateTopText = $('.date-top').text();
   var firstDate = moment(dateTopText, dateTopFormat);
-//  var firstDate = moment.utc(dateTopText, dateTopFormat);
+  //  var firstDate = moment.utc(dateTopText, dateTopFormat);
 
   var lastDate = null;
   var startedMonth = false;
+
+  var toInsert = [];
 
   $(dayLabelSelector)
     .each(function (i, el) {
@@ -119,67 +121,129 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
 
       lastDate = thisDate;
 
-      var di = getDateInfo(thisDate.toDate());
+      //      console.log(thisDate.format('YYYY MM DD'));
 
-      console.log(thisDate.format('ll') + ' ' + di.bDay);
+      chrome.runtime.sendMessage({
+        cmd: 'getInfo',
+        targetDay: thisDate.toDate().getTime(),
+        layout: layout
+      }, function (info) {
+        span.addClass('gDay');
+        var div;
+        switch (layout) {
+          case 'month':
+          case 'week':
+          case 'day':
+          case 'custom':
+          case 'list':
+            div = $('<div/>',
+            {
+              html: info.label,
+              'class': 'bDay' + info.classes,
+              title: info.title
+            });
+            toInsert.push([span, div]);
+            break;
+        }
+      });
+    });
 
-      span.addClass('gDay');
-      switch (layout) {
-        case 'month':
-          let label = [];
-          if (di.bDay === 1) {
-            label.push(di.bMonthMeaning);
-          } else {
-            label.push(di.bMonthMeaning);
-//            label.push(di.bMonthMeaning.substring(0, 3) + '.');
-          }
-          label.push(di.bDay);
 
-          $('<div/>',
-          {
-            html: label.join(' '),
-            'class': 'bDay' + (di.bDay === 1 ? ' firstBDay' : ''),
-            title: thisDate.format()
-          }).insertAfter(span);
-          break;
+  chrome.runtime.sendMessage({
+    cmd: 'dummy' // just to get in the queue after all the ones above
+  },
+    function () {
+//      console.log(`insert ${toInsert.length + 1} elements`);
+      for (var j = 0; j < toInsert.length; j++) {
+        var item = toInsert[j];
+
+        switch (layout) {
+          case 'month':
+          case 'list':
+          case 'custom':
+          case 'week':
+          case 'day':
+            item[1].insertAfter(item[0]);
+            break;
+            //          case 'day':
+            //            item[1].insertBefore(item[0]);
+            //            break;
+        }
       }
     });
 }
 
+var refreshCount = 0;
+function calendarUpdated(element) {
+  refreshCount++;
+
+  // seems to redraw twice on first load
+  var threshold = 1;
+
+  //  if (element.id === 'mvEventContainer') {
+  //    threshold = 1; 
+  //  }
+
+  if (refreshCount > threshold) {
+    fillCalendar();
+  }
+}
 
 
-$(window).bind('hashchange', function () {
-  reload();
-});
 
-setTimeout(function () {
-  // need a better way to trigger after calendar is fully displayed!
-//  reload();
-}, 100);
 
-var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-var list = document.querySelector('.st-dtitle');
 
-var observer = new MutationObserver(function (mutations) {
-  mutations.forEach(function (mutation) {
-    if (mutation.type === 'childList') {
-      var list_values = [].slice.call(list.children)
-          .map(function (node) { return node.innerHTML; })
-          .filter(function (s) {
-            if (s === '<br />') {
-              return false;
-            }
-            else {
-              return true;
-            }
-          });
-      console.log(list_values);
+(function (win) {
+  'use strict';
+
+  var listeners = [],
+  doc = win.document,
+  MutationObserver = win.MutationObserver || win.WebKitMutationObserver,
+  observer;
+
+  function ready(selector, fn) {
+    // Store the selector and callback to be monitored
+    listeners.push({
+      selector: selector,
+      fn: fn
+    });
+    if (!observer) {
+      // Watch for changes in the document
+      observer = new MutationObserver(check);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
     }
-  });
-});
+    // Check if the element is currently in the DOM
+    check();
+  }
 
-observer.observe(list, {
-  attributes: true,
-  childList: true,
-  characterData: true
-});
+  function check() {
+    // Check the DOM for elements matching a stored selector
+    for (var i = 0, len = listeners.length, listener, elements; i < len; i++) {
+      listener = listeners[i];
+      // Query for elements matching the specified selector
+      elements = doc.querySelectorAll(listener.selector);
+      for (var j = 0, jLen = elements.length, element; j < jLen; j++) {
+        element = elements[j];
+        // Make sure the callback isn't invoked with the 
+        // same element more than once
+        if (!element.ready) {
+          element.ready = true;
+          // Invoke the callback with the element
+          listener.fn.call(element, element);
+        }
+      }
+    }
+  }
+
+  // Expose `ready`
+  win.ready = ready;
+
+})(this);
+
+
+ready('#mvEventContainer', calendarUpdated);
+ready('.wk-weektop', calendarUpdated);
+ready('#lv_listview', calendarUpdated);

@@ -1,20 +1,77 @@
-﻿// month view
+﻿@import "colors.less";
+
+.bDay {
+  border-radius: 3px;
+  color: #555;
+  padding: 0 3px 0 3px;
+  width: auto;
+  cursor: default;
+
+  &.element1 {
+    background-color: @lightFire;
+  }
+
+  &.element2 {
+    background-color: @lightAir;
+  }
+
+  &.element3 {
+    background-color: @lightWater;
+  }
+
+  &.element4 {
+    background-color: @lightEarth;
+  }
+
+
+  &.firstBDay {
+    color: #fff;
+
+    &.element1 {
+      background-color: @darkFire;
+    }
+
+    &.element2 {
+      background-color: @darkAir;
+    }
+
+    &.element3 {
+      background-color: @darkWater;
+    }
+
+    &.element4 {
+      background-color: @darkEarth;
+    }
+  }
+}
+
+// month view
 div.month-row {
   .bDay {
     float: right;
-    font-style: italic;
-    font-size: .75em;
-    background-color: aliceblue;
-    padding: 0 5px 0 3px;
-    border-radius: 3px;
-    cursor: pointer;
+    font-size: .9em;
+    line-height: 1.3em;
+    margin: 2px -2px 0 0;
+  }
+}
+
+.lv-datecell {
+  .bDay {
+    font-weight: normal;
 
     &.firstBDay {
-      background-color: brown;
-      color: #fff;
+      font-weight: bold;
     }
   }
+}
 
-  .gDay {
+
+.wk-dayname {
+  .bDay {
+    font-weight: normal;
+
+    &.firstBDay {
+      font-weight: bold;
+    }
   }
 }
