@@ -1,74 +1,164 @@
 ﻿///<reference path='gcalsetup.js'/>
 ///<reference path='shared.js'/>
-
+/* global chrome */
 
 /*
- * This code is very specific to the normal English Google calendar layout and formats!
+ * Warning...
  * 
- *  
+ * This code is very specific to the 'normal' English Google calendar layout and formats!
+ * It has to read the screen and try to determine which dates are being displayed.
  * 
  */
 
-function fillCalendar() {
+function fillCalendar(watchedDomElement) {
   var hash = location.hash;
   var parts = hash.split(/%7C|,|-/g);
-  var layout = parts.length > 1 ? parts[1] : 'month';
-  var selector = '';
-  var dateTopFormat = '';
-  var dayRegEx = '';
 
-  switch (layout) {
+  var config = {
+    layout: parts.length > 1 ? parts[1] : 'month',
+    daySelector: '',
+    dayRegEx: null,
+    contextDateSelector: '.date-top',
+    contextDateFormat: '',
+    logDetails: false
+  };
+
+  var el = $(watchedDomElement);
+  let popupDisplay = el.hasClass('neb-date');
+  let popupNew = el.hasClass('period-tile');
+  if (popupDisplay || popupNew) {
+    config = parsePopupInfo(popupDisplay, popupNew, config);
+
+  } else {
+    if (config.layout === 'eid' && el.hasClass('mv-event-container')) {
+      config.layout = 'month';
+    }
+  }
+
+
+  switch (config.layout) {
     case 'week':
-      selector = '.wk-dayname span';
-      dateTopFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
-      dayRegEx = /.* (\d+)\/(\d+)/; // Tue 9/13
+      config.daySelector = '.wk-dayname span';
+      config.contextDateFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
+      config.dayRegEx = /.* (\d+)\/(\d+)/; // Tue 9/13
       break;
 
     case 'month':
-      selector = '.st-dtitle span';
-      dateTopFormat = 'MMMM YYYY';
-      dayRegEx = /(\w+ )?(\d+)/; // Sep 1  or  5
+      config.daySelector = '.st-dtitle span';
+      config.contextDateFormat = 'MMMM YYYY';
+      config.dayRegEx = /(\w+ )?(\d+)/; // Sep 1  or  5
+      config.logDetails = true;
       break;
 
     case 'day':
-      selector = '.wk-dayname span';
-      dateTopFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
-      dayRegEx = /.* (\d+)\/(\d+)/;// Tuesday 9/13
+      config.daySelector = '.wk-dayname span';
+      config.contextDateFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
+      config.dayRegEx = /.* (\d+)\/(\d+)/;// Tuesday 9/13
       break;
 
     case 'custom': // 5 day
-      selector = '.wk-dayname span';
-      dateTopFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
-      dayRegEx = /.* (\d+)\/(\d+)/;// Tue 9/13
+      config.daySelector = '.wk-dayname span';
+      config.contextDateFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
+      config.dayRegEx = /.* (\d+)\/(\d+)/;// Tue 9/13
       break;
 
     case 'list': // agenda
-      selector = '.lv-datecell span';
-      dateTopFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
-      dayRegEx = /(\w+)\s(\d+)/;// Tue Sep 14
+      config.daySelector = '.lv-datecell span';
+      config.contextDateFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
+      config.dayRegEx = /(\w+)\s(\d+)/;// Tue Sep 14
+      break;
+
+    case 'popup':
       break;
 
     default:
-      console.log('unexpected layout: ' + layout);
+      console.log('unexpected layout: ' + config.layout);
+      console.log(el.attr('id'));
+      console.log(el.className);
       return;
   }
 
-  addToAllDays(selector, layout, dateTopFormat, dayRegEx);
+  addToAllDays(config);
 }
 
-function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
-  //  console.log($('.calHeaderSpace').eq(1).text());
+function parsePopupInfo(popupDisplay, popupNew, config) {
+  config.layout = 'popup';
+  config.daySelector = '.wk-dayname span';
+  config.dayRegEx = /.* (\d+)\/(\d+)/;
 
-  let dateTopText = $('.date-top').text();
-  var firstDate = moment(dateTopText, dateTopFormat);
+  if (popupDisplay) {
+    config.contextDateSelector = '.neb-date div';
+  } else {
+    config.contextDateSelector = '.period-tile .tile-content div';
+  }
+
+  //1 Mon, September 5
+
+  //2 Thu, January 5, 2017
+  //2 Tue, September 13, 1:30pm
+  //2 Tue, September 20, 8am – 9am
+
+  //3 Tue, May 9, 2017, 5:00pm – 5:01pm
+
+  //4 Mon, August 29, 9am – Fri, September 2, 5pm
+
+  //6 Sat, July 8, 2017, 9:51pm – Sun, July 9, 2017, 9:51pm
+
+  var textDate = $(config.contextDateSelector).text();
+  let textParts = textDate.split(',');
+  var numCommas = textParts.length - 1;
+
+  // VERY SPECIFIC to English layout!
+
+  switch (numCommas) {
+    case 1:
+      config.contextDateFormat = '-, MMMM DD';
+      break;
+    case 2:
+      if (!isNaN(textParts[2])) {
+        config.contextDateFormat = '-, MMMM DD, YYYY';
+      } else {
+        config.contextDateFormat = '-, MMMM DD, -';
+      }
+      break;
+    case 3:
+      config.contextDateFormat = '-, MMMM DD, YYYY, -';
+      break;
+    case 4:
+      config.contextDateFormat = '-, MMMM DD, -';
+      break;
+    case 6:
+      config.contextDateFormat = '-, MMMM DD, YYYY, -';
+      break;
+    default:
+      log(numCommas);
+      break;
+  }
+
+
+  config.logDetails = true;
+
+  return config;
+}
+
+
+function addToAllDays(config) {
+
+  let dateTopText = $(config.contextDateSelector).text();
+  var firstDate = moment(dateTopText, config.contextDateFormat);
   //  var firstDate = moment.utc(dateTopText, dateTopFormat);
+
+  if (config.logDetails) {
+    log('top text: ' + dateTopText);
+    log('first date: ' + firstDate.format());
+  }
 
   var lastDate = null;
   var startedMonth = false;
 
   var toInsert = [];
 
-  $(dayLabelSelector)
+  $(config.daySelector)
     .each(function (i, el) {
       var span = $(el);
 
@@ -78,9 +168,9 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
       var monthOffset = 0;
       let inMonth = span.closest('td').hasClass('st-dtitle-nonmonth');
       let rawDateText = span.text();
-      var matches = rawDateText.match(dayRegEx);
+      var matches = rawDateText.match(config.dayRegEx);
 
-      switch (layout) {
+      switch (config.layout) {
         case 'month':
           if (inMonth) {
             if (!startedMonth) {
@@ -126,13 +216,14 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
       chrome.runtime.sendMessage({
         cmd: 'getInfo',
         targetDay: thisDate.toDate().getTime(),
-        layout: layout
+        layout: config.layout
       }, function (info) {
         span.addClass('gDay');
         var div;
-        switch (layout) {
+        switch (config.layout) {
           case 'month':
           case 'week':
+          case 'popup':
           case 'day':
           case 'custom':
           case 'list':
@@ -153,11 +244,14 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
     cmd: 'dummy' // just to get in the queue after all the ones above
   },
     function () {
-//      console.log(`insert ${toInsert.length + 1} elements`);
+      // just in case we are called twice...
+      $('.bDay').remove();
+
+      //      console.log(`insert ${toInsert.length + 1} elements`);
       for (var j = 0; j < toInsert.length; j++) {
         var item = toInsert[j];
 
-        switch (layout) {
+        switch (config.layout) {
           case 'month':
           case 'list':
           case 'custom':
@@ -174,7 +268,7 @@ function addToAllDays(dayLabelSelector, layout, dateTopFormat, dayRegEx) {
 }
 
 var refreshCount = 0;
-function calendarUpdated(element) {
+function calendarUpdated(watchedDomElement) {
   refreshCount++;
 
   // seems to redraw twice on first load
@@ -185,7 +279,7 @@ function calendarUpdated(element) {
   //  }
 
   if (refreshCount > threshold) {
-    fillCalendar();
+    fillCalendar(watchedDomElement);
   }
 }
 
@@ -244,6 +338,9 @@ function calendarUpdated(element) {
 })(this);
 
 
-ready('#mvEventContainer', calendarUpdated);
-ready('.wk-weektop', calendarUpdated);
-ready('#lv_listview', calendarUpdated);
+ready('#mvEventContainer', calendarUpdated); // month
+ready('.wk-weektop', calendarUpdated); // week, custom
+ready('#lv_listview', calendarUpdated); // agenda
+ready('.neb-date', calendarUpdated); // popup
+ready('.period-tile', calendarUpdated); // popup new event
+ready('.ep-dpc', calendarUpdated); // edit page

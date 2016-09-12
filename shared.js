@@ -1150,7 +1150,7 @@ chrome.runtime.onMessage.addListener(
         var di = getDateInfo(new Date(payload.targetDay));
         callback({
           label: getStorage('gCalLabel', '{bMonthNamePri} {bDay}').filledWith(di),
-          title: getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{element} {bYear}').filledWith(di),
+          title: getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}').filledWith(di),
           classes:
             (di.bDay === 1 ? ' firstBDay' : '')
           + (' element' + di.elementNum)
