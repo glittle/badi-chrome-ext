@@ -1,6 +1,8 @@
 ﻿///<reference path='gcalsetup.js'/>
 ///<reference path='shared.js'/>
 /* global chrome */
+var enableExtension = true;
+
 
 /*
  * Warning...
@@ -20,14 +22,18 @@ function fillCalendar(watchedDomElement) {
     dayRegEx: null,
     contextDateSelector: '.date-top',
     contextDateFormat: '',
-    logDetails: false
+    logDetails: false,
+    hostSelector: '',
+    showNextDayToo: false,
+    inEditPage: false,
+    classes: ''
   };
 
   var el = $(watchedDomElement);
   let popupDisplay = el.hasClass('neb-date');
   let popupNew = el.hasClass('period-tile');
   if (popupDisplay || popupNew) {
-    config = parsePopupInfo(popupDisplay, popupNew, config);
+    config.layout = 'popup';
 
   } else {
     if (config.layout === 'eid' && el.hasClass('mv-event-container')) {
@@ -47,7 +53,7 @@ function fillCalendar(watchedDomElement) {
       config.daySelector = '.st-dtitle span';
       config.contextDateFormat = 'MMMM YYYY';
       config.dayRegEx = /(\w+ )?(\d+)/; // Sep 1  or  5
-      config.logDetails = true;
+      //      config.logDetails = true;
       break;
 
     case 'day':
@@ -69,6 +75,11 @@ function fillCalendar(watchedDomElement) {
       break;
 
     case 'popup':
+      config = parsePopupInfo(popupDisplay, popupNew, config);
+      break;
+
+    case 'eid':
+      config = parseEditInfo(config);
       break;
 
     default:
@@ -82,14 +93,16 @@ function fillCalendar(watchedDomElement) {
 }
 
 function parsePopupInfo(popupDisplay, popupNew, config) {
-  config.layout = 'popup';
-  config.daySelector = '.wk-dayname span';
-  config.dayRegEx = /.* (\d+)\/(\d+)/;
+  config.daySelector = '';
 
   if (popupDisplay) {
     config.contextDateSelector = '.neb-date div';
+    config.hostSelector = '.neb-date';
   } else {
+    // creating new
     config.contextDateSelector = '.period-tile .tile-content div';
+    config.hostSelector = '.tile-content';
+    config.showNextDayToo = true;
   }
 
   //1 Mon, September 5
@@ -97,6 +110,7 @@ function parsePopupInfo(popupDisplay, popupNew, config) {
   //2 Thu, January 5, 2017
   //2 Tue, September 13, 1:30pm
   //2 Tue, September 20, 8am – 9am
+  //2 Tue, September 20, 8:15pm – 9:15pm
 
   //3 Tue, May 9, 2017, 5:00pm – 5:01pm
 
@@ -118,7 +132,7 @@ function parsePopupInfo(popupDisplay, popupNew, config) {
       if (!isNaN(textParts[2])) {
         config.contextDateFormat = '-, MMMM DD, YYYY';
       } else {
-        config.contextDateFormat = '-, MMMM DD, -';
+        config.contextDateFormat = '-, MMMM DD, hh:mma -';
       }
       break;
     case 3:
@@ -131,10 +145,26 @@ function parsePopupInfo(popupDisplay, popupNew, config) {
       config.contextDateFormat = '-, MMMM DD, YYYY, -';
       break;
     default:
-      log(numCommas);
       break;
   }
 
+
+  //  config.logDetails = true;
+
+  return config;
+}
+
+
+function parseEditInfo(config) {
+  config.inEditPage = true;
+  config.classes = ' editBDay';
+
+  config.hostSelector = '.ep-edr-first-line';
+
+  config.contextDateSelector = '.dr-date';
+  config.contextTimeSelector = '.dr-time';
+
+  config.contextDateFormat = 'YYYY-MM-DD hh:mma';
 
   config.logDetails = true;
 
@@ -143,111 +173,167 @@ function parsePopupInfo(popupDisplay, popupNew, config) {
 
 
 function addToAllDays(config) {
+  let contextDateSpan = $(config.contextDateSelector);
+  let contextDateText;
 
-  let dateTopText = $(config.contextDateSelector).text();
-  var firstDate = moment(dateTopText, config.contextDateFormat);
-  //  var firstDate = moment.utc(dateTopText, dateTopFormat);
-
-  if (config.logDetails) {
-    log('top text: ' + dateTopText);
-    log('first date: ' + firstDate.format());
+  if (config.inEditPage) {
+    contextDateText = contextDateSpan.val() + ' ' + $(config.contextTimeSelector).val();
+  } else {
+    contextDateText = contextDateSpan.text();
   }
 
-  var lastDate = null;
-  var startedMonth = false;
+  var firstDate = moment(contextDateText, config.contextDateFormat);
+
+  if (config.logDetails) {
+    log('context text: ' + contextDateText);
+    log('context date: ' + firstDate.format());
+    log(config.daySelector);
+  }
+
+  $('.editBDay').remove();
 
   var toInsert = [];
 
-  $(config.daySelector)
-    .each(function (i, el) {
-      var span = $(el);
+  if (config.daySelector) {
 
-      var thisDate = moment(firstDate);
-      thisDate.hour(12); // move to noon
+    var lastDate = null;
+    var startedMonth = false;
 
-      var monthOffset = 0;
-      let inMonth = span.closest('td').hasClass('st-dtitle-nonmonth');
-      let rawDateText = span.text();
-      var matches = rawDateText.match(config.dayRegEx);
+    $(config.daySelector)
+      .each(function (i, el) {
+        var originalDateSpan = $(el);
 
-      switch (config.layout) {
-        case 'month':
-          if (inMonth) {
-            if (!startedMonth) {
-              // before the month
-              monthOffset = -1;
-            }
-            if (startedMonth) {
-              // before the month
-              monthOffset = 1;
-            }
-          } else {
-            startedMonth = true;
-          }
-          thisDate.month(thisDate.month() + monthOffset);
-          thisDate.date(+matches[2]);
-          break;
+        var thisDate = moment(firstDate);
+        thisDate.hour(12); // move to noon
 
-        case 'list':
-          thisDate.date(+matches[2]);
-          if (lastDate) {
-            if (thisDate.isBefore(lastDate)) {
-              thisDate.month(thisDate.month() + 1);
-            }
-          }
-          break;
+        var monthOffset = 0;
+        let inMonth = originalDateSpan.closest('td').hasClass('st-dtitle-nonmonth');
+        let rawDayNumberText = originalDateSpan.text();
+        var matches = rawDayNumberText.match(config.dayRegEx);
 
-        default:
-          thisDate.month(+matches[1] - 1);
-          thisDate.date(+matches[2]);
-          break;
-      }
-
-      if (lastDate) {
-        if (thisDate.isBefore(lastDate)) {
-          thisDate.year(thisDate.year() + 1);
-        }
-      }
-
-      lastDate = thisDate;
-
-      //      console.log(thisDate.format('YYYY MM DD'));
-
-      chrome.runtime.sendMessage({
-        cmd: 'getInfo',
-        targetDay: thisDate.toDate().getTime(),
-        layout: config.layout
-      }, function (info) {
-        span.addClass('gDay');
-        var div;
         switch (config.layout) {
           case 'month':
-          case 'week':
-          case 'popup':
-          case 'day':
-          case 'custom':
+            if (inMonth) {
+              if (!startedMonth) {
+                // before the month
+                monthOffset = -1;
+              }
+              if (startedMonth) {
+                // before the month
+                monthOffset = 1;
+              }
+            } else {
+              startedMonth = true;
+            }
+            thisDate.month(thisDate.month() + monthOffset);
+            thisDate.date(+matches[2]);
+            break;
+
           case 'list':
-            div = $('<div/>',
-            {
-              html: info.label,
-              'class': 'bDay' + info.classes,
-              title: info.title
-            });
-            toInsert.push([span, div]);
+            thisDate.date(+matches[2]);
+            if (lastDate) {
+              if (thisDate.isBefore(lastDate)) {
+                thisDate.month(thisDate.month() + 1);
+              }
+            }
+            break;
+
+          default:
+            thisDate.month(+matches[1] - 1);
+            thisDate.date(+matches[2]);
             break;
         }
+
+        if (lastDate) {
+          if (thisDate.isBefore(lastDate)) {
+            thisDate.year(thisDate.year() + 1);
+          }
+        }
+
+        lastDate = thisDate;
+
+        //      console.log(thisDate.format('YYYY MM DD'));
+
+        chrome.runtime.sendMessage({
+          cmd: 'getInfo',
+          targetDay: thisDate.toDate().getTime(),
+          layout: config.layout
+        },
+          function (info) {
+            originalDateSpan.addClass('gDay');
+            var div;
+            switch (config.layout) {
+              case 'month':
+              case 'week':
+              case 'day':
+              case 'custom':
+              case 'list':
+                div = $('<div/>',
+                {
+                  html: info.label,
+                  'class': 'bDay' + info.classes + config.classes,
+                  title: info.title
+                });
+                toInsert.push([originalDateSpan, div]);
+                break;
+              default:
+                log('unexpected layout 2:');
+                log(config);
+            }
+          });
       });
-    });
+  } else {
+    // just one date - the context date in the popup
+    chrome.runtime.sendMessage({
+      cmd: 'getInfo',
+      targetDay: firstDate.toDate().getTime(),
+      layout: config.layout
+    },
+      function (info) {
+        contextDateSpan.addClass('gDay');
+        var host = contextDateSpan.closest(config.hostSelector);
 
+        if (config.showNextDayToo) {
+          firstDate.add(1, 'd');
+          chrome.runtime.sendMessage({
+            cmd: 'getInfo',
+            targetDay: firstDate.toDate().getTime(),
+            layout: config.layout
+          },
+          function (info2) {
+            var div = $('<div/>',
+            {
+              html: info.label + ' / ' + info2.label,
+              'class': 'bDay' + info.classes + config.classes,
+              title: info.title
+            });
+            toInsert.push([host, div]);
 
+            //            log('to insert double');
+            addThem(config, toInsert);
+          });
+          return;
+        }
+
+        var div = $('<div/>',
+        {
+          html: info.label,
+          'class': 'bDay' + info.classes + config.classes,
+          title: info.title
+        });
+        toInsert.push([host, div]);
+      });
+  }
+
+  addThem(config, toInsert);
+}
+
+function addThem(config, toInsert) {
   chrome.runtime.sendMessage({
     cmd: 'dummy' // just to get in the queue after all the ones above
   },
     function () {
-      // just in case we are called twice...
-      $('.bDay').remove();
-
-      //      console.log(`insert ${toInsert.length + 1} elements`);
+      //      console.log(`insert ${toInsert.length} elements`);
       for (var j = 0; j < toInsert.length; j++) {
         var item = toInsert[j];
 
@@ -255,7 +341,9 @@ function addToAllDays(config) {
           case 'month':
           case 'list':
           case 'custom':
+          case 'popup':
           case 'week':
+          case 'eid':
           case 'day':
             item[1].insertAfter(item[0]);
             break;
@@ -338,9 +426,24 @@ function calendarUpdated(watchedDomElement) {
 })(this);
 
 
-ready('#mvEventContainer', calendarUpdated); // month
-ready('.wk-weektop', calendarUpdated); // week, custom
-ready('#lv_listview', calendarUpdated); // agenda
-ready('.neb-date', calendarUpdated); // popup
-ready('.period-tile', calendarUpdated); // popup new event
-ready('.ep-dpc', calendarUpdated); // edit page
+if (enableExtension) {
+  ready('#mvEventContainer', calendarUpdated); // month
+  ready('.wk-weektop', calendarUpdated); // week, custom
+  ready('#lv_listview', calendarUpdated); // agenda
+  ready('.neb-date', calendarUpdated); // popup
+  ready('.period-tile', calendarUpdated); // popup new event
+
+  // ready('.ep-dpc', calendarUpdated); // edit page
+  //
+  // -- can't find an event to know when the input has been changed!
+  //
+  // $('body').on('change', '.dr-date', calendarUpdated); // edit page
+  // $('body').on('change', '.dr-time', calendarUpdated); // edit page
+
+  //$(document).on('change', ', .dr-time', function () {
+  //  log('dr changed');
+  //  fillCalendar($('.ep-dpc')[0]);
+  //});
+
+  console.log("Dates from the Wondrous Calendar added via the Badí' Calendar extension.");
+}
