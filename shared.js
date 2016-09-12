@@ -15,7 +15,8 @@ var _iconPrepared = false;
 var settings = {
   useArNames: true,
   rememberFocusTimeMinutes: 5, // show on settings page?
-  optedOutOfGoogleAnalytics: getStorage('optOutGa', -1)
+  optedOutOfGoogleAnalytics: getStorage('optOutGa', -1),
+  integrateIntoGoogleCalendar: getStorage('enableGCal', true)
 };
 
 
@@ -1152,10 +1153,16 @@ chrome.runtime.onMessage.addListener(
           label: getStorage('gCalLabel', '{bMonthNamePri} {bDay}').filledWith(di),
           title: getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}').filledWith(di),
           classes:
-            (di.bDay === 1 ? ' firstBDay' : '')
-          + (' element' + di.elementNum)
+          (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum)
         });
         break;
+
+      case 'getStorage':
+        callback({
+          value: getStorage(payload.key, payload.defaultValue)
+        });
+        break;
+
       default:
         callback();
         break;

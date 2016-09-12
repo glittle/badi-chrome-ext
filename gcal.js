@@ -1,8 +1,6 @@
 ﻿///<reference path='gcalsetup.js'/>
 ///<reference path='shared.js'/>
 /* global chrome */
-var enableExtension = true;
-
 
 /*
  * Warning...
@@ -426,24 +424,32 @@ function calendarUpdated(watchedDomElement) {
 })(this);
 
 
-if (enableExtension) {
-  ready('#mvEventContainer', calendarUpdated); // month
-  ready('.wk-weektop', calendarUpdated); // week, custom
-  ready('#lv_listview', calendarUpdated); // agenda
-  ready('.neb-date', calendarUpdated); // popup
-  ready('.period-tile', calendarUpdated); // popup new event
+chrome.runtime.sendMessage({
+  cmd: 'getStorage',
+  key: 'enableGCal',
+  defaultValue: true
+},
+  function (info) {
+    if (info.value) {
+      ready('#mvEventContainer', calendarUpdated); // month
+      ready('.wk-weektop', calendarUpdated); // week, custom
+      ready('#lv_listview', calendarUpdated); // agenda
+      ready('.neb-date', calendarUpdated); // popup
+      ready('.period-tile', calendarUpdated); // popup new event
 
-  // ready('.ep-dpc', calendarUpdated); // edit page
-  //
-  // -- can't find an event to know when the input has been changed!
-  //
-  // $('body').on('change', '.dr-date', calendarUpdated); // edit page
-  // $('body').on('change', '.dr-time', calendarUpdated); // edit page
+      // ready('.ep-dpc', calendarUpdated); // edit page
+      //
+      // -- can't find an event to know when the input has been changed!
+      //
+      // $('body').on('change', '.dr-date', calendarUpdated); // edit page
+      // $('body').on('change', '.dr-time', calendarUpdated); // edit page
 
-  //$(document).on('change', ', .dr-time', function () {
-  //  log('dr changed');
-  //  fillCalendar($('.ep-dpc')[0]);
-  //});
+      //$(document).on('change', ', .dr-time', function () {
+      //  log('dr changed');
+      //  fillCalendar($('.ep-dpc')[0]);
+      //});
 
-  console.log("Dates from the Wondrous Calendar added via the Badí' Calendar extension.");
-}
+      console.log("Dates from the Wondrous Calendar added via the Badí' Calendar extension.");
+    }
+  });
+

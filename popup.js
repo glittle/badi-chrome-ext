@@ -172,7 +172,7 @@ function updateSharedContent(di) {
     $('.bVahidPicker').val(di.bVahid);
     $('.bYearInVahidPicker').val(di.bYearInVahid);
   }
-  
+
   var manifest = chrome.runtime.getManifest();
   $('#version').text(getMessage('version', manifest.version));
 
@@ -1110,7 +1110,7 @@ function changeDay(ev, delta) {
 
   showInfo(_di);
 
-  if (delta===0) {
+  if (delta === 0) {
     showWhenResetToNow();
   }
 }
@@ -1137,6 +1137,17 @@ function fillSetup() {
     if (!optingOut) {
       tracker.sendEvent('optOut', optingOut);
     }
+  });
+
+  var enabledGCal = settings.integrateIntoGoogleCalendar;
+  cb = $('#setupGCal');
+  cb.prop('checked', enabledGCal);
+  cb.on('change', function () {
+    var enablingGCal = cb.prop('checked');
+    setStorage('enableGCal', enablingGCal);
+    settings.integrateIntoGoogleCalendar = enablingGCal;
+
+    tracker.sendEvent('enableGoogleCalendar', enablingGCal);
   });
 }
 
