@@ -449,7 +449,7 @@ chrome.runtime.sendMessage({
       //  fillCalendar($('.ep-dpc')[0]);
       //});
 
-      console.log("Dates from the Wondrous Calendar added via the Badí' Calendar extension.");
+      console.log(`Dates from the Wondrous Calendar added via the Badí' Calendar extension (version ${chrome.runtime.getManifest().version}).`);
     }
   });
 
