@@ -27,7 +27,7 @@ function fillCalendar(watchedDomElement) {
     classes: ''
   };
 
-  var el = $(watchedDomElement);
+  var el = $(watchedDomElement); // may be null
   let popupDisplay = el.hasClass('neb-date');
   let popupNew = el.hasClass('period-tile');
   if (popupDisplay || popupNew) {
@@ -450,6 +450,7 @@ chrome.runtime.sendMessage({
       //});
 
       console.log(`Dates from the Wondrous Calendar added via the Badí' Calendar extension (version ${chrome.runtime.getManifest().version}).`);
+      calendarUpdated();
     }
   });
 

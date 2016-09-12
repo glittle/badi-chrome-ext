@@ -1,6 +1,6 @@
 {
   "name": "__MSG_title__",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "__MSG_titleDesc__",
   "default_locale": "en",
   "icons": {
@@ -65,9 +65,8 @@
       ],
       "css": [
         "gcal.css"
-      ], 
-      "matches": [ "https://calendar.google.com/calendar/*" ],
-      "permissions": [ "tabs", "https://calendar.google.com/calendar/*" ]
+      ],
+      "matches": [ "https://calendar.google.com/calendar/*" ]
     }
   ]
 }
