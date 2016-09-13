@@ -340,8 +340,8 @@ var PageCustom = () => {
     function fillSelectForDefaults() {
         // each item in list is:  letter:'A',format:'{format}'
         fillSelectDefault('customLoadToolTip1', 'formatToolTip1', getMessage('formatIconToolTip'));
-        fillSelectDefault('customLoadToolTip2', 'formatToolTip2', '{nearestSunset}');
-        fillSelectDefault('customLoadTopDay', 'formatTopDay', 'bTopDayDisplay');
+        fillSelectDefault('customLoadToolTip2', 'formatToolTip2', getMessage('nearestSunset'));
+        fillSelectDefault('customLoadTopDay', 'formatTopDay', getMessage('bTopDayDisplay'));
         updateDefaultDropdowns();
     }
     function fillSelectDefault(id, storageId, message) {
