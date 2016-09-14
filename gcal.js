@@ -11,6 +11,10 @@
  */
 
 function fillCalendar(watchedDomElement) {
+  if (!watchedDomElement) {
+    return;
+  }
+
   var hash = location.hash;
   var parts = hash.split(/%7C|,|-/g);
 
@@ -18,19 +22,34 @@ function fillCalendar(watchedDomElement) {
     layout: parts.length > 1 ? parts[1] : 'month',
     daySelector: '',
     dayRegEx: null,
+    dayRegExItem: byFormat({
+      month: 1,
+      day: 2
+    }, {
+      day: 1,
+      month: 2
+    }, {
+      month: 1,
+      day: 2
+    }),
     contextDateSelector: '.date-top',
     contextDateFormat: '',
     logDetails: false,
     hostSelector: '',
+    wrapIn: '',
     showNextDayToo: false,
     inEditPage: false,
     classes: ''
   };
 
   var el = $(watchedDomElement); // may be null
-  let popupDisplay = el.hasClass('neb-date');
-  let popupNew = el.hasClass('period-tile');
-  if (popupDisplay || popupNew) {
+  let popupType =
+    el.hasClass('neb-date') ? 'view1'
+    : el.hasClass('period-tile') ? 'new'
+    : el.hasClass('datetime-container') ? 'view2'
+    : '';
+
+  if (popupType) {
     config.layout = 'popup';
 
   } else {
@@ -39,41 +58,42 @@ function fillCalendar(watchedDomElement) {
     }
   }
 
+  log(config.layout + ' - ' + watchedDomElement.className);
 
   switch (config.layout) {
     case 'week':
       config.daySelector = '.wk-dayname span';
-      config.contextDateFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
-      config.dayRegEx = /.* (\d+)\/(\d+)/; // Tue 9/13
+      config.contextDateFormat = byFormat('MMM DD - -, YYYY', 'MMM DD - -, YYYY', 'MMM DD - -, YYYY'); //Sep 4 – 10, 2016
+      config.dayRegEx = byFormat(/.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/); // Tue 9/13
       break;
 
     case 'month':
       config.daySelector = '.st-dtitle span';
-      config.contextDateFormat = 'MMMM YYYY';
-      config.dayRegEx = /(\w+ )?(\d+)/; // Sep 1  or  5
-      //      config.logDetails = true;
+      config.contextDateFormat = byFormat('MMMM YYYY', 'MMMM YYYY', 'MMMM YYYY');
+      config.dayRegEx = byFormat(/(\w+ )?(\d+)/, /(\w+ )?(\d+)/, /(\w+ )?(\d+)/); // Sep 1  or  5
       break;
 
     case 'day':
       config.daySelector = '.wk-dayname span';
-      config.contextDateFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
-      config.dayRegEx = /.* (\d+)\/(\d+)/;// Tuesday 9/13
+      config.contextDateFormat = byFormat('dddd, MMM DD, YYYY', 'dddd, MMM DD, YYYY', 'dddd, MMM DD, YYYY'); //Tuesday, Sep 6, 2016
+      config.dayRegEx = byFormat(/.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/);// Tuesday 9/13
+      config.wrapIn = '<div class="bDayWrap" />';
       break;
 
     case 'custom': // 5 day
       config.daySelector = '.wk-dayname span';
-      config.contextDateFormat = 'MMM DD - -, YYYY'; //Sep 4 – 10, 2016
-      config.dayRegEx = /.* (\d+)\/(\d+)/;// Tue 9/13
+      config.contextDateFormat = byFormat('MMM DD - -, YYYY', 'MMM DD - -, YYYY', 'MMM DD - -, YYYY'); //Sep 4 – 10, 2016
+      config.dayRegEx = byFormat(/.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/, /.* (\d+)\/(\d+)/);// Tue 9/13
       break;
 
     case 'list': // agenda
       config.daySelector = '.lv-datecell span';
-      config.contextDateFormat = 'dddd, MMM DD, YYYY'; //Tuesday, Sep 6, 2016
-      config.dayRegEx = /(\w+)\s(\d+)/;// Tue Sep 14
+      config.contextDateFormat = byFormat('dddd, MMM DD, YYYY', 'dddd, MMM DD, YYYY', 'dddd, MMM DD, YYYY'); //Tuesday, Sep 6, 2016
+      config.dayRegEx = byFormat(/(\w+)\s(\d+)/, /(\w+)\s(\d+)/, /(\w+)\s(\d+)/);// Tue Sep 14
       break;
 
     case 'popup':
-      config = parsePopupInfo(popupDisplay, popupNew, config);
+      config = parsePopupInfo(popupType, config);
       break;
 
     case 'eid':
@@ -90,17 +110,25 @@ function fillCalendar(watchedDomElement) {
   addToAllDays(config);
 }
 
-function parsePopupInfo(popupDisplay, popupNew, config) {
+function parsePopupInfo(popupType, config) {
   config.daySelector = '';
+  var textDate;
 
-  if (popupDisplay) {
-    config.contextDateSelector = '.neb-date div';
-    config.hostSelector = '.neb-date';
-  } else {
-    // creating new
-    config.contextDateSelector = '.period-tile .tile-content div';
-    config.hostSelector = '.tile-content';
-    config.showNextDayToo = true;
+  switch (popupType) {
+    case 'view1':
+      config.contextDateSelector = '.neb-date div';
+      config.hostSelector = '.neb-date';
+      break;
+    case 'new':
+      config.contextDateSelector = '.period-tile .tile-content div';
+      config.hostSelector = '.tile-content';
+      config.showNextDayToo = true;
+      break;
+    case 'view2':
+      // 9/18 at 8:00am
+      config.contextDateSelector = '.datetime-container';
+      config.hostSelector = '.datetime-container';
+      break;
   }
 
   //1 Mon, September 5
@@ -116,31 +144,34 @@ function parsePopupInfo(popupDisplay, popupNew, config) {
 
   //6 Sat, July 8, 2017, 9:51pm – Sun, July 9, 2017, 9:51pm
 
-  var textDate = $(config.contextDateSelector).text();
+  textDate = $(config.contextDateSelector).text();
   let textParts = textDate.split(',');
   var numCommas = textParts.length - 1;
 
   // VERY SPECIFIC to English layout!
 
   switch (numCommas) {
+    case 0:
+      config.contextDateFormat = byFormat('', '', 'M/DD - h:mma');
+      break;
     case 1:
-      config.contextDateFormat = '-, MMMM DD';
+      config.contextDateFormat = byFormat('', '', '-, MMMM DD');
       break;
     case 2:
       if (!isNaN(textParts[2])) {
-        config.contextDateFormat = '-, MMMM DD, YYYY';
+        config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY');
       } else {
-        config.contextDateFormat = '-, MMMM DD, hh:mma -';
+        config.contextDateFormat = byFormat('', '', '-, MMMM DD, hh:mma -');
       }
       break;
     case 3:
-      config.contextDateFormat = '-, MMMM DD, YYYY, -';
+      config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY, -');
       break;
     case 4:
-      config.contextDateFormat = '-, MMMM DD, -';
+      config.contextDateFormat = byFormat('', '', '-, MMMM DD, -');
       break;
     case 6:
-      config.contextDateFormat = '-, MMMM DD, YYYY, -';
+      config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY, -');
       break;
     default:
       break;
@@ -162,7 +193,7 @@ function parseEditInfo(config) {
   config.contextDateSelector = '.dr-date';
   config.contextTimeSelector = '.dr-time';
 
-  config.contextDateFormat = 'YYYY-MM-DD hh:mma';
+  config.contextDateFormat = byFormat('', '', 'YYYY-MM-DD hh:mma');
 
   config.logDetails = true;
 
@@ -228,7 +259,7 @@ function addToAllDays(config) {
             break;
 
           case 'list':
-            thisDate.date(+matches[2]);
+            thisDate.date(+matches[config.dayRegExItem.day]);
             if (lastDate) {
               if (thisDate.isBefore(lastDate)) {
                 thisDate.month(thisDate.month() + 1);
@@ -237,8 +268,8 @@ function addToAllDays(config) {
             break;
 
           default:
-            thisDate.month(+matches[1] - 1);
-            thisDate.date(+matches[2]);
+            thisDate.month(+matches[config.dayRegExItem.month] - 1);
+            thisDate.date(+matches[config.dayRegExItem.day]);
             break;
         }
 
@@ -272,6 +303,11 @@ function addToAllDays(config) {
                   'class': 'bDay' + info.classes + config.classes,
                   title: info.title
                 });
+                if (config.wrapIn) {
+                  var wrap = $(config.wrapIn);
+                  wrap.append(div);
+                  div = wrap;
+                }
                 toInsert.push([originalDateSpan, div]);
                 break;
               default:
@@ -369,9 +405,29 @@ function calendarUpdated(watchedDomElement) {
   }
 }
 
+function determineDateFormat() {
+  // window['INITIAL_DATA'][2][0][0].substr(window['INITIAL_DATA'][2][0][0].indexOf('dtFldOrdr')+12,3)
 
+  var master = document.getElementById('calmaster').innerHTML;
+  var fieldDefinition = master.indexOf('dtFldOrdr');
+  return master.substr(fieldDefinition + 12, 3);
 
+  // 0 MDY 12/31/2016
+  // 1 DMY 31/12/2016
+  // 2 YMD 2016-12-31
+}
 
+function byFormat(mdy, dmy, ymd) {
+  switch (googleFormat) {
+    case 'MDY':
+      return mdy;
+    case 'DMY':
+      return dmy;
+    case 'YMD':
+      return ymd;
+  }
+  return '';
+}
 
 (function (win) {
   'use strict';
@@ -423,6 +479,7 @@ function calendarUpdated(watchedDomElement) {
 
 })(this);
 
+var googleFormat;
 
 chrome.runtime.sendMessage({
   cmd: 'getStorage',
@@ -431,11 +488,15 @@ chrome.runtime.sendMessage({
 },
   function (info) {
     if (info.value) {
+      googleFormat = determineDateFormat();
+      log(googleFormat + ' ' + byFormat(0, 1, 2));
+
       ready('#mvEventContainer', calendarUpdated); // month
       ready('.wk-weektop', calendarUpdated); // week, custom
       ready('#lv_listview', calendarUpdated); // agenda
       ready('.neb-date', calendarUpdated); // popup
-      ready('.period-tile', calendarUpdated); // popup new event
+      //ready('.hin-dt', calendarUpdated); // popup
+      ready('.datetime-container', calendarUpdated); // popup new event
 
       // ready('.ep-dpc', calendarUpdated); // edit page
       //
@@ -454,3 +515,19 @@ chrome.runtime.sendMessage({
     }
   });
 
+
+var pendingFormat = '';
+$(document).on('change', '#dtFldOrdr', function () {
+  pendingFormat = $(this).val();
+  // tried to only apply when Save is clicked, but my handler is called too late, after the change is applied
+  // need to set it when format is changed. Will be wrong if person clicks Cancel.
+  googleFormat = pendingFormat;
+  log(googleFormat + ' ' + byFormat(0, 1, 2));
+});
+//$(document).on('click', 'input[id=settings_save_btn]', function () {
+//  if (pendingFormat) {
+//    googleFormat = pendingFormat;
+//    pendingFormat = '';
+//  }
+//  log(googleFormat + ' ' + byFormat(0, 1, 2));
+//});
