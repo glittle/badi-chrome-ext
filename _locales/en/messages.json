@@ -1371,5 +1371,13 @@
   "setupEnableGCal": {
     "message": "Enable Badí' dates on Google Calendar pages?",
     "description": "on setup page"
+  },
+  "setupColorH3": {
+    "message": "Icon Color",
+    "description": "on setup page"
+  },
+  "setupColor": {
+    "message": "Text color for toolbar icon:",
+    "description": "on setup page"
   }
 }

@@ -1145,6 +1145,17 @@ function fillSetup() {
 
     tracker.sendEvent('enableGoogleCalendar', enablingGCal);
   });
+
+  var colorInput = $('#setupColor');
+  colorInput.val(settings.iconTextColor);
+  colorInput.on('change', function () {
+    var newColor = colorInput.val();
+    setStorage('iconTextColor', newColor);
+    settings.iconTextColor = newColor;
+    showIcon();
+  });
+
+
 }
 
 function fillStatic() {

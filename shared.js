@@ -16,7 +16,8 @@ var settings = {
   useArNames: true,
   rememberFocusTimeMinutes: 5, // show on settings page?
   optedOutOfGoogleAnalytics: getStorage('optOutGa', -1),
-  integrateIntoGoogleCalendar: getStorage('enableGCal', true)
+  integrateIntoGoogleCalendar: getStorage('enableGCal', true),
+  iconTextColor: getStorage('iconTextColor', 'black')
 };
 
 
@@ -357,9 +358,8 @@ function draw(line1, line2, line2Alignment) {
 
   var fontName = 'Tahoma';
 
-  if (browserHostType === browser.Firefox) {
-    context.fillStyle = 'grey'; // background may be white or black, or anything else!
-  }
+  context.fillStyle = getStorage('iconTextColor', 'black');
+
 
   context.font = (size / 2 - 1) + "px " + fontName;
   context.fillText(line1, 0, 7);
