@@ -189,10 +189,6 @@ function updateSharedContent(di) {
 
 function changePage(ev, delta) {
 
-  // opens in a regular tab
-  // var url = 'chrome-extension://' + getMessage('@@extension_id') + '/popup.html';
-  // chrome.tabs.create({url: url});
-
   if (ev) {
     var btn = $(ev.target);
     var id = btn.data('page');
