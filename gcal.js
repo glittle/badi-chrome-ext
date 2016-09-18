@@ -48,7 +48,7 @@ function fillCalendar(watchedDomElement) {
     }
   }
 
-  log(config.layout + ' - ' + watchedDomElement.className);
+//  log(config.layout + ' - ' + watchedDomElement.className);
 
   switch (config.layout) {
     case 'week':
@@ -104,7 +104,7 @@ function parsePopupInfo(popupType, config) {
   config.daySelector = '';
   var textDate;
 
-  log('popup-' + popupType);
+//  log('popup-' + popupType);
 
   switch (popupType) {
     case 'view1':
@@ -188,7 +188,7 @@ function parseEditInfo(config) {
 
   config.contextDateFormat = byFormat('YYYY-MM-DD hh:mma', 'YYYY-MM-DD hh:mma', 'YYYY-MM-DD hh:mma');
 
-  config.logDetails = true;
+//  config.logDetails = true;
 
   return config;
 }
@@ -503,7 +503,7 @@ chrome.runtime.sendMessage({
   function (info) {
     if (info.value) {
       googleFormat = determineDateFormat();
-      log(googleFormat + ' ' + byFormat(0, 1, 2));
+//      log(googleFormat + ' ' + byFormat(0, 1, 2));
 
       ready('#mvEventContainer', calendarUpdated); // month
       ready('.wk-weektop', calendarUpdated); // week, custom
@@ -536,7 +536,7 @@ $(document).on('change', '#dtFldOrdr', function () {
   // tried to only apply when Save is clicked, but my handler is called too late, after the change is applied
   // need to set it when format is changed. Will be wrong if person clicks Cancel.
   googleFormat = pendingFormat;
-  log(googleFormat + ' ' + byFormat(0, 1, 2));
+//  log(googleFormat + ' ' + byFormat(0, 1, 2));
 });
 //$(document).on('click', 'input[id=settings_save_btn]', function () {
 //  if (pendingFormat) {
