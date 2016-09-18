@@ -22,16 +22,6 @@ function fillCalendar(watchedDomElement) {
     layout: parts.length > 1 ? parts[1] : 'month',
     daySelector: '',
     dayRegEx: null,
-    dayRegExItem: byFormat({
-      month: 1,
-      day: 2
-    }, {
-      day: 1,
-      month: 2
-    }, {
-      month: 1,
-      day: 2
-    }),
     contextDateSelector: '.date-top',
     contextDateFormat: '',
     logDetails: false,
@@ -114,6 +104,8 @@ function parsePopupInfo(popupType, config) {
   config.daySelector = '';
   var textDate;
 
+  log('popup-' + popupType);
+
   switch (popupType) {
     case 'view1':
       config.contextDateSelector = '.neb-date div';
@@ -126,6 +118,7 @@ function parsePopupInfo(popupType, config) {
       break;
     case 'view2':
       // 9/18 at 8:00am
+      // 18/9 at 8:00am DMT
       config.contextDateSelector = '.datetime-container';
       config.hostSelector = '.datetime-container';
       break;
@@ -152,26 +145,26 @@ function parsePopupInfo(popupType, config) {
 
   switch (numCommas) {
     case 0:
-      config.contextDateFormat = byFormat('', '', 'M/DD - h:mma');
+      config.contextDateFormat = byFormat('M/DD - h:mma', 'DD/M - h:mma', 'M/DD - h:mma');
       break;
     case 1:
-      config.contextDateFormat = byFormat('', '', '-, MMMM DD');
+      config.contextDateFormat = byFormat('-, MMMM DD', '-, MMMM DD', '-, MMMM DD');
       break;
     case 2:
       if (!isNaN(textParts[2])) {
-        config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY');
+        config.contextDateFormat = byFormat('-, MMMM DD, YYYY', '-, MMMM DD, YYYY', '-, MMMM DD, YYYY');
       } else {
-        config.contextDateFormat = byFormat('', '', '-, MMMM DD, hh:mma -');
+        config.contextDateFormat = byFormat('-, MMMM DD, hh:mma -', '-, MMMM DD, hh:mma -', '-, MMMM DD, hh:mma -');
       }
       break;
     case 3:
-      config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY, -');
+      config.contextDateFormat = byFormat('-, MMMM DD, YYYY, -', '-, MMMM DD, YYYY, -', '-, MMMM DD, YYYY, -');
       break;
     case 4:
-      config.contextDateFormat = byFormat('', '', '-, MMMM DD, -');
+      config.contextDateFormat = byFormat('-, MMMM DD, -', '-, MMMM DD, -', '-, MMMM DD, -');
       break;
     case 6:
-      config.contextDateFormat = byFormat('', '', '-, MMMM DD, YYYY, -');
+      config.contextDateFormat = byFormat('-, MMMM DD, YYYY, -', '-, MMMM DD, YYYY, -', '-, MMMM DD, YYYY, -');
       break;
     default:
       break;
@@ -193,7 +186,7 @@ function parseEditInfo(config) {
   config.contextDateSelector = '.dr-date';
   config.contextTimeSelector = '.dr-time';
 
-  config.contextDateFormat = byFormat('', '', 'YYYY-MM-DD hh:mma');
+  config.contextDateFormat = byFormat('YYYY-MM-DD hh:mma', 'YYYY-MM-DD hh:mma', 'YYYY-MM-DD hh:mma');
 
   config.logDetails = true;
 
@@ -212,7 +205,6 @@ function addToAllDays(config) {
   }
 
   var firstDate = moment(contextDateText, config.contextDateFormat);
-
   if (config.logDetails) {
     log('context text: ' + contextDateText);
     log('context date: ' + firstDate.format());
@@ -227,7 +219,6 @@ function addToAllDays(config) {
 
     var lastDate = null;
     var startedMonth = false;
-
     $(config.daySelector)
       .each(function (i, el) {
         var originalDateSpan = $(el);
@@ -259,7 +250,18 @@ function addToAllDays(config) {
             break;
 
           case 'list':
-            thisDate.date(+matches[config.dayRegExItem.day]);
+            thisDate.date(+matches[byFormat({
+              month: 1,
+              day: 2
+            },
+            {
+              day: 2,
+              month: 1
+            },
+            {
+              month: 1,
+              day: 2
+            }).day]);
             if (lastDate) {
               if (thisDate.isBefore(lastDate)) {
                 thisDate.month(thisDate.month() + 1);
@@ -268,8 +270,20 @@ function addToAllDays(config) {
             break;
 
           default:
-            thisDate.month(+matches[config.dayRegExItem.month] - 1);
-            thisDate.date(+matches[config.dayRegExItem.day]);
+            let regExPositions = byFormat({
+              month: 1,
+              day: 2
+            },
+            {
+              day: 1,
+              month: 2
+            },
+            {
+              month: 1,
+              day: 2
+            });
+            thisDate.month(+matches[regExPositions.month] - 1);
+            thisDate.date(+matches[regExPositions.day]);
             break;
         }
 
