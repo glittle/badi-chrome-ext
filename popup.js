@@ -1135,16 +1135,16 @@ function fillSetup() {
     }
   });
 
-  var enabledGCal = settings.integrateIntoGoogleCalendar;
-  cb = $('#setupGCal');
-  cb.prop('checked', enabledGCal);
-  cb.on('change', function () {
-    var enablingGCal = cb.prop('checked');
-    setStorage('enableGCal', enablingGCal);
-    settings.integrateIntoGoogleCalendar = enablingGCal;
-
-    tracker.sendEvent('enableGoogleCalendar', enablingGCal);
-  });
+//  var enabledGCal = settings.integrateIntoGoogleCalendar;
+//  cb = $('#setupGCal');
+//  cb.prop('checked', enabledGCal);
+//  cb.on('change', function () {
+//    var enablingGCal = cb.prop('checked');
+//    setStorage('enableGCal', enablingGCal);
+//    settings.integrateIntoGoogleCalendar = enablingGCal;
+//
+//    tracker.sendEvent('enableGoogleCalendar', enablingGCal);
+//  });
 
   var colorInput = $('#setupColor');
   colorInput.val(settings.iconTextColor);

@@ -16,7 +16,7 @@ var settings = {
   useArNames: true,
   rememberFocusTimeMinutes: 5, // show on settings page?
   optedOutOfGoogleAnalytics: getStorage('optOutGa', -1),
-  integrateIntoGoogleCalendar: getStorage('enableGCal', true),
+  //  integrateIntoGoogleCalendar: getStorage('enableGCal', true),
   iconTextColor: getStorage('iconTextColor', 'black')
 };
 
@@ -1078,7 +1078,7 @@ var trackerFunc = function () {
   return {
     sendEvent: sendEvent,
     sendAppView: sendAppView
-  }
+  };
 };
 
 var tracker;
@@ -1168,3 +1168,57 @@ chrome.runtime.onMessage.addListener(
         break;
     }
   });
+
+chrome.runtime.onMessageExternal.addListener(
+/*
+cmd options:  getInfo, connect
+
+ * payload:
+ *  { 
+ *    cmd: 'getInfo'
+ *    targetDay: date/datestring for new Date(targetDay)
+ *    labelFormat: '{bDay}' (optional)
+ *  }
+ * returns:
+ *  {
+ *   label: {bMonthNamePri} {bDay}
+ *   title:
+ *   classes: '[firstBDay] element4'
+ *  }
+ * 
+ */
+function (payload, sender, callback) {
+  if (!callback) {
+    callback = function () { }; // make it optional
+  }
+  switch (payload.cmd) {
+    case 'getInfo':
+      // layout, targetDay
+      // can adjust per layout
+      var di = getDateInfo(new Date(payload.targetDay));
+      callback({
+        label: (payload.labelFormat || getStorage('gCalLabel', '{bMonthNamePri} {bDay}')).filledWith(di),
+        title: (payload.titleFormat || getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}')).filledWith(di),
+        classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum)
+      });
+      break;
+
+    case 'getStorage':
+      callback({
+        value: getStorage(payload.key, payload.defaultValue)
+      });
+      break;
+
+    case 'connect':
+      callback({
+        value: 'Wondrous Calendar!',
+        id: chrome.runtime.id
+      });
+      break;
+
+    default:
+      callback();
+      break;
+  }
+});
+
