@@ -1364,14 +1364,6 @@
     "message": "Custom Formats",
     "description": "in the list of formats at the bottom of of the 'Custom' page"
   },
-  "setupGCalH3": {
-    "message": "Google Calendar",
-    "description": "on setup page"
-  },
-  "setupEnableGCal": {
-    "message": "Enable Badí' dates on Google Calendar pages?",
-    "description": "on setup page"
-  },
   "setupColorH3": {
     "message": "Icon Color",
     "description": "on setup page"
