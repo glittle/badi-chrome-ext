@@ -1199,7 +1199,8 @@ function (payload, sender, callback) {
       callback({
         label: (payload.labelFormat || getStorage('gCalLabel', '{bMonthNamePri} {bDay}')).filledWith(di),
         title: (payload.titleFormat || getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}')).filledWith(di),
-        classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum)
+        classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum),
+        di :di
       });
       break;
 
