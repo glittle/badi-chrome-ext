@@ -45,6 +45,14 @@
     "message": "Open in een nieuw tabblad",
     "description": "shown as menu item when right-clicking on the browser icon "
   },
+  "btnCal2M": {
+    "message": "Focus op maand",
+    "description": "on button"
+  },
+  "btnCal2Y": {
+    "message": "Focus op jaar",
+    "description": "on button"
+  },
   "btnCustomBuilderCancel": {
     "message": "Cancel / New"
   },
@@ -137,6 +145,14 @@
     "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
+  "cal2DarkerColors": {
+    "message": "Donkerdere kleuren (<u>c</u>)",
+    "description": "a check box on the calendar. If checked, darker colors are used."
+  },
+  "cal2ShowTimes": {
+    "message": "Zonsopgang/ondergang<u>t</u>tijden laten zien?",
+    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+  },
   "Chrome_History": {
     "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
@@ -172,8 +188,24 @@
   "customDefined": {
     "message": "Custom Date Formats"
   },
+  "customFormats": {
+    "message": "Aangepaste formaten",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
+  },
   "customIntroClick": {
     "message": "Click Copy to copy formatted date to the clipboard."
+  },
+  "customLoadDefaultToolTip": {
+    "message": "Formaat gebruikt in de Chrome icoon-muishint:"
+  },
+  "customLoadDefaultToolTip1": {
+    "message": "Regel 1"
+  },
+  "customLoadDefaultToolTip2": {
+    "message": "Regel 2"
+  },
+  "customLoadDefaultTopDay": {
+    "message": "Formaat om bovenaan de meeste pagina's te laten zien:"
   },
   "customLoadLetters": {
     "message": "Click to start from a standard format: "
@@ -214,6 +246,10 @@
   },
   "dayStartedPast": {
     "message": "is begonnen"
+  },
+  "defaultFormat": {
+    "message": "(Standaard)",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
   },
   "elements": {
     "message": "Vuur,Lucht,Water,Aarde",
@@ -674,6 +710,10 @@
   "next": {
     "message": "Volg &rarr;"
   },
+  "nextMonth": {
+    "message": "Volgende <u>m</u>aand",
+    "description": "button to move to next month (gregorian or badi)"
+  },
   "nextRefreshAlarm": {
     "message": "Next refresh scheduled after {0}: {1}",
     "description": "only shown in the debug console"
@@ -747,6 +787,9 @@
   "pick_pageCal1": {
     "message": "Jaar"
   },
+  "pick_pageCal2": {
+    "message": "Kalender"
+  },
   "pick_pageCalGreg": {
     "message": "Gregoriaans jaar",
     "description": "tab name"
@@ -784,6 +827,10 @@
     "message": "Herinneringen",
     "description": "page tab name and page title"
   },
+  "pick_pageSetup": {
+    "message": "Inrichting",
+    "description": "page for setup information"
+  },
   "planFromWhen": {
     "message": "Met ingang van?",
     "description": "another input"
@@ -800,9 +847,45 @@
     "message": "Vandaag",
     "description": "answer for planFromWhen"
   },
+  "planIncludeWhat": {
+    "message": "Dag of vooravond meenemen?",
+    "description": "include day or evening or both?"
+  },
+  "planIncludeWhatBoth": {
+    "message": "Allebei",
+    "description": "answer to planIncludeWhat"
+  },
+  "planIncludeWhatDay": {
+    "message": "Dag",
+    "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+  },
+  "planIncludeWhatEve": {
+    "message": "Avond",
+    "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+  },
+  "plannerResults": {
+    "message": "Resultaten",
+    "description": "title over results"
+  },
   "plannerShowWhat": {
     "message": "Wat tonen?",
     "description": "First question in inputs"
+  },
+  "plannerStartSunsetForLocation": {
+    "message": "Beginnend op zonsopgang om {0}",
+    "description": "title in results table - sunset at location"
+  },
+  "plannerTitle": {
+    "message": "Langetermijnsplanner",
+    "description": "page title"
+  },
+  "plannerTitle2": {
+    "message": "Planning-selectie",
+    "description": "title over inputs"
+  },
+  "plannerWhatEvent": {
+    "message": "Welke?",
+    "description": "which event or events?"
   },
   "plannerWhatManyEvents": {
     "message": "Meer heilige dagen en feesten",
@@ -811,6 +894,10 @@
   "plannerWhatOneEvent": {
     "message": "Een heilige dag of negentiendaagsfeest",
     "description": "answer to first question"
+  },
+  "planUntilUnitsYears": {
+    "message": "jaren",
+    "description": "answer to planUntilWhen"
   },
   "planUntilWhen": {
     "message": "Tot wanneer?",
@@ -831,6 +918,10 @@
   "prev": {
     "message": "&larr; Vorig"
   },
+  "prevMonth": {
+    "message": "Vorige maa<u>n</u>d",
+    "description": "button to move to previous month (gregorian or badi)"
+  },
   "prevYear": {
     "message": "Jaar terug",
     "description": "hold Shift and press left arrow key"
@@ -840,7 +931,8 @@
     "description": "hold Shift and press left arrow key"
   },
   "rbDefLangText": {
-    "message": "Taal voor maanden, enz."
+    "message": "Taal voor maanden, enz.",
+    "description": "on first tab... show Arabic names or in your language"
   },
   "rbDefLang_Ar": {
     "message": "Arabisch",
@@ -1046,6 +1138,34 @@
     "message": "Geen",
     "description": "in dropdown list, for when no other action is chosen"
   },
+  "setupAboutPara": {
+    "message": "<p>Deze extensie is ontworpen om huidige informatie over de Badí'-kalender weer te geven voor waar je bent.</p><p>Voor meer informatie, klik op de  'Versie'-link, of op een icoon!</p><p></p>",
+    "description": "explanation of "
+  },
+  "setupAboutTitle": {
+    "message": "Over",
+    "description": "title for the About section"
+  },
+  "setupColor": {
+    "message": "Tekstkleur voor werkbalkicoon:",
+    "description": "on setup page"
+  },
+  "setupColorH3": {
+    "message": "Icoonkleur",
+    "description": "on setup page"
+  },
+  "setupOptOut": {
+    "message": "Uitschrijven?",
+    "description": "label for checkbox"
+  },
+  "setupOptOutPara": {
+    "message": "Om te begrijpen hoe deze extensie gebruikt word worden er statistieken geregistreerd wanneer je tussen pagina's switcht of bij andere belangrijke acties. Dit is anoniem, en de gerelateerde rapporten kunnen door Glen Little worden gezien. Als je dit uit wil zetten en hier niet aan mee wilt doen, klik dit vakje aan:",
+    "description": "explanation of opting out of Google Analytics"
+  },
+  "setupOptOutTitle": {
+    "message": "Analytics",
+    "description": "title for setup section about opting out of Google Analytics"
+  },
   "shoghiExample": {
     "message": "Deze dag heet {bWeekdayNamePri}, de dag {bDayNamePri} van de maand {bMonthNamePri}, van het jaar {bYearInVahidNamePri}, van de {bVahidOrdinalName} {VahidLabelPri}, van de {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
@@ -1078,6 +1198,10 @@
   "specialTime_SS2": {
     "message": "Ongeveer twee uur na zonsondergang",
     "description": "Declaration of the Bab"
+  },
+  "standardFormats": {
+    "message": "Standaardformaten",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
   },
   "startedWithSunset": {
     "message": "Begonnen met zonsondergang om {0}"
