@@ -551,7 +551,8 @@
     "description": "hold Shift and press left arrow key"
   },
   "rbDefLangText": {
-    "message": "Sprache für Monate etc."
+    "message": "Sprache für Monate etc.",
+    "description": "on first tab... show Arabic names or in your language"
   },
   "rbDefLang_Ar": {
     "message": "Arabisch",
