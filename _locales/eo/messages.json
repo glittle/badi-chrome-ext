@@ -1,0 +1,313 @@
+{
+  "bDatePickerTitle": {
+    "message": "Iri al <u>B</u>adí'-dato",
+    "description": "added <u></u> - should have one letter between <u> and </u>"
+  },
+  "beforeSunset": {
+    "message": "Tago (antaŭ sunsubiro)"
+  },
+  "bMonthMeaning": {
+    "message": "Intermetitaj tagoj,Splendoro,Gloro,Beleco,Grandiozeco,Lumo,Indulgo,Vortoj,Perfekteco,Nomoj,Potenco,Volo,Scio,Povo,Parolo,Demandoj,Honoro,Suvereneco,Regado,Alteco",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "btnCustomBuilderCancel": {
+    "message": "Nuligi / nova"
+  },
+  "btnEveOrDay": {
+    "message": "Antaŭ / post sunsubiro"
+  },
+  "btnRetry2": {
+    "message": "Nun reŝargi"
+  },
+  "bTopDayDisplay": {
+    "message": "{bDay} {bMonthNamePri} {bYear}",
+    "description": "top right corner"
+  },
+  "bWeekDayMeaning": {
+    "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
+    "description": "start with Saturday"
+  },
+  "bYearInVahidMeaning": {
+    "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
+    "description": "Vahid names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
+  "customBuilderIntro": {
+    "message": "Tajpu la formaton en ĉi tiu kesto. <span class=customHint title='...NamePri = nomo en unua lingvo\n...NameSec = nomo en dua lingvo\nfrag1... = sunsubiro ĝis meznokto\nfrag2... = meznokto ĝis sunsubiro'>(vidu konsilojn)</span><br>Alklaku la aldono-butonon en la parto de Haveblaj Dato-partoj por enmeti en la nuna loko."
+  },
+  "dayEndedFuture": {
+    "message": "Finiĝas"
+  },
+  "DayOfWeekFormat": {
+    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+  },
+  "dayStartedFuture": {
+    "message": "Komenciĝas"
+  },
+  "Ended": {
+    "message": "Finiĝis",
+    "description": "Shown in the upcoming dates area"
+  },
+  "exportAlert_B0": {
+    "message": "Kiam komenciĝas"
+  },
+  "exportAlert_B1": {
+    "message": "1 minuto antaŭe"
+  },
+  "exportBadiYear0": {
+    "message": "Badí'-jaro - {0} B.E."
+  },
+  "exportCalendarDescription": {
+    "message": "Datoj en la Badí'-kalendaro por {location}",
+    "description": "title on page"
+  },
+  "exportDayFromSunset": {
+    "message": "Komenco de {0}"
+  },
+  "exporterDateRange": {
+    "message": "<u>A</u>tingo da tagoj por eksporti (bazita je la nuna elektita jaro)"
+  },
+  "exporterFastUntil": {
+    "message": "Fasto ĝis {endingSunsetDesc}"
+  },
+  "exporterItemDescFast": {
+    "message": "Tempoj por la ĉiujara Bahaa fasto.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescGeneralTime": {
+    "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badí'-tago",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterItemDescShared": {
+    "message": "Sunleviĝo aŭ sunsubiro laŭ horoj de {location}. Generitaj laŭ http://bit.ly/BadiChrome.",
+    "description": "Be sure the URL is not translated!"
+  },
+  "exportGregYear1": {
+    "message": "Gregoria jaro - {0} post Kristo"
+  },
+  "exportIncludeLocation": {
+    "message": "Informoj pri loko"
+  },
+  "exportIntro": {
+    "message": "Grave! Vidu <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">ĉi tiun retpaĝon</a> por informoj kaj avertoj!",
+    "description": "Be sure the URL remains in English, to find the webpage!"
+  },
+  "exportOption_AllDay": {
+    "message": "Tut-taga evento ekde meznokto <em>(dum unu tago)</em>"
+  },
+  "exportOption_Hd": {
+    "message": "Sanktaj tagoj <em>(11 tagoj)</em>"
+  },
+  "exportOption_Start": {
+    "message": "Evento je elektita plenumo-horo aŭ kutima renkontiĝa horo"
+  },
+  "exportOption_Sunset": {
+    "message": "Nur sunsubire"
+  },
+  "exportOtherSettings": {
+    "message": "Aliaj agordoj"
+  },
+  "exportQuickPick2Text": {
+    "message": "Sunleviĝo, kun sciigo tuj antaŭ ĝi."
+  },
+  "exportQuickPick3Text": {
+    "message": "Sunsubiro, kun sciigo."
+  },
+  "exportQuickPicks": {
+    "message": "Rekomendata aro da eventoj"
+  },
+  "facebook": {
+    "message": "Facebook",
+    "description": "ALT for icon at bottom of page"
+  },
+  "Firefox_WebStore": {
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "description": "link to Webstore when running in Firefox"
+  },
+  "future_Day": {
+    "message": "komenciĝas je {time}",
+    "description": "shown in the eve of the day"
+  },
+  "gCombinedY_1": {
+    "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+    "description": "with year"
+  },
+  "gCombined_2": {
+    "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+    "description": "day spanning different gregorian months"
+  },
+  "gMonthShort": {
+    "message": "Jan,Feb,Mar,Apr,Maj,Jun,Jul,Aŭg,Sep,Okt,Nov,Dec"
+  },
+  "gotoNow": {
+    "message": "Nun"
+  },
+  "gTopDayDisplay": {
+    "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+    "description": "top right corner"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Forpaso de Bahá'u'lláh"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Naskiĝo de Bahá'u'lláh"
+  },
+  "HolyDay_Covenant": {
+    "message": "Tago de la Interligo"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Unua tago de Ridván"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Dekdua tago de Ridván"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Naŭa tago de Ridván"
+  },
+  "iftttInfo": {
+    "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
+    "description": "info and link to ifttt page"
+  },
+  "MonthFormatAyyam": {
+    "message": "{bMonthNamePri} ({bMonthNameSec})"
+  },
+  "MonthFormatNormal": {
+    "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+  },
+  "monthNames": {
+    "message": "Nomoj de monatoj/tagoj",
+    "description": "on List page - table caption"
+  },
+  "nearestSunsetDay": {
+    "message": "{dayEnded} kun sunsubiro je {endingSunsetDesc}"
+  },
+  "noLocationName": {
+    "message": "(Nuna loko)",
+    "description": "If the internet is not available, to get the name of the current location."
+  },
+  "Now": {
+    "message": "Nun",
+    "description": "Shown in the upcoming dates area"
+  },
+  "num": {
+    "message": "#",
+    "description": "on List page - table heading"
+  },
+  "ordinal": {
+    "message": "a,a,a,a",
+    "description": "x,1,2,3"
+  },
+  "ordinalNames": {
+    "message": ",unua,dua,tria,kvara,kvina,sesa,sepa,oka,naŭa,deka,dekunua,dekdua,dektria,dekkvara,dekkvina,deksesa,deksepa,dekoka,deknaŭa"
+  },
+  "past_Delta": {
+    "message": "estis antaŭ {numUnits}"
+  },
+  "past_StartDeltaTime": {
+    "message": "komenciĝis antaŭ {numUnits} je {time}"
+  },
+  "planFromWhenToday": {
+    "message": "Hodiaŭ",
+    "description": "answer for planFromWhen"
+  },
+  "plannerTitle2": {
+    "message": "Elekto de planado",
+    "description": "title over inputs"
+  },
+  "plannerWhatEvent": {
+    "message": "Kiu?",
+    "description": "which event or events?"
+  },
+  "reminderBefore": {
+    "message": "antaŭ"
+  },
+  "reminderCalcTypeRelative": {
+    "message": "relativa al <span class=modelTriggerEcho></span>",
+    "description": "in dropdown"
+  },
+  "reminderDayDetails": {
+    "message": "{eventTime} je {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+  },
+  "reminderDayWhen": {
+    "message": "Je {num} tago(j) {beforeAfter} ĉiu {event}",
+    "description": "in list of defined reminders"
+  },
+  "reminderFeast": {
+    "message": "La festo de {pri}, {sec},"
+  },
+  "reminderNum_minutes_1_more": {
+    "message": "minuto;minutoj"
+  },
+  "reminder_nullAction": {
+    "message": "neniu",
+    "description": "in dropdown list, for when no other action is chosen"
+  },
+  "sampleGroup1_10": {
+    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+    "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+  },
+  "sampleGroup1_2": {
+    "message": "{bMonthNamePri} {bDay}, {bYear}",
+    "description": "Jamal 4, 172"
+  },
+  "sampleGroup1_23": {
+    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+    "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+  },
+  "sampleGroup1_24": {
+    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+    "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+  },
+  "sampleGroup1_3": {
+    "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+    "description": "Jamal 4, 172 -> 7:55pm"
+  },
+  "sampleGroup1_9": {
+    "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+    "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+  },
+  "startedWithSunset": {
+    "message": "Komenciĝis per sunsubiro je {0}"
+  },
+  "title": {
+    "message": "Badí'-kalendaro",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "Montras la daton de hodiaŭ en la Badí'-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
+    "description": "Used in the manifest"
+  },
+  "upcomingTitle": {
+    "message": "Venontaj festoj, sanktaj tagoj kaj aliaj eventoj"
+  },
+  "use24HourClock": {
+    "message": "true",
+    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+  },
+  "VahidFormat": {
+    "message": "{bVahid}"
+  },
+  "VahidLocal": {
+    "message": "Unueco"
+  },
+  "version": {
+    "message": "Versio {0}"
+  },
+  "webstore": {
+    "message": "Retvendejo"
+  },
+  "weekDayNames": {
+    "message": "Nomoj de la tagoj de la semajno",
+    "description": "on List page - table caption"
+  },
+  "YearOfVahidFormat": {
+    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "zapierKey": {
+    "message": "Zapier Webhook (reta hoko)",
+    "description": "url for Zapier"
+  }
+}
