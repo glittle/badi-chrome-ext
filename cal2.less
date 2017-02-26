@@ -222,13 +222,14 @@
 
   .monthNameDay {
     .dayName {
-      padding: 1px 3px 2px 3px;
+      padding: 0 3px 1px 3px;
       border: 1px solid #999;
       border-radius: 4px;
+      margin: 2px 0 0 -1px;
     }
 
     .bWeekDay {
-      top: 33px;
+      top: 36px;
     }
   }
 
@@ -273,7 +274,7 @@
     width: @dayWidth;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    margin: 0 0 0 -1px;
+    margin: 0 0 3px -1px;
     white-space: normal;
     background-color: #fff;
 
@@ -301,18 +302,19 @@
   .hdName {
     color: darkblue;
     font-weight: bold;
-    padding: 0 2px;
+    padding: 4px 2px 0 2px;
     position: absolute;
   }
 
   .top {
-    line-height: 14px;
+    line-height: 20px;
     height: 23px; // @gradientEnd - 15;
     text-align: right;
 
     .dayNum {
       font-weight: bold;
       position: absolute;
+      font-size: 18px;
       left: 3px;
     }
   }
@@ -339,22 +341,25 @@
   }
 
   .dayName, .bWeekDay, .sunrise, .sunsetStart, .sunsetEnd {
-    color: #7F4444;
+    color: #000;
     font-size: .55rem;
   }
 
   .dayName {
     position: absolute;
-    top: 15px; //@gradientEnd * .9;
+    top: 17px; //@gradientEnd * .9;
+    font-weight: 600;
     left: 3px;
+    font-size: 11px;
   }
 
   .bWeekDay {
-    color: lighten(#7F4444, 40%);
+    color: #000;
     text-align: left;
-    font-size: .55rem;
+    font-size: 9px;
     position: absolute;
-    top: 29px; //@gradientEnd * .9;
+    top: 32px;
+    font-style: italic;
     left: 3px;
   }
 
@@ -380,12 +385,12 @@
 
     .bWeekDay {
       font-weight: bold;
-      color: #7F4444;
+      color: #000;
     }
 
     .gStart {
       background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-      border-color: #333;
+      border-color: #ccc;
     }
   }
 
@@ -441,6 +446,43 @@
 
     .month.elementNum4 .monthElement {
       background-color: @darkEarth;
+    }
+  }
+
+  &.forPrint {
+    .dayCell{
+       margin: 0 6px 11px -1px;
+       border-radius: 3px;
+    }
+
+    .dayRow.elementNum0 {
+      .dayCell {
+        background-image: none;
+      }
+    }
+
+    .dayRow.elementNum1 {
+      .dayCell {
+        background-image: none;
+      }
+    }
+
+    .dayRow.elementNum2 {
+      .dayCell {
+        background-image: none;
+      }
+    }
+
+    .dayRow.elementNum3 {
+      .dayCell {
+        background-image: none;
+      }
+    }
+
+    .dayRow.elementNum4 {
+      .dayCell {
+        background-image: none;
+      }
     }
   }
 }
@@ -502,7 +544,7 @@ body.rtl {
     .calendar {
       page: myLandscape;
       max-height: none;
-      overflow: hidden;
+      overflow: visible; 
     }
 
     .month {

@@ -359,7 +359,7 @@
     "message": "Number of calendar entries that will be created (approximately):"
   },
   "exportOption_AllDay": {
-    "message": "All-day' event from midnight <em>(1 day long)</em>"
+    "message": "All-day event from midnight <em>(1 day long)</em>"
   },
   "exportOption_BeginningSunset": {
     "message": "At beginning sunset only"
@@ -429,6 +429,9 @@
   },
   "exportTest": {
     "message": "Di<u>s</u>play for copying"
+  },
+  "exportTestCsv": {
+    "message": "CSV"
   },
   "exportWhatTitle": {
     "message": "Select what should be exported."
@@ -1320,6 +1323,10 @@
     "message": "Darker <u>c</u>olors",
     "description": "a check box on the calendar. If checked, darker colors are used."
   },
+  "cal2ForPrint": {
+    "message": "For <u>p</u>rint",
+    "description": "a check box on the calendar. If checked, formating is improved for printing."
+  },
   "nextMonth": {
     "message": "Next <u>M</u>onth",
     "description": "button to move to next month (gregorian or badi)"
@@ -1370,6 +1377,14 @@
   },
   "setupColor": {
     "message": "Text color for toolbar icon:",
+    "description": "on setup page"
+  },
+  "inputLat": {
+    "message": "Latitude:",
+    "description": "on setup page"
+  },
+  "inputLng": {
+    "message": "Longitude:",
     "description": "on setup page"
   }
 }

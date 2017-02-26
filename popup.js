@@ -89,6 +89,11 @@ function attachHandlers() {
   $('#btnPrint').click(function () {
     window.print();
   });
+
+  $('.setupPlace')
+      .on('paste keydown keypress', 'input', function () { updateLocation(false) })
+      .on('change', 'input', function () { updateLocation(true) });
+
   $('input:radio[name=language]').click(function (ev) {
     settings.useArNames = ev.target.value === 'Ar';
     ApplyLanguage();
@@ -462,8 +467,8 @@ function updatePageContentWhenVisible(id, di) {
       $('#otherPageTitle').html(getMessage('plannerTitle'));
       break;
 
-      //        case 'pageCustom':
-      //            break;
+    //        case 'pageCustom':
+    //            break;
 
   }
 
@@ -507,13 +512,13 @@ function updatePageContent(id, di) {
         return { name: name || getMessage(key, di), value: getMessage(key + 'Format', di) };
       };
       var dayDetails = [
-         makeObj('DayOfWeek')
-       , makeObj('DayOfMonth')
-       , { name: getMessage('Month'), value: getMessage(di.bMonth ? 'MonthFormatNormal' : "MonthFormatAyyam", di) }
-       , makeObj('YearOfVahid')
-       , makeObj('Vahid', di.VahidLabelPri)
-       , makeObj('Kullishay', di.KullishayLabelPri)
-       , makeObj('YearOfEra')
+        makeObj('DayOfWeek')
+        , makeObj('DayOfMonth')
+        , { name: getMessage('Month'), value: getMessage(di.bMonth ? 'MonthFormatNormal' : "MonthFormatAyyam", di) }
+        , makeObj('YearOfVahid')
+        , makeObj('Vahid', di.VahidLabelPri)
+        , makeObj('Kullishay', di.KullishayLabelPri)
+        , makeObj('YearOfEra')
       ];
       var explain1 = getMessage('shoghiExample', di);
       var explain2 = getMessage('example2', di);
@@ -965,8 +970,8 @@ function addSample(info, format, group) {
   // also in pageCustom
   $('#samples').find('#sampleList' + group)
     .append(('<div><button title="{tooltip}"'
-    + ' type=button data-letter={letter} id="key{letter}">{letter}{currentNote}</button>'
-    + ' <span>{^value}</span></div>').filledWith(sample));
+      + ' type=button data-letter={letter} id="key{letter}">{letter}{currentNote}</button>'
+      + ' <span>{^value}</span></div>').filledWith(sample));
 }
 
 function clearSamples() {
@@ -1135,16 +1140,16 @@ function fillSetup() {
     }
   });
 
-//  var enabledGCal = settings.integrateIntoGoogleCalendar;
-//  cb = $('#setupGCal');
-//  cb.prop('checked', enabledGCal);
-//  cb.on('change', function () {
-//    var enablingGCal = cb.prop('checked');
-//    setStorage('enableGCal', enablingGCal);
-//    settings.integrateIntoGoogleCalendar = enablingGCal;
-//
-//    tracker.sendEvent('enableGoogleCalendar', enablingGCal);
-//  });
+  //  var enabledGCal = settings.integrateIntoGoogleCalendar;
+  //  cb = $('#setupGCal');
+  //  cb.prop('checked', enabledGCal);
+  //  cb.on('change', function () {
+  //    var enablingGCal = cb.prop('checked');
+  //    setStorage('enableGCal', enablingGCal);
+  //    settings.integrateIntoGoogleCalendar = enablingGCal;
+  //
+  //    tracker.sendEvent('enableGoogleCalendar', enablingGCal);
+  //  });
 
   var colorInput = $('#setupColor');
   colorInput.val(settings.iconTextColor);
@@ -1155,7 +1160,61 @@ function fillSetup() {
     showIcon();
   });
 
+  $('#inputLat').val(localStorage.lat);
+  $('#inputLng').val(localStorage.long);
 
+}
+
+var updateLocationTimer = null;
+function updateLocation(immediately) {
+  if (!immediately) {
+    clearTimeout(updateLocationTimer);
+    updateLocationTimer = setTimeout(function () {
+      updateLocation(true);
+    }, 1000);
+    return;
+  }
+
+  var inputLat = $('#inputLat');
+  var lat = +inputLat.val();
+
+  var inputLng = $('#inputLng');
+  var lng = +inputLng.val();
+
+  if (lat === 0 || Math.abs(lat) > 85) {
+    inputLat.addClass('error');
+    lat = 0;
+  }
+  if (lng === 0 || Math.abs(lng) > 180) {
+    inputLng.addClass('error');
+    lng = 0;
+  }
+  if (lat === 0 || lng === 0) {
+    return;
+  }
+  inputLat.removeClass('error');
+  inputLng.removeClass('error');
+
+  var changed = false;
+  if (_locationLat !== lat) {
+    localStorage.lat = _locationLat = lat;
+    changed = true;
+  }
+  if (_locationLong !== lng) {
+    localStorage.long = _locationLong = lng;
+    changed = true;
+  }
+
+  if (changed) {
+    knownDateInfos = {};
+    setStorage('locationKnown', true);
+    setStorage('locationNameKnown', false);
+    localStorage.locationName = getMessage('browserActionTitle'); // temp until we get it
+
+    startGetLocationName();
+
+    refreshDateInfoAndShow();
+  }
 }
 
 function fillStatic() {
@@ -1377,7 +1436,7 @@ function BuildSpecialDaysTable(di) {
 
   $('#fastListBody')
     .html(fastRowTemplate.join('')
-    .filledWithEach(dayInfos.filter(function (el) { return el.Type === 'Fast' })));
+      .filledWithEach(dayInfos.filter(function (el) { return el.Type === 'Fast' })));
 
   $('#fastDaysTitle').html(getMessage('fastDaysTitle', di));
 }
@@ -1484,12 +1543,12 @@ function prepare1() {
 
   var langCode = _languageCode.slice(0, 2);
   $('body')
-  .addClass(_languageCode)
-  .addClass(_languageDir)
-  .addClass(langCode)
-  .addClass(browserHostType)
-  .attr('lang', _languageCode)
-  .attr('dir', _languageDir);
+    .addClass(_languageCode)
+    .addClass(_languageDir)
+    .addClass(langCode)
+    .addClass(browserHostType)
+    .attr('lang', _languageCode)
+    .attr('dir', _languageDir);
 
   _initialDiStamp = getDateInfo(new Date(), true);
 

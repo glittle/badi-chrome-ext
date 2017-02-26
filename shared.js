@@ -371,9 +371,9 @@ function draw(line1, line2, line2Alignment) {
     case 'center':
       x = size / 2;
       break;
-      //    case 'end':
-      //      x = size;
-      //      break;
+    //    case 'end':
+    //      x = size;
+    //      break;
   }
   context.fillText(line2, x, size);
 
@@ -450,12 +450,12 @@ function showTime(d, use24) {
   var hours24 = d.getHours();
   var pm = hours24 >= 12;
   var hours = show24Hour
-      ? hours24
-      : hours24 > 12
+    ? hours24
+    : hours24 > 12
       ? hours24 - 12
       : hours24 === 0
-      ? 12
-      : hours24;
+        ? 12
+        : hours24;
   var minutes = d.getMinutes();
   var time = hours + ':' + ('0' + minutes).slice(-2);
   if (!show24Hour) {
@@ -465,10 +465,10 @@ function showTime(d, use24) {
       time = getMessage('midnight');
     } else {
       time = getMessage('timeFormat12')
-          .filledWith({
-            time: time,
-            ampm: pm ? getMessage('pm') : getMessage('am')
-          });
+        .filledWith({
+          time: time,
+          ampm: pm ? getMessage('pm') : getMessage('am')
+        });
     }
   }
   return time;
@@ -496,7 +496,7 @@ function startGetLocationName() {
     return;
   }
   var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}'
-      .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale);
+    .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale);
   xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
@@ -504,10 +504,10 @@ function startGetLocationName() {
     if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
       localStorage.locationName =
-          findName('neighborhood', data.results, true) ||
-          findName('locality', data.results) ||
-          findName('political', data.results) ||
-          getMessage('noLocationName');
+        findName('neighborhood', data.results, true) ||
+        findName('locality', data.results) ||
+        findName('political', data.results) ||
+        getMessage('noLocationName');
 
       setStorage('locationNameKnown', true);
       log(localStorage.locationName);
@@ -540,6 +540,11 @@ function setLocation(position) {
   setStorage('locationNameKnown', false);
   localStorage.locationName = getMessage('browserActionTitle'); // temp until we get it
 
+  if (typeof _inPopupPage !== 'undefined') {
+    $('#inputLat').val(localStorage.lat);
+    $('#inputLng').val(localStorage.long);
+  }
+
   startGetLocationName();
 
   refreshDateInfoAndShow();
@@ -561,7 +566,6 @@ function noLocation(err) {
 }
 
 function recallFocusAndSettings() {
-
   var storedAsOf = +getStorage('focusTimeAsOf');
   if (!storedAsOf) {
     setStorage('focusTimeIsEve', null);
@@ -595,6 +599,8 @@ function recallFocusAndSettings() {
         }
       }
     }
+  } else {
+    setStorage('focusPage', null);
   }
   if (!timeSet) {
     setFocusTime(new Date());
@@ -746,17 +752,16 @@ String.prototype.filledWith = function () {
       } else if (values === null) {
         value = '';
       }
-        //else if (testForFunc.test(token)) {
-        //  try {
-        //    debugger;
-        //    log('eval... ' + token);
-        //    value = eval(token.substring(1));
-        //  }
-        //  catch (e) {
-        //    // if the token cannot be executed, then pass it through intact
-        //    value = '{' + token + '}';
-        //  }
-        //}
+      //else if (testForFunc.test(token)) {
+      //  try {
+      //    log('eval... ' + token);
+      //    value = eval(token.substring(1));
+      //  }
+      //  catch (e) {
+      //    // if the token cannot be executed, then pass it through intact
+      //    value = '{' + token + '}';
+      //  }
+      //}
       else if (testForElementAttribute.test(token)) {
         value = quoteattr(values[token.substring(1)]);
       } else if (testDoNotEscpaeHtmlButToken.test(token)) {
@@ -776,7 +781,6 @@ String.prototype.filledWith = function () {
             value = '{' + token + '}';
           } else {
             log('missing property for filledWith: ' + token);
-            //debugger;
             value = '';
           }
         }
@@ -816,18 +820,18 @@ String.prototype.filledWith = function () {
 function quoteattr(s, preserveCr) {
   preserveCr = preserveCr ? '&#13;' : '\n';
   return ('' + s) /* Forces the conversion to string. */
-      .replace(/&/g, '&amp;') /* This MUST be the 1st replacement. */
-      .replace(/'/g, '&apos;') /* The 4 other predefined entities, required. */
-      .replace(/"/g, '&quot;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      /*
-      You may add other replacements here for HTML only 
-      (but it's not necessary).
-      Or for XML, only if the named entities are defined in its DTD.
-      */
-      .replace(/\r\n/g, preserveCr) /* Must be before the next replacement. */
-      .replace(/[\r\n]/g, preserveCr);
+    .replace(/&/g, '&amp;') /* This MUST be the 1st replacement. */
+    .replace(/'/g, '&apos;') /* The 4 other predefined entities, required. */
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    /*
+    You may add other replacements here for HTML only 
+    (but it's not necessary).
+    Or for XML, only if the named entities are defined in its DTD.
+    */
+    .replace(/\r\n/g, preserveCr) /* Must be before the next replacement. */
+    .replace(/[\r\n]/g, preserveCr);
 }
 
 
@@ -927,7 +931,6 @@ function setFocusTime(t) {
   }
   setStorage('focusTime', t.getTime());
   setStorage('focusTimeAsOf', new Date().getTime());
-
 }
 
 function localizeHtml(host, fnOnEach) {
@@ -937,62 +940,62 @@ function localizeHtml(host, fnOnEach) {
   // fnOnEach is passed the value and must return an updated value
   var accessKeyList = [];
   $(host || document)
-      .find('[data-msg]')
-      .each(function (domNum, dom) {
-        var el = $(dom);
-        var children = el.children();
-        var info = el.data('msg');
-        var useDateInfo = el.data('msg-di');
-        var accessKeyFor = null;
-        var text = '';
-        var parts = info.split(splitSeparator);
-        for (var i = 0; i < parts.length; i++) {
-          var part = parts[i];
-          var detail = part.split(':');
-          var target, value = '';
-          if (detail.length === 1) {
-            var key = detail[0];
-            var key2 = key === '_id_' ? el.attr('id') : key;
-            target = 'html';
-            value = getMessage(key2, useDateInfo ? _di : null);
-          }
-          if (detail.length === 2) {
-            if (detail[0] === 'extractAccessKeyFor') {
-              accessKeyFor = detail[1];
-              continue;
-            }
-            target = detail[0];
-            value = getMessage(detail[1]);
-          }
-          if (fnOnEach) {
-            value = fnOnEach(value);
-          }
-          if (target === 'html') {
-            $.each(children,
-                function (i, c) {
-                  var name = $(c).data('child');
-                  value = value.replace('{' + name + '}', c.outerHTML);
-                });
-            el.html(value);
-            localizeHtml(el);
-            text = value;
-          } else if (target === 'text') {
-            el.text(value);
-            text = value;
-          } else {
-            el.attr(target, value);
-          }
+    .find('[data-msg]')
+    .each(function (domNum, dom) {
+      var el = $(dom);
+      var children = el.children();
+      var info = el.data('msg');
+      var useDateInfo = el.data('msg-di');
+      var accessKeyFor = null;
+      var text = '';
+      var parts = info.split(splitSeparator);
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i];
+        var detail = part.split(':');
+        var target, value = '';
+        if (detail.length === 1) {
+          var key = detail[0];
+          var key2 = key === '_id_' ? el.attr('id') : key;
+          target = 'html';
+          value = getMessage(key2, useDateInfo ? _di : null);
         }
-        if (accessKeyFor) {
-          var accessKey = $('<div/>').html(text).find('u').text().substring(0, 1);
-          if (accessKey) {
-            accessKeyList.push({
-              id: accessKeyFor,
-              key: accessKey
+        if (detail.length === 2) {
+          if (detail[0] === 'extractAccessKeyFor') {
+            accessKeyFor = detail[1];
+            continue;
+          }
+          target = detail[0];
+          value = getMessage(detail[1]);
+        }
+        if (fnOnEach) {
+          value = fnOnEach(value);
+        }
+        if (target === 'html') {
+          $.each(children,
+            function (i, c) {
+              var name = $(c).data('child');
+              value = value.replace('{' + name + '}', c.outerHTML);
             });
-          }
+          el.html(value);
+          localizeHtml(el);
+          text = value;
+        } else if (target === 'text') {
+          el.text(value);
+          text = value;
+        } else {
+          el.attr(target, value);
         }
-      });
+      }
+      if (accessKeyFor) {
+        var accessKey = $('<div/>').html(text).find('u').text().substring(0, 1);
+        if (accessKey) {
+          accessKeyList.push({
+            id: accessKeyFor,
+            key: accessKey
+          });
+        }
+      }
+    });
   // apply after all done
   for (var a = 0; a < accessKeyList.length; a++) {
     var item = accessKeyList[a];
@@ -1003,9 +1006,9 @@ function localizeHtml(host, fnOnEach) {
 
 function getVersionInfo() {
   var info = '{0}:{1} ({2})'.filledWith(
-      chrome.runtime.getManifest().version,
-      _languageCode,
-      navigator.languages ? navigator.languages.slice(0, 2).join(',') : '');
+    chrome.runtime.getManifest().version,
+    _languageCode,
+    navigator.languages ? navigator.languages.slice(0, 2).join(',') : '');
   return info;
 }
 
@@ -1121,7 +1124,7 @@ if (!Array.prototype.includes) {
     while (k < len) {
       currentElement = o[k];
       if (searchElement === currentElement ||
-      (searchElement !== searchElement && currentElement !== currentElement)) { // NaN !== NaN
+        (searchElement !== searchElement && currentElement !== currentElement)) { // NaN !== NaN
         return true;
       }
       k++;
@@ -1132,10 +1135,10 @@ if (!Array.prototype.includes) {
 
 function createGuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-      function (c) {
-        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-      });
+    function (c) {
+      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
 }
 
 
@@ -1170,56 +1173,56 @@ chrome.runtime.onMessage.addListener(
   });
 
 chrome.runtime.onMessageExternal.addListener(
-/*
-cmd options:  getInfo, connect
+  /*
+  cmd options:  getInfo, connect
+  
+   * payload:
+   *  { 
+   *    cmd: 'getInfo'
+   *    targetDay: date/datestring for new Date(targetDay)
+   *    labelFormat: '{bDay}' (optional)
+   *  }
+   * returns:
+   *  {
+   *   label: {bMonthNamePri} {bDay}
+   *   title:
+   *   classes: '[firstBDay] element4'
+   *  }
+   * 
+   */
+  function (payload, sender, callback) {
+    if (!callback) {
+      callback = function () { }; // make it optional
+    }
+    switch (payload.cmd) {
+      case 'getInfo':
+        // layout, targetDay
+        // can adjust per layout
+        var di = getDateInfo(new Date(payload.targetDay));
+        callback({
+          label: (payload.labelFormat || getStorage('gCalLabel', '{bMonthNamePri} {bDay}')).filledWith(di),
+          title: (payload.titleFormat || getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}')).filledWith(di),
+          classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum),
+          di: di
+        });
+        break;
 
- * payload:
- *  { 
- *    cmd: 'getInfo'
- *    targetDay: date/datestring for new Date(targetDay)
- *    labelFormat: '{bDay}' (optional)
- *  }
- * returns:
- *  {
- *   label: {bMonthNamePri} {bDay}
- *   title:
- *   classes: '[firstBDay] element4'
- *  }
- * 
- */
-function (payload, sender, callback) {
-  if (!callback) {
-    callback = function () { }; // make it optional
-  }
-  switch (payload.cmd) {
-    case 'getInfo':
-      // layout, targetDay
-      // can adjust per layout
-      var di = getDateInfo(new Date(payload.targetDay));
-      callback({
-        label: (payload.labelFormat || getStorage('gCalLabel', '{bMonthNamePri} {bDay}')).filledWith(di),
-        title: (payload.titleFormat || getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}')).filledWith(di),
-        classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum),
-        di :di
-      });
-      break;
+      case 'getStorage':
+        callback({
+          value: getStorage(payload.key, payload.defaultValue)
+        });
+        break;
 
-    case 'getStorage':
-      callback({
-        value: getStorage(payload.key, payload.defaultValue)
-      });
-      break;
+      case 'connect':
+        callback({
+          value: 'Wondrous Calendar!',
+          id: chrome.runtime.id
+        });
+        break;
 
-    case 'connect':
-      callback({
-        value: 'Wondrous Calendar!',
-        id: chrome.runtime.id
-      });
-      break;
-
-    default:
-      callback();
-      break;
-  }
-});
+      default:
+        callback();
+        break;
+    }
+  });
 

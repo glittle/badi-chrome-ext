@@ -395,7 +395,7 @@
     "message": "Number of calendar entries that will be created (approximately):"
   },
   "exportOption_AllDay": {
-    "message": "All-day' event from midnight <em>(1 day long)</em>"
+    "message": "All-day event from midnight <em>(1 day long)</em>"
   },
   "exportOption_BeginningSunset": {
     "message": "At beginning sunset only"

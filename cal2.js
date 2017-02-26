@@ -37,6 +37,9 @@ var Cal2 = function () {
       _page.toggleClass('darkerColors', !!_page.find('#cbCal2Darker').prop('checked'));
       // _calendarDiv.find('#cbCal2Darker').blur();
     });
+    _page.on('change', '#cbCal2Print', function () {
+      _page.toggleClass('forPrint', !!_page.find('#cbCal2Print').prop('checked'));
+    });
     _page.find('#btnCal2Y').click(function () {
       zoomTo('Y');
     });
@@ -53,9 +56,17 @@ var Cal2 = function () {
     if (currentYear > 1000) return;
 
     var currentMonth = _di.bMonth;
-    currentMonth += delta;
+    if (currentMonth === 0) {
+      // ayyam-i-ha
+      if(delta < 0){
+        // moving back in time
+        currentMonth = 19;
+      }else{
+        currentMonth = 18;
+      }
+    }
 
-    // ignore ayyam-i-ha
+    currentMonth += delta;
 
     if (currentMonth < 1) {
       currentMonth = 19;
@@ -94,13 +105,13 @@ var Cal2 = function () {
     switch (level) {
       case 'Y':
         // replace month detail with month shell
-//        var currentMonth = _di.bMonth;
-//        monthShell.css({
-//          left: (leftOffset + getCol(currentMonth) * 123) + 'px',
-//          top: (topOffset + getRow(currentMonth) * 99) + 'px',
-//          width: '122px',
-//          height: '98px'
-//        });
+        //        var currentMonth = _di.bMonth;
+        //        monthShell.css({
+        //          left: (leftOffset + getCol(currentMonth) * 123) + 'px',
+        //          top: (topOffset + getRow(currentMonth) * 99) + 'px',
+        //          width: '122px',
+        //          height: '98px'
+        //        });
 
         // make shell small
         monthShells.addClass('sizeY');
@@ -125,7 +136,7 @@ var Cal2 = function () {
 
         // zoom shell to full size
         monthShells.removeClass('sizeY');
-        
+
         monthShells.css({
           left: leftOffset + 'px',
           top: topOffset + 'px',
@@ -325,18 +336,18 @@ var Cal2 = function () {
     var newRowEnd = '</div>';
 
     var dayCellTemplate = [
-        '<div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
-            '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart>{frag1WeekdayShort}<span> {startingSunsetDesc}</span></span></div>',
-                '<div class=night>',
-                    '<div class=gStart><span class=wd>{frag2WeekdayShort}</span>, {frag2MonthShort} {frag2Day}',
-                '</div>',
-                '{^sunriseDiv}',
-            '</div>',
-            '<div class=day>{^holyDayAftName}</div>',
-            '<div class=dayName>{bDayNamePri}</div>',
-            '<div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>',
-            '{^sunsetDesc}',
-        '</div>'
+      '<div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
+      '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart>{frag1WeekdayShort}<span> {startingSunsetDesc}</span></span></div>',
+      '<div class=night>',
+      '<div class=gStart><span class=wd>{frag2WeekdayShort}</span>, {frag2MonthShort} {frag2Day}',
+      '</div>',
+      '{^sunriseDiv}',
+      '</div>',
+      '<div class=day>{^holyDayAftName}</div>',
+      '<div class=dayName>{bDayNamePri}</div>',
+      '<div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>',
+      '{^sunsetDesc}',
+      '</div>'
     ].join('');
 
     var dayCells = [newRow.filledWith(bMonth === 0 ? 0 : 1)];
@@ -466,10 +477,10 @@ var Cal2 = function () {
     var html = [
       '<div class="month elementNum{1}" id=cal2_m{0}>'.filledWith(focusMonth, elementNum),
       '<div class=caption>',
-        '<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>'.filledWith(monthTitleInfo),
-        '<div class=bMonthInfo>{0}</div>'.filledWith(bMonthInfo),
-        '<div class=gMonthInfo>{0}</div>'.filledWith(gMonthInfo),
-        '<div class=placeName>{0}</div>'.filledWith(localStorage.locationName),
+      '<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>'.filledWith(monthTitleInfo),
+      '<div class=bMonthInfo>{0}</div>'.filledWith(bMonthInfo),
+      '<div class=gMonthInfo>{0}</div>'.filledWith(gMonthInfo),
+      '<div class=placeName>{0}</div>'.filledWith(localStorage.locationName),
       '</div>',
       '<div class=monthDays>',
       '{^0}'.filledWith(dayCells.join('')),

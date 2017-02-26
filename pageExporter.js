@@ -3,6 +3,9 @@
 var PageExporter = function () {
 
   var _lines = [];
+  var _forCsv = false;
+  var _doingCsvLine = false;
+  var _csvLine = [];
   var _numEntries = 0;
   var _uidPrefix = 'UID:Chrome Badi Calendar Extension//';
   var _nowCalDate = '';
@@ -89,8 +92,9 @@ var PageExporter = function () {
     }
     return date.toJSON().replace(/[\-\:]/g, '').split('.')[0] + 'Z';
   };
-  var makeEntries = function () {
+  var makeEntries = function (asCsv) {
     _lines = [];
+    _forCsv = !!asCsv;
     _nowCalDate = calFormat(new Date());
     _includeLocation = $('#exporterIncludeLocation').is(':checked');
     _includeAlert = $('#exporterIncludeAlert').is(':checked');
@@ -214,6 +218,7 @@ END:VEVENT
       case 'AllDay':
         addLine('DTSTART;VALUE=DATE:' + di.currentDateString.replace(/\-/g, ''));
         addLine('SUMMARY:' + dayInfo + ' ⇨{endingSunsetDesc}'.filledWith(di));
+        noTimes = true;
         break;
       case 'Sun':
         addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
@@ -230,8 +235,7 @@ END:VEVENT
         break;
     }
 
-
-    addDescription(getMessage('exporterItemDescDay'));
+    addDescription(getMessage('exporterItemDescDay'), variation === 'AllDay');
 
     addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
     addEndOfEntry();
@@ -316,7 +320,7 @@ END:VEVENT
       key = 'exporterItemDescGeneralTime';
     }
 
-    addDescription(getMessage(key, extraInfo));
+    addDescription(getMessage(key, extraInfo), variation === 'AllDay');
 
 
     addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
@@ -381,7 +385,7 @@ END:VEVENT
         break;
     }
 
-    addDescription(getMessage('exporterItemDescGeneralTime'));
+    addDescription(getMessage('exporterItemDescGeneralTime'), variation === 'AllDay');
 
     addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
     addEndOfEntry();
@@ -461,17 +465,26 @@ END:VEVENT
     //END:VALARM
   };
 
-  var addDescription = function (msg) {
-    var extraInfo = { location: localStorage.locationName };
-    var shared = getMessage('exporterItemDescShared', extraInfo);
-
-    msg = msg + ' ' + shared;
+  var addDescription = function (msg, allDay) {
+    if (!allDay) {
+      var extraInfo = { location: localStorage.locationName };
+      var timesLocation = getMessage('exporterItemDescShared', extraInfo);
+      msg = msg + ' ' + timesLocation;
+    }
 
     addLine('DESCRIPTION:' + msg); // strip out HTML ?
     //addLine('X-ALT-DESC:' + msg);
   }
 
   var addEndOfEntry = function () {
+    if (_doingCsvLine) {
+      _lines.push(_csvLine.join(','));
+      _csvLine = []
+      _doingCsvLine = false;
+      _numEntries++;
+      return;
+    }
+
     addLine('TRANSP:TRANSPARENT');
     addLine('CLASS:PUBLIC');
     addLine('DTSTAMP:' + _nowCalDate);
@@ -484,6 +497,20 @@ END:VEVENT
     _numEntries++;
   };
   var addLine = function (line) {
+    if (line === 'BEGIN:VEVENT') {
+      _doingCsvLine = _forCsv;
+      if (_doingCsvLine) {
+        return;
+      }
+    }
+    if (_forCsv && !_doingCsvLine) {
+      return;
+    }
+    if (_doingCsvLine) {
+      _csvLine.push(line.split(':')[1]);
+      return;
+    }
+
     var maxLength = 65; // actually 75, but need to handle extended characters, etc
     if (line.length < maxLength) {
       _lines.push(line);
@@ -570,7 +597,7 @@ END:VEVENT
 
     $('#btnQuickPickClear').click(clearQuickPick);
     $('#btnQuickPick1').click(function () {
-      setQuickPicks(['Date_AllDay', 'Hd_AllDay', 'Hd_Start', 'Feast_Usual']);
+      setQuickPicks(['Date_AllDay', 'Hd_AllDay', 'Feast_BeginningSunset']);
     });
     $('#btnQuickPick2').click(function () {
       setQuickPicks(['Fast_Sunrise'], 'B10');
@@ -580,6 +607,10 @@ END:VEVENT
     });
     $('#btnExportTest').click(function () {
       makeEntries();
+      sendTo('test');
+    });
+    $('#cbExportTestCsv').click(function () {
+      makeEntries(true);
       sendTo('test');
     });
     $('#btnHideSample').click(function () {
