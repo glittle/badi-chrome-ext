@@ -467,6 +467,10 @@ function updatePageContentWhenVisible(id, di) {
       $('#otherPageTitle').html(getMessage('plannerTitle'));
       break;
 
+    case 'pageSetup':
+      $('#otherPageTitle').html(getMessage('pick_pageSetup'));
+      break;
+
     //        case 'pageCustom':
     //            break;
 
