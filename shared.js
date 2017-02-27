@@ -360,6 +360,8 @@ function draw(line1, line2, line2Alignment) {
 
   context.fillStyle = getStorage('iconTextColor', 'black');
 
+  line1 = $("<div>{^0}</div>".filledWith(line1)).text();
+  line2 = $("<div>{^0}</div>".filledWith(line2)).text();
 
   context.font = (size / 2 - 1) + "px " + fontName;
   context.fillText(line1, 0, 7);
