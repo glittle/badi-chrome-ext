@@ -190,7 +190,7 @@ body.rtl {
   margin: -1em 0 1em 2em;
 }
 #pageSetup .pageSetupInput2 {
-  margin: 0.5em 0 1em 2em;
+  margin: 0.7em 0 1em 2em;
 }
 #pageSetup #setupColor {
   padding: 0px 1px;
@@ -212,7 +212,7 @@ body.rtl {
   background: url(ajax-loader-white.gif) no-repeat;
 }
 #pageSetup div.setupPlace {
-  margin: 0.5em 0 1em 2em;
+  margin: 0.7em 0 1em 2em;
 }
 #pageSetup div.setupPlace div {
   margin: 0 0 2px 0;
@@ -230,6 +230,12 @@ body.rtl {
 }
 #pageSetup div.setupPlace input.error {
   border-color: red;
+}
+#pageSetup #setupLang {
+  width: 100px;
+}
+#pageSetup #setupLangPct {
+  margin-left: 5px;
 }
 #pageExporter > div {
   border: 1px solid #77b55a;

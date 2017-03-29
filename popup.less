@@ -1,1179 +1,1073 @@
 @green: #77b55a;
-
 body {
-  margin: 0;
-  font-family: Geneva, 'Segoe UI';
-  font-size: 9pt;
-
-  &.rtl {
-    direction: rtl;
-  }
+    margin: 0;
+    font-family: Geneva, 'Segoe UI';
+    font-size: 9pt;
+    &.rtl {
+        direction: rtl;
+    }
 }
 
 #mainBody {
-  margin: 0 auto;
-  width: 800px;
-  font-family: Geneva, 'Segoe UI';
+    margin: 0 auto;
+    width: 800px;
+    font-family: Geneva, 'Segoe UI';
 }
 
 #initialCover {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background-color: white;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: white;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .initialMsgArea {
-  color: green;
-  width: 700px;
-  text-align: center;
-  font-size: 12pt;
+    color: green;
+    width: 700px;
+    text-align: center;
+    font-size: 12pt;
 }
 
-#loadingMsg {
-}
+#loadingMsg {}
 
-#loadingCount {
-}
+#loadingCount {}
 
 .mainTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .mainMiddle {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .mainBottom {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-#pageDay, #pageEvents, #pageFast, #pageLists, #pageCal1, #pageReminders, #pageExporter, #pageSetup, #pageCustom, #pagePlanner {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+#pageDay,
+#pageEvents,
+#pageFast,
+#pageLists,
+#pageCal1,
+#pageReminders,
+#pageExporter,
+#pageSetup,
+#pageCustom,
+#pagePlanner {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-#pageEvents, #pageFast, #pageLists, #pageCal1, #pageCalWheel, #pageCalGreg, #pageCal2 {
-  border: 1px solid @green;
-  border-radius: 3px;
+#pageEvents,
+#pageFast,
+#pageLists,
+#pageCal1,
+#pageCalWheel,
+#pageCalGreg,
+#pageCal2 {
+    border: 1px solid @green;
+    border-radius: 3px;
 }
 
-#pageCalWheel, #pageCalGreg, #pageCal2 {
-  width: 100%;
+#pageCalWheel,
+#pageCalGreg,
+#pageCal2 {
+    width: 100%;
 }
 
 .alarms {
-  li {
-    padding: 1px 0;
-    list-style-type: none;
-    margin-left: -20px;
-
-    &.inEdit {
-      background: #eee;
+    li {
+        padding: 1px 0;
+        list-style-type: none;
+        margin-left: -20px;
+        &.inEdit {
+            background: #eee;
+        }
+        &.tempHover {
+            background: #dfd;
+        }
     }
-
-    &.tempHover {
-      background: #dfd;
-    }
-  }
 }
 
 #pageReminders {
-  > div {
-    border: 1px solid @green;
-    border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
-    padding: 5px 10px 10px 10px;
-    /*&:first-of-type {
+    >div {
+        border: 1px solid @green;
+        border-radius: 3px;
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 100%;
+        padding: 5px 10px 10px 10px;
+        /*&:first-of-type {
       border-color: rgba(0, 3, 255, 0.67);
     }*/
-  }
-
-  .reminderEditInputs {
-    margin-left: 10px;
-  }
-
-  #reminderTrigger {
-    margin-bottom: 9px;
-  }
-
-  .reminderEdit {
-    margin: 0 5px 25px 10px;
-    position: relative;
-
-    .reminder_num {
-      width: 3em;
     }
-
-    textarea {
-      display: block;
-      margin-left: 20px;
-      width: 80%;
+    .reminderEditInputs {
+        margin-left: 10px;
     }
-
-    div {
-      margin: 3px 0 3px 10px;
+    #reminderTrigger {
+        margin-bottom: 9px;
     }
-  }
-
-  .reminderModel {
-    display: none;
-    margin: 1px 0 1px 20px;
-  }
-
-  div.reminderShared {
-    margin: 20px 0 5px -10px;
-  }
-
-  .reminders {
-    > div {
-      padding: 1px 0;
-      display: flex;
-
-      button {
-        padding-left: 3px;
-        padding-right: 3px;
+    .reminderEdit {
+        margin: 0 5px 25px 10px;
+        position: relative;
+        .reminder_num {
+            width: 3em;
+        }
+        textarea {
+            display: block;
+            margin-left: 20px;
+            width: 80%;
+        }
+        div {
+            margin: 3px 0 3px 10px;
+        }
+    }
+    .reminderModel {
+        display: none;
+        margin: 1px 0 1px 20px;
+    }
+    div.reminderShared {
+        margin: 20px 0 5px -10px;
+    }
+    .reminders {
+        >div {
+            padding: 1px 0;
+            display: flex;
+            button {
+                padding-left: 3px;
+                padding-right: 3px;
+                display: block;
+                flex-shrink: 0;
+                align-self: baseline;
+            }
+            &.inEdit {
+                background: #eee;
+            }
+            &.tempHover {
+                background: #dfd;
+            }
+            >div {
+                display: block;
+                margin-left: 7px;
+            }
+        }
+    }
+    .reminder_iftttEvent {
+        width: 10em;
+    }
+    #reminderAction_ifttt {
+        border: 1px solid #ddd;
+        background-color: #eee;
+        padding: 1px 5px;
+        margin-left: 10px;
+    }
+    div.reminderComment {
+        margin-left: 20px;
+    }
+    .reminderAction {
+        display: none;
+    }
+    .reminderNum {
+        min-width: 15px;
+        margin-right: 5px;
         display: block;
-        flex-shrink: 0;
-        align-self: baseline;
-      }
-
-      &.inEdit {
-        background: #eee;
-      }
-
-      &.tempHover {
-        background: #dfd;
-      }
-
-      > div {
-        display: block;
-        margin-left: 7px;
-      }
+        text-align: right;
     }
-  }
-
-  .reminder_iftttEvent {
-    width: 10em;
-  }
-
-  #reminderAction_ifttt {
-    border: 1px solid #ddd;
-    background-color: #eee;
-    padding: 1px 5px;
-    margin-left: 10px;
-  }
-
-  div.reminderComment {
-    margin-left: 20px;
-  }
-
-  .reminderAction {
-    display: none;
-  }
-
-  .reminderNum {
-    min-width: 15px;
-    margin-right: 5px;
-    display: block;
-    text-align: right;
-  }
-
-  #btnReminderSave {
-    display: none;
-  }
-
-  #btnReminderDelete {
-    position: absolute;
-    right: 2px;
-    margin-top: 3px;
-  }
-
-  div.reminderSaveBtns {
-    margin: 10px 30px 0 0;
-    line-height: 21px; // for when they wrap
-  }
-
-  #btnReminderCancel {
-    margin-right: 20px;
-  }
+    #btnReminderSave {
+        display: none;
+    }
+    #btnReminderDelete {
+        position: absolute;
+        right: 2px;
+        margin-top: 3px;
+    }
+    div.reminderSaveBtns {
+        margin: 10px 30px 0 0;
+        line-height: 21px; // for when they wrap
+    }
+    #btnReminderCancel {
+        margin-right: 20px;
+    }
 }
 
 #pageSetup {
-  > div {
-    border: 1px solid @green;
-    border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
-    padding: 10px;
-  }
-
-  .pageSetupInput {
-    margin: -1em 0 1em 2em;
-  }
-
-  .pageSetupInput2 {
-    margin: 0.5em 0 1em 2em;
-  }
-
-  #setupColor{
-    padding: 0px 1px;
-    height: 19px;
-    margin: -1px 0 -3px 2px;
-  }
-
-  h3 {
-    margin-bottom: -.5em;
-    clear: both;
-  }
-
-  h3.setupPlace{
-    .btnRetry {
-        margin-top: 1px;
-        float: none;
-
-        .btnRetryImg {
-          background: url(ajax-loader-white-img.gif) no-repeat;
+    >div {
+        border: 1px solid @green;
+        border-radius: 3px;
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 100%;
+        padding: 10px;
+    }
+    .pageSetupInput {
+        margin: -1em 0 1em 2em;
+    }
+    .pageSetupInput2 {
+        margin: 0.7em 0 1em 2em;
+    }
+    #setupColor {
+        padding: 0px 1px;
+        height: 19px;
+        margin: -1px 0 -3px 2px;
+    }
+    h3 {
+        margin-bottom: -.5em;
+        clear: both;
+    }
+    h3.setupPlace {
+        .btnRetry {
+            margin-top: 1px;
+            float: none;
+            .btnRetryImg {
+                background: url(ajax-loader-white-img.gif) no-repeat;
+            }
         }
-      }
-
-      .btnRetry.active {
-        .btnRetryImg {
-          background: url(ajax-loader-white.gif) no-repeat;
+        .btnRetry.active {
+            .btnRetryImg {
+                background: url(ajax-loader-white.gif) no-repeat;
+            }
         }
-      }
-  }
-
-  div.setupPlace {
-    margin: 0.5em 0 1em 2em;
-    div{
-      margin: 0 0 2px 0;
     }
-    .place {
-      font-size: 100%;
-      color: #000;
-      vertical-align: middle;
-      border-bottom: 1px solid #ccc;
-      padding: 0 4px;
-      font-style: italic;
+    div.setupPlace {
+        margin: 0.7em 0 1em 2em;
+        div {
+            margin: 0 0 2px 0;
+        }
+        .place {
+            font-size: 100%;
+            color: #000;
+            vertical-align: middle;
+            border-bottom: 1px solid #ccc;
+            padding: 0 4px;
+            font-style: italic;
+        }
+        input {
+            width: 95px;
+            &.error {
+                border-color: red;
+            }
+        }
     }
-
-    input {
-      width: 95px;
-
-      &.error{
-        border-color: red;
-      }
+    #setupLang {
+        width: 100px;
     }
-  }
+    #setupLangPct {
+        margin-left: 5px;
+    }
 }
 
 #pageExporter {
-  > div {
-    border: 1px solid @green;
-    border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
-    display: flex;
-
-    > div {
-      margin-left: 4px;
-      justify-content: flex-end;
-      flex: 0 1 100%;
-      padding: 5px 10px 10px 10px;
+    >div {
+        border: 1px solid @green;
+        border-radius: 3px;
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 100%;
+        display: flex;
+        >div {
+            margin-left: 4px;
+            justify-content: flex-end;
+            flex: 0 1 100%;
+            padding: 5px 10px 10px 10px;
+        }
     }
-  }
-
-  .exportNum {
-    margin: 10px 0 0;
-  }
-
-  em {
-    color: #999;
-  }
-
-  .exportIncludeAlert {
-    display: inline-flex;
-    vertical-align: top;
-    margin-top: -2px;
-  }
-
-  #exporterIncludeAlertMin {
-    display: block;
-    margin: 0 0 0 35px;
-  }
-
-  .exportItemTitle {
-    font-weight: bold;
-    margin-top: 6px;
-
+    .exportNum {
+        margin: 10px 0 0;
+    }
     em {
-      font-weight: normal;
+        color: #999;
     }
-  }
-
-  .exporterButtons {
-    label {
-      display: inline-block;
-      font-size: 8.25pt;
-      margin: 0;
-      input {
-        margin: 0;
-        vertical-align: middle;
-      }
+    .exportIncludeAlert {
+        display: inline-flex;
+        vertical-align: top;
+        margin-top: -2px;
     }
-
-    .exportTest {
-      float: right;
+    #exporterIncludeAlertMin {
+        display: block;
+        margin: 0 0 0 35px;
     }
-  }
-
-  input, select {
-    margin-left: 20px;
-  }
-
-  label {
-    display: block;
-    margin: 5px 0 2px 0;
-
+    .exportItemTitle {
+        font-weight: bold;
+        margin-top: 6px;
+        em {
+            font-weight: normal;
+        }
+    }
+    .exporterButtons {
+        label {
+            display: inline-block;
+            font-size: 8.25pt;
+            margin: 0;
+            input {
+                margin: 0;
+                vertical-align: middle;
+            }
+        }
+        .exportTest {
+            float: right;
+        }
+    }
+    input,
     select {
-      margin-left: 0;
+        margin-left: 20px;
     }
-  }
-
-  .exportOtherSettings {
-
-    button {
-      display: inline-block;
-      margin: 5px 0 0 0;
-    }
-
-    #exporterTest {
-      display: none;
-      background-color: #eee;
-      height: 100px;
-      width: 350px;
-      white-space: pre-line;
-      font-size: 85%;
-      font-family: sans-serif;
-    }
-
-    #btnHideSample {
-      display: none;
-      float: right;
-      margin-right: 15px;
-    }
-  }
-
-  .exportOptionList {
     label {
-      margin: 0;
+        display: block;
+        margin: 5px 0 2px 0;
+        select {
+            margin-left: 0;
+        }
     }
-
-    span.comment {
-      font-weight: 700;
-      color: #000;
+    .exportOtherSettings {
+        button {
+            display: inline-block;
+            margin: 5px 0 0 0;
+        }
+        #exporterTest {
+            display: none;
+            background-color: #eee;
+            height: 100px;
+            width: 350px;
+            white-space: pre-line;
+            font-size: 85%;
+            font-family: sans-serif;
+        }
+        #btnHideSample {
+            display: none;
+            float: right;
+            margin-right: 15px;
+        }
     }
-  }
-
-  .QuickPickTitle {
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 6px;
-  }
-
-  .QuickPicks {
-    div {
-      display: flex;
-      margin-left: 10px;
-      align-items: flex-start;
+    .exportOptionList {
+        label {
+            margin: 0;
+        }
+        span.comment {
+            font-weight: 700;
+            color: #000;
+        }
     }
-
-    button {
-      margin: 1px 4px 0 0;
-      flex-shrink: 0;
-      display: block;
+    .QuickPickTitle {
+        font-weight: bold;
+        font-style: italic;
+        margin-top: 6px;
     }
-  }
+    .QuickPicks {
+        div {
+            display: flex;
+            margin-left: 10px;
+            align-items: flex-start;
+        }
+        button {
+            margin: 1px 4px 0 0;
+            flex-shrink: 0;
+            display: block;
+        }
+    }
 }
 
 #pageCustom {
-  > div {
-    border: 1px solid @green;
-    border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 60%;
-    padding: 2px 6px;
-  }
-
-  .customHint {
-    margin-left: 10px;
-    color: #999;
-    font-size: 90%;
-  }
-
-  .customPartsListDiv {
-    flex: 0 1 40%;
-
-    h2 {
-      text-align: center;
+    >div {
+        border: 1px solid @green;
+        border-radius: 3px;
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 60%;
+        padding: 2px 6px;
     }
-
-    button.button {
-      background: transparent;
-      color: green;
+    .customHint {
+        margin-left: 10px;
+        color: #999;
+        font-size: 90%;
     }
-  }
-
-  #customSampleTemplate {
-    display: none;
-  }
-
-  .customLoadLettersDiv {
-    margin: 5px 0 0 5px;
-
-    button {
-      margin: 0 1px;
-      background: transparent;
-      color: green;
+    .customPartsListDiv {
+        flex: 0 1 40%;
+        h2 {
+            text-align: center;
+        }
+        button.button {
+            background: transparent;
+            color: green;
+        }
     }
-  }
-
-  .customLoadDefaults {
-    margin: 3px 0 0 5px;
-
-    > span {
-      margin: 1px 0;
-      display: block;
+    #customSampleTemplate {
+        display: none;
     }
-
-    > div {
-      display: flex;
-      margin: 0 0 0 25px;
+    .customLoadLettersDiv {
+        margin: 5px 0 0 5px;
+        button {
+            margin: 0 1px;
+            background: transparent;
+            color: green;
+        }
     }
-
-    select {
-      max-width: 80%;
-      margin: 1px 0 0 5px;
+    .customLoadDefaults {
+        margin: 3px 0 0 5px;
+        >span {
+            margin: 1px 0;
+            display: block;
+        }
+        >div {
+            display: flex;
+            margin: 0 0 0 25px;
+        }
+        select {
+            max-width: 80%;
+            margin: 1px 0 0 5px;
+        }
     }
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .customDefinedTitleDiv {
-    position: relative;
-
-    h2 {
-      margin-bottom: 0;
+    p {
+        margin: 0;
     }
-
-    .customIntroSelectSome {
-      position: absolute;
-      text-align: right;
-      font-size: 90%;
-      max-width: 60%;
-      bottom: 0;
-      right: 0;
+    .customDefinedTitleDiv {
+        position: relative;
+        h2 {
+            margin-bottom: 0;
+        }
+        .customIntroSelectSome {
+            position: absolute;
+            text-align: right;
+            font-size: 90%;
+            max-width: 60%;
+            bottom: 0;
+            right: 0;
+        }
     }
-  }
-
-  #customBuilder {
-    margin-bottom: 2em;
-  }
-
-  #customBuilderInputDiv {
-    margin: 3px 30px 6px 10px;
-  }
-
-  #customBuilderInput {
-    width: 100%;
-
-    &.hasError {
-      background-color: rgba(255, 0, 0, 0.17);
+    #customBuilder {
+        margin-bottom: 2em;
     }
-  }
-
-  #customBuilderEcho {
-    margin: 2px 26px 0 10px;
-    border: 1px solid #ccc;
-    padding: 2px;
-    white-space: pre-wrap;
-  }
-
-
-  #partsList {
-    max-height: 450px;
-    overflow: auto;
-
-    > div {
-      display: table-row;
-
-      button {
-        padding: 0 2px;
-        margin: 0 3px;
-      }
+    #customBuilderInputDiv {
+        margin: 3px 30px 6px 10px;
     }
-
-    .customPart {
-      display: table-cell;
-      vertical-align: top;
-      text-align: right;
-      padding-right: 2px;
-      white-space: nowrap;
+    #customBuilderInput {
+        width: 100%;
+        &.hasError {
+            background-color: rgba(255, 0, 0, 0.17);
+        }
     }
-
-    .customPartSample {
-      display: table-cell;
-      padding-left: 2px;
-      margin-left: 2px;
-      white-space: normal;
+    #customBuilderEcho {
+        margin: 2px 26px 0 10px;
+        border: 1px solid #ccc;
+        padding: 2px;
+        white-space: pre-wrap;
     }
-
-    .part_object {
-      color: red;
+    #partsList {
+        max-height: 450px;
+        overflow: auto;
+        >div {
+            display: table-row;
+            button {
+                padding: 0 2px;
+                margin: 0 3px;
+            }
+        }
+        .customPart {
+            display: table-cell;
+            vertical-align: top;
+            text-align: right;
+            padding-right: 2px;
+            white-space: nowrap;
+        }
+        .customPartSample {
+            display: table-cell;
+            padding-left: 2px;
+            margin-left: 2px;
+            white-space: normal;
+        }
+        .part_object {
+            color: red;
+        }
     }
-  }
-
-  .customFormats {
-    clear: both;
-    max-height: 168px;
-    overflow: auto;
-    border-bottom: 1px solid #eee;
-
-    .customFormatDiv {
-      margin: 1px 0;
-      border-top: 1px solid #eee;
-      border-radius: 3px;
-      padding: 1px 3px;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-
-      &.inEdit {
-        background-color: #efe;
-      }
-
-      .customFormatInfo {
-        text-align: right;
-        white-space: nowrap;
-      }
+    .customFormats {
+        clear: both;
+        max-height: 168px;
+        overflow: auto;
+        border-bottom: 1px solid #eee;
+        .customFormatDiv {
+            margin: 1px 0;
+            border-top: 1px solid #eee;
+            border-radius: 3px;
+            padding: 1px 3px;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            &.inEdit {
+                background-color: #efe;
+            }
+            .customFormatInfo {
+                text-align: right;
+                white-space: nowrap;
+            }
+        }
+        .customSampleContent {
+            width: 100%;
+            position: relative;
+        }
+        .btnCopy {
+            display: inline-block;
+            padding: 0 3px;
+        }
+        .customSample {
+            background-color: #eee;
+            display: inline-block;
+            padding: 0 4px 2px 3px;
+        }
+        .customFormat {
+            color: #999;
+            padding: 0 4px 2px 2px;
+            margin: 0 30px 2px 0;
+            display: inline-block;
+        }
+        .customIsSample {
+            display: inline-block;
+            input {
+                vertical-align: text-top;
+            }
+        }
+        .customFormatsButtons {
+            padding-right: 4px;
+            button {
+                display: block;
+                margin-bottom: 1px;
+            }
+        }
     }
-
-    .customSampleContent {
-      width: 100%;
-      position: relative;
+    .customBuilderButtons {
+        width: 40%;
+        margin: 5px 0 0 10px;
+        button:disabled {
+            cursor: default;
+            background: #ddd;
+            border-color: #ddd;
+        }
+        .btnDelete {
+            float: right;
+        }
     }
-
-    .btnCopy {
-      display: inline-block;
-      padding: 0 3px;
-    }
-
-    .customSample {
-      background-color: #eee;
-      display: inline-block;
-      padding: 0 4px 2px 3px;
-    }
-
-    .customFormat {
-      color: #999;
-      padding: 0 4px 2px 2px;
-      margin: 0 30px 2px 0;
-      display: inline-block;
-    }
-
-    .customIsSample {
-      display: inline-block;
-
-      input {
-        vertical-align: text-top;
-      }
-    }
-
-
-    .customFormatsButtons {
-      padding-right: 4px;
-
-      button {
-        display: block;
-        margin-bottom: 1px;
-      }
-    }
-  }
-
-  .customBuilderButtons {
-    width: 40%;
-    margin: 5px 0 0 10px;
-
-    button:disabled {
-      cursor: default;
-      background: #ddd;
-      border-color: #ddd;
-    }
-
-    .btnDelete {
-      float: right;
-    }
-  }
 }
 
 #pagePlanner {
-  > div {
-    border: 1px solid @green;
-    border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
-    padding: 5px 10px 10px 10px;
-  }
-
-  .plannerInputs {
-    flex: 0 1;
-
-    select {
-      margin: 0 0 1px 0;
-      font-size: 9pt;
+    >div {
+        border: 1px solid @green;
+        border-radius: 3px;
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 100%;
+        padding: 5px 10px 10px 10px;
     }
-
-    > ol {
-      -webkit-padding-start: 13px;
-
-      li {
-        margin: 0 0 5px 0;
-      }
+    .plannerInputs {
+        flex: 0 1;
+        select {
+            margin: 0 0 1px 0;
+            font-size: 9pt;
+        }
+        >ol {
+            -webkit-padding-start: 13px;
+            li {
+                margin: 0 0 5px 0;
+            }
+        }
     }
-  }
-
-  #plannerResultsDiv {
-    max-height: 450px;
-    overflow: auto;
-  }
-
-  .plannerResultButtons {
-    float: right;
-    text-align: right;
-
-    button {
-      margin: 1px 0;
+    #plannerResultsDiv {
+        max-height: 450px;
+        overflow: auto;
     }
-  }
-
-  #btnPlanGenerate {
-    float: right;
-  }
-
-  .plannerResults {
-    td {
-      text-align: center;
-      vertical-align: top;
-
-      &:first-child {
-        text-align: left;
-        white-space: nowrap;
-      }
-
-      &.plannerNewYear {
-        font-weight: bold;
-      }
-
-      &.plannerDate {
-        white-space: nowrap;
-      }
+    .plannerResultButtons {
+        float: right;
+        text-align: right;
+        button {
+            margin: 1px 0;
+        }
     }
-
-    th {
-      vertical-align: bottom;
-
-      &:first-child {
-        text-align: left;
-      }
+    #btnPlanGenerate {
+        float: right;
     }
-
-    th.plannerThTitle {
-      border-bottom: 1px solid #ccc;
+    .plannerResults {
+        td {
+            text-align: center;
+            vertical-align: top;
+            &:first-child {
+                text-align: left;
+                white-space: nowrap;
+            }
+            &.plannerNewYear {
+                font-weight: bold;
+            }
+            &.plannerDate {
+                white-space: nowrap;
+            }
+        }
+        th {
+            vertical-align: bottom;
+            &:first-child {
+                text-align: left;
+            }
+        }
+        th.plannerThTitle {
+            border-bottom: 1px solid #ccc;
+        }
+        tbody {
+            tr:nth-child(even) {
+                background-color: #fafdff;
+            }
+        }
     }
-
-    tbody {
-      tr:nth-child(even) {
-        background-color: #fafdff;
-      }
+    .plannerWhatHelpers {
+        .button {
+            font-size: 90%;
+            margin: 0 -2px 1px 0;
+            background: transparent;
+            color: green;
+        }
     }
-  }
-
-  .plannerWhatHelpers {
-    .button {
-      font-size: 90%;
-      margin: 0 -2px 1px 0;
-      background: transparent;
-      color: green;
-    }
-  }
 }
 
 #pageDay {
-  > div {
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
-  }
+    >div {
+        margin-left: 4px;
+        justify-content: flex-end;
+        flex: 0 1 100%;
+    }
 }
 
 #pageEvents {
-  display: flex;
-  align-items: flex-start;
-  max-height: 509px;
-  overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    max-height: 509px;
+    overflow: auto;
 }
 
 body.inTab #pageEvents {
-  max-height: none;
+    max-height: none;
 }
 
 #pageCalWheel {
-  height: 500px;
+    height: 500px;
 }
 
 #show {
-  white-space: nowrap;
-  font-size: 12pt;
-  text-align: center;
-  padding-right: 30px;
+    white-space: nowrap;
+    font-size: 12pt;
+    text-align: center;
+    padding-right: 30px;
 }
 
 #day {
-  font-size: 13.5pt;
-  display: inline-block;
-  margin-top: 9px;
-  margin-bottom: 9px;
+    font-size: 13.5pt;
+    display: inline-block;
+    margin-top: 9px;
+    margin-bottom: 9px;
 }
 
 #day.withSpecial {
-  font-size: 12pt;
-  margin-top: 0;
-  margin-bottom: 0;
+    font-size: 12pt;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #special {
-  margin-top: -1px;
+    margin-top: -1px;
 }
 
 #special1 {
-  font-size: 12pt;
-  color: blue;
-  display: none;
+    font-size: 12pt;
+    color: blue;
+    display: none;
 }
 
 #special2 {
-  font-size: 12pt;
-  color: blue;
-  display: none;
+    font-size: 12pt;
+    color: blue;
+    display: none;
 }
 
 body.ta #sunset {
-  font-size: 9.75pt;
+    font-size: 9.75pt;
 }
 
 div.selectPages {
-  width: 20px;
-  z-index: 100;
+    width: 20px;
+    z-index: 100;
 }
 
 .selectPages .buttons {
-  padding-top: 4px;
-  width: 20px;
-  display: flex;
-  flex-direction: column;
+    padding-top: 4px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .selectPages .buttons.fakeHover,
 .selectPages .buttons:hover {
-  align-items: flex-end;
-  width: auto;
+    align-items: flex-end;
+    width: auto;
 }
 
 .selectPages .buttons button {
-  background-color: #b5775a;
-  border-radius: 2px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border: none;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  display: block;
-  outline: none;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 8.5pt;
-  padding: 2px 2px 2px 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  width: 20px;
-  margin: -1px 0 0 0;
-  transition: width 0.2s ease-out;
-  text-decoration: none;
-  white-space: nowrap;
-  position: relative;
+    background-color: #b5775a;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    display: block;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 8.5pt;
+    padding: 2px 2px 2px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 20px;
+    margin: -1px 0 0 0;
+    transition: width 0.2s ease-out;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
 }
 
 .selectPages .buttons button.showing {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  background-color: @green;
-  margin-left: -2px;
-  padding-left: 2px;
-  width: 22px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    background-color: @green;
+    margin-left: -2px;
+    padding-left: 2px;
+    width: 22px;
 }
 
 .selectPages .buttons:hover button.showing:hover {
-  background-color: @green;
+    background-color: @green;
 }
 
 .selectPages .buttons.fakeHover button,
 .selectPages .buttons:hover button {
-  border-radius: 2px;
-  padding: 2px 6px 2px 7px;
-  width: auto;
+    border-radius: 2px;
+    padding: 2px 6px 2px 7px;
+    width: auto;
 }
 
 .selectPages .buttons:hover button:hover {
-  background-color: rgb(187, 137, 114);
+    background-color: rgb(187, 137, 114);
 }
 
 .selectPages .buttons button:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  pointer-events: none;
-  background-image: linear-gradient(to right, rgba(255,255,255, 0), rgba(255,255,255, 1) 100%);
-  height: 100%;
-  width: 9px;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%);
+    height: 100%;
+    width: 9px;
 }
 
 .selectPages .buttons.fakeHover button:after,
 .selectPages .buttons:hover button:after {
-  z-index: -1;
+    z-index: -1;
 }
 
 #ayyamIs0 {
-  text-align: right;
-  padding-right: 9px;
+    text-align: right;
+    padding-right: 9px;
 }
 
 #shortcutKeys {
-  font-size: 8.25pt;
-  color: #999;
-  position: absolute;
-  right: 100px;
-  top: 0;
+    font-size: 8.25pt;
+    color: #999;
+    position: absolute;
+    right: 100px;
+    top: 0;
 }
 
 #btnOpen,
 #btnPrint {
-  position: absolute;
-  width: 26px;
-  height: 22px;
-  right: 20px;
-  top: 0;
-  display: none;
+    position: absolute;
+    width: 26px;
+    height: 22px;
+    right: 20px;
+    top: 0;
+    display: none;
 }
 
 #tips {
-  position: absolute;
-  left: 2px;
-  top: 0;
-  font-size: 8.25pt;
-  color: #999;
-
-  span {
-    margin-right: 30px;
-  }
+    position: absolute;
+    left: 2px;
+    top: 0;
+    font-size: 8.25pt;
+    color: #999;
+    span {
+        margin-right: 30px;
+    }
 }
 
 #locationErrorHolder {
-  display: none;
-  background: #ad0000;
-  color: white;
-  padding: 2px 2px 3px 2px;
-  margin: 6px 1px 1px 3px;
-  white-space: normal;
-  font-size: 9pt;
-  border-radius: 3px;
+    display: none;
+    background: #ad0000;
+    color: white;
+    padding: 2px 2px 3px 2px;
+    margin: 6px 1px 1px 3px;
+    white-space: normal;
+    font-size: 9pt;
+    border-radius: 3px;
 }
 
 #locationError {
-  margin-left: 30px;
-  display: block;
-  text-align: left;
+    margin-left: 30px;
+    display: block;
+    text-align: left;
 }
 
 .btnRetry {
-  cursor: pointer;
-  border: none;
-  float: left;
-  margin-left: 5px;
-  position: relative;
-  padding: 0;
-
-  &.button {
-    background: #ad0000;
-    border-color: #ad0000;
-    margin-left: 0;
-  }
-
-  .text {
-    padding: 0 5px;
-  }
-
-  .btnRetryImg {
-    background: url(./ajax-loader-img.gif) no-repeat;
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    vertical-align: text-top;
-  }
+    cursor: pointer;
+    border: none;
+    float: left;
+    margin-left: 5px;
+    position: relative;
+    padding: 0;
+    &.button {
+        background: #ad0000;
+        border-color: #ad0000;
+        margin-left: 0;
+    }
+    .text {
+        padding: 0 5px;
+    }
+    .btnRetryImg {
+        background: url(./ajax-loader-img.gif) no-repeat;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        vertical-align: text-top;
+    }
 }
 
 .btnRetry.active {
-  .btnRetryImg {
-    background: url(./ajax-loader.gif) no-repeat;
-  }
+    .btnRetryImg {
+        background: url(./ajax-loader.gif) no-repeat;
+    }
 }
 
 .place {
-  font-size: 8.25pt;
-  color: gray;
+    font-size: 8.25pt;
+    color: gray;
 }
 
 #gDay {
-  font-size: 8.25pt;
-  margin-bottom: 3px;
+    font-size: 8.25pt;
+    margin-bottom: 3px;
 }
 
-#day, #gDay {
-  padding: 0 3px;
-  border-radius: 3px;
-
-  &.notToday {
-    background-color: rgba(255, 255, 0, 0.25);
-  }
+#day,
+#gDay {
+    padding: 0 3px;
+    border-radius: 3px;
+    &.notToday {
+        background-color: rgba(255, 255, 0, 0.25);
+    }
 }
-
 
 #showUpcoming {
-  padding-left: 8px;
+    padding-left: 8px;
 }
 
 tr.M {
-  color: darkgoldenrod;
+    color: darkgoldenrod;
 }
 
 tr.HS {
-  color: darkblue;
+    color: darkblue;
 }
 
 tr.OtherRange {
-  color: gray;
+    color: gray;
 }
 
 #dayDetails {
-  border: 1px solid rgba(0, 3, 255, 0.67);
-  border-radius: 3px;
-  padding: 5px;
-  /*display: table-cell;*/
-  vertical-align: top;
-
-
-  dl {
-    margin: 0;
-    width: 160px;
-  }
-
-  dt {
-    color: green;
-    opacity: 0.7;
-    white-space: nowrap;
-  }
-
-  dd {
-    margin-left: 9px;
-    margin-bottom: .4em;
-  }
+    border: 1px solid rgba(0, 3, 255, 0.67);
+    border-radius: 3px;
+    padding: 5px;
+    /*display: table-cell;*/
+    vertical-align: top;
+    dl {
+        margin: 0;
+        width: 160px;
+    }
+    dt {
+        color: green;
+        opacity: 0.7;
+        white-space: nowrap;
+    }
+    dd {
+        margin-left: 9px;
+        margin-bottom: .4em;
+    }
 }
-
 
 .comment {
-  color: green;
-  opacity: 0.6;
-  font-size: 8.25pt;
+    color: green;
+    opacity: 0.6;
+    font-size: 8.25pt;
 }
 
-
 #samples {
-  font-size: 9pt;
-  border: 1px solid green;
-  border-radius: 3px;
-  padding: 5px;
-  position: relative;
-  /*display: table-cell;*/
-  vertical-align: top;
-  white-space: nowrap;
+    font-size: 9pt;
+    border: 1px solid green;
+    border-radius: 3px;
+    padding: 5px;
+    position: relative;
+    /*display: table-cell;*/
+    vertical-align: top;
+    white-space: nowrap;
 }
 
 #samplesList div {
-  margin: 2px auto;
+    margin: 2px auto;
 }
 
 #sampleTitle {
-  color: green;
-  opacity: 0.7;
-  width: 370px;
-  white-space: normal;
+    color: green;
+    opacity: 0.7;
+    width: 370px;
+    white-space: normal;
 }
 
 body.pt_PT #sampleTitle {
-  width: 410px;
+    width: 410px;
 }
 
 #sampleFootnote {
-  color: green;
-  opacity: 0.7;
-  margin-top: 5px;
-  padding-left: 3px;
+    color: green;
+    opacity: 0.7;
+    margin-top: 5px;
+    padding-left: 3px;
 }
 
 #sampleCopy {
-  position: absolute;
-  top: -500px;
+    position: absolute;
+    top: -500px;
 }
 
 #pageLists {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 #pageLists table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  display: inline-block;
-  margin: 2px 15px 5px 15px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: inline-block;
+    margin: 2px 15px 5px 15px;
 }
 
 #pageLists table caption {
-  color: green;
-  opacity: .7;
-  text-align: left;
+    color: green;
+    opacity: .7;
+    text-align: left;
 }
 
 #pageLists table th {
-  text-align: left;
+    text-align: left;
 }
 
 #pageLists table th,
 #pageLists table td {
-  padding: 0 6px 0 4px;
+    padding: 0 6px 0 4px;
 }
 
 #pageLists table tr td:first-child,
 #pageLists table tr th:first-child {
-  text-align: right;
+    text-align: right;
 }
 
 #pageLists table tr.selectedDay td {
-  color: blue;
+    color: blue;
 }
 
 #pageLists table tr.selectedDay {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 #pageLists table #monthListBody tr.selected {
-  background-color: #ddd;
-  color: green;
+    background-color: #ddd;
+    color: green;
 }
 
 #pageLists table #yearListBody tr.selected {
-  background-color: #ddd;
-  color: #9a710c;
+    background-color: #ddd;
+    color: #9a710c;
 }
 
 #otherPageTitle {
-  display: none;
-  font-size: 13.5pt;
-  text-align: center;
-  margin: 10px 0 10px 0;
-  width: 100%;
+    display: none;
+    font-size: 13.5pt;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    width: 100%;
 }
 
 #specialDaysTitle {
-  display: none;
-  font-size: 13.5pt;
-  text-align: center;
-  margin: 0 50px 0 0;
+    display: none;
+    font-size: 13.5pt;
+    text-align: center;
+    margin: 0 50px 0 0;
 }
 
 #specialLists {
-  padding: 4px;
-  white-space: nowrap;
-  overflow: auto;
-  margin: 0 auto;
-  max-height: 500px;
+    padding: 4px;
+    white-space: nowrap;
+    overflow: auto;
+    margin: 0 auto;
+    max-height: 500px;
 }
 
 #specialListsTable {
-  width: 99.9%;
-  border-spacing: 1px 0px;
-  border-collapse: collapse;
+    width: 99.9%;
+    border-spacing: 1px 0px;
+    border-collapse: collapse;
 }
 
 #specialListsTable tbody tr {
-  display: none;
+    display: none;
 }
 
 #specialListsTable.Feasts tbody tr.M {
-  display: table-row;
+    display: table-row;
 }
 
 #specialListsTable.HolyDays tbody tr.H {
-  display: table-row;
-  background-color: rgb(250, 250, 250);
+    display: table-row;
+    background-color: rgb(250, 250, 250);
 }
 
 #specialListsTable .forHD {
-  display: none;
+    display: none;
 }
 
 #specialListsTable.HolyDays .forHD {
-  display: table-cell;
+    display: table-cell;
 }
 
 #specialListsTable.HolyDays .forFeast {
-  display: none;
+    display: none;
 }
-
 
 #specialListsTable td.eventTime {
-  white-space: normal;
+    white-space: normal;
 }
+
 
 /*#specialListsTable tr.SpecialTime td.eventTime {
   color: blue;
@@ -1182,558 +1076,543 @@ body.pt_PT #sampleTitle {
 }*/
 
 #specialListsTable .forHD.time {
-  font-style: italic;
-  margin-left: 25px;
-  display: block;
+    font-style: italic;
+    margin-left: 25px;
+    display: block;
 }
 
 #specialListsTable th {
-  text-align: left;
+    text-align: left;
 }
 
 #specialListsTable td {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 #specialListsTable caption {
-  color: green;
-  text-align: left;
-  font-size: 12pt;
-  margin: -2px 0px 2px 2px;
+    color: green;
+    text-align: left;
+    font-size: 12pt;
+    margin: -2px 0px 2px 2px;
 }
 
 #specialListsTable TD {
-  color: black;
-  border-top: solid 1px #ddd;
+    color: black;
+    border-top: solid 1px #ddd;
 }
 
 #specialListsTable .HS td {
-  color: black;
+    color: black;
 }
 
 #specialListsTable td.name {
-  white-space: normal;
+    white-space: normal;
 }
 
 #specialListsTable .HS .name {
-  color: blue;
-  background-image: url(./star12c.gif);
-  background-repeat: no-repeat;
-  background-position: 2px 3px;
-  padding-left: 18px;
+    color: blue;
+    background-image: url(./star12c.gif);
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+    padding-left: 18px;
 }
 
 #specialListsTable .HO td {
-  color: black;
+    color: black;
 }
 
 #specialListsTable .HO .name {
-  color: blue;
-  background: url(star12b.gif);
-  background-repeat: no-repeat;
-  background-position: 2px 3px;
-  padding-left: 17px;
+    color: blue;
+    background: url(star12b.gif);
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+    padding-left: 17px;
 }
 
 #specialListsTable .Today {
-  color: #070;
+    color: #070;
 }
 
 #specialListsTable tr.Default td.eventTime {
-  color: #777;
+    color: #777;
 }
 
 #eventStartHolder {
-  float: right;
-  margin: 0 0 10px 0;
+    float: right;
+    margin: 0 0 10px 0;
 }
 
 body.ta #eventStartHolder {
-  position: relative;
-  float: right;
+    position: relative;
+    float: right;
 }
 
 #eventStartHolder select {
-  font-size: 9pt;
+    font-size: 9pt;
 }
 
 #includeWhat {
-  margin-right: 20px;
-  display: inline-block;
+    margin-right: 20px;
+    display: inline-block;
 }
 
 #fastList {
-  font-size: 9pt;
-  padding: 5px;
-  position: relative;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 100%;
+    font-size: 9pt;
+    padding: 5px;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 100%;
 }
 
 #fastListTable {
-  /*border-spacing: 15px 2px;*/
-  border-collapse: collapse;
-  margin: 0 auto 5px auto;
+    /*border-spacing: 15px 2px;*/
+    border-collapse: collapse;
+    margin: 0 auto 5px auto;
 }
 
 #fastListTable th {
-  text-align: left;
+    text-align: left;
 }
 
 #fastListTable td,
 #fastListTable th {
-  padding: 2px 9px;
+    padding: 2px 9px;
 }
 
-
 #fastListTable caption {
-  color: green;
-  font-size: 12pt;
+    color: green;
+    font-size: 12pt;
 }
 
 tr.FastSat td {
-  border-top: solid 1px #ddd;
+    border-top: solid 1px #ddd;
 }
 
 h2 {
-  color: green;
-  font-size: 12pt;
-  margin: 0 0 6px 0;
-  font-weight: normal;
+    color: green;
+    font-size: 12pt;
+    margin: 0 0 6px 0;
+    font-weight: normal;
 }
 
 h3 {
-  color: green;
-  font-size: 10pt;
-  margin: 0 0 3px 0;
-  font-weight: normal;
+    color: green;
+    font-size: 10pt;
+    margin: 0 0 3px 0;
+    font-weight: normal;
 }
 
 button.button {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @green), color-stop(1, #72b352));
-  background-color: @green;
-  border-radius: 4px;
-  border: 1px solid #4b8f29;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Geneva, 'Segoe UI';
-  font-size: 8.25pt;
-  line-height: 14px;
-  transition: color 0.4s ease-out;
-  padding: 1px 2px;
-  text-decoration: none;
-  min-width: 15px;
-
-  &.btnDelete {
-    background: red;
-    border-color: red;
-  }
-
-  &.btnCancel {
-    background: coral;
-    border-color: coral;
-  }
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @green), color-stop(1, #72b352));
+    background-color: @green;
+    border-radius: 4px;
+    border: 1px solid #4b8f29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Geneva, 'Segoe UI';
+    font-size: 8.25pt;
+    line-height: 14px;
+    transition: color 0.4s ease-out;
+    padding: 1px 2px;
+    text-decoration: none;
+    min-width: 15px;
+    &.btnDelete {
+        background: red;
+        border-color: red;
+    }
+    &.btnCancel {
+        background: coral;
+        border-color: coral;
+    }
 }
 
 #btnEveOrDay {
-  display: block;
-  margin: 3px 0 0 0;
+    display: block;
+    margin: 3px 0 0 0;
 }
 
 button.today.notToday {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b5775a), color-stop(1, #b37252));
-  background-color: #b5775a;
-  border: 1px solid #8f4b29;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b5775a), color-stop(1, #b37252));
+    background-color: #b5775a;
+    border: 1px solid #8f4b29;
 }
 
 #samples button {
-  vertical-align: text-bottom;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @green), color-stop(1, #72b352));
-  background-color: @green;
-  border-radius: 4px;
-  border: 1px solid #4b8f29;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  /*font-family: Geneva;*/
-  font-size: 6.75pt;
-  transition: color 0.4s ease-out;
-  padding: 1px 2px;
-  text-decoration: none;
-  min-width: 15px;
+    vertical-align: text-bottom;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, @green), color-stop(1, #72b352));
+    background-color: @green;
+    border-radius: 4px;
+    border: 1px solid #4b8f29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    /*font-family: Geneva;*/
+    font-size: 6.75pt;
+    transition: color 0.4s ease-out;
+    padding: 1px 2px;
+    text-decoration: none;
+    min-width: 15px;
 }
 
 #samples button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, @green));
-  background: -webkit-linear-gradient(top, #72b352 5%, @green 100%);
-  background: linear-gradient(to bottom, #72b352 5%, @green 100%);
-  background-color: #72b352;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, @green));
+    background: -webkit-linear-gradient(top, #72b352 5%, @green 100%);
+    background: linear-gradient(to bottom, #72b352 5%, @green 100%);
+    background-color: #72b352;
 }
 
 #samples button:active {
-  position: relative;
-  top: 1px;
+    position: relative;
+    top: 1px;
 }
 
 #samples div.copied button {
-  background: #b2f392;
-  color: #4b8f29;
-  transition: color 0.4s ease-out;
+    background: #b2f392;
+    color: #4b8f29;
+    transition: color 0.4s ease-out;
 }
 
 #samples div.copied button:hover {
-  background: #b2f392;
-  color: #4b8f29;
+    background: #b2f392;
+    color: #4b8f29;
 }
 
 .iconArea {
-  margin: 3px 0 0 0;
-  text-align: center;
-  position: relative;
-  clear: both;
+    margin: 3px 0 0 0;
+    text-align: center;
+    position: relative;
+    clear: both;
 }
 
 #googlePlus img {
-  margin: 0 0 3px 5px;
+    margin: 0 0 3px 5px;
 }
 
 #facebook img {
-  margin: 0 5px 3px 0;
+    margin: 0 5px 3px 0;
 }
 
 #logo {
-  width: 22px;
-  height: 24px;
+    width: 22px;
+    height: 24px;
 }
 
 .explains {
-  text-align: center;
-  clear: both;
+    text-align: center;
+    clear: both;
 }
 
 .centered {
-  text-align: center;
+    text-align: center;
 }
 
 #explain {
-  margin: 6px 6px 0 0;
+    margin: 6px 6px 0 0;
 }
 
 #explain2 {
-  margin: 3px 6px 15px 0;
+    margin: 3px 6px 15px 0;
 }
 
 #gDatePicker {
-  border: 1px solid #daaaaa;
-  border-radius: 3px;
-  padding: 5px;
+    border: 1px solid #daaaaa;
+    border-radius: 3px;
+    padding: 5px;
 }
 
 #gDatePickerTitle {
-  color: green;
-  opacity: 0.7;
-  width: 150px;
+    color: green;
+    opacity: 0.7;
+    width: 150px;
 }
 
 #gDatePickerTitle2 {
-  color: green;
-  opacity: 0.7;
-  margin: 6px 0 0 0;
+    color: green;
+    opacity: 0.7;
+    margin: 6px 0 0 0;
 }
 
 .DatePickerTitle {
-  color: green;
-  opacity: 0.7;
-  margin: 6px 0 0 0;
+    color: green;
+    opacity: 0.7;
+    margin: 6px 0 0 0;
 }
 
 .setupLangOption {
-  margin-left: 10px;
-
-  input {
-    vertical-align: bottom;
-  }
+    margin-left: 10px;
+    input {
+        vertical-align: bottom;
+    }
 }
 
 #bDatePickerTitleTip {
-  float: right;
-  color: #999;
-  margin: 6px 0 0 0;
-  font-size: 8.25pt;
+    float: right;
+    color: #999;
+    margin: 6px 0 0 0;
+    font-size: 8.25pt;
 }
 
 #upcomingTitle {
-  color: green;
-  text-decoration: underline;
+    color: green;
+    text-decoration: underline;
 }
 
-body.ta #upcomingTitle {
-}
+body.ta #upcomingTitle {}
 
 #upcoming {
-  width: 100%;
-  border-spacing: 1px 0px;
+    width: 100%;
+    border-spacing: 1px 0px;
 }
 
 #upcoming td {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .gDateButtons {
-  margin-left: 11px;
+    margin-left: 11px;
 }
 
 #gDate {
-  margin: 0 3px 0 9px;
-  white-space: nowrap;
+    margin: 0 3px 0 9px;
+    white-space: nowrap;
 }
 
 #gDateDesc {
-  margin: 0 3px 0 9px;
+    margin: 0 3px 0 9px;
 }
 
 #datePicker {
-  display: block;
-  margin: 0 0 2px 10px;
-  text-align: center;
-  font-family: Geneva, 'Segoe UI';
-  font-size: 8.25pt;
+    display: block;
+    margin: 0 0 2px 10px;
+    text-align: center;
+    font-family: Geneva, 'Segoe UI';
+    font-size: 8.25pt;
 }
 
 .textLink {
-  color: darkblue;
-  vertical-align: top;
-  display: inline-block;
-  margin: 3px 9px 0 6px;
+    color: darkblue;
+    vertical-align: top;
+    display: inline-block;
+    margin: 3px 9px 0 6px;
 }
 
 a.textLink {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a.textLink:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .bDatePickerInputs {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 .bDatePickerInputs input {
-  font-size: 8.25pt;
-  font-family: Geneva, 'Segoe UI';
-  text-align: center;
-  margin: 0;
-  width: 33px;
+    font-size: 8.25pt;
+    font-family: Geneva, 'Segoe UI';
+    text-align: center;
+    margin: 0;
+    width: 33px;
 }
 
 input.bYearPicker {
-  width: 50px;
+    width: 50px;
 }
-
 
 #yearSelector {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
-#yearSelector > div {
-  margin: 2px 5px;
-  background-color: rgb(237, 246, 233);
-  padding: 2px;
-  border-radius: 5px;
-  border: 1px solid rgb(237, 246, 233);
+#yearSelector>div {
+    margin: 2px 5px;
+    background-color: rgb(237, 246, 233);
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgb(237, 246, 233);
 }
 
 #yearSelector input {
-  font-size: 8.25pt;
-  font-family: Geneva, 'Segoe UI';
-  text-align: center;
-  margin: 0;
+    font-size: 8.25pt;
+    font-family: Geneva, 'Segoe UI';
+    text-align: center;
+    margin: 0;
 }
 
 .monthNav {
-  display: none;
-  width: 100%;
-  text-align: center;
+    display: none;
+    width: 100%;
+    text-align: center;
 }
 
 .JumpDays {
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
 }
 
 .yearPicker {
-  white-space: nowrap;
-  width: 100%;
-  text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
 }
 
 #yearSelector input.jumpTo {
-  width: 45px;
-  text-align: right;
+    width: 45px;
+    text-align: right;
 }
 
-.bVahidPicker, .bYearInVahidPicker {
-  width: 40px;
+.bVahidPicker,
+.bYearInVahidPicker {
+    width: 40px;
 }
 
 .vahidInputs {
-  text-align: center;
-  display: block;
+    text-align: center;
+    display: block;
 }
 
-.vahidInputs > div {
-  display: inline-block;
+.vahidInputs>div {
+    display: inline-block;
 }
 
-.vahidInputs > div > span {
-  display: block;
+.vahidInputs>div>span {
+    display: block;
 }
 
 .pageHeader {
-  font-size: 12pt;
-  text-align: center;
+    font-size: 12pt;
+    text-align: center;
 }
 
 body[data-pageid="pageLists"],
 body[data-pageid="pageSetup"] {
-  #show {
-    width: 100%;
-  }
+    #show {
+        width: 100%;
+    }
 }
 
-
-
 .nobreak {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 @media print {
-  @page {
-    margin: 15mm 15mm;
-    size: portrait;
-  }
-
-  #yearSelector, .selectPages, .iconArea, .NoPrint {
-    display: none !important;
-  }
-
-  #pageEvents, #pageFast, #pageLists, #pageCal1, #pageCal2, #pageCalWheel, #pageReminders, #pageExporter, #pageCustom, #pagePlanner {
-    border: none;
-    padding: 10px 0 0 0;
-  }
-
-  #includeWhat, #askShowPointer {
-    display: none;
-    z-index: 1;
-  }
-
-  #eventStart {
-    -webkit-appearance: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #specialLists {
-    max-height: none;
-  }
-
-  #specialDaysTitle {
-    margin: 0;
-  }
-
-  #fastListTable caption {
-    margin-bottom: 20px;
-  }
-
-  #pagePlanner {
-    > div {
-      border: none;
-      margin: 0 auto;
+    @page {
+        margin: 15mm 15mm;
+        size: portrait;
     }
-
-    .plannerInputs {
-      display: none;
+    #yearSelector,
+    .selectPages,
+    .iconArea,
+    .NoPrint {
+        display: none !important;
     }
-
-    .plannerResultButtons {
-      display: none;
+    #pageEvents,
+    #pageFast,
+    #pageLists,
+    #pageCal1,
+    #pageCal2,
+    #pageCalWheel,
+    #pageReminders,
+    #pageExporter,
+    #pageCustom,
+    #pagePlanner {
+        border: none;
+        padding: 10px 0 0 0;
     }
-  }
-
-  body.Chrome {
-    * {
-      -webkit-print-color-adjust: exact;
+    #includeWhat,
+    #askShowPointer {
+        display: none;
+        z-index: 1;
     }
-  }
+    #eventStart {
+        -webkit-appearance: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    #specialLists {
+        max-height: none;
+    }
+    #specialDaysTitle {
+        margin: 0;
+    }
+    #fastListTable caption {
+        margin-bottom: 20px;
+    }
+    #pagePlanner {
+        >div {
+            border: none;
+            margin: 0 auto;
+        }
+        .plannerInputs {
+            display: none;
+        }
+        .plannerResultButtons {
+            display: none;
+        }
+    }
+    body.Chrome {
+        * {
+            -webkit-print-color-adjust: exact;
+        }
+    }
 }
 
 @media (min-width: 900px) {
-  /*body {
+    /*body {
         background: url('Sea of Fog.jpg') #fff no-repeat center;
     }*/
-  .selectPages .buttons {
-    width: auto;
-    align-items: flex-start;
-  }
-
-  .selectPages .buttons button:after {
-    z-index: -1;
-  }
-
-  .selectPages .buttons:hover {
-    align-items: flex-start;
-    width: auto;
-  }
-
-
-  .selectPages .buttons button {
-    border-radius: 2px;
-    padding: 2px 6px 2px 3px;
-    width: auto;
-  }
-
-  .selectPages .buttons:hover button {
-    border-radius: 2px;
-    padding: 2px 6px 2px 3px;
-  }
-
-  .selectPages .buttons button.showing {
-    width: auto;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    background-color: @green;
-    margin-left: -2px;
-    padding-left: 5px;
-  }
+    .selectPages .buttons {
+        width: auto;
+        align-items: flex-start;
+    }
+    .selectPages .buttons button:after {
+        z-index: -1;
+    }
+    .selectPages .buttons:hover {
+        align-items: flex-start;
+        width: auto;
+    }
+    .selectPages .buttons button {
+        border-radius: 2px;
+        padding: 2px 6px 2px 3px;
+        width: auto;
+    }
+    .selectPages .buttons:hover button {
+        border-radius: 2px;
+        padding: 2px 6px 2px 3px;
+    }
+    .selectPages .buttons button.showing {
+        width: auto;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        background-color: @green;
+        margin-left: -2px;
+        padding-left: 5px;
+    }
 }
 
-
 body.Firefox {
-  #btnPageReminders {
-    display: none;
-  }
-
-  #samples button {
-    width: 16px;
-    padding: 0;
-  }
-
-  #sampleList1 > div {
-    margin: 1px 0 0 0;
-  }
-
-  .setupLangOption input {
-    vertical-align: bottom;
-  }
+    #btnPageReminders {
+        display: none;
+    }
+    #samples button {
+        width: 16px;
+        padding: 0;
+    }
+    #sampleList1>div {
+        margin: 1px 0 0 0;
+    }
+    .setupLangOption input {
+        vertical-align: bottom;
+    }
 }
 
 @page myLandscape {
-  size: landscape;
-  background-color: red;
+    size: landscape;
+    background-color: red;
 }

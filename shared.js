@@ -4,6 +4,8 @@
 var ObjectConstant = '$****$';
 var splitSeparator = /[,،]+/;
 var _currentPageId = null;
+var _rawMessages = null;
+var _rawMessageTranslationPct = 0;
 var _cachedMessages = {};
 var _cachedMessageUseCount = 0;
 
@@ -20,10 +22,72 @@ var settings = {
   iconTextColor: getStorage('iconTextColor', 'black')
 };
 
+function ApplyBaseLanguageCode(langCode, cb) {
+  // load base English, then overwrite with base for language, then with full lang code
+  _languageDir = ',fa'.search(_languageCode) !== -1 ? 'rtl' : 'ltr'
+
+  var rawLangCodes = { en: true };
+  if (langCode.length > 2) {
+    rawLangCodes[langCode.slice(0, 2)] = true;
+  }
+  rawLangCodes[langCode] = true;
+  var langsToLoad = Object.keys(rawLangCodes);
+
+  var numMessagesEn = 0;
+  var numMessagesOther = -1;
+  _rawMessages = {};
+
+  for (var langNum = 0; langNum < langsToLoad.length; langNum++) {
+    var langToLoad = langsToLoad[langNum];
+    // console.log(langNum, langToLoad);
+    var url = "/_locales/" + langToLoad + "/messages.json";
+
+    $.ajax({
+      dataType: "json",
+      url: url,
+      isLocal: true,
+      async: false
+    })
+      .done(function (messages) {
+        // console.log(langToLoad, messages);
+
+        var keys = Object.keys(messages);
+        console.log('loading', keys.length, 'keys from', langToLoad);
+
+        if (langToLoad === 'en') {
+          numMessagesEn = keys.length;
+        } else {
+          // this will be incorrect if the _locales folder does have folders for xx and xx-yy. None do currently.
+          numMessagesOther = keys.length;
+        }
+
+        keys.forEach(function (k) {
+          _rawMessages[k.toLowerCase()] = messages[k].message;
+        });
+
+      })
+      .fail(function () {
+      });
+  }
+
+  _cachedMessages = {};
+  _cachedMessageUseCount = 0;
+
+  _rawMessageTranslationPct = Math.round(numMessagesOther === -1 || numMessagesEn === 0 ? 100 : 100 * numMessagesOther / numMessagesEn);
+  console.log('loaded', numMessagesEn, numMessagesOther, langsToLoad, Object.keys(_rawMessages).length, 'keys - ', _rawMessageTranslationPct, '% translated');
+
+  if (cb) {
+    cb();
+  }
+
+}
+
+var _languageCode = getStorage('lang', chrome.i18n.getUILanguage()); //getMessage('translation');
+var _languageDir = 'ltr';
+
+ApplyBaseLanguageCode(_languageCode); // default to the current language
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
-var _languageCode = getMessage('translation');
-var _languageDir = ',fa'.search(_languageCode) !== -1 ? 'rtl' : 'ltr';
 
 var _locationLat = localStorage.lat;
 var _locationLong = localStorage.long;
@@ -553,6 +617,10 @@ function setLocation(position) {
 }
 
 function noLocation(err) {
+  if (getStorage('locationNameKnown', false)) {
+    return;
+  }
+
   localStorage.lat = _locationLat = 0;
   localStorage.long = _locationLong = 0;
   knownDateInfos = {};
@@ -851,11 +919,18 @@ String.prototype.filledWithEach = function (arr) {
   return result.join('');
 };
 
+function getRawMessage(key) {
+  // default
+  // return chrome.i18n.getMessage(key);
+
+  // custom loader
+  return _rawMessages[key.toLowerCase()];
+}
 
 function getMessage(key, obj, defaultValue) {
   var rawMsg = _cachedMessages[key];
   if (!rawMsg) {
-    rawMsg = chrome.i18n.getMessage(key);
+    rawMsg = getRawMessage(key);
     _cachedMessages[key] = rawMsg;
   } else {
     // _cachedMessageUseCount++; --> good for testing
