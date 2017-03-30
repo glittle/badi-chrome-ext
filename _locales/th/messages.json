@@ -18,10 +18,6 @@
     "message": "ความหมาย",
     "description": "on List page - table heading"
   },
-  "rbDefLang_Local": {
-    "message": "Thai",
-    "description": "put your language here, in your script"
-  },
   "Month": {
     "message": "เดือน"
   },

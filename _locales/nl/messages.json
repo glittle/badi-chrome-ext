@@ -939,7 +939,7 @@
     "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
-    "message": "Nederlands",
+    "message": "local (Nederlands)",
     "description": "put your language here, in your script"
   },
   "reminderAction_ifttt": {
