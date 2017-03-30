@@ -7,6 +7,39 @@
       params:
         locale_id: en
         update_translations: true
+    - file: "./_locales/es/messages.json" 
+      params:
+        locale_id: es
+    - file: "./_locales/fa/messages.json" 
+      params:
+        locale_id: fa
+    - file: "./_locales/fr/messages.json" 
+      params:
+        locale_id: fr
+    - file: "./_locales/nl/messages.json" 
+      params:
+        locale_id: nl
+    - file: "./_locales/pt_PT/messages.json" 
+      params:
+        locale_id: pt_PT
+    - file: "./_locales/de/messages.json" 
+      params:
+        locale_id: de
+    - file: "./_locales/ta/messages.json" 
+      params:
+        locale_id: ta
+    - file: "./_locales/th/messages.json" 
+      params:
+        locale_id: th
+    - file: "./_locales/eo/messages.json" 
+      params:
+        locale_id: eo
+    - file: "./_locales/zh_CN/messages.json" 
+      params:
+        locale_id: zh_CN
+    - file: "./_locales/sv/messages.json" 
+      params:
+        locale_id: sv
 
   pull:
     targets:
