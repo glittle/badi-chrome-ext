@@ -1165,16 +1165,16 @@ function fillSetup() {
 }
 
 function startFillingLanguageInput(select) {
-  var langs = {};
-  getMessage('languageList')
-    .split(splitSeparator)
-    .forEach(function (s) {
-      // console.log(s)
-      var parts = s.split(':', 2);
-      // console.log(parts)
-      langs[parts[0]] = parts[parts.length - 1];
-    });
-  // console.log(langs);
+  var langs = [];
+  // getMessage('languageList')
+  //   .split(splitSeparator)
+  //   .forEach(function (s) {
+  //     // console.log(s)
+  //     var parts = s.split(':', 2);
+  //     // console.log(parts)
+  //     langs[parts[0]] = parts[parts.length - 1];
+  //   });
+  // // console.log(langs);
 
   chrome.runtime.getPackageDirectoryEntry(function (directoryEntry) {
     // console.log('got directory')
@@ -1184,26 +1184,55 @@ function startFillingLanguageInput(select) {
       directoryReader.readEntries(function (entries) {
         // console.log('got entries')
         for (var i = 0; i < entries.length; ++i) {
-          var existing = langs[entries[i].name];
-          if (!existing) {
-            langs[entries[i].name] = entries[i].name;
-          }
+          var langToLoad = entries[i].name;
+
+          var url = "/_locales/" + langToLoad + "/messages.json";
+          $.ajax({
+            dataType: "json",
+            url: url,
+            isLocal: true,
+            async: false
+          })
+            .done(function (messages) {
+              // console.log(langToLoad, messages);
+              var msg = messages.rbDefLang_Local;
+              var name = msg ? msg.message : langToLoad;
+              langs.push({
+                code: langToLoad,
+                name: name || '',
+                pct: Math.round(Object.keys(messages).length / _numMessagesEn * 100)
+              });
+            })
+            .fail(function () {
+            });
         }
 
-        var keys = Object.keys(langs);
         var options = [];
-        for (i = 0; i < keys.length; i++) {
-          var key = keys[i];
-          options.push('<option data-sort="{1}" value={0}>{1} ... {0}</option>'.filledWith(key, langs[key]))
+        langs.sort(function (a, b) {
+          return (a.name || a.code) > (b.name || b.code) ? 1 : -1;
+        });
+        for (i = 0; i < langs.length; i++) {
+          var info = langs[i];
+          options.push('<option value={0}>{1} ... {0} ... {2}%</option>'.filledWith(info.code, info.name, info.pct))
         }
-        options.sort();
         select.html(options.join(''))
         // console.log('lang list filled')
 
         select.val(_languageCode);
 
         if (select[0].selectedIndex === -1) {
+          // code was not in the list
           select.val('en');
+        }
+
+        var pctSpan = $('#setupLangPct');
+        if (select.val() === 'en') {
+          pctSpan.hide();
+        } else {
+          var msg = _rawMessageTranslationPct === 100
+            ? getMessage('setupLangPct100')
+            : getMessage('setupLangPct').filledWith(_rawMessageTranslationPct);
+          pctSpan.html(msg).show();
         }
 
         langSelectChanged();
@@ -1216,24 +1245,16 @@ function startFillingLanguageInput(select) {
 function langSelectChanged() {
   var select = $('#setupLang');
   var lang = select.val();
-  var pctSpan = $('#setupLangPct');
-  if (lang === 'en') {
-    pctSpan.hide();
-  }
+
+  setStorage('lang', lang);
+
   if (lang === _languageCode) {
     return;
   }
 
-  ApplyBaseLanguageCode(_languageCode, function () {
-
-    ApplyLanguage(); // mainly for Ar/Local switch, but helps for us too
-
-    if (lang !== 'en') {
-      pctSpan
-        .html(getMessage(pctSpan.data('msg')).filledWith(_rawMessageTranslationPct))
-        .show();
-    }
-  });
+  // reload to apply new language
+  // location.reload(false);
+  location.href = location.href;
 }
 
 var updateLocationTimer = null;

@@ -6,6 +6,7 @@ var splitSeparator = /[,،]+/;
 var _currentPageId = null;
 var _rawMessages = null;
 var _rawMessageTranslationPct = 0;
+var _numMessagesEn = 0;
 var _cachedMessages = {};
 var _cachedMessageUseCount = 0;
 
@@ -22,9 +23,8 @@ var settings = {
   iconTextColor: getStorage('iconTextColor', 'black')
 };
 
-function ApplyBaseLanguageCode(langCode, cb) {
+function loadRawMessages(langCode, cb) {
   // load base English, then overwrite with base for language, then with full lang code
-  _languageDir = ',fa'.search(_languageCode) !== -1 ? 'rtl' : 'ltr'
 
   var rawLangCodes = { en: true };
   if (langCode.length > 2) {
@@ -33,7 +33,7 @@ function ApplyBaseLanguageCode(langCode, cb) {
   rawLangCodes[langCode] = true;
   var langsToLoad = Object.keys(rawLangCodes);
 
-  var numMessagesEn = 0;
+  _numMessagesEn = 0;
   var numMessagesOther = -1;
   _rawMessages = {};
 
@@ -55,7 +55,7 @@ function ApplyBaseLanguageCode(langCode, cb) {
         console.log('loading', keys.length, 'keys from', langToLoad);
 
         if (langToLoad === 'en') {
-          numMessagesEn = keys.length;
+          _numMessagesEn = keys.length;
         } else {
           // this will be incorrect if the _locales folder does have folders for xx and xx-yy. None do currently.
           numMessagesOther = keys.length;
@@ -73,8 +73,8 @@ function ApplyBaseLanguageCode(langCode, cb) {
   _cachedMessages = {};
   _cachedMessageUseCount = 0;
 
-  _rawMessageTranslationPct = Math.round(numMessagesOther === -1 || numMessagesEn === 0 ? 100 : 100 * numMessagesOther / numMessagesEn);
-  console.log('loaded', numMessagesEn, numMessagesOther, langsToLoad, Object.keys(_rawMessages).length, 'keys - ', _rawMessageTranslationPct, '% translated');
+  _rawMessageTranslationPct = Math.round(numMessagesOther === -1 || _numMessagesEn === 0 ? 100 : 100 * numMessagesOther / _numMessagesEn);
+  console.log('loaded', _numMessagesEn, numMessagesOther, langsToLoad, Object.keys(_rawMessages).length, 'keys - ', _rawMessageTranslationPct, '% translated');
 
   if (cb) {
     cb();
@@ -82,10 +82,14 @@ function ApplyBaseLanguageCode(langCode, cb) {
 
 }
 
-var _languageCode = getStorage('lang', chrome.i18n.getUILanguage()); //getMessage('translation');
-var _languageDir = 'ltr';
+var _languageCode = getStorage('lang', ''); //getMessage('translation');
+if (!_languageCode) {
+  _languageCode = chrome.i18n.getUILanguage();
+  setStorage('lang', _languageCode);
+}
+var _languageDir = ',fa,'.search(_languageCode) !== -1 ? 'rtl' : 'ltr'
 
-ApplyBaseLanguageCode(_languageCode); // default to the current language
+loadRawMessages(_languageCode); // default to the current language
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 

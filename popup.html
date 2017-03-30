@@ -502,7 +502,7 @@
           <h2 data-msg="customPartsList"></h2>
           <div id=partsList></div>
         </div>
-        <div>
+        <div class="customBuilderDiv">
           <h2 data-msg="customBuilder"></h2>
           <div id=customBuilder>
             <p data-msg="customBuilderIntro"></p>
@@ -534,6 +534,10 @@
             <span class="customLettersFromFirstPage"></span>
           </div>
           <div class="customLoadDefaults">
+            <span data-msg="customLoadDefaultTopDay"></span>
+            <div>
+              <select id="customLoadTopDay"></select>
+            </div>
             <span data-msg="customLoadDefaultToolTip"></span>
             <div>
               <span data-msg="customLoadDefaultToolTip1"></span>
@@ -542,10 +546,6 @@
             <div>
               <span data-msg="customLoadDefaultToolTip2"></span>
               <select id="customLoadToolTip2"></select>
-            </div>
-            <span data-msg="customLoadDefaultTopDay"></span>
-            <div>
-              <select id="customLoadTopDay"></select>
             </div>
           </div>
         </div>
@@ -659,12 +659,12 @@
           </div>
           <h3 data-msg="setupLangH3"></h3>
           <div>
-            <p class="pageSetupInput2">
+            <div class="pageSetupInput2">
               <label>
                 <select id="setupLang"></select>
-                <span id="setupLangPct" data-msg="setupLangPct"></span>
+                <div id="setupLangPct"></div>
               </label>
-            </p>
+            </div>
           </div>
           <h3 class="setupPlace">
             <span data-msg="exportIncludeLocation"></span>
@@ -681,7 +681,7 @@
                 <input type="number" id="inputLng">
               </label>
             </div>
-            ⇨
+            <span>⇨</span>
             <span class="place"></span>
           </div>
           <h3 data-msg="setupOptOutTitle"></h3>

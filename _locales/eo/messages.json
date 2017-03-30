@@ -209,6 +209,10 @@
   "past_StartDeltaTime": {
     "message": "komenciĝis antaŭ {numUnits} je {time}"
   },
+  "rbDefLang_Local": {
+    "message": "Esperanto",
+    "description": "put your language here, in your script"
+  },
   "planFromWhenToday": {
     "message": "Hodiaŭ",
     "description": "answer for planFromWhen"

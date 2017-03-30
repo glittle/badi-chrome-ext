@@ -1218,7 +1218,7 @@
     "message": "Accuracy?"
   },
   "tipsAboutText": {
-    "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be neeed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
+    "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be needed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
   },
   "tipsText": {
     "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!\nPress Ctrl+Shift+A to change language."
@@ -1394,8 +1394,11 @@
   "setupLangPct":{
     "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
   },
+  "setupLangPct100":{
+    "message": "100% translated!"
+  },
   "languageList":{
-    "message": "de:German,en:English,eo:??,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai",
+    "message": "de:German,en:English,eo:Esperanto,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai",
     "description": "On setup page. Order here does not matter. Format: 'code:Name in local language' -- translate name, but NOT code"
   }
 }

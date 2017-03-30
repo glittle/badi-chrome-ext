@@ -22,12 +22,13 @@ body {
     background-color: white;
     z-index: 99999;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
 }
 
 .initialMsgArea {
+    margin-top: 150px;
     color: green;
     width: 700px;
     text-align: center;
@@ -260,9 +261,10 @@ body {
         }
     }
     #setupLang {
-        width: 100px;
+        width: 200px;
     }
     #setupLangPct {
+        display: none;
         margin-left: 5px;
     }
 }
@@ -386,6 +388,11 @@ body {
         flex: 0 1 60%;
         padding: 2px 6px;
     }
+    .customBuilderDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     .customHint {
         margin-left: 10px;
         color: #999;
@@ -413,14 +420,17 @@ body {
         }
     }
     .customLoadDefaults {
-        margin: 3px 0 0 5px;
+        margin: 3px -4px 0px -4px;
+        background: #eee;
+        border-radius: 3px;
+        padding: 3px 5px 4px;
         >span {
             margin: 1px 0;
             display: block;
         }
         >div {
             display: flex;
-            margin: 0 0 0 25px;
+            margin: 0 0 0 5px;
         }
         select {
             max-width: 80%;
