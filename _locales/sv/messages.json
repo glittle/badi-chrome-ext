@@ -1,4 +1,8 @@
 {
+    "title": {
+        "message": "Badí' Calendar",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
     "rbDefLang_Local": {
         "message": "Swedish",
         "description": "put your language here, in your script"
