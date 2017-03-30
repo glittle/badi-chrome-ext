@@ -495,7 +495,7 @@
     "description": "hold Shift and press left arrow key"
   },
   "rbDefLang_Local": {
-    "message": "português",
+    "message": "local (português)",
     "description": "put your language here, in your script"
   },
   "reminderAction_speak": {
