@@ -1280,11 +1280,17 @@ chrome.runtime.onMessageExternal.addListener(
         // layout, targetDay
         // can adjust per layout
         var di = getDateInfo(new Date(payload.targetDay));
+        var holyDay = $.grep(holyDays.prepareDateInfos(di.bYear), function (el, i) {
+          return el.Type.substring(0, 1) == 'H' && el.BDateCode == di.bDateCode;
+        });
+        var holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
+
         callback({
           label: (payload.labelFormat || getStorage('gCalLabel', '{bMonthNamePri} {bDay}')).filledWith(di),
           title: (payload.titleFormat || getStorage('gCalTitle', '⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}')).filledWith(di),
           classes: (di.bDay === 1 ? ' firstBDay' : '') + (' element' + di.elementNum),
-          di: di
+          di: di,
+          hd: holyDayName
         });
         break;
 
