@@ -1,5 +1,8 @@
 # Badí' Calendar Chrome Extension #
 
+[![Install now.](https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png)
+](https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp)
+
 
 ### To be done ###
 
