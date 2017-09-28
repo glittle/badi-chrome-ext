@@ -20,7 +20,7 @@ var HolyDays = function () {
     if (cached) {
       return _dateInfos = cached;
     }
-    //    log('prepare ' + bYear);
+    //    console.log('prepare ' + bYear);
 
     // add fast times
     for (var d = 1; d <= 19; d++) {
@@ -89,8 +89,8 @@ var HolyDays = function () {
               }
               dateInfo.BDateCode = dateInfo.BMonthDay.m + '.' + dateInfo.BMonthDay.d;
             } else {
-              log('Twin Holy Birthdays unknown for year ' + bYear);
-              log(dateInfo);
+              console.log('Twin Holy Birthdays unknown for year ' + bYear);
+              console.log(dateInfo);
               dateInfo.BMonthDay = makeBMonthDay(12, 2);
             }
             break;
@@ -164,8 +164,8 @@ var HolyDays = function () {
       // if(a.Sort == b.Sort) debugger;
       // }
       // }catch(e){
-      // log(e);
-      // log(a);
+      // console.log(e);
+      // console.log(a);
       // }
       if (!b.BMonthDay) {
         return -1;
@@ -418,7 +418,7 @@ var HolyDays = function () {
       pmSunset = sunCalculator.getTimes(pmSunset, _locationLat, _locationLong).sunset;
     }
     //    else {
-    //      log('unknown sunset - ' + sunCalcReady + ' ' + latReady);
+    //      console.log('unknown sunset - ' + sunCalcReady + ' ' + latReady);
     //      pmSunset.setHours(18,30,0,0);
     //    }
     var afterSunset = false;

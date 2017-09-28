@@ -238,18 +238,18 @@ var PageCustom = () => {
         chrome.storage.local.set({
             customFormats: formats
         }, function () {
-            log('stored formats with local');
+            console.log('stored formats with local');
             if (chrome.runtime.lastError) {
-                log(chrome.runtime.lastError);
+                console.log(chrome.runtime.lastError);
             }
         });
         if (browserHostType === browser.Chrome) {
             chrome.storage.sync.set({
                 customFormats: formats
             }, function () {
-                log('stored stored with sync');
+                console.log('stored stored with sync');
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
             });
         }
@@ -262,14 +262,14 @@ var PageCustom = () => {
                 customFormats: []
             }, function (info) {
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
                 if (info.customFormats.length) {
-                    log('formats loaded from local: ' + info.customFormats.length);
+                    console.log('formats loaded from local: ' + info.customFormats.length);
                     recallSettings(info.customFormats);
                 }
                 else {
-                    log('loading from local.storage');
+                    console.log('loading from local.storage');
                     recallSettings();
                 }
             });
@@ -279,10 +279,10 @@ var PageCustom = () => {
                 customFormats: []
             }, function (info) {
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
                 if (info.customFormats.length) {
-                    log('formats loaded from sync: ' + info.customFormats.length);
+                    console.log('formats loaded from sync: ' + info.customFormats.length);
                     recallSettings(info.customFormats);
                 }
                 else {

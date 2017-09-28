@@ -79,9 +79,9 @@ function attachHandlers() {
   });
 
   //chrome.alarms.onAlarm.addListener(function (alarm) {
-  //  log(alarm.name);
-  //  log(new Date(alarm.scheduledTime));
-  //  chrome.alarms.clear(alarm.name, function (wasCleared) { log(wasCleared); });
+  //  console.log(alarm.name);
+  //  console.log(new Date(alarm.scheduledTime));
+  //  chrome.alarms.clear(alarm.name, function (wasCleared) { console.log(wasCleared); });
   //  refreshDateInfoAndShow();
   //});
 
@@ -746,7 +746,7 @@ function changeToBDate(ev) {
     _changingBDate = false;
 
   } catch (error) {
-    log(error);
+    console.log(error);
   }
 
 }
@@ -1804,7 +1804,7 @@ function updateLoadProgress(comment) {
   //  if (_lastLoadingTime) {
   //    var elapsed = `${_lastLoadingComment} (${time - _lastLoadingTime})`;
   //
-  //    log(_loadingNum, elapsed);
+  //    console.log(_loadingNum, elapsed);
   //  }
   //  _lastLoadingTime = new Date().getTime();
   //  _lastLoadingComment = comment;

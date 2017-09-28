@@ -408,8 +408,8 @@ function showIcon() {
     _iconPrepared = true;
   } catch (e) {
     // fails in Firefox unless in the popup
-    log('icon failed');
-    log(e);
+    console.log('icon failed');
+    console.log(e);
     _iconPrepared = false;
   }
 
@@ -562,7 +562,7 @@ var xhr = null;
 
 function startGetLocationName() {
   if (xhr && xhr.readyState !== 4) {
-    log('xhr call in progress already ' + xhr.readyState);
+    console.log('xhr call in progress already ' + xhr.readyState);
     return;
   }
   var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}'
@@ -570,7 +570,7 @@ function startGetLocationName() {
   xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {
-    //    log('new state ' + xhr.readState);
+    //    console.log('new state ' + xhr.readState);
     if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
       localStorage.locationName =
@@ -580,7 +580,7 @@ function startGetLocationName() {
         getMessage('noLocationName');
 
       setStorage('locationNameKnown', true);
-      log(localStorage.locationName);
+      console.log(localStorage.locationName);
 
       stopLoaderButton();
 
@@ -662,7 +662,7 @@ function recallFocusAndSettings() {
 
       if (!isNaN(time)) {
         var changing = now.toDateString() !== time.toDateString();
-        //        log('reuse focus time: ' + time);
+        //        console.log('reuse focus time: ' + time);
 
         setFocusTime(time);
 
@@ -682,7 +682,7 @@ function recallFocusAndSettings() {
 }
 
 function highlightGDay() {
-  //  log('highlight');
+  //  console.log('highlight');
   //  if (typeof $().effect !== 'undefined') {
   //    setTimeout(function () {
   //      $('#day, #gDay').effect("highlight", 6000);
@@ -699,7 +699,7 @@ function refreshDateInfoAndShow(resetToNow) {
     // will reset to now after a few minutes
     recallFocusAndSettings();
   }
-  log('refreshDateInfoAndShow at ' + new Date());
+  console.log('refreshDateInfoAndShow at ' + new Date());
   var di = refreshDateInfo();
   _di = di;
   _firstLoad = false;
@@ -739,7 +739,7 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
   //}
 
   if (whenTime < new Date().getTime()) {
-    log('ignored attempt to set {0} alarm in the past'.filledWith(alarmName));
+    console.log('ignored attempt to set {0} alarm in the past'.filledWith(alarmName));
     return;
   }
 
@@ -752,9 +752,9 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
     for (var i = 0; i < alarms.length; i++) {
       var alarm = alarms[i];
       if (alarm.name.startsWith('refresh_')) {
-        log(alarm.name, new Date(alarm.scheduledTime));
+        console.log(alarm.name, new Date(alarm.scheduledTime));
       } else {
-        log(alarm.name);
+        console.log(alarm.name);
       }
     }
   });
@@ -828,7 +828,7 @@ String.prototype.filledWith = function () {
       }
       //else if (testForFunc.test(token)) {
       //  try {
-      //    log('eval... ' + token);
+      //    console.log('eval... ' + token);
       //    value = eval(token.substring(1));
       //  }
       //  catch (e) {
@@ -854,7 +854,7 @@ String.prototype.filledWith = function () {
           if (_nextFilledWithEach_UsesExactMatchOnly) {
             value = '{' + token + '}';
           } else {
-            log('missing property for filledWith: ' + token);
+            console.log('missing property for filledWith: ' + token);
             value = '';
           }
         }
@@ -864,7 +864,7 @@ String.prototype.filledWith = function () {
       //REMOVE try... catch to optimize in this project... not dealing with unknown and untested input
 
       //          } catch (err) {
-      //            log('filledWithError:\n' +
+      //            console.log('filledWithError:\n' +
       //                err +
       //                '\ntoken:' +
       //                token +
@@ -873,7 +873,7 @@ String.prototype.filledWith = function () {
       //                '\ntemplate:' +
       //                input +
       //                '\nall values:\n');
-      //            log(values);
+      //            console.log(values);
       //            throw 'Error in Filled With';
       //          }
       return (typeof value == 'undefined' || value == null ? '' : ('' + value));
@@ -998,7 +998,7 @@ function getFocusTime() {
   }
 
   if (isNaN(_focusTime)) {
-    log('unexpected 1: ', _focusTime);
+    console.log('unexpected 1: ', _focusTime);
     _focusTime = new Date();
   }
 
@@ -1008,7 +1008,7 @@ function getFocusTime() {
 function setFocusTime(t) {
   _focusTime = t;
   if (isNaN(_focusTime)) {
-    log('unexpected 2: ', _focusTime);
+    console.log('unexpected 2: ', _focusTime);
   }
   setStorage('focusTime', t.getTime());
   setStorage('focusTimeAsOf', new Date().getTime());
@@ -1097,7 +1097,7 @@ function timeNow(msg) {
   // for debugging
   var now = new Date();
   var time = now.getMilliseconds() / 1000 + now.getSeconds();
-  log(time + ' ' + msg);
+  console.log(time + ' ' + msg);
 }
 
 function shallowCloneOf(obj) {
@@ -1110,20 +1110,20 @@ function shallowCloneOf(obj) {
   return clone;
 }
 
-function log() {
-  // add a timestamp to console log entries
-  //  var a = ['%c'];
-  //  a.push('display: block; text-align: right;');
-  //  a.push(new moment().format('DD H:mm:ss'));
-  //  a.push('\n');
-  var a = ['\n'];
-  for (var x in log.arguments) {
-    if (log.arguments.hasOwnProperty(x)) {
-      a.push(log.arguments[x]);
-    }
-  }
-  console.log.apply(console, a);
-}
+// function console.log() {
+//   // add a timestamp to console log entries
+//   //  var a = ['%c'];
+//   //  a.push('display: block; text-align: right;');
+//   //  a.push(new moment().format('DD H:mm:ss'));
+//   //  a.push('\n');
+//   var a = ['\n'];
+//   for (var x in log.arguments) {
+//     if (log.arguments.hasOwnProperty(x)) {
+//       a.push(log.arguments[x]);
+//     }
+//   }
+//   console.log.apply(console, a);
+// }
 
 // google analytics using Measurement Protocol
 var trackerFunc = function () {
@@ -1140,7 +1140,7 @@ var trackerFunc = function () {
 
   var send = function (info) {
     if (settings.optedOutOfGoogleAnalytics === true) {
-      log('opted out of analytics');
+      console.log('opted out of analytics');
       return;
     }
     var data = $.extend(info, baseParams);

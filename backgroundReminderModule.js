@@ -50,7 +50,7 @@ var BackgroundReminderEngine = function () {
         _nowAlmostMidnight = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 23, 59, 0, 0);
         _nowSunTimes = sunCalculator.getTimes(_nowNoon, _locationLat, _locationLong);
 
-        log('checking ' + _remindersDefined.length + ' reminders at ' + new Date());
+        console.log('checking ' + _remindersDefined.length + ' reminders at ' + new Date());
 
         for (var i = 0; i < _remindersDefined.length; i++) {
             var reminder = _remindersDefined[i];
@@ -63,7 +63,7 @@ var BackgroundReminderEngine = function () {
             try {
                 tryAddAlarmFor[reminder.trigger](reminder);
             } catch (e) {
-                log(e.message);
+                console.log(e.message);
             }
         }
 
@@ -147,7 +147,7 @@ var BackgroundReminderEngine = function () {
 
         var typeWanted = reminder.trigger == 'feast' ? 'M' : 'H';
 
-        //if(typeWanted=='H') log("reminder", reminder);
+        //if(typeWanted=='H') console.log("reminder", reminder);
 
 
         // check for an event this number of days away, at this time
@@ -347,7 +347,7 @@ var BackgroundReminderEngine = function () {
             specialDays.known = {}
         }
 
-        //if (typeWanted == 'H') log(typeWanted, testDayDi);
+        //if (typeWanted == 'H') console.log(typeWanted, testDayDi);
 
         var holyDayInfo = specialDays.known[typeWanted + testDayDi.bDateCode];
         if (holyDayInfo) {
@@ -421,21 +421,21 @@ var BackgroundReminderEngine = function () {
 
     function triggerAlarmNow(alarmName) {
         if (!alarmName.startsWith(_reminderPrefix)) {
-            log('unexpected reminder alarm: ' + alarmName);
+            console.log('unexpected reminder alarm: ' + alarmName);
             return;
         }
 
 
         var alarmInfo = getStorage(alarmName);
         if (!alarmInfo) {
-            log('no info for ' + alarmName);
+            console.log('no info for ' + alarmName);
             return;
         }
 
         var isTest = alarmName.substr(-4) === 'TEST';
 
         if (!isTest && alarmInfo.triggerTime + 1000 < new Date().getTime()) {
-            log('reminder requested, but past trigger.', alarmInfo);
+            console.log('reminder requested, but past trigger.', alarmInfo);
             return;
         }
 
@@ -467,11 +467,12 @@ var BackgroundReminderEngine = function () {
             });
         }
 
+debugger;
 
         alarmInfo.tagLine = tagLine;
         alarmInfo.alarmName = alarmName;
 
-        log('DISPLAYED {alarmName}: {messageBody} '.filledWith(alarmInfo));
+        console.log('DISPLAYED {alarmName}: {messageBody} '.filledWith(alarmInfo));
         //log(alarmInfo);
 
         //    var api = alarmInfo.api || 'html';
@@ -510,7 +511,7 @@ var BackgroundReminderEngine = function () {
 
             tracker.sendEvent('showReminder', alarmInfo.trigger, alarmInfo.delta * alarmInfo.num + ' ' + alarmInfo.units + ' ' + api);
         } catch (e) {
-            log(e);
+            console.log(e);
         }
 
         if (alarmInfo.action) {
@@ -526,13 +527,13 @@ var BackgroundReminderEngine = function () {
                     'voiceName': alarmInfo.speakVoice,
                     'enqueue': true
                 };
-                log(options);
+                console.log(options);
                 chrome.tts.speak(
                   '{title}.\n\n {messageBody}'.filledWith(alarmInfo),
                   options,
                   function () {
                       if (chrome.runtime.lastError) {
-                          log('Error: ' + chrome.runtime.lastError);
+                          console.log('Error: ' + chrome.runtime.lastError);
                       }
                   });
 
@@ -557,15 +558,15 @@ var BackgroundReminderEngine = function () {
                             });
                         },
                         error: function (request, error) {
-                            log(JSON.stringify(request));
-                            log(JSON.stringify(error));
+                            console.log(JSON.stringify(request));
+                            console.log(JSON.stringify(error));
 
                             alert(request.statusText);
                         }
                     });
 
                 } catch (e) {
-                    log(e);
+                    console.log(e);
                 }
 
                 break;
@@ -588,17 +589,17 @@ var BackgroundReminderEngine = function () {
                                 title: alarmInfo.actionDisplay,
                                 message: data.status
                             });
-                            log(data);
+                            console.log(data);
                         },
                         error: function (request, error) {
                             var msg = "Request: " + JSON.stringify(request);
-                            log(msg);
+                            console.log(msg);
                             alert(msg);
                         }
                     });
 
                 } catch (e) {
-                    log(e);
+                    console.log(e);
                 }
 
                 break;
@@ -623,7 +624,7 @@ var BackgroundReminderEngine = function () {
     function prepareImage() {
         _baseBDayImage = new Image();
         _baseBDayImage.src = 'data:image/jpeg;base64,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';
-        //_baseBDayImage.onload = function () { log('loaded'); };
+        //_baseBDayImage.onload = function () { console.log('loaded'); };
     }
 
     function makeBadiNum(num) {
@@ -673,8 +674,8 @@ var BackgroundReminderEngine = function () {
 
             for (var i = 0; i < alarms.length; i++) {
                 var alarm = alarms[i];
-                log('{0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
-                log(getStorage(alarm.name));
+                console.log('{0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
+                console.log(getStorage(alarm.name));
             }
         });
     }
@@ -683,18 +684,18 @@ var BackgroundReminderEngine = function () {
         chrome.storage.local.set({
             reminders: _remindersDefined
         }, function () {
-            log('stored reminders with local');
+            console.log('stored reminders with local');
             if (chrome.runtime.lastError) {
-                log(chrome.runtime.lastError);
+                console.log(chrome.runtime.lastError);
             }
         });
         if (browserHostType === browser.Chrome) {
             chrome.storage.sync.set({
                 reminders: _remindersDefined
             }, function () {
-                log('stored reminders with sync');
+                console.log('stored reminders with sync');
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
             });
         }
@@ -706,11 +707,11 @@ var BackgroundReminderEngine = function () {
                 reminders: []
             }, function (items) {
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
 
                 if (items.reminders) {
-                    log('reminders loaded from local: ' + items.reminders.length);
+                    console.log('reminders loaded from local: ' + items.reminders.length);
                     _remindersDefined = items.reminders || [];
                 }
 
@@ -723,11 +724,11 @@ var BackgroundReminderEngine = function () {
                 reminders: []
             }, function (items) {
                 if (chrome.runtime.lastError) {
-                    log(chrome.runtime.lastError);
+                    console.log(chrome.runtime.lastError);
                 }
 
                 if (items.reminders) {
-                    log('reminders loaded from sync: ' + items.reminders.length);
+                    console.log('reminders loaded from sync: ' + items.reminders.length);
                     _remindersDefined = items.reminders || [];
                 }
 
@@ -778,30 +779,30 @@ var BackgroundReminderEngine = function () {
     }
 
     function connectToPort() {
-        log('listening for new ports');
+        console.log('listening for new ports');
         chrome.runtime.onConnect.addListener(function (port) {
             if (port.name != "reminderModule") {
                 return; // not for us
             }
 
             _ports.push(port);
-            log('ports: ' + _ports.length);
+            console.log('ports: ' + _ports.length);
 
             // each popup will have its own port for us to respond to
-            log('listening to port', port.name, 'from', port.sender.id);
+            console.log('listening to port', port.name, 'from', port.sender.id);
 
             port.onDisconnect.addListener(function (port) {
                 for (var i = 0; i < _ports.length; i++) {
                     var knownPort = _ports[i];
                     if (knownPort === port) {
-                        log('removed port');
+                        console.log('removed port');
                         _ports.splice(i, 1);
                     }
                 }
             });
 
             port.onMessage.addListener(function (msg) {
-                log('received: ', msg);
+                console.log('received: ', msg);
 
                 switch (msg.code) {
 

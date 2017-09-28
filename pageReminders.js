@@ -61,7 +61,7 @@ var PageReminders = function () {
     if (!_currentEditId || mode == saveMode.saveNew) {
       mode = saveMode.saveNew;
       _currentEditId = _reminders.length;
-      log('new reminder');
+      console.log('new reminder');
     }
 
     var r = buildReminder(_currentEditId);
@@ -119,7 +119,7 @@ var PageReminders = function () {
         tracker.sendEvent('saveReminder', r.trigger, r.delta * r.num + ' ' + r.units);
       }
       catch (e) {
-        log('Error', e);
+        console.log('Error', e);
       }
       _reminderModulePort.postMessage({ code: "saveAllReminders", reminders: _reminders });
     }
@@ -254,7 +254,7 @@ var PageReminders = function () {
   }
 
   function getAndShowReminders() {
-    log('sending msg');
+    console.log('sending msg');
 
     _reminderModulePort.postMessage({
       code: "getReminders"
@@ -272,7 +272,7 @@ var PageReminders = function () {
     var listing = _page.find('.reminders');
     var html = [];
     var displayId = 1;
-    log('show reminders');
+    console.log('show reminders');
     _reminders.sort(reminderSort);
     $.each(_reminders, function (i, r) {
       var lines = [];
@@ -355,7 +355,7 @@ var PageReminders = function () {
         if (alarm.name.startsWith(_reminderPrefix)) {
           var alarmInfo = getStorage(alarm.name);
           if (!alarmInfo) {
-            log('No alarmInfo for ' + alarm.name);
+            console.log('No alarmInfo for ' + alarm.name);
             continue;
           }
 
@@ -542,10 +542,10 @@ var PageReminders = function () {
   }
 
   function establishPortToBackground() {
-    log('making port');
+    console.log('making port');
     _reminderModulePort = chrome.runtime.connect({ name: "reminderModule" });
     _reminderModulePort.onMessage.addListener(function (msg) {
-      log('received:', msg);
+      console.log('received:', msg);
 
       // these are return call in response to our matching request
       switch (msg.code) {

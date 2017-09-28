@@ -84,7 +84,7 @@ var Cal2 = function () {
 
     showInfo(_di);
     //    } catch (error) {
-    //      log('Error: ' + error);
+    //      console.log('Error: ' + error);
     //    }
 
 
@@ -155,7 +155,7 @@ var Cal2 = function () {
   }
 
   function getCol(month) {
-    log(month);
+    console.log(month);
     switch (month) {
       case 1:
       case 4:
@@ -298,7 +298,7 @@ var Cal2 = function () {
     _scrollToMonth = bMonth;
     var month = _calendarDiv.find('#cal2_m{0}'.filledWith(bMonth));
     if (month.length === 0) {
-      log("no month " + bMonth);
+      console.log("no month " + bMonth);
       return;
     }
     _calendarDiv.find('.month').hide();
@@ -505,13 +505,13 @@ var Cal2 = function () {
     var end = moment(nowDi.frag2SunTimes.sunset);
     var now = moment(currentTime); // moment seems to cache the time when the page loads
 
-    //    log('------');
-    //    log('start ' + start.format());
-    //    log('end ' + end.format());
+    //    console.log('------');
+    //    console.log('start ' + start.format());
+    //    console.log('end ' + end.format());
     //
-    //    log('now ' + now.format());
-    //    log('end->start ' + start.diff(now));
-    //    log('now->start ' + now.diff(start));
+    //    console.log('now ' + now.format());
+    //    console.log('end->start ' + start.diff(now));
+    //    console.log('now->start ' + now.diff(start));
 
     var pct = now.diff(start) / end.diff(start) * 100;
 

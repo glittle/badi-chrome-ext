@@ -142,12 +142,12 @@ var PageExporter = function () {
         nextYearStarts.setHours(12, 0, 0, 0);
         break;
       default:
-        log("unexpected: {0} {1}".filledWith(rangeType, year));
+        console.log("unexpected: {0} {1}".filledWith(rangeType, year));
         return;
     }
 
     var wantedEventTypes = $('.exportOptionList input:checked').map(function (i, el) { return el.value; }).get();
-    log(wantedEventTypes);
+    console.log(wantedEventTypes);
 
     // process each day... see if there is a wanted type for that day
     while (date < nextYearStarts) {
@@ -174,7 +174,7 @@ var PageExporter = function () {
             break;
 
           default:
-            log('unknown: ' + eventType)
+            console.log('unknown: ' + eventType)
         }
       }
 
@@ -231,7 +231,7 @@ END:VEVENT
         addLine('SUMMARY:' + getMessage('exportDayFromSunset', dayInfo));
         break;
       default:
-        log('unexpected date variation: ' + variation);
+        console.log('unexpected date variation: ' + variation);
         break;
     }
 
@@ -306,7 +306,7 @@ END:VEVENT
         addLine('DTEND:' + calFormat(startTime));
         break;
       default:
-        log('unexpected date variation: ' + variation);
+        console.log('unexpected date variation: ' + variation);
         break;
     }
 
@@ -381,7 +381,7 @@ END:VEVENT
         addLine('DTEND:' + calFormat(di.frag1SunTimes.sunset));
         break;
       default:
-        log('unexpected date variation: ' + variation);
+        console.log('unexpected date variation: ' + variation);
         break;
     }
 
@@ -439,7 +439,7 @@ END:VEVENT
         addEndOfEntry();
         break;
       default:
-        log('unexpected date variation: ' + variation);
+        console.log('unexpected date variation: ' + variation);
         break;
     }
 

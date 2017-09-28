@@ -93,7 +93,7 @@ var CalGreg = function (di, host) {
     _yearShown = gYear;
 
     var gMonth = _di.frag2Month;
-    //    log(_yearShown + ' ' + gYear + ' ' + gMonth);
+    //    console.log(_yearShown + ' ' + gYear + ' ' + gMonth);
 
     _calendarDiv.html('');
 
