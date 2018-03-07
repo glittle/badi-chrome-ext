@@ -39,20 +39,20 @@
 #pageCal2 .calendar.showTimes .todayTime {
   position: absolute;
   display: block;
-  left: 0;
-  width: 15px;
-  height: 1px;
-  background-image: linear-gradient(to right, #5b439a, #5b439a 3px, transparent 100%);
+  bottom: 0;
+  width: 1px;
+  height: 15px;
+  background-image: linear-gradient(to top, #5b439a, #5b439a 3px, transparent 100%);
 }
 #pageCal2 .calendar.showTimes .todayTime:before {
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  border-left: 3px solid #5b439a;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 4px solid #5b439a;
   display: block;
   content: '';
   width: 0;
   height: 0;
-  transform: translate(0, -1.5px);
+  transform: translate(-1.65px, 12px);
 }
 #pageCal2 .calendar .todayTime {
   display: none;
@@ -213,8 +213,9 @@
   display: inline-block;
   font-size: .55rem;
   text-align: right;
-  margin: 3px 0 0 0;
-  padding: 2px 3px 3px 4px;
+  margin: 8px 0 0 0;
+  padding: 5px 3px 3px 4px;
+  line-height: 5px;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
   border-top-left-radius: 5px;
@@ -240,7 +241,7 @@
   position: relative;
 }
 #pageCal2 .sunrise {
-  margin: 3px 2px 0 0;
+  margin: 27px 3px 0 0;
 }
 #pageCal2 .sunsetEnd {
   position: absolute;
@@ -274,7 +275,6 @@
   font-size: 9px;
   position: absolute;
   top: 32px;
-  font-style: italic;
   left: 3px;
 }
 #pageCal2 .hdHS,
@@ -290,22 +290,20 @@
   background-position: 0 1px;
   width: 12px;
 }
-#pageCal2 .wd6 .wd {
-  font-weight: bold;
-}
 #pageCal2 .wd6 .bWeekDay {
   font-weight: bold;
-  color: #000;
-}
-#pageCal2 .wd6 .gStart {
-  background-image: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-  border-color: #ccc;
+  background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
+  padding: 0px 4px 2px;
+  border-radius: 3px;
 }
 #pageCal2 #cal2options {
   position: absolute;
   right: 20px;
   bottom: 4px;
   z-index: 1;
+}
+#pageCal2 #cal2options span {
+  margin-left: -2px;
 }
 #pageCal2.darkerColors .dayRow.elementNum0 .dayCell {
   background-image: linear-gradient(rgba(255, 20, 147, 0.6), rgba(255, 255, 255, 0) 40px);
@@ -334,8 +332,21 @@
 #pageCal2.darkerColors .month.elementNum4 .monthElement {
   background-color: #009600;
 }
+#pageCal2.designB .calendar.showTimes .sunsetStart {
+  line-height: normal;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  text-align: left;
+}
+#pageCal2.designB .calendar.showTimes .sunsetStart span {
+  display: block;
+}
+#pageCal2.designB .calendar.showTimes .sunsetEnd {
+  display: none;
+}
 #pageCal2.forPrint .dayCell {
-  margin: 0 6px 11px -1px;
+  margin: 0 10px 11px 0;
   border-radius: 3px;
 }
 #pageCal2.forPrint .dayRow.elementNum0 .dayCell {

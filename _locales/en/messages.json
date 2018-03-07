@@ -130,11 +130,11 @@
     "description": "weekday names, with leading , "
   },
   "bYearInVahidMeaning": {
-    "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendour,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
+    "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendor,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
     "description": "Vahid names, with leading , "
   },
   "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
   "Chrome_History": {
@@ -462,11 +462,11 @@
     "description": "about page"
   },
   "Firefox_WebStore": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
     "description": "link to Webstore when running in Firefox"
   },
   "Firefox_WebStoreSupport": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
     "description": "link to Webstore support link when running in Firefox"
   },
   "formatIconClick": {
@@ -1159,7 +1159,7 @@
   },
   "specialTime_0100S": {
     "message": "1 am (Standard Time)",
-    "description": "Martyrdom of the Bab"
+    "description": "Ascension of `Abdu'l-Bahá"
   },
   "specialTime_0300S": {
     "message": "3 am (Standard Time)",
@@ -1326,6 +1326,10 @@
   "cal2ForPrint": {
     "message": "For <u>p</u>rint",
     "description": "a check box on the calendar. If checked, formating is improved for printing."
+  },
+  "cal2VerB": {
+    "message": "<u>O</u>ther Layout",
+    "description": "different display"
   },
   "nextMonth": {
     "message": "Next <u>M</u>onth",

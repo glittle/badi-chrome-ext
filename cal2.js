@@ -37,6 +37,9 @@ var Cal2 = function () {
       _page.toggleClass('darkerColors', !!_page.find('#cbCal2Darker').prop('checked'));
       // _calendarDiv.find('#cbCal2Darker').blur();
     });
+    _page.on('change', '#cbCal2VerB', function () {
+      _page.toggleClass('designB', !!_page.find('#cbCal2VerB').prop('checked'));
+    });
     _page.on('change', '#cbCal2Print', function () {
       _page.toggleClass('forPrint', !!_page.find('#cbCal2Print').prop('checked'));
     });
@@ -58,10 +61,10 @@ var Cal2 = function () {
     var currentMonth = _di.bMonth;
     if (currentMonth === 0) {
       // ayyam-i-ha
-      if(delta < 0){
+      if (delta < 0) {
         // moving back in time
         currentMonth = 19;
-      }else{
+      } else {
         currentMonth = 18;
       }
     }
@@ -337,9 +340,9 @@ var Cal2 = function () {
 
     var dayCellTemplate = [
       '<div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
-      '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart>{frag1WeekdayShort}<span> {startingSunsetDesc}</span></span></div>',
+      '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart><span>{startingSunsetDesc} </span>{frag1WeekdayShort}</span></div>',
       '<div class=night>',
-      '<div class=gStart><span class=wd>{frag2WeekdayShort}</span>, {frag2MonthShort} {frag2Day}',
+      '<div class=gStart>{frag2MonthShort} {frag2Day}, <span class=wd>{frag2WeekdayShort}</span>',
       '</div>',
       '{^sunriseDiv}',
       '</div>',
@@ -388,8 +391,7 @@ var Cal2 = function () {
         gYear = di.frag2Year; // remember last year used
       }
 
-      if (bMonth === 0) {
-      } else {
+      if (bMonth === 0) {} else {
         switch (bDay) {
           case 4:
           case 8:
@@ -428,7 +430,7 @@ var Cal2 = function () {
       });
 
       $.extend(di, {
-        sunsetDesc: '<span class=sunsetEnd>{1} {0}</span>'.filledWith(showTime(di.frag2SunTimes.sunset), di.frag2WeekdayShort)
+        sunsetDesc: '<span class=sunsetEnd>{0}</span>'.filledWith(showTime(di.frag2SunTimes.sunset))
       });
 
       if (di.bMonth === 19) {
@@ -519,10 +521,11 @@ var Cal2 = function () {
     if (pct < 1) pct = 1;
     if (pct > 99) pct = 99;
 
-    dayCell.append('<div class=todayTime title="{1} {2}" style="top:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm')));
+    // ~~ is like Math.floor()
+    dayCell.append('<div class=todayTime title="{1} {2}" style="left:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format('HH:mm')));
 
     clearTimeout(_timeoutTime);
-    _timeoutTime = setTimeout(showTodayTime, 15 * 60 * 1000);  // 15 minutes
+    _timeoutTime = setTimeout(showTodayTime, 15 * 60 * 1000); // 15 minutes
   }
 
   preparePage();

@@ -43,6 +43,9 @@ var HolyDays = function () {
 
     for (var i = 0; i < _dateInfos.length; i++) {
       var dateInfo = _dateInfos[i];
+      if(!dateInfo.MonthNum){
+        dateInfo.MonthNum = NaN;
+      }
 
       if (dateInfo.UntilYear && bYear > dateInfo.UntilYear) {
         _dateInfos.splice(i, 1);

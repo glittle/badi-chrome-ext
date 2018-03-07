@@ -60,7 +60,7 @@
     "description": "Vahid names, with leading , "
   },
   "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
   "Chrome_History": {
@@ -177,11 +177,11 @@
     "description": "about page"
   },
   "Firefox_WebStore": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
     "description": "link to Webstore when running in Firefox"
   },
   "Firefox_WebStoreSupport": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/bad%C3%AD-calendar/",
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
     "description": "link to Webstore support link when running in Firefox"
   },
   "formatIconClick": {

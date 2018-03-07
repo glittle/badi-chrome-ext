@@ -30,7 +30,7 @@ var CalWheel = function () {
       return;
     }
 
-    di = newDi;
+    var di = newDi;
     _yearShown = newDi.bYear;
 
     var wheel = $('#wheel');

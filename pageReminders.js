@@ -272,7 +272,7 @@ var PageReminders = function () {
     var listing = _page.find('.reminders');
     var html = [];
     var displayId = 1;
-    console.log('show reminders');
+    // console.log('show reminders');
     _reminders.sort(reminderSort);
     $.each(_reminders, function (i, r) {
       var lines = [];

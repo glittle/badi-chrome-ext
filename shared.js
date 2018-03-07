@@ -573,14 +573,20 @@ function startGetLocationName() {
     //    console.log('new state ' + xhr.readState);
     if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
+      var unknownLocation = getMessage('noLocationName');
+
       localStorage.locationName =
         findName('neighborhood', data.results, true) ||
         findName('locality', data.results) ||
         findName('political', data.results) ||
-        getMessage('noLocationName');
+        unknownLocation;
 
       setStorage('locationNameKnown', true);
       console.log(localStorage.locationName);
+
+      if (localStorage.locationName === unknownLocation) {
+        console.log(data);
+      }
 
       stopLoaderButton();
 
@@ -1311,5 +1317,5 @@ chrome.runtime.onMessageExternal.addListener(
         callback();
         break;
     }
-  });
-
+  }
+);

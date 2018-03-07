@@ -467,8 +467,6 @@ var BackgroundReminderEngine = function () {
             });
         }
 
-debugger;
-
         alarmInfo.tagLine = tagLine;
         alarmInfo.alarmName = alarmName;
 
