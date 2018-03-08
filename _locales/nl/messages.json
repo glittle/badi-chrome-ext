@@ -967,7 +967,7 @@
   },
   "reminderBDay": {
     "message": "Dag {num} van de Badíʿ maand",
-    "description": "what this reminder is triggered on (left out the the apostrophe after Badíʿ since it breaks when displayed)"
+    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
   },
   "reminderBefore": {
     "message": "voor"
