@@ -1,18 +1,10 @@
 {
-  "1day": {
-    "message": "",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
-  },
   "actionSpeakDesc": {
     "message": "Die Erinnerung wird in dieser Stimme vorgelesen:",
     "description": "in edit area when asking for a relative time"
   },
   "afterSunset": {
     "message": "Abend - nach Sonnenuntergang"
-  },
-  "arabic": {
-    "message": "",
-    "description": "on List page - table heading"
   },
   "bDatePickerTitle": {
     "message": "Zum <u>B</u>adí' Datum springen",
@@ -111,7 +103,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",Ruhm,Schönheit,Vollkommenheit,Gnade,Gerechtigkeit,Majestät,Unabhängigkeit",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bWeekdayNameAr": {
     "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
@@ -122,7 +114,7 @@
     "description": "Vahid names, with leading , "
   },
   "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
   "Chrome_History": {
@@ -230,9 +222,6 @@
   "exportAlert_B1": {
     "message": "1 Minute vor"
   },
-  "exportDayFromSunset": {
-    "message": ""
-  },
   "exporterDateRange": {
     "message": "Export-Datumsspanne (laut aktuell gewähltem Jahr)"
   },
@@ -248,7 +237,7 @@
     "message": "Fasten bis {endingSunsetDesc}"
   },
   "exporterItemDescDay": {
-    "message": "Ein Tag im Badíʿ Kalender.",
+    "message": "Ein Tag im Badí' Kalender.",
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescFast": {
@@ -256,7 +245,7 @@
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescGeneralTime": {
-    "message": "Versammlung kann zu jeder Zeit an diesem Badíʿ Tag beginnen.",
+    "message": "Versammlung kann zu jeder Zeit an diesem Badí' Tag beginnen.",
     "description": "For when a Holy Day as a particular time"
   },
   "exporterItemDescShared": {
@@ -264,7 +253,7 @@
     "description": "Be sure the URL is not translated!"
   },
   "exporterTitle": {
-    "message": "Badíʿ Kalender Exporter",
+    "message": "Badí' Kalender Exporter",
     "description": "title on page"
   },
   "exportFile": {
@@ -342,11 +331,11 @@
     "description": "about page"
   },
   "Firefox_WebStore": {
-    "message": "https://addons.mozilla.org/de/firefox/addon/wondrous-calendar/",
+    "message": "https://addons.mozilla.org/de/firefox/addon/bad%C3%AD-calendar/",
     "description": "link to Webstore when running in Firefox"
   },
   "Firefox_WebStoreSupport": {
-    "message": "https://addons.mozilla.org/de/firefox/addon/wondrous-calendar/",
+    "message": "https://addons.mozilla.org/de/firefox/addon/bad%C3%AD-calendar/",
     "description": "link to Webstore support link when running in Firefox"
   },
   "formatIconClick": {
@@ -661,7 +650,7 @@
     "description": "heading in Fast days listing"
   },
   "sunsetHeading": {
-    "message": "Beginn des Badíʿ-Tages",
+    "message": "Beginn des Badí'-Tages",
     "description": "heading in Events listing"
   },
   "suspendWorkHeading": {
@@ -678,11 +667,11 @@
     "message": "Bild hoch/Bild runter um Unterseite auszuwählen.\nPfeil rechts/links um das Datum zu ändern.\n\"/\" um zwischen vor und nach Sonnenuntergang umzustellen.\nPos 1 um zum heutigen Tag zurückzuschalten!\nStrg+Umschalt+A um die Sprache zu ändern."
   },
   "title": {
-    "message": "Badíʿ Kalender",
+    "message": "Badí' Kalender",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Zeigt das heutige Datum im Badíʿ Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
+    "message": "Zeigt das heutige Datum im Badí' Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
     "description": "Used in the manifest"
   },
   "Tonight": {
