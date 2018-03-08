@@ -1,10 +1,17 @@
 {
-  "title": {
-    "message": "Badíʿ Calendar",
-    "description": "The title of the extension. Shown in a number of locations."
+  "elements": {
+    "message": "आग, वायु, जल, पृथ्वी",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "gMonthLong": {
+    "message": "जनवरी, फरवरी, मार्च, अप्रैल, मई, जून, जुलाई, अगस्त, सितंबर, अक्टूबर, नवंबर, दिसंबर"
   },
   "rbDefLang_Local": {
     "message": "हिंदी",
     "description": "put your language here, in your script"
+  },
+  "title": {
+    "message": "Badíʿ Calendar",
+    "description": "The title of the extension. Shown in a number of locations."
   }
 }
