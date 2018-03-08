@@ -25,14 +25,14 @@
   },
   "bWeekDayMeaning": {
     "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bYearInVahidMeaning": {
     "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
     "description": "Vahid names, with leading , "
   },
   "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
+    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá',Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badí‘,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
   "customBuilderIntro": {
@@ -58,10 +58,10 @@
     "message": "1 minuto antaŭe"
   },
   "exportBadiYear0": {
-    "message": "Badíʿ-jaro - {0} B.E."
+    "message": "Badí'-jaro - {0} B.E."
   },
   "exportCalendarDescription": {
-    "message": "Datoj en la Badíʿ-kalendaro por {location}",
+    "message": "Datoj en la Badí'-kalendaro por {location}",
     "description": "title on page"
   },
   "exportDayFromSunset": {
@@ -78,7 +78,7 @@
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescGeneralTime": {
-    "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badíʿ-tago",
+    "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badí'-tago",
     "description": "For when a Holy Day as a particular time"
   },
   "exporterItemDescShared": {
@@ -209,10 +209,6 @@
   "past_StartDeltaTime": {
     "message": "komenciĝis antaŭ {numUnits} je {time}"
   },
-  "rbDefLang_Local": {
-    "message": "Esperanto",
-    "description": "put your language here, in your script"
-  },
   "planFromWhenToday": {
     "message": "Hodiaŭ",
     "description": "answer for planFromWhen"
@@ -224,6 +220,10 @@
   "plannerWhatEvent": {
     "message": "Kiu?",
     "description": "which event or events?"
+  },
+  "rbDefLang_Local": {
+    "message": "Esperanto",
+    "description": "put your language here, in your script"
   },
   "reminderBefore": {
     "message": "antaŭ"
@@ -277,11 +277,11 @@
     "message": "Komenciĝis per sunsubiro je {0}"
   },
   "title": {
-    "message": "Badíʿ-kalendaro",
+    "message": "Badí'-kalendaro",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Montras la daton de hodiaŭ en la Badíʿ-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
+    "message": "Montras la daton de hodiaŭ en la Badí'-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
     "description": "Used in the manifest"
   },
   "upcomingTitle": {
