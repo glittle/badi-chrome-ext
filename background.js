@@ -113,7 +113,7 @@ var BackgroundModule = function () {
     }, showErrors);
     //chrome.contextMenus.create({
     //  'id': 'paste',
-    //  'title': 'Insert Bad� Date',
+    //  'title': 'Insert Badíʿ Date',
     //  'contexts': ['editable']
     //}, showErrors);
 
