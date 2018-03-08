@@ -49,7 +49,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",புகழ்,அழகு,நிறைவு,கிருபை,நீதி,மாட்சிமை,சுதந்திரம்",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bYearInVahidMeaning": {
     "message": ",அ,ப,தந்தை,ட,வாசல்,வ,நித்தியம்,வள்ளன்மை,பேரொளி,அன்பு,மகிழ்ச்சிகரமான,பதில்,தனி,அபரிமிதம்,பாசம்,ஆரம்பம்,ஒளிர்வு,அதி ஒளிர்வு,ஒற்றுமை",
