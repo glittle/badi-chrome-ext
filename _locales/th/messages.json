@@ -18,10 +18,6 @@
     "message": "ความหมาย",
     "description": "on List page - table heading"
   },
-  "rbDefLang_Local": {
-    "message": "Thai",
-    "description": "put your language here, in your script"
-  },
   "Month": {
     "message": "เดือน"
   },
@@ -40,6 +36,10 @@
   "prevYear": {
     "message": "ปีก่อน",
     "description": "hold Shift and press left arrow key"
+  },
+  "rbDefLang_Local": {
+    "message": "Thai",
+    "description": "put your language here, in your script"
   },
   "title": {
     "message": "หัวข้อ",

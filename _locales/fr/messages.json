@@ -49,7 +49,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",Gloire,Beauté,Perfection,Grâce,Justice,Majesté,Indépendance",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bWeekdayNameAr": {
     "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",

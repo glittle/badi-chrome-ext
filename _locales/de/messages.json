@@ -1,18 +1,10 @@
 {
-  "1day": {
-    "message": "",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
-  },
   "actionSpeakDesc": {
     "message": "Die Erinnerung wird in dieser Stimme vorgelesen:",
     "description": "in edit area when asking for a relative time"
   },
   "afterSunset": {
     "message": "Abend - nach Sonnenuntergang"
-  },
-  "arabic": {
-    "message": "",
-    "description": "on List page - table heading"
   },
   "bDatePickerTitle": {
     "message": "Zum <u>B</u>adí' Datum springen",
@@ -229,9 +221,6 @@
   },
   "exportAlert_B1": {
     "message": "1 Minute vor"
-  },
-  "exportDayFromSunset": {
-    "message": ""
   },
   "exporterDateRange": {
     "message": "Export-Datumsspanne (laut aktuell gewähltem Jahr)"
