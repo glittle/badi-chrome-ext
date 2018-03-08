@@ -58,10 +58,10 @@
     "message": "1 minuto antaŭe"
   },
   "exportBadiYear0": {
-    "message": "Badí'-jaro - {0} B.E."
+    "message": "Badíʿ-jaro - {0} B.E."
   },
   "exportCalendarDescription": {
-    "message": "Datoj en la Badí'-kalendaro por {location}",
+    "message": "Datoj en la Badíʿ-kalendaro por {location}",
     "description": "title on page"
   },
   "exportDayFromSunset": {
@@ -78,7 +78,7 @@
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescGeneralTime": {
-    "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badí'-tago",
+    "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badíʿ-tago",
     "description": "For when a Holy Day as a particular time"
   },
   "exporterItemDescShared": {
@@ -277,11 +277,11 @@
     "message": "Komenciĝis per sunsubiro je {0}"
   },
   "title": {
-    "message": "Badí'-kalendaro",
+    "message": "Badíʿ-kalendaro",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Montras la daton de hodiaŭ en la Badí'-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
+    "message": "Montras la daton de hodiaŭ en la Badíʿ-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
     "description": "Used in the manifest"
   },
   "upcomingTitle": {

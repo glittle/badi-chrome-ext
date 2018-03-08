@@ -248,7 +248,7 @@
     "message": "Fasten bis {endingSunsetDesc}"
   },
   "exporterItemDescDay": {
-    "message": "Ein Tag im Badí' Kalender.",
+    "message": "Ein Tag im Badíʿ Kalender.",
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescFast": {
@@ -256,7 +256,7 @@
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescGeneralTime": {
-    "message": "Versammlung kann zu jeder Zeit an diesem Badí' Tag beginnen.",
+    "message": "Versammlung kann zu jeder Zeit an diesem Badíʿ Tag beginnen.",
     "description": "For when a Holy Day as a particular time"
   },
   "exporterItemDescShared": {
@@ -264,7 +264,7 @@
     "description": "Be sure the URL is not translated!"
   },
   "exporterTitle": {
-    "message": "Badí' Kalender Exporter",
+    "message": "Badíʿ Kalender Exporter",
     "description": "title on page"
   },
   "exportFile": {
@@ -661,7 +661,7 @@
     "description": "heading in Fast days listing"
   },
   "sunsetHeading": {
-    "message": "Beginn des Badí'-Tages",
+    "message": "Beginn des Badíʿ-Tages",
     "description": "heading in Events listing"
   },
   "suspendWorkHeading": {
@@ -678,11 +678,11 @@
     "message": "Bild hoch/Bild runter um Unterseite auszuwählen.\nPfeil rechts/links um das Datum zu ändern.\n\"/\" um zwischen vor und nach Sonnenuntergang umzustellen.\nPos 1 um zum heutigen Tag zurückzuschalten!\nStrg+Umschalt+A um die Sprache zu ändern."
   },
   "title": {
-    "message": "Badí' Kalender",
+    "message": "Badíʿ Kalender",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Zeigt das heutige Datum im Badí' Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
+    "message": "Zeigt das heutige Datum im Badíʿ Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
     "description": "Used in the manifest"
   },
   "Tonight": {

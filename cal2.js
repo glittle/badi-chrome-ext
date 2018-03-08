@@ -37,12 +37,15 @@ var Cal2 = function () {
       _page.toggleClass('darkerColors', !!_page.find('#cbCal2Darker').prop('checked'));
       // _calendarDiv.find('#cbCal2Darker').blur();
     });
-    _page.on('change', '#cbCal2VerB', function () {
-      _page.toggleClass('designB', !!_page.find('#cbCal2VerB').prop('checked'));
-    });
     _page.on('change', '#cbCal2Print', function () {
       _page.toggleClass('forPrint', !!_page.find('#cbCal2Print').prop('checked'));
     });
+    
+    // presets
+    _page.addClass('forPrint');
+    _page.find('#cbCal2Print').prop('checked', true)
+
+    
     _page.find('#btnCal2Y').click(function () {
       zoomTo('Y');
     });
@@ -338,20 +341,7 @@ var Cal2 = function () {
     var newRow = '<div class="dayRow elementNum{0}">';
     var newRowEnd = '</div>';
 
-    var dayCellTemplate = [
-      '<div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">',
-      '<div class=top><span class=dayNum>{bDay}{^holyDayAftStar}</span> <span class=sunsetStart><span>{startingSunsetDesc} </span>{frag1WeekdayShort}</span></div>',
-      '<div class=night>',
-      '<div class=gStart>{frag2MonthShort} {frag2Day}, <span class=wd>{frag2WeekdayShort}</span>',
-      '</div>',
-      '{^sunriseDiv}',
-      '</div>',
-      '<div class=day>{^holyDayAftName}</div>',
-      '<div class=dayName>{bDayNamePri}</div>',
-      '<div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>',
-      '{^sunsetDesc}',
-      '</div>'
-    ].join('');
+    var dayCellTemplate = $('#cal2dayCell').text();
 
     var dayCells = [newRow.filledWith(bMonth === 0 ? 0 : 1)];
     var day1Di;
@@ -429,15 +419,15 @@ var Cal2 = function () {
         //eveSize: eveSize,
       });
 
-      $.extend(di, {
-        sunsetDesc: '<span class=sunsetEnd>{0}</span>'.filledWith(showTime(di.frag2SunTimes.sunset))
-      });
-
       if (di.bMonth === 19) {
         $.extend(di, {
           sunriseDiv: '<div class=sunrise>{0}</div>'.filledWith(showTime(sunrise))
         });
       }
+
+      $.extend(di, {
+        sunsetDesc: '<div class=sunsetEnd>{0}{1}</div>'.filledWith(di.sunriseDiv || '', showTime(di.frag2SunTimes.sunset))
+      });
 
       if (bDay === bMonth) {
         di.classesOuter.push('monthNameDay');
@@ -480,8 +470,8 @@ var Cal2 = function () {
       '<div class="month elementNum{1}" id=cal2_m{0}>'.filledWith(focusMonth, elementNum),
       '<div class=caption>',
       '<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>'.filledWith(monthTitleInfo),
-      '<div class=bMonthInfo>{0}</div>'.filledWith(bMonthInfo),
       '<div class=gMonthInfo>{0}</div>'.filledWith(gMonthInfo),
+      '<div class=bMonthInfo>{0}</div>'.filledWith(bMonthInfo),
       '<div class=placeName>{0}</div>'.filledWith(localStorage.locationName),
       '</div>',
       '<div class=monthDays>',

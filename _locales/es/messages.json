@@ -502,7 +502,7 @@
     "description": "heading in Fast days listing"
   },
   "sunsetHeading": {
-    "message": "Start of Badí' Day",
+    "message": "Start of Badíʿ Day",
     "description": "heading in Events listing"
   },
   "suspendWorkHeading": {
@@ -521,11 +521,11 @@
     "message": "Use PgUp/PgDn teclas para seleccionar paneles.\nUse derecha/iaquierda teclas con flechas para cambiar los dias.\nUse / para cambiar antes/despues ocaso."
   },
   "title": {
-    "message": "calendario Badí",
+    "message": "calendario Badíʿ",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "ensena el dia de hoy en el calendario Badí', el calendario oficial de La Fe Bahá'í.",
+    "message": "ensena el dia de hoy en el calendario Badíʿ, el calendario oficial de La Fe Bahá'í.",
     "description": "Used in the manifest"
   },
   "Tonight": {

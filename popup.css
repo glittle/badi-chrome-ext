@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Geneva, 'Segoe UI';
+  font-family: 'Segoe UI', sans-serif;
   font-size: 9pt;
 }
 body.rtl {
@@ -9,7 +9,7 @@ body.rtl {
 #mainBody {
   margin: 0 auto;
   width: 800px;
-  font-family: Geneva, 'Segoe UI';
+  font-family: 'Segoe UI', sans-serif;
 }
 #initialCover {
   position: absolute;
@@ -1415,5 +1415,4 @@ body.Firefox .setupLangOption input {
 }
 @page myLandscape {
   size: landscape;
-  background-color: red;
 }

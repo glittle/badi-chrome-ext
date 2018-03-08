@@ -13,13 +13,15 @@
   <script src="jquery-2.1.3.min.js"></script>
   <script src="suncalc.js"></script>
   <script src="moment.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
 </head>
 
 <body>
   <div id="mainBody">
     <div id="initialCover">
       <div class="initialMsgArea">
-        <span id="loadingMsg"></span><span id="loadingCount"></span>
+        <span id="loadingMsg"></span>
+        <span id="loadingCount"></span>
       </div>
     </div>
     <div class="mainTop">
@@ -79,7 +81,9 @@
         <div class="normal place"></div>
         <!--<div id=gDayWithSunset></div>-->
         <div id=locationErrorHolder>
-          <button type="button" class=btnRetry><span class="btnRetryImg"></span></button>
+          <button type="button" class=btnRetry>
+            <span class="btnRetryImg"></span>
+          </button>
           <span id=locationError data-msg="_id_"></span>
         </div>
       </div>
@@ -108,10 +112,12 @@
 
           <div class=DatePickerTitle data-msg="rbDefLangText"></div>
           <div class="setupLangOption">
-            <input type="radio" name="language" value="Local" id="rbDefLang_Local" /> <label for="rbDefLang_Local" data-msg="rbDefLang_Local"></label>
+            <input type="radio" name="language" value="Local" id="rbDefLang_Local" />
+            <label for="rbDefLang_Local" data-msg="rbDefLang_Local"></label>
           </div>
           <div class="setupLangOption">
-            <input type="radio" name="language" value="Ar" id="rbDefLang_Ar" /> <label for="rbDefLang_Ar" data-msg="rbDefLang_Ar"></label>
+            <input type="radio" name="language" value="Ar" id="rbDefLang_Ar" />
+            <label for="rbDefLang_Ar" data-msg="rbDefLang_Ar"></label>
           </div>
         </div>
         <div id=dayDetails></div>
@@ -127,8 +133,14 @@
             <span id=includeWhat>
               <span data-msg=includeThese></span>
 
-            <label><input type=checkbox class=includeThis id=includeFeasts><span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span></label>
-            <label><input type=checkbox class=includeThis id=includeHolyDays><span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span></label>
+              <label>
+                <input type=checkbox class=includeThis id=includeFeasts>
+                <span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span>
+              </label>
+              <label>
+                <input type=checkbox class=includeThis id=includeHolyDays>
+                <span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span>
+              </label>
             </span>
 
             <span data-msg="startTimeOption"></span>
@@ -211,16 +223,24 @@
       </div>
       <div id="pageCal2" class="fullPage page">
         <div id="cal2options">
-          <label><input type="checkbox" id="cbShowTimes" checked><span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span></label>
-          <label><input type="checkbox" id="cbCal2Darker"><span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span></label>
-          <label><input type="checkbox" id="cbCal2Print"><span data-msg="cal2ForPrint,extractAccessKeyFor:cbCal2Print"></span></label>
-          <label><input type="checkbox" id="cbCal2VerB"><span data-msg="cal2VerB,extractAccessKeyFor:cbCal2VerB"></span></label>
+          <label>
+            <input type="checkbox" id="cbShowTimes">
+            <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
+          </label>
+          <label>
+            <input type="checkbox" id="cbCal2Darker">
+            <span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span>
+          </label>
+          <label>
+            <input type="checkbox" id="cbCal2Print">
+            <span data-msg="cal2ForPrint,extractAccessKeyFor:cbCal2Print"></span>
+          </label>
         </div>
         <div class="cal2NavButtons">
           <button type="button" class="button" id="btnCal2Y" data-msg="_id_"></button>
           <button type="button" class="button" id="btnCal2M" data-msg="_id_"></button>
         </div>
-        <div class="calendar showTimes zoomM">
+        <div class="calendar zoomM">
         </div>
       </div>
       <div id="pageCalGreg" class="fullPage page">
@@ -229,7 +249,10 @@
       </div>
       <div id="pageCalWheel" class="fullPage page">
         <div id="askShowPointer">
-          <label><input type="checkbox" id="cbShowPointer" /> <span data-msg="showPointer"></span></label>
+          <label>
+            <input type="checkbox" id="cbShowPointer" />
+            <span data-msg="showPointer"></span>
+          </label>
         </div>
         <div id="wheelHolder">
           <div id="wheel"></div>
@@ -356,7 +379,8 @@
               <div id="model_bday" class="reminderModel">
                 <div>
                   <span data-msg="reminderDayOfMonth">
-                    <input data-child="num" type="number" class="reminder_num" name="x8" min="1" max="19" step="1" value="1" data-type="num" data-default="1" required />
+                    <input data-child="num" type="number" class="reminder_num" name="x8" min="1" max="19" step="1" value="1" data-type="num"
+                      data-default="1" required />
                   </span>
                 </div>
                 <div>
@@ -669,7 +693,9 @@
           </div>
           <h3 class="setupPlace">
             <span data-msg="exportIncludeLocation"></span>
-            <button type="button" class="btnRetry"><span class="btnRetryImg"></span></button>
+            <button type="button" class="btnRetry">
+              <span class="btnRetryImg"></span>
+            </button>
           </h3>
           <div class="setupPlace">
             <div>
@@ -727,44 +753,66 @@
         <a id=version class=textLink href="" target="version"></a>
 
         <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools" rel="publisher" style="text-decoration: none;">
-<img src="FB-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
-</a>
+          <img src="FB-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
+        </a>
 
-<a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png"></a>
+        <a id="linkWebStore" href="" target="webstore">
+          <img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png">
+        </a>
 
-<a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3" rel="publisher" style="text-decoration: none;">
-<img src="gplus-16.png" data-msg="alt:googlePlus" style="border: 0; width: 16px; height: 16px;" />
-</a>
-
-
-<a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
-
-
-<img id="btnOpen" src="popout.png" />
-<img id="btnPrint" src="print.png" />
-
-<span id=shortcutKeys data-msg="title:shortcutKeyTitle"></span>
-
-</div>
+        <a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3" rel="publisher" style="text-decoration: none;">
+          <img src="gplus-16.png" data-msg="alt:googlePlus" style="border: 0; width: 16px; height: 16px;" />
+        </a>
 
 
-</div>
-</div>
-<script src="jquery-ui.min.js"></script>
-<script src="holydays.js"></script>
-<script src="sharedBrowser.js"></script>
-<script src="shared.js"></script>
-<script src="popup.js"></script>
-<script src="cal1.js"></script>
-<script src="cal2.js"></script>
-<script src="calWheel.js"></script>
-<script src="calGreg.js"></script>
-<script src="pageReminders.js"></script>
-<script src="pagePlanner.js"></script>
-<script src="pageExporter.js"></script>
-<script src="pageCustom.js"></script>
-<script src="misc/moment-timezone-with-data.min.js"></script>
-<!--<script src="presenteer.js"></script>-->
+        <a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
+
+
+        <img id="btnOpen" src="popout.png" />
+        <img id="btnPrint" src="print.png" />
+
+        <span id=shortcutKeys data-msg="title:shortcutKeyTitle"></span>
+
+      </div>
+
+
+    </div>
+  </div>
+  <script src="jquery-ui.min.js"></script>
+  <script src="holydays.js"></script>
+  <script src="sharedBrowser.js"></script>
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+  <script src="cal1.js"></script>
+  <script src="cal2.js"></script>
+  <script src="calWheel.js"></script>
+  <script src="calGreg.js"></script>
+  <script src="pageReminders.js"></script>
+  <script src="pagePlanner.js"></script>
+  <script src="pageExporter.js"></script>
+  <script src="pageCustom.js"></script>
+  <script src="misc/moment-timezone-with-data.min.js"></script>
+  <!--<script src="presenteer.js"></script>-->
+
+  <script type="text/x-template" id="cal2dayCell">
+    <div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
+      <div class=top>
+        <span class=dayNum>{bDay}{^holyDayAftStar}</span>
+        <span class=sunsetStart>{frag1WeekdayShort}
+          <span>{startingSunsetDesc}</span>
+        </span>
+      </div>
+      <div class=dayName>{bDayNamePri} / {bDayNameSec}</div>
+      <div class=mid>
+        <div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>
+        <div class=gStart>{frag2MonthShort} {frag2Day}
+          <span class=wd>{frag2WeekdayShort}</span>
+        </div>
+      </div>
+      <div class=day>{^holyDayAftName}</div>
+      {^sunsetDesc}
+    </div>
+  </script>
 </body>
 
 </html>

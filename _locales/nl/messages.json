@@ -316,13 +316,13 @@
     "message": "60 minutes before"
   },
   "exportBadiYear0": {
-    "message": "Badí' year - {0} B.E."
+    "message": "Badíʿ year - {0} B.E."
   },
   "exportBadiYear1": {
-    "message": "Badí' year - {0} B.E."
+    "message": "Badíʿ year - {0} B.E."
   },
   "exportCalendarDescription": {
-    "message": "Datums in de Badí'-kalender voor {location}",
+    "message": "Datums in de Badíʿ-kalender voor {location}",
     "description": "title on page"
   },
   "exportDayFromSunset": {
@@ -343,7 +343,7 @@
     "message": "Fast until {endingSunsetDesc}"
   },
   "exporterItemDescDay": {
-    "message": "A day in the Badí' calendar.",
+    "message": "A day in the Badíʿ calendar.",
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescFast": {
@@ -351,7 +351,7 @@
     "description": "Included as the description in every calendar entry"
   },
   "exporterItemDescGeneralTime": {
-    "message": "Gathering may start at any time on this Badí' day.",
+    "message": "Gathering may start at any time on this Badíʿ day.",
     "description": "For when a Holy Day as a particular time"
   },
   "exporterItemDescShared": {
@@ -363,7 +363,7 @@
     "description": "For when a Holy Day as a particular time"
   },
   "exporterTitle": {
-    "message": "Exporteer de Badí' kalender",
+    "message": "Exporteer de Badíʿ kalender",
     "description": "title on page"
   },
   "exportFile": {
@@ -401,7 +401,7 @@
     "message": "At beginning sunset only"
   },
   "exportOption_Date": {
-    "message": "Badí'-dagen <em>(365/366 dagen)</em>"
+    "message": "Badíʿ-dagen <em>(365/366 dagen)</em>"
   },
   "exportOption_Fast": {
     "message": "Fast Days <em>(19 days)</em>"
@@ -440,7 +440,7 @@
     "message": "1. Full Calendar"
   },
   "exportQuickPick1Text": {
-    "message": "Display each Badí' day, along with Holy Days and Feast times. No alerts."
+    "message": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
   },
   "exportQuickPick2": {
     "message": "2. Fast Time - Morning"
@@ -836,7 +836,7 @@
     "description": "another input"
   },
   "planFromWhenNextYear": {
-    "message": "Begin van het volgende Badí'-jaar",
+    "message": "Begin van het volgende Badíʿ-jaar",
     "description": "answer for planFromWhen"
   },
   "planFromWhenThisYear": {
@@ -966,8 +966,8 @@
     "description": "used when showing list of alarms scheduled today"
   },
   "reminderBDay": {
-    "message": "Dag {num} van de Badí' maand",
-    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    "message": "Dag {num} van de Badíʿ maand",
+    "description": "what this reminder is triggered on (left out the the apostrophe after Badíʿ since it breaks when displayed)"
   },
   "reminderBefore": {
     "message": "voor"
@@ -991,7 +991,7 @@
     "message": "{eventTime} op {eventDay} {eventMonthShort}"
   },
   "reminderDayOfMonth": {
-    "message": "Op dag {num} van de Badí' maand",
+    "message": "Op dag {num} van de Badíʿ maand",
     "description": "in list of defined reminders"
   },
   "reminderDayWhen": {
@@ -1095,7 +1095,7 @@
     "description": "a group of triggers - sunset sunrise noon midnight"
   },
   "reminderTrigger_bday": {
-    "message": "Badí' dag",
+    "message": "Badíʿ dag",
     "description": "what this reminder is triggered on"
   },
   "reminderTrigger_feast": {
@@ -1139,7 +1139,7 @@
     "description": "in dropdown list, for when no other action is chosen"
   },
   "setupAboutPara": {
-    "message": "<p>Deze extensie is ontworpen om huidige informatie over de Badí'-kalender weer te geven voor waar je bent.</p><p>Voor meer informatie, klik op de  'Versie'-link, of op een icoon!</p><p></p>",
+    "message": "<p>Deze extensie is ontworpen om huidige informatie over de Badíʿ-kalender weer te geven voor waar je bent.</p><p>Voor meer informatie, klik op de  'Versie'-link, of op een icoon!</p><p></p>",
     "description": "explanation of "
   },
   "setupAboutTitle": {
@@ -1225,7 +1225,7 @@
     "description": "heading in Fast days listing"
   },
   "sunsetHeading": {
-    "message": "Begin van de Badí' Dag",
+    "message": "Begin van de Badíʿ Dag",
     "description": "heading in Events listing"
   },
   "suspendWorkHeading": {
@@ -1250,11 +1250,11 @@
     "message": "Gebruik PgUp/PgDn toetsen om tussen pagina's te wisselen.\nGebruik pijl naar rechts/links om van dag te veranderen.\nGebruik / te wisselen tussen voor/na zonsondergang."
   },
   "title": {
-    "message": "Badí' kalender",
+    "message": "Badíʿ kalender",
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
-    "message": "Laat de huidige datum zien in de Badí'-kalender, de officiële kalender van het Bahá'í-geloof.",
+    "message": "Laat de huidige datum zien in de Badíʿ-kalender, de officiële kalender van het Bahá'í-geloof.",
     "description": "Used in the manifest"
   },
   "Tonight": {

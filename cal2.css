@@ -3,6 +3,8 @@
 /* water of Divine Unity */
 /* earth */
 #pageCal2 {
+  --dayWidth: 124px;
+  --monthWidth: calc(744) px;
   position: relative;
   padding-bottom: 16px;
   padding-top: 7px;
@@ -16,6 +18,7 @@
   display: none;
 }
 #pageCal2 .calendar {
+  width: 100%;
   margin-left: 5px;
   overflow: auto;
   max-height: 497px;
@@ -29,9 +32,11 @@
   max-width: 220px;
   margin-top: 5px;
 }
-#pageCal2 .calendar.showTimes .sunsetEnd,
-#pageCal2 .calendar.showTimes .sunsetStart span {
-  display: inline;
+#pageCal2 .calendar.showTimes .hdName {
+  margin: 0 35px 0 0px;
+}
+#pageCal2 .calendar.showTimes .sunsetEnd {
+  display: block;
 }
 #pageCal2 .calendar.showTimes .sunrise {
   display: block;
@@ -78,7 +83,7 @@
   position: relative;
   margin: 10px 0px 11px 6px;
   padding: 5px 6px;
-  width: 744px;
+  width: var(--monthWidth);
   display: inline-block;
 }
 #pageCal2 .monthShell {
@@ -112,6 +117,7 @@
 }
 #pageCal2 .gMonthInfo {
   font-size: 11pt;
+  margin: 1px 0 4px;
 }
 #pageCal2 .monthNames {
   font-size: 17pt;
@@ -119,10 +125,14 @@
 }
 #pageCal2 .dayRow {
   margin-top: -1px;
+  display: flex;
 }
 #pageCal2 .dayRow > div {
   padding: 0;
-  display: inline-block;
+  display: block;
+}
+#pageCal2 .dayRow.elementNum0 {
+  margin-top: 150px;
 }
 #pageCal2 .dayRow.elementNum0 .dayCell {
   background-image: linear-gradient(rgba(255, 20, 147, 0.2), rgba(255, 255, 255, 0) 40px);
@@ -162,27 +172,20 @@
   height: 390px;
 }
 #pageCal2 .monthNameDay .dayName {
-  padding: 0 3px 1px 3px;
+  padding: 0 2px 0 3px;
   border: 1px solid #999;
-  border-radius: 4px;
-  margin: 2px 0 0 -1px;
+  border-radius: 3px;
+  margin: 0 0 1px 2px;
 }
-#pageCal2 .monthNameDay .bWeekDay {
-  top: 36px;
-}
-#pageCal2 .month.elementNum1 .monthNameDay .dayName,
 #pageCal2 .month.elementNum1 .monthElement {
   background-color: #ffe6e6;
 }
-#pageCal2 .month.elementNum2 .monthNameDay .dayName,
 #pageCal2 .month.elementNum2 .monthElement {
   background-color: #fafafa;
 }
-#pageCal2 .month.elementNum3 .monthNameDay .dayName,
 #pageCal2 .month.elementNum3 .monthElement {
   background-color: #e8e8ff;
 }
-#pageCal2 .month.elementNum4 .monthNameDay .dayName,
 #pageCal2 .month.elementNum4 .monthElement {
   background-color: #e6ffe6;
 }
@@ -195,7 +198,7 @@
 #pageCal2 .dayCell {
   position: relative;
   height: 100px;
-  width: 124px;
+  width: var(--dayWidth);
   box-sizing: border-box;
   border: 1px solid #ddd;
   margin: 0 0 3px -1px;
@@ -205,54 +208,24 @@
 #pageCal2 .dayCell.hdDayHS {
   background-image: linear-gradient(#ff9999, #ffe5e5 100%) !important;
 }
-#pageCal2 .night {
-  position: relative;
-  text-align: right;
-}
-#pageCal2 .night .gStart {
-  display: inline-block;
-  font-size: .55rem;
-  text-align: right;
-  margin: 8px 0 0 0;
-  padding: 5px 3px 3px 4px;
-  line-height: 5px;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-top-left-radius: 5px;
-}
 #pageCal2 .hdName {
-  color: darkblue;
   font-weight: bold;
-  padding: 4px 2px 0 2px;
-  position: absolute;
-}
-#pageCal2 .top {
-  line-height: 20px;
-  height: 23px;
-  text-align: right;
-}
-#pageCal2 .top .dayNum {
-  font-weight: bold;
-  position: absolute;
-  font-size: 18px;
-  left: 3px;
+  font-size: 13px;
 }
 #pageCal2 .day {
-  position: relative;
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
 }
 #pageCal2 .sunrise {
-  margin: 27px 3px 0 0;
+  margin: 0 0 3px 0;
 }
 #pageCal2 .sunsetEnd {
   position: absolute;
   right: 3px;
   bottom: 3px;
-}
-#pageCal2 .sunsetStart {
-  padding: 2px 3px 0 0;
-  display: block;
-  font-weight: normal;
-  vertical-align: text-top;
+  text-align: right;
 }
 #pageCal2 .dayName,
 #pageCal2 .bWeekDay,
@@ -262,39 +235,66 @@
   color: #000;
   font-size: .55rem;
 }
+#pageCal2 .top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3px;
+}
+#pageCal2 .top .dayNum {
+  font-weight: bold;
+  font-size: 18px;
+}
+#pageCal2 .top .sunsetStart {
+  padding: 2px 0 0 0;
+}
+#pageCal2 .top .sunsetStart span {
+  padding-right: 3px;
+}
 #pageCal2 .dayName {
-  position: absolute;
-  top: 17px;
-  font-weight: 600;
-  left: 3px;
+  display: inline-block;
+  margin: 0 3px 3px 3px;
   font-size: 11px;
+  font-weight: bold;
+}
+#pageCal2 .mid {
+  display: flex;
+  margin: 0 0 1px 3px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+#pageCal2 .gStart {
+  padding: 2px 3px 3px 3px;
+  line-height: 6px;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-top-left-radius: 5px;
+  font-size: .55rem;
+  text-align: right;
+  white-space: nowrap;
+}
+#pageCal2 .gStart .wd {
+  padding-left: 2px;
 }
 #pageCal2 .bWeekDay {
   color: #000;
   text-align: left;
   font-size: 9px;
-  position: absolute;
-  top: 32px;
-  left: 3px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
-#pageCal2 .hdHS,
-#pageCal2 .hdHO {
+#pageCal2 .hdHS {
   display: inline-block;
   width: 13px;
-  height: 12px;
-  background: url(star12e.png);
-  margin: 0 0 0 3px;
-}
-#pageCal2 .hdHO {
-  background: url(star12b.gif);
-  background-position: 0 1px;
-  width: 12px;
+  height: 14px;
+  background: url(yellow_star.svg) no-repeat;
+  background-size: contain;
+  margin: 0 0 0 5px;
 }
 #pageCal2 .wd6 .bWeekDay {
   font-weight: bold;
-  background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-  padding: 0px 4px 2px;
-  border-radius: 3px;
+  background: #eee;
+  padding: 1px 2px 1px;
+  border-radius: 1.5px;
 }
 #pageCal2 #cal2options {
   position: absolute;
@@ -332,22 +332,32 @@
 #pageCal2.darkerColors .month.elementNum4 .monthElement {
   background-color: #009600;
 }
-#pageCal2.designB .calendar.showTimes .sunsetStart {
-  line-height: normal;
-  position: absolute;
-  bottom: 2px;
-  left: 2px;
+#pageCal2.forPrint {
+  font-family: 'Philosopher', 'Segoe UI', sans-serif;
+  --dayWidth: 120px;
+  --monthWidth: calc(720) px;
+}
+#pageCal2.forPrint .caption {
   text-align: left;
+  right: 20px;
 }
-#pageCal2.designB .calendar.showTimes .sunsetStart span {
-  display: block;
+#pageCal2.forPrint .caption .monthNames {
+  font-size: 22pt;
 }
-#pageCal2.designB .calendar.showTimes .sunsetEnd {
-  display: none;
+#pageCal2.forPrint .caption .gMonthInfo {
+  font-size: 15pt;
+}
+#pageCal2.forPrint .caption .bMonthInfo {
+  font-size: 12pt;
 }
 #pageCal2.forPrint .dayCell {
   margin: 0 10px 11px 0;
+  border: 2px solid #cc9933;
   border-radius: 3px;
+}
+#pageCal2.forPrint .dayCell.hdDayHS,
+#pageCal2.forPrint .dayCell.hdDayHO {
+  background-image: linear-gradient(#e0c285, #faf5eb 66%, #fff 100%) !important;
 }
 #pageCal2.forPrint .dayRow.elementNum0 .dayCell {
   background-image: none;
@@ -376,22 +386,24 @@ body.rtl #pageCal2 .caption {
   right: auto;
 }
 @media screen {
-  #pageCal2 .dayCell {
+  #pageCal2:not(.forPrint) .dayCell {
     cursor: pointer;
   }
-  #pageCal2 .calendar .today.dayCell {
+  #pageCal2:not(.forPrint) .calendar .today.dayCell {
     border: 1px solid #a08ece;
     z-index: 1;
   }
-  #pageCal2 .calendar .selected.dayCell {
+  #pageCal2:not(.forPrint) .calendar .selected.dayCell {
     border: 1px solid #5b439a;
     background-color: #EAEAEA;
     z-index: 1;
   }
 }
 @media print {
+  @page {
+    margin: 0;
+  }
   #pageCal2 {
-    page: myLandscape;
     border: none;
     padding: 0;
   }
@@ -401,20 +413,34 @@ body.rtl #pageCal2 .caption {
     display: none !important;
   }
   #pageCal2 .calendar {
-    page: myLandscape;
     max-height: none;
     overflow: visible;
   }
   #pageCal2 .month {
-    transform: rotate(90deg) translate(35%, 0) scale(1.3);
-    page: myLandscape;
-    transform-origin: 50% 50%;
     margin: 50px auto 0 auto;
     page-break-inside: avoid;
     page-break-after: always;
     display: block !important;
   }
+  #pageCal2.landscape {
+    page: myLandscape;
+  }
+  #pageCal2.landscape .calender {
+    page: myLandscape;
+  }
+  #pageCal2.landscape .month {
+    page: myLandscape;
+    transform: rotate(90deg) translate(35%, 0) scale(1.3);
+    transform-origin: 50% 50%;
+  }
   body[data-pageid="pageCal2"] .mainTop {
     display: none;
   }
+}
+body[lang="ta"] #pageCal2 .day {
+  bottom: 4px;
+}
+body[lang="ta"] #pageCal2 .hdName {
+  word-break: break-all;
+  line-height: 10px;
 }
