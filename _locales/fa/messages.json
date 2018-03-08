@@ -262,13 +262,13 @@
   "prev": {
     "message": "قبلی\t&larr; "
   },
-  "rbDefLang_Local": {
-    "message": "Persian",
-    "description": "put your language here, in your script"
-  },
   "rbDefLang_Ar": {
     "message": "عربی",
     "description": "Shown on the main page (see screenshot in PhraseApp)"
+  },
+  "rbDefLang_Local": {
+    "message": "Persian",
+    "description": "put your language here, in your script"
   },
   "reminderAction_zapier": {
     "message": "زاپیر وبهوک را تریگر شروع کنید",
