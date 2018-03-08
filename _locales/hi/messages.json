@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "Badíʿ Calendar",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "rbDefLang_Local": {
+    "message": "हिंदी",
+    "description": "put your language here, in your script"
+  }
+}

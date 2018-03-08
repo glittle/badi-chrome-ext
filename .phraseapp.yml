@@ -19,6 +19,10 @@
       params:
         locale_id: fr
         update_translations: true
+    - file: "./_locales/hi/messages.json" 
+      params:
+        locale_id: hi
+        update_translations: true
     - file: "./_locales/nl/messages.json" 
       params:
         locale_id: nl
@@ -63,6 +67,9 @@
     - file: "./_locales/fr/messages.json" 
       params:
         locale_id: fr
+    - file: "./_locales/hi/messages.json" 
+      params:
+        locale_id: hi
     - file: "./_locales/nl/messages.json" 
       params:
         locale_id: nl
