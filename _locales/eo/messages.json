@@ -25,7 +25,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bYearInVahidMeaning": {
     "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
@@ -209,10 +209,6 @@
   "past_StartDeltaTime": {
     "message": "komenciĝis antaŭ {numUnits} je {time}"
   },
-  "rbDefLang_Local": {
-    "message": "Esperanto",
-    "description": "put your language here, in your script"
-  },
   "planFromWhenToday": {
     "message": "Hodiaŭ",
     "description": "answer for planFromWhen"
@@ -224,6 +220,10 @@
   "plannerWhatEvent": {
     "message": "Kiu?",
     "description": "which event or events?"
+  },
+  "rbDefLang_Local": {
+    "message": "Esperanto",
+    "description": "put your language here, in your script"
   },
   "reminderBefore": {
     "message": "antaŭ"
