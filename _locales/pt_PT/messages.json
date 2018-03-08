@@ -77,7 +77,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",Glória,Beleza,Perfeição,Graça,Justiça,Majestade,Independência",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bYearInVahidMeaning": {
     "message": ",A,B,Pai,D,Porta,V,Eternidade,Generosidade,Esplendor,Amor,Deleite,Resposta,Único,Caridoso,Afecto,Início,Luminosidade,Mais Luminoso,Unidade",

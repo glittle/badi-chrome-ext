@@ -131,7 +131,7 @@
   },
   "bWeekDayMeaning": {
     "message": ",Heerlijkheid,Schoonheid,Volmaaktheid,Genade,Gerechtigheid,Majesteit,Onafhankelijkheid",
-    "description": "start with Saturday"
+    "description": "start with Saturday and a leading comma"
   },
   "bWeekdayNameAr": {
     "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
