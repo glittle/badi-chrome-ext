@@ -191,10 +191,6 @@
     "message": "{bDay} {bMonthNamePri} {bYear}",
     "description": "text when mouse is over the extension icon"
   },
-  "future_Day": {
-    "message": "",
-    "description": "shown in the eve of the day"
-  },
   "gCombinedY_1": {
     "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
     "description": "with year"
