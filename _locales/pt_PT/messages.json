@@ -29,6 +29,10 @@
     "message": "Dias Intercalares,Esplendor,Glória,Beleza,Grandeza,Luz,Misericórdia,Palavras,Perfeição,Nomes,Potência,Vontade,Conhecimento,Poder,Discurso,Perguntas,Honra,Soberania,Domínio,Sublimidade",
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
   "browserActionTitle": {
     "message": "A carregar...",
     "description": "Shown until the dynamic tip is created"
@@ -78,6 +82,10 @@
   "bWeekDayMeaning": {
     "message": ",Glória,Beleza,Perfeição,Graça,Justiça,Majestade,Independência",
     "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
   },
   "bYearInVahidMeaning": {
     "message": ",A,B,Pai,D,Porta,V,Eternidade,Generosidade,Esplendor,Amor,Deleite,Resposta,Único,Caridoso,Afecto,Início,Luminosidade,Mais Luminoso,Unidade",
@@ -735,6 +743,10 @@
   "suspendWorkHeading": {
     "message": "Suspensão de trabalho",
     "description": "heading in Events listing"
+  },
+  "timeFormat12": {
+    "message": "{time} {ampm}",
+    "description": "used when use24HourClock is set to false"
   },
   "tips": {
     "message": "Sugestões",
