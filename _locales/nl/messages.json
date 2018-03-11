@@ -34,7 +34,7 @@
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
   "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Azamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sultán,Mulk,`Alá’",
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
     "description": "month names, start with Ayyam-i-Ha"
   },
   "browserActionTitle": {
@@ -1274,7 +1274,7 @@
   },
   "use24HourClock": {
     "message": "true",
-    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
   "Vahid": {
     "message": "Váḥid"
