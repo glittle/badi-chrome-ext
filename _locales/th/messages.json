@@ -46,7 +46,7 @@
     "description": "The title of the extension. Shown in a number of locations."
   },
   "translation": {
-    "message": "แปลว่า",
+    "message": "th",
     "description": "This needs to be the international language code for this language, shown in English letters."
   }
 }
