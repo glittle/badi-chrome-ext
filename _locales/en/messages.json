@@ -1,7 +1,7 @@
 {
   "1day": {
     "message": "in {0} day",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future (see otherDays)"
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "actionSpeakDesc": {
     "message": "The reminder will be read aloud using this voice: ",
@@ -45,6 +45,14 @@
     "message": "Open in a tab",
     "description": "shown as menu item when right-clicking on the browser icon "
   },
+  "btnCal2M": {
+    "message": "Zoom to Month",
+    "description": "on button"
+  },
+  "btnCal2Y": {
+    "message": "Zoom to Year",
+    "description": "on button"
+  },
   "btnCustomBuilderCancel": {
     "message": "Cancel / New"
   },
@@ -60,7 +68,7 @@
   },
   "btnPlannerExportCsv": {
     "message": "Export to Excel",
-    "description": "button - export to Comma Separated Value format for import in to Excel"
+    "description": "button - export to Comma Separated Value format for import into Excel"
   },
   "btnPlannerExportICal": {
     "message": "Export ICAL",
@@ -137,6 +145,18 @@
     "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
     "description": "Arabic names of years in a Vahid, with leading , "
   },
+  "cal2DarkerColors": {
+    "message": "Darker <u>c</u>olors",
+    "description": "a check box on the calendar. If checked, darker colors are used."
+  },
+  "cal2ForPrint": {
+    "message": "All months when <u>p</u>rinting",
+    "description": "a check box on the calendar. If checked, formating is improved for printing."
+  },
+  "cal2ShowTimes": {
+    "message": "Show <u>t</u>imes",
+    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+  },
   "Chrome_History": {
     "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
     "description": "about page"
@@ -172,8 +192,24 @@
   "customDefined": {
     "message": "Custom Date Formats"
   },
+  "customFormats": {
+    "message": "Custom Formats",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
+  },
   "customIntroClick": {
     "message": "Click 'Copy' to copy formatted date to the clipboard."
+  },
+  "customLoadDefaultToolTip": {
+    "message": "Format to show in the Chrome icon tooltip:"
+  },
+  "customLoadDefaultToolTip1": {
+    "message": "Line 1"
+  },
+  "customLoadDefaultToolTip2": {
+    "message": "Line 2"
+  },
+  "customLoadDefaultTopDay": {
+    "message": "Format to show at the top of most pages:"
   },
   "customLoadLetters": {
     "message": "Click to copy from a standard format: "
@@ -214,6 +250,10 @@
   },
   "dayStartedPast": {
     "message": "Started"
+  },
+  "defaultFormat": {
+    "message": "(Default) ",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
   },
   "elements": {
     "message": "Fire,Air,Water,Earth",
@@ -615,6 +655,14 @@
     "message": "Show",
     "description": "choosing what to include in the listing"
   },
+  "inputLat": {
+    "message": "Latitude:",
+    "description": "on setup page"
+  },
+  "inputLng": {
+    "message": "Longitude:",
+    "description": "on setup page"
+  },
   "Intercalary": {
     "message": "Intercalary Days"
   },
@@ -635,6 +683,10 @@
   "KullishayLocal": {
     "message": "All-Things",
     "description": "Transalation of Kull-i-Shay"
+  },
+  "languageList": {
+    "message": "de:German,en:English,eo:Esperanto,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai",
+    "description": "On setup page. Order here does not matter. Format: 'code:Name in local language' -- translate name, but NOT code"
   },
   "locationError": {
     "message": "Unable to determine your current location.\n\nThe extension will use 6:30pm for sunset on every date.",
@@ -676,6 +728,10 @@
   },
   "next": {
     "message": "Next &rarr;"
+  },
+  "nextMonth": {
+    "message": "Next <u>M</u>onth",
+    "description": "button to move to next month (gregorian or badi)"
   },
   "nextRefreshAlarm": {
     "message": "Next refresh scheduled after {0}: {1}",
@@ -790,6 +846,10 @@
     "message": "Reminders",
     "description": "page tab name and page title"
   },
+  "pick_pageSetup": {
+    "message": "Setup",
+    "description": "page for setup information"
+  },
   "planFromWhen": {
     "message": "Starting from when?",
     "description": "another input"
@@ -877,6 +937,10 @@
   "prev": {
     "message": "&larr; Prev"
   },
+  "prevMonth": {
+    "message": "Prev Mo<u>n</u>th",
+    "description": "button to move to previous month (gregorian or badi)"
+  },
   "prevYear": {
     "message": "Prev Year",
     "description": "hold Shift and press left arrow key"
@@ -890,7 +954,8 @@
     "description": "on first tab... show Arabic names or in your language"
   },
   "rbDefLang_Ar": {
-    "message": "Arabic"
+    "message": "Arabic",
+    "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
     "message": "English",
@@ -921,7 +986,7 @@
   },
   "reminderBDay": {
     "message": "Day {num} of the Badíʿ month",
-    "description": "what this reminder is triggered on (left out the the apostrophe after Badíʿ since it breaks when displayed)"
+    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
   },
   "reminderBefore": {
     "message": "before"
@@ -1144,6 +1209,44 @@
     "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
     "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
   },
+  "setupAboutPara": {
+    "message": "<p>This Web Extension is designed to provide current information about the Badíʿ calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
+    "description": "explanation of "
+  },
+  "setupAboutTitle": {
+    "message": "About",
+    "description": "title for the About section"
+  },
+  "setupColor": {
+    "message": "Text color for toolbar icon:",
+    "description": "on setup page"
+  },
+  "setupColorH3": {
+    "message": "Icon Color",
+    "description": "on setup page"
+  },
+  "setupLangH3": {
+    "message": "Language",
+    "description": "on setup page"
+  },
+  "setupLangPct": {
+    "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
+  },
+  "setupLangPct100": {
+    "message": "100% translated!"
+  },
+  "setupOptOut": {
+    "message": "Opt out?",
+    "description": "label for checkbox"
+  },
+  "setupOptOutPara": {
+    "message": "To help understand how this Web Extension is being used, statistics are recorded whenever you switch between pages or do other major actions. This is anonymous, and the associated reports can be viewed by Glen Little. If you wish to opt out and turn this off, you may check this box:",
+    "description": "explanation of opting out of Google Analytics"
+  },
+  "setupOptOutTitle": {
+    "message": "Analytics",
+    "description": "title for setup section about opting out of Google Analytics"
+  },
   "shoghiExample": {
     "message": "This is the weekday of {bWeekdayNamePri}, the day of {bDayNamePri}, of the month of {bMonthNamePri}, of the year {bYearInVahidNamePri}, of the {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
     "description": "Example given by Shoghi Effendi"
@@ -1177,6 +1280,10 @@
     "message": "About 2 hours after sunset",
     "description": "Declaration of the Bab"
   },
+  "standardFormats": {
+    "message": "Standard Formats",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
+  },
   "startedWithSunset": {
     "message": "Started with sunset at {0}"
   },
@@ -1205,6 +1312,10 @@
   "suspendWorkHeading": {
     "message": "Suspend Work",
     "description": "heading in Events listing"
+  },
+  "textDirection": {
+    "message": "ltr",
+    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
   },
   "timeFormat12": {
     "message": "{time} {ampm}",
@@ -1236,7 +1347,8 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "en"
+    "message": "en",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "upcomingDateFormat": {
     "message": "{bMonthNamePri} {bDay} ({gCombined})",
@@ -1247,7 +1359,7 @@
   },
   "use24HourClock": {
     "message": "false",
-    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
   "Vahid": {
     "message": "Váḥid"
@@ -1290,115 +1402,5 @@
   "zapierKey": {
     "message": "Zapier Webhook",
     "description": "url for Zapier"
-  },
-  "pick_pageSetup": {
-    "message": "Setup",
-    "description": "page for setup information"
-  },
-  "setupOptOutTitle": {
-    "message": "Analytics",
-    "description": "title for setup section about opting out of Google Analytics"
-  },
-  "setupOptOutPara": {
-    "message": "To help understand how this Web Extension is being used, statistics are recorded whenever you switch between pages or do other major actions. This is anonymous, and the associated reports can be viewed by Glen Little. If you wish to opt out and turn this off, you may check this box:",
-    "description": "explanation of opting out of Google Analytics"
-  },
-  "setupOptOut": {
-    "message": "Opt out?",
-    "description": "label for checkbox"
-  },
-  "setupAboutTitle": {
-    "message": "About",
-    "description": "title for the About section"
-  },
-  "setupAboutPara": {
-    "message": "<p>This Web Extension is designed to provide current information about the Badíʿ calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
-    "description": "explanation of "
-  },
-  "cal2ShowTimes": {
-    "message": "Show <u>t</u>imes",
-    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
-  },
-  "cal2DarkerColors": {
-    "message": "Darker <u>c</u>olors",
-    "description": "a check box on the calendar. If checked, darker colors are used."
-  },
-  "cal2ForPrint": {
-    "message": "All months when <u>p</u>rinting",
-    "description": "a check box on the calendar. If checked, formatting is improved for printing and all months are printed."
-  },
-  "nextMonth": {
-    "message": "Next <u>M</u>onth",
-    "description": "button to move to next month (gregorian or badi)"
-  },
-  "prevMonth": {
-    "message": "Prev Mo<u>n</u>th",
-    "description": "button to move to previous month (gregorian or badi)"
-  },
-  "btnCal2Y": {
-    "message": "Zoom to Year",
-    "description": "on button"
-  },
-  "btnCal2M": {
-    "message": "Zoom to Month",
-    "description": "on button"
-  },
-  "customLoadDefaultToolTip": {
-    "message": "Format to show in the Chrome icon tooltip:",
-    "description": ""
-  },
-  "customLoadDefaultToolTip1": {
-    "message": "Line 1",
-    "description": ""
-  },
-  "customLoadDefaultToolTip2": {
-    "message": "Line 2",
-    "description": ""
-  },
-  "customLoadDefaultTopDay": {
-    "message": "Format to show at the top of most pages:",
-    "description": ""
-  },
-  "defaultFormat": {
-    "message": "(Default) ",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "standardFormats": {
-    "message": "Standard Formats",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "customFormats": {
-    "message": "Custom Formats",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "setupColorH3": {
-    "message": "Icon Color",
-    "description": "on setup page"
-  },
-  "setupColor": {
-    "message": "Text color for toolbar icon:",
-    "description": "on setup page"
-  },
-  "inputLat": {
-    "message": "Latitude:",
-    "description": "on setup page"
-  },
-  "inputLng": {
-    "message": "Longitude:",
-    "description": "on setup page"
-  },
-  "setupLangH3": {
-    "message": "Language",
-    "description": "on setup page"
-  },
-  "setupLangPct": {
-    "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
-  },
-  "setupLangPct100": {
-    "message": "100% translated!"
-  },
-  "languageList": {
-    "message": "de:German,en:English,eo:Esperanto,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai",
-    "description": "On setup page. Order here does not matter. Format: 'code:Name in local language' -- translate name, but NOT code"
   }
 }
