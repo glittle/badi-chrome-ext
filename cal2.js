@@ -45,7 +45,8 @@ var Cal2 = function () {
     // _page.addClass('forPrint');
     // _page.find('#cbCal2Print').prop('checked', true)
     
-    _page.find('#cbCal2Times').prop('checked', true)
+    _page.find('#cbShowTimes').prop('checked', true)
+    _calendarDiv.addClass('showTimes');
     
     _page.find('#btnCal2Y').click(function () {
       zoomTo('Y');

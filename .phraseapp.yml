@@ -3,8 +3,9 @@
   file_format: "json" 
   push:
     sources:
-        update_translations: true
       - file: "./_locales/<locale_code>/messages.json"
+        params:
+            update_translations: true
   pull:
     targets:
       - file: "./_locales/<locale_code>/messages.json"
