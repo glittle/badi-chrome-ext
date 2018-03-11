@@ -1,0 +1,90 @@
+{
+  "bMonthMeaning": {
+    "message": "'哈'之日,荣,华,美,耀,光,恩,道,全,名,力,志,智,权,言,问,尊,治,统,崇",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "阿亚米哈,巴哈,贾拉勒,贾迈勒,阿泽迈特,努尔,拉赫迈特,凯利马特,卡迈勒,埃斯玛,伊扎特,迈希耶特,伊勒姆,古德雷特,高勒,迈萨伊勒,谢拉夫,苏丹,穆勒克,阿拉",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "bWeekDayMeaning": {
+    "message": ",荣耀,美丽,完美,优雅,正义,高贵,独立",
+    "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",贾拉勒,贾迈勒,卡迈勒,菲达勒,伊达勒,伊斯提杰拉勒,伊斯提格拉勒",
+    "description": "weekday names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": ",艾利夫,巴,阿巴,达勒,巴孛,瓦乌,阿巴德,贾德,巴哈,胡卜,巴哈杰,贾瓦卜,阿哈德,瓦哈卜,维达德,巴迪,巴希,阿卜哈,瓦希德",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
+  "elements": {
+    "message": "火,氣,水,土",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "gMonthLong": {
+    "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+  },
+  "gMonthShort": {
+    "message": "x一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "阿博都-巴哈升天日"
+  },
+  "HolyDay_AscBaha": {
+    "message": "巴哈欧拉升天日"
+  },
+  "HolyDay_BirthBab": {
+    "message": "巴孛诞辰"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "巴哈欧拉诞辰"
+  },
+  "HolyDay_Covenant": {
+    "message": "圣约日"
+  },
+  "HolyDay_DeclBab": {
+    "message": "巴孛宣示日"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "巴孛殉道日"
+  },
+  "HolyDay_NawRuz": {
+    "message": "诺鲁孜节"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "里兹万节的第一日"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "里兹万节的第十二日"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "里兹万节的第九日"
+  },
+  "Kullishay": {
+    "message": "库勒谢"
+  },
+  "ordinalNames": {
+    "message": ",一,二,三,四,五,六,七,八,九,十,十一,十二,十三,十四,十五,十六,十七,十八,十九"
+  },
+  "rbDefLang_Local": {
+    "message": "中文",
+    "description": "put your language here, in your script"
+  },
+  "shoghiExample": {
+    "message": "第{KullishayLabelPri}个库勒谢的第{VahidLabelPri}个瓦希德的{bYearInVahidNamePri}年{bMonthNamePri}月{bDayNamePri}日一周当中的{bWeekdayNamePri}日",
+    "description": "Example given by Shoghi Effendi"
+  },
+  "title": {
+    "message": "巴迪历",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "zh_CN",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "Vahid": {
+    "message": "瓦希德"
+  }
+}
