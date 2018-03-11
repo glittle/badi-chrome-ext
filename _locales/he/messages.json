@@ -1,0 +1,69 @@
+{
+  "bMonthMeaning": {
+    "message": "ימי הַאאְ,זוהר,תהילה,יופי,גדולה,אור,רחמים,מילים,שלמות,שמות,עוצמה,רצון,ידע,כוח,נאום,שאלות,כבוד,ריבונות,שלטון,רוממות",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "איאם-אי הא,בַּהָאאְ,ג'לאל,ג'מאל,עזמת,נור,רחמת,כַּלִמאת,כמאל,אסמאא,עִזַת,מַשִיַת,עִלְם,קֻדרַת,קול,מסַאאֶל,שרף,סֻלטאן,מֻלְכּ,עַלַאאְ",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "bWeekDayMeaning": {
+    "message": ",תהילה,יופי,שלמות,חסד,צדק,הדר,עצמאות",
+    "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",ג'לאל,ג'מאל,כמאל,פידאל,עִדאל,אִסתג'לאל,אִסתקלאל ",
+    "description": "weekday names, with leading , "
+  },
+  "elements": {
+    "message": "אש,אוויר,מים,אדמה",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "gMonthLong": {
+    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
+  },
+  "gMonthShort": {
+    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "יום פטירת עבד אלבהאא"
+  },
+  "HolyDay_AscBaha": {
+    "message": "פטירת בהאא אללאה"
+  },
+  "HolyDay_BirthBab": {
+    "message": "יום הולדת הבאב"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "יום הולדת בהאא אללאה"
+  },
+  "HolyDay_Covenant": {
+    "message": "יום הברית"
+  },
+  "HolyDay_DeclBab": {
+    "message": "הכרזת הבאב על התגלותו"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "הריגת הבאב"
+  },
+  "HolyDay_NawRuz": {
+    "message": "נו רוז"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "היום הראשון של רזואן"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "היום השנים עשר של רזואן"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "היום התשיעי של רזואן"
+  },
+  "textDirection": {
+    "message": "rtl",
+    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+  },
+  "title": {
+    "message": "לוח השנה הבהאי",
+    "description": "The title of the extension. Shown in a number of locations."
+  }
+}
