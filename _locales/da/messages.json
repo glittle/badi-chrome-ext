@@ -1,0 +1,6 @@
+{
+  "1day": {
+    "message": "om {0} dag",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+  }
+}
