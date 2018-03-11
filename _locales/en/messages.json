@@ -685,7 +685,7 @@
     "description": "Transalation of Kull-i-Shay"
   },
   "languageList": {
-    "message": "de:German,en:English,eo:Esperanto,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai",
+    "message": "de:German,en:English,eo:Esperanto,es:Spanish,fa:Persian,fr:French,nl:Dutch,pt_PT:Portugese,ta:Tamil,th:Thai,ru:Russian",
     "description": "On setup page. Order here does not matter. Format: 'code:Name in local language' -- translate name, but NOT code"
   },
   "locationError": {
