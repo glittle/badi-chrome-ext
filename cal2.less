@@ -1,522 +1,574 @@
-    @import "colors.less";
-    @borderWidth: 3px;
-    #pageCal2 {
-        --dayWidth: 124px;
-        --monthWidth: calc(124 * 6)px;
+@import "colors.less";
+@borderWidth: 3px;
+#pageCal2 {
+    --dayWidth: 124px;
+    --monthWidth: calc(124 * 6)px;
+    position: relative;
+    padding-bottom: 16px;
+    padding-top: 7px;
+    .placeName {
+        display: none;
+    }
+    .sunsetEnd,
+    .sunsetStart span,
+    .sunrise {
+        display: none;
+    }
+    .calendar {
+        width: 100%;
+        margin-left: 5px;
+        overflow: auto;
+        max-height: 497px;
         position: relative;
-        padding-bottom: 16px;
-        padding-top: 7px;
-        .placeName {
-            display: none;
-        }
-        .sunsetEnd,
-        .sunsetStart span,
-        .sunrise {
-            display: none;
-        }
-        .calendar {
-            width: 100%;
-            margin-left: 5px;
-            overflow: auto;
-            max-height: 497px;
-            position: relative;
-            &.showTimes {
-                .placeName {
-                    display: block;
-                    font-style: italic;
-                    font-size: 80%;
-                    max-width: 220px;
-                    margin-top: 5px;
-                }
-                .hdName {
-                    margin: 0 35px 0 0px;
-                }
-                .sunsetEnd {
-                    display: block;
-                }
-                .sunrise {
-                    display: block;
-                }
-                .todayTime {
-                    position: absolute;
-                    display: block;
-                    bottom: 0;
-                    width: 1px;
-                    height: 15px;
-                    background-image: linear-gradient(to top, @bdayBorderColor, @bdayBorderColor 3px, transparent 100%);
-                    &:before {
-                        border-right: 2px solid transparent;
-                        border-left: 2px solid transparent;
-                        border-bottom: 4px solid @bdayBorderColor;
-                        display: block;
-                        content: '';
-                        width: 0;
-                        height: 0;
-                        transform: translate(-1.65px, 12px);
-                    }
-                }
+        &.showTimes {
+            .placeName {
+                display: block;
+                font-style: italic;
+                font-size: 80%;
+                max-width: 220px;
+                margin-top: 5px;
             }
-            .todayTime {
-                display: none;
+            .hdName {
+                margin: 0 35px 0 0px;
             }
-            transition: all 1s;
-        }
-        &.zoomY {
-            #btnCal2Y {
-                display: none;
-            }
-            .month {
-                transition: all 1s;
-                opacity: 0;
-            }
-        }
-        &.zoomM {
-            #btnCal2M {
-                display: none;
-            }
-        }
-        .cal2NavButtons {
-            position: absolute;
-            right: 22px;
-            top: 160px;
-            z-index: 1;
-            display: none; // not ready yet
-        }
-        .month {
-            position: relative;
-            margin: 10px 0px 11px 6px;
-            padding: 5px 6px;
-            width: var(--monthWidth);
-            display: inline-block;
-        }
-        .monthShell {
-            width: 738px;
-            height: 395px;
-            position: absolute;
-            border: 1px solid red;
-            top: 14px;
-            left: 11px;
-            transition: all ease-in-out 1s;
-            opacity: 0;
-            z-index: -1;
-            &.sizeY {
-                width: 122px;
-                height: 98px;
-                transition: all ease-in-out 1s;
-                z-index: 1;
-            }
-            .monthNum {
-                font-size: 2em;
-            }
-        }
-        .caption {
-            position: absolute;
-            top: 0;
-            right: 6px;
-            text-align: right;
-        }
-        .bMonthInfo {
-            font-size: 11pt;
-        }
-        .gMonthInfo {
-            font-size: 11pt;
-            margin: 1px 0 4px;
-        }
-        .monthNames {
-            font-size: 17pt;
-            font-weight: bold;
-        }
-        .dayRow {
-            margin-top: -1px;
-            display: flex;
-            >div {
-                padding: 0;
+            .sunsetEnd {
                 display: block;
             }
+            .sunrise {
+                display: block;
+            }
+            .todayTime {
+                position: absolute;
+                display: block;
+                bottom: 0;
+                width: 1px;
+                height: 15px;
+                background-image: linear-gradient(to top, @bdayBorderColor, @bdayBorderColor 3px, transparent 100%);
+                &:before {
+                    border-right: 2px solid transparent;
+                    border-left: 2px solid transparent;
+                    border-bottom: 4px solid @bdayBorderColor;
+                    display: block;
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    transform: translate(-1.65px, 12px);
+                }
+            }
         }
+        .todayTime {
+            display: none;
+        }
+        transition: all 1s;
+    }
+    &.zoomY {
+        #btnCal2Y {
+            display: none;
+        }
+        .month {
+            transition: all 1s;
+            opacity: 0;
+        }
+    }
+    &.zoomM {
+        #btnCal2M {
+            display: none;
+        }
+    }
+    .cal2NavButtons {
+        position: absolute;
+        right: 22px;
+        top: 160px;
+        z-index: 1;
+        display: none; // not ready yet
+    }
+    .month {
+        position: relative;
+        margin: 10px 0px 11px 6px;
+        padding: 5px 6px;
+        width: var(--monthWidth);
+        display: inline-block;
+    }
+    .monthShell {
+        width: 738px;
+        height: 395px;
+        position: absolute;
+        border: 1px solid red;
+        top: 14px;
+        left: 11px;
+        transition: all ease-in-out 1s;
+        opacity: 0;
+        z-index: -1;
+        &.sizeY {
+            width: 122px;
+            height: 98px;
+            transition: all ease-in-out 1s;
+            z-index: 1;
+        }
+        .monthNum {
+            font-size: 2em;
+        }
+    }
+    .caption {
+        position: absolute;
+        top: 0;
+        right: 6px;
+        text-align: right;
+    }
+    .bMonthInfo {
+        font-size: 11pt;
+    }
+    .gMonthInfo {
+        font-size: 11pt;
+        margin: 1px 0 4px;
+    }
+    .monthNames {
+        font-size: 17pt;
+        font-weight: bold;
+    }
+    .dayRow {
+        margin-top: -1px;
+        display: flex;
+        >div {
+            padding: 0;
+            display: block;
+        }
+    }
+    .dayRow.elementNum0 {
+        // margin-top: 150px;
+        .dayCell {
+            background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
+            width: 100px;
+        }
+        .dayName {
+            display: none;
+        }
+    }
+    @gradientEnd: 40px;
+    @endColor: rgba(255, 255, 255, 0);
+    .dayRow.elementNum1 {
+        .dayCell {
+            background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+        }
+    }
+    .monthShell.elementNum1 {
+        background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+    }
+    .dayRow.elementNum2 {
+        .dayCell {
+            background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+        }
+    }
+    .monthShell.elementNum2 {
+        background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+    }
+    .dayRow.elementNum3 {
+        .dayCell {
+            background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+        }
+    }
+    .monthShell.elementNum3 {
+        background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+    }
+    .dayRow.elementNum4 {
+        .dayCell {
+            background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+        }
+    }
+    .monthShell.elementNum4 {
+        background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+    }
+    .monthRow {
+        white-space: nowrap;
+    }
+    .month.elementNum0 {
+        height: 390px; // keep it big
+    }
+    .monthNameDay {
+        .dayName {
+            padding: 0 2px 0 3px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin: 0 0 1px 2px;
+        }
+    }
+    .month.elementNum1 {
+        // .monthNameDay .dayName,
+        .monthElement {
+            background-color: @lightFire;
+        }
+    }
+    .month.elementNum2 {
+        // .monthNameDay .dayName,
+        .monthElement {
+            background-color: @lightAir;
+        }
+    }
+    .month.elementNum3 {
+        // .monthNameDay .dayName,
+        .monthElement {
+            background-color: @lightWater;
+        }
+    }
+    .month.elementNum4 {
+        // .monthNameDay .dayName,
+        .monthElement {
+            background-color: @lightEarth;
+        }
+    }
+    .monthElement {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        padding: 1px 10px 3px 10px;
+        border-radius: 5px;
+    }
+    .dayCell {
+        position: relative;
+        height: 100px;
+        width: var(--dayWidth);
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        margin: 0 0 3px -1px;
+        white-space: normal;
+        background-color: #fff;
+        &.hdDayHS {
+            background-image: linear-gradient(lighten(red, 30%), lighten(red, 45%) 100%) !important;
+        }
+    }
+    .hdName {
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .day {
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        right: 3px;
+    }
+    .sunrise {
+        margin: 0 0 3px 0;
+    }
+    .sunsetEnd {
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        text-align: right;
+    }
+    .dayName,
+    .bWeekDay,
+    .sunrise,
+    .sunsetStart,
+    .sunsetEnd {
+        color: #000;
+        font-size: .55rem;
+    }
+    .top {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 3px;
+        .dayNum {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .sunsetStart {
+            padding: 2px 0 0 0;
+            span {
+                padding-right: 3px;
+            }
+        }
+    }
+    .dayName {
+        display: inline-block;
+        margin: 0 3px 3px 3px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .mid {
+        display: flex;
+        margin: 0 0 1px 3px;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .gStart {
+        padding: 2px 3px 3px 3px;
+        line-height: 6px;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-top-left-radius: 5px;
+        font-size: .55rem;
+        text-align: right;
+        white-space: nowrap;
+        .wd {
+            padding-left: 2px;
+        }
+    }
+    .bWeekDay {
+        color: #000;
+        text-align: left;
+        font-size: 9px; //font-style: italic;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+    .hdHS {
+        display: inline-block;
+        width: 13px;
+        height: 14px;
+        background: url(./yellow_star.svg) no-repeat;
+        background-size: contain;
+        margin: 0 0 0 5px;
+    }
+    .wd6 {
+        .bWeekDay {
+            font-weight: bold; // background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
+            background: #eee;
+            padding: 1px 2px 1px;
+            border-radius: 1.5px;
+        }
+    }
+    #cal2options {
+        position: absolute;
+        right: 20px;
+        bottom: 4px;
+        z-index: 1;
+        span {
+            margin-left: -2px;
+        }
+    }
+    &.darkerColors {
         .dayRow.elementNum0 {
-            margin-top: 150px;
             .dayCell {
-                background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
-                width: 100px;
-            }
-            .dayName {
-                display: none;
+                background-image: linear-gradient(@darkAyyamiHa, @endColor @gradientEnd);
             }
         }
-        @gradientEnd: 40px;
-        @endColor: rgba(255, 255, 255, 0);
         .dayRow.elementNum1 {
             .dayCell {
-                background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+                background-image: linear-gradient(@darkFire, @endColor @gradientEnd);
             }
-        }
-        .monthShell.elementNum1 {
-            background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
         }
         .dayRow.elementNum2 {
             .dayCell {
-                background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+                background-image: linear-gradient(@darkAir, @endColor @gradientEnd);
             }
-        }
-        .monthShell.elementNum2 {
-            background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
         }
         .dayRow.elementNum3 {
             .dayCell {
-                background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+                background-image: linear-gradient(@darkWater, @endColor @gradientEnd);
             }
-        }
-        .monthShell.elementNum3 {
-            background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
         }
         .dayRow.elementNum4 {
             .dayCell {
-                background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+                background-image: linear-gradient(@darkEarth, @endColor @gradientEnd);
             }
         }
-        .monthShell.elementNum4 {
-            background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+        .month.elementNum1 .monthElement {
+            background-color: @darkFire;
         }
-        .monthRow {
-            white-space: nowrap;
+        .month.elementNum2 .monthElement {
+            background-color: @darkAir;
         }
-        .month.elementNum0 {
-            height: 390px; // keep it big
+        .month.elementNum3 .monthElement {
+            background-color: @darkWater;
         }
-        .monthNameDay {
-            .dayName {
-                padding: 0 2px 0 3px;
-                border: 1px solid #999;
-                border-radius: 3px;
-                margin: 0 0 1px 2px;
-            }
-        }
-        .month.elementNum1 {
-            // .monthNameDay .dayName,
-            .monthElement {
-                background-color: @lightFire;
-            }
-        }
-        .month.elementNum2 {
-            // .monthNameDay .dayName,
-            .monthElement {
-                background-color: @lightAir;
-            }
-        }
-        .month.elementNum3 {
-            // .monthNameDay .dayName,
-            .monthElement {
-                background-color: @lightWater;
-            }
-        }
-        .month.elementNum4 {
-            // .monthNameDay .dayName,
-            .monthElement {
-                background-color: @lightEarth;
-            }
-        }
-        .monthElement {
-            display: inline-block;
-            margin: 0 0 0 10px;
-            padding: 1px 10px 3px 10px;
-            border-radius: 5px;
-        }
-        .dayCell {
-            position: relative;
-            height: 100px;
-            width: var(--dayWidth);
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            margin: 0 0 3px -1px;
-            white-space: normal;
-            background-color: #fff;
-            &.hdDayHS {
-                background-image: linear-gradient(lighten(red, 30%), lighten(red, 45%) 100%) !important;
-            }
-        }
-        .hdName {
-            font-weight: bold;
-            font-size: 13px;
-        }
-        .day {
-            position: absolute;
-            bottom: 3px;
-            left: 3px;
-            right: 3px;
-        }
-        .sunrise {
-            margin: 0 0 3px 0;
-        }
-        .sunsetEnd {
-            position: absolute;
-            right: 3px;
-            bottom: 3px;
-            text-align: right;
-        }
-        .dayName,
-        .bWeekDay,
-        .sunrise,
-        .sunsetStart,
-        .sunsetEnd {
-            color: #000;
-            font-size: .55rem;
-        }
-        .top {
-            display: flex;
-            justify-content: space-between;
-            margin: 0 3px;
-            .dayNum {
-                font-weight: bold;
-                font-size: 18px;
-            }
-            .sunsetStart {
-                padding: 2px 0 0 0;
-                span {
-                    padding-right: 3px;
-                }
-            }
-        }
-        .dayName {
-            display: inline-block;
-            margin: 0 3px 3px 3px;
-            font-size: 11px;
-            font-weight: bold;
-        }
-        .mid {
-            display: flex;
-            margin: 0 0 1px 3px;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .gStart {
-            padding: 2px 3px 3px 3px;
-            line-height: 6px;
-            border-top: 1px solid #ddd;
-            border-left: 1px solid #ddd;
-            border-top-left-radius: 5px;
-            font-size: .55rem;
-            text-align: right;
-            white-space: nowrap;
-            .wd {
-                padding-left: 2px;
-            }
-        }
-        .bWeekDay {
-            color: #000;
-            text-align: left;
-            font-size: 9px; //font-style: italic;
-            word-break: break-all;
-            word-wrap: break-word;
-        }
-        .hdHS {
-            display: inline-block;
-            width: 13px;
-            height: 14px;
-            background: url(./yellow_star.svg) no-repeat;
-            background-size: contain;
-            margin: 0 0 0 5px;
-        }
-        .wd6 {
-            .bWeekDay {
-                font-weight: bold; // background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-                background: #eee;
-                padding: 1px 2px 1px;
-                border-radius: 1.5px;
-            }
-        }
-        #cal2options {
-            position: absolute;
-            right: 20px;
-            bottom: 4px;
-            z-index: 1;
-            span {
-                margin-left: -2px;
-            }
-        }
-        &.darkerColors {
-            .dayRow.elementNum0 {
-                .dayCell {
-                    background-image: linear-gradient(@darkAyyamiHa, @endColor @gradientEnd);
-                }
-            }
-            .dayRow.elementNum1 {
-                .dayCell {
-                    background-image: linear-gradient(@darkFire, @endColor @gradientEnd);
-                }
-            }
-            .dayRow.elementNum2 {
-                .dayCell {
-                    background-image: linear-gradient(@darkAir, @endColor @gradientEnd);
-                }
-            }
-            .dayRow.elementNum3 {
-                .dayCell {
-                    background-image: linear-gradient(@darkWater, @endColor @gradientEnd);
-                }
-            }
-            .dayRow.elementNum4 {
-                .dayCell {
-                    background-image: linear-gradient(@darkEarth, @endColor @gradientEnd);
-                }
-            }
-            .month.elementNum1 .monthElement {
-                background-color: @darkFire;
-            }
-            .month.elementNum2 .monthElement {
-                background-color: @darkAir;
-            }
-            .month.elementNum3 .monthElement {
-                background-color: @darkWater;
-            }
-            .month.elementNum4 .monthElement {
-                background-color: @darkEarth;
-            }
-        }
-        &.forPrint {
-            font-family: 'Philosopher', 'Segoe UI', sans-serif;
-            --dayWidth: 120px;
-            --monthWidth: calc(120 * 6)px;
-            .caption {
-                text-align: left;
-                right: 20px;
-                .monthNames {
-                    font-size: 22pt;
-                }
-                .gMonthInfo {
-                    font-size: 15pt;
-                }
-                .bMonthInfo {
-                    font-size: 12pt;
-                }
-            }
-            @color1: #cc9933;
-            .dayCell {
-                margin: 0 10px 11px 0;
-                border: 2px solid @color1;
-                border-radius: 3px;
-                &.hdDayHS,
-                &.hdDayHO {
-                    background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, #fff 100%) !important;
-                }
-            }
-            .dayRow.elementNum0 {
-                .dayCell {
-                    background-image: none;
-                }
-            }
-            .dayRow.elementNum1 {
-                .dayCell {
-                    background-image: none;
-                }
-            }
-            .dayRow.elementNum2 {
-                .dayCell {
-                    background-image: none;
-                }
-            }
-            .dayRow.elementNum3 {
-                .dayCell {
-                    background-image: none;
-                }
-            }
-            .dayRow.elementNum4 {
-                .dayCell {
-                    background-image: none;
-                }
-            }
+        .month.elementNum4 .monthElement {
+            background-color: @darkEarth;
         }
     }
+}
 
-    body[data-pageid=pageCal2] {
-        &.inTab {
-            #pageCal2 {
-                .calendar {
-                    max-height: none;
-                }
-            }
-            overflow-y: auto;
-        }
-    }
-
-    body.rtl {
+body[data-pageid=pageCal2] {
+    &.inTab {
         #pageCal2 {
-            .caption {
-                direction: rtl;
-                left: 6px;
-                right: auto;
-            }
-        }
-    }
-
-    @media screen {
-        #pageCal2:not(.forPrint) {
-            .dayCell {
-                cursor: pointer;
-            }
-            .calendar {
-                .today.dayCell {
-                    border: 1px solid lighten(@todayBorderColor, 10%);
-                    z-index: 1;
-                }
-                .selected.dayCell {
-                    border: 1px solid @bdayBorderColor;
-                    background-color: #EAEAEA;
-                    z-index: 1;
-                }
-            }
-        }
-    }
-
-    @media print {
-        @page {
-            margin: 0;
-        }
-        #pageCal2 {
-            border: none;
-            padding: 0;
-            .todayTime,
-            .cal2NavButtons,
-            #cal2options {
-                display: none !important;
-            }
             .calendar {
                 max-height: none;
-                overflow: visible;
+            }
+        }
+        overflow-y: auto;
+    }
+}
+
+@media screen {
+    #pageCal2:not(.forPrint) {
+        .dayCell {
+            cursor: pointer;
+        }
+        .calendar {
+            .today.dayCell {
+                border: 1px solid lighten(@todayBorderColor, 10%);
+                z-index: 1;
+            }
+            .selected.dayCell {
+                border: 1px solid @bdayBorderColor;
+                background-color: #EAEAEA;
+                z-index: 1;
+            }
+        }
+    }
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    #mainBody {
+        margin: 0;
+    }
+    .todayTime,
+    .cal2NavButtons,
+    #cal2options {
+        display: none !important;
+    }
+    #pageCal2.forPrint {
+        border: none;
+        padding: 0;
+        font-family: 'Philosopher', 'Segoe UI', sans-serif;
+        --dayWidth: 120px;
+        --monthWidth: calc(120 * 6)px;
+        .caption {
+            text-align: left;
+            right: 20px;
+        }
+        @color1: #cc9933;
+        .dayCell {
+            margin: 0 10px 11px 0;
+            border: 2px solid @color1;
+            border-radius: 3px;
+            &.hdDayHS,
+            &.hdDayHO {
+                background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, #fff 100%) !important;
+            }
+        }
+        .dayRow.elementNum0 {
+            .dayCell {
+                background-image: none;
+            }
+        }
+        .dayRow.elementNum1 {
+            .dayCell {
+                background-image: none;
+            }
+        }
+        .dayRow.elementNum2 {
+            .dayCell {
+                background-image: none;
+            }
+        }
+        .dayRow.elementNum3 {
+            .dayCell {
+                background-image: none;
+            }
+        }
+        .dayRow.elementNum4 {
+            .dayCell {
+                background-image: none;
+            }
+        }
+        .calendar {
+            max-height: none;
+            overflow: visible;
+            margin: 0;
+        }
+        .monthDays {
+            position: absolute;
+            top: 300px;
+            left: 25px;
+        }
+        .month {
+            background: no-repeat bottom right;
+            background-size: cover;
+            height: 100.3vh;
+            width: 100vw;
+            margin: 0; //margin: 50px auto 0 auto;
+            page-break-inside: avoid;
+            page-break-after: always;
+            display: block !important;
+            .month {
+                margin: 280px 0 0 24px;
+            } // background-image: url(TempBackground.png);
+            //background-image: url(background1.jpg);
+            // &.elementNum2 {
+            // background-image: url(TempBackground2.png);
+            // background-image: url(background2.jpg);
+            // }
+            // &.elementNum3 {
+            //     background-image: url(background3.jpg);
+            // }
+            // &.elementNum4 {
+            //     background-image: url(background4.jpg);
+            // }
+            // &.elementNum0 {
+            //     background-image: url(background0.jpg);
+            // }
+        }
+        .caption {
+            text-align: left;
+            left: -10px;
+            top: 50px;
+            right: unset;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px 30px 20px 130px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            .monthNames {
+                font-size: 22pt;
+            }
+            .gMonthInfo {
+                font-size: 15pt;
+            }
+            .bMonthInfo {
+                font-size: 12pt;
+            }
+        }
+        &.landscape {
+            page: myLandscape;
+            .calender {
+                page: myLandscape;
             }
             .month {
-                margin: 50px auto 0 auto;
-                page-break-inside: avoid;
-                page-break-after: always;
-                display: block !important;
-            }
-            &.landscape {
                 page: myLandscape;
-                .calender {
-                    page: myLandscape;
-                }
-                .month {
-                    page: myLandscape;
-                    transform: rotate(90deg) translate(35%, 0) scale(1.3);
-                    transform-origin: 50% 50%;
-                }
-            }
-        }
-        body[data-pageid="pageCal2"] {
-            .mainTop {
-                display: none;
+                transform: rotate(90deg) translate(35%, 0) scale(1.3);
+                transform-origin: 50% 50%;
             }
         }
     }
+    body[data-pageid="pageCal2"] {
+        .mainTop {
+            display: none;
+        }
+    }
+}
 
-    body[lang="ta"] {
-        #pageCal2 {
-            .day {
-                bottom: 4px;
-            }
-            .hdName {
-                word-break: break-all;
-                line-height: 10px;
-            }
+body[lang="ta"] {
+    #pageCal2 {
+        .day {
+            bottom: 4px;
+        }
+        .hdName {
+            word-break: break-all;
+            line-height: 10px;
         }
     }
+}
+
+body.rtl {
+    #pageCal2 {
+        .caption {
+            direction: rtl;
+            left: 6px;
+            right: auto;
+        }
+        .mid {
+            margin: 0 3px 1px 0;
+        }
+        .gStart {
+            padding: 2px 3px 3px 1px;
+            border-left: none;
+            border-top-left-radius: 0;
+            border-right: 1px solid #ddd;
+            border-top-right-radius: 5px;
+        }
+    }
+}

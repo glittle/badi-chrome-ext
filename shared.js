@@ -87,9 +87,10 @@ if (!_languageCode) {
   _languageCode = chrome.i18n.getUILanguage();
   setStorage('lang', _languageCode);
 }
-var _languageDir = ',fa,'.search(_languageCode) !== -1 ? 'rtl' : 'ltr'
 
 loadRawMessages(_languageCode); // default to the current language
+
+var _languageDir = getMessage('textDirection', null, 'ltr');
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 
@@ -565,8 +566,9 @@ function startGetLocationName() {
     console.log('xhr call in progress already ' + xhr.readyState);
     return;
   }
-  var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}'
-    .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale);
+  var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}&key={3}'
+    .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale,
+      'AIzaSyAuSFuKxDtfCgBUGsSFrYZKardnK15Nmjc');
   xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
   xhr.onreadystatechange = function () {

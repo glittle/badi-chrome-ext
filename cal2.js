@@ -42,9 +42,10 @@ var Cal2 = function () {
     });
     
     // presets
-    _page.addClass('forPrint');
-    _page.find('#cbCal2Print').prop('checked', true)
-
+    // _page.addClass('forPrint');
+    // _page.find('#cbCal2Print').prop('checked', true)
+    
+    _page.find('#cbCal2Times').prop('checked', true)
     
     _page.find('#btnCal2Y').click(function () {
       zoomTo('Y');

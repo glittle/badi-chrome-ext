@@ -1324,8 +1324,8 @@
     "description": "a check box on the calendar. If checked, darker colors are used."
   },
   "cal2ForPrint": {
-    "message": "For <u>p</u>rint",
-    "description": "a check box on the calendar. If checked, formating is improved for printing."
+    "message": "All months when <u>p</u>rinting",
+    "description": "a check box on the calendar. If checked, formatting is improved for printing and all months are printed."
   },
   "nextMonth": {
     "message": "Next <u>M</u>onth",

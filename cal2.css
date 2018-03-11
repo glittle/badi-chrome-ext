@@ -131,9 +131,6 @@
   padding: 0;
   display: block;
 }
-#pageCal2 .dayRow.elementNum0 {
-  margin-top: 150px;
-}
 #pageCal2 .dayRow.elementNum0 .dayCell {
   background-image: linear-gradient(rgba(255, 20, 147, 0.2), rgba(255, 255, 255, 0) 40px);
   width: 100px;
@@ -332,58 +329,11 @@
 #pageCal2.darkerColors .month.elementNum4 .monthElement {
   background-color: #009600;
 }
-#pageCal2.forPrint {
-  font-family: 'Philosopher', 'Segoe UI', sans-serif;
-  --dayWidth: 120px;
-  --monthWidth: calc(720) px;
-}
-#pageCal2.forPrint .caption {
-  text-align: left;
-  right: 20px;
-}
-#pageCal2.forPrint .caption .monthNames {
-  font-size: 22pt;
-}
-#pageCal2.forPrint .caption .gMonthInfo {
-  font-size: 15pt;
-}
-#pageCal2.forPrint .caption .bMonthInfo {
-  font-size: 12pt;
-}
-#pageCal2.forPrint .dayCell {
-  margin: 0 10px 11px 0;
-  border: 2px solid #cc9933;
-  border-radius: 3px;
-}
-#pageCal2.forPrint .dayCell.hdDayHS,
-#pageCal2.forPrint .dayCell.hdDayHO {
-  background-image: linear-gradient(#e0c285, #faf5eb 66%, #fff 100%) !important;
-}
-#pageCal2.forPrint .dayRow.elementNum0 .dayCell {
-  background-image: none;
-}
-#pageCal2.forPrint .dayRow.elementNum1 .dayCell {
-  background-image: none;
-}
-#pageCal2.forPrint .dayRow.elementNum2 .dayCell {
-  background-image: none;
-}
-#pageCal2.forPrint .dayRow.elementNum3 .dayCell {
-  background-image: none;
-}
-#pageCal2.forPrint .dayRow.elementNum4 .dayCell {
-  background-image: none;
-}
 body[data-pageid=pageCal2].inTab {
   overflow-y: auto;
 }
 body[data-pageid=pageCal2].inTab #pageCal2 .calendar {
   max-height: none;
-}
-body.rtl #pageCal2 .caption {
-  direction: rtl;
-  left: 6px;
-  right: auto;
 }
 @media screen {
   #pageCal2:not(.forPrint) .dayCell {
@@ -403,32 +353,102 @@ body.rtl #pageCal2 .caption {
   @page {
     margin: 0;
   }
-  #pageCal2 {
-    border: none;
-    padding: 0;
+  body {
+    height: 100vh;
+    width: 100vw;
   }
-  #pageCal2 .todayTime,
-  #pageCal2 .cal2NavButtons,
-  #pageCal2 #cal2options {
+  #mainBody {
+    margin: 0;
+  }
+  .todayTime,
+  .cal2NavButtons,
+  #cal2options {
     display: none !important;
   }
-  #pageCal2 .calendar {
+  #pageCal2.forPrint {
+    border: none;
+    padding: 0;
+    font-family: 'Philosopher', 'Segoe UI', sans-serif;
+    --dayWidth: 120px;
+    --monthWidth: calc(720) px;
+  }
+  #pageCal2.forPrint .caption {
+    text-align: left;
+    right: 20px;
+  }
+  #pageCal2.forPrint .dayCell {
+    margin: 0 10px 11px 0;
+    border: 2px solid #cc9933;
+    border-radius: 3px;
+  }
+  #pageCal2.forPrint .dayCell.hdDayHS,
+  #pageCal2.forPrint .dayCell.hdDayHO {
+    background-image: linear-gradient(#e0c285, #faf5eb 66%, #fff 100%) !important;
+  }
+  #pageCal2.forPrint .dayRow.elementNum0 .dayCell {
+    background-image: none;
+  }
+  #pageCal2.forPrint .dayRow.elementNum1 .dayCell {
+    background-image: none;
+  }
+  #pageCal2.forPrint .dayRow.elementNum2 .dayCell {
+    background-image: none;
+  }
+  #pageCal2.forPrint .dayRow.elementNum3 .dayCell {
+    background-image: none;
+  }
+  #pageCal2.forPrint .dayRow.elementNum4 .dayCell {
+    background-image: none;
+  }
+  #pageCal2.forPrint .calendar {
     max-height: none;
     overflow: visible;
+    margin: 0;
   }
-  #pageCal2 .month {
-    margin: 50px auto 0 auto;
+  #pageCal2.forPrint .monthDays {
+    position: absolute;
+    top: 300px;
+    left: 25px;
+  }
+  #pageCal2.forPrint .month {
+    background: no-repeat bottom right;
+    background-size: cover;
+    height: 100.3vh;
+    width: 100vw;
+    margin: 0;
     page-break-inside: avoid;
     page-break-after: always;
     display: block !important;
   }
-  #pageCal2.landscape {
+  #pageCal2.forPrint .month .month {
+    margin: 280px 0 0 24px;
+  }
+  #pageCal2.forPrint .caption {
+    text-align: left;
+    left: -10px;
+    top: 50px;
+    right: unset;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px 30px 20px 130px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  #pageCal2.forPrint .caption .monthNames {
+    font-size: 22pt;
+  }
+  #pageCal2.forPrint .caption .gMonthInfo {
+    font-size: 15pt;
+  }
+  #pageCal2.forPrint .caption .bMonthInfo {
+    font-size: 12pt;
+  }
+  #pageCal2.forPrint.landscape {
     page: myLandscape;
   }
-  #pageCal2.landscape .calender {
+  #pageCal2.forPrint.landscape .calender {
     page: myLandscape;
   }
-  #pageCal2.landscape .month {
+  #pageCal2.forPrint.landscape .month {
     page: myLandscape;
     transform: rotate(90deg) translate(35%, 0) scale(1.3);
     transform-origin: 50% 50%;
@@ -443,4 +463,19 @@ body[lang="ta"] #pageCal2 .day {
 body[lang="ta"] #pageCal2 .hdName {
   word-break: break-all;
   line-height: 10px;
+}
+body.rtl #pageCal2 .caption {
+  direction: rtl;
+  left: 6px;
+  right: auto;
+}
+body.rtl #pageCal2 .mid {
+  margin: 0 3px 1px 0;
+}
+body.rtl #pageCal2 .gStart {
+  padding: 2px 3px 3px 1px;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-right: 1px solid #ddd;
+  border-top-right-radius: 5px;
 }
