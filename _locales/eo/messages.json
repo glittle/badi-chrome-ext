@@ -314,6 +314,10 @@
     "message": "Montras la daton de hodiaŭ en la Badíʿ-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
     "description": "Used in the manifest"
   },
+  "translation": {
+    "message": "eo",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
   "upcomingTitle": {
     "message": "Venontaj festoj, sanktaj tagoj kaj aliaj eventoj"
   },
