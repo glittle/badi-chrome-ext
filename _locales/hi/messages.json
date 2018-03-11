@@ -13,5 +13,9 @@
   "title": {
     "message": "Badíʿ Calendar",
     "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "hi",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   }
 }
