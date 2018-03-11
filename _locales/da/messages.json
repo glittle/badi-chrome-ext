@@ -1,0 +1,10 @@
+{
+  "1day": {
+    "message": "om {0} dag",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+  },
+  "translation": {
+    "message": "da",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  }
+}
