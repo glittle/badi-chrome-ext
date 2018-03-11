@@ -65,5 +65,9 @@
   "title": {
     "message": "לוח השנה הבהאי",
     "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "he",
+    "description": "This needs to be the international language code for this language, shown in English letters."
   }
 }

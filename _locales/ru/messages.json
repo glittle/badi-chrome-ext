@@ -1,6 +1,93 @@
 {
+  "am": {
+    "message": "a.m.",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "bMonthMeaning": {
+    "message": "Вставные дни,Великолепие,Слава,Красота,Величие,Свет,Милость,Слова,Совершенство,Имена,Мощь,Воля,Знание,Могущество,Речь,Вопросы,Честь,Владычество,Господство,Возвышенность",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "Аййāм-и Хā',Бахā,Джалāл,Джамāл,‘Аз̣амат,Нӯр,Рах̣мат,Калимāт,Камāл,Асмā’,‘Иззат,Машӣййат,‘Илм,К̣удрат,К̣аул,Масā’ил,Шараф,Султ̣ан,Мулк,‘Алā’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "bWeekDayMeaning": {
+    "message": ",Слава,Красота,Совершенство,Благодать,Справедливость,Величие,Независимость",
+    "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Джалāл,Джамāл,Камāл,Фид̣āл,‘Идāл,Истиджлāл,Истик̣лāл",
+    "description": "weekday names, with leading , "
+  },
+  "elements": {
+    "message": "Огонь,Воздух,Вода,Земля",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "gMonthLong": {
+    "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
+  },
+  "gMonthShort": {
+    "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Вознесение Абдул-Баха"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Вознесение Бахауллы"
+  },
+  "HolyDay_BirthBab": {
+    "message": "День рождения Баба"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "День рождения Бахауллы"
+  },
+  "HolyDay_Covenant": {
+    "message": "День Завета"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Возвещение Бабa"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Мученическая смерть Баба"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Нау-Рӯз"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Первый день Рид̣вāна"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Двенадцатый день Рид̣вāна"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Девятый день Рид̣вāна"
+  },
+  "pm": {
+    "message": "p.m.",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
   "rbDefLang_Local": {
     "message": "Russian",
     "description": "put your language here, in your script"
+  },
+  "textDirection": {
+    "message": "ltr",
+    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+  },
+  "timeFormat12": {
+    "message": "{time} {ampm}",
+    "description": "used when use24HourClock is set to false"
+  },
+  "title": {
+    "message": "Календарь бахаи",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "ru",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "use24HourClock": {
+    "message": "false",
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   }
 }
