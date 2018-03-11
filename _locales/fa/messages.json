@@ -312,6 +312,10 @@
   "suggestionsTitle": {
     "message": "برای بهینه سازی این تقویم پیشنهادات خود را در این قسمت بنویسید"
   },
+  "textDirection": {
+    "message": "rtl",
+    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+  },
   "title": {
     "message": "تقویم بدیع",
     "description": "The title of the extension. Shown in a number of locations."

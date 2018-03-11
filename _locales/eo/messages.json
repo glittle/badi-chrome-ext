@@ -10,6 +10,10 @@
     "message": "Intermetitaj tagoj,Splendoro,Gloro,Beleco,Grandiozeco,Lumo,Indulgo,Vortoj,Perfekteco,Nomoj,Potenco,Volo,Scio,Povo,Parolo,Demandoj,Honoro,Suvereneco,Regado,Alteco",
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahao,Ĵalalo,Ĵamalo,Azamato,Nuro,Ramato,Kalemato,Kamalo,Asmao,Ezato,Maŝijato,Elmo,Godrato,Goŭlo,Masaelo,Ŝarafo,Soltano,Molko,‘Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
   "btnCustomBuilderCancel": {
     "message": "Nuligi / nova"
   },
@@ -26,6 +30,10 @@
   "bWeekDayMeaning": {
     "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
     "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
   },
   "bYearInVahidMeaning": {
     "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
@@ -46,6 +54,10 @@
   },
   "dayStartedFuture": {
     "message": "Komenciĝas"
+  },
+  "elements": {
+    "message": "fajro,aero,akvo,tero",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
   },
   "Ended": {
     "message": "Finiĝis",
@@ -139,8 +151,11 @@
     "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
     "description": "day spanning different gregorian months"
   },
+  "gMonthLong": {
+    "message": "januaro,februaro,marto,aprilo,majo,junio,julio,aŭgusto,septembro,oktobro,novembro,decembro"
+  },
   "gMonthShort": {
-    "message": "Jan,Feb,Mar,Apr,Maj,Jun,Jul,Aŭg,Sep,Okt,Nov,Dec"
+    "message": "jan,feb,mar,apr,maj,jun,jul,aŭg,sep,okt,nov,dec"
   },
   "gotoNow": {
     "message": "Nun"
@@ -149,14 +164,29 @@
     "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
     "description": "top right corner"
   },
+  "HolyDay_AscAbdul": {
+    "message": "Forpaso de `Abdu'l-Bahá"
+  },
   "HolyDay_AscBaha": {
     "message": "Forpaso de Bahá'u'lláh"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Naskiĝo de Báb"
   },
   "HolyDay_BirthBaha": {
     "message": "Naskiĝo de Bahá'u'lláh"
   },
   "HolyDay_Covenant": {
     "message": "Tago de la Interligo"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Deklaracio de Báb"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Martirigo de Báb"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Noruzo"
   },
   "HolyDay_Ridvan1": {
     "message": "Unua tago de Ridván"
@@ -289,7 +319,7 @@
   },
   "use24HourClock": {
     "message": "true",
-    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
   "VahidFormat": {
     "message": "{bVahid}"

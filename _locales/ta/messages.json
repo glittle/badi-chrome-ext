@@ -29,6 +29,10 @@
     "message": "உபரி நாள்கள்,பேரொளி,புகழ்,அழகு,சிறப்பு,ஒளி,இரக்கம்,சொற்கள்,நிறைவு,பெயர்,வலிமை,விருப்பம்,அறிவு, சக்தி,உரை,கேள்வி,மதிப்பு,மாட்சிமை,அரசு,உயர்வு",
     "description": "Names of days/months, with first one being Ayyam-i-ha"
   },
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
   "browserActionTitle": {
     "message": "பதிவேற்றம்...",
     "description": "Shown until the dynamic tip is created"
@@ -50,6 +54,10 @@
   "bWeekDayMeaning": {
     "message": ",புகழ்,அழகு,நிறைவு,கிருபை,நீதி,மாட்சிமை,சுதந்திரம்",
     "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
   },
   "bYearInVahidMeaning": {
     "message": ",அ,ப,தந்தை,ட,வாசல்,வ,நித்தியம்,வள்ளன்மை,பேரொளி,அன்பு,மகிழ்ச்சிகரமான,பதில்,தனி,அபரிமிதம்,பாசம்,ஆரம்பம்,ஒளிர்வு,அதி ஒளிர்வு,ஒற்றுமை",
@@ -510,7 +518,7 @@
   },
   "use24HourClock": {
     "message": "false",
-    "description": "use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
   "Vahid": {
     "message": "வஹீட்"
