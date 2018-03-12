@@ -1,0 +1,74 @@
+{
+  "bMonthMeaning": {
+    "message": ",Hán päivät,Kirkkaus,Loisto,Kauneus,Suurus,Valo,Armo,Sanat,Täydellisyys,Nimet,Mahti,Tahto,Tieto,Voima,Puhe,Kysymykset,Kunnia,Yliherruus,Valta,Ylevyys",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "bWeekDayMeaning": {
+    "message": ",Kunnia,Kauneus,Täydellisyys,Armo,Oikeus,Majesteettius,Itsenäisyys",
+    "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+    "description": "weekday names, with leading , "
+  },
+  "elements": {
+    "message": "Tuli,ilma,vesi,maa",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "gMonthLong": {
+    "message": "Tammi-,helmi-,maalis-,huhti-,touko-,kesä-,heinä-,elo-,syys-,loka-,marras-,joulu-"
+  },
+  "gWeekdayShort": {
+    "message": "su,ma,ti,ke,to,pe,la",
+    "description": "start with Sun"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "Abdu'l Baháin poismenon muistopäivä"
+  },
+  "HolyDay_AscBaha": {
+    "message": "Bahá’u'llahin poismenon muistopäivä"
+  },
+  "HolyDay_BirthBab": {
+    "message": "Babin syntymäpäivä"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "Bahá’u'llahin syntymäpäivä"
+  },
+  "HolyDay_Covenant": {
+    "message": "Liiton päivä"
+  },
+  "HolyDay_DeclBab": {
+    "message": "Babin, uskon edelläkävijän, ilmoituksen päivä"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "Babin marttyyrikuoleman muistopäivä"
+  },
+  "HolyDay_NawRuz": {
+    "message": "Naw-Ruz"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "Ridvanin ensimmäinen päivä"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "Ridvanin kahdestoista päivä"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "Ridvanin yhdeksäs päivä"
+  },
+  "title": {
+    "message": "Bahai-kalenteri",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "fi",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "Finnish",
+    "description": "The name of this language, in English"
+  }
+}
