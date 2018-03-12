@@ -1,4 +1,8 @@
 {
+  "arabic": {
+    "message": "名称",
+    "description": "on List page - table heading"
+  },
   "bMonthMeaning": {
     "message": "'哈'之日,荣,华,美,耀,光,恩,道,全,名,力,志,智,权,言,问,尊,治,统,崇",
     "description": "Names of days/months, with first one being Ayyam-i-ha"
