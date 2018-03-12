@@ -19,6 +19,14 @@
     "message": ",Джалāл,Джамāл,Камāл,Фид̣āл,‘Идāл,Истиджлāл,Истик̣лāл",
     "description": "weekday names, with leading , "
   },
+  "bYearInVahidMeaning": {
+    "message": "А,Б,Отец,Д,Врата,В,Вечность,Щедрость,Великолепие,Любовь,Восхитительный,Ответ,Единственный,Изобильный,Привязанность,Начало,Лучезарный,Наилучезарнейший,Единство\n",
+    "description": "Vahid names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": "Алиф,Бā’,Аб,Дāль,Бāб,Вāв,Абад,Джāд,Бахā',Х̣убб,Баххāдж,Джавāб,Ах̣ад,Ваххāб,Видāд,Бадӣ‘,Бахӣ,Абхā,Вāх̣ид\n",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
   "elements": {
     "message": "Огонь,Воздух,Вода,Земля",
     "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
@@ -70,6 +78,13 @@
   "HolyDay_Ridvan9": {
     "message": "Девятый день Рид̣вāна"
   },
+  "Kullishay": {
+    "message": "Кулл-и Шай’"
+  },
+  "KullishayLocal": {
+    "message": "всё сущее",
+    "description": "Transalation of Kull-i-Shay"
+  },
   "pm": {
     "message": "p.m.",
     "description": "displayed in 'timeFormat12' if not using 24 hours clock"
@@ -97,5 +112,8 @@
   "use24HourClock": {
     "message": "false",
     "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+  },
+  "Vahid": {
+    "message": "Вāх̣ид"
   }
 }
