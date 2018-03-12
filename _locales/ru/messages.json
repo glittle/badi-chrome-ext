@@ -29,6 +29,14 @@
   "gMonthShort": {
     "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
   },
+  "gWeekdayLong": {
+    "message": "Воскресенье,понедельник,вторник,среда,четверг,пятница,суббота",
+    "description": "start with Sunday"
+  },
+  "gWeekdayShort": {
+    "message": "Вс,Пн,Вт,Ср,Чт,Пт,Сб",
+    "description": "start with Sun"
+  },
   "HolyDay_AscAbdul": {
     "message": "Вознесение Абдул-Баха"
   },
