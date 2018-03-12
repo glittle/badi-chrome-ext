@@ -25,6 +25,10 @@
   "gMonthShort": {
     "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
   },
+  "gWeekdayShort": {
+    "message": "א,ב,ג,ד,ה,ו,ש",
+    "description": "start with Sun"
+  },
   "HolyDay_AscAbdul": {
     "message": "יום פטירת עבד אלבהאא"
   },
