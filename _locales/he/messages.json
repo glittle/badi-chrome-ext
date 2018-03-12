@@ -69,5 +69,9 @@
   "translation": {
     "message": "he",
     "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "Hebrew",
+    "description": "The name of this language, in English"
   }
 }

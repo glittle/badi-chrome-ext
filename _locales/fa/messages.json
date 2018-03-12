@@ -332,6 +332,10 @@
     "message": "fa",
     "description": "This needs to be the international language code for this language, shown in English letters."
   },
+  "translationEnglishName": {
+    "message": "Persian",
+    "description": "The name of this language, in English"
+  },
   "upcomingTitle": {
     "message": "ضیافات و ایام متبرکه آینده"
   },

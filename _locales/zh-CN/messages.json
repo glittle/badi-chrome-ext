@@ -88,6 +88,10 @@
     "message": "zh_CN",
     "description": "This needs to be the international language code for this language, shown in English letters."
   },
+  "translationEnglishName": {
+    "message": "Chinese",
+    "description": "The name of this language, in English"
+  },
   "Vahid": {
     "message": "瓦希德"
   }

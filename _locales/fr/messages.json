@@ -525,6 +525,10 @@
     "message": "fr",
     "description": "This needs to be the international language code for this language, shown in English letters."
   },
+  "translationEnglishName": {
+    "message": "French",
+    "description": "The name of this language, in English"
+  },
   "upcomingDateFormat": {
     "message": "{bDay} {bMonthNamePri} ({gCombined})",
     "description": "upcoming list"

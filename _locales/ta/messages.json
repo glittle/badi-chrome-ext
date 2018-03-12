@@ -509,6 +509,10 @@
     "message": "ta",
     "description": "This needs to be the international language code for this language, shown in English letters."
   },
+  "translationEnglishName": {
+    "message": "Tamil",
+    "description": "The name of this language, in English"
+  },
   "upcomingDateFormat": {
     "message": "{bMonthNamePri} {bDay} ({gCombined})",
     "description": "upcoming list"
