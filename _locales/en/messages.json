@@ -684,10 +684,6 @@
     "message": "All-Things",
     "description": "Transalation of Kull-i-Shay"
   },
-  "languageList": {
-    "message": "de:German,\nen:English,\neo:Esperanto,\nes:Spanish,\nfa:Persian,\nfr:French,\nnl:Dutch,\npt_PT:Portugese,\nta:Tamil,\nth:Thai",
-    "description": "On setup page. Order here does not matter. Format: 'code:Name in your language' -- translate the name but NOT the code"
-  },
   "locationError": {
     "message": "Unable to determine your current location.\n\nThe extension will use 6:30pm for sunset on every date.",
     "description": "If the system cannot determine the location, this is shown in an alert window."
