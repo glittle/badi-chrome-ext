@@ -70,5 +70,9 @@
   "translationEnglishName": {
     "message": "Finnish",
     "description": "The name of this language, in English"
+  },
+  "use24HourClock": {
+    "message": "true",
+    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   }
 }
