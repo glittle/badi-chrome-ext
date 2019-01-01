@@ -177,4 +177,4 @@ var CalWheel = function() {
             clearTimeout(_rotating);
         }
     };
-}
+};
