@@ -8,6 +8,7 @@
     <link href="popup.css" rel=stylesheet>
     <link href="cal1.css" rel=stylesheet>
     <link href="cal2.css" rel=stylesheet>
+    <link href="cal3.css" rel=stylesheet>
     <link href="calWheel.css" rel=stylesheet>
     <link href="calGreg.css" rel=stylesheet>
     <script src="jquery-3.3.1.min.js"></script>
@@ -82,8 +83,8 @@
                 <!--<div id=gDayWithSunset></div>-->
                 <div id=locationErrorHolder>
                     <button type="button" class=btnRetry>
-            <span class="btnRetryImg"></span>
-          </button>
+                        <span class="btnRetryImg"></span>
+                    </button>
                     <span id=locationError data-msg="_id_"></span>
                 </div>
             </div>
@@ -131,16 +132,16 @@
                 <div id=specialLists>
                     <div id=eventStartHolder>
                         <span id=includeWhat>
-              <span data-msg=includeThese></span>
+                            <span data-msg=includeThese></span>
 
                         <label>
-                <input type=checkbox class=includeThis id=includeFeasts>
-                <span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span>
-              </label>
+                                <input type=checkbox class=includeThis id=includeFeasts>
+                                <span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span>
+                            </label>
                         <label>
-                <input type=checkbox class=includeThis id=includeHolyDays>
-                <span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span>
-              </label>
+                                <input type=checkbox class=includeThis id=includeHolyDays>
+                                <span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span>
+                            </label>
                         </span>
 
                         <span data-msg="startTimeOption"></span>
@@ -224,21 +225,35 @@
             <div id="pageCal2" class="fullPage page">
                 <div id="cal2options">
                     <label>
-            <input type="checkbox" id="cbShowTimes">
-            <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
-          </label>
+                        <input type="checkbox" id="cbShowTimes">
+                        <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
+                    </label>
                     <label>
-            <input type="checkbox" id="cbCal2Darker">
-            <span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span>
-          </label>
+                        <input type="checkbox" id="cbCal2Darker">
+                        <span data-msg="cal2DarkerColors,extractAccessKeyFor:cbCal2Darker"></span>
+                    </label>
                     <label>
-            <input type="checkbox" id="cbCal2Print">
-            <span data-msg="cal2ForPrint,extractAccessKeyFor:cbCal2Print"></span>
-          </label>
+                        <input type="checkbox" id="cbCal2Print">
+                        <span data-msg="cal2ForPrint,extractAccessKeyFor:cbCal2Print"></span>
+                    </label>
                 </div>
                 <div class="cal2NavButtons">
                     <button type="button" class="button" id="btnCal2Y" data-msg="_id_"></button>
                     <button type="button" class="button" id="btnCal2M" data-msg="_id_"></button>
+                </div>
+                <div class="calendar zoomM">
+                </div>
+            </div>
+            <div id="pageCal3" class="fullPage page">
+                <div id="cal3options">
+                    <label>
+                        <input type="checkbox" id="cbShowTimes">
+                        <span data-msg="cal3ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cbCal3Print">
+                        <span data-msg="cal3ForPrint,extractAccessKeyFor:cbCal3Print"></span>
+                    </label>
                 </div>
                 <div class="calendar zoomM">
                 </div>
@@ -250,43 +265,42 @@
             <div id="pageCalWheel" class="fullPage page">
                 <div id="askShowPointer">
                     <label>
-            <input type="checkbox" id="cbShowPointer" />
-            <span data-msg="showPointer"></span>
-          </label>
+                        <input type="checkbox" id="cbShowPointer" />
+                        <span data-msg="showPointer"></span>
+                    </label>
                 </div>
                 <div id="wheelHolder">
                     <div id="wheel"></div>
                     <svg id="wheelYearHolder" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
-            <text x="520" y="480" text-anchor="middle" id="wheelYear"></text>
-          </svg>
+                        <text x="520" y="480" text-anchor="middle" id="wheelYear"></text>
+                    </svg>
 
                     <svg id="pointerToday" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
-            <!--<text x="155" y="480" text-anchor="end" data-msg="currentFocus"></text>
+                        <!--<text x="155" y="480" text-anchor="end" data-msg="currentFocus"></text>
             <line x1="160" y1="472" y2="472" x2="185" stroke-width="1" />
             <line x1="179" y1="469" y2="472" x2="185" stroke-width="1" />
             <line x1="179" y1="476" y2="472" x2="185" stroke-width="1" />-->
 
-            <line x1="549" y1="472" y2="472" x2="570" stroke-width="1" />
-            <text x="575" y="480" text-anchor="start" id="wheelDay"></text>
-          </svg>
+                        <line x1="549" y1="472" y2="472" x2="570" stroke-width="1" />
+                        <text x="575" y="480" text-anchor="start" id="wheelDay"></text>
+                    </svg>
 
                 </div>
                 <svg id="templateSlice" class="slice" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
-          <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="#FFC107"
-            stroke-width="65px">
-            <path d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z"
-            />
-          </g>
-          <text x="65" y="320" class="monthNum"></text>
-          <text x="75" y="260" class="monthNameAr" transform="rotate(-95 75 260) translate(0 -10)"></text>
-          <text x="75" y="260" class="monthName" transform="rotate(-85 75 260) translate(0 10)"></text>
+                    <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)" fill="#000000"
+                        stroke="#FFC107" stroke-width="65px">
+                        <path d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z" />
+                    </g>
+                    <text x="65" y="320" class="monthNum"></text>
+                    <text x="75" y="260" class="monthNameAr" transform="rotate(-95 75 260) translate(0 -10)"></text>
+                    <text x="75" y="260" class="monthName" transform="rotate(-85 75 260) translate(0 10)"></text>
 
-          <text x="65" y="39" class="firstDayWk"></text>
-          <text x="65" y="64" class="firstDayG"></text>
-          <text x="65" y="87" class="firstDayYr"></text>
-          <!--<circle cx="65" cy="350" r="10" fill="#f55" />-->
-          <!--<line x1="65" y1="0" x2="65" y2="470" stroke="black" stroke-width="1" />-->
-        </svg>
+                    <text x="65" y="39" class="firstDayWk"></text>
+                    <text x="65" y="64" class="firstDayG"></text>
+                    <text x="65" y="87" class="firstDayYr"></text>
+                    <!--<circle cx="65" cy="350" r="10" fill="#f55" />-->
+                    <!--<line x1="65" y1="0" x2="65" y2="470" stroke="black" stroke-width="1" />-->
+                </svg>
             </div>
             <div id="pageReminders" class="fullPage page">
                 <div>
@@ -295,32 +309,32 @@
                         <div>
                             <span data-msg="reminderType"></span>
                             <select id="reminder_trigger" name="x1" data-default="">
-                <option value="" data-msg="reminderSelectTrigger"></option>
+                                <option value="" data-msg="reminderSelectTrigger"></option>
 
-                <optgroup label="x" data-msg="label:reminderTriggerGroup_time">
-                  <option value="sunset" data-msg="reminderTrigger_sunset" data-model="sun"></option>
-                  <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun"></option>
-                  <option value="noon" data-msg="reminderTrigger_noon" data-model="time"></option>
-                  <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time"></option>
-                </optgroup>
-                <optgroup label="x" data-msg="label:reminderTriggerGroup_day">
-                  <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday"></option>
-                  <option value="feast" data-model="day" data-msg="reminderTrigger_feast"></option>
-                  <option value="bday" data-model="bday" data-msg="reminderTrigger_bday"></option>
+                                <optgroup label="x" data-msg="label:reminderTriggerGroup_time">
+                                    <option value="sunset" data-msg="reminderTrigger_sunset" data-model="sun"></option>
+                                    <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun"></option>
+                                    <option value="noon" data-msg="reminderTrigger_noon" data-model="time"></option>
+                                    <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time"></option>
+                                </optgroup>
+                                <optgroup label="x" data-msg="label:reminderTriggerGroup_day">
+                                    <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday"></option>
+                                    <option value="feast" data-model="day" data-msg="reminderTrigger_feast"></option>
+                                    <option value="bday" data-model="bday" data-msg="reminderTrigger_bday"></option>
 
-                </optgroup>
-                <optgroup label="x" data-msg="label:reminderTriggerGroup_load">
-                  <option value="load" data-model="load" data-msg="reminderTrigger_load"></option>
-                </optgroup>
-              </select>
+                                </optgroup>
+                                <optgroup label="x" data-msg="label:reminderTriggerGroup_load">
+                                    <option value="load" data-model="load" data-msg="reminderTrigger_load"></option>
+                                </optgroup>
+                            </select>
                         </div>
                         <div class="reminderEditInputs">
                             <div id="model_sun" class="reminderModel">
                                 <div data-msg="reminderCalcType">
                                     <select data-child="calcTypeInput" class="reminder_calcType" name="x3a" data-default="Relative">
-                    <option value="Relative" data-msg="reminderCalcTypeRelative"></option>
-                    <option value="Absolute" data-msg="reminderCalcTypeAbsolute"></option>
-                  </select>
+                                        <option value="Relative" data-msg="reminderCalcTypeRelative"></option>
+                                        <option value="Absolute" data-msg="reminderCalcTypeAbsolute"></option>
+                                    </select>
                                 </div>
                                 <div id="reminderCalcTypeAbsolute" class="reminderCalcType">
                                     <span data-msg="reminderShowAt"></span>
@@ -329,14 +343,14 @@
                                 <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure" class="reminderCalcType">
                                     <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
                                     <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
-                    <option value="minutes" data-msg="reminderNum_minutes"></option>
-                    <option value="hours" data-msg="reminderNum_hours"></option>
-                    <option value="seconds" data-msg="reminderNum_seconds"></option>
-                  </select>
+                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
+                                        <option value="hours" data-msg="reminderNum_hours"></option>
+                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
+                                    </select>
                                     <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
-                    <option value="-1" data-msg="reminderBefore"></option>
-                    <option value="1" data-msg="reminderAfter"></option>
-                  </select>
+                                        <option value="-1" data-msg="reminderBefore"></option>
+                                        <option value="1" data-msg="reminderAfter"></option>
+                                    </select>
                                 </div>
                             </div>
                             <div id="model_time" class="reminderModel">
@@ -344,14 +358,14 @@
                                 <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure">
                                     <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
                                     <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
-                    <option value="minutes" data-msg="reminderNum_minutes"></option>
-                    <option value="hours" data-msg="reminderNum_hours"></option>
-                    <option value="seconds" data-msg="reminderNum_seconds"></option>
-                  </select>
+                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
+                                        <option value="hours" data-msg="reminderNum_hours"></option>
+                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
+                                    </select>
                                     <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
-                    <option value="-1" data-msg="reminderBefore"></option>
-                    <option value="1" data-msg="reminderAfter"></option>
-                  </select>
+                                        <option value="-1" data-msg="reminderBefore"></option>
+                                        <option value="1" data-msg="reminderAfter"></option>
+                                    </select>
                                 </div>
                             </div>
                             <div id="model_day" class="reminderModel">
@@ -360,9 +374,9 @@
                                 <div data-msg="reminderDayWhen">
                                     <input data-child="num" type="number" name="x5" class="reminder_num" min="0" max="365" step="1" value="1" data-type="num" data-default="3" required />
                                     <select data-child="beforeAfter" class="reminder_delta" name="x6" data-type="num" data-default="-1">
-                    <option value="-1" data-msg="reminderBefore"></option>
-                    <option value="1" data-msg="reminderAfter"></option>
-                  </select>
+                                        <option value="-1" data-msg="reminderBefore"></option>
+                                        <option value="1" data-msg="reminderAfter"></option>
+                                    </select>
                                     <span data-child="event" class="modelTriggerEcho"></span>
                                 </div>
                                 <div>
@@ -373,9 +387,9 @@
                             <div id="model_bday" class="reminderModel">
                                 <div>
                                     <span data-msg="reminderDayOfMonth">
-                    <input data-child="num" type="number" class="reminder_num" name="x8" min="1" max="19" step="1" value="1" data-type="num"
-                      data-default="1" required />
-                  </span>
+                                        <input data-child="num" type="number" class="reminder_num" name="x8" min="1"
+                                            max="19" step="1" value="1" data-type="num" data-default="1" required />
+                                    </span>
                                 </div>
                                 <div>
                                     <span data-msg="reminderShowAt"></span>
@@ -386,10 +400,10 @@
                                 <div>
                                     <input type="number" class="reminder_num" name="x10" min="1" max="59" step="1" value="1" data-type="num" data-default="3" required />
                                     <select class="reminder_units" data-default="seconds" name="x11">
-                    <option value="seconds" data-msg="reminderNum_seconds"></option>
-                    <option value="minutes" data-msg="reminderNum_minutes"></option>
-                    <option value="hours" data-msg="reminderNum_hours"></option>
-                  </select> after
+                                        <option value="seconds" data-msg="reminderNum_seconds"></option>
+                                        <option value="minutes" data-msg="reminderNum_minutes"></option>
+                                        <option value="hours" data-msg="reminderNum_hours"></option>
+                                    </select> after
                                     <span class="modelTriggerEcho"></span>
                                 </div>
                             </div>
@@ -397,11 +411,11 @@
                                 <div>
                                     <span data-msg="reminder_actions"></span>
                                     <select id="reminder_action" data-default="" name="x13">
-                    <option value="" data-msg="reminder_nullAction"></option>
-                    <option value="speak" data-msg="reminderAction_speak"></option>
-                    <option value="ifttt" data-msg="reminderAction_ifttt"></option>
-                    <option value="zapier" data-msg="reminderAction_zapier"></option>
-                  </select>
+                                        <option value="" data-msg="reminder_nullAction"></option>
+                                        <option value="speak" data-msg="reminderAction_speak"></option>
+                                        <option value="ifttt" data-msg="reminderAction_ifttt"></option>
+                                        <option value="zapier" data-msg="reminderAction_zapier"></option>
+                                    </select>
                                 </div>
                                 <div id="reminderAction_ifttt" class="reminderAction">
                                     <div>
@@ -479,18 +493,18 @@
 
                         <label for="exporterDateRange" data-msg="exporterDateRange,extractAccessKeyFor:exporterDateRange"></label>
                         <select id="exporterDateRange">
-              <option id="exportRange_Badi_0"></option>
-              <option id="exportRange_Badi_1"></option>
-              <option id="exportRange_Greg_0"></option>
-              <option id="exportRange_Greg_1"></option>
-            </select>
+                            <option id="exportRange_Badi_0"></option>
+                            <option id="exportRange_Badi_1"></option>
+                            <option id="exportRange_Greg_0"></option>
+                            <option id="exportRange_Greg_1"></option>
+                        </select>
 
                         <label data-msg="exportWhatToInclude"></label>
                         <div>
                             <label class="exportIncludeAlert">
-                <input id="exporterIncludeAlert" type="checkbox" value="location" />
-                <span data-msg="exportIncludeAlert"></span>
-              </label>
+                                <input id="exporterIncludeAlert" type="checkbox" value="location" />
+                                <span data-msg="exportIncludeAlert"></span>
+                            </label>
                             <select id="exporterIncludeAlertMin"></select>
                         </div>
 
@@ -578,9 +592,9 @@
                         </div>
                         <div class="customFormatInfo">
                             <label class="customIsSample">
-                <span></span>
-                <input class="cbIsSample" type="checkbox" value="Y" data-x="" />
-              </label>
+                                <span></span>
+                                <input class="cbIsSample" type="checkbox" value="Y" data-x="" />
+                            </label>
                             <button class="button btnCopy" type=button data-msg="customBtnCopy"></button>
                         </div>
                     </div>
@@ -595,9 +609,9 @@
                             <div>
                                 <span data-msg="plannerShowWhat"></span>
                                 <select id="planWhat">
-                  <option value="event1" data-msg="plannerWhatOneEvent"></option>
-                  <option value="event2" data-msg="plannerWhatManyEvents"></option>
-                </select>
+                                    <option value="event1" data-msg="plannerWhatOneEvent"></option>
+                                    <option value="event2" data-msg="plannerWhatManyEvents"></option>
+                                </select>
                             </div>
                             <div id="plannerWhatEventDiv">
                                 <span data-msg="plannerWhatEvent"></span>
@@ -610,35 +624,35 @@
                                     <button type="button" class="button" id="btnPlannerHelperNone" data-msg="_id_"></button>
                                 </div>
                                 <select id="plannerWhatEvents">
-                  <optgroup label="Holy Days" id="planWhatHdGroup"></optgroup>
-                  <optgroup label="Feasts" id="planWhatFeastGroup"></optgroup>
-                </select>
+                                    <optgroup label="Holy Days" id="planWhatHdGroup"></optgroup>
+                                    <optgroup label="Feasts" id="planWhatFeastGroup"></optgroup>
+                                </select>
                             </div>
                         </li>
                         <li>
                             <span data-msg="planFromWhen"></span>
                             <select id="planFromWhen">
-                <option value="today" data-msg="planFromWhenToday"></option>
-                <option value="by0" data-msg="planFromWhenThisYear"></option>
-                <option value="by1" data-msg="planFromWhenNextYear"></option>
-              </select>
+                                <option value="today" data-msg="planFromWhenToday"></option>
+                                <option value="by0" data-msg="planFromWhenThisYear"></option>
+                                <option value="by1" data-msg="planFromWhenNextYear"></option>
+                            </select>
                         </li>
                         <li>
                             <div>
                                 <span data-msg="planUntilWhen"></span>
                                 <select id="planUntilNum"></select>
                                 <select id="planUntilUnits">
-                  <option value="y" data-msg="planUntilUnitsYears"></option>
-                </select>
+                                    <option value="y" data-msg="planUntilUnitsYears"></option>
+                                </select>
                             </div>
                         </li>
                         <li>
                             <span data-msg="planIncludeWhat"></span>
                             <select id="plannerShowWhat">
-                <option value="frag2" data-msg="planIncludeWhatDay"></option>
-                <option value="both" data-msg="planIncludeWhatBoth"></option>
-                <option value="frag1" data-msg="planIncludeWhatEve"></option>
-              </select>
+                                <option value="frag2" data-msg="planIncludeWhatDay"></option>
+                                <option value="both" data-msg="planIncludeWhatBoth"></option>
+                                <option value="frag1" data-msg="planIncludeWhatEve"></option>
+                            </select>
                         </li>
                     </ol>
                     <!--<button class="button" type="button" id="btnPlanGenerate">Refresh</button>-->
@@ -670,36 +684,36 @@
                     <div>
                         <p class="pageSetupInput2">
                             <label>
-                <span data-msg="setupColor"></span>
-                <input type="color" id="setupColor" value="#000000">
-              </label>
+                                <span data-msg="setupColor"></span>
+                                <input type="color" id="setupColor" value="#000000">
+                            </label>
                         </p>
                     </div>
                     <h3 data-msg="setupLangH3"></h3>
                     <div>
                         <div class="pageSetupInput2">
                             <label>
-                <select id="setupLang"></select>
-                <div id="setupLangPct"></div>
-              </label>
+                                <select id="setupLang"></select>
+                                <div id="setupLangPct"></div>
+                            </label>
                         </div>
                     </div>
                     <h3 class="setupPlace">
                         <span data-msg="exportIncludeLocation"></span>
                         <button type="button" class="btnRetry">
-              <span class="btnRetryImg"></span>
-            </button>
+                            <span class="btnRetryImg"></span>
+                        </button>
                     </h3>
                     <div class="setupPlace">
                         <div>
                             <label>
-                <span data-msg="inputLat"></span>
-                <input type="number" id="inputLat">
-              </label>
+                                <span data-msg="inputLat"></span>
+                                <input type="number" id="inputLat">
+                            </label>
                             <label>
-                <span data-msg="inputLng"></span>
-                <input type="number" id="inputLng">
-              </label>
+                                <span data-msg="inputLng"></span>
+                                <input type="number" id="inputLng">
+                            </label>
                         </div>
                         <span>⇨</span>
                         <span class="place"></span>
@@ -708,9 +722,9 @@
                     <p data-msg="setupOptOutPara"></p>
                     <div class="pageSetupInput">
                         <label>
-              <span data-msg="setupOptOut"></span>
-              <input type="checkbox" id="setupOptOut" />
-            </label>
+                            <span data-msg="setupOptOut"></span>
+                            <input type="checkbox" id="setupOptOut" />
+                        </label>
                     </div>
                 </div>
             </div>
@@ -720,6 +734,7 @@
                     <button data-page="pageDay" data-msg=pick_pageDay></button>
                     <button data-page="pageEvents" data-msg=pick_pageEvents></button>
                     <button data-page="pageCal2" data-msg=pick_pageCal2></button>
+                    <button data-page="pageCal3" data-msg=pick_pageCal3></button>
                     <button data-page="pageCal1" data-msg=pick_pageCal1></button>
                     <button data-page="pageCalWheel" data-msg=pick_pageCalWheel></button>
                     <button data-page="pageCalGreg" data-msg=pick_pageCalGreg></button>
@@ -776,6 +791,7 @@
     <script src="popup.js"></script>
     <script src="cal1.js"></script>
     <script src="cal2.js"></script>
+    <script src="cal3.js"></script>
     <script src="calWheel.js"></script>
     <script src="calGreg.js"></script>
     <script src="pageReminders.js"></script>
@@ -793,13 +809,27 @@
           <span>{startingSunsetDesc}</span>
                 </span>
             </div>
-            <div class=dayName>{bDayNamePri} / {bDayNameSec}</div>
+            <div class=dayName>{bDayNamePri} <span>{bDayNameSec}</span></div>
             <div class=mid>
                 <div class=bWeekDay title="{DayOfWeek}">{bWeekdayNamePri}</div>
                 <div class=gStart>{frag2MonthShort} {frag2Day}
                     <span class=wd>{frag2WeekdayShort}</span>
                 </div>
             </div>
+            <div class=day>{^holyDayAftName}</div>
+            {^sunsetDesc}
+        </div>
+    </script>
+    <script type="text/x-template" id="cal3dayCell">
+        <div style="grid-area: {row} / {column}" class="dayCell elementNum{elementNum} bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal3_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
+            <div class=top>
+                <span class=dayNum>{bDay}{^holyDayAftStar}</span>
+                <span class=sunsetStart>
+                        {frag1MonthShortX} {frag1Day}{frag1MonthShortXComma} {frag2MonthShort} {frag2Day}
+                      <span>{startingSunsetDesc}</span>
+                </span>
+            </div>
+            <div class=dayName>{bDayNamePri} <span>{bDayNameSec}</span></div>
             <div class=day>{^holyDayAftName}</div>
             {^sunsetDesc}
         </div>

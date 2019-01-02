@@ -39,7 +39,7 @@ function loadRawMessages(langCode, cb) {
 
     for (var langNum = 0; langNum < langsToLoad.length; langNum++) {
         var langToLoad = langsToLoad[langNum];
-        // console.log(langNum, langToLoad);
+        // console.log('shared', langNum, langToLoad);
         var url = "/_locales/" + langToLoad + "/messages.json";
 
         $.ajax({
@@ -577,7 +577,7 @@ function startGetLocationName() {
             var unknownLocation = getMessage('noLocationName');
 
             localStorage.locationName =
-                findName('neighborhood', data.results, true) ||
+                // findName('neighborhood', data.results, true) ||
                 findName('locality', data.results) ||
                 findName('political', data.results) ||
                 unknownLocation;

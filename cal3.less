@@ -1,8 +1,6 @@
 @import "colors.less";
-@borderWidth: 3px;
-#pageCal2 {
-    --dayWidth: 124px;
-    --monthWidth: calc(124 * 6)px;
+#pageCal3 {
+    @borderWidth: 3px;
     position: relative;
     padding-bottom: 16px;
     padding-top: 7px;
@@ -15,21 +13,19 @@
         display: none;
     }
     .calendar {
-        width: 100%;
-        margin-left: 5px;
-        overflow: auto;
+        width: 99%;
+        margin: 0 auto 12px;
+        overflow: unset;
         max-height: 497px;
         position: relative;
         &.showTimes {
             .placeName {
                 display: block;
                 font-style: italic;
-                font-size: 80%;
-                max-width: 220px;
-                margin-top: 5px;
+                font-size: 70%;
             }
             .hdName {
-                margin: 0 35px 0 0px;
+                margin: 0 0 0 3px;
             }
             .sunsetEnd {
                 display: block;
@@ -62,7 +58,7 @@
         transition: all 1s;
     }
     &.zoomY {
-        #btnCal2Y {
+        #btnCal3Y {
             display: none;
         }
         .month {
@@ -71,22 +67,22 @@
         }
     }
     &.zoomM {
-        #btnCal2M {
+        #btnCal3M {
             display: none;
         }
     }
-    .cal2NavButtons {
-        position: absolute;
-        right: 22px;
-        top: 160px;
-        z-index: 1;
-        display: none; // not ready yet
+    .monthDays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 0;
+        // outline: 1px solid #ddd;
+        margin: 2px;
     }
     .month {
-        position: relative;
-        margin: 10px 0px 11px 6px;
-        padding: 5px 6px;
-        width: var(--monthWidth);
+        position: relative; //margin: 10px 0px 11px 6px;
+        //padding: 5px 6px;
+        //width: var(--monthWidth);
         display: inline-block;
     }
     .monthShell {
@@ -109,18 +105,43 @@
             font-size: 2em;
         }
     }
+    .weekdayTitle {
+        background-color: #6b6b6b;
+        color: white;
+        outline: white 1px solid;
+        padding: 0px 3px 2px;
+        .g {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            .e {
+                font-size: 9px;
+            }
+            .d {}
+        }
+        .b {
+            text-align: center;
+            .a {
+                font-weight: bold;
+            }
+            .m {
+                font-size: 9px;
+                padding-left: 5px;
+            }
+        }
+    }
     .caption {
-        position: absolute;
-        top: 0;
-        right: 6px;
-        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 4px 10px 4px;
     }
     .bMonthInfo {
         font-size: 11pt;
     }
     .gMonthInfo {
         font-size: 11pt;
-        margin: 1px 0 4px;
+        text-align: center;
     }
     .monthNames {
         font-size: 17pt;
@@ -146,32 +167,32 @@
     }
     @gradientEnd: 40px;
     @endColor: rgba(255, 255, 255, 0);
-    .dayRow.elementNum1 {
-        .dayCell {
+    .elementNum1 {
+        &.dayCell {
             background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum1 {
         background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
     }
-    .dayRow.elementNum2 {
-        .dayCell {
+    .elementNum2 {
+        &.dayCell {
             background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum2 {
         background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
     }
-    .dayRow.elementNum3 {
-        .dayCell {
+    .elementNum3 {
+        &.dayCell {
             background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum3 {
         background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
     }
-    .dayRow.elementNum4 {
-        .dayCell {
+    .elementNum4 {
+        &.dayCell {
             background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
         }
     }
@@ -181,15 +202,11 @@
     .monthRow {
         white-space: nowrap;
     }
-    .month.elementNum0 {
-        height: 390px; // keep it big
-    }
     .monthNameDay {
         .dayName {
             padding: 0 2px 0 3px;
             border: 1px solid #999;
             border-radius: 3px;
-            margin: 0 0 1px 2px;
         }
     }
     .month.elementNum1 {
@@ -224,13 +241,11 @@
     }
     .dayCell {
         position: relative;
-        height: 100px;
-        width: var(--dayWidth);
         box-sizing: border-box;
-        border: 1px solid #ddd;
-        margin: 0 0 3px -1px;
+        outline: 1px solid #ddd;
         white-space: normal;
         background-color: #fff;
+        height: 95px;
         &.hdDayHS {
             background-image: linear-gradient(lighten(red, 30%), lighten(red, 45%) 100%) !important;
         }
@@ -240,10 +255,6 @@
         font-size: 13px;
     }
     .day {
-        position: absolute;
-        bottom: 3px;
-        left: 3px;
-        right: 3px;
     }
     .sunrise {
         margin: 0 0 3px 0;
@@ -282,15 +293,15 @@
         margin: 0 3px 3px 3px;
         font-size: 11px;
         font-weight: bold;
-        span {
+        span{
             font-size: 9px;
             font-weight: normal;
             padding-left: 5px;
-            &::before {
-                content: "("
+            &::before{
+                content:"("
             }
-            &::after {
-                content: ")"
+            &::after{
+                content:")"
             }
         }
     }
@@ -336,7 +347,7 @@
             border-radius: 1.5px;
         }
     }
-    #cal2options {
+    #cal3options {
         position: absolute;
         right: 20px;
         bottom: 4px;
@@ -386,9 +397,9 @@
     }
 }
 
-body[data-pageid=pageCal2] {
+body[data-pageid=pageCal3] {
     &.inTab {
-        #pageCal2 {
+        #pageCal3 {
             .calendar {
                 max-height: none;
             }
@@ -398,19 +409,19 @@ body[data-pageid=pageCal2] {
 }
 
 @media screen {
-    #pageCal2:not(.forPrint) {
+    #pageCal3:not(.forPrint) {
         .dayCell {
             cursor: pointer;
         }
         .calendar {
             .today.dayCell {
-                border: 1px solid lighten(@todayBorderColor, 10%);
+                outline: 1px solid lighten(@todayBorderColor, 10%);
                 z-index: 1;
             }
             .selected.dayCell {
-                border: 1px solid @bdayBorderColor;
+                outline: 1px solid @bdayBorderColor;
                 background-color: #EAEAEA;
-                z-index: 1;
+                z-index: 2;
             }
         }
     }
@@ -428,25 +439,16 @@ body[data-pageid=pageCal2] {
         margin: 0;
     }
     .todayTime,
-    .cal2NavButtons,
-    #cal2options {
+    .cal3NavButtons,
+    #cal3options {
         display: none !important;
     }
-    #pageCal2.forPrint {
+    #pageCal3.forPrint {
         border: none;
         padding: 0;
         font-family: 'Philosopher', 'Segoe UI', sans-serif;
-        --dayWidth: 120px;
-        --monthWidth: calc(120 * 6)px;
-        .caption {
-            text-align: left;
-            right: 20px;
-        }
         @color1: #cc9933;
         .dayCell {
-            margin: 0 10px 11px 0;
-            border: 2px solid @color1;
-            border-radius: 3px;
             &.hdDayHS,
             &.hdDayHO {
                 background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, #fff 100%) !important;
@@ -482,17 +484,12 @@ body[data-pageid=pageCal2] {
             overflow: visible;
             margin: 0;
         }
-        .monthDays {
-            position: absolute;
-            top: 300px;
-            left: 25px;
-        }
         .month {
             background: no-repeat bottom right;
             background-size: cover;
-            height: 100.3vh;
+            // height: 100.3vh;
             width: 100vw;
-            margin: 0; //margin: 50px auto 0 auto;
+            margin: 150px auto 0 auto;
             page-break-inside: avoid;
             page-break-after: always;
             display: block !important;
@@ -515,14 +512,6 @@ body[data-pageid=pageCal2] {
             // }
         }
         .caption {
-            text-align: left;
-            left: -10px;
-            top: 50px;
-            right: unset;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 20px 30px 20px 130px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
             .monthNames {
                 font-size: 22pt;
             }
@@ -545,7 +534,7 @@ body[data-pageid=pageCal2] {
             }
         }
     }
-    body[data-pageid="pageCal2"] {
+    body[data-pageid="pageCal3"] {
         .mainTop {
             display: none;
         }
@@ -553,7 +542,7 @@ body[data-pageid=pageCal2] {
 }
 
 body[lang="ta"] {
-    #pageCal2 {
+    #pageCal3 {
         .day {
             bottom: 4px;
         }
@@ -565,7 +554,7 @@ body[lang="ta"] {
 }
 
 body.rtl {
-    #pageCal2 {
+    #pageCal3 {
         .caption {
             direction: rtl;
             left: 6px;

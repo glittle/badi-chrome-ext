@@ -1,27 +1,31 @@
-﻿[
-  {
-    "outputFile": "cal1.css",
-    "inputFile": "cal1.less",
-    "options": { "sourceMap": true }
-  },
-  {
-    "outputFile": "cal2.css",
-    "inputFile": "cal2.less",
-    "options": { "sourceMap": true }
-  },
-  {
-    "outputFile": "calWheel.css",
-    "inputFile": "calWheel.less",
-    "options": { "sourceMap": true }
-  },
-  {
-    "outputFile": "popup.css",
-    "inputFile": "popup.less",
-    "options": { "sourceMap": true }
-  },
-  {
-    "outputFile": "calGreg.css",
-    "inputFile": "calGreg.less",
-    "options": { "sourceMap": true }
-  }
+﻿[{
+        "outputFile": "cal1.css",
+        "inputFile": "cal1.less",
+        "options": { "sourceMap": true }
+    },
+    {
+        "outputFile": "cal2.css",
+        "inputFile": "cal2.less",
+        "options": { "sourceMap": true }
+    },
+    {
+        "outputFile": "cal3.css",
+        "inputFile": "cal3.less",
+        "options": { "sourceMap": true }
+    },
+    {
+        "outputFile": "calWheel.css",
+        "inputFile": "calWheel.less",
+        "options": { "sourceMap": true }
+    },
+    {
+        "outputFile": "popup.css",
+        "inputFile": "popup.less",
+        "options": { "sourceMap": true }
+    },
+    {
+        "outputFile": "calGreg.css",
+        "inputFile": "calGreg.less",
+        "options": { "sourceMap": true }
+    }
 ]

@@ -63,12 +63,14 @@ body.rtl {
 #pageCal1,
 #pageCalWheel,
 #pageCalGreg,
+#pageCal3,
 #pageCal2 {
   border: 1px solid #77b55a;
   border-radius: 3px;
 }
 #pageCalWheel,
 #pageCalGreg,
+#pageCal3,
 #pageCal2 {
   width: 100%;
 }
@@ -1325,6 +1327,7 @@ body[data-pageid="pageSetup"] #show {
   #pageLists,
   #pageCal1,
   #pageCal2,
+  #pageCal3,
   #pageCalWheel,
   #pageReminders,
   #pageExporter,

@@ -1,1406 +1,1417 @@
 {
-  "1day": {
-    "message": "in {0} day",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
-  },
-  "actionSpeakDesc": {
-    "message": "The reminder will be read aloud using this voice: ",
-    "description": "in edit area when asking for a relative time"
-  },
-  "afterSunset": {
-    "message": "Evening (After Sunset)"
-  },
-  "am": {
-    "message": "am",
-    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
-  },
-  "arabic": {
-    "message": "Name",
-    "description": "on List page - table heading"
-  },
-  "ayyamIs0": {
-    "message": "(Y M D) 0={0}",
-    "description": "(updated) in Badi date picker area"
-  },
-  "bDatePickerTitle": {
-    "message": "Go to <u>B</u>adí' Date",
-    "description": "added <u></u> - should have one letter between <u> and </u>"
-  },
-  "beforeSunset": {
-    "message": "Day (Before Sunset)"
-  },
-  "bMonthMeaning": {
-    "message": "Intercalary Days,Splendor,Glory,Beauty,Grandeur,Light,Mercy,Words,Perfection,Names,Might,Will,Knowledge,Power,Speech,Questions,Honor,Sovereignty,Dominion,Loftiness",
-    "description": "Names of days/months, with first one being Ayyam-i-ha"
-  },
-  "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
-    "description": "month names, start with Ayyam-i-Ha"
-  },
-  "browserActionTitle": {
-    "message": "Loading",
-    "description": "Shown until the dynamic tip is created"
-  },
-  "browserMenuOpen": {
-    "message": "Open in a tab",
-    "description": "shown as menu item when right-clicking on the browser icon "
-  },
-  "btnCal2M": {
-    "message": "Zoom to Month",
-    "description": "on button"
-  },
-  "btnCal2Y": {
-    "message": "Zoom to Year",
-    "description": "on button"
-  },
-  "btnCustomBuilderCancel": {
-    "message": "Cancel / New"
-  },
-  "btnEveOrDay": {
-    "message": "Before / After Sunset"
-  },
-  "btnJumpTo": {
-    "message": "Go"
-  },
-  "btnJumpToTitle": {
-    "message": "Move forward or backward by this number of days",
-    "description": "tooltip"
-  },
-  "btnPlannerExportCsv": {
-    "message": "Export to Excel",
-    "description": "button - export to Comma Separated Value format for import into Excel"
-  },
-  "btnPlannerExportICal": {
-    "message": "Export ICAL",
-    "description": "button - export to iCalendar format"
-  },
-  "btnPlannerHelperFeasts": {
-    "message": "Feasts",
-    "description": "helper button"
-  },
-  "btnPlannerHelperHD1": {
-    "message": "Holy Days (no work)",
-    "description": "helper button"
-  },
-  "btnPlannerHelperHD2": {
-    "message": "All Holy Days",
-    "description": "helper button"
-  },
-  "btnPlannerHelperNone": {
-    "message": "None",
-    "description": "helper button"
-  },
-  "btnPlannerHelperRid": {
-    "message": "Ridvan",
-    "description": "helper button"
-  },
-  "btnPlannerHelperTHB": {
-    "message": "Twin Birthdays",
-    "description": "helper button"
-  },
-  "btnReminderCancel": {
-    "message": "Cancel",
-    "description": "cancel changes and close the edit area"
-  },
-  "btnReminderDelete": {
-    "message": "Delete",
-    "description": "delete a reminder"
-  },
-  "btnReminderEdit": {
-    "message": "Edit",
-    "description": "shown next to each reminder. Click to edit the reminder."
-  },
-  "btnReminderSave": {
-    "message": "<u>S</u>ave",
-    "description": "Save the changes and close the edit area"
-  },
-  "btnReminderSaveNew": {
-    "message": "Save as New Reminder",
-    "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
-  },
-  "btnReminderTest": {
-    "message": "Test Now",
-    "description": "show a sample of the reminder now"
-  },
-  "btnRetry2": {
-    "message": "Reload Now"
-  },
-  "bTopDayDisplay": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "top right corner"
-  },
-  "bWeekDayMeaning": {
-    "message": ",Glory,Beauty,Perfection,Grace,Justice,Majesty,Independence",
-    "description": "start with Saturday and a leading comma"
-  },
-  "bWeekdayNameAr": {
-    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
-    "description": "weekday names, with leading , "
-  },
-  "bYearInVahidMeaning": {
-    "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendor,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
-    "description": "Vahid names, with leading , "
-  },
-  "bYearInVahidNameAr": {
-    "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
-    "description": "Arabic names of years in a Vahid, with leading , "
-  },
-  "cal2DarkerColors": {
-    "message": "Darker <u>c</u>olors",
-    "description": "a check box on the calendar. If checked, darker colors are used."
-  },
-  "cal2ForPrint": {
-    "message": "All months when <u>p</u>rinting",
-    "description": "a check box on the calendar. If checked, formating is improved for printing."
-  },
-  "cal2ShowTimes": {
-    "message": "Show <u>t</u>imes",
-    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
-  },
-  "Chrome_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-    "description": "about page"
-  },
-  "Chrome_WebStore": {
-    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
-    "description": "link to Webstore when running in Chrome"
-  },
-  "Chrome_WebStoreSupport": {
-    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
-    "description": "link to Webstore support link when running in Chrome"
-  },
-  "copied": {
-    "message": "Copied!",
-    "description": "short message that replaces sample format button text when button is clicked"
-  },
-  "currentFocus": {
-    "message": "Current Day",
-    "description": "in wheel, points to today, or whatever day is currently selected"
-  },
-  "customBtnCopy": {
-    "message": "Copy"
-  },
-  "customBuilder": {
-    "message": "Build a Custom Date Format"
-  },
-  "customBuilderEcho": {
-    "message": "Results (for currently selected day - see Tips & Keys to change day)"
-  },
-  "customBuilderIntro": {
-    "message": "Type the format into this box. <span class=customHint title='...NamePri = in Primary language\n...NameSec = in Secondary language\nfrag1... = sunset to midnight\nfrag2... = midnight to sunset'>(View Hints)</span><br>Click an 'Add' button in the Available Date Parts to insert at the current location."
-  },
-  "customDefined": {
-    "message": "Custom Date Formats"
-  },
-  "customFormats": {
-    "message": "Custom Formats",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "customIntroClick": {
-    "message": "Click 'Copy' to copy formatted date to the clipboard."
-  },
-  "customLoadDefaultToolTip": {
-    "message": "Format to show in the Chrome icon tooltip:"
-  },
-  "customLoadDefaultToolTip1": {
-    "message": "Line 1"
-  },
-  "customLoadDefaultToolTip2": {
-    "message": "Line 2"
-  },
-  "customLoadDefaultTopDay": {
-    "message": "Format to show at the top of most pages:"
-  },
-  "customLoadLetters": {
-    "message": "Click to copy from a standard format: "
-  },
-  "customPartsList": {
-    "message": "Available Date Parts"
-  },
-  "customSelectForFrontPage": {
-    "message": "Tick box to show on {0} page."
-  },
-  "customUseAsSample": {
-    "message": "Use as Sample?"
-  },
-  "dateHeading": {
-    "message": "Day",
-    "description": "heading in Events listing"
-  },
-  "dayEndedFuture": {
-    "message": "Ends"
-  },
-  "dayEndedPast": {
-    "message": "Ended"
-  },
-  "DayOfMonth": {
-    "message": "Day of Month"
-  },
-  "DayOfMonthFormat": {
-    "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
-  },
-  "DayOfWeek": {
-    "message": "Weekday"
-  },
-  "DayOfWeekFormat": {
-    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
-  },
-  "dayStartedFuture": {
-    "message": "Starts"
-  },
-  "dayStartedPast": {
-    "message": "Started"
-  },
-  "defaultFormat": {
-    "message": "(Default) ",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "elements": {
-    "message": "Fire,Air,Water,Earth",
-    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
-  },
-  "Ended": {
-    "message": "Ended",
-    "description": "Shown in the upcoming dates area"
-  },
-  "endingWithSunset": {
-    "message": "Ends with sunset at {0}"
-  },
-  "equiv": {
-    "message": "Equivalent",
-    "description": "on List page - table heading"
-  },
-  "eraAbbrev": {
-    "message": "B.E."
-  },
-  "eraLong": {
-    "message": "Bahá'í Era"
-  },
-  "eraShort": {
-    "message": "BE"
-  },
-  "eventTime": {
-    "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
-    "description": "show start time in Events listing"
-  },
-  "eventTimeHeading1": {
-    "message": "Usual meeting time",
-    "description": "heading in Events listing (if not showing Holy Days)"
-  },
-  "eventTimeHeading2": {
-    "message": "Meeting/Special Time",
-    "description": "heading in Events listing (if showing Holy Days)"
-  },
-  "evePartOfDay": {
-    "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
-    "description": "show start time in Events listing"
-  },
-  "example2": {
-    "message": "{bMonthNamePri} {bDay} {dayStartedLower} at sunset (about {startingSunsetDesc}) on {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} and {dayEndedLower} at sunset (about {endingSunsetDesc}) on {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
-  },
-  "exportAlert_B0": {
-    "message": "When it starts"
-  },
-  "exportAlert_B1": {
-    "message": "1 minute before"
-  },
-  "exportAlert_B10": {
-    "message": "10 minutes before"
-  },
-  "exportAlert_B15": {
-    "message": "15 minutes before"
-  },
-  "exportAlert_B30": {
-    "message": "30 minutes before"
-  },
-  "exportAlert_B5": {
-    "message": "5 minutes before"
-  },
-  "exportAlert_B60": {
-    "message": "60 minutes before"
-  },
-  "exportBadiYear0": {
-    "message": "Badíʿ year - {0} B.E."
-  },
-  "exportBadiYear1": {
-    "message": "Badíʿ year - {0} B.E."
-  },
-  "exportCalendarDescription": {
-    "message": "Dates in the Badíʿ Calendar for {location}",
-    "description": "title on page"
-  },
-  "exportDayFromSunset": {
-    "message": "Start of {0}"
-  },
-  "exporterDateRange": {
-    "message": "<u>R</u>ange of dates to Export (based on currently selected year)"
-  },
-  "exporterFastEnd": {
-    "message": "Fast Ends",
-    "description": "when the fast ends at sunset"
-  },
-  "exporterFastStart": {
-    "message": "Fast Starts",
-    "description": "when the fast starts at sunrise"
-  },
-  "exporterFastUntil": {
-    "message": "Fast until {endingSunsetDesc}"
-  },
-  "exporterItemDescDay": {
-    "message": "A day in the Badíʿ calendar.",
-    "description": "Included as the description in every calendar entry"
-  },
-  "exporterItemDescFast": {
-    "message": "Times for the annual Bahá'í Fast.",
-    "description": "Included as the description in every calendar entry"
-  },
-  "exporterItemDescGeneralTime": {
-    "message": "Gathering may start at any time on this Badíʿ day.",
-    "description": "For when a Holy Day as a particular time"
-  },
-  "exporterItemDescShared": {
-    "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
-    "description": "Be sure the URL is not translated!"
-  },
-  "exporterItemDescSpecialTime": {
-    "message": "{SpecialTime}.",
-    "description": "For when a Holy Day as a particular time"
-  },
-  "exporterTitle": {
-    "message": "Badíʿ Calendar Exporter",
-    "description": "title on page"
-  },
-  "exportFile": {
-    "message": "Download iCalendar file (.ics)"
-  },
-  "exportGregYear0": {
-    "message": "Gregorian year - {0} A.D."
-  },
-  "exportGregYear1": {
-    "message": "Gregorian year - {0} A.D."
-  },
-  "exportHideTest": {
-    "message": "Hide"
-  },
-  "exportIncludeAlert": {
-    "message": "Add an alert to each event (may not load into Google calendar)"
-  },
-  "exportIncludeLocation": {
-    "message": "Location Information"
-  },
-  "exportIntro": {
-    "message": "Important! See <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">this web page</a> for information and cautions!",
-    "description": "Be sure the URL remains in English, to find the webpage!"
-  },
-  "exportName": {
-    "message": "Title for Exported Calendar (may not be used)"
-  },
-  "exportNumToInclude": {
-    "message": "Number of calendar entries that will be created (approximately):"
-  },
-  "exportOption_AllDay": {
-    "message": "All-day event from midnight <em>(1 day long)</em>"
-  },
-  "exportOption_BeginningSunset": {
-    "message": "At beginning sunset only"
-  },
-  "exportOption_Date": {
-    "message": "Badíʿ Days <em>(365/366 days)</em>"
-  },
-  "exportOption_Fast": {
-    "message": "Fast Days <em>(19 days)</em>"
-  },
-  "exportOption_Feast": {
-    "message": "Feasts <em>(19 days)</em>"
-  },
-  "exportOption_Hd": {
-    "message": "Holy Days <em>(11 days)</em>"
-  },
-  "exportOption_Start": {
-    "message": "Event at designated observation time or usual meeting time"
-  },
-  "exportOption_Sun": {
-    "message": "From sunset to sunset <em>(about 24 hours)</em>"
-  },
-  "exportOption_Sunrise": {
-    "message": "At sunrise only"
-  },
-  "exportOption_SunriseToSunset": {
-    "message": "Event from sunrise to sunset <em>(about 12 hours)</em>"
-  },
-  "exportOption_Sunset": {
-    "message": "At sunset only"
-  },
-  "exportOption_Usual": {
-    "message": "Event at usual meeting time (see Events page)"
-  },
-  "exportOtherSettings": {
-    "message": "Other Settings"
-  },
-  "exportQuickDesc": {
-    "message": "Export each set, then load them all into the same calendar!"
-  },
-  "exportQuickPick1": {
-    "message": "1. Full Calendar"
-  },
-  "exportQuickPick1Text": {
-    "message": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
-  },
-  "exportQuickPick2": {
-    "message": "2. Fast Time - Morning"
-  },
-  "exportQuickPick2Text": {
-    "message": "Sunrise, with an alert just before it."
-  },
-  "exportQuickPick3": {
-    "message": "3. Fast Time - Evening"
-  },
-  "exportQuickPick3Text": {
-    "message": "Sunset, with an alert."
-  },
-  "exportQuickPickClearText": {
-    "message": "Reset options"
-  },
-  "exportQuickPicks": {
-    "message": "Recommended sets of Events"
-  },
-  "exportRangeFullRange": {
-    "message": "Export all calendar entries. (If not checked, only export a sample set.)"
-  },
-  "exportTest": {
-    "message": "Di<u>s</u>play for copying"
-  },
-  "exportTestCsv": {
-    "message": "CSV"
-  },
-  "exportWhatTitle": {
-    "message": "Select what should be exported."
-  },
-  "exportWhatToInclude": {
-    "message": "Options"
-  },
-  "facebook": {
-    "message": "Facebook",
-    "description": "ALT for icon at bottom of page"
-  },
-  "fastDaysTitle": {
-    "message": "Fasting Times in {bYear}"
-  },
-  "fastGDate": {
-    "message": "Date",
-    "description": "heading in Fast days listing"
-  },
-  "FeastOf": {
-    "message": "Feast of {0}",
-    "description": "The localized name of the Feast will be put into {0}"
-  },
-  "FestivalRidvan": {
-    "message": "Festival of Ridván"
-  },
-  "Firefox_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-    "description": "about page"
-  },
-  "Firefox_WebStore": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-    "description": "link to Webstore when running in Firefox"
-  },
-  "Firefox_WebStoreSupport": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-    "description": "link to Webstore support link when running in Firefox"
-  },
-  "formatIconClick": {
-    "message": "(click for more details)"
-  },
-  "formatIconToolTip": {
-    "message": "{bMonthNamePri} {bDay}, {bYear}",
-    "description": "text when mouse is over the extension icon"
-  },
-  "future_Day": {
-    "message": "starts at {time}",
-    "description": "shown in the eve of the day"
-  },
-  "future_Delta": {
-    "message": "will be in {numUnits}"
-  },
-  "future_DeltaTime": {
-    "message": "will be in {numUnits} at {time}"
-  },
-  "future_StartDeltaTime": {
-    "message": "will start in {numUnits} at {time}"
-  },
-  "future_StartTime": {
-    "message": "will start at {time}"
-  },
-  "future_Time": {
-    "message": "will be at {time}"
-  },
-  "gCombinedY_1": {
-    "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
-    "description": "with year"
-  },
-  "gCombinedY_2": {
-    "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
-    "description": "with year"
-  },
-  "gCombinedY_3": {
-    "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
-    "description": "with year"
-  },
-  "gCombined_1": {
-    "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
-    "description": "day in same gregorian month"
-  },
-  "gCombined_2": {
-    "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
-    "description": "day spanning different gregorian months"
-  },
-  "gCombined_3": {
-    "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
-    "description": "day spanning different gregorian years"
-  },
-  "gDatePickerTitle": {
-    "message": "Gregorian Date"
-  },
-  "gDatePickerTitle2": {
-    "message": "Go to <u>G</u>regorian Date",
-    "description": "changed in 1.1.2"
-  },
-  "gMonthDayYear": {
-    "message": "{bMonthNamePri} {bDay}, {bYear}"
-  },
-  "gMonthLong": {
-    "message": "January,February,March,April,May,June,July,August,September,October,November,December"
-  },
-  "gMonthShort": {
-    "message": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
-  },
-  "googlePlus": {
-    "message": "Google+",
-    "description": "ALT for icon at bottom of page"
-  },
-  "gotoNow": {
-    "message": "Now"
-  },
-  "gregorianDateDisplay": {
-    "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
-    "description": "in left panel"
-  },
-  "gTopDayDisplay": {
-    "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
-    "description": "top right corner"
-  },
-  "gWeekdayLong": {
-    "message": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday",
-    "description": "start with Sunday"
-  },
-  "gWeekdayShort": {
-    "message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
-    "description": "start with Sun"
-  },
-  "HolyDay_AscAbdul": {
-    "message": "Ascension of `Abdu'l-Bahá"
-  },
-  "HolyDay_AscBaha": {
-    "message": "Ascension of Bahá'u'lláh"
-  },
-  "HolyDay_BirthBab": {
-    "message": "Birth of the Báb"
-  },
-  "HolyDay_BirthBaha": {
-    "message": "Birth of Bahá'u'lláh"
-  },
-  "HolyDay_Covenant": {
-    "message": "Day of the Covenant"
-  },
-  "HolyDay_DeclBab": {
-    "message": "Declaration of the Báb"
-  },
-  "HolyDay_Martyrdom": {
-    "message": "Martyrdom of the Báb"
-  },
-  "HolyDay_NawRuz": {
-    "message": "Naw Rúz"
-  },
-  "HolyDay_Ridvan1": {
-    "message": "First Day of Ridván"
-  },
-  "HolyDay_Ridvan12": {
-    "message": "Twelfth Day of Ridván"
-  },
-  "HolyDay_Ridvan9": {
-    "message": "Ninth Day of Ridván"
-  },
-  "iftttEvent": {
-    "message": "IFTTT Event Name",
-    "description": "name of 'Event' for IFTTT Maker channel"
-  },
-  "iftttInfo": {
-    "message": "For details or to sign up, see <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. The event will contain these fields: title, body, tag",
-    "description": "info and link to ifttt page"
-  },
-  "iftttKey": {
-    "message": "IFTTT Maker Channel Key",
-    "description": "Key' for IFTTT Maker channel"
-  },
-  "includeFeasts": {
-    "message": "<u>F</u>easts",
-    "description": "choosing what to include in the listing"
-  },
-  "includeHolyDays": {
-    "message": "<u>H</u>oly Days",
-    "description": "choosing what to include in the listing"
-  },
-  "includeThese": {
-    "message": "Show",
-    "description": "choosing what to include in the listing"
-  },
-  "inputLat": {
-    "message": "Latitude:",
-    "description": "on setup page"
-  },
-  "inputLng": {
-    "message": "Longitude:",
-    "description": "on setup page"
-  },
-  "Intercalary": {
-    "message": "Intercalary Days"
-  },
-  "jumpTo": {
-    "message": "<u>J</u>ump ± days",
-    "description": "user can enter a day after/before currently selected day"
-  },
-  "keyToOpenInTab": {
-    "message": "T",
-    "description": "Press Shift+(this letter) to open into a tab"
-  },
-  "Kullishay": {
-    "message": "Kull-i-<u>Sh</u>ay’"
-  },
-  "KullishayFormat": {
-    "message": "{bKullishay}"
-  },
-  "KullishayLocal": {
-    "message": "All-Things",
-    "description": "Transalation of Kull-i-Shay"
-  },
-  "locationError": {
-    "message": "Unable to determine your current location.\n\nThe extension will use 6:30pm for sunset on every date.",
-    "description": "If the system cannot determine the location, this is shown in an alert window."
-  },
-  "mainPartOfDay": {
-    "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
-    "description": "show start time in Events listing"
-  },
-  "meaning": {
-    "message": "Meaning",
-    "description": "on List page - table heading"
-  },
-  "messageBody": {
-    "message": "{triggerDisplayName} {desc}"
-  },
-  "midnight": {
-    "message": "12:00 midnight",
-    "description": "nice way to say midnight"
-  },
-  "Month": {
-    "message": "Month"
-  },
-  "MonthFormatAyyam": {
-    "message": "{bMonthNamePri} ({bMonthNameSec})"
-  },
-  "MonthFormatNormal": {
-    "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
-  },
-  "monthNames": {
-    "message": "Month/Day Names",
-    "description": "on List page - table caption"
-  },
-  "nearestSunsetDay": {
-    "message": "{dayEnded} with sunset at {endingSunsetDesc}"
-  },
-  "nearestSunsetEve": {
-    "message": "{dayStarted} with sunset at {startingSunsetDesc}"
-  },
-  "next": {
-    "message": "Next &rarr;"
-  },
-  "nextMonth": {
-    "message": "Next <u>M</u>onth",
-    "description": "button to move to next month (gregorian or badi)"
-  },
-  "nextRefreshAlarm": {
-    "message": "Next refresh scheduled after {0}: {1}",
-    "description": "only shown in the debug console"
-  },
-  "nextYear": {
-    "message": "Next Year",
-    "description": "hold Shift and press right arrow key"
-  },
-  "nextYearTitle": {
-    "message": "Press Shift + Right Arrow to view the next Year",
-    "description": "hold Shift and press right arrow key"
-  },
-  "noLocationAvailable": {
-    "message": "(Unknown Location - 6:30pm sunset times)",
-    "description": "If the system does not know the location of this computer."
-  },
-  "noLocationName": {
-    "message": "(Current Location)",
-    "description": "If the internet is not available, to get the name of the current location."
-  },
-  "noon": {
-    "message": "12:00 noon",
-    "description": "nice way to say noon"
-  },
-  "noReminders": {
-    "message": "Add Sample Reminders",
-    "description": "shown if there are no reminders"
-  },
-  "Now": {
-    "message": "Now",
-    "description": "Shown in the upcoming dates area"
-  },
-  "num": {
-    "message": "#",
-    "description": "on List page - table heading"
-  },
-  "numUnits": {
-    "message": "{num} {units}",
-    "description": "eg. 5 days, 1 minute, 3 hours"
-  },
-  "ordinal": {
-    "message": "th,st,nd,rd",
-    "description": "x,1,2,3"
-  },
-  "ordinalNames": {
-    "message": ",first,second,third,fourth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelfth,thirteenth,fourteenth,fifteenth,sixteenth,seventeenth,eighteenth,nineteenth"
-  },
-  "otherDays": {
-    "message": "in {0} days",
-    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
-  },
-  "past_Day": {
-    "message": "started at {time}",
-    "description": "shown after midnight of the day"
-  },
-  "past_Delta": {
-    "message": "was {numUnits} ago"
-  },
-  "past_DeltaTime": {
-    "message": "was {numUnits} ago at {time}"
-  },
-  "past_StartDeltaTime": {
-    "message": "started {numUnits} ago at {time}"
-  },
-  "past_StartTime": {
-    "message": "started at {time}"
-  },
-  "past_Time": {
-    "message": "was at {time}"
-  },
-  "pick_pageCal1": {
-    "message": "Year View"
-  },
-  "pick_pageCal2": {
-    "message": "Calendar"
-  },
-  "pick_pageCalGreg": {
-    "message": "Calendar - Gregorian",
-    "description": "tab name"
-  },
-  "pick_pageCalWheel": {
-    "message": "Wheel",
-    "description": "tab name"
-  },
-  "pick_pageCustom": {
-    "message": "Custom",
-    "description": "page tab name and page title"
-  },
-  "pick_pageDay": {
-    "message": "Day"
-  },
-  "pick_pageEvents": {
-    "message": "Events",
-    "description": "showing Feast and Holy Days"
-  },
-  "pick_pageExporter": {
-    "message": "Export",
-    "description": "page tab name and page title"
-  },
-  "pick_pageFast": {
-    "message": "Fast"
-  },
-  "pick_pageLists": {
-    "message": "Lists"
-  },
-  "pick_pagePlanner": {
-    "message": "Planner",
-    "description": "tab"
-  },
-  "pick_pageReminders": {
-    "message": "Reminders",
-    "description": "page tab name and page title"
-  },
-  "pick_pageSetup": {
-    "message": "Setup",
-    "description": "page for setup information"
-  },
-  "planFromWhen": {
-    "message": "Starting from when?",
-    "description": "another input"
-  },
-  "planFromWhenNextYear": {
-    "message": "Start of next Badíʿ year",
-    "description": "answer for planFromWhen"
-  },
-  "planFromWhenThisYear": {
-    "message": "Start of this Badíʿ year",
-    "description": "answer for planFromWhen"
-  },
-  "planFromWhenToday": {
-    "message": "Today",
-    "description": "answer for planFromWhen"
-  },
-  "planIncludeWhat": {
-    "message": "Include Day or Eve?",
-    "description": "include day or evening or both?"
-  },
-  "planIncludeWhatBoth": {
-    "message": "Both",
-    "description": "answer to planIncludeWhat"
-  },
-  "planIncludeWhatDay": {
-    "message": "Day",
-    "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
-  },
-  "planIncludeWhatEve": {
-    "message": "Eve",
-    "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
-  },
-  "plannerResults": {
-    "message": "Results",
-    "description": "title over results"
-  },
-  "plannerShowWhat": {
-    "message": "Show what?",
-    "description": "First question in inputs"
-  },
-  "plannerStartSunsetForLocation": {
-    "message": "Starting Sunset at {0}",
-    "description": "title in results table - sunset at location"
-  },
-  "plannerTitle": {
-    "message": "Long-range Planner",
-    "description": "page title"
-  },
-  "plannerTitle2": {
-    "message": "Planning Selection",
-    "description": "title over inputs"
-  },
-  "plannerWhatEvent": {
-    "message": "Which?",
-    "description": "which event or events?"
-  },
-  "plannerWhatManyEvents": {
-    "message": "multiple Holy Days and Feasts",
-    "description": "answer to first question"
-  },
-  "plannerWhatOneEvent": {
-    "message": "one Holy Day or Feast",
-    "description": "answer to first question"
-  },
-  "planUntilUnitsYears": {
-    "message": "years",
-    "description": "answer to planUntilWhen"
-  },
-  "planUntilWhen": {
-    "message": "For how long?",
-    "description": "another question"
-  },
-  "pm": {
-    "message": "pm",
-    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
-  },
-  "pressKeyOrClick": {
-    "message": "Click button or type {0}.",
-    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
-  },
-  "pressToCopy": {
-    "message": "Press key to copy formatted date to the clipboard:",
-    "description": "Can click button with mouse, or press matching key on keyboard"
-  },
-  "prev": {
-    "message": "&larr; Prev"
-  },
-  "prevMonth": {
-    "message": "Prev Mo<u>n</u>th",
-    "description": "button to move to previous month (gregorian or badi)"
-  },
-  "prevYear": {
-    "message": "Prev Year",
-    "description": "hold Shift and press left arrow key"
-  },
-  "prevYearTitle": {
-    "message": "Press Shift + Left Arrow to view the previous year",
-    "description": "hold Shift and press left arrow key"
-  },
-  "rbDefLangText": {
-    "message": "Display language for dates",
-    "description": "on first tab... show Arabic names or in your language"
-  },
-  "rbDefLang_Ar": {
-    "message": "Arabic",
-    "description": "Shown on the main page (see screenshot in PhraseApp)"
-  },
-  "rbDefLang_Local": {
-    "message": "English",
-    "description": "put your language here, in your script"
-  },
-  "reminderAction_ifttt": {
-    "message": "trigger IFTTT recipe",
-    "description": "in dropdown list, to choose to use IFTTT"
-  },
-  "reminderAction_speak": {
-    "message": "read aloud",
-    "description": "in dropdown list, to choose to read the alert"
-  },
-  "reminderAction_zapier": {
-    "message": "trigger Zapier Webhook",
-    "description": "in dropdown list, to choose to use Zapier"
-  },
-  "reminderAddEdit": {
-    "message": "Add/Edit Reminder",
-    "description": "title on left side"
-  },
-  "reminderAfter": {
-    "message": "after"
-  },
-  "reminderAlarm": {
-    "message": "At {triggerTimeDisplay} --> {messageBody}",
-    "description": "used when showing list of alarms scheduled today"
-  },
-  "reminderBDay": {
-    "message": "Day {num} of the Badíʿ month",
-    "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
-  },
-  "reminderBefore": {
-    "message": "before"
-  },
-  "reminderCalcType": {
-    "message": "Show reminder {calcTypeInput}",
-    "description": "in edit area when asking when to show the reminder"
-  },
-  "reminderCalcTypeAbsolute": {
-    "message": "at specific time",
-    "description": "in dropdown"
-  },
-  "reminderCalcTypeRelative": {
-    "message": "relative to <span class=modelTriggerEcho></span>",
-    "description": "in dropdown"
-  },
-  "reminderDayDetails": {
-    "message": "{eventTime} on {eventWeekdayLong}, {eventMonthLong} {eventDay}."
-  },
-  "reminderDayDetailsTest": {
-    "message": "{eventTime} on {eventMonthShort} {eventDay}"
-  },
-  "reminderDayOfMonth": {
-    "message": "On day {num} of the Badíʿ month",
-    "description": "in list of defined reminders"
-  },
-  "reminderDayWhen": {
-    "message": "When {num} day(s) {beforeAfter} each {event}",
-    "description": "in list of defined reminders"
-  },
-  "reminderFeast": {
-    "message": "The Feast of {pri}, {sec},"
-  },
-  "reminderHolyDay": {
-    "message": "The Holy Day, \"{0}\","
-  },
-  "reminderList_bday": {
-    "message": "day {num} at {triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "reminderList_dayEvent": {
-    "message": "{num} day(s) {deltaText}, at {triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "reminderList_onload": {
-    "message": "{num} {units} after",
-    "description": "in list of defined reminders"
-  },
-  "reminderList_timeAbsolute": {
-    "message": "announce at {triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "reminderList_timeRelative": {
-    "message": "{num} {units} {deltaText}",
-    "description": "in list of defined reminders"
-  },
-  "reminderNum_days": {
-    "message": "day(s)",
-    "description": "unknown number of days"
-  },
-  "reminderNum_days_1_more": {
-    "message": "day;days",
-    "description": "single;plural"
-  },
-  "reminderNum_hours": {
-    "message": "hour(s)"
-  },
-  "reminderNum_hours_1_more": {
-    "message": "hour;hours"
-  },
-  "reminderNum_minutes": {
-    "message": "minute(s)"
-  },
-  "reminderNum_minutes_1_more": {
-    "message": "minute;minutes"
-  },
-  "reminderNum_seconds": {
-    "message": "second(s)"
-  },
-  "reminderNum_seconds_1_more": {
-    "message": "second;seconds"
-  },
-  "remindersDefined": {
-    "message": "Your Reminders",
-    "description": "title on right side"
-  },
-  "reminderSelectTrigger": {
-    "message": "Add a reminder...",
-    "description": "in dropdown, when no trigger is selected"
-  },
-  "reminderShowAt": {
-    "message": "Show at",
-    "description": "in front of time of day input"
-  },
-  "remindersScheduled": {
-    "message": "Scheduled today from {time} until midnight",
-    "description": "title on left side"
-  },
-  "reminderTagline": {
-    "message": "(displayed at {when})",
-    "description": "shown on the bottom of each reminder popoup"
-  },
-  "reminderTestTagline": {
-    "message": "(to be displayed at {when})",
-    "description": "shown on the bottom of popoup when tested"
-  },
-  "reminderTimeInputStructure": {
-    "message": "Show {num} {units} {delta}",
-    "description": "in edit area when asking for a relative time"
-  },
-  "reminderTitle": {
-    "message": "{0} Reminder",
-    "description": "displayed as the title of each reminder shown"
-  },
-  "reminderTriggerGroup_day": {
-    "message": "Special Days",
-    "description": "a group of triggers - feast, holy day, Badi day"
-  },
-  "reminderTriggerGroup_load": {
-    "message": "Other Events",
-    "description": "a group of triggers - for other types of events"
-  },
-  "reminderTriggerGroup_time": {
-    "message": "Time of Day",
-    "description": "a group of triggers - sunset sunrise noon midnight"
-  },
-  "reminderTrigger_bday": {
-    "message": "Badíʿ Day",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_feast": {
-    "message": "Feast day",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_holyday": {
-    "message": "Holy Day",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_load": {
-    "message": "On Load",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_midnight": {
-    "message": "Midnight",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_noon": {
-    "message": "Noon",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_sunrise": {
-    "message": "Sunrise",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderTrigger_sunset": {
-    "message": "Sunset",
-    "description": "what this reminder is triggered on"
-  },
-  "reminderType": {
-    "message": "Event",
-    "description": "in front of the trigger selector"
-  },
-  "reminder_actions": {
-    "message": "Additional Action",
-    "description": "prompt for other actions"
-  },
-  "reminder_nullAction": {
-    "message": "none",
-    "description": "in dropdown list, for when no other action is chosen"
-  },
-  "sampleGroup1_1": {
-    "message": "{bDay} {bMonthNamePri} {bYear}",
-    "description": "3 Jamál 172"
-  },
-  "sampleGroup1_10": {
-    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
-    "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
-  },
-  "sampleGroup1_14": {
-    "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
-    "description": "1.10.1.3.13"
-  },
-  "sampleGroup1_15": {
-    "message": "{bYear}.{bMonth00}.{bDay00}",
-    "description": "172.03.13"
-  },
-  "sampleGroup1_2": {
-    "message": "{bMonthNamePri} {bDay}, {bYear}",
-    "description": "Jamal 4, 172"
-  },
-  "sampleGroup1_20": {
-    "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
-    "description": "172.03.13 Sep 3 -- OneNote tabs"
-  },
-  "sampleGroup1_23": {
-    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
-    "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
-  },
-  "sampleGroup1_24": {
-    "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
-    "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
-  },
-  "sampleGroup1_3": {
-    "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
-    "description": "Jamal 4, 172 -> 7:55pm"
-  },
-  "sampleGroup1_6": {
-    "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
-    "description": "1 Jamal (Beauty) 172"
-  },
-  "sampleGroup1_7": {
-    "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
-    "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
-  },
-  "sampleGroup1_8": {
-    "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
-    "description": "Jamál / Bahá, 1st ‘Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
-  },
-  "sampleGroup1_9": {
-    "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
-    "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
-  },
-  "setupAboutPara": {
-    "message": "<p>This Web Extension is designed to provide current information about the Badíʿ calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
-    "description": "explanation of "
-  },
-  "setupAboutTitle": {
-    "message": "About",
-    "description": "title for the About section"
-  },
-  "setupColor": {
-    "message": "Text color for toolbar icon:",
-    "description": "on setup page"
-  },
-  "setupColorH3": {
-    "message": "Icon Color",
-    "description": "on setup page"
-  },
-  "setupLangH3": {
-    "message": "Language",
-    "description": "on setup page"
-  },
-  "setupLangPct": {
-    "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
-  },
-  "setupLangPct100": {
-    "message": "100% translated!"
-  },
-  "setupOptOut": {
-    "message": "Opt out?",
-    "description": "label for checkbox"
-  },
-  "setupOptOutPara": {
-    "message": "To help understand how this Web Extension is being used, statistics are recorded whenever you switch between pages or do other major actions. This is anonymous, and the associated reports can be viewed by Glen Little. If you wish to opt out and turn this off, you may check this box:",
-    "description": "explanation of opting out of Google Analytics"
-  },
-  "setupOptOutTitle": {
-    "message": "Analytics",
-    "description": "title for setup section about opting out of Google Analytics"
-  },
-  "shoghiExample": {
-    "message": "This is the weekday of {bWeekdayNamePri}, the day of {bDayNamePri}, of the month of {bMonthNamePri}, of the year {bYearInVahidNamePri}, of the {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
-    "description": "Example given by Shoghi Effendi"
-  },
-  "shortcutKeyTitle": {
-    "message": "Press this key combination to open the Calendar from anywhere in the browser."
-  },
-  "showPointer": {
-    "message": "Show pointer"
-  },
-  "specialDaysTitle": {
-    "message": "Feasts and Holy Days in {bYear}"
-  },
-  "specialTime_0100S": {
-    "message": "1 am (Standard Time)",
-    "description": "Ascension of `Abdu'l-Bahá"
-  },
-  "specialTime_0300S": {
-    "message": "3 am (Standard Time)",
-    "description": "Ascension of Baha'u'llah"
-  },
-  "specialTime_1200S": {
-    "message": "Noon (Standard Time)",
-    "description": "Martyrdom of the Bab"
-  },
-  "specialTime_1500S": {
-    "message": "3 pm (Standard Time)",
-    "description": "First day of Ridvan"
-  },
-  "specialTime_SS2": {
-    "message": "About 2 hours after sunset",
-    "description": "Declaration of the Bab"
-  },
-  "standardFormats": {
-    "message": "Standard Formats",
-    "description": "in the list of formats at the bottom of of the 'Custom' page"
-  },
-  "startedWithSunset": {
-    "message": "Started with sunset at {0}"
-  },
-  "startTimeOption": {
-    "message": "Usual meeting time: ",
-    "description": "above Events listing"
-  },
-  "suggestions": {
-    "message": "Suggestions?"
-  },
-  "suggestionsTitle": {
-    "message": "Please click here and submit any suggestions for how to improve this extension!"
-  },
-  "sunriseFastHeading": {
-    "message": "Sunrise",
-    "description": "heading in Fast days listing"
-  },
-  "sunsetFastHeading": {
-    "message": "Sunset",
-    "description": "heading in Fast days listing"
-  },
-  "sunsetHeading": {
-    "message": "Start of Badíʿ Day",
-    "description": "heading in Events listing"
-  },
-  "suspendWorkHeading": {
-    "message": "Suspend Work",
-    "description": "heading in Events listing"
-  },
-  "textDirection": {
-    "message": "ltr",
-    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
-  },
-  "timeFormat12": {
-    "message": "{time} {ampm}",
-    "description": "used when use24HourClock is set to false"
-  },
-  "tips": {
-    "message": "Tips &amp; Keys",
-    "description": "hints of how to use the tool"
-  },
-  "tipsAbout": {
-    "message": "Accuracy?"
-  },
-  "tipsAboutText": {
-    "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be needed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
-  },
-  "tipsText": {
-    "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!\nPress Ctrl+Shift+A to change language."
-  },
-  "title": {
-    "message": "Badíʿ Calendar",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "titleDesc": {
-    "message": "Shows today's date in the Wondrous (Badíʿ) calendar, the official calendar of the Bahá'í Faith.",
-    "description": "Used in the manifest"
-  },
-  "Tonight": {
-    "message": "Tonight",
-    "description": "Shown in the upcoming dates area"
-  },
-  "translation": {
-    "message": "en",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "English",
-    "description": "The name of this language, in English"
-  },
-  "upcomingDateFormat": {
-    "message": "{bMonthNamePri} {bDay} ({gCombined})",
-    "description": "upcoming list"
-  },
-  "upcomingTitle": {
-    "message": "Upcoming Feasts, Holy Days and other events"
-  },
-  "use24HourClock": {
-    "message": "false",
-    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
-  },
-  "Vahid": {
-    "message": "Váḥid"
-  },
-  "VahidFormat": {
-    "message": "{bVahid}"
-  },
-  "VahidLocal": {
-    "message": "Unity"
-  },
-  "version": {
-    "message": "Version {0}"
-  },
-  "webstore": {
-    "message": "Web Store"
-  },
-  "weekDayNames": {
-    "message": "Weekday Names",
-    "description": "on List page - table caption"
-  },
-  "YearOfEra": {
-    "message": "Year of Bahá'í Era"
-  },
-  "YearOfEraFormat": {
-    "message": "{bYear}"
-  },
-  "YearOfVahid": {
-    "message": "Year of {VahidLabelPri}"
-  },
-  "YearOfVahidFormat": {
-    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
-  },
-  "yearWithEra": {
-    "message": "{bYear} {bEraAbbrev}"
-  },
-  "zapierInfo": {
-    "message": "For details or to sign up, see <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. The Zap will contain these fields: title, body, tag, time",
-    "description": "info and link to Zapier"
-  },
-  "zapierKey": {
-    "message": "Zapier Webhook",
-    "description": "url for Zapier"
-  }
+    "1day": {
+        "message": "in {0} day",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "actionSpeakDesc": {
+        "message": "The reminder will be read aloud using this voice: ",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "Evening (After Sunset)"
+    },
+    "am": {
+        "message": "am",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Name",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(Y M D) 0={0}",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Go to <u>B</u>adí' Date",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "Day (Before Sunset)"
+    },
+    "bMonthMeaning": {
+        "message": "Intercalary Days,Splendor,Glory,Beauty,Grandeur,Light,Mercy,Words,Perfection,Names,Might,Will,Knowledge,Power,Speech,Questions,Honor,Sovereignty,Dominion,Loftiness",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Loading",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Open in a tab",
+        "description": "shown as menu item when right-clicking on the browser icon "
+    },
+    "btnCal2M": {
+        "message": "Zoom to Month",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Zoom to Year",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Cancel / New"
+    },
+    "btnEveOrDay": {
+        "message": "Before / After Sunset"
+    },
+    "btnJumpTo": {
+        "message": "Go"
+    },
+    "btnJumpToTitle": {
+        "message": "Move forward or backward by this number of days",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Export to Excel",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Export ICAL",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Feasts",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Holy Days (no work)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "All Holy Days",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "None",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Ridvan",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Twin Birthdays",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Cancel",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Delete",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Edit",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>S</u>ave",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Save as New Reminder",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Test Now",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Reload Now"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Glory,Beauty,Perfection,Grace,Justice,Majesty,Independence",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Father,D,Gate,V,Eternity,Generosity,Splendor,Love,Delightful,Answer,Single,Bountiful,Affection,Beginning,Luminous,Most Luminous,Unity",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "Darker <u>c</u>olors",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "All months when <u>p</u>rinting",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Show <u>t</u>imes",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "All months when <u>p</u>rinting",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Show <u>t</u>imes",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "Copied!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Current Day",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Copy"
+    },
+    "customBuilder": {
+        "message": "Build a Custom Date Format"
+    },
+    "customBuilderEcho": {
+        "message": "Results (for currently selected day - see Tips & Keys to change day)"
+    },
+    "customBuilderIntro": {
+        "message": "Type the format into this box. <span class=customHint title='...NamePri = in Primary language\n...NameSec = in Secondary language\nfrag1... = sunset to midnight\nfrag2... = midnight to sunset'>(View Hints)</span><br>Click an 'Add' button in the Available Date Parts to insert at the current location."
+    },
+    "customDefined": {
+        "message": "Custom Date Formats"
+    },
+    "customFormats": {
+        "message": "Custom Formats",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Click 'Copy' to copy formatted date to the clipboard."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Format to show in the Chrome icon tooltip:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Line 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Line 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Format to show at the top of most pages:"
+    },
+    "customLoadLetters": {
+        "message": "Click to copy from a standard format: "
+    },
+    "customPartsList": {
+        "message": "Available Date Parts"
+    },
+    "customSelectForFrontPage": {
+        "message": "Tick box to show on {0} page."
+    },
+    "customUseAsSample": {
+        "message": "Use as Sample?"
+    },
+    "dateHeading": {
+        "message": "Day",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "Ends"
+    },
+    "dayEndedPast": {
+        "message": "Ended"
+    },
+    "DayOfMonth": {
+        "message": "Day of Month"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Weekday"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "Starts"
+    },
+    "dayStartedPast": {
+        "message": "Started"
+    },
+    "defaultFormat": {
+        "message": "(Default) ",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "Fire,Air,Water,Earth",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Ended",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Ends with sunset at {0}"
+    },
+    "equiv": {
+        "message": "Equivalent",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "Bahá'í Era"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Usual meeting time",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Meeting/Special Time",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} at sunset (about {startingSunsetDesc}) on {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} and {dayEndedLower} at sunset (about {endingSunsetDesc}) on {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "10 minutes before"
+    },
+    "exportAlert_B15": {
+        "message": "15 minutes before"
+    },
+    "exportAlert_B30": {
+        "message": "30 minutes before"
+    },
+    "exportAlert_B5": {
+        "message": "5 minutes before"
+    },
+    "exportAlert_B60": {
+        "message": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "Badíʿ year - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "Badíʿ year - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "Dates in the Badíʿ Calendar for {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>R</u>ange of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "Fast Ends",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Fast Starts",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Fast until {endingSunsetDesc}"
+    },
+    "exporterItemDescDay": {
+        "message": "A day in the Badíʿ calendar.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Times for the annual Bahá'í Fast.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Gathering may start at any time on this Badíʿ day.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ Calendar Exporter",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Download iCalendar file (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregorian year - {0} A.D."
+    },
+    "exportGregYear1": {
+        "message": "Gregorian year - {0} A.D."
+    },
+    "exportHideTest": {
+        "message": "Hide"
+    },
+    "exportIncludeAlert": {
+        "message": "Add an alert to each event (may not load into Google calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Location Information"
+    },
+    "exportIntro": {
+        "message": "Important! See <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">this web page</a> for information and cautions!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Title for Exported Calendar (may not be used)"
+    },
+    "exportNumToInclude": {
+        "message": "Number of calendar entries that will be created (approximately):"
+    },
+    "exportOption_AllDay": {
+        "message": "All-day event from midnight <em>(1 day long)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "At beginning sunset only"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ Days <em>(365/366 days)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fast Days <em>(19 days)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Feasts <em>(19 days)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Holy Days <em>(11 days)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Event at designated observation time or usual meeting time"
+    },
+    "exportOption_Sun": {
+        "message": "From sunset to sunset <em>(about 24 hours)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "At sunrise only"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Event from sunrise to sunset <em>(about 12 hours)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "At sunset only"
+    },
+    "exportOption_Usual": {
+        "message": "Event at usual meeting time (see Events page)"
+    },
+    "exportOtherSettings": {
+        "message": "Other Settings"
+    },
+    "exportQuickDesc": {
+        "message": "Export each set, then load them all into the same calendar!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Full Calendar"
+    },
+    "exportQuickPick1Text": {
+        "message": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
+    },
+    "exportQuickPick2": {
+        "message": "2. Fast Time - Morning"
+    },
+    "exportQuickPick2Text": {
+        "message": "Sunrise, with an alert just before it."
+    },
+    "exportQuickPick3": {
+        "message": "3. Fast Time - Evening"
+    },
+    "exportQuickPick3Text": {
+        "message": "Sunset, with an alert."
+    },
+    "exportQuickPickClearText": {
+        "message": "Reset options"
+    },
+    "exportQuickPicks": {
+        "message": "Recommended sets of Events"
+    },
+    "exportRangeFullRange": {
+        "message": "Export all calendar entries. (If not checked, only export a sample set.)"
+    },
+    "exportTest": {
+        "message": "Di<u>s</u>play for copying"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Select what should be exported."
+    },
+    "exportWhatToInclude": {
+        "message": "Options"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Fasting Times in {bYear}"
+    },
+    "fastGDate": {
+        "message": "Date",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Feast of {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival of Ridván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(click for more details)"
+    },
+    "formatIconToolTip": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "starts at {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "will be in {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "will be in {numUnits} at {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "will start in {numUnits} at {time}"
+    },
+    "future_StartTime": {
+        "message": "will start at {time}"
+    },
+    "future_Time": {
+        "message": "will be at {time}"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregorian Date"
+    },
+    "gDatePickerTitle2": {
+        "message": "Go to <u>G</u>regorian Date",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "January,February,March,April,May,June,July,August,September,October,November,December"
+    },
+    "gMonthShort": {
+        "message": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Now"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Ascension of `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Ascension of Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Birth of the Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Birth of Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Day of the Covenant"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Declaration of the Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martyrdom of the Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "First Day of Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Twelfth Day of Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Ninth Day of Ridván"
+    },
+    "iftttEvent": {
+        "message": "IFTTT Event Name",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "For details or to sign up, see <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. The event will contain these fields: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel Key",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>easts",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>oly Days",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Show",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Latitude:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Longitude:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "Intercalary Days"
+    },
+    "jumpTo": {
+        "message": "<u>J</u>ump ± days",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "All-Things",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Unable to determine your current location.\n\nThe extension will use 6:30pm for sunset on every date.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Meaning",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 midnight",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Month"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Month/Day Names",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} with sunset at {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} with sunset at {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Next &rarr;"
+    },
+    "nextMonth": {
+        "message": "Next <u>M</u>onth",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Next refresh scheduled after {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Next Year",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Press Shift + Right Arrow to view the next Year",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Unknown Location - 6:30pm sunset times)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Current Location)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 noon",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Add Sample Reminders",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Now",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "th,st,nd,rd",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",first,second,third,fourth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelfth,thirteenth,fourteenth,fifteenth,sixteenth,seventeenth,eighteenth,nineteenth"
+    },
+    "otherDays": {
+        "message": "in {0} days",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "started at {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "was {numUnits} ago"
+    },
+    "past_DeltaTime": {
+        "message": "was {numUnits} ago at {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "started {numUnits} ago at {time}"
+    },
+    "past_StartTime": {
+        "message": "started at {time}"
+    },
+    "past_Time": {
+        "message": "was at {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Year View"
+    },
+    "pick_pageCal2": {
+        "message": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregorian Month View",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Wheel",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Custom",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Day"
+    },
+    "pick_pageEvents": {
+        "message": "Events",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Export",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Fast"
+    },
+    "pick_pageLists": {
+        "message": "Lists"
+    },
+    "pick_pagePlanner": {
+        "message": "Planner",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Reminders",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Setup",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Starting from when?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Start of next Badíʿ year",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Start of this Badíʿ year",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Today",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Include Day or Eve?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Both",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Day",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Eve",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Results",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Show what?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Starting Sunset at {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Long-range Planner",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Planning Selection",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Which?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "multiple Holy Days and Feasts",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "one Holy Day or Feast",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "years",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "For how long?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "pm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Click button or type {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Press key to copy formatted date to the clipboard:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Prev"
+    },
+    "prevMonth": {
+        "message": "Prev Mo<u>n</u>th",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Prev Year",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Press Shift + Left Arrow to view the previous year",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLangText": {
+        "message": "Display language for dates",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabic",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "English",
+        "description": "put your language here, in your script"
+    },
+    "reminderAction_ifttt": {
+        "message": "trigger IFTTT recipe",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "read aloud",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "trigger Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Add/Edit Reminder",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "after"
+    },
+    "reminderAlarm": {
+        "message": "At {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Day {num} of the Badíʿ month",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "before"
+    },
+    "reminderCalcType": {
+        "message": "Show reminder {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "at specific time",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relative to <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} on {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} on {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "On day {num} of the Badíʿ month",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "When {num} day(s) {beforeAfter} each {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "The Feast of {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "The Holy Day, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "day {num} at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} day(s) {deltaText}, at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} after",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "announce at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "day(s)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "day;days",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "hour(s)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "hour;hours"
+    },
+    "reminderNum_minutes": {
+        "message": "minute(s)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minute;minutes"
+    },
+    "reminderNum_seconds": {
+        "message": "second(s)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "second;seconds"
+    },
+    "remindersDefined": {
+        "message": "Your Reminders",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Add a reminder...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Show at",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Scheduled today from {time} until midnight",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(displayed at {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(to be displayed at {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Show {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} Reminder",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Special Days",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Other Events",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Time of Day",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderTrigger_bday": {
+        "message": "Badíʿ Day",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Feast day",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Holy Day",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "On Load",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Midnight",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Noon",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Sunrise",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Sunset",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderType": {
+        "message": "Event",
+        "description": "in front of the trigger selector"
+    },
+    "reminder_actions": {
+        "message": "Additional Action",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "none",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st ‘Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>This Web Extension is designed to provide current information about the Badíʿ calendar, local to where you are.</p><p>For more information, please click below on the 'Version' link, or any of the icons!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "About",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "Text color for toolbar icon:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "Icon Color",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "Language",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
+    },
+    "setupLangPct100": {
+        "message": "100% translated!"
+    },
+    "setupOptOut": {
+        "message": "Opt out?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "To help understand how this Web Extension is being used, statistics are recorded whenever you switch between pages or do other major actions. This is anonymous, and the associated reports can be viewed by Glen Little. If you wish to opt out and turn this off, you may check this box:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "Analytics",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "This is the weekday of {bWeekdayNamePri}, the day of {bDayNamePri}, of the month of {bMonthNamePri}, of the year {bYearInVahidNamePri}, of the {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Press this key combination to open the Calendar from anywhere in the browser."
+    },
+    "showPointer": {
+        "message": "Show pointer"
+    },
+    "specialDaysTitle": {
+        "message": "Feasts and Holy Days in {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 am (Standard Time)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 am (Standard Time)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Noon (Standard Time)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 pm (Standard Time)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "About 2 hours after sunset",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "Standard Formats",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "Started with sunset at {0}"
+    },
+    "startTimeOption": {
+        "message": "Usual meeting time: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Suggestions?"
+    },
+    "suggestionsTitle": {
+        "message": "Please click here and submit any suggestions for how to improve this extension!"
+    },
+    "sunriseFastHeading": {
+        "message": "Sunrise",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Sunset",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Start of Badíʿ Day",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspend Work",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Tips &amp; Keys",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "Accuracy?"
+    },
+    "tipsAboutText": {
+        "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be needed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
+    },
+    "tipsText": {
+        "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!\nPress Ctrl+Shift+A to change language."
+    },
+    "title": {
+        "message": "Badíʿ Calendar",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Shows today's date in the Wondrous (Badíʿ) calendar, the official calendar of the Bahá'í Faith.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Tonight",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "en",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "English",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Upcoming Feasts, Holy Days and other events"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unity"
+    },
+    "version": {
+        "message": "Version {0}"
+    },
+    "webstore": {
+        "message": "Web Store"
+    },
+    "weekDayNames": {
+        "message": "Weekday Names",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Year of Bahá'í Era"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Year of {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "For details or to sign up, see <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. The Zap will contain these fields: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook",
+        "description": "url for Zapier"
+    }
 }

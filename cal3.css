@@ -2,46 +2,42 @@
 /* air of eternity */
 /* water of Divine Unity */
 /* earth */
-#pageCal2 {
-  --dayWidth: 124px;
-  --monthWidth: calc(744) px;
+#pageCal3 {
   position: relative;
   padding-bottom: 16px;
   padding-top: 7px;
 }
-#pageCal2 .placeName {
+#pageCal3 .placeName {
   display: none;
 }
-#pageCal2 .sunsetEnd,
-#pageCal2 .sunsetStart span,
-#pageCal2 .sunrise {
+#pageCal3 .sunsetEnd,
+#pageCal3 .sunsetStart span,
+#pageCal3 .sunrise {
   display: none;
 }
-#pageCal2 .calendar {
-  width: 100%;
-  margin-left: 5px;
-  overflow: auto;
+#pageCal3 .calendar {
+  width: 99%;
+  margin: 0 auto 12px;
+  overflow: unset;
   max-height: 497px;
   position: relative;
   transition: all 1s;
 }
-#pageCal2 .calendar.showTimes .placeName {
+#pageCal3 .calendar.showTimes .placeName {
   display: block;
   font-style: italic;
-  font-size: 80%;
-  max-width: 220px;
-  margin-top: 5px;
+  font-size: 70%;
 }
-#pageCal2 .calendar.showTimes .hdName {
-  margin: 0 35px 0 0px;
+#pageCal3 .calendar.showTimes .hdName {
+  margin: 0 0 0 3px;
 }
-#pageCal2 .calendar.showTimes .sunsetEnd {
+#pageCal3 .calendar.showTimes .sunsetEnd {
   display: block;
 }
-#pageCal2 .calendar.showTimes .sunrise {
+#pageCal3 .calendar.showTimes .sunrise {
   display: block;
 }
-#pageCal2 .calendar.showTimes .todayTime {
+#pageCal3 .calendar.showTimes .todayTime {
   position: absolute;
   display: block;
   bottom: 0;
@@ -49,7 +45,7 @@
   height: 15px;
   background-image: linear-gradient(to top, #5b439a, #5b439a 3px, transparent 100%);
 }
-#pageCal2 .calendar.showTimes .todayTime:before {
+#pageCal3 .calendar.showTimes .todayTime:before {
   border-right: 2px solid transparent;
   border-left: 2px solid transparent;
   border-bottom: 4px solid #5b439a;
@@ -59,34 +55,31 @@
   height: 0;
   transform: translate(-1.65px, 12px);
 }
-#pageCal2 .calendar .todayTime {
+#pageCal3 .calendar .todayTime {
   display: none;
 }
-#pageCal2.zoomY #btnCal2Y {
+#pageCal3.zoomY #btnCal3Y {
   display: none;
 }
-#pageCal2.zoomY .month {
+#pageCal3.zoomY .month {
   transition: all 1s;
   opacity: 0;
 }
-#pageCal2.zoomM #btnCal2M {
+#pageCal3.zoomM #btnCal3M {
   display: none;
 }
-#pageCal2 .cal2NavButtons {
-  position: absolute;
-  right: 22px;
-  top: 160px;
-  z-index: 1;
-  display: none;
+#pageCal3 .monthDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 0;
+  margin: 2px;
 }
-#pageCal2 .month {
+#pageCal3 .month {
   position: relative;
-  margin: 10px 0px 11px 6px;
-  padding: 5px 6px;
-  width: var(--monthWidth);
   display: inline-block;
 }
-#pageCal2 .monthShell {
+#pageCal3 .monthShell {
   width: 738px;
   height: 395px;
   position: absolute;
@@ -97,180 +90,192 @@
   opacity: 0;
   z-index: -1;
 }
-#pageCal2 .monthShell.sizeY {
+#pageCal3 .monthShell.sizeY {
   width: 122px;
   height: 98px;
   transition: all ease-in-out 1s;
   z-index: 1;
 }
-#pageCal2 .monthShell .monthNum {
+#pageCal3 .monthShell .monthNum {
   font-size: 2em;
 }
-#pageCal2 .caption {
-  position: absolute;
-  top: 0;
-  right: 6px;
-  text-align: right;
+#pageCal3 .weekdayTitle {
+  background-color: #6b6b6b;
+  color: white;
+  outline: white 1px solid;
+  padding: 0px 3px 2px;
 }
-#pageCal2 .bMonthInfo {
+#pageCal3 .weekdayTitle .g {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+#pageCal3 .weekdayTitle .g .e {
+  font-size: 9px;
+}
+#pageCal3 .weekdayTitle .b {
+  text-align: center;
+}
+#pageCal3 .weekdayTitle .b .a {
+  font-weight: bold;
+}
+#pageCal3 .weekdayTitle .b .m {
+  font-size: 9px;
+  padding-left: 5px;
+}
+#pageCal3 .caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4px 10px 4px;
+}
+#pageCal3 .bMonthInfo {
   font-size: 11pt;
 }
-#pageCal2 .gMonthInfo {
+#pageCal3 .gMonthInfo {
   font-size: 11pt;
-  margin: 1px 0 4px;
+  text-align: center;
 }
-#pageCal2 .monthNames {
+#pageCal3 .monthNames {
   font-size: 17pt;
   font-weight: bold;
 }
-#pageCal2 .dayRow {
+#pageCal3 .dayRow {
   margin-top: -1px;
   display: flex;
 }
-#pageCal2 .dayRow > div {
+#pageCal3 .dayRow > div {
   padding: 0;
   display: block;
 }
-#pageCal2 .dayRow.elementNum0 .dayCell {
+#pageCal3 .dayRow.elementNum0 .dayCell {
   background-image: linear-gradient(rgba(255, 20, 147, 0.2), rgba(255, 255, 255, 0) 40px);
   width: 100px;
 }
-#pageCal2 .dayRow.elementNum0 .dayName {
+#pageCal3 .dayRow.elementNum0 .dayName {
   display: none;
 }
-#pageCal2 .dayRow.elementNum1 .dayCell {
+#pageCal3 .elementNum1.dayCell {
   background-image: linear-gradient(#ffe6e6, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .monthShell.elementNum1 {
+#pageCal3 .monthShell.elementNum1 {
   background-image: linear-gradient(#ffe6e6, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .dayRow.elementNum2 .dayCell {
+#pageCal3 .elementNum2.dayCell {
   background-image: linear-gradient(#fafafa, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .monthShell.elementNum2 {
+#pageCal3 .monthShell.elementNum2 {
   background-image: linear-gradient(#fafafa, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .dayRow.elementNum3 .dayCell {
+#pageCal3 .elementNum3.dayCell {
   background-image: linear-gradient(#e8e8ff, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .monthShell.elementNum3 {
+#pageCal3 .monthShell.elementNum3 {
   background-image: linear-gradient(#e8e8ff, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .dayRow.elementNum4 .dayCell {
+#pageCal3 .elementNum4.dayCell {
   background-image: linear-gradient(#e6ffe6, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .monthShell.elementNum4 {
+#pageCal3 .monthShell.elementNum4 {
   background-image: linear-gradient(#e6ffe6, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2 .monthRow {
+#pageCal3 .monthRow {
   white-space: nowrap;
 }
-#pageCal2 .month.elementNum0 {
-  height: 390px;
-}
-#pageCal2 .monthNameDay .dayName {
+#pageCal3 .monthNameDay .dayName {
   padding: 0 2px 0 3px;
   border: 1px solid #999;
   border-radius: 3px;
-  margin: 0 0 1px 2px;
 }
-#pageCal2 .month.elementNum1 .monthElement {
+#pageCal3 .month.elementNum1 .monthElement {
   background-color: #ffe6e6;
 }
-#pageCal2 .month.elementNum2 .monthElement {
+#pageCal3 .month.elementNum2 .monthElement {
   background-color: #fafafa;
 }
-#pageCal2 .month.elementNum3 .monthElement {
+#pageCal3 .month.elementNum3 .monthElement {
   background-color: #e8e8ff;
 }
-#pageCal2 .month.elementNum4 .monthElement {
+#pageCal3 .month.elementNum4 .monthElement {
   background-color: #e6ffe6;
 }
-#pageCal2 .monthElement {
+#pageCal3 .monthElement {
   display: inline-block;
   margin: 0 0 0 10px;
   padding: 1px 10px 3px 10px;
   border-radius: 5px;
 }
-#pageCal2 .dayCell {
+#pageCal3 .dayCell {
   position: relative;
-  height: 100px;
-  width: var(--dayWidth);
   box-sizing: border-box;
-  border: 1px solid #ddd;
-  margin: 0 0 3px -1px;
+  outline: 1px solid #ddd;
   white-space: normal;
   background-color: #fff;
+  height: 95px;
 }
-#pageCal2 .dayCell.hdDayHS {
+#pageCal3 .dayCell.hdDayHS {
   background-image: linear-gradient(#ff9999, #ffe5e5 100%) !important;
 }
-#pageCal2 .hdName {
+#pageCal3 .hdName {
   font-weight: bold;
   font-size: 13px;
 }
-#pageCal2 .day {
-  position: absolute;
-  bottom: 3px;
-  left: 3px;
-  right: 3px;
-}
-#pageCal2 .sunrise {
+#pageCal3 .sunrise {
   margin: 0 0 3px 0;
 }
-#pageCal2 .sunsetEnd {
+#pageCal3 .sunsetEnd {
   position: absolute;
   right: 3px;
   bottom: 3px;
   text-align: right;
 }
-#pageCal2 .dayName,
-#pageCal2 .bWeekDay,
-#pageCal2 .sunrise,
-#pageCal2 .sunsetStart,
-#pageCal2 .sunsetEnd {
+#pageCal3 .dayName,
+#pageCal3 .bWeekDay,
+#pageCal3 .sunrise,
+#pageCal3 .sunsetStart,
+#pageCal3 .sunsetEnd {
   color: #000;
   font-size: .55rem;
 }
-#pageCal2 .top {
+#pageCal3 .top {
   display: flex;
   justify-content: space-between;
   margin: 0 3px;
 }
-#pageCal2 .top .dayNum {
+#pageCal3 .top .dayNum {
   font-weight: bold;
   font-size: 18px;
 }
-#pageCal2 .top .sunsetStart {
+#pageCal3 .top .sunsetStart {
   padding: 2px 0 0 0;
 }
-#pageCal2 .top .sunsetStart span {
+#pageCal3 .top .sunsetStart span {
   padding-right: 3px;
 }
-#pageCal2 .dayName {
+#pageCal3 .dayName {
   display: inline-block;
   margin: 0 3px 3px 3px;
   font-size: 11px;
   font-weight: bold;
 }
-#pageCal2 .dayName span {
+#pageCal3 .dayName span {
   font-size: 9px;
   font-weight: normal;
   padding-left: 5px;
 }
-#pageCal2 .dayName span::before {
+#pageCal3 .dayName span::before {
   content: "(";
 }
-#pageCal2 .dayName span::after {
+#pageCal3 .dayName span::after {
   content: ")";
 }
-#pageCal2 .mid {
+#pageCal3 .mid {
   display: flex;
   margin: 0 0 1px 3px;
   justify-content: space-between;
   align-items: baseline;
 }
-#pageCal2 .gStart {
+#pageCal3 .gStart {
   padding: 2px 3px 3px 3px;
   line-height: 6px;
   border-top: 1px solid #ddd;
@@ -280,17 +285,17 @@
   text-align: right;
   white-space: nowrap;
 }
-#pageCal2 .gStart .wd {
+#pageCal3 .gStart .wd {
   padding-left: 2px;
 }
-#pageCal2 .bWeekDay {
+#pageCal3 .bWeekDay {
   color: #000;
   text-align: left;
   font-size: 9px;
   word-break: break-all;
   word-wrap: break-word;
 }
-#pageCal2 .hdHS {
+#pageCal3 .hdHS {
   display: inline-block;
   width: 13px;
   height: 14px;
@@ -298,66 +303,66 @@
   background-size: contain;
   margin: 0 0 0 5px;
 }
-#pageCal2 .wd6 .bWeekDay {
+#pageCal3 .wd6 .bWeekDay {
   font-weight: bold;
   background: #eee;
   padding: 1px 2px 1px;
   border-radius: 1.5px;
 }
-#pageCal2 #cal2options {
+#pageCal3 #cal3options {
   position: absolute;
   right: 20px;
   bottom: 4px;
   z-index: 1;
 }
-#pageCal2 #cal2options span {
+#pageCal3 #cal3options span {
   margin-left: -2px;
 }
-#pageCal2.darkerColors .dayRow.elementNum0 .dayCell {
+#pageCal3.darkerColors .dayRow.elementNum0 .dayCell {
   background-image: linear-gradient(rgba(255, 20, 147, 0.6), rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2.darkerColors .dayRow.elementNum1 .dayCell {
+#pageCal3.darkerColors .dayRow.elementNum1 .dayCell {
   background-image: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2.darkerColors .dayRow.elementNum2 .dayCell {
+#pageCal3.darkerColors .dayRow.elementNum2 .dayCell {
   background-image: linear-gradient(rgba(100, 100, 100, 0.4), rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2.darkerColors .dayRow.elementNum3 .dayCell {
+#pageCal3.darkerColors .dayRow.elementNum3 .dayCell {
   background-image: linear-gradient(rgba(0, 0, 255, 0.6), rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2.darkerColors .dayRow.elementNum4 .dayCell {
+#pageCal3.darkerColors .dayRow.elementNum4 .dayCell {
   background-image: linear-gradient(#009600, rgba(255, 255, 255, 0) 40px);
 }
-#pageCal2.darkerColors .month.elementNum1 .monthElement {
+#pageCal3.darkerColors .month.elementNum1 .monthElement {
   background-color: rgba(255, 0, 0, 0.6);
 }
-#pageCal2.darkerColors .month.elementNum2 .monthElement {
+#pageCal3.darkerColors .month.elementNum2 .monthElement {
   background-color: rgba(100, 100, 100, 0.4);
 }
-#pageCal2.darkerColors .month.elementNum3 .monthElement {
+#pageCal3.darkerColors .month.elementNum3 .monthElement {
   background-color: rgba(0, 0, 255, 0.6);
 }
-#pageCal2.darkerColors .month.elementNum4 .monthElement {
+#pageCal3.darkerColors .month.elementNum4 .monthElement {
   background-color: #009600;
 }
-body[data-pageid=pageCal2].inTab {
+body[data-pageid=pageCal3].inTab {
   overflow-y: auto;
 }
-body[data-pageid=pageCal2].inTab #pageCal2 .calendar {
+body[data-pageid=pageCal3].inTab #pageCal3 .calendar {
   max-height: none;
 }
 @media screen {
-  #pageCal2:not(.forPrint) .dayCell {
+  #pageCal3:not(.forPrint) .dayCell {
     cursor: pointer;
   }
-  #pageCal2:not(.forPrint) .calendar .today.dayCell {
-    border: 1px solid #a08ece;
+  #pageCal3:not(.forPrint) .calendar .today.dayCell {
+    outline: 1px solid #a08ece;
     z-index: 1;
   }
-  #pageCal2:not(.forPrint) .calendar .selected.dayCell {
-    border: 1px solid #5b439a;
+  #pageCal3:not(.forPrint) .calendar .selected.dayCell {
+    outline: 1px solid #5b439a;
     background-color: #EAEAEA;
-    z-index: 1;
+    z-index: 2;
   }
 }
 @media print {
@@ -372,118 +377,91 @@ body[data-pageid=pageCal2].inTab #pageCal2 .calendar {
     margin: 0;
   }
   .todayTime,
-  .cal2NavButtons,
-  #cal2options {
+  .cal3NavButtons,
+  #cal3options {
     display: none !important;
   }
-  #pageCal2.forPrint {
+  #pageCal3.forPrint {
     border: none;
     padding: 0;
     font-family: 'Philosopher', 'Segoe UI', sans-serif;
-    --dayWidth: 120px;
-    --monthWidth: calc(720) px;
   }
-  #pageCal2.forPrint .caption {
-    text-align: left;
-    right: 20px;
-  }
-  #pageCal2.forPrint .dayCell {
-    margin: 0 10px 11px 0;
-    border: 2px solid #cc9933;
-    border-radius: 3px;
-  }
-  #pageCal2.forPrint .dayCell.hdDayHS,
-  #pageCal2.forPrint .dayCell.hdDayHO {
+  #pageCal3.forPrint .dayCell.hdDayHS,
+  #pageCal3.forPrint .dayCell.hdDayHO {
     background-image: linear-gradient(#e0c285, #faf5eb 66%, #fff 100%) !important;
   }
-  #pageCal2.forPrint .dayRow.elementNum0 .dayCell {
+  #pageCal3.forPrint .dayRow.elementNum0 .dayCell {
     background-image: none;
   }
-  #pageCal2.forPrint .dayRow.elementNum1 .dayCell {
+  #pageCal3.forPrint .dayRow.elementNum1 .dayCell {
     background-image: none;
   }
-  #pageCal2.forPrint .dayRow.elementNum2 .dayCell {
+  #pageCal3.forPrint .dayRow.elementNum2 .dayCell {
     background-image: none;
   }
-  #pageCal2.forPrint .dayRow.elementNum3 .dayCell {
+  #pageCal3.forPrint .dayRow.elementNum3 .dayCell {
     background-image: none;
   }
-  #pageCal2.forPrint .dayRow.elementNum4 .dayCell {
+  #pageCal3.forPrint .dayRow.elementNum4 .dayCell {
     background-image: none;
   }
-  #pageCal2.forPrint .calendar {
+  #pageCal3.forPrint .calendar {
     max-height: none;
     overflow: visible;
     margin: 0;
   }
-  #pageCal2.forPrint .monthDays {
-    position: absolute;
-    top: 300px;
-    left: 25px;
-  }
-  #pageCal2.forPrint .month {
+  #pageCal3.forPrint .month {
     background: no-repeat bottom right;
     background-size: cover;
-    height: 100.3vh;
     width: 100vw;
-    margin: 0;
+    margin: 150px auto 0 auto;
     page-break-inside: avoid;
     page-break-after: always;
     display: block !important;
   }
-  #pageCal2.forPrint .month .month {
+  #pageCal3.forPrint .month .month {
     margin: 280px 0 0 24px;
   }
-  #pageCal2.forPrint .caption {
-    text-align: left;
-    left: -10px;
-    top: 50px;
-    right: unset;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px 30px 20px 130px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-  #pageCal2.forPrint .caption .monthNames {
+  #pageCal3.forPrint .caption .monthNames {
     font-size: 22pt;
   }
-  #pageCal2.forPrint .caption .gMonthInfo {
+  #pageCal3.forPrint .caption .gMonthInfo {
     font-size: 15pt;
   }
-  #pageCal2.forPrint .caption .bMonthInfo {
+  #pageCal3.forPrint .caption .bMonthInfo {
     font-size: 12pt;
   }
-  #pageCal2.forPrint.landscape {
+  #pageCal3.forPrint.landscape {
     page: myLandscape;
   }
-  #pageCal2.forPrint.landscape .calender {
+  #pageCal3.forPrint.landscape .calender {
     page: myLandscape;
   }
-  #pageCal2.forPrint.landscape .month {
+  #pageCal3.forPrint.landscape .month {
     page: myLandscape;
     transform: rotate(90deg) translate(35%, 0) scale(1.3);
     transform-origin: 50% 50%;
   }
-  body[data-pageid="pageCal2"] .mainTop {
+  body[data-pageid="pageCal3"] .mainTop {
     display: none;
   }
 }
-body[lang="ta"] #pageCal2 .day {
+body[lang="ta"] #pageCal3 .day {
   bottom: 4px;
 }
-body[lang="ta"] #pageCal2 .hdName {
+body[lang="ta"] #pageCal3 .hdName {
   word-break: break-all;
   line-height: 10px;
 }
-body.rtl #pageCal2 .caption {
+body.rtl #pageCal3 .caption {
   direction: rtl;
   left: 6px;
   right: auto;
 }
-body.rtl #pageCal2 .mid {
+body.rtl #pageCal3 .mid {
   margin: 0 3px 1px 0;
 }
-body.rtl #pageCal2 .gStart {
+body.rtl #pageCal3 .gStart {
   padding: 2px 3px 3px 1px;
   border-left: none;
   border-top-left-radius: 0;

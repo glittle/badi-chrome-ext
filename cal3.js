@@ -4,11 +4,11 @@
 /* global di */
 /* global chrome */
 /* global $ */
-var Cal2 = function() {
+var Cal3 = function() {
     var _yearShown = null;
     var _specialDays = {};
     var _scrollToMonth = -1;
-    var _page = $('#pageCal2');
+    var _page = $('#pageCal3');
     var _calendarDiv = _page.find('.calendar');
     var _initialScrollDone = false;
     var _timeoutTime = null;
@@ -33,28 +33,36 @@ var Cal2 = function() {
             _calendarDiv.toggleClass('showTimes', !!_page.find('#cbShowTimes').prop('checked'));
             // _calendarDiv.find('#cbShowTimes').blur();
         });
-        _page.on('change', '#cbCal2Darker', function() {
-            _page.toggleClass('darkerColors', !!_page.find('#cbCal2Darker').prop('checked'));
-            // _calendarDiv.find('#cbCal2Darker').blur();
+        _page.on('change', '#cbCal3Darker', function() {
+            _page.toggleClass('darkerColors', !!_page.find('#cbCal3Darker').prop('checked'));
+            // _calendarDiv.find('#cbCal3Darker').blur();
         });
-        _page.on('change', '#cbCal2Print', function() {
-            _page.toggleClass('forPrint', !!_page.find('#cbCal2Print').prop('checked'));
+        _page.on('change', '#cbCal3Print', function() {
+            var show = !!_page.find('#cbCal3Print').prop('checked');
+            _page.toggleClass('forPrint', show);
+            if (show) {
+                window.onafterprint = function() {
+                    _page.find('#cbCal3Print').prop('checked', false);
+                    _page.toggleClass('forPrint', false);
+                    window.onafterprint = null;
+                };
+            }
         });
 
         // presets
         // _page.addClass('forPrint');
-        // _page.find('#cbCal2Print').prop('checked', true)
+        // _page.find('#cbCal3Print').prop('checked', true)
 
         _page.find('#cbShowTimes').prop('checked', true);
         _calendarDiv.addClass('showTimes');
 
-        _page.find('#btnCal2Y').click(function() {
+        _page.find('#btnCal3Y').click(function() {
             zoomTo('Y');
         });
-        _page.find('#btnCal2M').click(function() {
+        _page.find('#btnCal3M').click(function() {
             zoomTo('M');
         });
-        $(document).on('click', 'body[data-pageid=pageCal2] .btnChangeMonth', changeMonth);
+        $(document).on('click', 'body[data-pageid=pageCal3] .btnChangeMonth', changeMonth);
     }
 
     function changeMonth(ev) {
@@ -246,7 +254,7 @@ var Cal2 = function() {
     function highlightTargetDay(di) {
         _calendarDiv.find('.selected').removeClass('selected');
 
-        var sel = ('#cal2_igd{bMonth}_{bDay}').filledWith(di);
+        var sel = ('#cal3_igd{bMonth}_{bDay}').filledWith(di);
 
         _calendarDiv.find(sel).addClass('selected');
 
@@ -304,7 +312,7 @@ var Cal2 = function() {
 
     function scrollToMonth(bMonth) {
         _scrollToMonth = bMonth;
-        var month = _calendarDiv.find('#cal2_m{0}'.filledWith(bMonth));
+        var month = _calendarDiv.find('#cal3_m{0}'.filledWith(bMonth));
         if (month.length === 0) {
             console.log("no month " + bMonth);
             return;
@@ -340,16 +348,32 @@ var Cal2 = function() {
 
     function buildMonth(bYear, bMonth) {
         var focusMonth = bMonth;
-        var newRow = '<div class="dayRow elementNum{0}">';
-        var newRowEnd = '</div>';
 
-        var dayCellTemplate = $('#cal2dayCell').text();
+        var dayCellTemplate = $('#cal3dayCell').text();
 
-        var dayCells = [newRow.filledWith(bMonth === 0 ? 0 : 1)];
+        var dayCells = [];
         var day1Di;
         var gMonths = [];
         var lastGMonth = '';
         var gYear = 0;
+        var row = 2;
+
+        for (var i = 1; i < bWeekdayNameAr.length; i++) {
+            var gDay = i < 2 ? 5 + i : i - 2;
+            var eveDay = gDay === 0 ? 6 : gDay - 1;
+            var wdInfo = {
+                row: 1,
+                column: i,
+                num: i,
+                arabic: bWeekdayNamePri[i],
+                meaning: bWeekdayNameSec[i],
+                gEve: gWeekdayShort[eveDay],
+                gDay: gWeekdayLong[gDay]
+            };
+            dayCells.push(`<div style="grid-area: {row} / {column}" class="weekdayTitle">
+            <div class=b><span class=a>{arabic}</span><span class=m>({meaning})</span></div>
+            <div class=g><span class=e>{gEve}</span><span class=d>{gDay}</span></div></div>`.filledWith(wdInfo));
+        }
 
         for (var bDay = 1; bDay <= 19; bDay++) {
             var bDateCode = bMonth + '.' + bDay;
@@ -376,6 +400,15 @@ var Cal2 = function() {
                 dayGroup = bMonth === 0 ? 0 : 1;
             }
 
+            if (bDay > 1 && di.bWeekday === 1) {
+                row++;
+                console.log(di);
+            }
+            di.row = row;
+            di.column = di.bWeekday;
+            // console.log('weekday', di.bMonth, di.bDay, di.row, di.column);
+            di.elementNum = bMonth === 0 ? 0 : getElementNum(bDay);
+
             var gMonth = di.frag2MonthLong;
             if (lastGMonth !== gMonth) {
                 gMonths.push(gMonth);
@@ -383,16 +416,9 @@ var Cal2 = function() {
                 gYear = di.frag2Year; // remember last year used
             }
 
-            if (bMonth === 0) {} else {
-                switch (bDay) {
-                    case 4:
-                    case 8:
-                    case 14:
-                        dayCells.push(newRowEnd);
-                        dayGroup++;
-                        dayCells.push(newRow.filledWith(dayGroup));
-                        break;
-                }
+            if (di.frag1MonthShort !== di.frag2MonthShort) {
+                di.frag1MonthShortX = di.frag1MonthShort;
+                di.frag1MonthShortXComma = ',';
             }
 
             var startSunset = di.frag1SunTimes.sunset;
@@ -455,8 +481,6 @@ var Cal2 = function() {
             dayCells.push(dayCellTemplate.filledWith(di));
         }
 
-        dayCells.push(newRowEnd);
-
         var elementNum = getElementNum(bMonth);
         var monthTitleInfo = {
             bMonthName: day1Di.bMonthNamePri,
@@ -464,17 +488,16 @@ var Cal2 = function() {
         };
 
         var monthElement = (bMonth === 0 ? '' : '<div class=monthElement>{element}</div>'.filledWith(day1Di));
-        var bMonthInfo = (bMonth === 0 ? '{bMonthNameSec}' : '{bMonth} &#8230; {bMonthNameSec}').filledWith(day1Di) +
-            monthElement;
+        var bMonthInfo = (bMonth === 0 ? '{bMonthNameSec}' : '{bMonth} - {bMonthNameSec}').filledWith(day1Di) +
+            monthElement; //&#8230;
         var gMonthInfo = gMonths.join(', ') + ' ' + gYear;
 
         var html = [
-            '<div class="month elementNum{1}" id=cal2_m{0}>'.filledWith(focusMonth, elementNum),
+            '<div class="month elementNum{1}" id=cal3_m{0}>'.filledWith(focusMonth, elementNum),
             '<div class=caption>',
             '<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>'.filledWith(monthTitleInfo),
-            '<div class=gMonthInfo>{0}</div>'.filledWith(gMonthInfo),
+            '<div class=gMonthInfo>{0}<div class=placeName>{1}</div></div>'.filledWith(gMonthInfo, localStorage.locationName),
             '<div class=bMonthInfo>{0}</div>'.filledWith(bMonthInfo),
-            '<div class=placeName>{0}</div>'.filledWith(localStorage.locationName),
             '</div>',
             '<div class=monthDays>',
             '{^0}'.filledWith(dayCells.join('')),
@@ -492,7 +515,7 @@ var Cal2 = function() {
         var currentTime = new Date();
         var nowDi = getDateInfo(currentTime);
 
-        var dayCell = _calendarDiv.find('#cal2_igd{bMonth}_{bDay}'.filledWith(nowDi));
+        var dayCell = _calendarDiv.find('#cal3_igd{bMonth}_{bDay}'.filledWith(nowDi));
         dayCell.addClass('today');
 
         var start = moment(nowDi.frag1SunTimes.sunset);
