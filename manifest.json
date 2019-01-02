@@ -1,6 +1,6 @@
 {
     "name": "__MSG_title__",
-    "version": "3.2.0",
+    "version": "3.2.1",
     "description": "__MSG_titleDesc__",
     "default_locale": "en",
     "icons": {
@@ -26,7 +26,6 @@
         "notifications",
         "geolocation",
         "contextMenus",
-        "syncFileSystem",
         "clipboardWrite",
         "tts",
         "https://maker.ifttt.com/"
