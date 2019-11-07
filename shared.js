@@ -561,47 +561,83 @@ var findName = function(typeName, results, getLastMatch) {
 var xhr = null;
 
 function startGetLocationName() {
-    if (xhr && xhr.readyState !== 4) {
-        console.log('xhr call in progress already ' + xhr.readyState);
-        return;
-    }
-    var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}&key={3}'
-        .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale,
-            'AIzaSyAuSFuKxDtfCgBUGsSFrYZKardnK15Nmjc');
-    xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.onreadystatechange = function() {
-        //    console.log('new state ' + xhr.readState);
-        if (xhr.readyState === 4) {
-            var data = JSON.parse(xhr.responseText);
-            var unknownLocation = getMessage('noLocationName');
+    try {
+        var geocoder = new google.maps.Geocoder;
 
-            localStorage.locationName =
-                // findName('neighborhood', data.results, true) ||
-                findName('locality', data.results) ||
-                findName('political', data.results) ||
-                unknownLocation;
+        if (geocoder) {
+            geocoder.geocode({ location: { lat: +localStorage.lat, lng: +localStorage.long } }, function(results, status) {
+                var unknownLocation = getMessage('noLocationName');
 
-            setStorage('locationNameKnown', true);
-            console.log(localStorage.locationName);
+                localStorage.locationName =
+                    // findName('neighborhood', data.results, true) ||
+                    findName('locality', results) ||
+                    findName('political', results) ||
+                    unknownLocation;
 
-            if (localStorage.locationName === unknownLocation) {
-                console.log(data);
-            }
+                setStorage('locationNameKnown', true);
+                console.log(localStorage.locationName);
 
-            stopLoaderButton();
+                if (localStorage.locationName === unknownLocation) {
+                    console.log(status, results);
+                }
 
-            //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
+                stopLoaderButton();
 
-            // if popup is showing...
-            if (typeof _inPopupPage !== 'undefined') {
-                showLocation();
-            }
+                //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
 
-            xhr = null;
+                // if popup is showing...
+                if (typeof _inPopupPage !== 'undefined') {
+                    showLocation();
+                }
+            });
         }
-    };
-    xhr.send();
+
+    } catch (error) {
+        console.log(error);
+    }
+
+
+    // if (xhr && xhr.readyState !== 4) {
+    //     console.log('xhr call in progress already ' + xhr.readyState);
+    //     return;
+    // }
+    // var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}&key={3}'
+    //     .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale,
+    //         'AIzaSyAuSFuKxDtfCgBUGsSFrYZKardnK15Nmjc');
+    // xhr = new XMLHttpRequest();
+    // xhr.open("GET", url, true);
+    // xhr.onreadystatechange = function() {
+    //     //    console.log('new state ' + xhr.readState);
+    //     if (xhr.readyState === 4) {
+    //         var data = JSON.parse(xhr.responseText);
+    //         var unknownLocation = getMessage('noLocationName');
+
+    //         localStorage.locationName =
+    //             // findName('neighborhood', data.results, true) ||
+    //             findName('locality', data.results) ||
+    //             findName('political', data.results) ||
+    //             unknownLocation;
+
+    //         setStorage('locationNameKnown', true);
+    //         console.log(localStorage.locationName);
+
+    //         if (localStorage.locationName === unknownLocation) {
+    //             console.log(data);
+    //         }
+
+    //         stopLoaderButton();
+
+    //         //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
+
+    //         // if popup is showing...
+    //         if (typeof _inPopupPage !== 'undefined') {
+    //             showLocation();
+    //         }
+
+    //         xhr = null;
+    //     }
+    // };
+    // xhr.send();
 }
 
 function stopLoaderButton() {
@@ -622,7 +658,7 @@ function setLocation(position) {
         $('#inputLng').val(localStorage.long);
     }
 
-    startGetLocationName();
+    // startGetLocationName();
 
     refreshDateInfoAndShow();
 }
@@ -861,7 +897,7 @@ String.prototype.filledWith = function() {
                     if (_nextFilledWithEach_UsesExactMatchOnly) {
                         value = '{' + token + '}';
                     } else {
-                        console.log('missing property for filledWith: ' + token);
+                        // console.log('missing property for filledWith: ' + token);
                         value = '';
                     }
                 }

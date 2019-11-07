@@ -402,7 +402,7 @@ var Cal3 = function() {
 
             if (bDay > 1 && di.bWeekday === 1) {
                 row++;
-                console.log(di);
+                // console.log(di);
             }
             di.row = row;
             di.column = di.bWeekday;

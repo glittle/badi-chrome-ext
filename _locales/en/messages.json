@@ -1346,7 +1346,7 @@
         "description": "The title of the extension. Shown in a number of locations."
     },
     "titleDesc": {
-        "message": "Shows today's date in the Wondrous (Badíʿ) calendar, the official calendar of the Bahá'í Faith.",
+        "message": "Shows today's date in the Badíʿ (Wondrous) calendar, the official calendar of the Bahá'í Faith.",
         "description": "Used in the manifest"
     },
     "Tonight": {

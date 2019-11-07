@@ -1,6 +1,6 @@
 {
     "name": "__MSG_title__",
-    "version": "3.2.2",
+    "version": "3.2.3",
     "description": "__MSG_titleDesc__",
     "default_locale": "en",
     "icons": {
@@ -37,7 +37,7 @@
             "48": "badi19a-48.png"
         }
     },
-    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://maps.googleapis.com; object-src 'self'",
     "author": "Glen Little",
     "short_name": "BadiCal",
     "manifest_version": 2,
