@@ -11,10 +11,9 @@
     <link href="cal3.css" rel=stylesheet>
     <link href="calWheel.css" rel=stylesheet>
     <link href="calGreg.css" rel=stylesheet>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="suncalc.js"></script>
-    <script src="moment.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
+    <link href="fonts.css" rel=stylesheet>
+    <script src="third-party/jquery-3.7.1.min.js"></script>
+    <script src="third-party/dayjs.min.js"></script>
 </head>
 
 <body>
@@ -54,14 +53,18 @@
 
                 <div>
                     <div class="yearPicker">
-                        <button type=button class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
+                        <button type=button class="btnChangeYear button" data-delta="-1"
+                            data-msg="prevYear,title:prevYearTitle"></button>
                         <input class=bYearPicker type=number max=1000 min=1>
-                        <button type=button class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
+                        <button type=button class="btnChangeYear button" data-delta="1"
+                            data-msg="nextYear,title:nextYearTitle"></button>
                     </div>
 
                     <div class="monthNav">
-                        <button type=button class="btnChangeMonth button" data-delta="-1" id="changeMonthPrev" data-msg="prevMonth,extractAccessKeyFor:changeMonthPrev"></button>
-                        <button type=button class="btnChangeMonth button" data-delta="1" id="changeMonthNext" data-msg="nextMonth,extractAccessKeyFor:changeMonthNext"></button>
+                        <button type=button class="btnChangeMonth button" data-delta="-1" id="changeMonthPrev"
+                            data-msg="prevMonth,extractAccessKeyFor:changeMonthPrev"></button>
+                        <button type=button class="btnChangeMonth button" data-delta="1" id="changeMonthNext"
+                            data-msg="nextMonth,extractAccessKeyFor:changeMonthNext"></button>
                     </div>
                 </div>
 
@@ -99,7 +102,8 @@
                     <input type="date" id=datePicker min="1844-03-21" max="2843-03-19">
                     <div class=gDateButtons>
                         <button type=button class="button btnChangeDay" data-delta="-1" data-msg="prev"></button>
-                        <button type=button class="button btnChangeDay today" data-delta="0" data-msg="gotoNow"></button>
+                        <button type=button class="button btnChangeDay today" data-delta="0"
+                            data-msg="gotoNow"></button>
                         <button type=button class="button btnChangeDay" data-delta="1" data-msg="next"></button>
                         <button type=button id="btnEveOrDay" class="button" data-msg="_id_"></button>
                     </div>
@@ -134,11 +138,11 @@
                         <span id=includeWhat>
                             <span data-msg=includeThese></span>
 
-                        <label>
+                            <label>
                                 <input type=checkbox class=includeThis id=includeFeasts>
                                 <span data-msg="includeFeasts,extractAccessKeyFor:includeFeasts"></span>
                             </label>
-                        <label>
+                            <label>
                                 <input type=checkbox class=includeThis id=includeHolyDays>
                                 <span data-msg="includeHolyDays,extractAccessKeyFor:includeHolyDays"></span>
                             </label>
@@ -271,11 +275,13 @@
                 </div>
                 <div id="wheelHolder">
                     <div id="wheel"></div>
-                    <svg id="wheelYearHolder" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
+                    <svg id="wheelYearHolder" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt"
+                        height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
                         <text x="520" y="480" text-anchor="middle" id="wheelYear"></text>
                     </svg>
 
-                    <svg id="pointerToday" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
+                    <svg id="pointerToday" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt"
+                        overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
                         <!--<text x="155" y="480" text-anchor="end" data-msg="currentFocus"></text>
             <line x1="160" y1="472" y2="472" x2="185" stroke-width="1" />
             <line x1="179" y1="469" y2="472" x2="185" stroke-width="1" />
@@ -286,10 +292,12 @@
                     </svg>
 
                 </div>
-                <svg id="templateSlice" class="slice" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt" height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
-                    <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)" fill="#000000"
-                        stroke="#FFC107" stroke-width="65px">
-                        <path d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z" />
+                <svg id="templateSlice" class="slice" version="1.0" xmlns="http://www.w3.org/2000/svg" width="65pt"
+                    height="300pt" overflow="visible" viewBox="0 0 130 550" preserveAspectRatio="xMidYMid meet">
+                    <g class="innerSlice" transform="translate(0.000000,350.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="#FFC107" stroke-width="65px">
+                        <path
+                            d="M634 3479 c-7 -12 -153 -121 -294 -219 -243 -169 -333 -329 -332 -590 0 -102 21 -242 181 -1200 100 -597 189 -1112 198 -1145 25 -96 87 -217 132 -258 63 -57 136 -70 206 -38 74 33 141 133 184 276 12 39 103 556 202 1150 170 1011 182 1088 182 1210 1 276 -84 423 -346 605 -60 41 -151 108 -203 148 -52 39 -96 72 -99 72 -2 0 -7 -5 -11 -11z" />
                     </g>
                     <text x="65" y="320" class="monthNum"></text>
                     <text x="75" y="260" class="monthNameAr" transform="rotate(-95 75 260) translate(0 -10)"></text>
@@ -313,12 +321,15 @@
 
                                 <optgroup label="x" data-msg="label:reminderTriggerGroup_time">
                                     <option value="sunset" data-msg="reminderTrigger_sunset" data-model="sun"></option>
-                                    <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun"></option>
+                                    <option value="sunrise" data-msg="reminderTrigger_sunrise" data-model="sun">
+                                    </option>
                                     <option value="noon" data-msg="reminderTrigger_noon" data-model="time"></option>
-                                    <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time"></option>
+                                    <option value="midnight" data-msg="reminderTrigger_midnight" data-model="time">
+                                    </option>
                                 </optgroup>
                                 <optgroup label="x" data-msg="label:reminderTriggerGroup_day">
-                                    <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday"></option>
+                                    <option value="holyday" data-model="day" data-msg="reminderTrigger_holyday">
+                                    </option>
                                     <option value="feast" data-model="day" data-msg="reminderTrigger_feast"></option>
                                     <option value="bday" data-model="bday" data-msg="reminderTrigger_bday"></option>
 
@@ -331,23 +342,28 @@
                         <div class="reminderEditInputs">
                             <div id="model_sun" class="reminderModel">
                                 <div data-msg="reminderCalcType">
-                                    <select data-child="calcTypeInput" class="reminder_calcType" name="x3a" data-default="Relative">
+                                    <select data-child="calcTypeInput" class="reminder_calcType" name="x3a"
+                                        data-default="Relative">
                                         <option value="Relative" data-msg="reminderCalcTypeRelative"></option>
                                         <option value="Absolute" data-msg="reminderCalcTypeAbsolute"></option>
                                     </select>
                                 </div>
                                 <div id="reminderCalcTypeAbsolute" class="reminderCalcType">
                                     <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
+                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00"
+                                        type="time" required />
                                 </div>
-                                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure" class="reminderCalcType">
-                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
+                                <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure"
+                                    class="reminderCalcType">
+                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0"
+                                        max="500" step="1" value="1" data-type="num" data-default="10" required />
                                     <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
                                         <option value="minutes" data-msg="reminderNum_minutes"></option>
                                         <option value="hours" data-msg="reminderNum_hours"></option>
                                         <option value="seconds" data-msg="reminderNum_seconds"></option>
                                     </select>
-                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
+                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num"
+                                        data-default="-1">
                                         <option value="-1" data-msg="reminderBefore"></option>
                                         <option value="1" data-msg="reminderAfter"></option>
                                     </select>
@@ -356,13 +372,15 @@
                             <div id="model_time" class="reminderModel">
                                 <input type="hidden" class="reminder_calcType" name="x3b" data-default="Relative">
                                 <div id="reminderCalcTypeRelative" data-msg="reminderTimeInputStructure">
-                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0" max="500" step="1" value="1" data-type="num" data-default="10" required />
+                                    <input data-child="num" type="number" name="x2" class="reminder_num" min="0"
+                                        max="500" step="1" value="1" data-type="num" data-default="10" required />
                                     <select data-child="units" class="reminder_units" name="x3" data-default="minutes">
                                         <option value="minutes" data-msg="reminderNum_minutes"></option>
                                         <option value="hours" data-msg="reminderNum_hours"></option>
                                         <option value="seconds" data-msg="reminderNum_seconds"></option>
                                     </select>
-                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num" data-default="-1">
+                                    <select data-child="delta" class="reminder_delta" name="x4" data-type="num"
+                                        data-default="-1">
                                         <option value="-1" data-msg="reminderBefore"></option>
                                         <option value="1" data-msg="reminderAfter"></option>
                                     </select>
@@ -372,8 +390,10 @@
                                 <input type="hidden" class="reminder_units" name="x3" data-default="days">
 
                                 <div data-msg="reminderDayWhen">
-                                    <input data-child="num" type="number" name="x5" class="reminder_num" min="0" max="365" step="1" value="1" data-type="num" data-default="3" required />
-                                    <select data-child="beforeAfter" class="reminder_delta" name="x6" data-type="num" data-default="-1">
+                                    <input data-child="num" type="number" name="x5" class="reminder_num" min="0"
+                                        max="365" step="1" value="1" data-type="num" data-default="3" required />
+                                    <select data-child="beforeAfter" class="reminder_delta" name="x6" data-type="num"
+                                        data-default="-1">
                                         <option value="-1" data-msg="reminderBefore"></option>
                                         <option value="1" data-msg="reminderAfter"></option>
                                     </select>
@@ -381,7 +401,8 @@
                                 </div>
                                 <div>
                                     <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00" type="time" required />
+                                    <input id="reminder_triggerTimeRaw" name="x7" value="10:00" data-default="10:00"
+                                        type="time" required />
                                 </div>
                             </div>
                             <div id="model_bday" class="reminderModel">
@@ -393,12 +414,14 @@
                                 </div>
                                 <div>
                                     <span data-msg="reminderShowAt"></span>
-                                    <input id="reminder_triggerTimeRaw" value="10:00" name="x9" data-default="10:00" type="time" required />
+                                    <input id="reminder_triggerTimeRaw" value="10:00" name="x9" data-default="10:00"
+                                        type="time" required />
                                 </div>
                             </div>
                             <div id="model_load" class="reminderModel">
                                 <div>
-                                    <input type="number" class="reminder_num" name="x10" min="1" max="59" step="1" value="1" data-type="num" data-default="3" required />
+                                    <input type="number" class="reminder_num" name="x10" min="1" max="59" step="1"
+                                        value="1" data-type="num" data-default="3" required />
                                     <select class="reminder_units" data-default="seconds" name="x11">
                                         <option value="seconds" data-msg="reminderNum_seconds"></option>
                                         <option value="minutes" data-msg="reminderNum_minutes"></option>
@@ -438,16 +461,20 @@
                                 <div id="reminderAction_speak" class="reminderAction">
                                     <div>
                                         <span data-msg="actionSpeakDesc"></span>
-                                        <select id="speakVoice" name="speakVoice" class="reminder_speakVoice" required></select>
+                                        <select id="speakVoice" name="speakVoice" class="reminder_speakVoice"
+                                            required></select>
                                     </div>
                                 </div>
                             </div>
                             <div class="reminderSaveBtns">
-                                <button type="submit" class="button" id="btnReminderSave" data-msg="_id_,extractAccessKeyFor:btnReminderSave"></button>
+                                <button type="submit" class="button" id="btnReminderSave"
+                                    data-msg="_id_,extractAccessKeyFor:btnReminderSave"></button>
                                 <button type="submit" class="button" id="btnReminderSaveNew" data-msg="_id_"></button>
-                                <button type="button" class="button btnCancel" id="btnReminderCancel" data-msg="_id_"></button>
+                                <button type="button" class="button btnCancel" id="btnReminderCancel"
+                                    data-msg="_id_"></button>
                                 <button type="submit" class="button" id="btnReminderTest" data-msg="_id_"></button>
-                                <button type="button" class="button btnDelete" id="btnReminderDelete" data-msg="_id_"></button>
+                                <button type="button" class="button btnDelete" id="btnReminderDelete"
+                                    data-msg="_id_"></button>
                             </div>
                         </div>
                     </form>
@@ -475,15 +502,18 @@
                         <div class="QuickPickDesc" data-msg="exportQuickDesc"></div>
                         <div class="QuickPicks">
                             <div>
-                                <button type="button" class="button" data-msg="exportQuickPick1" id="btnQuickPick1"></button>
+                                <button type="button" class="button" data-msg="exportQuickPick1"
+                                    id="btnQuickPick1"></button>
                                 <span data-msg="exportQuickPick1text"></span>
                             </div>
                             <div>
-                                <button type="button" class="button" data-msg="exportQuickPick2" id="btnQuickPick2"></button>
+                                <button type="button" class="button" data-msg="exportQuickPick2"
+                                    id="btnQuickPick2"></button>
                                 <span data-msg="exportQuickPick2text"></span>
                             </div>
                             <div>
-                                <button type="button" class="button" data-msg="exportQuickPick3" id="btnQuickPick3"></button>
+                                <button type="button" class="button" data-msg="exportQuickPick3"
+                                    id="btnQuickPick3"></button>
                                 <span data-msg="exportQuickPick3text"></span>
                             </div>
                         </div>
@@ -491,7 +521,8 @@
                         <label for="exporterName" data-msg="exportName"></label>
                         <input id="exporterName" type="text" />
 
-                        <label for="exporterDateRange" data-msg="exporterDateRange,extractAccessKeyFor:exporterDateRange"></label>
+                        <label for="exporterDateRange"
+                            data-msg="exporterDateRange,extractAccessKeyFor:exporterDateRange"></label>
                         <select id="exporterDateRange">
                             <option id="exportRange_Badi_0"></option>
                             <option id="exportRange_Badi_1"></option>
@@ -509,7 +540,8 @@
                         </div>
 
                         <div>
-                            <button type="button" class="button" data-msg="exportQuickPickCleartext" id="btnQuickPickClear"></button>
+                            <button type="button" class="button" data-msg="exportQuickPickCleartext"
+                                id="btnQuickPickClear"></button>
                         </div>
 
                         <div class="exportNum">
@@ -521,7 +553,8 @@
                             <button type="button" class="button" id="btnExportFile" data-msg="exportFile"></button>
                             <button type="button" class="button" id="btnHideSample" data-msg="exportHideTest"></button>
                             <div class="exportTest">
-                                <button type="button" class="button" id="btnExportTest" data-msg="exportTest,extractAccessKeyFor:btnExportTest"></button>
+                                <button type="button" class="button" id="btnExportTest"
+                                    data-msg="exportTest,extractAccessKeyFor:btnExportTest"></button>
                                 <!--<label><input type="checkbox" id="cbExportTestCsv"><span data-msg="exportTestCsv"></span></label>-->
                             </div>
                             <textarea id="exporterTest"></textarea>
@@ -546,9 +579,12 @@
                         <div id=customBuilderEcho></div>
 
                         <div class=customBuilderButtons>
-                            <button id=btnCustomBuilderSave type=button class=button data-msg="btnReminderSave,extractAccessKeyFor:btnCustomBuilderSave"></button>
-                            <button id=btnCustomBuilderCancel type=button class="button btnCancel" data-msg="btnCustomBuilderCancel"></button>
-                            <button id=btnCustomBuilderDelete type=button class="button btnDelete" data-msg="btnReminderDelete"></button>
+                            <button id=btnCustomBuilderSave type=button class=button
+                                data-msg="btnReminderSave,extractAccessKeyFor:btnCustomBuilderSave"></button>
+                            <button id=btnCustomBuilderCancel type=button class="button btnCancel"
+                                data-msg="btnCustomBuilderCancel"></button>
+                            <button id=btnCustomBuilderDelete type=button class="button btnDelete"
+                                data-msg="btnReminderDelete"></button>
                         </div>
                     </div>
 
@@ -616,12 +652,18 @@
                             <div id="plannerWhatEventDiv">
                                 <span data-msg="plannerWhatEvent"></span>
                                 <div class="plannerWhatHelpers">
-                                    <button type="button" class="button" id="btnPlannerHelperHD1" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperHD2" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperRid" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperTHB" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperFeasts" data-msg="_id_"></button>
-                                    <button type="button" class="button" id="btnPlannerHelperNone" data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperHD1"
+                                        data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperHD2"
+                                        data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperRid"
+                                        data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperTHB"
+                                        data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperFeasts"
+                                        data-msg="_id_"></button>
+                                    <button type="button" class="button" id="btnPlannerHelperNone"
+                                        data-msg="_id_"></button>
                                 </div>
                                 <select id="plannerWhatEvents">
                                     <optgroup label="Holy Days" id="planWhatHdGroup"></optgroup>
@@ -760,18 +802,22 @@
 
                 <a id=version class=textLink href="" target="version"></a>
 
-                <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools" rel="publisher" style="text-decoration: none;">
+                <a id=facebook target="fb" href="https://www.facebook.com/BadiCalendarTools" rel="publisher"
+                    style="text-decoration: none;">
                     <img src="FB-16.png" data-msg="alt:facebook" style="border: 0; width: 16px; height: 16px;" />
                 </a>
 
-                <a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore" src="badi19a-22.png"></a>
+                <a id="linkWebStore" href="" target="webstore"><img id=logo data-msg="alt:webstore,title:webstore"
+                        src="badi19a-22.png"></a>
 
-                <a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3" rel="publisher" style="text-decoration: none;">
+                <a id=googlePlus target="gp" href="http://plus.google.com/u/0/111984989420723537597?prsrc=3"
+                    rel="publisher" style="text-decoration: none;">
                     <img src="gplus-16.png" data-msg="alt:googlePlus" style="border: 0; width: 16px; height: 16px;" />
                 </a>
 
 
-                <a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
+                <a id="linkWebStoreSupport" class="textLink" href="" target="webstore"
+                    data-msg="suggestions,title:suggestionsTitle"></a>
 
 
                 <img id="btnOpen" src="popout.png" />
@@ -784,11 +830,14 @@
 
         </div>
     </div>
-    <script src="jquery-ui.min.js"></script>
+    <script src="third-party/jquery-ui.min.js"></script>
+    <script src="third-party/dayjs.min.js"></script>
+    <script src="third-party/utc.js"></script>
+    <script src="third-party/timezone.js"></script>
+    <script src="suncalc.js"></script>
     <script src="holydays.js"></script>
     <script src="sharedBrowser.js"></script>
     <script src="shared.js"></script>
-    <script src="popup.js"></script>
     <script src="cal1.js"></script>
     <script src="cal2.js"></script>
     <script src="cal3.js"></script>
@@ -798,16 +847,15 @@
     <script src="pagePlanner.js"></script>
     <script src="pageExporter.js"></script>
     <script src="pageCustom.js"></script>
-    <script src="misc/moment-timezone-with-data.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuSFuKxDtfCgBUGsSFrYZKardnK15Nmjc" async defer></script>
-    <!--<script src="presenteer.js"></script>-->
+    <script src="popup.js"></script>
 
-    <script type="text/x-template" id="cal2dayCell">
-        <div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
+    <template id="cal2dayCell">
+        <div class="dayCell bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal2_i{cellId}
+            data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
             <div class=top>
                 <span class=dayNum>{bDay}{^holyDayAftStar}</span>
                 <span class=sunsetStart>{frag1WeekdayShort}
-          <span>{startingSunsetDesc}</span>
+                    <span>{startingSunsetDesc}</span>
                 </span>
             </div>
             <div class=dayName>{bDayNamePri} <span>{bDayNameSec}</span></div>
@@ -820,21 +868,24 @@
             <div class=day>{^holyDayAftName}</div>
             {^sunsetDesc}
         </div>
-    </script>
-    <script type="text/x-template" id="cal3dayCell">
-        <div style="grid-area: {row} / {column}" class="dayCell elementNum{elementNum} bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal3_i{cellId} data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
+    </template>
+    <template id="cal3dayCell">
+        <div style="grid-area: {row} / {column}"
+            class="dayCell elementNum{elementNum} bDay{bDay} {classesOuter} wd{frag2Weekday}" id=cal3_i{cellId}
+            data-gdate="{frag2Year}/{frag2Month00}/{frag2Day00}">
             <div class=top>
                 <span class=dayNum>{bDay}{^holyDayAftStar}</span>
                 <span class=sunsetStart>
-                        {frag1MonthShortX} {frag1Day}{frag1MonthShortXComma} {frag2MonthShort} {frag2Day}
-                      <span>{startingSunsetDesc}</span>
+                    {frag1MonthShortX} {frag1Day}{frag1MonthShortXComma} {frag2MonthShort} {frag2Day}
+                    <span>{startingSunsetDesc}</span>
                 </span>
             </div>
             <div class=dayName>{bDayNamePri} <span>{bDayNameSec}</span></div>
             <div class=day>{^holyDayAftName}</div>
             {^sunsetDesc}
         </div>
-    </script>
+    </template>
+
 </body>
 
 </html>

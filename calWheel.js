@@ -4,7 +4,7 @@
 /* global chrome */
 /* global $ */
 
-var CalWheel = function() {
+var CalWheel = function () {
     var _yearShown = null;
     var _lastAngle = null;
     var _rotateTimeout = null;
@@ -114,7 +114,7 @@ var CalWheel = function() {
             s.html(keyframes);
 
             clearTimeout(_rotateTimeout);
-            _rotateTimeout = setTimeout(function() {
+            _rotateTimeout = setTimeout(function () {
                 wheel.addClass('rotating');
                 _lastAngle = offsetAngle;
             }, 0);
@@ -129,6 +129,7 @@ var CalWheel = function() {
     }
 
     function forSvg(s) {
+        if (!s) debugger;
         return s.replace('<u>', '<tspan class=u>').replace('</u>', '</tspan>');
     }
 
@@ -152,7 +153,7 @@ var CalWheel = function() {
         $('#cbShowPointer').prop('checked', true);
         $('#askShowPointer').hide();
 
-        var show = function() {
+        var show = function () {
             var di = getDateInfo(gDate);
             if (di.bYear != year) {
                 return;
@@ -170,10 +171,10 @@ var CalWheel = function() {
         showCalendar: showCalendar,
         gotoYear: gotoYear,
         rotateYear: rotateYear,
-        resetPageForLanguageChange: function() {
+        resetPageForLanguageChange: function () {
             _yearShown = -1;
         },
-        stopRotation: function() {
+        stopRotation: function () {
             clearTimeout(_rotating);
         }
     };

@@ -12,13 +12,13 @@ var createSunCalc = function () {
   // shortcuts for easier to read formulas
 
   var PI = Math.PI,
-      sin = Math.sin,
-      cos = Math.cos,
-      tan = Math.tan,
-      asin = Math.asin,
-      atan = Math.atan2,
-      acos = Math.acos,
-      rad = PI / 180;
+    sin = Math.sin,
+    cos = Math.cos,
+    tan = Math.tan,
+    asin = Math.asin,
+    atan = Math.atan2,
+    acos = Math.acos,
+    rad = PI / 180;
 
   // sun calculations are based on http://aa.quae.nl/en/reken/zonpositie.html formulas
 
@@ -26,8 +26,8 @@ var createSunCalc = function () {
   // date/time constants and conversions
 
   var dayMs = 1000 * 60 * 60 * 24,
-      J1970 = 2440588,
-      J2000 = 2451545;
+    J1970 = 2440588,
+    J2000 = 2451545;
 
   function toJulian(date) { return date.valueOf() / dayMs - 0.5 + J1970; }
   function fromJulian(j) { return new Date((j + 0.5 - J1970) * dayMs); }
@@ -54,7 +54,7 @@ var createSunCalc = function () {
   function eclipticLongitude(M) {
 
     var C = rad * (1.9148 * sin(M) + 0.02 * sin(2 * M) + 0.0003 * sin(3 * M)), // equation of center
-        P = rad * 102.9372; // perihelion of the Earth
+      P = rad * 102.9372; // perihelion of the Earth
 
     return M + C + P + PI;
   }
@@ -76,12 +76,12 @@ var createSunCalc = function () {
   // sun times configuration (angle, morning name, evening name)
 
   var times = SunCalc.times = [
-      [-0.833, 'sunrise', 'sunset']
-      //[  -0.3, 'sunriseEnd',    'sunsetStart' ],
-      //[    -6, 'dawn',          'dusk'        ],
-      //[   -12, 'nauticalDawn',  'nauticalDusk'],
-      //[   -18, 'nightEnd',      'night'       ],
-      //[     6, 'goldenHourEnd', 'goldenHour'  ]
+    [-0.833, 'sunrise', 'sunset']
+    //[  -0.3, 'sunriseEnd',    'sunsetStart' ],
+    //[    -6, 'dawn',          'dusk'        ],
+    //[   -12, 'nauticalDawn',  'nauticalDusk'],
+    //[   -18, 'nightEnd',      'night'       ],
+    //[     6, 'goldenHourEnd', 'goldenHour'  ]
   ];
 
 
@@ -100,7 +100,7 @@ var createSunCalc = function () {
   function getSetJ(h, lw, phi, dec, n, M, L) {
 
     var w = hourAngle(h, phi, dec),
-        a = approxTransit(w, lw, n);
+      a = approxTransit(w, lw, n);
     return solarTransitJ(a, M, L);
   }
 
@@ -111,9 +111,9 @@ var createSunCalc = function () {
 
     // Glen - override
     if (localStorage['locationKnown'] !== ObjectConstant + 'true') {
-      var dt2 = moment(date).toDate();
+      var dt2 = dayjs(date).toDate();
       dt2.setHours(18, 30, 0, 0);
-      var dt3 = moment(date).toDate();
+      var dt3 = dayjs(date).toDate();
       dt3.setHours(6, 30, 0, 0);
       return {
         sunset: dt2,
@@ -123,19 +123,19 @@ var createSunCalc = function () {
 
 
     var lw = rad * -lng,
-        phi = rad * lat,
+      phi = rad * lat,
 
-        d = toDays(date),
-        n = julianCycle(d, lw),
-        ds = approxTransit(0, lw, n),
+      d = toDays(date),
+      n = julianCycle(d, lw),
+      ds = approxTransit(0, lw, n),
 
-        M = solarMeanAnomaly(ds),
-        L = eclipticLongitude(M),
-        dec = declination(L, 0),
+      M = solarMeanAnomaly(ds),
+      L = eclipticLongitude(M),
+      dec = declination(L, 0),
 
-        Jnoon = solarTransitJ(ds, M, L),
+      Jnoon = solarTransitJ(ds, M, L),
 
-        i, len, time, Jset, Jrise;
+      i, len, time, Jset, Jrise;
 
 
     var result = {

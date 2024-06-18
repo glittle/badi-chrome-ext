@@ -1,6 +1,6 @@
 ﻿/* global getMessage */
 
-var PageExporter = function() {
+var PageExporter = function () {
 
     var _lines = [];
     var _forCsv = false;
@@ -13,7 +13,7 @@ var PageExporter = function() {
     var _includeLocation = true;
     var _includeAlert = false;
 
-    var prepareInputs = function() {
+    var prepareInputs = function () {
         var template = '{title}<label><input type="checkbox" value="{val}" data-num="{n}" /><span>{name}</span></label>';
         var items = [
             { val: 'Date_AllDay', n: 365 },
@@ -31,7 +31,7 @@ var PageExporter = function() {
             { val: 'Fast_SunriseToSunset', n: 19 }
         ];
         var lastWhat = '';
-        $.each(items, function(i, item) {
+        $.each(items, function (i, item) {
             var valParts = item.val.split('_');
             var type = valParts[1];
             item.name = getMessage('exportOption_' + type);
@@ -46,7 +46,7 @@ var PageExporter = function() {
 
         $('.exportOptionList').html(template.filledWithEach(items));
 
-        localizeHtml('.exportOptionList', function(value) {
+        localizeHtml('.exportOptionList', function (value) {
             value = value.replace(/\(/g, '<span class=comment>(');
             value = value.replace(/\)/g, ')</span>');
             return value;
@@ -62,16 +62,16 @@ var PageExporter = function() {
             { v: 'B60' },
             // can't go after...
         ];
-        $.each(alerts, function(i, a) {
+        $.each(alerts, function (i, a) {
             a.t = getMessage('exportAlert_' + a.v);
         });
         $('#exporterIncludeAlertMin').html('<option value="{v}">{t}</option>'.filledWithEach(alerts));
 
         setByYear();
     };
-    var setByYear = function(highlight) {
+    var setByYear = function (highlight) {
         var select = $('#exporterDateRange');
-        select.find('option').each(function(i, el) {
+        select.find('option').each(function (i, el) {
             var option = $(el);
             var key = option.attr('id');
             var parts = key.split('_');
@@ -86,13 +86,13 @@ var PageExporter = function() {
             select.effect("highlight", 1000);
         }
     };
-    var calFormat = function(date, addHours, addMinutes) {
+    var calFormat = function (date, addHours, addMinutes) {
         if (addHours + addMinutes) {
             date.setHours(date.getHours() + addHours, date.getMinutes() + addMinutes, 0, 0);
         }
         return date.toJSON().replace(/[\-\:]/g, '').split('.')[0] + 'Z';
     };
-    var makeEntries = function(asCsv) {
+    var makeEntries = function (asCsv) {
         _lines = [];
         _forCsv = !!asCsv;
         _nowCalDate = calFormat(new Date());
@@ -104,7 +104,7 @@ var PageExporter = function() {
         addLine('CALSCALE:GREGORIAN');
         addLine('METHOD:PUBLISH');
         addLine('X-WR-CALNAME:' + $('#exporterName').val());
-        addLine('X-WR-TIMEZONE:' + moment.tz.guess());
+        addLine('X-WR-TIMEZONE:' + dayjs.tz.guess());
         addLine('X-WR-CALDESC:' + getMessage('exportCalendarDescription', { location: localStorage.locationName }));
 
         addEntries();
@@ -112,7 +112,7 @@ var PageExporter = function() {
         addLine('END:VCALENDAR');
         addLine('');
     };
-    var addEntries = function() {
+    var addEntries = function () {
         var ddl = $('#exporterDateRange');
         if (!ddl.val()) {
             ddl[0].selectedIndex = 0;
@@ -146,7 +146,7 @@ var PageExporter = function() {
                 return;
         }
 
-        var wantedEventTypes = $('.exportOptionList input:checked').map(function(i, el) { return el.value; }).get();
+        var wantedEventTypes = $('.exportOptionList input:checked').map(function (i, el) { return el.value; }).get();
         console.log(wantedEventTypes);
 
         // process each day... see if there is a wanted type for that day
@@ -210,7 +210,7 @@ END:VEVENT
    */
 
 
-    var addEntryDate = function(type, di, variation) {
+    var addEntryDate = function (type, di, variation) {
         addLine('BEGIN:VEVENT');
 
         var dayInfo = '{bDay} {bMonthNamePri} {bYear}'.filledWith(di);
@@ -242,11 +242,11 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addHolyDay = function(type, di, variation) {
+    var addHolyDay = function (type, di, variation) {
         if (!_specialDays[di.bYear]) {
             _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
         }
-        var holyDayInfo = $.grep(_specialDays[di.bYear], function(el, i) {
+        var holyDayInfo = $.grep(_specialDays[di.bYear], function (el, i) {
             return el.Type.substring(0, 1) == 'H' && el.BDateCode == di.bDateCode;
         });
 
@@ -327,11 +327,11 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addFeast = function(type, di, variation) {
+    var addFeast = function (type, di, variation) {
         if (!_specialDays[di.bYear]) {
             _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
         }
-        var feastInfo = $.grep(_specialDays[di.bYear], function(el, i) {
+        var feastInfo = $.grep(_specialDays[di.bYear], function (el, i) {
             return el.Type.substring(0, 1) == 'M' && el.BDateCode == di.bDateCode;
         });
 
@@ -391,7 +391,7 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addFastEntries = function(type, di, variation) {
+    var addFastEntries = function (type, di, variation) {
         if (di.bMonth != 19) {
             return;
         }
@@ -445,7 +445,7 @@ END:VEVENT
 
     };
 
-    var addAlert = function(msg) {
+    var addAlert = function (msg) {
         if (!_includeAlert) {
             return;
         }
@@ -465,7 +465,7 @@ END:VEVENT
         //END:VALARM
     };
 
-    var addDescription = function(msg, allDay) {
+    var addDescription = function (msg, allDay) {
         if (!allDay) {
             var extraInfo = { location: localStorage.locationName };
             var timesLocation = getMessage('exporterItemDescShared', extraInfo);
@@ -476,7 +476,7 @@ END:VEVENT
         //addLine('X-ALT-DESC:' + msg);
     }
 
-    var addEndOfEntry = function() {
+    var addEndOfEntry = function () {
         if (_doingCsvLine) {
             _lines.push(_csvLine.join(','));
             _csvLine = []
@@ -496,7 +496,7 @@ END:VEVENT
 
         _numEntries++;
     };
-    var addLine = function(line) {
+    var addLine = function (line) {
         if (line === 'BEGIN:VEVENT') {
             _doingCsvLine = _forCsv;
             if (_doingCsvLine) {
@@ -519,7 +519,7 @@ END:VEVENT
         _lines.push(line.substr(0, maxLength));
         addLine(' ' + line.substr(maxLength));
     };
-    var sendTo = function(target) {
+    var sendTo = function (target) {
         switch (target) {
             case 'test':
                 var html = [];
@@ -537,8 +537,8 @@ END:VEVENT
                 break;
             case 'file':
                 //TODO: name file with content and time stamp
-                var wantedEventTypes = $('.exportOptionList input:checked').map(function(i, el) { return el.value.replace(/\_/g, ''); }).get();
-                var filename = 'Badi__{0}_{1}.ics'.filledWith(wantedEventTypes.join('_'), moment().format('DDHHmmss'));
+                var wantedEventTypes = $('.exportOptionList input:checked').map(function (i, el) { return el.value.replace(/\_/g, ''); }).get();
+                var filename = 'Badi__{0}_{1}.ics'.filledWith(wantedEventTypes.join('_'), dayjs().format('DDHHmmss'));
                 var element = document.createElement('a');
                 element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(_lines.join('\r\n')));
                 element.setAttribute('download', filename);
@@ -552,24 +552,24 @@ END:VEVENT
                 break;
         }
     };
-    var updateTotalToExport = function() {
+    var updateTotalToExport = function () {
         var total = 0;
-        $('#pageExporter input[type=checkbox]:checked').each(function(i, el) {
+        $('#pageExporter input[type=checkbox]:checked').each(function (i, el) {
             total += $(el).data('num') || 0;
         });
         $('#exportNum').text(total);
     };
-    var saveValue = function(ev) {
+    var saveValue = function (ev) {
         var input = ev.target;
         setStorage('exporter_' + input.id, input.value);
     };
-    var clearQuickPick = function() {
+    var clearQuickPick = function () {
         $('#pageExporter input[type=checkbox]:checked, #exporterIncludeAlert')
-            .each(function(i, el) { $(el).prop('checked', false).trigger('change'); });
+            .each(function (i, el) { $(el).prop('checked', false).trigger('change'); });
     };
-    var setQuickPicks = function(list, alert) {
+    var setQuickPicks = function (list, alert) {
         clearQuickPick();
-        $.each(list, function(i, l) {
+        $.each(list, function (i, l) {
             $('#pageExporter input[value={0}]'.filledWith(l)).prop('checked', true).trigger('change');
         });
         if (alert) {
@@ -577,50 +577,50 @@ END:VEVENT
             $('#exporterIncludeAlert').prop('checked', true).trigger('change');
         }
     };
-    var attachHandlers = function() {
-        $('#pageExporter').on('change', 'input[type=checkbox]', function(ev) {
+    var attachHandlers = function () {
+        $('#pageExporter').on('change', 'input[type=checkbox]', function (ev) {
             var cb = $(ev.target);
             setStorage('exporter_' + cb.val(), cb.is(':checked'));
             updateTotalToExport();
         });
         $('#exporterName, #exporterDateRange').on('change', saveValue);
 
-        $('#btnExportFile').click(function() {
+        $('#btnExportFile').click(function () {
             makeEntries();
             sendTo('file');
         });
 
-        $('#btnExportGoogle').click(function() {
+        $('#btnExportGoogle').click(function () {
             makeEntries();
             sendTo('google');
         });
 
         $('#btnQuickPickClear').click(clearQuickPick);
-        $('#btnQuickPick1').click(function() {
+        $('#btnQuickPick1').click(function () {
             setQuickPicks(['Date_AllDay', 'Hd_AllDay', 'Feast_BeginningSunset']);
         });
-        $('#btnQuickPick2').click(function() {
+        $('#btnQuickPick2').click(function () {
             setQuickPicks(['Fast_Sunrise'], 'B10');
         });
-        $('#btnQuickPick3').click(function() {
+        $('#btnQuickPick3').click(function () {
             setQuickPicks(['Fast_Sunset'], 'B0');
         });
-        $('#btnExportTest').click(function() {
+        $('#btnExportTest').click(function () {
             makeEntries();
             sendTo('test');
         });
-        $('#cbExportTestCsv').click(function() {
+        $('#cbExportTestCsv').click(function () {
             makeEntries(true);
             sendTo('test');
         });
-        $('#btnHideSample').click(function() {
+        $('#btnHideSample').click(function () {
             $('#exporterTest').hide();
             $(this).hide();
         });
         $('#exporterIncludeAlert, #exporterIncludeAlertMin').on('change', refreshAlert);
     };
-    var recallSettings = function() {
-        $('#pageExporter input[type=checkbox]').each(function(i, el) {
+    var recallSettings = function () {
+        $('#pageExporter input[type=checkbox]').each(function (i, el) {
             var cb = $(el);
             cb.prop('checked', getStorage('exporter_' + cb.val(), false));
         });
@@ -632,7 +632,7 @@ END:VEVENT
         }
         $('#exporterIncludeAlertMin').val(getStorage('exporter_alertMin', 'B0'));
     };
-    var refreshAlert = function() {
+    var refreshAlert = function () {
         var ddl = $('#exporterIncludeAlertMin');
         ddl.toggle($('#exporterIncludeAlert').is(':checked'));
         setStorage('exporter_alertMin', ddl.val());

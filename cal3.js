@@ -4,7 +4,7 @@
 /* global di */
 /* global chrome */
 /* global $ */
-var Cal3 = function() {
+var Cal3 = function () {
     var _yearShown = null;
     var _specialDays = {};
     var _scrollToMonth = -1;
@@ -20,7 +20,7 @@ var Cal3 = function() {
     }
 
     function attachHandlers() {
-        _calendarDiv.on('click', '.dayCell', function(ev) {
+        _calendarDiv.on('click', '.dayCell', function (ev) {
             var cell = $(ev.target).closest('.dayCell');
             var gDate = cell.data('gdate');
 
@@ -29,19 +29,19 @@ var Cal3 = function() {
             refreshDateInfo();
             showInfo(_di);
         });
-        _page.on('change', '#cbShowTimes', function() {
+        _page.on('change', '#cbShowTimes', function () {
             _calendarDiv.toggleClass('showTimes', !!_page.find('#cbShowTimes').prop('checked'));
             // _calendarDiv.find('#cbShowTimes').blur();
         });
-        _page.on('change', '#cbCal3Darker', function() {
+        _page.on('change', '#cbCal3Darker', function () {
             _page.toggleClass('darkerColors', !!_page.find('#cbCal3Darker').prop('checked'));
             // _calendarDiv.find('#cbCal3Darker').blur();
         });
-        _page.on('change', '#cbCal3Print', function() {
+        _page.on('change', '#cbCal3Print', function () {
             var show = !!_page.find('#cbCal3Print').prop('checked');
             _page.toggleClass('forPrint', show);
             if (show) {
-                window.onafterprint = function() {
+                window.onafterprint = function () {
                     _page.find('#cbCal3Print').prop('checked', false);
                     _page.toggleClass('forPrint', false);
                     window.onafterprint = null;
@@ -56,10 +56,10 @@ var Cal3 = function() {
         _page.find('#cbShowTimes').prop('checked', true);
         _calendarDiv.addClass('showTimes');
 
-        _page.find('#btnCal3Y').click(function() {
+        _page.find('#btnCal3Y').click(function () {
             zoomTo('Y');
         });
-        _page.find('#btnCal3M').click(function() {
+        _page.find('#btnCal3M').click(function () {
             zoomTo('M');
         });
         $(document).on('click', 'body[data-pageid=pageCal3] .btnChangeMonth', changeMonth);
@@ -132,7 +132,7 @@ var Cal3 = function() {
                 // make shell small
                 monthShells.addClass('sizeY');
 
-                monthShells.each(function(i, el) {
+                monthShells.each(function (i, el) {
                     var monthNum = +el.id.replace('monthCell', '');
                     $(el).css({
                         left: (leftOffset + getCol(monthNum) * 123) + 'px',
@@ -258,7 +258,7 @@ var Cal3 = function() {
 
         _calendarDiv.find(sel).addClass('selected');
 
-        setTimeout(function() {
+        setTimeout(function () {
             scrollToMonth(di.bMonth);
         }, 0);
 
@@ -466,7 +466,7 @@ var Cal3 = function() {
                 _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
             }
 
-            var holyDayInfo = $.grep(_specialDays[bYear], function(el, i) {
+            var holyDayInfo = $.grep(_specialDays[bYear], function (el, i) {
                 return el.Type.substring(0, 1) === 'H' && el.BDateCode === bDateCode;
             });
 
@@ -518,9 +518,9 @@ var Cal3 = function() {
         var dayCell = _calendarDiv.find('#cal3_igd{bMonth}_{bDay}'.filledWith(nowDi));
         dayCell.addClass('today');
 
-        var start = moment(nowDi.frag1SunTimes.sunset);
-        var end = moment(nowDi.frag2SunTimes.sunset);
-        var now = moment(currentTime); // moment seems to cache the time when the page loads
+        var start = dayjs(nowDi.frag1SunTimes.sunset);
+        var end = dayjs(nowDi.frag2SunTimes.sunset);
+        var now = dayjs(currentTime); // moment seems to cache the time when the page loads
 
         //    console.log('------');
         //    console.log('start ' + start.format());
@@ -547,7 +547,7 @@ var Cal3 = function() {
 
     return {
         showCalendar: showCalendar,
-        resetPageForLanguageChange: function() {
+        resetPageForLanguageChange: function () {
             _yearShown = -1;
         },
         di: _di,

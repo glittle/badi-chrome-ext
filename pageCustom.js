@@ -1,3 +1,4 @@
+"use strict";
 /* global addSamples */
 var PageCustom = () => {
     //var _maxToUseAsSamples: number = 3;
@@ -189,6 +190,7 @@ var PageCustom = () => {
         var selected = [];
         var nextItemNumber = 1 + $('#sampleList1 > div').length;
         if (nextItemNumber === 1) {
+            _samplesAddedToFirstPage = true;
             addSamples(_di);
             return;
         }

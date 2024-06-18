@@ -1,6 +1,6 @@
 ﻿/* Code by Glen Little */
 /* global HolyDays */
-/* global moment */
+/* global dayjs */
 var ObjectConstant = '$****$';
 var splitSeparator = /[,،]+/;
 var _currentPageId = null;
@@ -9,6 +9,46 @@ var _rawMessageTranslationPct = 0;
 var _numMessagesEn = 0;
 var _cachedMessages = {};
 var _cachedMessageUseCount = 0;
+
+var _languageCode = '';
+var _languageDir = 'ltr';
+var _nextFilledWithEach_UsesExactMatchOnly = false;
+var _locationLat = null;
+var _locationLong = null;
+var _focusTime = null;
+var holyDays = null;
+var knownDateInfos = {};
+var _di = {};
+var _initialDiStamp;
+var _firstLoad = true;
+var _firstPopup = false;
+
+var bMonthNameAr;
+var bMonthMeaning;
+
+var bWeekdayNameAr;
+var bWeekdayMeaning;
+
+var bYearInVahidNameAr;
+var bYearInVahidMeaningnull;
+
+var bMonthNamePri;
+var bMonthNameSec;
+var bWeekdayNamePri;
+var bWeekdayNameSec;
+var bYearInVahidNamePri;
+var bYearInVahidNameSec;
+
+var gWeekdayLong;
+var gWeekdayShort;
+var gMonthLong;
+var gMonthShort;
+
+var ordinall
+var ordinalNames;
+var elements;
+
+var use24HourClock;
 
 var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
 
@@ -20,11 +60,28 @@ var settings = {
     rememberFocusTimeMinutes: 5, // show on settings page?
     optedOutOfGoogleAnalytics: getStorage('optOutGa', -1),
     //  integrateIntoGoogleCalendar: getStorage('enableGCal', true),
-    iconTextColor: getStorage('iconTextColor', 'black')
+    iconTextColor: getStorage('iconTextColor', '#000000')
 };
 
-function loadRawMessages(langCode, cb) {
+async function loadJsonfile(filePath) {
+    try {
+        const url = chrome.runtime.getURL(filePath);
+        const response = await fetch(url);
+        if (!response.ok) {
+            console.log(`File not found: ${filePath}`);
+            return null;
+        }
+        const jsonData = await response.json();
+        return jsonData;
+    } catch (error) {
+        console.error(`Error fetching file ${filePath}:`, error);
+        return null;
+    }
+}
+
+async function loadRawMessages(langCode, cb) {
     // load base English, then overwrite with base for language, then with full lang code
+    console.log('loading', langCode);
 
     var rawLangCodes = { en: true };
     if (langCode.length > 2) {
@@ -39,34 +96,30 @@ function loadRawMessages(langCode, cb) {
 
     for (var langNum = 0; langNum < langsToLoad.length; langNum++) {
         var langToLoad = langsToLoad[langNum];
-        // console.log('shared', langNum, langToLoad);
         var url = "/_locales/" + langToLoad + "/messages.json";
+        console.log('shared', langNum, langToLoad, url);
 
-        $.ajax({
-                dataType: "json",
-                url: url,
-                isLocal: true,
-                async: false
-            })
-            .done(function(messages) {
-                // console.log(langToLoad, messages);
+        var messages = await loadJsonfile(url);
 
-                var keys = Object.keys(messages);
-                console.log('loading', keys.length, 'keys from', langToLoad);
+        if (!messages) {
+            console.log('no source found for', langToLoad);
+            continue;
+        }
 
-                if (langToLoad === 'en') {
-                    _numMessagesEn = keys.length;
-                } else {
-                    // this will be incorrect if the _locales folder does have folders for xx and xx-yy. None do currently.
-                    numMessagesOther = keys.length;
-                }
+        var keys = Object.keys(messages);
 
-                keys.forEach(function(k) {
-                    _rawMessages[k.toLowerCase()] = messages[k].message;
-                });
+        console.log('loading', keys.length, 'keys from', langToLoad);
 
-            })
-            .fail(function() {});
+        if (langToLoad === 'en') {
+            _numMessagesEn = keys.length;
+        } else {
+            // this will be incorrect if the _locales folder does have folders for xx and xx-yy. None do currently.
+            numMessagesOther = keys.length;
+        }
+
+        keys.forEach(function (k) {
+            _rawMessages[k.toLowerCase()] = messages[k].message;
+        });
     }
 
     _cachedMessages = {};
@@ -81,62 +134,54 @@ function loadRawMessages(langCode, cb) {
 
 }
 
-var _languageCode = getStorage('lang', ''); //getMessage('translation');
-if (!_languageCode) {
-    _languageCode = chrome.i18n.getUILanguage();
-    setStorage('lang', _languageCode);
+var prepareShared = async function () {
+    settings.useArNames = getStorage('useArNames', true);
+
+    // debugger;
+    _languageCode = getStorage('lang', 'en'); //getMessage('translation');
+    if (!_languageCode) {
+        _languageCode = chrome.i18n.getUILanguage();
+        setStorage('lang', _languageCode);
+    }
+
+    await loadRawMessages(_languageCode); // default to the current language
+    // console.log('raw messages loaded', _rawMessages);
+
+    // must be set immediately for tab managers to see this name
+    $('#windowTitle').text(getMessage('title'));
+
+    _languageDir = getMessage('textDirection', null, 'ltr');
+
+    _locationLat = localStorage.lat;
+    _locationLong = localStorage.long;
+    holyDays = HolyDays();
+
+    // see messages.json for translations and local names
+    bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
+    bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
+
+    bWeekdayNameAr = getMessage("bWeekdayNameAr").split(splitSeparator); // from Saturday
+    bWeekdayMeaning = getMessage("bWeekdayMeaning").split(splitSeparator);
+
+    bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(splitSeparator);
+    bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(splitSeparator);
+
+    setupLanguageChoice();
+
+    gWeekdayLong = getMessage("gWeekdayLong").split(splitSeparator);
+    gWeekdayShort = getMessage("gWeekdayShort").split(splitSeparator);
+    gMonthLong = getMessage("gMonthLong").split(splitSeparator);
+    gMonthShort = getMessage("gMonthShort").split(splitSeparator);
+
+    ordinal = getMessage('ordinal').split(splitSeparator);
+    ordinalNames = getMessage('ordinalNames').split(splitSeparator);
+    elements = getMessage('elements').split(splitSeparator);
+
+    use24HourClock = getMessage('use24HourClock') === 'true';
 }
 
-loadRawMessages(_languageCode); // default to the current language
-
-var _languageDir = getMessage('textDirection', null, 'ltr');
-
-var _nextFilledWithEach_UsesExactMatchOnly = false;
-
-var _locationLat = localStorage.lat;
-var _locationLong = localStorage.long;
-var _focusTime = null;
-var holyDays = HolyDays();
-var knownDateInfos = {};
-var _di = {};
-var _initialDiStamp;
-var _firstLoad = true;
-var _firstPopup = false;
-
-settings.useArNames = getStorage('useArNames', true);
-
-// see messages.json for translations and local names
-var bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
-var bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
-
-var bWeekdayNameAr = getMessage("bWeekdayNameAr").split(splitSeparator); // from Saturday
-var bWeekdayMeaning = getMessage("bWeekdayMeaning").split(splitSeparator);
-
-var bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(splitSeparator);
-var bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(splitSeparator);
-
-var bMonthNamePri;
-var bMonthNameSec;
-var bWeekdayNamePri;
-var bWeekdayNameSec;
-var bYearInVahidNamePri;
-var bYearInVahidNameSec;
-
-setupLanguageChoice();
-
-var gWeekdayLong = getMessage("gWeekdayLong").split(splitSeparator);
-var gWeekdayShort = getMessage("gWeekdayShort").split(splitSeparator);
-var gMonthLong = getMessage("gMonthLong").split(splitSeparator);
-var gMonthShort = getMessage("gMonthShort").split(splitSeparator);
-
-var ordinal = getMessage('ordinal').split(splitSeparator);
-var ordinalNames = getMessage('ordinalNames').split(splitSeparator);
-var elements = getMessage('elements').split(splitSeparator);
-
-var use24HourClock = getMessage('use24HourClock') === 'true';
-
-
 function setupLanguageChoice() {
+    // debugger;
     bMonthNamePri = settings.useArNames ? bMonthNameAr : bMonthMeaning;
     bMonthNameSec = !settings.useArNames ? bMonthNameAr : bMonthMeaning;
     bWeekdayNamePri = settings.useArNames ? bWeekdayNameAr : bWeekdayMeaning;
@@ -166,6 +211,8 @@ function getDateInfo(currentTime, onlyStamp) {
     if (known) {
         return known;
     }
+
+    // debugger;
 
     var bNow = holyDays.getBDate(currentTime);
     if (onlyStamp) {
@@ -240,6 +287,7 @@ function getDateInfo(currentTime, onlyStamp) {
         stamp: JSON.stringify(bNow) // used to compare to other dates and for developer reference 
     };
 
+    // debugger;
     di.bDayNamePri = settings.useArNames ? di.bDayNameAr : di.bDayMeaning;
     di.bDayNameSec = !settings.useArNames ? di.bDayNameAr : di.bDayMeaning;
     di.bMonthNamePri = settings.useArNames ? di.bMonthNameAr : di.bMonthMeaning;
@@ -303,7 +351,7 @@ function getDateInfo(currentTime, onlyStamp) {
     di.currentMonthShort = gMonthShort[di.currentMonth];
     di.currentWeekdayLong = gWeekdayLong[di.currentWeekday];
     di.currentWeekdayShort = gWeekdayShort[di.currentWeekday];
-    di.currentDateString = moment(di.currentTime).format('YYYY-MM-DD');
+    di.currentDateString = dayjs(di.currentTime).format('YYYY-MM-DD');
 
 
     di.currentRelationToSunset = getMessage(bNow.eve ? 'afterSunset' : 'beforeSunset');
@@ -399,10 +447,10 @@ function showIcon() {
 
     tipLines.push(getMessage('formatIconClick'));
 
-    chrome.browserAction.setTitle({ title: tipLines.join('\n') });
+    chrome.action.setTitle({ title: tipLines.join('\n') });
 
     try {
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             imageData: draw(dateInfo.bMonthNamePri, dateInfo.bDay, 'center')
         });
         _iconPrepared = true;
@@ -441,9 +489,9 @@ function draw(line1, line2, line2Alignment) {
         case 'center':
             x = size / 2;
             break;
-            //    case 'end':
-            //      x = size;
-            //      break;
+        //    case 'end':
+        //      x = size;
+        //      break;
     }
     context.fillText(line2, x, size);
 
@@ -451,7 +499,6 @@ function draw(line1, line2, line2Alignment) {
 }
 
 function startGettingLocation() {
-    // geo
     var positionOptions = {
         enableHighAccuracy: false,
         maximumAge: Infinity,
@@ -466,12 +513,12 @@ function getUpcoming(di) {
         return; // already done 
     }
     var dayInfos = holyDays.getUpcoming(di, 3);
-    var today = moment(di.frag2);
+    var today = dayjs(di.frag2);
     today.hour(0);
     di.special1 = null;
     di.special2 = null;
 
-    dayInfos.forEach(function(dayInfo, i) {
+    dayInfos.forEach(function (dayInfo, i) {
         var targetDi = getDateInfo(dayInfo.GDate);
         if (dayInfo.Type === 'M') {
             dayInfo.A = getMessage('FeastOf').filledWith(targetDi.bMonthNameSec);
@@ -484,7 +531,7 @@ function getUpcoming(di) {
         dayInfo.date = getMessage('upcomingDateFormat', targetDi);
 
         var sameDay = di.stampDay === targetDi.stampDay;
-        var targetMoment = moment(dayInfo.GDate);
+        var targetMoment = dayjs(dayInfo.GDate);
         dayInfo.away = determineDaysAway(di, today, targetMoment, sameDay);
 
         if (sameDay) {
@@ -522,10 +569,10 @@ function showTime(d, use24) {
     var hours = show24Hour ?
         hours24 :
         hours24 > 12 ?
-        hours24 - 12 :
-        hours24 === 0 ?
-        12 :
-        hours24;
+            hours24 - 12 :
+            hours24 === 0 ?
+                12 :
+                hours24;
     var minutes = d.getMinutes();
     var time = hours + ':' + ('0' + minutes).slice(-2);
     if (!show24Hour) {
@@ -545,7 +592,7 @@ function showTime(d, use24) {
 };
 
 
-var findName = function(typeName, results, getLastMatch) {
+var findName = function (typeName, results, getLastMatch) {
     var match = null;
     for (var r = 0; r < results.length; r++) {
         var result = results[r];
@@ -561,36 +608,60 @@ var findName = function(typeName, results, getLastMatch) {
 var xhr = null;
 
 function startGetLocationName() {
+    // debugger;
+
     try {
-        var geocoder = new google.maps.Geocoder;
+        var unknownLocation = getMessage('noLocationName');
 
-        if (geocoder) {
-            geocoder.geocode({ location: { lat: +localStorage.lat, lng: +localStorage.long } }, function(results, status) {
-                var unknownLocation = getMessage('noLocationName');
+        // Send a message to the background script to get the city name
+        chrome.runtime.sendMessage({
+            action: 'getCityName',
+            lat: localStorage.lat,
+            long: localStorage.long,
+            unknownLocation: unknownLocation
+        }, response => {
+            var location = response.city || unknownLocation;
+            console.log('Location:', location);
 
-                localStorage.locationName =
-                    // findName('neighborhood', data.results, true) ||
-                    findName('locality', results) ||
-                    findName('political', results) ||
-                    unknownLocation;
+            localStorage.locationName = location;
+            setStorage('locationNameKnown', localStorage.locationName !== unknownLocation);
 
-                setStorage('locationNameKnown', true);
-                console.log(localStorage.locationName);
+            stopLoaderButton();
 
-                if (localStorage.locationName === unknownLocation) {
-                    console.log(status, results);
-                }
+            if (typeof _inPopupPage !== 'undefined') {
+                showLocation();
+            }
+        });
 
-                stopLoaderButton();
+        // var geocoder = new google.maps.Geocoder;
 
-                //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
+        // if (geocoder) {
+        //     geocoder.geocode({ location: { lat: +localStorage.lat, lng: +localStorage.long } }, function (results, status) {
+        //         var unknownLocation = getMessage('noLocationName');
 
-                // if popup is showing...
-                if (typeof _inPopupPage !== 'undefined') {
-                    showLocation();
-                }
-            });
-        }
+        //         localStorage.locationName =
+        //             // findName('neighborhood', data.results, true) ||
+        //             findName('locality', results) ||
+        //             findName('political', results) ||
+        //             unknownLocation;
+
+        //         setStorage('locationNameKnown', true);
+        //         console.log(localStorage.locationName);
+
+        //         if (localStorage.locationName === unknownLocation) {
+        //             console.log(status, results);
+        //         }
+
+        //         stopLoaderButton();
+
+        //         //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
+
+        //         // if popup is showing...
+        //         if (typeof _inPopupPage !== 'undefined') {
+        //             showLocation();
+        //         }
+        //     });
+        // }
 
     } catch (error) {
         console.log(error);
@@ -791,7 +862,7 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
     chrome.alarms.create(alarmName, { when: whenTime });
 
     // debug - show alarm that was set
-    chrome.alarms.getAll(function(alarms) {
+    chrome.alarms.getAll(function (alarms) {
         for (var i = 0; i < alarms.length; i++) {
             var alarm = alarms[i];
             if (alarm.name.startsWith('refresh_')) {
@@ -827,7 +898,7 @@ function setStorage(key, value) {
 
 function getStorage(key, defaultValue) {
     /// <summary>Get a value from storage.</summary>
-    var checkForObject = function(obj) {
+    var checkForObject = function (obj) {
         if (obj.substring(0, ObjectConstant.length) === ObjectConstant) {
             obj = $.parseJSON(obj.substring(ObjectConstant.length));
         }
@@ -841,7 +912,7 @@ function getStorage(key, defaultValue) {
     return defaultValue;
 }
 
-String.prototype.filledWith = function() {
+String.prototype.filledWith = function () {
     /// <summary>Similar to C# String.Format...  in two modes:
     /// 1) Replaces {0},{1},{2}... in the string with values from the list of arguments. 
     /// 2) If the first and only parameter is an object, replaces {xyz}... (only names allowed) in the string with the properties of that object. 
@@ -858,8 +929,8 @@ String.prototype.filledWith = function() {
 
     var extractTokens = /{([^{]+?)}/g;
 
-    var replaceTokens = function(input) {
-        return input.replace(extractTokens, function() {
+    var replaceTokens = function (input, debugCount) {
+        return input.replace(extractTokens, function () {
             var token = arguments[1];
             var value;
             //try {
@@ -926,9 +997,11 @@ String.prototype.filledWith = function() {
     var result = replaceTokens(this);
 
     var lastResult = '';
+    var debugCount = 0;
     while (lastResult !== result) {
         lastResult = result;
-        result = replaceTokens(result);
+        if (debugCount > 0) console.log('filledWith loop count', debugCount || 0, 'for', result);
+        result = replaceTokens(result, debugCount + 1);
     }
 
     return result;
@@ -952,7 +1025,7 @@ function quoteattr(s, preserveCr) {
 }
 
 
-String.prototype.filledWithEach = function(arr) {
+String.prototype.filledWithEach = function (arr) {
     /// <summary>Silimar to 'filledWith', but repeats the fill for each item in the array. Returns a single string with the results.
     /// </summary>
     if (arr === undefined || arr === null) {
@@ -1065,7 +1138,7 @@ function localizeHtml(host, fnOnEach) {
     var accessKeyList = [];
     $(host || document)
         .find('[data-msg]')
-        .each(function(domNum, dom) {
+        .each(function (domNum, dom) {
             var el = $(dom);
             var children = el.children();
             var info = el.data('msg');
@@ -1096,7 +1169,7 @@ function localizeHtml(host, fnOnEach) {
                 }
                 if (target === 'html') {
                     $.each(children,
-                        function(i, c) {
+                        function (i, c) {
                             var name = $(c).data('child');
                             value = value.replace('{' + name + '}', c.outerHTML);
                         });
@@ -1157,7 +1230,7 @@ function shallowCloneOf(obj) {
 //   // add a timestamp to console log entries
 //   //  var a = ['%c'];
 //   //  a.push('display: block; text-align: right;');
-//   //  a.push(new moment().format('DD H:mm:ss'));
+//   //  a.push(new dayjs().format('DD H:mm:ss'));
 //   //  a.push('\n');
 //   var a = ['\n'];
 //   for (var x in log.arguments) {
@@ -1169,7 +1242,7 @@ function shallowCloneOf(obj) {
 // }
 
 // google analytics using Measurement Protocol
-var trackerFunc = function() {
+var trackerFunc = function () {
     var baseParams = {
         ds: 'app',
         tid: 'UA-1312528-10',
@@ -1181,7 +1254,7 @@ var trackerFunc = function() {
         av: chrome.runtime.getManifest().version
     };
 
-    var send = function(info) {
+    var send = function (info) {
         if (settings.optedOutOfGoogleAnalytics === true) {
             console.log('opted out of analytics');
             return;
@@ -1196,10 +1269,10 @@ var trackerFunc = function() {
         }
     };
 
-    var sendEvent = function(category, action) {
+    var sendEvent = function (category, action) {
         send({ t: 'event', ec: category, ea: action });
     };
-    var sendAppView = function(id) {
+    var sendAppView = function (id) {
         send({ t: 'screenview', cd: id });
     };
     return {
@@ -1208,7 +1281,6 @@ var trackerFunc = function() {
     };
 };
 
-var tracker;
 
 function prepareAnalytics() {
     tracker = trackerFunc();
@@ -1227,7 +1299,7 @@ function prepareAnalytics() {
 
 // polyfill
 if (!Array.prototype.includes) {
-    Array.prototype.includes = function(searchElement /*, fromIndex*/ ) {
+    Array.prototype.includes = function (searchElement /*, fromIndex*/) {
         'use strict';
         var o = Object(this);
         var len = parseInt(o.length) || 0;
@@ -1259,7 +1331,7 @@ if (!Array.prototype.includes) {
 
 function createGuid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
-        function(c) {
+        function (c) {
             var r = Math.random() * 16 | 0,
                 v = c === 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
@@ -1268,9 +1340,9 @@ function createGuid() {
 
 
 chrome.runtime.onMessage.addListener(
-    function(payload, sender, callback) {
+    function (payload, sender, callback) {
         if (!callback) {
-            callback = function() {}; // make it optional
+            callback = function () { }; // make it optional
         }
         switch (payload.cmd) {
             case 'getInfo':
@@ -1314,16 +1386,16 @@ chrome.runtime.onMessageExternal.addListener(
      *  }
      * 
      */
-    function(payload, sender, callback) {
+    function (payload, sender, callback) {
         if (!callback) {
-            callback = function() {}; // make it optional
+            callback = function () { }; // make it optional
         }
         switch (payload.cmd) {
             case 'getInfo':
                 // layout, targetDay
                 // can adjust per layout
                 var di = getDateInfo(new Date(payload.targetDay));
-                var holyDay = $.grep(holyDays.prepareDateInfos(di.bYear), function(el, i) {
+                var holyDay = $.grep(holyDays.prepareDateInfos(di.bYear), function (el, i) {
                     return el.Type.substring(0, 1) == 'H' && el.BDateCode == di.bDateCode;
                 });
                 var holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;

@@ -7,7 +7,7 @@ var PageCustom = () => {
   var _samplesAddedToFirstPage: boolean = false;
   var _itemsForDefaultSelects: any[] = [];
 
-  function preparePartsList() {
+  function preparePartsList () {
     var parts = [];
     var source = shallowCloneOf(_di);
     var partsToSkip = ';upcomingHtml;bNow;frag1SunTimes;frag2SunTimes;frag1;frag2;currentTime;stamp;';
@@ -39,7 +39,7 @@ var PageCustom = () => {
     }, 0);
   };
 
-  function showForCurrentDate() {
+  function showForCurrentDate () {
     $('#partsList .customPartSample, .customFormats .customSample').each(function (i, el) {
       var span = $(el);
       var part = span.data('part');
@@ -50,11 +50,11 @@ var PageCustom = () => {
     updateDefaultDropdowns();
   }
 
-  function inputChanged() {
+  function inputChanged () {
     updateActive();
   }
 
-  function updateActive() {
+  function updateActive () {
     var rawSource = $('#customBuilderInput');
     var rawText = rawSource.val();
     _nextFilledWithEach_UsesExactMatchOnly = true;
@@ -71,7 +71,7 @@ var PageCustom = () => {
   }
 
 
-  function addPart(ev: JQueryEventObject) {
+  function addPart (ev: JQueryEventObject) {
     var btn = $(ev.target);
     var template = btn.next().data('part');
     var input = $('#customBuilderInput');
@@ -94,7 +94,7 @@ var PageCustom = () => {
 
   }
 
-  function saveEdits() {
+  function saveEdits () {
     var editInput = $('#customBuilderInput');
     var value = editInput.val();
 
@@ -131,7 +131,7 @@ var PageCustom = () => {
     updateEditButtons();
   }
 
-  function renumberSamples(): number {
+  function renumberSamples (): number {
     var lastNum = 0;
     $('.customFormats .customFormatDiv').each(function (i, el) {
       lastNum = 1 + i;
@@ -140,7 +140,7 @@ var PageCustom = () => {
     return lastNum;
   }
 
-  function deleteSample(ev) {
+  function deleteSample (ev) {
     var div = $('#customFormat_' + _currentEditId);
     div.remove();
 
@@ -148,7 +148,7 @@ var PageCustom = () => {
     saveFormats();
   }
 
-  function copySample(ev) {
+  function copySample (ev) {
     var btn = $(ev.target);
     var div = btn.closest('.customFormatDiv');
 
@@ -166,7 +166,7 @@ var PageCustom = () => {
     }, 1000);
   }
 
-  function editSample(ev) {
+  function editSample (ev) {
     var btn = $(ev.target);
     var div = btn.closest('.customFormatDiv');
 
@@ -181,7 +181,7 @@ var PageCustom = () => {
     updateEditButtons();
   }
 
-  function loadCustom(ev) {
+  function loadCustom (ev) {
     cancelEditing();
 
     var btn = $(ev.target);
@@ -190,7 +190,7 @@ var PageCustom = () => {
     updateEditButtons();
   }
 
-  function updateEditButtons() {
+  function updateEditButtons () {
     var notEditing = !_currentEditId;
     var notEditingAndBlank = notEditing && $('#customBuilderInput').val() === '';
 
@@ -199,7 +199,7 @@ var PageCustom = () => {
     $('#btnCustomBuilderCancel').prop('disabled', notEditingAndBlank);
   }
 
-  function cancelEditing() {
+  function cancelEditing () {
     $('.customFormats .customFormatDiv').removeClass('inEdit');
     _currentEditId = 0;
     _currentUseForSample = false;
@@ -208,7 +208,7 @@ var PageCustom = () => {
     updateEditButtons();
   }
 
-  function addFromFirstPage(letter: string, format: string) {
+  function addFromFirstPage (letter: string, format: string) {
     var button = '<button type=button class="button btnLoadCustom" data-format="'
       + format
       + '">' + letter + '</button>';
@@ -223,11 +223,11 @@ var PageCustom = () => {
     }
   }
 
-  function clearFromFirstPage() {
+  function clearFromFirstPage () {
     $('.customLettersFromFirstPage').html('');
   }
 
-  function updateFirstPageSamples(forceRefresh?: boolean) {
+  function updateFirstPageSamples (forceRefresh?: boolean) {
     if (!_samplesAddedToFirstPage || forceRefresh) {
       addSamplesToFirstPage();
     }
@@ -238,10 +238,11 @@ var PageCustom = () => {
     });
   }
 
-  function addSamplesToFirstPage() {
+  function addSamplesToFirstPage () {
     var selected = [];
     var nextItemNumber = 1 + $('#sampleList1 > div').length;
     if (nextItemNumber === 1) {
+      _samplesAddedToFirstPage = true;
       addSamples(_di);
       return;
     }
@@ -287,7 +288,7 @@ var PageCustom = () => {
     _samplesAddedToFirstPage = true;
   }
 
-  function saveFormats() {
+  function saveFormats () {
     var formats = [];
     $('.customFormats .customFormatDiv').each(function (i, el) {
       var div = $(el);
@@ -321,7 +322,7 @@ var PageCustom = () => {
   }
 
 
-  function loadFormatsFromSync() {
+  function loadFormatsFromSync () {
     var localLoad = function () {
       chrome.storage.local.get({
         customFormats: []
@@ -361,11 +362,11 @@ var PageCustom = () => {
     }
   }
 
-  function getCustomSample(): string {
+  function getCustomSample (): string {
     return $('#customSampleTemplate').html().replace('data-x=""', '{checked}');
   }
 
-  function recallSettings(formats?: any) {
+  function recallSettings (formats?: any) {
     formats = formats || getStorage('customFormats', []);
     if (formats && formats.length) {
       $.each(formats, function (i, el) {
@@ -389,12 +390,12 @@ var PageCustom = () => {
     }
   };
 
-  function isSampleChanged() {
+  function isSampleChanged () {
     saveFormats();
     updateEditButtons();
   }
 
-  function attachHandlers() {
+  function attachHandlers () {
     $('#customBuilderInput').on('change keyup paste', inputChanged);
     $('#partsList').on('click', 'button', addPart);
     $('.customFormats').on('click', '.btnCopy', copySample);
@@ -409,7 +410,7 @@ var PageCustom = () => {
     $('#customLoadToolTip2').on('change', saveTopToolTipFormat2);
   };
 
-  function fillSelectForDefaults() {
+  function fillSelectForDefaults () {
     // each item in list is:  letter:'A',format:'{format}'
     fillSelectDefault('customLoadToolTip1', 'formatToolTip1', getMessage('formatIconToolTip'));
     fillSelectDefault('customLoadToolTip2', 'formatToolTip2', getMessage('nearestSunset'));
@@ -417,7 +418,7 @@ var PageCustom = () => {
     updateDefaultDropdowns();
   }
 
-  function fillSelectDefault(id: string, storageId: string, message: string) {
+  function fillSelectDefault (id: string, storageId: string, message: string) {
     var defaultFormat = message;
     var defaultFound: boolean;
     var optionsHtml: string[] = ['<optgroup label="{0}">'.filledWith(getMessage('standardFormats'))];
@@ -449,7 +450,7 @@ var PageCustom = () => {
     // fill select
     var ddl = $('#' + id)
       .html((defaultFound ? '' : '<option value="' + defaultFormat + '" data-prefix="Default - " data-format="' + defaultFormat + '"></option>')
-            + optionsHtml.join(''));
+        + optionsHtml.join(''));
     ddl.val(getStorage(storageId, ''));
 
     if (!ddl.val()) {
@@ -457,29 +458,29 @@ var PageCustom = () => {
     }
   }
 
-  function saveTopToolTipFormat1(ev: JQueryInputEventObject) {
+  function saveTopToolTipFormat1 (ev: JQueryInputEventObject) {
     setStorage('formatToolTip1', $(ev.target).find('option:selected').data('format'));
     showIcon();
   }
 
-  function saveTopToolTipFormat2(ev: JQueryInputEventObject) {
+  function saveTopToolTipFormat2 (ev: JQueryInputEventObject) {
     setStorage('formatToolTip2', $(ev.target).find('option:selected').data('format'));
     showIcon();
   }
 
-  function saveTopDayFormat(ev: JQueryInputEventObject) {
+  function saveTopDayFormat (ev: JQueryInputEventObject) {
     setStorage('formatTopDay', $(ev.target).find('option:selected').data('format'));
     showInfo(_di);
   }
 
-  function updateDefaultDropdowns() {
+  function updateDefaultDropdowns () {
     $('.customLoadDefaults option').each(function (i, el) {
       var option = $(el);
       option.html(option.data('prefix') + option.data('format').filledWith(_di));
     });
   }
 
-  function startup() {
+  function startup () {
     recallSettings(); // do local storage quickly... let sync storage overwrite later
     preparePartsList();
     loadFormatsFromSync();

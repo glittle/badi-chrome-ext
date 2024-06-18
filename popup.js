@@ -32,16 +32,20 @@ var _lastLoadingComment = null;
 var _inTab = false;
 var _pageIdList = [];
 var _inPopupPage = true;
+var tracker;
 
 var _remindersEnabled = browserHostType === browser.Chrome;
 
 function attachHandlers() {
+    dayjs.extend(window.dayjs_plugin_utc);
+    dayjs.extend(window.dayjs_plugin_timezone);
+
     $('#samples').on('click', 'button', copySample);
     $('.btnChangeDay').on('click', changeDay);
     $('.btnChangeYear').on('click', changeYear);
 
     $('.btnJumpTo').on('click', moveDays);
-    $('.btnJumpToday').on('click', function() {
+    $('.btnJumpToday').on('click', function () {
         changeDay(null, 0);
     });
     $('.jumpTo').val(getStorage('jumpTo', '90'));
@@ -51,7 +55,7 @@ function attachHandlers() {
 
     $('#btnEveOrDay').on('click', toggleEveOrDay);
     $('#datePicker').on('change', jumpToDate);
-    $('#eventStart').on('change', function() {
+    $('#eventStart').on('change', function () {
         setStorage('eventStart', $(this).val());
         _lastSpecialDaysYear = 0;
         BuildSpecialDaysTable(_di);
@@ -59,13 +63,13 @@ function attachHandlers() {
     });
     $('.includeThis').on('change, click', SetFiltersForSpecialDaysTable);
 
-    $('.btnRetry').on('click', function() {
+    $('.btnRetry').on('click', function () {
         $('.setupPlace .place').text(''); //blank the copy on the setup page
         $('.btnRetry').addClass('active').blur();
         startGettingLocation();
 
     });
-    $('#datePicker').on('keydown', function(ev) {
+    $('#datePicker').on('keydown', function (ev) {
         ev.stopPropagation();
     });
     $('.selectPages').on('click', 'button', changePage);
@@ -74,7 +78,7 @@ function attachHandlers() {
     //  chrome.tabs.create({ active: true, url: this.href });
     //});
 
-    $('#cbShowPointer').on('change', function() {
+    $('#cbShowPointer').on('change', function () {
         setStorage('showPointer', $(this).prop('checked'));
         _calWheel.showCalendar(_di);
     });
@@ -87,19 +91,19 @@ function attachHandlers() {
     //});
 
     $('#btnOpen').click(openInTab);
-    $('#btnPrint').click(function() {
+    $('#btnPrint').click(function () {
         window.print();
     });
 
     $('.setupPlace')
-        .on('paste keydown keypress', 'input', function() {
+        .on('paste keydown keypress', 'input', function () {
             updateLocation(false)
         })
-        .on('change', 'input', function() {
+        .on('change', 'input', function () {
             updateLocation(true)
         });
 
-    $('input:radio[name=language]').click(function(ev) {
+    $('input:radio[name=language]').click(function (ev) {
         settings.useArNames = ev.target.value === 'Ar';
         ApplyLanguage();
     });
@@ -116,7 +120,7 @@ function ApplyLanguage() {
     refreshDateInfoAndShow();
 
     // find and update some html
-    $('*[data-msg-di]').each(function(i, el) {
+    $('*[data-msg-di]').each(function (i, el) {
         localizeHtml($(el).parent());
     });
 }
@@ -125,6 +129,8 @@ var sampleNum = 0;
 var showInfoDelay = null;
 
 function showInfo(di) {
+    // debugger;
+
     _showingInfo = true;
     clearTimeout(showInfoDelay);
 
@@ -136,8 +142,8 @@ function showInfo(di) {
 
     updateSharedContent(di);
 
-    showInfoDelay = setTimeout(function() {
-        $.each(_pageIdList, function(i, id) {
+    showInfoDelay = setTimeout(function () {
+        $.each(_pageIdList, function (i, id) {
             if (id !== _currentPageId) {
                 updatePageContent(id, di);
             }
@@ -152,7 +158,7 @@ function showInfo(di) {
 function resetForLanguageChange() {
     setupLanguageChoice();
     _lastSpecialDaysYear = 0;
-    $.each(_pageIdList, function(i, id) {
+    $.each(_pageIdList, function (i, id) {
         resetPageForLanguageChange(id);
     });
 }
@@ -172,6 +178,7 @@ function updateSpecial(di) {
 }
 
 function updateSharedContent(di) {
+    // debugger;
     $('#day').html(getStorage('formatTopDay', getMessage('bTopDayDisplay')).filledWith(di));
     $('#sunset').html(di.nearestSunset);
     $('#gDay').html(getMessage('gTopDayDisplay', di));
@@ -260,7 +267,7 @@ function showPage(id) {
     $([other, pageDay, pageEvents, pageCal1, pageCalWheel, pageCalGreg, pageCal2, pageCal3, pageLists, pageFast, pageReminders, pageExporter, pagePlanner, pageSetup].join(',')).hide();
 
     _currentPageId = id;
-    btns.each(function(i, el) {
+    btns.each(function (i, el) {
         if ($(el).data('page') === id) {
             _currentPageNum = i;
             return false;
@@ -293,7 +300,7 @@ function showPage(id) {
             _enableSampleKeys = false;
             _enableDayKeysLR = true;
             _enableDayKeysUD = true;
-            _upDownKeyDelta = function() {
+            _upDownKeyDelta = function () {
                 return 19;
             }
             break;
@@ -310,7 +317,7 @@ function showPage(id) {
             _enableSampleKeys = false;
             _enableDayKeysLR = true;
             _enableDayKeysUD = true;
-            _upDownKeyDelta = function() {
+            _upDownKeyDelta = function () {
                 return 7;
             }
             break;
@@ -320,7 +327,7 @@ function showPage(id) {
             _enableSampleKeys = false;
             _enableDayKeysLR = true;
             _enableDayKeysUD = true;
-            _upDownKeyDelta = function(direction) {
+            _upDownKeyDelta = function (direction) {
                 var bDay = _di.bDay;
                 var bMonth = _di.bMonth;
                 if (bMonth === 0) {
@@ -370,7 +377,7 @@ function showPage(id) {
             _enableSampleKeys = false;
             _enableDayKeysLR = true;
             _enableDayKeysUD = true;
-            _upDownKeyDelta = function(direction) {
+            _upDownKeyDelta = function (direction) {
                 // var bDay = _di.bDay;
                 // var bMonth = _di.bMonth;
                 // if (bMonth === 0) {
@@ -461,7 +468,7 @@ function showPage(id) {
 
     // delay a bit, to ensure we are not just moving past this page
     if (tracker) {
-        _pageHitTimeout = setTimeout(function() {
+        _pageHitTimeout = setTimeout(function () {
             tracker.sendAppView(id);
         }, 500);
     }
@@ -518,8 +525,8 @@ function updatePageContentWhenVisible(id, di) {
             $('#otherPageTitle').html(getMessage('pick_pageSetup'));
             break;
 
-            //        case 'pageCustom':
-            //            break;
+        //        case 'pageCustom':
+        //            break;
 
     }
 
@@ -564,7 +571,7 @@ function resetPageForLanguageChange(id) {
 function updatePageContent(id, di) {
     switch (id) {
         case 'pageDay':
-            var makeObj = function(key, name) {
+            var makeObj = function (key, name) {
                 return {
                     name: name || getMessage(key, di),
                     value: getMessage(key + 'Format', di)
@@ -1050,7 +1057,7 @@ function copySample(ev) {
 
     div.addClass('copied');
     btn.text(getMessage('copied'));
-    setTimeout(function() {
+    setTimeout(function () {
         div.removeClass('copied');
         btn.text(btn.data('letter'));
         if (!_inTab) {
@@ -1110,7 +1117,7 @@ function moveDays(ev) {
 }
 
 function jumpToDate(ev) {
-    var date = moment($(ev.target).val()).toDate();
+    var date = dayjs($(ev.target).val()).toDate();
     if (!isNaN(date)) {
         setFocusTime(date);
 
@@ -1187,7 +1194,7 @@ function fillSetup() {
     var optedOut = settings.optedOutOfGoogleAnalytics === true;
     var cb = $('#setupOptOut');
     cb.prop('checked', optedOut);
-    cb.on('change', function() {
+    cb.on('change', function () {
         var optingOut = cb.prop('checked');
         if (optingOut) {
             tracker.sendEvent('optOut', optingOut);
@@ -1206,7 +1213,7 @@ function fillSetup() {
 
     var colorInput = $('#setupColor');
     colorInput.val(settings.iconTextColor);
-    colorInput.on('change', function() {
+    colorInput.on('change', function () {
         var newColor = colorInput.val();
         setStorage('iconTextColor', newColor);
         settings.iconTextColor = newColor;
@@ -1218,58 +1225,42 @@ function fillSetup() {
 
 }
 
+/**
+ * Scan all the language files and fill the language select
+ * @param {*} select 
+ */
 function startFillingLanguageInput(select) {
     var langs = [];
-    // getMessage('languageList')
-    //   .split(splitSeparator)
-    //   .forEach(function (s) {
-    //     // console.log(s)
-    //     var parts = s.split(':', 2);
-    //     // console.log(parts)
-    //     langs[parts[0]] = parts[parts.length - 1];
-    //   });
-    // // console.log(langs);
 
-    chrome.runtime.getPackageDirectoryEntry(function(directoryEntry) {
-        // console.log('got directory')
-        directoryEntry.getDirectory('_locales', {}, function(subDirectoryEntry) {
-            // console.log('got subdirectory list')
+    chrome.runtime.getPackageDirectoryEntry(function (directoryEntry) {
+        directoryEntry.getDirectory('_locales', {}, function (subDirectoryEntry) {
             var directoryReader = subDirectoryEntry.createReader();
-            directoryReader.readEntries(function(entries) {
-                // console.log('got entries')
+            directoryReader.readEntries(async function (entries) {
                 for (var i = 0; i < entries.length; ++i) {
                     var langToLoad = entries[i].name;
 
                     var url = "/_locales/" + langToLoad + "/messages.json";
-                    $.ajax({
-                            dataType: "json",
-                            url: url,
-                            isLocal: true,
-                            async: false
-                        })
-                        .done(function(messages) {
-                            // console.log(langToLoad, messages);
-                            var langLocalMsg = messages.rbDefLang_Local;
-                            var name = langLocalMsg ? langLocalMsg.message : langToLoad;
 
-                            var enNameMsg = messages.translationEnglishName;
-                            var english = enNameMsg ? enNameMsg.message : '';
+                    var messages = await loadJsonfile(url);
 
-                            var info = {
-                                code: langToLoad,
-                                name: name || '',
-                                english: english == name || english == langToLoad ? '' : english,
-                                pct: Math.round(Object.keys(messages).length / _numMessagesEn * 100)
-                            };
-                            info.sort = info.english || info.name || info.code;
-                            langs.push(info);
+                    var langLocalMsg = messages.rbDefLang_Local;
+                    var name = langLocalMsg ? langLocalMsg.message : langToLoad;
 
-                        })
-                        .fail(function() {});
+                    var enNameMsg = messages.translationEnglishName;
+                    var english = enNameMsg ? enNameMsg.message : '';
+
+                    var info = {
+                        code: langToLoad,
+                        name: name || '',
+                        english: english == name || english == langToLoad ? '' : english,
+                        pct: Math.round(Object.keys(messages).length / _numMessagesEn * 100)
+                    };
+                    info.sort = info.english || info.name || info.code;
+                    langs.push(info);
                 }
 
                 var options = [];
-                langs.sort(function(a, b) {
+                langs.sort(function (a, b) {
                     return a.sort > b.sort ? 1 : -1;
                 });
                 for (i = 0; i < langs.length; i++) {
@@ -1280,7 +1271,7 @@ function startFillingLanguageInput(select) {
                         info.english ? (info.english + ' / ') : ''))
                 }
                 select.html(options.join(''))
-                    // console.log('lang list filled')
+                // console.log('lang list filled')
 
                 select.val(_languageCode);
 
@@ -1326,7 +1317,7 @@ var updateLocationTimer = null;
 function updateLocation(immediately) {
     if (!immediately) {
         clearTimeout(updateLocationTimer);
-        updateLocationTimer = setTimeout(function() {
+        updateLocationTimer = setTimeout(function () {
             updateLocation(true);
         }, 1000);
         return;
@@ -1470,7 +1461,7 @@ function BuildSpecialDaysTable(di) {
 
     SetFiltersForSpecialDaysTable();
 
-    dayInfos.forEach(function(dayInfo, i) {
+    dayInfos.forEach(function (dayInfo, i) {
         if (dayInfo.Type === 'Today') {
             // an old version... remove Today from list
             dayInfos.splice(i, 1);
@@ -1480,7 +1471,7 @@ function BuildSpecialDaysTable(di) {
 
     var defaultEventStart = $('#eventStart').val() || getStorage('eventStart');
 
-    dayInfos.forEach(function(dayInfo, i) {
+    dayInfos.forEach(function (dayInfo, i) {
         var targetDi = getDateInfo(dayInfo.GDate);
         var tempDate = null;
         dayInfo.di = targetDi;
@@ -1584,7 +1575,7 @@ function BuildSpecialDaysTable(di) {
     rowTemplate.push('<td class=eventTime>{EventTime}<div class="forHD time">{ST}</div></td>'); // {isEve}
     rowTemplate.push('<td>{G}</td>');
     rowTemplate.push('</tr>');
-    $('#specialListBody').html(rowTemplate.join('').filledWithEach(dayInfos.filter(function(el) {
+    $('#specialListBody').html(rowTemplate.join('').filledWithEach(dayInfos.filter(function (el) {
         return el.Type !== 'Fast'
     })));
 
@@ -1601,7 +1592,7 @@ function BuildSpecialDaysTable(di) {
 
     $('#fastListBody')
         .html(fastRowTemplate.join('')
-            .filledWithEach(dayInfos.filter(function(el) {
+            .filledWithEach(dayInfos.filter(function (el) {
                 return el.Type === 'Fast'
             })));
 
@@ -1610,7 +1601,7 @@ function BuildSpecialDaysTable(di) {
 
 function showShortcutKeys() {
     if (chrome.commands && browserHostType === browser.Chrome) {
-        chrome.commands.getAll(function(cmd) {
+        chrome.commands.getAll(function (cmd) {
             for (var i = 0; i < cmd.length; i++) {
                 var a = cmd[i];
                 if (a.shortcut) {
@@ -1657,7 +1648,7 @@ function adjustHeight() {
 function prepareDefaults() {
     var feasts = getStorage('includeFeasts');
     var holyDays = getStorage('includeHolyDays');
-    if (typeof(feasts) === 'undefined' && typeof(holyDays) === 'undefined') {
+    if (typeof (feasts) === 'undefined' && typeof (holyDays) === 'undefined') {
         feasts = false;
         holyDays = true;
     }
@@ -1681,12 +1672,12 @@ function openInTab() {
     if (_inTab) {
         return;
     }
-    var url = chrome.extension.getURL('popup.html');
+    var url = chrome.runtime.getURL('popup.html');
 
     if (browserHostType === browser.Chrome) {
         chrome.tabs.query({
             url: url
-        }, function(foundTabs) {
+        }, function (foundTabs) {
             if (foundTabs[0]) {
                 chrome.tabs.update(foundTabs[0].id, {
                     active: true
@@ -1708,9 +1699,11 @@ function openInTab() {
     }
 }
 
-
 function prepare1() {
+
     $('#loadingMsg').html(getMessage('browserActionTitle'));
+
+    startGettingLocation();
 
     var langCode = _languageCode.slice(0, 2);
     $('body')
@@ -1779,7 +1772,7 @@ function prepare1() {
 }
 
 function updateTabNames() {
-    $('.selectPages button').filter(':visible').each(function(i, el) {
+    $('.selectPages button').filter(':visible').each(function (i, el) {
         var tab = $(el);
         tab.html((i + 1) + ' ' + tab.html());
         _pageIdList.push(tab.data('page'));
@@ -1787,7 +1780,7 @@ function updateTabNames() {
 }
 
 function showBtnOpen() {
-    chrome.tabs.getCurrent(function(tab) {
+    chrome.tabs.getCurrent(function (tab) {
         if (tab) {
             _inTab = true;
             $('body').addClass('inTab');
@@ -1895,9 +1888,7 @@ function updateLoadProgress(comment) {
     $('#loadingCount').text(new Array(_loadingNum + 1).join('.'));
 }
 
-// must be set immediately for tab managers to see this name
-$('#windowTitle').text(getMessage('title'));
-
-$(function() {
+$(async function () {
+    await prepareShared();
     prepare1();
 });

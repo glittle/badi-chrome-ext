@@ -1,10 +1,11 @@
 ﻿{
-  "compileOnSave": true,
   "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es6"
-  }
-} 
+    "target": "es6", 
+    "module": "commonjs",
+    "outDir": "./",  // This is important, it tells tsc to place output files alongside their source files
+    "strict": true,
+    "sourceMap": true  // Optional: Generates source maps
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

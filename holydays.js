@@ -43,7 +43,7 @@ var HolyDays = function () {
 
     for (var i = 0; i < _dateInfos.length; i++) {
       var dateInfo = _dateInfos[i];
-      if(!dateInfo.MonthNum){
+      if (!dateInfo.MonthNum) {
         dateInfo.MonthNum = NaN;
       }
 
@@ -143,8 +143,8 @@ var HolyDays = function () {
       }
 
       dateInfo.gYear = 1843 +
-                      +bYear +
-                      +(dateInfo.GYearOffset || 0);
+        +bYear +
+        +(dateInfo.GYearOffset || 0);
 
       if (!dateInfo.GDate) {
         dateInfo.GDate = getGDateYBDate(bYear, dateInfo.BMonthDay);
@@ -207,7 +207,7 @@ var HolyDays = function () {
   }
 
   function getUpcoming(di, numToAdd) {
-    var targetDate = moment(moment(di.frag1).format('YYYY-MM-DD')).toDate();//clone and lose timezone
+    var targetDate = dayjs(dayjs(di.frag1).format('YYYY-MM-DD')).toDate();//clone and lose timezone
     if (_dateInfosForYear !== di.bYear) {
       prepareDateInfos(di.bYear);
     }
@@ -230,13 +230,13 @@ var HolyDays = function () {
 
       var dateInfo = _dateInfos[targetDateInfoNum];
 
-      if (moment(dateInfo.GDate).format('YYYY-MM-DD') < moment(targetDate).format('YYYY-MM-DD')) {
+      if (dayjs(dateInfo.GDate).format('YYYY-MM-DD') < dayjs(targetDate).format('YYYY-MM-DD')) {
         // move on
       }
       else {
         if (dateInfo.Type === 'M'
-        || dateInfo.Type.slice(0, 1) === 'H'
-        || dateInfo.Type === 'OtherRange' && dateInfo.Special && dateInfo.Special.slice(0, 5) === 'AYYAM'
+          || dateInfo.Type.slice(0, 1) === 'H'
+          || dateInfo.Type === 'OtherRange' && dateInfo.Special && dateInfo.Special.slice(0, 5) === 'AYYAM'
         ) {
           upcoming.push(dateInfo);
           //log(dateInfo);
@@ -252,61 +252,61 @@ var HolyDays = function () {
 
   function dateInfosRaw() {
     return [
-    /* fields
-       Type - M (Month),HS (Holy Day standard),HO (Holy Day other),OtherDay,OtherRange
-       NameEn - English name
-       NameAr - Arabic name
-       MonthNum - Badi month number
-       BDateCode - MM.DD month and day in Badi calendar (calculated for Month entries)
-       BDateCodeTo - last day of a range - MM.DD month and day in Badi calendar (calculated for Month entries)
-       UntilYear - Badi year this day is in effect until
-       FromYear - Badi year this day is in effect from
-    */
-    { Type: 'M', NameEn: 'Splendor', NameAr: 'Bah&aacute;', MonthNum: 1 },
-    { Type: 'M', NameEn: 'Glory', NameAr: 'Jal&aacute;l', MonthNum: 2 },
-    { Type: 'M', NameEn: 'Beauty', NameAr: 'Jam&aacute;l', MonthNum: 3 },
-    { Type: 'M', NameEn: 'Grandeur', NameAr: '`Azamat', MonthNum: 4 },
-    { Type: 'M', NameEn: 'Light', NameAr: 'N&uacute;r', MonthNum: 5 },
-    { Type: 'M', NameEn: 'Mercy', NameAr: 'Rahmat', MonthNum: 6 },
-    { Type: 'M', NameEn: 'Words', NameAr: 'Kalim&aacute;t', MonthNum: 7 },
-    { Type: 'M', NameEn: 'Perfection', NameAr: 'Kam&aacute;l', MonthNum: 8 },
-    { Type: 'M', NameEn: 'Names', NameAr: "Asm&aacute;'", MonthNum: 9 },
-    { Type: 'M', NameEn: 'Might', NameAr: '`Izzat', MonthNum: 10 },
-    { Type: 'M', NameEn: 'Will', NameAr: 'Mash&iacute;yyat', MonthNum: 11 },
-    { Type: 'M', NameEn: 'Knowledge', NameAr: '`Ilm', MonthNum: 12 },
-    { Type: 'M', NameEn: 'Power', NameAr: 'Qudrat', MonthNum: 13 },
-    { Type: 'M', NameEn: 'Speech', NameAr: 'Qawl', MonthNum: 14 },
-    { Type: 'M', NameEn: 'Questions', NameAr: "Mas&aacute;'&iacute;l", MonthNum: 15 },
-    { Type: 'M', NameEn: 'Honor', NameAr: 'Sharaf', MonthNum: 16 },
-    { Type: 'M', NameEn: 'Sovereignty', NameAr: 'Sult&aacute;n', MonthNum: 17 },
-    { Type: 'M', NameEn: 'Dominion', NameAr: 'Mulk', MonthNum: 18 },
-    { Type: 'M', NameEn: 'Loftiness', NameAr: "`Al&aacute;'", MonthNum: 19 },
+      /* fields
+         Type - M (Month),HS (Holy Day standard),HO (Holy Day other),OtherDay,OtherRange
+         NameEn - English name
+         NameAr - Arabic name
+         MonthNum - Badi month number
+         BDateCode - MM.DD month and day in Badi calendar (calculated for Month entries)
+         BDateCodeTo - last day of a range - MM.DD month and day in Badi calendar (calculated for Month entries)
+         UntilYear - Badi year this day is in effect until
+         FromYear - Badi year this day is in effect from
+      */
+      { Type: 'M', NameEn: 'Splendor', NameAr: 'Bah&aacute;', MonthNum: 1 },
+      { Type: 'M', NameEn: 'Glory', NameAr: 'Jal&aacute;l', MonthNum: 2 },
+      { Type: 'M', NameEn: 'Beauty', NameAr: 'Jam&aacute;l', MonthNum: 3 },
+      { Type: 'M', NameEn: 'Grandeur', NameAr: '`Azamat', MonthNum: 4 },
+      { Type: 'M', NameEn: 'Light', NameAr: 'N&uacute;r', MonthNum: 5 },
+      { Type: 'M', NameEn: 'Mercy', NameAr: 'Rahmat', MonthNum: 6 },
+      { Type: 'M', NameEn: 'Words', NameAr: 'Kalim&aacute;t', MonthNum: 7 },
+      { Type: 'M', NameEn: 'Perfection', NameAr: 'Kam&aacute;l', MonthNum: 8 },
+      { Type: 'M', NameEn: 'Names', NameAr: "Asm&aacute;'", MonthNum: 9 },
+      { Type: 'M', NameEn: 'Might', NameAr: '`Izzat', MonthNum: 10 },
+      { Type: 'M', NameEn: 'Will', NameAr: 'Mash&iacute;yyat', MonthNum: 11 },
+      { Type: 'M', NameEn: 'Knowledge', NameAr: '`Ilm', MonthNum: 12 },
+      { Type: 'M', NameEn: 'Power', NameAr: 'Qudrat', MonthNum: 13 },
+      { Type: 'M', NameEn: 'Speech', NameAr: 'Qawl', MonthNum: 14 },
+      { Type: 'M', NameEn: 'Questions', NameAr: "Mas&aacute;'&iacute;l", MonthNum: 15 },
+      { Type: 'M', NameEn: 'Honor', NameAr: 'Sharaf', MonthNum: 16 },
+      { Type: 'M', NameEn: 'Sovereignty', NameAr: 'Sult&aacute;n', MonthNum: 17 },
+      { Type: 'M', NameEn: 'Dominion', NameAr: 'Mulk', MonthNum: 18 },
+      { Type: 'M', NameEn: 'Loftiness', NameAr: "`Al&aacute;'", MonthNum: 19 },
 
-    { Type: 'HS', BDateCode: '1.1', NameEn: 'HolyDay_NawRuz' },
-    { Type: 'HS', BDateCode: '2.13', NameEn: 'HolyDay_Ridvan1', Time: '1500S', TimeReason: '3 pm Standard time' },
-    { Type: 'HS', BDateCode: '3.2', NameEn: 'HolyDay_Ridvan9' },
-    { Type: 'HS', BDateCode: '3.5', NameEn: 'HolyDay_Ridvan12' },
-    { Type: 'HS', BDateCode: '4.13', NameEn: "HolyDay_AscBaha", Time: '0300S', TimeReason: '3 am Standard time' },
+      { Type: 'HS', BDateCode: '1.1', NameEn: 'HolyDay_NawRuz' },
+      { Type: 'HS', BDateCode: '2.13', NameEn: 'HolyDay_Ridvan1', Time: '1500S', TimeReason: '3 pm Standard time' },
+      { Type: 'HS', BDateCode: '3.2', NameEn: 'HolyDay_Ridvan9' },
+      { Type: 'HS', BDateCode: '3.5', NameEn: 'HolyDay_Ridvan12' },
+      { Type: 'HS', BDateCode: '4.13', NameEn: "HolyDay_AscBaha", Time: '0300S', TimeReason: '3 am Standard time' },
 
-    { Type: 'HS', UntilYear: 171, BDateCode: '4.7', NameEn: 'HolyDay_DeclBab', Time: 'SS2', TimeReason: 'about 2 hours after sunset' },
-    { Type: 'HS', FromYear: 172, BDateCode: '4.8', NameEn: 'HolyDay_DeclBab', Time: 'SS2', TimeReason: 'about 2 hours after sunset' },
+      { Type: 'HS', UntilYear: 171, BDateCode: '4.7', NameEn: 'HolyDay_DeclBab', Time: 'SS2', TimeReason: 'about 2 hours after sunset' },
+      { Type: 'HS', FromYear: 172, BDateCode: '4.8', NameEn: 'HolyDay_DeclBab', Time: 'SS2', TimeReason: 'about 2 hours after sunset' },
 
-    { Type: 'HS', UntilYear: 171, BDateCode: '6.16', NameEn: 'HolyDay_Martyrdom', Time: '1200S', TimeReason: 'Noon Standard time' },
-    { Type: 'HS', FromYear: 172, BDateCode: '6.17', NameEn: 'HolyDay_Martyrdom', Time: '1200S', TimeReason: 'Noon Standard time' },
+      { Type: 'HS', UntilYear: 171, BDateCode: '6.16', NameEn: 'HolyDay_Martyrdom', Time: '1200S', TimeReason: 'Noon Standard time' },
+      { Type: 'HS', FromYear: 172, BDateCode: '6.17', NameEn: 'HolyDay_Martyrdom', Time: '1200S', TimeReason: 'Noon Standard time' },
 
-    { Type: 'HS', UntilYear: 171, BDateCode: '12.5', NameEn: 'HolyDay_BirthBab' },
-    { Type: 'HS', UntilYear: 171, BDateCode: '13.9', NameEn: "HolyDay_BirthBaha" },
-    { Type: 'HS', FromYear: 172, Special: 'THB.1', NameEn: 'HolyDay_BirthBab' },
-    { Type: 'HS', FromYear: 172, Special: 'THB.2', NameEn: "HolyDay_BirthBaha" },
+      { Type: 'HS', UntilYear: 171, BDateCode: '12.5', NameEn: 'HolyDay_BirthBab' },
+      { Type: 'HS', UntilYear: 171, BDateCode: '13.9', NameEn: "HolyDay_BirthBaha" },
+      { Type: 'HS', FromYear: 172, Special: 'THB.1', NameEn: 'HolyDay_BirthBab' },
+      { Type: 'HS', FromYear: 172, Special: 'THB.2', NameEn: "HolyDay_BirthBaha" },
 
-    { Type: 'HO', BDateCode: '14.4', NameEn: 'HolyDay_Covenant' },
-    { Type: 'HO', BDateCode: '14.6', NameEn: "HolyDay_AscAbdul", Time: '0100S', TimeReason: '1 am Standard time' }
+      { Type: 'HO', BDateCode: '14.4', NameEn: 'HolyDay_Covenant' },
+      { Type: 'HO', BDateCode: '14.6', NameEn: "HolyDay_AscAbdul", Time: '0100S', TimeReason: '1 am Standard time' }
 
-    //{ Type: 'OtherRange', BDateCode: '2.13', BDateCodeTo: '3.5', NameEn: 'FestivalRidvan' },
-    //{ Type: 'OtherRange', Special: 'AYYAM.Intercalary', NameAr: 'Ayyám-i-Há', NameEn: 'Intercalary' },
+      //{ Type: 'OtherRange', BDateCode: '2.13', BDateCodeTo: '3.5', NameEn: 'FestivalRidvan' },
+      //{ Type: 'OtherRange', Special: 'AYYAM.Intercalary', NameAr: 'Ayyám-i-Há', NameEn: 'Intercalary' },
 
-    //{ Type: 'OtherDay', BDateCode: '2.13', NameEn: 'Annual Meeting and Election' },
-    //{ Type: 'OtherDay', Special: 'JAN1', NameEn: 'Start of Gregorian Year ' }
+      //{ Type: 'OtherDay', BDateCode: '2.13', NameEn: 'Annual Meeting and Election' },
+      //{ Type: 'OtherDay', Special: 'JAN1', NameEn: 'Start of Gregorian Year ' }
     ];
   };
 
@@ -2163,7 +2163,7 @@ var HolyDays = function () {
       0,
       0,
       0
-      );
+    );
 
     if (frag2DateOnly) {
       return nawRuz;
