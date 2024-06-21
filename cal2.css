@@ -4,7 +4,7 @@
 /* earth */
 #pageCal2 {
   --dayWidth: 124px;
-  --monthWidth: calc(124 * 6) px;
+  --monthWidth: calc(124 * 6px);
   position: relative;
   padding-bottom: 16px;
   padding-top: 7px;
@@ -381,7 +381,7 @@ body[data-pageid=pageCal2].inTab #pageCal2 .calendar {
     padding: 0;
     font-family: 'Philosopher', 'Segoe UI', sans-serif;
     --dayWidth: 120px;
-    --monthWidth: calc(120 * 6) px;
+    --monthWidth: calc(120 * 6px);
   }
   #pageCal2.forPrint .caption {
     text-align: left;

@@ -404,7 +404,7 @@
         "message": "Title for Exported Calendar (may not be used)"
     },
     "exportNumToInclude": {
-        "message": "Number of calendar entries that will be created (approximately):"
+        "message": "Number of calendar entries included (approximately):"
     },
     "exportOption_AllDay": {
         "message": "All-day event from midnight <em>(1 day long)</em>"
