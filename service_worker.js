@@ -18,13 +18,13 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     console.log('Alarm fired:', alarm);
 });
 
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+console.log('request:', request.action);
     if (request.action === 'getCityName') {
         const lat = request.lat;
         const long = request.long;
         const key = 'AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc';
-        var unknownLocation = request.unknownLocation || 'Unknown location';
+        const unknownLocation = request.unknownLocation || 'Unknown location';
         // debugger;
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`)
             .then(response => response.json())
@@ -40,7 +40,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 const results = data.results;
                 if (results.length > 0) {
 
-                    let city =
+                    const city =
                         findName('locality', results) ||
                         findName('political', results) ||
                         unknownLocation;
@@ -60,10 +60,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 });
 
-var findName = function (typeName, results, getLastMatch) {
-    var match = null;
-    for (var r = 0; r < results.length; r++) {
-        var result = results[r];
+const findName = (typeName, results, getLastMatch) => {
+    let match = null;
+    for (let r = 0; r < results.length; r++) {
+        const result = results[r];
         if (result.types.indexOf(typeName) !== -1) {
             match = result.formatted_address;
             if (!getLastMatch) return match;

@@ -4,70 +4,70 @@
 /* global chrome */
 /* global $ */
 
-var CalWheel = function () {
-    var _yearShown = null;
-    var _lastAngle = null;
-    var _rotateTimeout = null;
-    var _rotating = null;
+const CalWheel = () => {
+    let _yearShown = null;
+    let _lastAngle = null;
+    let _rotateTimeout = null;
+    let _rotating = null;
 
     // this page replicates a common format
     // don't know where the original is from
     // not rotating text of Month names as done in the original
 
 
-    var angle1 = 18.94736842105263;
+    const angle1 = 18.94736842105263;
 
     function showCalendar(newDi) {
         //var x = '43.5px';
         //var y = '335px';
 
-        var showPointer = $('#cbShowPointer').prop('checked');
+        const showPointer = $('#cbShowPointer').prop('checked');
         $('#pointerToday').toggle(showPointer);
 
-        var sameYear = newDi.bYear === _yearShown;
+        const sameYear = newDi.bYear === _yearShown;
 
         if (sameYear && !showPointer && _lastAngle === null) {
             return;
         }
 
-        var di = newDi;
+        const di = newDi;
         _yearShown = newDi.bYear;
 
-        var wheel = $('#wheel');
+        const wheel = $('#wheel');
 
         if (!sameYear) {
             $('#wheelYear').html(getMessage('yearWithEra', di));
 
             wheel.find('.slice').remove();
 
-            var template = $('#templateSlice')[0].outerHTML;
+            const template = $('#templateSlice')[0].outerHTML;
 
-            for (var i = 0; i < 19; i++) {
-                var slice = $(template);
-                var bm = i + 1;
-                var angle = i * angle1;
-                var css = browserHostType === browser.Chrome ? {
-                    transform: 'rotate(' + angle + 'deg)',
+            for (let i = 0; i < 19; i++) {
+                const slice = $(template);
+                const bm = i + 1;
+                const angle = i * angle1;
+                const css = browserHostType === browser.Chrome ? {
+                    transform: `rotate(${angle}deg)`,
                     transformOrigin: '39px 335px' //x + ' ' + y
                 } : {
-                    transform: 'rotate(' + angle + 'deg)',
+                    transform: `rotate(${angle}deg)`,
                     transformOrigin: '39px 335px' //x + ' ' + y
                 };
 
-                var inner = slice.find('.innerSlice');
+                const inner = slice.find('.innerSlice');
                 slice.removeAttr('id');
                 slice.css(css);
 
-                inner.attr('id', 'slice' + bm);
+                inner.attr('id', `slice${bm}`);
 
                 slice.find('.monthNum').html(bm);
                 slice.find('.monthNameAr').html(forSvg(bMonthNamePri[bm]));
                 //log(bMonthNamePri[bm] + ' - ' + settings.useArNames + ' - ' + bMonthNameSec[bm]);
                 slice.find('.monthName').html(forSvg(bMonthNameSec[bm]));
 
-                var gd = holyDays.getGDate(di.bYear, bm, 1, false);
+                const gd = holyDays.getGDate(di.bYear, bm, 1, false);
 
-                slice.find('.firstDayG').html(forSvg(gMonthShort[gd.getMonth()] + ' ' + gd.getDate()));
+                slice.find('.firstDayG').html(forSvg(`${gMonthShort[gd.getMonth()]} ${gd.getDate()}`));
                 slice.find('.firstDayWk').html(forSvg(gWeekdayShort[gd.getDay()]));
                 slice.find('.firstDayYr').html(gd.getFullYear());
 
@@ -75,27 +75,27 @@ var CalWheel = function () {
             }
         }
 
-        var offsetAngle = 0;
+        let offsetAngle = 0;
         if (showPointer) {
             $('#wheelDay').html(forSvg('{bDay} {^bMonthNamePri}'.filledWith(di)));
 
-            var dayOfYear = (di.bMonth - 1) * 19 + di.bDay - 1;
+            let dayOfYear = (di.bMonth - 1) * 19 + di.bDay - 1;
             if (di.bMonth === 0) {
                 dayOfYear = 18 * 19;
             } else if (di.bMonth === 19) {
                 // dayOfYear -= 4;// don't need to be precise here
             }
-            var pctOfYear = dayOfYear / 361;
+            const pctOfYear = dayOfYear / 361;
 
             //log(pctOfYear);
 
-            var magicAdjustment = 0.434;
+            const magicAdjustment = 0.434;
 
             offsetAngle = 90 - 360 * pctOfYear + magicAdjustment * angle1;
 
-            var s = $('style#specialStyle');
-            if (s.length == 0) {
-                var style = document.createElement('style');
+            let s = $('style#specialStyle');
+            if (s.length === 0) {
+                const style = document.createElement('style');
                 style.id = 'specialStyle';
                 $('head').append(style);
                 s = $('style#specialStyle');
@@ -105,8 +105,7 @@ var CalWheel = function () {
                 _lastAngle = offsetAngle;
             }
 
-            var keyframes = '@-webkit-keyframes spinner {from {-webkit-transform:rotateZ(' + _lastAngle + 'deg)} ' +
-                ' to {-webkit-transform:rotateZ(' + offsetAngle + 'deg)}}';
+            const keyframes = `@-webkit-keyframes spinner {from {-webkit-transform:rotateZ(${_lastAngle}deg)}  to {-webkit-transform:rotateZ(${offsetAngle}deg)}}`;
 
             wheel.css({ transform: 'rotate({0}deg)'.filledWith(_lastAngle) });
             wheel.removeClass('rotating');
@@ -114,7 +113,7 @@ var CalWheel = function () {
             s.html(keyframes);
 
             clearTimeout(_rotateTimeout);
-            _rotateTimeout = setTimeout(function () {
+            _rotateTimeout = setTimeout(() => {
                 wheel.addClass('rotating');
                 _lastAngle = offsetAngle;
             }, 0);
@@ -139,7 +138,7 @@ var CalWheel = function () {
 
     function gotoYear(year) {
         year = year || 173;
-        var gDate = holyDays.getGDate(+year, 1, 1, true);
+        const gDate = holyDays.getGDate(+year, 1, 1, true);
         setFocusTime(gDate);
         refreshDateInfo();
         showInfo(_di);
@@ -148,14 +147,14 @@ var CalWheel = function () {
     function rotateYear(year, speed) {
         year = year || 173;
         speed = speed || 100;
-        var gDate = holyDays.getGDate(+year, 1, 1, true);
+        const gDate = holyDays.getGDate(+year, 1, 1, true);
 
         $('#cbShowPointer').prop('checked', true);
         $('#askShowPointer').hide();
 
-        var show = function () {
-            var di = getDateInfo(gDate);
-            if (di.bYear != year) {
+        const show = () => {
+            const di = getDateInfo(gDate);
+            if (di.bYear !== year) {
                 return;
             }
 
@@ -171,10 +170,10 @@ var CalWheel = function () {
         showCalendar: showCalendar,
         gotoYear: gotoYear,
         rotateYear: rotateYear,
-        resetPageForLanguageChange: function () {
+        resetPageForLanguageChange: () => {
             _yearShown = -1;
         },
-        stopRotation: function () {
+        stopRotation: () => {
             clearTimeout(_rotating);
         }
     };

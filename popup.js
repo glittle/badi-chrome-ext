@@ -1984,7 +1984,6 @@ function updateLoadProgress(comment) {
   //  }
   //  _lastLoadingTime = new Date().getTime();
   //  _lastLoadingComment = comment;
-  console.log(comment);
   $("#loadingCount").text(new Array(_loadingNum + 1).join("."));
 }
 

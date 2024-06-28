@@ -1,20 +1,20 @@
 ﻿/* global addSamples */
-var PageCustom = () => {
-  //var _maxToUseAsSamples: number = 3;
-  var _currentEditId: number = 0;
-  var _currentUseForSample: boolean = false;
-  var _samplesAddedToFirstPage: boolean = false;
-  var _itemsForDefaultSelects: any[] = [];
+const PageCustom = () => {
+  let _currentEditId = 0;
+  let _currentUseForSample = false;
+  let _samplesAddedToFirstPage = false;
+  const _itemsForDefaultSelects: {format: string, letter: string}[] = [];
 
   function preparePartsList() {
-    var parts = [];
-    var source = shallowCloneOf(_di);
-    var partsToSkip =
+    const parts = [];
+    const source = shallowCloneOf(_di);
+    const partsToSkip =
       ";upcomingHtml;bNow;frag1SunTimes;frag2SunTimes;frag1;frag2;currentTime;stamp;";
 
-    for (var partName in source) {
-      if (source.hasOwnProperty(partName)) {
-        if (partsToSkip.search(";" + partName + ";") !== -1) {
+    for (const partName in source) {
+      // TODO verify this is correct
+      if (Object.prototype.hasOwnProperty.call(source, partName)) {
+        if (partsToSkip.search(`;${partName};`) !== -1) {
           continue;
         }
 
@@ -27,11 +27,11 @@ var PageCustom = () => {
 
     parts.sort((a, b) => (a.name < b.name ? -1 : 1));
 
-    var template =
+    const template =
       "<div><span class=customPart>#{name}*</span>" +
       "<button type=button class=button>Add</button>" +
       '<span class="customPartSample part_{type}" data-part="#{name}*"></span></div>';
-    var html = template
+    const html = template
       .filledWithEach(parts)
       .replace(/\#/g, "{")
       .replace(/\*/g, "}");
@@ -45,9 +45,9 @@ var PageCustom = () => {
 
   function showForCurrentDate() {
     $("#partsList .customPartSample, .customFormats .customSample").each(
-      function (i, el) {
-        var span = $(el);
-        var part = span.data("part");
+      (i, el) => {
+        const span = $(el);
+        const part = span.data("part");
         span.html(part.filledWith(_di));
       }
     );
@@ -61,35 +61,35 @@ var PageCustom = () => {
   }
 
   function updateActive() {
-    var rawSource = $("#customBuilderInput");
-    var rawText = rawSource.val();
+    const rawSource = $("#customBuilderInput");
+    const rawText = rawSource.val();
     _nextFilledWithEach_UsesExactMatchOnly = true;
-    var converted = rawText.filledWith(_di);
+    const converted = rawText.filledWith(_di);
     _nextFilledWithEach_UsesExactMatchOnly = false;
 
-    var echo = $("#customBuilderEcho");
+    const echo = $("#customBuilderEcho");
     echo.html(converted || "&nbsp;");
 
-    var hasError = converted.search(/{/) !== -1 || converted.search(/}/) !== -1;
+    const hasError = converted.search(/{/) !== -1 || converted.search(/}/) !== -1;
     rawSource.toggleClass("hasError", hasError);
 
     updateEditButtons();
   }
 
-  function addPart(ev: JQueryEventObject) {
-    var btn = $(ev.target);
-    var template = btn.next().data("part");
-    var input = $("#customBuilderInput");
+  function addPart(ev: { target: string; }) {
+    const btn = $(ev.target);
+    let template = btn.next().data("part");
+    const input = $("#customBuilderInput");
 
-    var rawInput = input[0];
+    const rawInput = input[0];
 
-    var startPos = rawInput.selectionStart;
-    var endPos = rawInput.selectionEnd;
+    const startPos = rawInput.selectionStart;
+    const endPos = rawInput.selectionEnd;
     if (endPos === rawInput.value.length && endPos > 0) {
-      template = " " + template; // if at the end of the input, add a space
+      template = ` ${template}`; // if at the end of the input, add a space
     }
 
-    var before = rawInput.value.substring(0, startPos);
+    const before = rawInput.value.substring(0, startPos);
     rawInput.value =
       before +
       template +
@@ -102,24 +102,24 @@ var PageCustom = () => {
   }
 
   function saveEdits() {
-    var editInput = $("#customBuilderInput");
-    var value = editInput.val();
+    const editInput = $("#customBuilderInput");
+    const value = editInput.val();
 
     if (!value && !_currentEditId) {
       return;
     }
 
-    var data = {
+    const data = {
       f: value,
       checked: _currentUseForSample ? "checked" : "",
     };
 
-    var templateDiv = getCustomSample();
+    const templateDiv = getCustomSample();
     _nextFilledWithEach_UsesExactMatchOnly = true;
-    var newDiv = $(templateDiv.filledWith(data));
+    const newDiv = $(templateDiv.filledWith(data));
     _nextFilledWithEach_UsesExactMatchOnly = false;
 
-    var sample = newDiv.find(".customSample");
+    const sample = newDiv.find(".customSample");
     sample.html(data.f.filledWith(_di));
 
     if (!_currentEditId) {
@@ -127,54 +127,54 @@ var PageCustom = () => {
       $(".customFormats").append(newDiv);
       _currentEditId = renumberSamples();
     } else {
-      var id = "customFormat_" + _currentEditId;
+      const id = `customFormat_${_currentEditId}`;
       newDiv.attr("id", id);
 
-      $("#" + id).replaceWith(newDiv);
+      $(`#${id}`).replaceWith(newDiv);
     }
 
     saveFormats();
     updateEditButtons();
   }
 
-  function renumberSamples(): number {
-    var lastNum = 0;
-    $(".customFormats .customFormatDiv").each(function (i, el) {
+  function renumberSamples() {
+    let lastNum = 0;
+    $(".customFormats .customFormatDiv").each((i, el) => {
       lastNum = 1 + i;
-      el.id = "customFormat_" + lastNum;
+      el.id = `customFormat_${lastNum}`;
     });
     return lastNum;
   }
 
-  function deleteSample(ev: JQueryEventObject) {
-    var div = $("#customFormat_" + _currentEditId);
+  function deleteSample() {
+    const div = $(`#customFormat_${_currentEditId}`);
     div.remove();
 
     cancelEditing();
     saveFormats();
   }
 
-  function copySample(ev: JQueryEventObject) {
-    var btn = $(ev.target);
-    var div = btn.closest(".customFormatDiv");
+  function copySample(ev: { target: string; }) {
+    const btn = $(ev.target);
+    const div = btn.closest(".customFormatDiv");
 
-    var format = div.find(".customFormat").html();
+    const format = div.find(".customFormat").html();
 
     tracker.sendEvent("customSample", format);
 
-    var text = div.find(".customSample").html();
+    const text = div.find(".customSample").html();
     $("#sampleCopy").val(text).focus().select();
     document.execCommand("copy");
 
     btn.text(getMessage("copied"));
-    setTimeout(function () {
+    setTimeout(() => {
       btn.text(getMessage("customBtnCopy"));
     }, 1000);
   }
 
-  function editSample(ev: JQueryEventObject) {
-    var btn = $(ev.target);
-    var div = btn.closest(".customFormatDiv");
+  function editSample(ev: { target: string; }) {
+    const btn = $(ev.target);
+    const div = btn.closest(".customFormatDiv");
 
     $(".customFormats .customFormatDiv").removeClass("inEdit");
     div.addClass("inEdit");
@@ -189,18 +189,18 @@ var PageCustom = () => {
     updateEditButtons();
   }
 
-  function loadCustom(ev: JQueryEventObject) {
+  function loadCustom(ev: { target: string; }) {
     cancelEditing();
 
-    var btn = $(ev.target);
+    const btn = $(ev.target);
     $("#customBuilderInput").val(btn.data("format")).trigger("change");
 
     updateEditButtons();
   }
 
   function updateEditButtons() {
-    var notEditing = !_currentEditId;
-    var notEditingAndBlank =
+    const notEditing = !_currentEditId;
+    const notEditingAndBlank =
       notEditing && $("#customBuilderInput").val() === "";
 
     $("#btnCustomBuilderSave").prop("disabled", notEditingAndBlank);
@@ -218,12 +218,8 @@ var PageCustom = () => {
   }
 
   function addFromFirstPage(letter: string, format: string) {
-    var button =
-      '<button type=button class="button btnLoadCustom" data-format="' +
-      format +
-      '">' +
-      letter +
-      "</button>";
+    const button =
+      `<button type=button class="button btnLoadCustom" data-format="${format}">${letter}</button>`;
     $(".customLettersFromFirstPage").append(button);
 
     if (!_samplesAddedToFirstPage) {
@@ -238,30 +234,30 @@ var PageCustom = () => {
     $(".customLettersFromFirstPage").html("");
   }
 
-  function updateFirstPageSamples(forceRefresh?: boolean) {
+  function updateFirstPageSamples(forceRefresh: boolean | null = null) {
     if (!_samplesAddedToFirstPage || forceRefresh) {
       addSamplesToFirstPage();
     }
 
-    $("#sampleList2 span").each(function (i, el) {
-      var span = $(el);
+    $("#sampleList2 span").each((i, el) => {
+      const span = $(el);
       span.html(span.data("template").filledWith(_di));
     });
   }
 
   function addSamplesToFirstPage() {
-    var selected: any[] = [];
-    var nextItemNumber = 1 + $("#sampleList1 > div").length;
+    const selected: any[] = [];
+    let nextItemNumber = 1 + $("#sampleList1 > div").length;
     if (nextItemNumber === 1) {
       _samplesAddedToFirstPage = true;
       addSamples(_di);
       return;
     }
 
-    $(".customFormats .customFormatDiv").each(function (i, el) {
-      var div = $(el);
-      var span = div.find(".customIsSample span");
-      var checked = div.find(".customIsSample input").is(":checked");
+    $(".customFormats .customFormatDiv").each((i, el) => {
+      const div = $(el);
+      const span = div.find(".customIsSample span");
+      let checked = div.find(".customIsSample input").is(":checked");
 
       if (nextItemNumber > 26) {
         div.find(".customIsSample input").prop("checked", false);
@@ -273,7 +269,7 @@ var PageCustom = () => {
         return;
       }
 
-      var letter = String.fromCharCode(64 + nextItemNumber);
+      const letter = String.fromCharCode(64 + nextItemNumber);
       span.html(letter);
 
       selected.push({
@@ -287,7 +283,7 @@ var PageCustom = () => {
     });
 
     _nextFilledWithEach_UsesExactMatchOnly = true;
-    var host = $("#samples").find("#sampleList2");
+    const host = $("#samples").find("#sampleList2");
     host.html(
       (
         '<div><button title="{tooltip}"' +
@@ -304,9 +300,9 @@ var PageCustom = () => {
   }
 
   function saveFormats() {
-    var formats: { f: string; s: boolean }[] = [];
-    $(".customFormats .customFormatDiv").each(function (i, el) {
-      var div = $(el);
+    const formats: { f: string; s: boolean; }[] = [];
+    $(".customFormats .customFormatDiv").each((i, el) => {
+      const div = $(el);
       formats.push({
         f: div.find(".customFormat").text(),
         s: div.find(".customIsSample input").is(":checked"),
@@ -318,7 +314,7 @@ var PageCustom = () => {
       {
         customFormats: formats,
       },
-      function () {
+      () => {
         console.log("stored formats with local");
         if (chrome.runtime.lastError) {
           console.log(chrome.runtime.lastError);
@@ -330,7 +326,7 @@ var PageCustom = () => {
         {
           customFormats: formats,
         },
-        function () {
+        () => {
           console.log("stored stored with sync");
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
@@ -343,19 +339,19 @@ var PageCustom = () => {
   }
 
   function loadFormatsFromSync() {
-    var localLoad = function () {
+    const localLoad = () => {
       chrome.storage.local.get(
         {
           customFormats: [],
         },
-        function (info: any) {
+        (info) => {
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
           }
 
           if (info.customFormats.length) {
             console.log(
-              "formats loaded from local: " + info.customFormats.length
+              `formats loaded from local: ${info.customFormats.length}`
             );
             recallSettings(info.customFormats);
           } else {
@@ -371,14 +367,14 @@ var PageCustom = () => {
         {
           customFormats: [],
         },
-        function (info: any) {
+        (info) => {
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
           }
 
           if (info.customFormats.length) {
             console.log(
-              "formats loaded from sync: " + info.customFormats.length
+              `formats loaded from sync: ${info.customFormats.length}`
             );
             recallSettings(info.customFormats);
           } else {
@@ -391,25 +387,30 @@ var PageCustom = () => {
     }
   }
 
-  function getCustomSample(): string {
+  function getCustomSample() {
     return $("#customSampleTemplate").html().replace('data-x=""', "{checked}");
   }
 
-  function recallSettings(formats?: any) {
-    formats = formats || getStorage("customFormats", []);
-    if (formats && formats.length) {
-      $.each(formats, function (i, el) {
+  function recallSettings(formats: string | any[] | undefined | null = null) {
+    let formats2: any[] = [];
+    if (typeof formats === "string") {
+      formats2 = JSON.parse(formats);
+    } else {
+      formats2 = formats || getStorage("customFormats", []);
+    }
+    if (formats2?.length) {
+      $.each(formats2, (i, el) => {
         el.checked = el.s ? "checked" : "";
         //log(el);
       });
-
-      var templateDiv = getCustomSample();
+  
+      const templateDiv = getCustomSample();
       _nextFilledWithEach_UsesExactMatchOnly = true;
-      var result = templateDiv.filledWithEach(formats);
+      const result = templateDiv.filledWithEach(formats2);
       _nextFilledWithEach_UsesExactMatchOnly = false;
-
+  
       $(".customFormats").html(result);
-
+  
       setTimeout(() => {
         addSamplesToFirstPage();
         showForCurrentDate();
@@ -460,49 +461,36 @@ var PageCustom = () => {
   }
 
   function fillSelectDefault(id: string, storageId: string, message: string) {
-    var defaultFormat = message;
-    var defaultFound = false;
-    var optionsHtml: string[] = [
+    const defaultFormat = message;
+    let defaultFound = false;
+    const optionsHtml = [
       '<optgroup label="{0}">'.filledWith(getMessage("standardFormats")),
     ];
 
-    $.each(_itemsForDefaultSelects, function (i, el) {
-      var format = el.format;
-      var isDefault = false;
+    $.each(_itemsForDefaultSelects, (i, el) => {
+      const format = el.format;
+      let isDefault = false;
       if (format === defaultFormat) {
         defaultFound = true;
         isDefault = true;
       }
       optionsHtml.push(
-        '<option value="' +
-          format.replace(/"/g, "&quot;") +
-          '" data-prefix="' +
-          (isDefault ? getMessage("defaultFormat") : "") +
-          el.letter +
-          ' - " data-format="' +
-          format +
-          '"></option>'
+        `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${isDefault ? getMessage("defaultFormat") : ""}${el.letter} - " data-format="${format}"></option>`
       );
     });
     optionsHtml.push("</optgroup>");
 
     // add local custom formats
-    var formats = getStorage("customFormats", []);
+    const formats = getStorage("customFormats", []);
     if (formats.length > 0) {
       optionsHtml.push(
         '<optgroup label="{0}">'.filledWith(getMessage("customFormats"))
       );
 
-      $.each(formats, function (i, el: { f: string; s: boolean }) {
-        var format = el.f;
+      $.each(formats, (i, el) => {
+        const format = el.f;
         optionsHtml.push(
-          '<option value="' +
-            format.replace(/"/g, "&quot;") +
-            '" data-prefix="' +
-            (i + 1) +
-            ' - " data-format="' +
-            format +
-            '"></option>'
+          `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${i + 1} - " data-format="${format}"></option>`
         );
       });
 
@@ -510,14 +498,10 @@ var PageCustom = () => {
     }
 
     // fill select
-    var ddl = $("#" + id).html(
+    const ddl = $(`#${id}`).html(
       (defaultFound
         ? ""
-        : '<option value="' +
-          defaultFormat +
-          '" data-prefix="Default - " data-format="' +
-          defaultFormat +
-          '"></option>') + optionsHtml.join("")
+        : `<option value="${defaultFormat}" data-prefix="Default - " data-format="${defaultFormat}"></option>`) + optionsHtml.join("")
     );
     ddl.val(getStorage(storageId, ""));
 
@@ -526,7 +510,7 @@ var PageCustom = () => {
     }
   }
 
-  function saveTopToolTipFormat1(ev: JQueryInputEventObject) {
+  function saveTopToolTipFormat1(ev: { target: string; }) {
     setStorage(
       "formatToolTip1",
       $(ev.target).find("option:selected").data("format")
@@ -534,7 +518,7 @@ var PageCustom = () => {
     showIcon();
   }
 
-  function saveTopToolTipFormat2(ev: JQueryInputEventObject) {
+  function saveTopToolTipFormat2(ev: { target: string; }) {
     setStorage(
       "formatToolTip2",
       $(ev.target).find("option:selected").data("format")
@@ -542,7 +526,7 @@ var PageCustom = () => {
     showIcon();
   }
 
-  function saveTopDayFormat(ev: JQueryInputEventObject) {
+  function saveTopDayFormat(ev: { target: string; }) {
     setStorage(
       "formatTopDay",
       $(ev.target).find("option:selected").data("format")
@@ -551,8 +535,8 @@ var PageCustom = () => {
   }
 
   function updateDefaultDropdowns() {
-    $(".customLoadDefaults option").each(function (i, el) {
-      var option = $(el);
+    $(".customLoadDefaults option").each((i, el) => {
+      const option = $(el);
       option.html(
         option.data("prefix") + option.data("format").filledWith(_di)
       );
