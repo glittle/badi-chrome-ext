@@ -1,60 +1,63 @@
-﻿/* Code by Glen Little */
+﻿/* Code by Glen Little - 2014 - 2024 */
 /* global HolyDays */
 /* global dayjs */
-const ObjectConstant = "$****$";
-const splitSeparator = /[,،]+/;
-let _currentPageId = null;
-let _rawMessages = null;
-let _rawMessageTranslationPct = 0;
-let _numMessagesEn = 0;
-let _cachedMessages = {};
-let _cachedMessageUseCount = 0;
 
-let _languageCode = "";
-let _languageDir = "ltr";
-let _nextFilledWithEach_UsesExactMatchOnly = false;
-let _locationLat = null;
-let _locationLong = null;
-let _focusTime = null;
-let holyDays = null;
-let knownDateInfos = {};
-let _di = {};
-let _initialDiStamp;
-let _firstLoad = true;
+// these use VAR to be globally available
+var ObjectConstant = "$****$";
+var splitSeparator = /[,،]+/;
 
-let bMonthNameAr;
-let bMonthMeaning;
+var _currentPageId = null;
+var _rawMessages = null;
+var _rawMessageTranslationPct = 0;
+var _numMessagesEn = 0;
+var _cachedMessages = {};
+var _cachedMessageUseCount = 0;
 
-let bWeekdayNameAr;
-let bWeekdayMeaning;
+var _languageCode = "";
+var _languageDir = "ltr";
+var _nextFilledWithEach_UsesExactMatchOnly = false;
+var _locationLat = null;
+var _locationLong = null;
+var _focusTime = null;
+var holyDays = null;
+var knownDateInfos = {};
+var _di = {};
+var _initialDiStamp;
+var _firstLoad = true;
 
-let bYearInVahidNameAr;
-let bYearInVahidMeaningnull;
+var bMonthNameAr;
+var bMonthMeaning;
 
-let bMonthNamePri;
-let bMonthNameSec;
-let bWeekdayNamePri;
-let bWeekdayNameSec;
-let bYearInVahidNamePri;
-let bYearInVahidNameSec;
+var bWeekdayNameAr;
+var bWeekdayMeaning;
 
-let gWeekdayLong;
-let gWeekdayShort;
-let gMonthLong;
-let gMonthShort;
+var bYearInVahidNameAr;
+var bYearInVahidMeaningnull;
 
-let ordinall;
-let ordinalNames;
-let elements;
+var bMonthNamePri;
+var bMonthNameSec;
+var bWeekdayNamePri;
+var bWeekdayNameSec;
+var bYearInVahidNamePri;
+var bYearInVahidNameSec;
 
-let use24HourClock;
+var gWeekdayLong;
+var gWeekdayShort;
+var gMonthLong;
+var gMonthShort;
 
-const _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
+var ordinall;
+var ordinalNames;
+var elements;
 
-let _iconPrepared = false;
+var use24HourClock;
+var _iconPrepared = false;
+
+var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
+
 
 //const tracker = null;
-const settings = {
+var settings = {
   useArNames: true,
   rememberFocusTimeMinutes: 5, // show on settings page?
   optedOutOfGoogleAnalytics: getStorage("optOutGa", -1),
@@ -875,19 +878,18 @@ function refreshDateInfoAndShow(resetToNow) {
     recallFocusAndSettings();
   }
   console.log("refreshDateInfoAndShow at", new Date());
-  const di = refreshDateInfo();
-  _di = di;
+  refreshDateInfo();
   _firstLoad = false;
 
   showIcon();
   if (typeof showInfo !== "undefined") {
     // are we inside the open popup?
-    showInfo(di);
+    showInfo(_di);
     showWhenResetToNow();
   }
 
   if (browserHostType === browser.Chrome) {
-    setAlarmForNextUpdate(di.currentTime, di.frag2SunTimes.sunset, di.bNow.eve);
+    setAlarmForNextUpdate(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
   }
 }
 
@@ -995,10 +997,11 @@ String.prototype.filledWith = function (...args) {
   const testDoNotEscpaeHtmlButSinglQuote = /^\>/; // simple test for ">"
 
   const extractTokens = /{([^{]+?)}/g;
+  let debugCount = 0;
 
   const replaceTokens = (input, debugCount) =>
-    input.replace(extractTokens, () => {
-      const token = args[1];
+    input.replace(extractTokens, (...inner) => {
+      const token = inner[1];
       let value;
       //try {
       if (token[0] === " ") {
@@ -1059,7 +1062,7 @@ String.prototype.filledWith = function (...args) {
       return typeof value === "undefined" || value == null ? "" : `${value}`;
     });
 
-  let result = replaceTokens(this);
+  let result = replaceTokens(this.toString());
 
   let lastResult = "";
   while (lastResult !== result) {

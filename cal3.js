@@ -358,7 +358,7 @@ const Cal3 = () => {
   function buildMonth(bYear, bMonth) {
     const focusMonth = bMonth;
 
-    const dayCellTemplate = $("#cal3dayCell").text();
+    const dayCellTemplate = $("#cal3dayCell").html();
 
     const dayCells = [];
     let day1Di;

@@ -1085,7 +1085,7 @@ button.button {
   color: #ffffff;
   font-family: Geneva, "Segoe UI";
   font-size: 85%;
-  line-height: 0.6em;
+  line-height: 1em;
   padding: 0.25em 0.4em 0.4em;
   transition: color 0.4s ease-out;
   text-decoration: none;
@@ -1407,8 +1407,8 @@ body[data-pageid="pageSetup"] #show {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
     background-color: #77b55a;
-    margin-left: -2px;
-    padding-left: 5px;
+    margin-left: -3px;
+    padding-left: 6px;
   }
 }
 body.Firefox #btnPageReminders {

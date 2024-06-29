@@ -357,8 +357,7 @@ const Cal2 = () => {
     const newRow = '<div class="dayRow elementNum{0}">';
     const newRowEnd = "</div>";
 
-    const dayCellTemplate = $("#cal2dayCell").text();
-
+    const dayCellTemplate = $("#cal2dayCell").html();
     const dayCells = [newRow.filledWith(bMonth === 0 ? 0 : 1)];
     let day1Di;
     const gMonths = [];

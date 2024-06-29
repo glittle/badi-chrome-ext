@@ -1,11 +1,11 @@
 ﻿{
   "compilerOptions": {
-    "target": "es6", 
-    "module": "commonjs",
+    "module": "CommonJS",
     "outDir": "./",  // This is important, it tells tsc to place output files alongside their source files
-    "strict": true,
-    "sourceMap": true  // Optional: Generates source maps
+    "sourceMap": true,
+    "explainFiles": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "compileOnSave": true
 }

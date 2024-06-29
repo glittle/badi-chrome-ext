@@ -1,35 +1,46 @@
 @import "colors.less";
 
-#pageCal1 {
-
-  .months {
-    margin: 2px 0 5px 0;
-    width: 774px;
+body.inTab {
+  #pageCal1 {
+    --day-width: 44px;
+    --month-row-height: 35px;
+    --element-height: 18px;
+    --font-size: 10pt;
   }
+}
+
+#pageCal1 {
+  --day-width: 35.7px;
+  --month-row-height: 27px;
+  --element-height: 14px;
+  --font-size: 8.25pt;
+
+  font-size: var(--font-size);
+
+  //.months {
+  // width: 774px;
+  // }
 
   .month {
-    margin-top: -1px;
+    // margin-top: -1px;
     position: relative;
+    height: var(--month-row-height);
+    // padding-right: var(--element-height);
   }
 
   .element {
     transform: rotate(-90deg);
     transform-origin: top right;
     position: absolute;
-    right: 14px;
-    line-height: 9.75pt;
-    font-size: 8.25pt;
+    right: var(--element-height);
+    top: 0;
+    line-height: var(--element-height);
+    // font-size: 8.25pt;
     text-align: center;
-    margin: 1px 0 0 0;
   }
 
   .bm {
-  }
-
-  .bm i {
-    font-style: normal;
-    padding-right: 2px;
-    font-size: 6pt;
+    white-space: nowrap;
   }
 
   .mGroup0 {
@@ -53,45 +64,45 @@
   }
 
   .element.mGroup1 {
-    width: 80px;
+    width: calc(3 * var(--month-row-height));
     color: rgba(255, 0, 0, 0.6);
     z-index: 1;
+    border-bottom-right-radius: 3px; // use right - this is rotated!
   }
 
   .element.mGroup2 {
-    width: 105px;
-    color: rgba(100, 100, 100, .8);
+    width: calc(4 * var(--month-row-height));
+    color: rgba(100, 100, 100, 0.8);
     z-index: 2;
   }
 
   .element.mGroup3 {
-    width: 158px;
-    color: rgba(0, 0, 255, .6);
+    width: calc(6 * var(--month-row-height));
+    color: rgba(0, 0, 255, 0.6);
     z-index: 3;
   }
 
   .element.mGroup4 {
-    width: 183px;
+    width: calc(7 * var(--month-row-height));
     color: rgba(0, 255, 0, 1);
     z-index: 4;
+    border-bottom-left-radius: 3px; // use left - this is rotated!
   }
 
-
-  .bd, .gd {
+  .bd,
+  .gd {
     display: inline-block;
-    width: 35.7px;
-    box-sizing: border-box;
+    width: var(--day-width);
     position: relative;
     overflow: hidden;
     white-space: nowrap;
   }
 
   .bd {
-    border-left: 1px solid rgba(0,0,0,.2);
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 0 0 1px 2px;
-    font-size: 8.25pt;
-    line-height: 7.5pt;
+    // font-size: 8.25pt;
   }
 
   .bd:hover {
@@ -104,8 +115,8 @@
   }
 
   .bd.dow6 {
-    border-left: 1px solid rgba(0,0,0,.6);
-    border-bottom: 1px solid rgba(0,0,0,.6);
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
     /* saturday */
   }
 
@@ -115,44 +126,44 @@
 
   .bmName {
     display: inline-block;
-    width: 78px;
-    margin-right: 3px;
-    font-size: 9.75pt;
-    line-height: 9.75pt;
-    padding: 1px 0 1px 4px;
-    margin-left: -3px;
+    width: calc(2 * var(--day-width));
+    text-align: right;
     white-space: nowrap;
     vertical-align: top;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    margin-top: -1px;
+    span {
+      padding: 0 3px 3px 3px;
+      border-radius: 3px;
+    }
+    i {
+      font-style: normal;
+      margin-right: 4px;
+      font-size: 0.72em;
+    }
   }
 
   .gmInitial {
     width: 93px; /* bmName width + offset */
+    width: calc(2 * var(--day-width) + 2.5em);
     padding-right: 2px;
     text-align: right;
     display: inline-block;
     font-weight: 500;
-    line-height: 7.5pt;
     overflow: hidden;
   }
 
   .gLast {
-    width: 21px;
-    overflow: hidden;
-    vertical-align: bottom;
   }
 
   .gm {
-    font-size: 6pt;
+    // font-size: 6pt;
+    font-size: 0.72em;
     margin-top: -4px;
-    margin-bottom: 2px;
+    white-space: nowrap;
   }
 
   .gd {
-    line-height: 7.5pt;
-    margin-bottom: 0;
-    border-left: 1px solid rgba(0,0,0,.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
     padding-left: 1px;
   }
 
@@ -171,7 +182,7 @@
 
   .gd.dow6 {
     background-color: #efefef;
-    border-left: 1px solid rgba(0,0,0,.6);
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
     /* saturday */
   }
 
@@ -182,27 +193,39 @@
     border-top: 2px solid rgba(0,0,0,.1);
   }*/
   .gma0 {
-    color: rgba(0,0,255,.8);
+    color: rgba(0, 0, 255, 0.8);
   }
 
   .gma1 {
-    color: rgba(0,0,255,.8);
+    color: rgba(0, 0, 255, 0.8);
     /*color: rgba(83, 205, 0, 0.9);*/
   }
 
-  .hdHS, .hdHO {
-    display: inline-block;
+  .hdHS,
+  .hdHO {
+    margin: 0 0 2px 3px;
     width: 12px;
     height: 12px;
-    background: url(./star12c.gif);
-    margin: -2px 1px 0 0;
-    position: absolute;
-    right: 1px;
-    top: 1px;
+    vertical-align: bottom;
+    .starInner {
+      animation: pulse 1s infinite;
+      fill: #ffff00;
+    }
   }
 
-  .hdHO {
-    background: url(star12b.gif);
+  @keyframes pulse {
+    0% {
+      fill: #ffff00; /* Bright yellow */
+      stroke: #ffff00;
+    }
+    50% {
+      fill: red;
+      stroke: red;
+    }
+    100% {
+      fill: #ffff00; /* Bright yellow */
+      stroke: #ffff00;
+    }
   }
 }
 
@@ -210,7 +233,6 @@
   #pageCal1 {
     .bd.selected {
       background-color: #77b55a;
-      border: 1px solid #4b8f29;
     }
 
     .bd.selected b {
@@ -218,7 +240,7 @@
       font-weight: bold;
     }
 
-    .bm.selected .bmName {
+    .bm.selected .bmName span {
       background-color: #77b55a;
       color: #fff;
     }
@@ -232,7 +254,6 @@
 
 @media print {
   body[data-pageid="pageCal1"] {
-
     #otherPageTitle {
       display: block !important;
     }

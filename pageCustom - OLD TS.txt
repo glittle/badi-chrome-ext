@@ -1,9 +1,12 @@
 ﻿/* global addSamples */
+/// <reference path="./tsDefinitions/shared.d.ts" />
+/// <reference path="./tsDefinitions/chrome.d.ts" />
+
 const PageCustom = () => {
   let _currentEditId = 0;
   let _currentUseForSample = false;
   let _samplesAddedToFirstPage = false;
-  const _itemsForDefaultSelects: {format: string, letter: string}[] = [];
+  const _itemsForDefaultSelects: { format: string; letter: string }[] = [];
 
   function preparePartsList() {
     const parts = [];
@@ -70,13 +73,14 @@ const PageCustom = () => {
     const echo = $("#customBuilderEcho");
     echo.html(converted || "&nbsp;");
 
-    const hasError = converted.search(/{/) !== -1 || converted.search(/}/) !== -1;
+    const hasError =
+      converted.search(/{/) !== -1 || converted.search(/}/) !== -1;
     rawSource.toggleClass("hasError", hasError);
 
     updateEditButtons();
   }
 
-  function addPart(ev: { target: string; }) {
+  function addPart(ev: JQuery.ClickEvent) {
     const btn = $(ev.target);
     let template = btn.next().data("part");
     const input = $("#customBuilderInput");
@@ -154,7 +158,7 @@ const PageCustom = () => {
     saveFormats();
   }
 
-  function copySample(ev: { target: string; }) {
+  function copySample(ev: { target: string }) {
     const btn = $(ev.target);
     const div = btn.closest(".customFormatDiv");
 
@@ -172,7 +176,7 @@ const PageCustom = () => {
     }, 1000);
   }
 
-  function editSample(ev: { target: string; }) {
+  function editSample(ev: { target: string }) {
     const btn = $(ev.target);
     const div = btn.closest(".customFormatDiv");
 
@@ -189,7 +193,7 @@ const PageCustom = () => {
     updateEditButtons();
   }
 
-  function loadCustom(ev: { target: string; }) {
+  function loadCustom(ev: { target: string }) {
     cancelEditing();
 
     const btn = $(ev.target);
@@ -218,8 +222,7 @@ const PageCustom = () => {
   }
 
   function addFromFirstPage(letter: string, format: string) {
-    const button =
-      `<button type=button class="button btnLoadCustom" data-format="${format}">${letter}</button>`;
+    const button = `<button type=button class="button btnLoadCustom" data-format="${format}">${letter}</button>`;
     $(".customLettersFromFirstPage").append(button);
 
     if (!_samplesAddedToFirstPage) {
@@ -245,8 +248,16 @@ const PageCustom = () => {
     });
   }
 
+  type Sample = {
+    currentNote: string;
+    letter: string;
+    tooltip: string;
+    template: string;
+  };
+
   function addSamplesToFirstPage() {
-    const selected: any[] = [];
+    debugger
+    const selected: Sample[] = [];
     let nextItemNumber = 1 + $("#sampleList1 > div").length;
     if (nextItemNumber === 1) {
       _samplesAddedToFirstPage = true;
@@ -300,7 +311,7 @@ const PageCustom = () => {
   }
 
   function saveFormats() {
-    const formats: { f: string; s: boolean; }[] = [];
+    const formats: { f: string; s: boolean }[] = [];
     $(".customFormats .customFormatDiv").each((i, el) => {
       const div = $(el);
       formats.push({
@@ -403,14 +414,14 @@ const PageCustom = () => {
         el.checked = el.s ? "checked" : "";
         //log(el);
       });
-  
+
       const templateDiv = getCustomSample();
       _nextFilledWithEach_UsesExactMatchOnly = true;
       const result = templateDiv.filledWithEach(formats2);
       _nextFilledWithEach_UsesExactMatchOnly = false;
-  
+
       $(".customFormats").html(result);
-  
+
       setTimeout(() => {
         addSamplesToFirstPage();
         showForCurrentDate();
@@ -462,6 +473,7 @@ const PageCustom = () => {
 
   function fillSelectDefault(id: string, storageId: string, message: string) {
     const defaultFormat = message;
+    debugger;
     let defaultFound = false;
     const optionsHtml = [
       '<optgroup label="{0}">'.filledWith(getMessage("standardFormats")),
@@ -475,7 +487,9 @@ const PageCustom = () => {
         isDefault = true;
       }
       optionsHtml.push(
-        `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${isDefault ? getMessage("defaultFormat") : ""}${el.letter} - " data-format="${format}"></option>`
+        `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${
+          isDefault ? getMessage("defaultFormat") : ""
+        }${el.letter} - " data-format="${format}"></option>`
       );
     });
     optionsHtml.push("</optgroup>");
@@ -490,7 +504,9 @@ const PageCustom = () => {
       $.each(formats, (i, el) => {
         const format = el.f;
         optionsHtml.push(
-          `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${i + 1} - " data-format="${format}"></option>`
+          `<option value="${format.replace(/"/g, "&quot;")}" data-prefix="${
+            i + 1
+          } - " data-format="${format}"></option>`
         );
       });
 
@@ -501,7 +517,8 @@ const PageCustom = () => {
     const ddl = $(`#${id}`).html(
       (defaultFound
         ? ""
-        : `<option value="${defaultFormat}" data-prefix="Default - " data-format="${defaultFormat}"></option>`) + optionsHtml.join("")
+        : `<option value="${defaultFormat}" data-prefix="Default - " data-format="${defaultFormat}"></option>`) +
+        optionsHtml.join("")
     );
     ddl.val(getStorage(storageId, ""));
 
@@ -510,7 +527,7 @@ const PageCustom = () => {
     }
   }
 
-  function saveTopToolTipFormat1(ev: { target: string; }) {
+  function saveTopToolTipFormat1(ev: JQuery.ChangeEvent) {
     setStorage(
       "formatToolTip1",
       $(ev.target).find("option:selected").data("format")
@@ -518,7 +535,7 @@ const PageCustom = () => {
     showIcon();
   }
 
-  function saveTopToolTipFormat2(ev: { target: string; }) {
+  function saveTopToolTipFormat2(ev: JQuery.ChangeEvent) {
     setStorage(
       "formatToolTip2",
       $(ev.target).find("option:selected").data("format")
@@ -526,13 +543,13 @@ const PageCustom = () => {
     showIcon();
   }
 
-  function saveTopDayFormat(ev: { target: string; }) {
+  function saveTopDayFormat(ev: JQuery.ChangeEvent) {
     setStorage(
       "formatTopDay",
       $(ev.target).find("option:selected").data("format")
     );
     showInfo(_di);
-  }
+  }  
 
   function updateDefaultDropdowns() {
     $(".customLoadDefaults option").each((i, el) => {
@@ -544,6 +561,8 @@ const PageCustom = () => {
   }
 
   function startup() {
+    debugger;
+// glen
     recallSettings(); // do local storage quickly... let sync storage overwrite later
     preparePartsList();
     loadFormatsFromSync();
@@ -553,10 +572,10 @@ const PageCustom = () => {
         getMessage("pick_pageDay")
       )
     );
-  }
+  } 
 
   startup();
-
+ 
   return {
     updateDate: showForCurrentDate,
     updateFirstPage: updateFirstPageSamples,
@@ -564,3 +583,4 @@ const PageCustom = () => {
     addFromFirstPage: addFromFirstPage,
   };
 };
+ 

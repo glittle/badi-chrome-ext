@@ -117,7 +117,7 @@ const Cal1 = (originalDi, originalHost) => {
 
       bMonthHtml.push('<div class="bm bm{0}">'.filledWith(bm));
       bMonthHtml.push(
-        "<div class=bmName><i>{^1}</i>{0}</div>".filledWith(
+        "<div class=bmName><span><i>{^1}</i>{0}</span></div>".filledWith(
           host.bMonthNamePri[bm],
           bm === 0 ? "" : bm
         )
@@ -147,7 +147,7 @@ const Cal1 = (originalDi, originalHost) => {
         let holyDayMarker = "";
         let bdTip = "";
         if (holyDay) {
-          holyDayMarker = "<span class=hd{0}></span>".filledWith(holyDay.Type);
+          holyDayMarker = "<img class=hd{0} src='star{0}.svg'>".filledWith(holyDay.Type);
           bdTip = ` title="${getMessage(holyDay.NameEn)}"`;
         }
 

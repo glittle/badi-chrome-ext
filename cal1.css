@@ -1,34 +1,38 @@
-﻿/* fire of God */
+/* fire of God */
 /* air of eternity */
 /* water of Divine Unity */
 /* earth */
+body.inTab #pageCal1 {
+  --day-width: 44px;
+  --month-row-height: 35px;
+  --element-height: 18px;
+  --font-size: 10pt;
+}
 #pageCal1 {
+  --day-width: 35.7px;
+  --month-row-height: 27px;
+  --element-height: 14px;
+  --font-size: 8.25pt;
+  font-size: var(--font-size);
   /*.gd.gAlt {
     border-top: 2px solid rgba(0,0,0,.1);
   }*/
 }
-#pageCal1 .months {
-  margin: 2px 0 5px 0;
-  width: 774px;
-}
 #pageCal1 .month {
-  margin-top: -1px;
   position: relative;
+  height: var(--month-row-height);
 }
 #pageCal1 .element {
   transform: rotate(-90deg);
   transform-origin: top right;
   position: absolute;
-  right: 14px;
-  line-height: 9.75pt;
-  font-size: 8.25pt;
+  right: var(--element-height);
+  top: 0;
+  line-height: var(--element-height);
   text-align: center;
-  margin: 1px 0 0 0;
 }
-#pageCal1 .bm i {
-  font-style: normal;
-  padding-right: 2px;
-  font-size: 6pt;
+#pageCal1 .bm {
+  white-space: nowrap;
 }
 #pageCal1 .mGroup0 {
   background-color: #fff;
@@ -50,30 +54,31 @@
   /* earth */
 }
 #pageCal1 .element.mGroup1 {
-  width: 80px;
+  width: calc(3 * var(--month-row-height));
   color: rgba(255, 0, 0, 0.6);
   z-index: 1;
+  border-bottom-right-radius: 3px;
 }
 #pageCal1 .element.mGroup2 {
-  width: 105px;
+  width: calc(4 * var(--month-row-height));
   color: rgba(100, 100, 100, 0.8);
   z-index: 2;
 }
 #pageCal1 .element.mGroup3 {
-  width: 158px;
+  width: calc(6 * var(--month-row-height));
   color: rgba(0, 0, 255, 0.6);
   z-index: 3;
 }
 #pageCal1 .element.mGroup4 {
-  width: 183px;
+  width: calc(7 * var(--month-row-height));
   color: #00ff00;
   z-index: 4;
+  border-bottom-left-radius: 3px;
 }
 #pageCal1 .bd,
 #pageCal1 .gd {
   display: inline-block;
-  width: 35.7px;
-  box-sizing: border-box;
+  width: var(--day-width);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -82,8 +87,6 @@
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 0 1px 2px;
-  font-size: 8.25pt;
-  line-height: 7.5pt;
 }
 #pageCal1 .bd:hover {
   background-color: #b7f59a;
@@ -102,40 +105,37 @@
 }
 #pageCal1 .bmName {
   display: inline-block;
-  width: 78px;
-  margin-right: 3px;
-  font-size: 9.75pt;
-  line-height: 9.75pt;
-  padding: 1px 0 1px 4px;
-  margin-left: -3px;
+  width: calc(2 * var(--day-width));
+  text-align: right;
   white-space: nowrap;
   vertical-align: top;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
+  margin-top: -1px;
+}
+#pageCal1 .bmName span {
+  padding: 0 3px 3px 3px;
+  border-radius: 3px;
+}
+#pageCal1 .bmName i {
+  font-style: normal;
+  margin-right: 4px;
+  font-size: 0.72em;
 }
 #pageCal1 .gmInitial {
   width: 93px;
   /* bmName width + offset */
+  width: calc(2 * var(--day-width) + 2.5em);
   padding-right: 2px;
   text-align: right;
   display: inline-block;
   font-weight: 500;
-  line-height: 7.5pt;
   overflow: hidden;
-}
-#pageCal1 .gLast {
-  width: 21px;
-  overflow: hidden;
-  vertical-align: bottom;
 }
 #pageCal1 .gm {
-  font-size: 6pt;
+  font-size: 0.72em;
   margin-top: -4px;
-  margin-bottom: 2px;
+  white-space: nowrap;
 }
 #pageCal1 .gd {
-  line-height: 7.5pt;
-  margin-bottom: 0;
   border-left: 1px solid rgba(0, 0, 0, 0.2);
   padding-left: 1px;
 }
@@ -166,28 +166,41 @@
 }
 #pageCal1 .hdHS,
 #pageCal1 .hdHO {
-  display: inline-block;
+  margin: 0 0 2px 3px;
   width: 12px;
   height: 12px;
-  background: url(star12c.gif);
-  margin: -2px 1px 0 0;
-  position: absolute;
-  right: 1px;
-  top: 1px;
+  vertical-align: bottom;
 }
-#pageCal1 .hdHO {
-  background: url(star12b.gif);
+#pageCal1 .hdHS .starInner,
+#pageCal1 .hdHO .starInner {
+  animation: pulse 1s infinite;
+  fill: #ffff00;
+}
+@keyframes pulse {
+  0% {
+    fill: #ffff00;
+    /* Bright yellow */
+    stroke: #ffff00;
+  }
+  50% {
+    fill: red;
+    stroke: red;
+  }
+  100% {
+    fill: #ffff00;
+    /* Bright yellow */
+    stroke: #ffff00;
+  }
 }
 @media screen {
   #pageCal1 .bd.selected {
     background-color: #77b55a;
-    border: 1px solid #4b8f29;
   }
   #pageCal1 .bd.selected b {
     color: #fff;
     font-weight: bold;
   }
-  #pageCal1 .bm.selected .bmName {
+  #pageCal1 .bm.selected .bmName span {
     background-color: #77b55a;
     color: #fff;
   }
@@ -222,4 +235,3 @@
     width: 334px;
   }
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhbDEubGVzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBRUE7Ozs7O0FBQUEsU0FFRTtFQUNFLG1CQUFBO0VBQ0EsWUFBQTs7QUFKSixTQU9FO0VBQ0UsZ0JBQUE7RUFDQSxrQkFBQTs7QUFUSixTQVlFO0VBQ0UsV0FBVyxjQUFYO0VBQ0EsMkJBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxtQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTs7QUFwQkosU0EwQkUsSUFBSTtFQUNGLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxjQUFBOztBQTdCSixTQWdDRTtFQUNFLHNCQUFBOztBQWpDSixTQW9DRTtFQUNFLHlCQUFBOzs7QUFyQ0osU0F3Q0U7RUFDRSx5QkFBQTs7O0FBekNKLFNBNENFO0VBQ0UseUJBQUE7OztBQTdDSixTQWdERTtFQUNFLHlCQUFBOzs7QUFqREosU0FvREUsU0FBUTtFQUNOLFdBQUE7RUFDQSwyQkFBQTtFQUNBLFVBQUE7O0FBdkRKLFNBMERFLFNBQVE7RUFDTixZQUFBO0VBQ0EsK0JBQUE7RUFDQSxVQUFBOztBQTdESixTQWdFRSxTQUFRO0VBQ04sWUFBQTtFQUNBLDJCQUFBO0VBQ0EsVUFBQTs7QUFuRUosU0FzRUUsU0FBUTtFQUNOLFlBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTs7QUF6RUosU0E2RUU7QUE3RUYsU0E2RU87RUFDSCxxQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTs7QUFuRkosU0FzRkU7RUFDRSx5Q0FBQTtFQUNBLDJDQUFBO0VBQ0Esb0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBOztBQTNGSixTQThGRSxJQUFHO0VBQ0QseUJBQUE7RUFDQSxlQUFBOztBQWhHSixTQW1HRSxJQUFJO0VBQ0YsbUJBQUE7O0FBcEdKLFNBdUdFLElBQUc7RUFDRCx5Q0FBQTtFQUNBLDJDQUFBOzs7QUF6R0osU0E2R0UsSUFBRyxLQUFNO0VBQ1AsaUJBQUE7O0FBOUdKLFNBaUhFO0VBQ0UscUJBQUE7RUFDQSxXQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7RUFDQSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsbUJBQUE7RUFDQSwyQkFBQTtFQUNBLDhCQUFBOztBQTVISixTQStIRTtFQUNFLFdBQUE7O0VBQ0Esa0JBQUE7RUFDQSxpQkFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBOztBQXRJSixTQXlJRTtFQUNFLFdBQUE7RUFDQSxnQkFBQTtFQUNBLHNCQUFBOztBQTVJSixTQStJRTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBOztBQWxKSixTQXFKRTtFQUNFLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5Q0FBQTtFQUNBLGlCQUFBOztBQXpKSixTQTRKRSxJQUFHO0VBQ0QsaUJBQUE7O0FBN0pKLFNBZ0tFLElBQUk7RUFDRixtQkFBQTtFQUNBLGtCQUFBOztBQWxLSixTQXFLRSxJQUFJO0VBQ0Ysa0JBQUE7O0FBdEtKLFNBeUtFLElBQUc7RUFDRCx5QkFBQTtFQUNBLHlDQUFBOzs7QUEzS0osU0ErS0UsSUFBRztFQUNELHlCQUFBOztBQWhMSixTQXFMRTtFQUNFLDJCQUFBOztBQXRMSixTQXlMRTtFQUNFLDJCQUFBOzs7QUExTEosU0E4TEU7QUE5TEYsU0E4TFM7RUFDTCxxQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsNEJBQUE7RUFDQSxvQkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFFBQUE7O0FBdE1KLFNBeU1FO0VBQ0UsNEJBQUE7O0FBSUo7RUFDRSxTQUNFLElBQUc7SUFDRCx5QkFBQTtJQUNBLHlCQUFBOztFQUhKLFNBTUUsSUFBRyxTQUFVO0lBQ1gsV0FBQTtJQUNBLGlCQUFBOztFQVJKLFNBV0UsSUFBRyxTQUFVO0lBQ1gseUJBQUE7SUFDQSxXQUFBOztFQWJKLFNBZ0JFLElBQUc7SUFDRCx5QkFBQTtJQUNBLFdBQUE7OztBQUtOO0VBQ0UsSUFBSSx3QkFFRjtJQUNFLHlCQUFBOztFQUhKLElBQUksd0JBTUY7SUFDRSx3QkFBQTs7RUFJSjtJQUNFLGNBQUE7O0VBREYsU0FHRTtJQUNFLFlBQUE7O0VBSkosU0FPRSxTQUFRO0lBQ04sWUFBQTs7RUFSSixTQVdFLFNBQVE7SUFDTixZQUFBOztFQVpKLFNBZUUsU0FBUTtJQUNOLFlBQUE7O0VBaEJKLFNBbUJFLFNBQVE7SUFDTixZQUFBIiwiZmlsZSI6InVuZGVmaW5lZCJ9 */
