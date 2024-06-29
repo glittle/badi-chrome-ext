@@ -8,35 +8,34 @@
 /* global chrome */
 /* global _languageCode */
 /* global $ */
-var _showingInfo = false;
-var _changingBDate = false;
-var _currentPageNum = 0;
-var _cal1 = null;
-var _cal2 = null;
-var _cal3 = null;
-var _calWheel = null;
-var _calGreg = null;
-var _pageReminders = null;
-var _pageExporter = null;
-var _pagePlanner = null;
-var _pageCustom = null;
-var _enableSampleKeys = true;
-var _enableDayKeysLR = true;
-var _enableDayKeysUD = true;
-var _upDownKeyDelta = null;
-var _pageHitTimeout = null;
-var _initialStartupDone = false;
-var _loadingNum = 0;
-var _lastLoadingTime = null;
-var _lastLoadingComment = null;
-var _inTab = false;
-var _pageIdList = [];
-var _inPopupPage = true;
-var tracker;
+let _showingInfo = false;
+let _changingBDate = false;
+let _currentPageNum = 0;
+let _cal1 = null;
+let _cal2 = null;
+let _cal3 = null;
+let _calWheel = null;
+let _calGreg = null;
+let _pageReminders = null;
+let _pageExporter = null;
+let _pagePlanner = null;
+let _pageCustom = null;
+let _enableSampleKeys = true;
+let _enableDayKeysLR = true;
+let _enableDayKeysUD = true;
+let _upDownKeyDelta = null;
+let _pageHitTimeout = null;
+let _initialStartupDone = false;
+let _loadingNum = 0;
+// let _lastLoadingTime = null;
+// let _lastLoadingComment = null;
+let _inTab = false;
+const _pageIdList = [];
+let tracker;
 
-var _remindersEnabled = browserHostType === browser.Chrome;
+const _remindersEnabled = browserHostType === browser.Chrome;
 
-chrome.tabs.getCurrent(function (tab) {
+chrome.tabs.getCurrent((tab) => {
   if (tab) {
     _inTab = true;
     $("body").addClass("inTab");
@@ -52,7 +51,7 @@ function attachHandlers() {
   $(".btnChangeYear").on("click", changeYear);
 
   $(".btnJumpTo").on("click", moveDays);
-  $(".btnJumpToday").on("click", function () {
+  $(".btnJumpToday").on("click", () => {
     changeDay(null, 0);
   });
   $(".jumpTo").val(getStorage("jumpTo", "90"));
@@ -68,7 +67,7 @@ function attachHandlers() {
 
   $("#btnEveOrDay").on("click", toggleEveOrDay);
   $("#datePicker").on("change", jumpToDate);
-  $("#eventStart").on("change", function () {
+  $("#eventStart").on("change", () => {
     setStorage("eventStart", $(this).val());
     _lastSpecialDaysYear = 0;
     BuildSpecialDaysTable(_di);
@@ -76,12 +75,12 @@ function attachHandlers() {
   });
   $(".includeThis").on("change, click", SetFiltersForSpecialDaysTable);
 
-  $(".btnRetry").on("click", function () {
+  $(".btnRetry").on("click", () => {
     $(".setupPlace .place").text(""); //blank the copy on the setup page
     $(".btnRetry").addClass("active").blur();
     startGettingLocation();
   });
-  $("#datePicker").on("keydown", function (ev) {
+  $("#datePicker").on("keydown", (ev) => {
     ev.stopPropagation();
   });
   $(".selectPages").on("click", "button", changePage);
@@ -90,7 +89,7 @@ function attachHandlers() {
   //  chrome.tabs.create({ active: true, url: this.href });
   //});
 
-  $("#cbShowPointer").on("change", function () {
+  $("#cbShowPointer").on("change", () => {
     setStorage("showPointer", $(this).prop("checked"));
     _calWheel.showCalendar(_di);
   });
@@ -103,19 +102,19 @@ function attachHandlers() {
   //});
 
   $("#btnOpen").click(openInTab);
-  $("#btnPrint").click(function () {
+  $("#btnPrint").click(() => {
     window.print();
   });
 
   $(".setupPlace")
-    .on("paste keydown keypress", "input", function () {
+    .on("paste keydown keypress", "input", () => {
       updateLocation(false);
     })
-    .on("change", "input", function () {
+    .on("change", "input", () => {
       updateLocation(true);
     });
 
-  $("input:radio[name=language]").click(function (ev) {
+  $("input:radio[name=language]").click((ev) => {
     settings.useArNames = ev.target.value === "Ar";
     ApplyLanguage();
   });
@@ -132,13 +131,13 @@ function ApplyLanguage() {
   refreshDateInfoAndShow();
 
   // find and update some html
-  $("*[data-msg-di]").each(function (i, el) {
+  $("*[data-msg-di]").each((i, el) => {
     localizeHtml($(el).parent());
   });
 }
 
-var sampleNum = 0;
-var showInfoDelay = null;
+let sampleNum = 0;
+let showInfoDelay = null;
 
 function showInfo(di) {
   // debugger;
@@ -154,8 +153,8 @@ function showInfo(di) {
 
   updateSharedContent(di);
 
-  showInfoDelay = setTimeout(function () {
-    $.each(_pageIdList, function (i, id) {
+  showInfoDelay = setTimeout(() => {
+    $.each(_pageIdList, (i, id) => {
       if (id !== _currentPageId) {
         updatePageContent(id, di);
       }
@@ -170,7 +169,7 @@ function showInfo(di) {
 function resetForLanguageChange() {
   setupLanguageChoice();
   _lastSpecialDaysYear = 0;
-  $.each(_pageIdList, function (i, id) {
+  $.each(_pageIdList, (i, id) => {
     resetPageForLanguageChange(id);
   });
 }
@@ -182,9 +181,7 @@ function updateSpecial(di) {
     $("#special1").html(di.special1).show();
     $("#day").addClass("withSpecial");
     if (di.special2) {
-      $("#special2")
-        .html(" - " + di.special2)
-        .show();
+      $("#special2").html(` - ${di.special2}`).show();
     }
   } else {
     $("#day").removeClass("withSpecial");
@@ -208,7 +205,7 @@ function updateSharedContent(di) {
     $(".bYearInVahidPicker").val(di.bYearInVahid);
   }
 
-  var manifest = chrome.runtime.getManifest();
+  const manifest = chrome.runtime.getManifest();
   $("#version").text(getMessage("version", manifest.version));
 
   //if (_initialStartupDone) {
@@ -224,13 +221,13 @@ function updateSharedContent(di) {
 
 function changePage(ev, delta) {
   if (ev) {
-    var btn = $(ev.target);
-    var id = btn.data("page");
+    const btn = $(ev.target);
+    const id = btn.data("page");
     showPage(id);
   } else {
-    var pageButtons = $(".selectPages button").filter(":visible");
-    var lastPageNum = pageButtons.length - 1;
-    var num = _currentPageNum;
+    const pageButtons = $(".selectPages button").filter(":visible");
+    const lastPageNum = pageButtons.length - 1;
+    let num = _currentPageNum;
 
     switch (delta) {
       case -1:
@@ -255,34 +252,34 @@ function changePage(ev, delta) {
 
 function showPage(id) {
   id = id || _currentPageId || "pageDay";
-  var pages = $(".page");
-  var btns = $(".selectPages button").filter(":visible");
-  var thisPage = pages.filter("#" + id);
+  const pages = $(".page");
+  const btns = $(".selectPages button").filter(":visible");
+  const thisPage = pages.filter(`#${id}`);
 
   pages.css({
     visibility: "hidden",
   }); // reduce flicker?
 
-  var other = ".vahidInputs"; // don't fit on any page... likely need to remove it
-  var pageDay =
+  const other = ".vahidInputs"; // don't fit on any page... likely need to remove it
+  const pageDay =
     "#gDay, #showUpcoming, .explains, .normal, #show, .iconArea, #special";
-  var pageEvents = "#yearSelector, .iconArea, #specialDaysTitle";
-  var pageCal1 = "#yearSelector, .JumpDays, #show, #gDay, #special";
-  var pageCalWheel = "#yearSelector, #show, #gDay, #special, .iconArea";
-  var pageCalGreg =
+  const pageEvents = "#yearSelector, .iconArea, #specialDaysTitle";
+  const pageCal1 = "#yearSelector, .JumpDays, #show, #gDay, #special";
+  const pageCalWheel = "#yearSelector, #show, #gDay, #special, .iconArea";
+  const pageCalGreg =
     "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
-  var pageCal2 =
+  const pageCal2 =
     "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
-  var pageCal3 =
+  const pageCal3 =
     "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
-  var pageLists = "#gDay, #show, .iconArea, #special";
-  var pageFast = "#yearSelector, .iconArea";
-  var pageReminders = ".iconArea, #otherPageTitle";
-  var pageExporter = "#yearSelector, .iconArea, #otherPageTitle";
-  var pagePlanner = ".iconArea, #otherPageTitle";
-  var pageCustom =
+  const pageLists = "#gDay, #show, .iconArea, #special";
+  const pageFast = "#yearSelector, .iconArea";
+  const pageReminders = ".iconArea, #otherPageTitle";
+  const pageExporter = "#yearSelector, .iconArea, #otherPageTitle";
+  const pagePlanner = ".iconArea, #otherPageTitle";
+  const pageCustom =
     "#yearSelector, .JumpDays, #show, #gDay, .iconArea, #special";
-  var pageSetup = "#otherPageTitle, .iconArea";
+  const pageSetup = "#otherPageTitle, .iconArea";
 
   $(
     [
@@ -304,7 +301,7 @@ function showPage(id) {
   ).hide();
 
   _currentPageId = id;
-  btns.each(function (i, el) {
+  btns.each((i, el) => {
     if ($(el).data("page") === id) {
       _currentPageNum = i;
       return false;
@@ -337,9 +334,7 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = function () {
-        return 19;
-      };
+      _upDownKeyDelta = () => 19;
       break;
 
     case "pageCalWheel":
@@ -354,9 +349,7 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = function () {
-        return 7;
-      };
+      _upDownKeyDelta = () => 7;
       break;
 
     case "pageCal2":
@@ -364,9 +357,9 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = function (direction) {
-        var bDay = _di.bDay;
-        var bMonth = _di.bMonth;
+      _upDownKeyDelta = (direction) => {
+        const bDay = _di.bDay;
+        const bMonth = _di.bMonth;
         if (bMonth === 0) {
           if (direction === -1) {
             return 6;
@@ -421,9 +414,9 @@ function showPage(id) {
       _enableSampleKeys = false;
       _enableDayKeysLR = true;
       _enableDayKeysUD = true;
-      _upDownKeyDelta = function (direction) {
-        // var bDay = _di.bDay;
-        // var bMonth = _di.bMonth;
+      _upDownKeyDelta = (direction) => {
+        // let bDay = _di.bDay;
+        // let bMonth = _di.bMonth;
         // if (bMonth === 0) {
         //     if (direction === -1) {
         //         return 7;
@@ -510,7 +503,7 @@ function showPage(id) {
 
   // delay a bit, to ensure we are not just moving past this page
   if (tracker) {
-    _pageHitTimeout = setTimeout(function () {
+    _pageHitTimeout = setTimeout(() => {
       tracker.sendAppView(id);
     }, 500);
   }
@@ -609,14 +602,12 @@ function resetPageForLanguageChange(id) {
 
 function updatePageContent(id, di) {
   switch (id) {
-    case "pageDay":
-      var makeObj = function (key, name) {
-        return {
-          name: name || getMessage(key, di),
-          value: getMessage(key + "Format", di),
-        };
-      };
-      var dayDetails = [
+    case "pageDay": {
+      const makeObj = (key, name) => ({
+        name: name || getMessage(key, di),
+        value: getMessage(`${key}Format`, di),
+      });
+      const dayDetails = [
         makeObj("DayOfWeek"),
         makeObj("DayOfMonth"),
         {
@@ -631,8 +622,8 @@ function updatePageContent(id, di) {
         makeObj("Kullishay", di.KullishayLabelPri),
         makeObj("YearOfEra"),
       ];
-      var explain1 = getMessage("shoghiExample", di);
-      var explain2 = getMessage("example2", di);
+      const explain1 = getMessage("shoghiExample", di);
+      const explain2 = getMessage("example2", di);
 
       $("#upcoming").html(di.upcomingHtml);
 
@@ -640,9 +631,9 @@ function updatePageContent(id, di) {
       $("#explain2").html(explain2);
       $("#ayyamIs0").html(getMessage("ayyamIs0").filledWith(bMonthNamePri[0]));
       $("#dayDetails").html(
-        "<dl>" +
-          "<dt>{^name}</dt><dd>{^value}</dd>".filledWithEach(dayDetails) +
-          "</dl>"
+        `<dl>${"<dt>{^name}</dt><dd>{^value}</dd>".filledWithEach(
+          dayDetails
+        )}</dl>`
       );
 
       $("#gDate").html(getMessage("gregorianDateDisplay", di));
@@ -656,6 +647,7 @@ function updatePageContent(id, di) {
       addSamples(di);
 
       break;
+    }
 
     case "pageEvents":
       BuildSpecialDaysTable(_di);
@@ -750,19 +742,19 @@ function changeInVahid(ev) {
     return; // wait for keypress
   }
 
-  var bKullishay = $(".bKullishayPicker").val();
+  let bKullishay = $(".bKullishayPicker").val();
   if (bKullishay === "") return;
   bKullishay = +bKullishay;
 
-  var bVahid = $(".bVahidPicker").val();
+  let bVahid = $(".bVahidPicker").val();
   if (bVahid === "") return;
   bVahid = +bVahid;
 
-  var bYearInVahid = $(".bYearInVahidPicker").val();
+  let bYearInVahid = $(".bYearInVahidPicker").val();
   if (bYearInVahid === "") return;
   bYearInVahid = +bYearInVahid;
 
-  var maxKullishay = 3;
+  const maxKullishay = 3;
 
   // fix to our supported range
   if (bYearInVahid < 1) {
@@ -818,12 +810,9 @@ function changeInVahid(ev) {
     bKullishay = maxKullishay;
   }
 
-  tracker.sendEvent(
-    "changeInVahid",
-    bKullishay + "-" + bVahid + "-" + bYearInVahid
-  );
+  tracker.sendEvent("changeInVahid", `${bKullishay}-${bVahid}-${bYearInVahid}`);
 
-  var year = Math.min(
+  const year = Math.min(
     1000,
     19 * 19 * (bKullishay - 1) + 19 * (bVahid - 1) + bYearInVahid
   );
@@ -840,8 +829,8 @@ function changeToBDate(ev) {
     return; // wait for keypress
   }
 
-  var input = $(ev.target);
-  var bYear = input.hasClass("bYearPicker")
+  const input = $(ev.target);
+  let bYear = input.hasClass("bYearPicker")
     ? input.val()
     : $(".bYearPicker").val(); // we have 2... use this one
   if (bYear === "") return;
@@ -850,16 +839,16 @@ function changeToBDate(ev) {
   if (bYear < 1) bYear = 1;
   if (bYear > 1000) bYear = 1000;
 
-  var bMonth = $("#bMonthPicker").val(); // month and day will be fixed by getGDate
+  const bMonth = $("#bMonthPicker").val(); // month and day will be fixed by getGDate
   if (bMonth === "") return;
 
-  var bDay = $("#bDayPicker").val();
+  const bDay = $("#bDayPicker").val();
   if (bDay === "") return;
 
-  tracker.sendEvent("changeToBDate", bYear + "." + bMonth + "." + bDay);
+  tracker.sendEvent("changeToBDate", `${bYear}.${bMonth}.${bDay}`);
 
   try {
-    var gDate = holyDays.getGDate(+bYear, +bMonth, +bDay, true);
+    const gDate = holyDays.getGDate(+bYear, +bMonth, +bDay, true);
 
     setFocusTime(gDate);
 
@@ -877,16 +866,16 @@ function addSamples(di) {
   // prepare samples
   clearSamples();
 
-  var msg;
-  var notInMessagesJson = "_$$$_";
+  let msg;
+  const notInMessagesJson = "_$$$_";
 
   if (_pageCustom) {
     _pageCustom.clearFromFirstPage();
   }
 
-  var sampleGroupNum = 1;
-  for (var sampleNum = 1; sampleNum < 30; sampleNum++) {
-    var key = "sampleGroup{0}_{1}".filledWith(sampleGroupNum, sampleNum);
+  const sampleGroupNum = 1;
+  for (let sampleNum = 1; sampleNum < 30; sampleNum++) {
+    const key = "sampleGroup{0}_{1}".filledWith(sampleGroupNum, sampleNum);
     msg = getMessage(key, di, notInMessagesJson);
     if (msg === notInMessagesJson) {
       continue;
@@ -909,7 +898,7 @@ function keyPressed(ev) {
     //don't intercept
     return;
   }
-  var key = String.fromCharCode(ev.which) || "";
+  const key = String.fromCharCode(ev.which) || "";
   switch (ev.which) {
     case 65: // Ctrl+Shift+A -- change lang to/from Arabic - mostly for during development and demos, not translatable
       if (ev.shiftKey && ev.ctrlKey) {
@@ -996,7 +985,7 @@ function keyPressed(ev) {
   //log(ev.which);
   if (_enableSampleKeys && !ev.ctrlKey) {
     try {
-      var sample = $("#key" + key);
+      const sample = $(`#key${key}`);
       if (sample.length) {
         sample.trigger("click"); // effective if a used letter is typed
         ev.preventDefault();
@@ -1009,8 +998,8 @@ function keyPressed(ev) {
   if (_currentPageId === "pageEvents") {
     // don't require ALT...
     try {
-      $("input[accessKey=" + key + "]", "#pageEvents").click();
-      $("select[accessKey=" + key + "]", "#pageEvents").click();
+      $(`input[accessKey=${key}]`, "#pageEvents").click();
+      $(`select[accessKey=${key}]`, "#pageEvents").click();
     } catch (e) {
       // key may have odd symbol in it
     }
@@ -1021,15 +1010,16 @@ function keyPressed(ev) {
   }
 
   if (ev.target.tagName !== "INPUT" && ev.target.tagName !== "TEXTAREA") {
-    var pageNum = +key;
-    var validPagePicker = key == pageNum; // don't use ===
+    let pageNum = +key;
+    // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
+    let validPagePicker = key == pageNum; // don't use ===
     if (!validPagePicker) {
       if (key >= "a" && key <= "i") {
         pageNum = key.charCodeAt(0) - 96;
         validPagePicker = true;
       }
 
-      var extraKeys;
+      let extraKeys;
       switch (browserHostType) {
         case browser.Chrome:
           extraKeys = {
@@ -1061,9 +1051,9 @@ function keyPressed(ev) {
       if (pageNum === 0) {
         pageNum = 10;
       }
-      var pageButtons = $(".selectPages button").filter(":visible");
+      const pageButtons = $(".selectPages button").filter(":visible");
       if (pageNum > 0 && pageNum <= pageButtons.length) {
-        var id = pageButtons.eq(pageNum - 1).data("page");
+        const id = pageButtons.eq(pageNum - 1).data("page");
         showPage(id);
       }
     }
@@ -1075,8 +1065,8 @@ function keyPressed(ev) {
 function addSample(info, format, group) {
   sampleNum++;
 
-  var letter = String.fromCharCode(64 + sampleNum);
-  var sample = {
+  const letter = String.fromCharCode(64 + sampleNum);
+  const sample = {
     value: "",
     currentTime: false,
     letter: letter,
@@ -1096,7 +1086,7 @@ function addSample(info, format, group) {
 
   // also in pageCustom
   $("#samples")
-    .find("#sampleList" + group)
+    .find(`#sampleList${group}`)
     .append(
       (
         '<div><button title="{tooltip}"' +
@@ -1108,24 +1098,24 @@ function addSample(info, format, group) {
 
 function clearSamples() {
   sampleNum = 0;
-  var samplesDiv = $("#samples");
+  const samplesDiv = $("#samples");
   samplesDiv.find("#sampleList1").text("");
   //samplesDiv.find('#sampleList2').text('');
 }
 
 function copySample(ev) {
-  var btn = $(ev.target);
-  var letter = btn.text();
+  const btn = $(ev.target);
+  const letter = btn.text();
   tracker.sendEvent("sample", letter);
 
-  var div = btn.closest("div");
-  var text = div.find("span").text();
+  const div = btn.closest("div");
+  const text = div.find("span").text();
   $("#sampleCopy").val(text).focus().select();
   document.execCommand("copy");
 
   div.addClass("copied");
   btn.text(getMessage("copied"));
-  setTimeout(function () {
+  setTimeout(() => {
     div.removeClass("copied");
     btn.text(btn.data("letter"));
     if (!_inTab) {
@@ -1136,16 +1126,16 @@ function copySample(ev) {
 
 function toggleEveOrDay(toEve) {
   setFocusTime(getFocusTime());
-  toEve = typeof toEve === "boolean" ? toEve : !_di.bNow.eve;
-  if (toEve) {
+  const toEve2 = typeof toEve === "boolean" ? toEve : !_di.bNow.eve;
+  if (toEve2) {
     _focusTime.setHours(23, 55, 0, 0);
   } else {
     _focusTime.setHours(12, 0, 0, 0);
   }
 
-  setStorage("focusTimeIsEve", toEve);
+  setStorage("focusTimeIsEve", toEve2);
   if (tracker) {
-    tracker.sendEvent("toggleEveDay", toEve ? "Eve" : "Day");
+    tracker.sendEvent("toggleEveDay", toEve2 ? "Eve" : "Day");
   }
 
   refreshDateInfo();
@@ -1153,18 +1143,18 @@ function toggleEveOrDay(toEve) {
 }
 
 function moveDays(ev) {
-  var input = $("input.jumpTo");
-  var days = +input.val();
+  const input = $("input.jumpTo");
+  let days = +input.val();
   if (!days) {
     days = 0;
     input.val(days);
   } else {
-    var min = +input.attr("min");
+    const min = +input.attr("min");
     if (days < min) {
       days = min;
       input.val(days);
     } else {
-      var max = +input.attr("max");
+      const max = +input.attr("max");
       if (days > max) {
         days = max;
         input.val(days);
@@ -1177,7 +1167,7 @@ function moveDays(ev) {
   if (!days) {
     return;
   }
-  var target = new Date(_di.currentTime);
+  const target = new Date(_di.currentTime);
   target.setTime(target.getTime() + days * 864e5);
   setFocusTime(target);
   refreshDateInfo();
@@ -1185,8 +1175,8 @@ function moveDays(ev) {
 }
 
 function jumpToDate(ev) {
-  var date = dayjs($(ev.target).val()).toDate();
-  if (!isNaN(date)) {
+  const date = dayjs($(ev.target).val()).toDate();
+  if (!Number.isNaN(date)) {
     setFocusTime(date);
 
     refreshDateInfo();
@@ -1195,38 +1185,38 @@ function jumpToDate(ev) {
 }
 
 function changeYear(ev, delta, targetYear) {
-  delta = ev ? +$(ev.target).data("delta") : +delta;
+  const delta2 = ev ? +$(ev.target).data("delta") : +delta;
 
-  var year = targetYear ? targetYear : _di.bYear + delta;
-  var gDate = holyDays.getGDate(year, _di.bMonth, _di.bDay, true);
+  const year = targetYear ? targetYear : _di.bYear + delta2;
+  const gDate = holyDays.getGDate(year, _di.bMonth, _di.bDay, true);
   setFocusTime(gDate);
 
-  tracker.sendEvent("changeYear", delta);
+  tracker.sendEvent("changeYear", delta2);
 
   refreshDateInfo();
   showInfo(_di);
 }
 
 function changeDay(ev, delta) {
-  delta = ev ? +$(ev.target).data("delta") : +delta;
+  const delta2 = ev ? +$(ev.target).data("delta") : +delta;
 
-  if (delta === 0) {
+  if (delta2 === 0) {
     // reset to real time
     setStorage("focusTimeIsEve", null);
     setFocusTime(new Date());
   } else {
-    var time = getFocusTime();
+    const time = getFocusTime();
     if (_di.bNow.eve) {
       time.setHours(23, 55, 0, 0);
     } else {
       time.setHours(12, 0, 0, 0);
     }
-    time.setDate(time.getDate() + delta);
+    time.setDate(time.getDate() + delta2);
     setFocusTime(time);
   }
 
   if (tracker) {
-    tracker.sendEvent("changeDay", delta);
+    tracker.sendEvent("changeDay", delta2);
   }
 
   refreshDateInfo();
@@ -1243,7 +1233,7 @@ function changeDay(ev, delta) {
 
   showInfo(_di);
 
-  if (delta === 0) {
+  if (delta2 === 0) {
     showWhenResetToNow();
   }
 }
@@ -1259,11 +1249,11 @@ function showWhenResetToNow() {
 }
 
 function fillSetup() {
-  var optedOut = settings.optedOutOfGoogleAnalytics === true;
-  var cb = $("#setupOptOut");
+  const optedOut = settings.optedOutOfGoogleAnalytics === true;
+  const cb = $("#setupOptOut");
   cb.prop("checked", optedOut);
-  cb.on("change", function () {
-    var optingOut = cb.prop("checked");
+  cb.on("change", () => {
+    const optingOut = cb.prop("checked");
     if (optingOut) {
       tracker.sendEvent("optOut", optingOut);
     }
@@ -1275,14 +1265,14 @@ function fillSetup() {
     }
   });
 
-  var langInput = $("#setupLang");
+  const langInput = $("#setupLang");
   startFillingLanguageInput(langInput);
   // console.log('finished call to start filling')
 
-  var colorInput = $("#setupColor");
+  const colorInput = $("#setupColor");
   colorInput.val(settings.iconTextColor);
-  colorInput.on("change", function () {
-    var newColor = colorInput.val();
+  colorInput.on("change", () => {
+    const newColor = colorInput.val();
     setStorage("iconTextColor", newColor);
     settings.iconTextColor = newColor;
     showIcon();
@@ -1297,29 +1287,29 @@ function fillSetup() {
  * @param {*} select
  */
 function startFillingLanguageInput(select) {
-  var langs = [];
+  const langs = [];
 
-  chrome.runtime.getPackageDirectoryEntry(function (directoryEntry) {
-    directoryEntry.getDirectory("_locales", {}, function (subDirectoryEntry) {
-      var directoryReader = subDirectoryEntry.createReader();
-      directoryReader.readEntries(async function (entries) {
-        for (var i = 0; i < entries.length; ++i) {
-          var langToLoad = entries[i].name;
+  chrome.runtime.getPackageDirectoryEntry((directoryEntry) => {
+    directoryEntry.getDirectory("_locales", {}, (subDirectoryEntry) => {
+      const directoryReader = subDirectoryEntry.createReader();
+      directoryReader.readEntries(async (entries) => {
+        for (let i = 0; i < entries.length; ++i) {
+          const langToLoad = entries[i].name;
 
-          var url = "/_locales/" + langToLoad + "/messages.json";
+          const url = `/_locales/${langToLoad}/messages.json`;
 
-          var messages = await loadJsonfile(url);
+          const messages = await loadJsonfile(url);
 
-          var langLocalMsg = messages.rbDefLang_Local;
-          var name = langLocalMsg ? langLocalMsg.message : langToLoad;
+          const langLocalMsg = messages.rbDefLang_Local;
+          const name = langLocalMsg ? langLocalMsg.message : langToLoad;
 
-          var enNameMsg = messages.translationEnglishName;
-          var english = enNameMsg ? enNameMsg.message : "";
+          const enNameMsg = messages.translationEnglishName;
+          const english = enNameMsg ? enNameMsg.message : "";
 
-          var info = {
+          const info = {
             code: langToLoad,
             name: name || "",
-            english: english == name || english == langToLoad ? "" : english,
+            english: english === name || english === langToLoad ? "" : english,
             pct: Math.round(
               (Object.keys(messages).length / _numMessagesEn) * 100
             ),
@@ -1328,18 +1318,16 @@ function startFillingLanguageInput(select) {
           langs.push(info);
         }
 
-        var options = [];
-        langs.sort(function (a, b) {
-          return a.sort > b.sort ? 1 : -1;
-        });
+        const options = [];
+        langs.sort((a, b) => (a.sort > b.sort ? 1 : -1));
         for (i = 0; i < langs.length; i++) {
-          var info = langs[i];
+          const info = langs[i];
           options.push(
             "<option value={0}>{3}{1} ... {0} ... {2}%</option>".filledWith(
               info.code,
               info.name,
               info.pct,
-              info.english ? info.english + " / " : ""
+              info.english ? `${info.english} / ` : ""
             )
           );
         }
@@ -1353,11 +1341,11 @@ function startFillingLanguageInput(select) {
           select.val("en");
         }
 
-        var pctSpan = $("#setupLangPct");
+        const pctSpan = $("#setupLangPct");
         if (select.val() === "en") {
           pctSpan.hide();
         } else {
-          var msg =
+          const msg =
             _rawMessageTranslationPct === 100
               ? getMessage("setupLangPct100")
               : getMessage("setupLangPct").filledWith(
@@ -1373,8 +1361,8 @@ function startFillingLanguageInput(select) {
 }
 
 function langSelectChanged() {
-  var select = $("#setupLang");
-  var lang = select.val();
+  const select = $("#setupLang");
+  const lang = select.val();
 
   setStorage("lang", lang);
 
@@ -1384,25 +1372,26 @@ function langSelectChanged() {
 
   // reload to apply new language
   // location.reload(false);
+  // biome-ignore lint/correctness/noSelfAssign: <explanation>
   location.href = location.href;
 }
 
-var updateLocationTimer = null;
+let updateLocationTimer = null;
 
 function updateLocation(immediately) {
   if (!immediately) {
     clearTimeout(updateLocationTimer);
-    updateLocationTimer = setTimeout(function () {
+    updateLocationTimer = setTimeout(() => {
       updateLocation(true);
     }, 1000);
     return;
   }
 
-  var inputLat = $("#inputLat");
-  var lat = +inputLat.val();
+  const inputLat = $("#inputLat");
+  let lat = +inputLat.val();
 
-  var inputLng = $("#inputLng");
-  var lng = +inputLng.val();
+  const inputLng = $("#inputLng");
+  let lng = +inputLng.val();
 
   if (lat === 0 || Math.abs(lat) > 85) {
     inputLat.addClass("error");
@@ -1418,7 +1407,7 @@ function updateLocation(immediately) {
   inputLat.removeClass("error");
   inputLng.removeClass("error");
 
-  var changed = false;
+  let changed = false;
   if (_locationLat !== lat) {
     localStorage.lat = _locationLat = lat;
     changed = true;
@@ -1441,8 +1430,8 @@ function updateLocation(immediately) {
 }
 
 function fillStatic() {
-  var nameList = [];
-  var i;
+  let nameList = [];
+  let i;
   for (i = 1; i < bMonthNameAr.length; i++) {
     nameList.push({
       num: i,
@@ -1458,13 +1447,13 @@ function fillStatic() {
 
   nameList = [];
   for (i = 1; i < bWeekdayNameAr.length; i++) {
-    var gDay = i < 2 ? 5 + i : i - 2;
-    var eveDay = gDay === 0 ? 6 : gDay - 1;
+    const gDay = i < 2 ? 5 + i : i - 2;
+    const eveDay = gDay === 0 ? 6 : gDay - 1;
     nameList.push({
       num: i,
       arabic: bWeekdayNameAr[i],
       meaning: bWeekdayMeaning[i],
-      equiv: gWeekdayShort[eveDay] + "/" + gWeekdayLong[gDay],
+      equiv: `${gWeekdayShort[eveDay]}/${gWeekdayLong[gDay]}`,
     });
   }
   $("#weekdayListBody").html(
@@ -1490,10 +1479,10 @@ function fillStatic() {
 
 function fillEventStart() {
   // fill ddl
-  var startTime = new Date(2000, 5, 5, 0, 0, 0, 0); // random day
-  var startTimes = [];
-  for (var h = 1800; h <= 2000; h += 100) {
-    for (var m = 0; m <= 30; m += 30) {
+  const startTime = new Date(2000, 5, 5, 0, 0, 0, 0); // random day
+  const startTimes = [];
+  for (let h = 1800; h <= 2000; h += 100) {
+    for (let m = 0; m <= 30; m += 30) {
       startTime.setHours(h / 100, m);
       startTimes.push({
         v: h + m,
@@ -1510,13 +1499,13 @@ function fillEventStart() {
 }
 
 function SetFiltersForSpecialDaysTable(ev) {
-  var includeFeasts = $("#includeFeasts").prop("checked");
-  var includeHolyDays = $("#includeHolyDays").prop("checked");
+  let includeFeasts = $("#includeFeasts").prop("checked");
+  let includeHolyDays = $("#includeHolyDays").prop("checked");
 
   if (!includeFeasts && !includeHolyDays) {
     if (ev) {
       // both turned off?  turn on one
-      var clicked = $(ev.target).closest("input").attr("id");
+      const clicked = $(ev.target).closest("input").attr("id");
       $(
         clicked === "includeFeasts" ? "#includeHolyDays" : "#includeFeasts"
       ).prop("checked", true);
@@ -1535,20 +1524,20 @@ function SetFiltersForSpecialDaysTable(ev) {
     .toggleClass("HolyDays", includeHolyDays);
 }
 
-var _lastSpecialDaysYear = 0;
+let _lastSpecialDaysYear = 0;
 
 function BuildSpecialDaysTable(di) {
-  var year = di.bNow.y;
+  const year = di.bNow.y;
   if (_lastSpecialDaysYear === year) {
     return;
   }
 
   _lastSpecialDaysYear = year;
-  var dayInfos = holyDays.prepareDateInfos(year);
+  const dayInfos = holyDays.prepareDateInfos(year);
 
   SetFiltersForSpecialDaysTable();
 
-  dayInfos.forEach(function (dayInfo, i) {
+  dayInfos.forEach((dayInfo, i) => {
     if (dayInfo.Type === "Today") {
       // an old version... remove Today from list
       dayInfos.splice(i, 1);
@@ -1556,13 +1545,13 @@ function BuildSpecialDaysTable(di) {
     }
   });
 
-  var defaultEventStart = $("#eventStart").val() || getStorage("eventStart");
+  const defaultEventStart = $("#eventStart").val() || getStorage("eventStart");
 
-  dayInfos.forEach(function (dayInfo, i) {
-    var targetDi = getDateInfo(dayInfo.GDate);
-    var tempDate = null;
+  dayInfos.forEach((dayInfo, i) => {
+    const targetDi = getDateInfo(dayInfo.GDate);
+    let tempDate = null;
     dayInfo.di = targetDi;
-    dayInfo.D = targetDi.bMonthNamePri + " " + targetDi.bDay;
+    dayInfo.D = `${targetDi.bMonthNamePri} ${targetDi.bDay}`;
     dayInfo.G = getMessage("evePartOfDay", targetDi);
     dayInfo.Sunset = targetDi.startingSunsetDesc;
     dayInfo.StartTime = null;
@@ -1573,7 +1562,7 @@ function BuildSpecialDaysTable(di) {
     dayInfo.TypeShort = null;
     dayInfo.DefaultTimeClass = null;
     dayInfo.RowClass = null;
-    var targetTime = dayInfo.Time || defaultEventStart;
+    let targetTime = dayInfo.Time || defaultEventStart;
 
     if (dayInfo.Type === "M") {
       dayInfo.A = getMessage("FeastOf").filledWith(targetDi.bMonthNameSec);
@@ -1589,7 +1578,7 @@ function BuildSpecialDaysTable(di) {
     }
 
     if (dayInfo.Type === "Fast") {
-      var sunrise = targetDi.frag2SunTimes.sunrise;
+      const sunrise = targetDi.frag2SunTimes.sunrise;
       dayInfo.FastSunrise = sunrise ? showTime(sunrise) : "?";
       dayInfo.FastSunset = sunrise
         ? showTime(targetDi.frag2SunTimes.sunset)
@@ -1604,7 +1593,7 @@ function BuildSpecialDaysTable(di) {
       tempDate = new Date(dayInfo.di.frag1SunTimes.sunset.getTime());
       tempDate.setHours(tempDate.getHours() + 2);
       // about 2 hours after sunset
-      var minutes = tempDate.getMinutes();
+      let minutes = tempDate.getMinutes();
       minutes = minutes > 30 ? 30 : 0; // start 1/2 hour before
       tempDate.setMinutes(minutes);
       dayInfo.Event = {
@@ -1615,14 +1604,14 @@ function BuildSpecialDaysTable(di) {
       addEventTime(dayInfo.Event);
       dayInfo.EventTime = getMessage("eventTime", dayInfo.Event);
     } else if (targetTime) {
-      var adjustDTtoST = 0;
+      let adjustDTtoST = 0;
       if (targetTime.slice(-1) === "S") {
         targetTime = targetTime.slice(0, 4);
         adjustDTtoST = inStandardTime(targetDi.frag1) ? 0 : 1;
       }
       tempDate = new Date(dayInfo.di.frag1.getTime());
-      var timeHour = +targetTime.slice(0, 2);
-      var timeMin = targetTime.slice(-2);
+      const timeHour = +targetTime.slice(0, 2);
+      const timeMin = targetTime.slice(-2);
       tempDate.setHours(timeHour + adjustDTtoST);
       tempDate.setMinutes(timeMin);
 
@@ -1642,7 +1631,7 @@ function BuildSpecialDaysTable(di) {
 
     if (dayInfo.Time) {
       if (dayInfo.Type !== "Today") {
-        dayInfo.ST = getMessage("specialTime_" + dayInfo.Time);
+        dayInfo.ST = getMessage(`specialTime_${dayInfo.Time}`);
         dayInfo.STClass = " SpecialTime";
       }
     } else {
@@ -1656,7 +1645,7 @@ function BuildSpecialDaysTable(di) {
     }
   });
 
-  var rowTemplate = [];
+  const rowTemplate = [];
   rowTemplate.push('<tr class="{Type}{TypeShort}{DefaultTimeClass}{STClass}">');
   rowTemplate.push("<td>{D}</td>");
   rowTemplate.push("<td class=name>{A}</td>"); //{STColSpan}
@@ -1667,16 +1656,14 @@ function BuildSpecialDaysTable(di) {
   rowTemplate.push("<td>{G}</td>");
   rowTemplate.push("</tr>");
   $("#specialListBody").html(
-    rowTemplate.join("").filledWithEach(
-      dayInfos.filter(function (el) {
-        return el.Type !== "Fast";
-      })
-    )
+    rowTemplate
+      .join("")
+      .filledWithEach(dayInfos.filter((el) => el.Type !== "Fast"))
   );
 
   $("#specialDaysTitle").html(getMessage("specialDaysTitle", di));
 
-  var fastRowTemplate = [];
+  const fastRowTemplate = [];
   fastRowTemplate.push('<tr class="{RowClass}">');
   fastRowTemplate.push("<td>{D}</td>");
   fastRowTemplate.push("<td class=centered>{FastSunrise}</td>");
@@ -1685,11 +1672,9 @@ function BuildSpecialDaysTable(di) {
   fastRowTemplate.push("</tr>");
 
   $("#fastListBody").html(
-    fastRowTemplate.join("").filledWithEach(
-      dayInfos.filter(function (el) {
-        return el.Type === "Fast";
-      })
-    )
+    fastRowTemplate
+      .join("")
+      .filledWithEach(dayInfos.filter((el) => el.Type === "Fast"))
   );
 
   $("#fastDaysTitle").html(getMessage("fastDaysTitle", di));
@@ -1697,9 +1682,9 @@ function BuildSpecialDaysTable(di) {
 
 function showShortcutKeys() {
   if (chrome.commands && browserHostType === browser.Chrome) {
-    chrome.commands.getAll(function (cmd) {
-      for (var i = 0; i < cmd.length; i++) {
-        var a = cmd[i];
+    chrome.commands.getAll((cmd) => {
+      for (let i = 0; i < cmd.length; i++) {
+        const a = cmd[i];
         if (a.shortcut) {
           $("#shortcutKeys").text(a.shortcut);
         }
@@ -1718,7 +1703,7 @@ function hideCal1() {
 }
 
 function showCal1() {
-  var iframe = $("#iFrameCal1");
+  const iframe = $("#iFrameCal1");
   if (iframe.is(":visible")) {
     iframe.hide();
   } else {
@@ -1732,17 +1717,17 @@ function showCal1() {
 
 function adjustHeight() {
   // try to ensure that the tabs are not longer than page1 content
-  //var content = $('.mainMiddle');
-  //var contentHeight = content.height();
-  //var tabsHeight = $('.selectPages').prop('scrollHeight');
+  //let content = $('.mainMiddle');
+  //let contentHeight = content.height();
+  //let tabsHeight = $('.selectPages').prop('scrollHeight');
   //if (tabsHeight > contentHeight) {
   //  content.css("min-height", (5 + tabsHeight) + 'px');
   //}
 }
 
 function prepareDefaults() {
-  var feasts = getStorage("includeFeasts");
-  var holyDays = getStorage("includeHolyDays");
+  let feasts = getStorage("includeFeasts");
+  let holyDays = getStorage("includeHolyDays");
   if (typeof feasts === "undefined" && typeof holyDays === "undefined") {
     feasts = false;
     holyDays = true;
@@ -1751,7 +1736,7 @@ function prepareDefaults() {
   $("#includeFeasts").prop("checked", feasts || false);
   $("#includeHolyDays").prop("checked", holyDays || false);
 
-  var showPointer = getStorage("showPointer");
+  let showPointer = getStorage("showPointer");
   if (typeof showPointer === "undefined") {
     showPointer = true;
   }
@@ -1759,24 +1744,21 @@ function prepareDefaults() {
 }
 
 function UpdateLanguageBtn() {
-  $("#rbDefLang_" + (settings.useArNames ? "Ar" : "Local")).prop(
-    "checked",
-    true
-  );
+  $(`#rbDefLang_${settings.useArNames ? "Ar" : "Local"}`).prop("checked", true);
 }
 
 function openInTab() {
   if (_inTab) {
     return;
   }
-  var url = chrome.runtime.getURL("popup.html");
+  const url = chrome.runtime.getURL("popup.html");
 
   if (browserHostType === browser.Chrome) {
     chrome.tabs.query(
       {
         url: url,
       },
-      function (foundTabs) {
+      (foundTabs) => {
         if (foundTabs[0]) {
           chrome.tabs.update(foundTabs[0].id, {
             active: true,
@@ -1804,7 +1786,7 @@ function prepare1() {
 
   startGettingLocation();
 
-  var langCode = _languageCode.slice(0, 2);
+  const langCode = _languageCode.slice(0, 2);
   $("body")
     .addClass(_languageCode)
     .addClass(_languageDir)
@@ -1830,7 +1812,7 @@ function prepare1() {
     refreshDateInfoAndShow();
   }
 
-  var isEve = getStorage("focusTimeIsEve", "x");
+  const isEve = getStorage("focusTimeIsEve", "x");
   if (isEve !== "x" && isEve !== _di.bNow.eve) {
     toggleEveOrDay(isEve);
   }
@@ -1873,15 +1855,15 @@ function prepare1() {
 function updateTabNames() {
   $(".selectPages button")
     .filter(":visible")
-    .each(function (i, el) {
-      var tab = $(el);
-      tab.html(i + 1 + " " + tab.html());
+    .each((i, el) => {
+      const tab = $(el);
+      tab.html(`${i + 1} ${tab.html()}`);
       _pageIdList.push(tab.data("page"));
     });
 }
 
 function showBtnOpen() {
-  chrome.tabs.getCurrent(function (tab) {
+  chrome.tabs.getCurrent((tab) => {
     if (tab) {
       _inTab = true;
       $("body").addClass("inTab");
@@ -1957,11 +1939,11 @@ function prepare2() {
   _pagePlanner = PagePlanner();
 
   updateLoadProgress("finish");
-  $("#version").attr("href", getMessage(browserHostType + "_History"));
-  $("#linkWebStore").attr("href", getMessage(browserHostType + "_WebStore"));
+  $("#version").attr("href", getMessage(`${browserHostType}_History`));
+  $("#linkWebStore").attr("href", getMessage(`${browserHostType}_WebStore`));
   $("#linkWebStoreSupport").attr(
     "href",
-    getMessage(browserHostType + "_WebStoreSupport")
+    getMessage(`${browserHostType}_WebStoreSupport`)
   );
 
   if (_currentPageId !== "pageDay") {
@@ -1976,9 +1958,9 @@ function prepare2() {
 
 function updateLoadProgress(comment) {
   _loadingNum++;
-  //  var time = new Date().getTime();
+  //  let time = new Date().getTime();
   //  if (_lastLoadingTime) {
-  //    var elapsed = `${_lastLoadingComment} (${time - _lastLoadingTime})`;
+  //    let elapsed = `${_lastLoadingComment} (${time - _lastLoadingTime})`;
   //
   //    console.log(_loadingNum, elapsed);
   //  }
@@ -1987,7 +1969,7 @@ function updateLoadProgress(comment) {
   $("#loadingCount").text(new Array(_loadingNum + 1).join("."));
 }
 
-$(async function () {
+$(async () => {
   await prepareShared();
   prepare1();
 });

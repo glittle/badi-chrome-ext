@@ -1,21 +1,21 @@
 ﻿/* global getMessage */
 
-var PageExporter = function () {
+const PageExporter = () => {
 
-    var _lines = [];
-    var _forCsv = false;
-    var _doingCsvLine = false;
-    var _csvLine = [];
-    var _numEntries = 0;
-    var _uidPrefix = 'UID:Chrome Badi Calendar Extension//';
-    var _nowCalDate = '';
-    var _specialDays = {};
-    var _includeLocation = true;
-    var _includeAlert = false;
+    let _lines = [];
+    let _forCsv = false;
+    let _doingCsvLine = false;
+    let _csvLine = [];
+    let _numEntries = 0;
+    const _uidPrefix = 'UID:Chrome Badi Calendar Extension//';
+    let _nowCalDate = '';
+    const _specialDays = {};
+    let _includeLocation = true;
+    let _includeAlert = false;
 
-    var prepareInputs = function () {
-        var template = '{title}<label><input type="checkbox" value="{val}" data-num="{n}" /><span>{name}</span></label>';
-        var items = [
+    const prepareInputs = () => {
+        const template = '{title}<label><input type="checkbox" value="{val}" data-num="{n}" /><span>{name}</span></label>';
+        const items = [
             { val: 'Date_AllDay', n: 365 },
             { val: 'Date_BeginningSunset', n: 365 },
             { val: 'Date_Sun', n: 365 },
@@ -30,14 +30,14 @@ var PageExporter = function () {
             { val: 'Fast_Sunset', n: 19 },
             { val: 'Fast_SunriseToSunset', n: 19 }
         ];
-        var lastWhat = '';
-        $.each(items, function (i, item) {
-            var valParts = item.val.split('_');
-            var type = valParts[1];
-            item.name = getMessage('exportOption_' + type);
-            var what = valParts[0];
-            if (what != lastWhat) {
-                item.title = '<div class=exportItemTitle>{0}</div>'.filledWith(getMessage('exportOption_' + what));
+        let lastWhat = '';
+        $.each(items, (i, item) => {
+            const valParts = item.val.split('_');
+            const type = valParts[1];
+            item.name = getMessage(`exportOption_${type}`);
+            const what = valParts[0];
+            if (what !== lastWhat) {
+                item.title = '<div class=exportItemTitle>{0}</div>'.filledWith(getMessage(`exportOption_${what}`));
                 lastWhat = what;
             } else {
                 item.title = '';
@@ -46,13 +46,14 @@ var PageExporter = function () {
 
         $('.exportOptionList').html(template.filledWithEach(items));
 
-        localizeHtml('.exportOptionList', function (value) {
+        localizeHtml('.exportOptionList', (originalValue) => {
+            let value = originalValue;
             value = value.replace(/\(/g, '<span class=comment>(');
             value = value.replace(/\)/g, ')</span>');
             return value;
         });
 
-        var alerts = [
+        const alerts = [
             { v: 'B0' },
             { v: 'B1' },
             { v: 'B5' },
@@ -62,37 +63,37 @@ var PageExporter = function () {
             { v: 'B60' },
             // can't go after...
         ];
-        $.each(alerts, function (i, a) {
-            a.t = getMessage('exportAlert_' + a.v);
+        $.each(alerts, (i, a) => {
+            a.t = getMessage(`exportAlert_${a.v}`);
         });
         $('#exporterIncludeAlertMin').html('<option value="{v}">{t}</option>'.filledWithEach(alerts));
 
         setByYear();
     };
-    var setByYear = function (highlight) {
-        var select = $('#exporterDateRange');
-        select.find('option').each(function (i, el) {
-            var option = $(el);
-            var key = option.attr('id');
-            var parts = key.split('_');
-            var type = parts[1];
-            var offset = +parts[2];
+    const setByYear = (highlight) => {
+        const select = $('#exporterDateRange');
+        select.find('option').each((i, el) => {
+            const option = $(el);
+            const key = option.attr('id');
+            const parts = key.split('_');
+            const type = parts[1];
+            const offset = +parts[2];
 
-            var year = offset + (type === 'Greg' ? _di.currentYear : _di.bYear);
+            const year = offset + (type === 'Greg' ? _di.currentYear : _di.bYear);
             option.val(type + year);
-            option.text(getMessage('Export' + type + 'Year' + offset, year));
+            option.text(getMessage(`Export${type}Year${offset}`, year));
         });
         if (highlight) {
             select.effect("highlight", 1000);
         }
     };
-    var calFormat = function (date, addHours, addMinutes) {
+    const calFormat = (date, addHours, addMinutes) => {
         if (addHours + addMinutes) {
             date.setHours(date.getHours() + addHours, date.getMinutes() + addMinutes, 0, 0);
         }
-        return date.toJSON().replace(/[\-\:]/g, '').split('.')[0] + 'Z';
+        return `${date.toJSON().replace(/[\-\:]/g, '').split('.')[0]}Z`;
     };
-    var makeEntries = function (asCsv) {
+    const makeEntries = (asCsv) => {
         _lines = [];
         _forCsv = !!asCsv;
         _nowCalDate = calFormat(new Date());
@@ -103,26 +104,26 @@ var PageExporter = function () {
         addLine('VERSION:2.0');
         addLine('CALSCALE:GREGORIAN');
         addLine('METHOD:PUBLISH');
-        addLine('X-WR-CALNAME:' + $('#exporterName').val());
-        addLine('X-WR-TIMEZONE:' + dayjs.tz.guess());
-        addLine('X-WR-CALDESC:' + getMessage('exportCalendarDescription', { location: localStorage.locationName }));
+        addLine(`X-WR-CALNAME:${$('#exporterName').val()}`);
+        addLine(`X-WR-TIMEZONE:${dayjs.tz.guess()}`);
+        addLine(`X-WR-CALDESC:${getMessage('exportCalendarDescription', { location: localStorage.locationName })}`);
 
         addEntries();
 
         addLine('END:VCALENDAR');
         addLine('');
     };
-    var addEntries = function () {
-        var ddl = $('#exporterDateRange');
+    const addEntries = () => {
+        const ddl = $('#exporterDateRange');
         if (!ddl.val()) {
             ddl[0].selectedIndex = 0;
         }
-        var range = ddl.val();
-        var rangeType = range.substr(0, 4);
-        var year = +range.substr(4);
-        var date = null;
-        var nextYearStarts = null;
-        var maxEntries = 0;
+        const range = ddl.val();
+        const rangeType = range.substr(0, 4);
+        const year = +range.substr(4);
+        let date = null;
+        let nextYearStarts = null;
+        const maxEntries = 0;
         //if (amount == 'some') {
         //  maxEntries = 5;
         //}
@@ -146,19 +147,19 @@ var PageExporter = function () {
                 return;
         }
 
-        var wantedEventTypes = $('.exportOptionList input:checked').map(function (i, el) { return el.value; }).get();
+        const wantedEventTypes = $('.exportOptionList input:checked').map((i, el) => el.value).get();
         console.log(wantedEventTypes);
 
         // process each day... see if there is a wanted type for that day
         while (date < nextYearStarts) {
             //log(calFormat(date));
-            var di = getDateInfo(date);
+            const di = getDateInfo(date);
 
-            for (var i = 0; i < wantedEventTypes.length; i++) {
-                var eventType = wantedEventTypes[i];
-                var parts = eventType.split('_');
-                var type = parts[0];
-                var variation = parts[1];
+            for (let i = 0; i < wantedEventTypes.length; i++) {
+                const eventType = wantedEventTypes[i];
+                const parts = eventType.split('_');
+                const type = parts[0];
+                const variation = parts[1];
                 switch (type) {
                     case 'Date': // badi days
                         addEntryDate(type, di, variation);
@@ -174,7 +175,7 @@ var PageExporter = function () {
                         break;
 
                     default:
-                        console.log('unknown: ' + eventType)
+                        console.log(`unknown: ${eventType}`)
                 }
             }
 
@@ -210,29 +211,29 @@ END:VEVENT
    */
 
 
-    var addEntryDate = function (type, di, variation) {
+    const addEntryDate = (type, di, variation) => {
         addLine('BEGIN:VEVENT');
 
-        var dayInfo = '{bDay} {bMonthNamePri} {bYear}'.filledWith(di);
+        const dayInfo = '{bDay} {bMonthNamePri} {bYear}'.filledWith(di);
 
         switch (variation) {
             case 'AllDay':
-                addLine('DTSTART;VALUE=DATE:' + di.currentDateString.replace(/\-/g, ''));
-                addLine('SUMMARY:' + dayInfo + ' ⇨{endingSunsetDesc}'.filledWith(di));
+                addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, '')}`);
+                addLine(`SUMMARY:${dayInfo}${' ⇨{endingSunsetDesc}'.filledWith(di)}`);
                 noTimes = true;
                 break;
             case 'Sun':
-                addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunset, 0, -5));
-                addLine('SUMMARY:' + dayInfo);
+                addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunset, 0, -5)}`);
+                addLine(`SUMMARY:${dayInfo}`);
                 break;
             case 'BeginningSunset':
-                addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('SUMMARY:' + getMessage('exportDayFromSunset', dayInfo));
+                addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`SUMMARY:${getMessage('exportDayFromSunset', dayInfo)}`);
                 break;
             default:
-                console.log('unexpected date variation: ' + variation);
+                console.log(`unexpected date variation: ${variation}`);
                 break;
         }
 
@@ -242,42 +243,40 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addHolyDay = function (type, di, variation) {
+    const addHolyDay = (type, di, variation) => {
         if (!_specialDays[di.bYear]) {
             _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
         }
-        var holyDayInfo = $.grep(_specialDays[di.bYear], function (el, i) {
-            return el.Type.substring(0, 1) == 'H' && el.BDateCode == di.bDateCode;
-        });
+        let holyDayInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === 'H' && el.BDateCode === di.bDateCode);
 
         if (!holyDayInfo.length) {
             return;
         }
         holyDayInfo = holyDayInfo[0]; // focus on first event only
 
-        var dayName = getMessage(holyDayInfo.NameEn);
+        const dayName = getMessage(holyDayInfo.NameEn);
 
         //log(dayName, holyDayInfo, di);
 
-        var targetTime = holyDayInfo.Time || $('#eventStart').val();
-        var startTime;
+        let targetTime = holyDayInfo.Time || $('#eventStart').val();
+        let startTime;
 
-        if (targetTime == 'SS2') {
+        if (targetTime === 'SS2') {
             startTime = new Date(di.frag1SunTimes.sunset.getTime());
             startTime.setHours(startTime.getHours() + 2);
             // about 2 hours after sunset
-            var minutes = startTime.getMinutes();
+            let minutes = startTime.getMinutes();
             minutes = minutes > 30 ? 30 : 0; // start 1/2 hour before
             startTime.setMinutes(minutes);
         } else {
-            var adjustDTtoST = 0;
-            if (targetTime.slice(-1) == 'S') {
+            let adjustDTtoST = 0;
+            if (targetTime.slice(-1) === 'S') {
                 targetTime = targetTime.slice(0, 4);
                 adjustDTtoST = inStandardTime(di.frag1) ? 0 : 1;
             }
             startTime = new Date(di.frag1.getTime());
-            var timeHour = +targetTime.slice(0, 2);
-            var timeMin = targetTime.slice(-2);
+            const timeHour = +targetTime.slice(0, 2);
+            const timeMin = targetTime.slice(-2);
             startTime.setHours(timeHour + adjustDTtoST);
             startTime.setMinutes(timeMin);
 
@@ -294,27 +293,27 @@ END:VEVENT
 
         switch (variation) {
             case 'AllDay':
-                addLine('DTSTART;VALUE=DATE:' + di.currentDateString.replace(/\-/g, ''));
+                addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, '')}`);
                 break;
             case 'Sun':
-                addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunset, 0, -5));
+                addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunset, 0, -5)}`);
                 break;
             case 'Start':
                 // put as single point in time... meetings may start earlier, if this time is honoured during the meeting
-                addLine('DTSTART:' + calFormat(startTime));
-                addLine('DTEND:' + calFormat(startTime));
+                addLine(`DTSTART:${calFormat(startTime)}`);
+                addLine(`DTEND:${calFormat(startTime)}`);
                 break;
             default:
-                console.log('unexpected date variation: ' + variation);
+                console.log(`unexpected date variation: ${variation}`);
                 break;
         }
 
-        var key;
-        var extraInfo = { location: localStorage.locationName };
+        let key;
+        const extraInfo = { location: localStorage.locationName };
 
         if (holyDayInfo.Time) {
-            extraInfo.SpecialTime = getMessage('specialTime_' + holyDayInfo.Time);
+            extraInfo.SpecialTime = getMessage(`specialTime_${holyDayInfo.Time}`);
             key = 'exporterItemDescSpecialTime';
         } else {
             key = 'exporterItemDescGeneralTime';
@@ -327,28 +326,26 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addFeast = function (type, di, variation) {
+    const addFeast = (type, di, variation) => {
         if (!_specialDays[di.bYear]) {
             _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
         }
-        var feastInfo = $.grep(_specialDays[di.bYear], function (el, i) {
-            return el.Type.substring(0, 1) == 'M' && el.BDateCode == di.bDateCode;
-        });
+        let feastInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === 'M' && el.BDateCode === di.bDateCode);
 
         if (!feastInfo.length) {
             return;
         }
         feastInfo = feastInfo[0]; // focus on first event only
 
-        var dayName = getMessage('FeastOf').filledWith(di.bMonthMeaning);
+        const dayName = getMessage('FeastOf').filledWith(di.bMonthMeaning);
 
         //log(dayName, feastInfo, di);
 
-        var targetTime = $('#eventStart').val();
+        const targetTime = $('#eventStart').val();
 
-        var startTime = new Date(di.frag1.getTime());
-        var timeHour = +targetTime.slice(0, 2);
-        var timeMin = targetTime.slice(-2);
+        const startTime = new Date(di.frag1.getTime());
+        const timeHour = +targetTime.slice(0, 2);
+        const timeMin = targetTime.slice(-2);
         startTime.setHours(timeHour);
         startTime.setMinutes(timeMin);
 
@@ -364,24 +361,24 @@ END:VEVENT
 
         switch (variation) {
             case 'AllDay':
-                addLine('DTSTART;VALUE=DATE:' + di.currentDateString.replace(/\-/g, ''));
+                addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, '')}`);
                 break;
             case 'Sun':
-                addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunset, 0, -5));
+                addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunset, 0, -5)}`);
                 break;
             case 'Usual':
                 // put as single point in time... 
-                addLine('DTSTART:' + calFormat(startTime));
-                addLine('DTEND:' + calFormat(startTime));
+                addLine(`DTSTART:${calFormat(startTime)}`);
+                addLine(`DTEND:${calFormat(startTime)}`);
                 break;
             case 'BeginningSunset':
                 // put as single point in time... 
-                addLine('DTSTART:' + calFormat(di.frag1SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag1SunTimes.sunset));
+                addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag1SunTimes.sunset)}`);
                 break;
             default:
-                console.log('unexpected date variation: ' + variation);
+                console.log(`unexpected date variation: ${variation}`);
                 break;
         }
 
@@ -391,8 +388,8 @@ END:VEVENT
         addEndOfEntry();
     };
 
-    var addFastEntries = function (type, di, variation) {
-        if (di.bMonth != 19) {
+    const addFastEntries = (type, di, variation) => {
+        if (di.bMonth !== 19) {
             return;
         }
 
@@ -400,26 +397,27 @@ END:VEVENT
 
         //        di.sunriseDesc = showTime(di.frag2SunTimes.sunrise);
         switch (variation) {
-            case 'SunriseToSunset':
+            case 'SunriseToSunset': {
                 addLine('BEGIN:VEVENT');
-                addLine('DTSTART:' + calFormat(di.frag2SunTimes.sunrise));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunset));
+                addLine(`DTSTART:${calFormat(di.frag2SunTimes.sunrise)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunset)}`);
 
-                var summary = getMessage('exporterFastUntil', di);
-                addLine('SUMMARY:' + summary);
+                const summary = getMessage('exporterFastUntil', di);
+                addLine(`SUMMARY:${summary}`);
                 addAlert(summary);
 
                 addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
                 addEndOfEntry();
 
                 break;
+            }
             case 'Sunrise':
                 addLine('BEGIN:VEVENT');
-                addLine('DTSTART:' + calFormat(di.frag2SunTimes.sunrise));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunrise));
+                addLine(`DTSTART:${calFormat(di.frag2SunTimes.sunrise)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunrise)}`);
 
                 summary = getMessage('exporterFastStart');
-                addLine('SUMMARY:' + summary);
+                addLine(`SUMMARY:${summary}`);
                 addAlert(summary);
 
                 addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
@@ -428,34 +426,34 @@ END:VEVENT
 
             case 'Sunset':
                 addLine('BEGIN:VEVENT');
-                addLine('DTSTART:' + calFormat(di.frag2SunTimes.sunset));
-                addLine('DTEND:' + calFormat(di.frag2SunTimes.sunset));
+                addLine(`DTSTART:${calFormat(di.frag2SunTimes.sunset)}`);
+                addLine(`DTEND:${calFormat(di.frag2SunTimes.sunset)}`);
 
                 summary = getMessage('exporterFastEnd');
-                addLine('SUMMARY:' + summary);
+                addLine(`SUMMARY:${summary}`);
                 addAlert(summary);
 
                 addLine(_uidPrefix + '{0}//{1}-{2}'.filledWith(di.stampDay, type, variation));
                 addEndOfEntry();
                 break;
             default:
-                console.log('unexpected date variation: ' + variation);
+                console.log(`unexpected date variation: ${variation}`);
                 break;
         }
 
     };
 
-    var addAlert = function (msg) {
+    const addAlert = (msg) => {
         if (!_includeAlert) {
             return;
         }
-        var alertOffset = $('#exporterIncludeAlertMin').val();
-        var sign = alertOffset[0] == 'B' ? '-' : '';
-        var num = alertOffset.substr(1);
+        const alertOffset = $('#exporterIncludeAlertMin').val();
+        const sign = alertOffset[0] === 'B' ? '-' : '';
+        const num = alertOffset.substr(1);
         addLine('BEGIN:VALARM');
         addLine('TRIGGER:{0}PT{1}M'.filledWith(sign, num));
         addLine('ACTION:DISPLAY');
-        addLine('DESCRIPTION:' + msg);
+        addLine(`DESCRIPTION:${msg}`);
         addLine('END:VALARM');
 
         //BEGIN:VALARM
@@ -465,18 +463,19 @@ END:VEVENT
         //END:VALARM
     };
 
-    var addDescription = function (msg, allDay) {
+    const addDescription = (originalMsg, allDay) => {
+        let msg = originalMsg; // Use a local variable instead of reassigning the parameter
         if (!allDay) {
-            var extraInfo = { location: localStorage.locationName };
-            var timesLocation = getMessage('exporterItemDescShared', extraInfo);
-            msg = msg + ' ' + timesLocation;
+            const extraInfo = { location: localStorage.locationName };
+            const timesLocation = getMessage('exporterItemDescShared', extraInfo);
+            msg = `${msg} ${timesLocation}`; // Now modifying the local variable
         }
-
-        addLine('DESCRIPTION:' + msg); // strip out HTML ?
-        //addLine('X-ALT-DESC:' + msg);
+    
+        addLine(`DESCRIPTION:${msg}`); // Use the modified local variable
+        //addLine('X-ALT-DESC:' + msg); // This line is commented out, but the approach remains the same
     }
 
-    var addEndOfEntry = function () {
+    const addEndOfEntry = () => {
         if (_doingCsvLine) {
             _lines.push(_csvLine.join(','));
             _csvLine = []
@@ -487,16 +486,16 @@ END:VEVENT
 
         addLine('TRANSP:TRANSPARENT');
         addLine('CLASS:PUBLIC');
-        addLine('DTSTAMP:' + _nowCalDate);
-        addLine('LAST-MODIFIED:' + _nowCalDate);
+        addLine(`DTSTAMP:${_nowCalDate}`);
+        addLine(`LAST-MODIFIED:${_nowCalDate}`);
         if (_includeLocation) {
-            addLine('LOCATION:' + localStorage.locationName);
+            addLine(`LOCATION:${localStorage.locationName}`);
         }
         addLine('END:VEVENT');
 
         _numEntries++;
     };
-    var addLine = function (line) {
+    const addLine = (line) => {
         if (line === 'BEGIN:VEVENT') {
             _doingCsvLine = _forCsv;
             if (_doingCsvLine) {
@@ -511,36 +510,37 @@ END:VEVENT
             return;
         }
 
-        var maxLength = 65; // actually 75, but need to handle extended characters, etc
+        const maxLength = 65; // actually 75, but need to handle extended characters, etc
         if (line.length < maxLength) {
             _lines.push(line);
             return;
         }
         _lines.push(line.substr(0, maxLength));
-        addLine(' ' + line.substr(maxLength));
+        addLine(` ${line.substr(maxLength)}`);
     };
-    var sendTo = function (target) {
+    const sendTo = (target) => {
         switch (target) {
-            case 'test':
-                var html = [];
-                for (var i = 0; i < _lines.length; i++) {
-                    var line = _lines[i];
+            case 'test': {
+                const html = [];
+                for (let i = 0; i < _lines.length; i++) {
+                    const line = _lines[i];
                     //if (line == 'BEGIN:VEVENT') {
                     //  html.push('\n');
                     //}
-                    html.push(_lines[i] + '\n');
+                    html.push(`${_lines[i]}\n`);
                 }
                 $('#exporterTest').show().val(html.join(''));
                 $('#btnHideSample').show();
                 break;
+            }
             case 'google':
                 break;
-            case 'file':
+            case 'file': {
                 //TODO: name file with content and time stamp
-                var wantedEventTypes = $('.exportOptionList input:checked').map(function (i, el) { return el.value.replace(/\_/g, ''); }).get();
-                var filename = 'Badi__{0}_{1}.ics'.filledWith(wantedEventTypes.join('_'), dayjs().format('DDHHmmss'));
-                var element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(_lines.join('\r\n')));
+                const wantedEventTypes = $('.exportOptionList input:checked').map((i, el) => el.value.replace(/\_/g, '')).get();
+                const filename = 'Badi__{0}_{1}.ics'.filledWith(wantedEventTypes.join('_'), dayjs().format('DDHHmmss'));
+                const element = document.createElement('a');
+                element.setAttribute('href', `data:text/plain;charset=utf-8,${encodeURIComponent(_lines.join('\r\n'))}`);
                 element.setAttribute('download', filename);
 
                 element.style.display = 'none';
@@ -550,26 +550,27 @@ END:VEVENT
 
                 document.body.removeChild(element);
                 break;
+            }
         }
     };
-    var updateTotalToExport = function () {
-        var total = 0;
-        $('#pageExporter input[type=checkbox]:checked').each(function (i, el) {
+    const updateTotalToExport = () => {
+        let total = 0;
+        $('#pageExporter input[type=checkbox]:checked').each((i, el) => {
             total += $(el).data('num') || 0;
         });
         $('#exportNum').text(total);
     };
-    var saveValue = function (ev) {
-        var input = ev.target;
-        setStorage('exporter_' + input.id, input.value);
+    const saveValue = (ev) => {
+        const input = ev.target;
+        setStorage(`exporter_${input.id}`, input.value);
     };
-    var clearQuickPick = function () {
+    const clearQuickPick = () => {
         $('#pageExporter input[type=checkbox]:checked, #exporterIncludeAlert')
-            .each(function (i, el) { $(el).prop('checked', false).trigger('change'); });
+            .each((i, el) => { $(el).prop('checked', false).trigger('change'); });
     };
-    var setQuickPicks = function (list, alert) {
+    const setQuickPicks = (list, alert) => {
         clearQuickPick();
-        $.each(list, function (i, l) {
+        $.each(list, (i, l) => {
             $('#pageExporter input[value={0}]'.filledWith(l)).prop('checked', true).trigger('change');
         });
         if (alert) {
@@ -577,63 +578,63 @@ END:VEVENT
             $('#exporterIncludeAlert').prop('checked', true).trigger('change');
         }
     };
-    var attachHandlers = function () {
-        $('#pageExporter').on('change', 'input[type=checkbox]', function (ev) {
-            var cb = $(ev.target);
-            setStorage('exporter_' + cb.val(), cb.is(':checked'));
+    const attachHandlers = () => {
+        $('#pageExporter').on('change', 'input[type=checkbox]', (ev) => {
+            const cb = $(ev.target);
+            setStorage(`exporter_${cb.val()}`, cb.is(':checked'));
             updateTotalToExport();
         });
         $('#exporterName, #exporterDateRange').on('change', saveValue);
 
-        $('#btnExportFile').click(function () {
+        $('#btnExportFile').click(() => {
             makeEntries();
             sendTo('file');
         });
 
-        $('#btnExportGoogle').click(function () {
+        $('#btnExportGoogle').click(() => {
             makeEntries();
             sendTo('google');
         });
 
         $('#btnQuickPickClear').click(clearQuickPick);
-        $('#btnQuickPick1').click(function () {
+        $('#btnQuickPick1').click(() => {
             setQuickPicks(['Date_AllDay', 'Hd_AllDay', 'Feast_BeginningSunset']);
         });
-        $('#btnQuickPick2').click(function () {
+        $('#btnQuickPick2').click(() => {
             setQuickPicks(['Fast_Sunrise'], 'B10');
         });
-        $('#btnQuickPick3').click(function () {
+        $('#btnQuickPick3').click(() => {
             setQuickPicks(['Fast_Sunset'], 'B0');
         });
-        $('#btnExportTest').click(function () {
+        $('#btnExportTest').click(() => {
             makeEntries();
             sendTo('test');
         });
-        $('#cbExportTestCsv').click(function () {
+        $('#cbExportTestCsv').click(() => {
             makeEntries(true);
             sendTo('test');
         });
-        $('#btnHideSample').click(function () {
+        $('#btnHideSample').click(() => {
             $('#exporterTest').hide();
             $(this).hide();
         });
         $('#exporterIncludeAlert, #exporterIncludeAlertMin').on('change', refreshAlert);
     };
-    var recallSettings = function () {
-        $('#pageExporter input[type=checkbox]').each(function (i, el) {
-            var cb = $(el);
-            cb.prop('checked', getStorage('exporter_' + cb.val(), false));
+    const recallSettings = () => {
+        $('#pageExporter input[type=checkbox]').each((i, el) => {
+            const cb = $(el);
+            cb.prop('checked', getStorage(`exporter_${cb.val()}`, false));
         });
         $('#exporterName').val(getStorage('exporter_exporterName', getMessage('title')));
-        var ddlRange = $('#exporterDateRange');
+        const ddlRange = $('#exporterDateRange');
         ddlRange.val(getStorage('exporter_exporterDateRange'));
         if (!ddlRange.val()) {
             ddlRange[0].selectedIndex = 0;
         }
         $('#exporterIncludeAlertMin').val(getStorage('exporter_alertMin', 'B0'));
     };
-    var refreshAlert = function () {
-        var ddl = $('#exporterIncludeAlertMin');
+    const refreshAlert = () => {
+        const ddl = $('#exporterIncludeAlertMin');
         ddl.toggle($('#exporterIncludeAlert').is(':checked'));
         setStorage('exporter_alertMin', ddl.val());
     };

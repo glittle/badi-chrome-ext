@@ -6,14 +6,14 @@
  *
  */
 
-var _isBackgroundPage = true;
-var _backgroundReminderEngine = {};
-var popupUrl = chrome.extension.getURL("popup.html");
+const _isBackgroundPage = true;
+let _backgroundReminderEngine = {};
+const popupUrl = chrome.extension.getURL("popup.html");
 
-var BackgroundModule = function () {
-  var alarmHandler = function (alarm) {
+const BackgroundModule = () => {
+  const alarmHandler = (alarm) => {
     if (alarm.name.startsWith("refresh")) {
-      console.log("ALARM: " + alarm.name);
+      console.log(`ALARM: ${alarm.name}`);
       refreshDateInfoAndShow();
       _backgroundReminderEngine.setAlarmsForRestOfToday();
     } else if (alarm.name.startsWith("alarm_")) {
@@ -22,16 +22,16 @@ var BackgroundModule = function () {
   };
 
   function installed(info) {
-    if (info.reason == "update") {
-      setTimeout(function () {
-        var newVersion = chrome.runtime.getManifest().version;
-        var oldVersion = localStorage.updateVersion;
-        if (newVersion != oldVersion) {
-          console.log(oldVersion + " --> " + newVersion);
+    if (info.reason === "update") {
+      setTimeout(() => {
+        const newVersion = chrome.runtime.getManifest().version;
+        const oldVersion = localStorage.updateVersion;
+        if (newVersion !== oldVersion) {
+          console.log(`${oldVersion} --> ${newVersion}`);
           localStorage.updateVersion = newVersion;
           chrome.tabs.create({
             url:
-              getMessage(browserHostType + "_History") +
+              getMessage(`${browserHostType}_History`) +
               "?{0}:{1}".filledWith(
                 chrome.runtime.getManifest().version,
                 _languageCode
@@ -60,14 +60,14 @@ var BackgroundModule = function () {
   //  }
 
   function showErrors() {
-    var msg = chrome.runtime.lastError;
+    const msg = chrome.runtime.lastError;
     if (msg) {
       console.log(msg);
     }
   }
 
   function makeTab() {
-    chrome.tabs.create({ url: popupUrl }, function (newTab) {
+    chrome.tabs.create({ url: popupUrl }, (newTab) => {
       setStorage("tabId", newTab.id);
     });
   }
@@ -86,15 +86,15 @@ var BackgroundModule = function () {
     }
 
     if (browserHostType === browser.Firefox) {
-      chrome.action.onClicked.addListener(function () {
-        var oldTabId = +getStorage("tabId", 0);
+      chrome.action.onClicked.addListener(() => {
+        const oldTabId = +getStorage("tabId", 0);
         if (oldTabId) {
           chrome.tabs.update(
             oldTabId,
             {
               active: true,
             },
-            function (updatedTab) {
+            (updatedTab) => {
               if (!updatedTab) {
                 makeTab();
               }
@@ -123,15 +123,15 @@ var BackgroundModule = function () {
     //  'contexts': ['editable']
     //}, showErrors);
 
-    chrome.contextMenus.onClicked.addListener(function (info, tab) {
+    chrome.contextMenus.onClicked.addListener((info, tab) => {
       switch (info.menuItemId) {
         //case 'paste':
         //  console.log(info, tab);
         //  chrome.tabs.executeScript(tab.id, {code: 'document.targetElement.value = "help"'}, showErrors);
         //  break;
 
-        case "openInTab":
-          var afterUpdate = function (updatedTab) {
+        case "openInTab": {
+          const afterUpdate = (updatedTab) => {
             if (!updatedTab) {
               makeTab();
             }
@@ -142,7 +142,7 @@ var BackgroundModule = function () {
 
           switch (browserHostType) {
             case browser.Chrome:
-              chrome.tabs.query({ url: popupUrl }, function (foundTabs) {
+              chrome.tabs.query({ url: popupUrl }, (foundTabs) => {
                 switch (foundTabs.length) {
                   case 1:
                     // resuse
@@ -159,10 +159,10 @@ var BackgroundModule = function () {
                     makeTab();
                     break;
 
-                  default:
+                  default: {
                     // bug in March 2016 - all tabs returned!
 
-                    var oldTabId = +getStorage("tabId", 0);
+                    const oldTabId = +getStorage("tabId", 0);
                     if (oldTabId) {
                       chrome.tabs.update(
                         oldTabId,
@@ -175,6 +175,7 @@ var BackgroundModule = function () {
                       makeTab();
                     }
                     break;
+                  }
                 }
 
                 if (tracker) {
@@ -196,6 +197,7 @@ var BackgroundModule = function () {
           }
 
           break;
+        }
       }
     });
 
@@ -212,29 +214,29 @@ var BackgroundModule = function () {
   };
 };
 
-var _backgroundModule = new BackgroundModule();
+const _backgroundModule = new BackgroundModule();
 
-$(function () {
+$(() => {
   _backgroundModule.prepare();
 });
-var browser = {
+const browser = {
   Chrome: "Chrome",
   Firefox: "Firefox",
   Edge: "Edge",
 };
-var browserHostType = browser.Chrome;
+const browserHostType = browser.Chrome;
 
-var _cachedDateInfos = {};
+const _cachedDateInfos = {};
 
 // this is loaded only in the background
 // visible page must use Ports to communicate with it
 
 // delta -->  + is future (event is after trigger),  - is past (event is before trigger)   (delta * offset --> new time in future or past)
-var _notificationsEnabled = true; // set to false to disable
+let _notificationsEnabled = true; // set to false to disable
 
 if (_notificationsEnabled && browserHostType === browser.Chrome) {
   // check to see...
-  chrome.notifications.getPermissionLevel(function (level) {
+  chrome.notifications.getPermissionLevel((level) => {
     // ensure flag is off if user has disabled them
     if (level !== "granted") {
       _notificationsEnabled = false;
@@ -242,25 +244,25 @@ if (_notificationsEnabled && browserHostType === browser.Chrome) {
   });
 }
 
-var BackgroundReminderEngine = function () {
-  var _ports = [];
-  var _reminderPrefix = "alarm_";
-  var _specialDays = {};
-  var _reminderInfoShown = null;
-  var _remindersDefined = [];
-  var _now = new Date();
-  var _nowDi = null;
-  var _nowNoon = null;
-  var _nowSunTimes = null;
-  var _nowAlmostMidnight = null;
-  var _baseBDayImage;
+const BackgroundReminderEngine = () => {
+  const _ports = [];
+  const _reminderPrefix = "alarm_";
+  const _specialDays = {};
+  const _reminderInfoShown = null;
+  let _remindersDefined = [];
+  let _now = new Date();
+  let _nowDi = null;
+  let _nowNoon = null;
+  let _nowSunTimes = null;
+  let _nowAlmostMidnight = null;
+  let _baseBDayImage;
 
-  var BEFORE = -1;
-  var AFTER = 1;
+  const BEFORE = -1;
+  const AFTER = 1;
 
   function setAlarmsForRestOfToday(initialLoad) {
     // clear, then set again
-    clearReminderAlarms(function () {
+    clearReminderAlarms(() => {
       setAlarmsInternal(initialLoad);
     });
   }
@@ -295,12 +297,12 @@ var BackgroundReminderEngine = function () {
     );
 
     console.log(
-      "checking " + _remindersDefined.length + " reminders at " + new Date()
+      `checking ${_remindersDefined.length} reminders at ${new Date()}`
     );
 
-    for (var i = 0; i < _remindersDefined.length; i++) {
-      var reminder = _remindersDefined[i];
-      if (reminder.trigger == "load" && !initialLoad) {
+    for (let i = 0; i < _remindersDefined.length; i++) {
+      const reminder = _remindersDefined[i];
+      if (reminder.trigger === "load" && !initialLoad) {
         // skip load triggers
         //log('load ' + initialLoad)
         continue;
@@ -316,44 +318,44 @@ var BackgroundReminderEngine = function () {
     broadcast({ code: "alarmsUpdated" });
   }
 
-  var tryAddAlarmFor = {
-    load: function (reminder, isTest) {
-      var eventDate = new Date();
+  const tryAddAlarmFor = {
+    load: (reminder, isTest) => {
+      const eventDate = new Date();
       tryAddTimeAlarm(eventDate, reminder, isTest);
     },
-    sunset: function (reminder, isTest) {
-      var eventDate = _nowSunTimes.sunset;
+    sunset: (reminder, isTest) => {
+      const eventDate = _nowSunTimes.sunset;
       tryAddTimeAlarm(eventDate, reminder, isTest);
     },
-    sunrise: function (reminder, isTest) {
-      var eventDate = _nowSunTimes.sunrise;
+    sunrise: (reminder, isTest) => {
+      const eventDate = _nowSunTimes.sunrise;
       tryAddTimeAlarm(eventDate, reminder, isTest);
     },
-    noon: function (reminder, isTest) {
-      var eventDate = _nowNoon;
+    noon: (reminder, isTest) => {
+      const eventDate = _nowNoon;
       tryAddTimeAlarm(eventDate, reminder, isTest);
     },
-    midnight: function (reminder, isTest) {
-      var eventDate = new Date();
+    midnight: (reminder, isTest) => {
+      const eventDate = new Date();
       eventDate.setHours(24, 0, 0, 0); // midnight coming tonight
       tryAddTimeAlarm(eventDate, reminder, isTest);
     },
-    feast: function (reminder, isTest) {
+    feast: (reminder, isTest) => {
       tryAddEventAlarm(reminder, isTest);
     },
-    holyday: function (reminder, isTest) {
+    holyday: (reminder, isTest) => {
       tryAddEventAlarm(reminder, isTest);
     },
-    bday: function (reminder, isTest) {
+    bday: (reminder, isTest) => {
       tryAddBDayAlarm(reminder, isTest);
     },
   };
 
   function tryAddTimeAlarm(eventDate, reminder, isTest) {
-    var alarmInfo = shallowCloneOf(reminder);
+    const alarmInfo = shallowCloneOf(reminder);
     alarmInfo.eventTime = eventDate.getTime();
 
-    var triggerDate;
+    let triggerDate;
     switch (alarmInfo.calcType) {
       case "Absolute":
         triggerDate = determineTriggerTimeToday(alarmInfo);
@@ -372,7 +374,7 @@ var BackgroundReminderEngine = function () {
     }
 
     if (
-      _now.toDateString() != triggerDate.toDateString() ||
+      _now.toDateString() !== triggerDate.toDateString() ||
       triggerDate < _now
     ) {
       // desired time for reminder has already past for today
@@ -387,47 +389,47 @@ var BackgroundReminderEngine = function () {
   }
 
   function tryAddEventAlarm(reminder, isTest) {
-    var triggerDate = determineTriggerTimeToday(reminder);
+    let triggerDate = determineTriggerTimeToday(reminder);
 
     if (
-      _now.toDateString() != triggerDate.toDateString() ||
+      _now.toDateString() !== triggerDate.toDateString() ||
       triggerDate < _now
     ) {
       // desired time for reminder has already past for today
       return;
     }
 
-    var typeWanted = reminder.trigger == "feast" ? "M" : "H";
+    const typeWanted = reminder.trigger === "feast" ? "M" : "H";
 
     //if(typeWanted=='H') console.log("reminder", reminder);
 
     // check for an event this number of days away, at this time
-    var testDate = new Date(_nowAlmostMidnight);
+    let testDate = new Date(_nowAlmostMidnight);
     testDate.setDate(testDate.getDate() - reminder.delta * reminder.num);
 
-    var testDayDi = getDateInfo(testDate);
-    var holyDayInfo = getMatchingEventDateFor(testDayDi, typeWanted);
+    let testDayDi = getDateInfo(testDate);
+    let holyDayInfo = getMatchingEventDateFor(testDayDi, typeWanted);
 
     if (!isTest && !holyDayInfo) {
       return;
     }
 
-    var alarmInfo = shallowCloneOf(reminder);
+    const alarmInfo = shallowCloneOf(reminder);
 
     if (isTest) {
       // get the first event
-      var days = [];
-      for (var x in _specialDays) {
-        var arr = _specialDays[x];
+      let days = [];
+      for (const x in _specialDays) {
+        const arr = _specialDays[x];
         days = days.concat(arr);
       }
 
-      for (var i = 0; i < days.length; i++) {
-        var testEvent = days[i];
+      for (let i = 0; i < days.length; i++) {
+        const testEvent = days[i];
         if (testEvent.GDate < _now) {
           continue;
         }
-        if (testEvent.Type === (reminder.trigger == "feast" ? "M" : "HS")) {
+        if (testEvent.Type === (reminder.trigger === "feast" ? "M" : "HS")) {
           holyDayInfo = testEvent;
           testDayDi = getDateInfo(holyDayInfo.GDate);
 
@@ -459,14 +461,14 @@ var BackgroundReminderEngine = function () {
   }
 
   function tryAddBDayAlarm(reminder, isTest) {
-    var triggerDate = determineTriggerTimeToday(reminder);
+    let triggerDate = determineTriggerTimeToday(reminder);
     if (triggerDate < _now && !isTest) {
       // desired time for reminder has already past for today
       return;
     }
 
-    var testDate = new Date(triggerDate);
-    var testDI = getDateInfo(testDate);
+    let testDate = new Date(triggerDate);
+    let testDI = getDateInfo(testDate);
 
     if (testDI.bDay !== reminder.num) {
       // check after sunset
@@ -478,7 +480,7 @@ var BackgroundReminderEngine = function () {
       }
     }
 
-    var alarmInfo = shallowCloneOf(reminder);
+    const alarmInfo = shallowCloneOf(reminder);
 
     if (isTest) {
       // remember when it should have been shown
@@ -500,21 +502,21 @@ var BackgroundReminderEngine = function () {
   }
 
   function buildUpAlarmInfo(alarmInfo, testDayDi, holyDayInfo) {
-    var triggerDisplayName = getMessage("reminderTrigger_" + alarmInfo.trigger);
+    let triggerDisplayName = getMessage(`reminderTrigger_${alarmInfo.trigger}`);
     alarmInfo.title = getMessage("reminderTitle", triggerDisplayName);
 
-    var units = alarmInfo.units;
-    var dayName = "";
-    var dateName = "";
+    let units = alarmInfo.units;
+    const dayName = "";
+    const dateName = "";
 
     //log(alarmInfo);
 
-    var messageType = "";
+    let messageType = "";
     switch (alarmInfo.trigger) {
       case "sunrise":
       case "sunset":
         messageType =
-          alarmInfo.calcType == "Absolute" || alarmInfo.num === 0
+          alarmInfo.calcType === "Absolute" || alarmInfo.num === 0
             ? "Time"
             : "DeltaTime";
         break;
@@ -532,14 +534,15 @@ var BackgroundReminderEngine = function () {
         );
         break;
 
-      case "feast":
+      case "feast": {
         messageType = alarmInfo.num === 0 ? "StartTime" : "StartDeltaTime";
-        var monthNum = holyDayInfo.MonthNum;
+        const monthNum = holyDayInfo.MonthNum;
         triggerDisplayName = getMessage("reminderFeast", {
           pri: bMonthNamePri[monthNum],
           sec: bMonthNameSec[monthNum],
         });
         break;
+      }
 
       case "bday":
         messageType = "Day";
@@ -552,8 +555,8 @@ var BackgroundReminderEngine = function () {
         break;
     }
 
-    var triggerDate = new Date(alarmInfo.triggerTime);
-    var showDate = new Date(
+    const triggerDate = new Date(alarmInfo.triggerTime);
+    const showDate = new Date(
       alarmInfo.testForTime ? alarmInfo.testForTime : triggerDate.getTime()
     );
     alarmInfo.triggerTimeDisplay = getFullTime(
@@ -562,23 +565,23 @@ var BackgroundReminderEngine = function () {
       true
     );
 
-    var futurePast =
+    const futurePast =
       alarmInfo.eventTime > showDate.getTime() ? "Future" : "Past";
-    var messageKey = "{0}_{1}".filledWith(futurePast, messageType);
+    const messageKey = "{0}_{1}".filledWith(futurePast, messageType);
 
-    var unitInfo = getMessage("reminderNum_{0}_1_more".filledWith(units));
+    const unitInfo = getMessage("reminderNum_{0}_1_more".filledWith(units));
 
-    var unitNames = unitInfo ? unitInfo.split(";") : ["?", "?"];
-    var unitDisplay = alarmInfo.num == 1 ? unitNames[0] : unitNames[1];
+    const unitNames = unitInfo ? unitInfo.split(";") : ["?", "?"];
+    const unitDisplay = alarmInfo.num === 1 ? unitNames[0] : unitNames[1];
 
-    var bodyInfo = {
+    const bodyInfo = {
       numUnits: getMessage("numUnits", {
         num: alarmInfo.num,
         units: unitDisplay,
       }),
       time: getFullTime(alarmInfo.eventTime, triggerDate),
     };
-    var info = {
+    const info = {
       triggerDisplayName: triggerDisplayName,
       desc: getMessage(messageKey, bodyInfo),
     };
@@ -586,38 +589,36 @@ var BackgroundReminderEngine = function () {
     alarmInfo.messageBody = getMessage("messageBody", info);
   }
 
-  var createAlarm = function (alarmInfo, isTest) {
+  const createAlarm = (alarmInfo, isTest) => {
     chrome.alarms.create(storeAlarmReminder(alarmInfo, isTest), {
       when: alarmInfo.triggerTime,
     });
   };
 
-  var getFullTime = function (eventDateTime, triggerDate, onlyDateIfOther) {
+  const getFullTime = (eventDateTime, triggerDate, onlyDateIfOther) => {
     // determine time to show
-    var eventDate = new Date(eventDateTime);
-    var eventTime = showTime(eventDate);
-    var today = _now.toDateString() === triggerDate.toDateString();
+    const eventDate = new Date(eventDateTime);
+    const eventTime = showTime(eventDate);
+    const today = _now.toDateString() === triggerDate.toDateString();
     if (today) {
       return eventTime;
-    } else {
-      var otherDay = { time: eventDate };
-      addEventTime(otherDay);
-      return getMessage(
-        onlyDateIfOther ? "reminderDayDetailsTest" : "reminderDayDetails",
-        otherDay
-      );
-      //return getMessage('timeAndDate', { time: eventTime, date: otherDateName });
     }
+    const otherDay = { time: eventDate };
+    addEventTime(otherDay);
+    return getMessage(
+      onlyDateIfOther ? "reminderDayDetailsTest" : "reminderDayDetails",
+      otherDay
+    );
   };
 
-  var getMatchingEventDateFor = function (testDayDi, typeWanted) {
+  const getMatchingEventDateFor = (testDayDi, typeWanted) => {
     if (!_specialDays[testDayDi.bYear]) {
       _specialDays[testDayDi.bYear] = holyDays.prepareDateInfos(
         testDayDi.bYear
       );
     }
 
-    var specialDays = _specialDays[testDayDi.bYear];
+    const specialDays = _specialDays[testDayDi.bYear];
     if (!specialDays.known) {
       // cache what we use
       specialDays.known = {};
@@ -625,29 +626,29 @@ var BackgroundReminderEngine = function () {
 
     //if (typeWanted == 'H') console.log(typeWanted, testDayDi);
 
-    var holyDayInfo = specialDays.known[typeWanted + testDayDi.bDateCode];
+    let holyDayInfo = specialDays.known[typeWanted + testDayDi.bDateCode];
     if (holyDayInfo) {
       return holyDayInfo;
     }
 
     // GDate is the 00:00 in the middle of the date, so start is the day before
-    var holyDayInfo = $.grep(specialDays, function (el, i) {
-      return (
-        el.Type.substring(0, 1) == typeWanted &&
-        el.BDateCode == testDayDi.bDateCode
-      );
-    });
+    holyDayInfo = $.grep(
+      specialDays,
+      (el, i) =>
+        el.Type.substring(0, 1) === typeWanted &&
+        el.BDateCode === testDayDi.bDateCode
+    );
 
     if (holyDayInfo.length) {
       //log('LENGTH', holyDayInfo.length, holyDayInfo[0])
-      return (specialDays.known[typeWanted + testDayDi.bDateCode] =
-        holyDayInfo[0]);
+      specialDays.known[typeWanted + testDayDi.bDateCode] = holyDayInfo[0];
+      return holyDayInfo[0];
     }
     return null;
   };
 
-  var adjustTime = function (d, alarmInfo) {
-    var ms = 0;
+  const adjustTime = (d, alarmInfo) => {
+    let ms = 0;
     alarmInfo.delta = alarmInfo.delta || BEFORE;
     switch (alarmInfo.units) {
       case "seconds":
@@ -671,7 +672,7 @@ var BackgroundReminderEngine = function () {
   };
 
   function determineTriggerTimeToday(reminder) {
-    var date = new Date();
+    const date = new Date();
     date.setHours(
       +reminder.triggerTimeRaw.substr(0, 2),
       +reminder.triggerTimeRaw.substr(3, 2),
@@ -683,9 +684,9 @@ var BackgroundReminderEngine = function () {
 
   function storeAlarmReminder(reminder, isTest) {
     // store, and give back key to get it later
-    for (var nextKey = 0; ; nextKey++) {
-      var publicKey = nextKey + (isTest ? "TEST" : "");
-      var fullKey = _reminderPrefix + publicKey;
+    for (let nextKey = 0; ; nextKey++) {
+      const publicKey = nextKey + (isTest ? "TEST" : "");
+      const fullKey = _reminderPrefix + publicKey;
       if (getStorage(fullKey, "") === "") {
         // empty slot
         setStorage(fullKey, reminder);
@@ -694,24 +695,24 @@ var BackgroundReminderEngine = function () {
     }
   }
 
-  var saveAllReminders = function (newSetOfReminders) {
+  const saveAllReminders = (newSetOfReminders) => {
     _remindersDefined = newSetOfReminders || [];
     storeReminders();
   };
 
   function triggerAlarmNow(alarmName) {
     if (!alarmName.startsWith(_reminderPrefix)) {
-      console.log("unexpected reminder alarm: " + alarmName);
+      console.log(`unexpected reminder alarm: ${alarmName}`);
       return;
     }
 
-    var alarmInfo = getStorage(alarmName);
+    const alarmInfo = getStorage(alarmName);
     if (!alarmInfo) {
-      console.log("no info for " + alarmName);
+      console.log(`no info for ${alarmName}`);
       return;
     }
 
-    var isTest = alarmName.substr(-4) === "TEST";
+    const isTest = alarmName.substr(-4) === "TEST";
 
     if (!isTest && alarmInfo.triggerTime + 1000 < new Date().getTime()) {
       console.log("reminder requested, but past trigger.", alarmInfo);
@@ -732,8 +733,8 @@ var BackgroundReminderEngine = function () {
   }
 
   function showAlarmNow(alarmInfo, alarmName) {
-    var iconUrl = getIcon(alarmInfo);
-    var tagLine;
+    const iconUrl = getIcon(alarmInfo);
+    let tagLine;
 
     if (alarmInfo.testForTime) {
       tagLine = getMessage("reminderTestTagline").filledWith({
@@ -751,8 +752,8 @@ var BackgroundReminderEngine = function () {
     console.log("DISPLAYED {alarmName}: {messageBody} ".filledWith(alarmInfo));
     //log(alarmInfo);
 
-    //    var api = alarmInfo.api || 'html';
-    var api = "chrome"; // for now, ONLY use Chrome
+    //    const api = alarmInfo.api || 'html';
+    const api = "chrome"; // for now, ONLY use Chrome
 
     switch (api) {
       case "chrome":
@@ -768,14 +769,14 @@ var BackgroundReminderEngine = function () {
             priority: 2,
             contextMessage: tagLine,
           },
-          function (id) {
+          (id) => {
             //log('chrome notification ' + id);
           }
         );
         break;
 
       //case 'html':
-      //  var n = new Notification('HTML ' + alarmInfo.title, {
+      //  const n = new Notification('HTML ' + alarmInfo.title, {
       //    icon: iconUrl,
 
       //    body: alarmInfo.messageBody + '\n\n' + tagLine,
@@ -792,7 +793,7 @@ var BackgroundReminderEngine = function () {
       tracker.sendEvent(
         "showReminder",
         alarmInfo.trigger,
-        alarmInfo.delta * alarmInfo.num + " " + alarmInfo.units + " " + api
+        `${alarmInfo.delta * alarmInfo.num} ${alarmInfo.units} ${api}`
       );
     } catch (e) {
       console.log(e);
@@ -805,8 +806,8 @@ var BackgroundReminderEngine = function () {
 
   function doAdditionalActions(alarmInfo) {
     switch (alarmInfo.action) {
-      case "speak":
-        var options = {
+      case "speak": {
+        const options = {
           //'lang': _languageCode,
           voiceName: alarmInfo.speakVoice,
           enqueue: true,
@@ -815,20 +816,21 @@ var BackgroundReminderEngine = function () {
         chrome.tts.speak(
           "{title}.\n\n {messageBody}".filledWith(alarmInfo),
           options,
-          function () {
+          () => {
             if (chrome.runtime.lastError) {
-              console.log("Error: " + chrome.runtime.lastError);
+              console.log(`Error: ${chrome.runtime.lastError}`);
             }
           }
         );
 
         break;
-      case "ifttt":
-        var url =
+      }
+      case "ifttt": {
+        const url =
           "https://maker.ifttt.com/trigger/{iftttEvent}/with/key/{iftttKey}".filledWith(
             alarmInfo
           );
-        var content = {
+        const content = {
           value1: alarmInfo.title,
           value2: alarmInfo.messageBody,
           value3: alarmInfo.tagLine,
@@ -837,7 +839,7 @@ var BackgroundReminderEngine = function () {
           $.ajax({
             url: url,
             data: content,
-            success: function (data) {
+            success: (data) => {
               chrome.notifications.create(null, {
                 type: "basic",
                 iconUrl: "badi19a-128.png",
@@ -845,7 +847,7 @@ var BackgroundReminderEngine = function () {
                 message: data,
               });
             },
-            error: function (request, error) {
+            error: (request, error) => {
               console.log(JSON.stringify(request));
               console.log(JSON.stringify(error));
 
@@ -857,9 +859,10 @@ var BackgroundReminderEngine = function () {
         }
 
         break;
+      }
 
-      case "zapier":
-        var zap = {
+      case "zapier": {
+        const zap = {
           title: alarmInfo.title,
           body: alarmInfo.messageBody,
           tag: alarmInfo.tagLine,
@@ -869,7 +872,7 @@ var BackgroundReminderEngine = function () {
           $.ajax({
             url: alarmInfo.zapierWebhook,
             data: zap,
-            success: function (data) {
+            success: (data) => {
               chrome.notifications.create(null, {
                 type: "basic",
                 iconUrl: "badi19a-128.png",
@@ -878,8 +881,8 @@ var BackgroundReminderEngine = function () {
               });
               console.log(data);
             },
-            error: function (request, error) {
-              var msg = "Request: " + JSON.stringify(request);
+            error: (request, error) => {
+              const msg = `Request: ${JSON.stringify(request)}`;
               console.log(msg);
               alert(msg);
             },
@@ -889,11 +892,12 @@ var BackgroundReminderEngine = function () {
         }
 
         break;
+      }
     }
   }
 
   function getIcon(reminder) {
-    var icon;
+    let icon;
     switch (reminder.trigger) {
       case "bday":
         icon = makeBadiNum(reminder.num);
@@ -914,10 +918,10 @@ var BackgroundReminderEngine = function () {
   }
 
   function makeBadiNum(num) {
-    var canvas = document.createElement("canvas");
+    const canvas = document.createElement("canvas");
     canvas.width = 80;
     canvas.height = 80;
-    var context = canvas.getContext("2d");
+    const context = canvas.getContext("2d");
 
     context.drawImage(_baseBDayImage, 0, 0);
 
@@ -930,18 +934,18 @@ var BackgroundReminderEngine = function () {
   }
 
   function clearReminderAlarms(fnAfter) {
-    chrome.alarms.getAll(function (alarms) {
-      for (var i = 0; i < alarms.length; i++) {
-        var alarm = alarms[i];
-        var name = alarm.name;
+    chrome.alarms.getAll((alarms) => {
+      for (let i = 0; i < alarms.length; i++) {
+        const alarm = alarms[i];
+        const name = alarm.name;
         if (name.startsWith(_reminderPrefix)) {
           //log('removed {0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime)));
           chrome.alarms.clear(name);
           localStorage.removeItem(name);
         }
       }
-      for (var key in localStorage) {
-        if (localStorage.hasOwnProperty(key)) {
+      for (const key in localStorage) {
+        if (Object.prototype.hasOwnProperty.call(localStorage, key)) {
           if (key.startsWith(_reminderPrefix)) {
             localStorage.removeItem(key);
           }
@@ -954,9 +958,9 @@ var BackgroundReminderEngine = function () {
   }
 
   function dumpAlarms() {
-    chrome.alarms.getAll(function (alarms) {
-      for (var i = 0; i < alarms.length; i++) {
-        var alarm = alarms[i];
+    chrome.alarms.getAll((alarms) => {
+      for (let i = 0; i < alarms.length; i++) {
+        const alarm = alarms[i];
         console.log(
           "{0} {1}".filledWith(
             alarm.name,
@@ -973,7 +977,7 @@ var BackgroundReminderEngine = function () {
       {
         reminders: _remindersDefined,
       },
-      function () {
+      () => {
         console.log("stored reminders with local");
         if (chrome.runtime.lastError) {
           console.log(chrome.runtime.lastError);
@@ -985,7 +989,7 @@ var BackgroundReminderEngine = function () {
         {
           reminders: _remindersDefined,
         },
-        function () {
+        () => {
           console.log("stored reminders with sync");
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
@@ -996,19 +1000,19 @@ var BackgroundReminderEngine = function () {
   }
 
   function loadReminders() {
-    var loadLocal = function () {
+    const loadLocal = () => {
       chrome.storage.local.get(
         {
           reminders: [],
         },
-        function (items) {
+        (items) => {
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
           }
 
           if (items.reminders) {
             console.log(
-              "reminders loaded from local: " + items.reminders.length
+              `reminders loaded from local: ${items.reminders.length}`
             );
             _remindersDefined = items.reminders || [];
           }
@@ -1023,19 +1027,19 @@ var BackgroundReminderEngine = function () {
         {
           reminders: [],
         },
-        function (items) {
+        (items) => {
           if (chrome.runtime.lastError) {
             console.log(chrome.runtime.lastError);
           }
 
           if (items.reminders) {
             console.log(
-              "reminders loaded from sync: " + items.reminders.length
+              `reminders loaded from sync: ${items.reminders.length}`
             );
             _remindersDefined = items.reminders || [];
           }
 
-          if (_remindersDefined.length != 0) {
+          if (_remindersDefined.length !== 0) {
             setAlarmsForRestOfToday(true);
           } else {
             loadLocal();
@@ -1084,20 +1088,20 @@ var BackgroundReminderEngine = function () {
 
   function connectToPort() {
     console.log("listening for new ports");
-    chrome.runtime.onConnect.addListener(function (port) {
-      if (port.name != "reminderModule") {
+    chrome.runtime.onConnect.addListener((port) => {
+      if (port.name !== "reminderModule") {
         return; // not for us
       }
 
       _ports.push(port);
-      console.log("ports: " + _ports.length);
+      console.log(`ports: ${_ports.length}`);
 
       // each popup will have its own port for us to respond to
       console.log("listening to port", port.name, "from", port.sender.id);
 
-      port.onDisconnect.addListener(function (port) {
-        for (var i = 0; i < _ports.length; i++) {
-          var knownPort = _ports[i];
+      port.onDisconnect.addListener((port) => {
+        for (let i = 0; i < _ports.length; i++) {
+          const knownPort = _ports[i];
           if (knownPort === port) {
             console.log("removed port");
             _ports.splice(i, 1);
@@ -1105,7 +1109,7 @@ var BackgroundReminderEngine = function () {
         }
       });
 
-      port.onMessage.addListener(function (msg) {
+      port.onMessage.addListener((msg) => {
         console.log("received: ", msg);
 
         switch (msg.code) {
@@ -1140,7 +1144,7 @@ var BackgroundReminderEngine = function () {
 
   function broadcast(msg) {
     // send to all ports
-    for (var i = 0; i < _ports.length; i++) {
+    for (let i = 0; i < _ports.length; i++) {
       _ports[i].postMessage(msg);
     }
   }
@@ -1165,11 +1169,9 @@ var BackgroundReminderEngine = function () {
     saveAllReminders: saveAllReminders,
     _specialDays: _specialDays, // testing
     makeBadiNum: makeBadiNum,
-    eraseReminders: function () {
+    eraseReminders: () => {
       saveAllReminders();
     },
-    getReminders: function () {
-      return _remindersDefined;
-    },
+    getReminders: () => _remindersDefined,
   };
 };
