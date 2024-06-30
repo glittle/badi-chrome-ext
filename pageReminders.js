@@ -73,11 +73,11 @@ const PageReminders = () => {
 
     if (r.iftttKey) {
       // store this, for other reminders to use
-      setStorage("iftttKey", r.iftttKey);
+      putInStorageSync(syncStorageKey.iftttKey, r.iftttKey);
     }
     if (r.zapierWebhook) {
       // store this, for other reminders to use
-      setStorage("zapierWebhook", r.zapierWebhook);
+      putInStorageSync(syncStorageKey.zapierWebhook, r.zapierWebhook);
     }
 
     let saveToBackground = true;
@@ -216,7 +216,7 @@ const PageReminders = () => {
     return r;
   }
 
-  function updateEditArea(focusOnFirstInput) {
+  async function updateEditArea(focusOnFirstInput) {
     // turn everything off
     _page
       .find(
@@ -267,7 +267,7 @@ const PageReminders = () => {
         case "ifttt": {
           const id = $(".reminder_iftttKey");
           if (!id.val()) {
-            id.val(getStorage("iftttKey", ""));
+            id.val(await getFromStorageSync(syncStorageKey.iftttKey, ""));
           }
           const eventName = $(".reminder_iftttEvent");
           if (!eventName.val()) {
@@ -278,7 +278,7 @@ const PageReminders = () => {
         case "zapier": {
           const url = $(".reminder_zapierWebhook");
           if (!url.val()) {
-            url.val(getStorage("zapierWebhook", ""));
+            url.val(await getFromStorageSync(syncStorageKey.zapierWebhook, ""));
           }
           break;
         }
@@ -396,13 +396,13 @@ const PageReminders = () => {
     const alarmList = _page.find(".alarms");
     alarmList.html("");
 
-    chrome.alarms.getAll((alarms) => {
+    chrome.alarms.getAll(async (alarms) => {
       alarms.sort((a, b) => a.scheduledTime < b.scheduledTime ? -1 : 1);
 
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         if (alarm.name.startsWith(_reminderPrefix)) {
-          const alarmInfo = getStorage(alarm.name);
+          const alarmInfo = await getFromStorageLocal(alarm.name);
           if (!alarmInfo) {
             console.log(`No alarmInfo for ${alarm.name}`);
             continue;

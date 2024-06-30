@@ -3,7 +3,6 @@
 /* global dayjs */
 
 // these use VAR to be globally available
-var ObjectConstant = "$****$";
 var splitSeparator = /[,،]+/;
 
 var _currentPageId = null;
@@ -18,6 +17,7 @@ var _languageDir = "ltr";
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _locationLat = null;
 var _locationLong = null;
+var _locationKnown = false;
 var _focusTime = null;
 var holyDays = null;
 var knownDateInfos = {};
@@ -53,17 +53,76 @@ var elements;
 var use24HourClock;
 var _iconPrepared = false;
 
+// in alphabetical order
+var localStorageKey = {
+  // alarm_{name}: "alarm_{name}",
+  //enableGCal: "enableGCal",
+  firstPopup: "firstPopup",
+  focusPage: "focusPage",
+  focusTimeAsOf: "focusTimeAsOf",
+  focusTime: "focusTime",
+  focusTimeIsEve: "focusTimeIsEve",
+  gCalLabel: "gCalLabel",
+  gCalTitle: "gCalTitle",
+  iconTextColor: "iconTextColor",
+  lat: "lat",
+  locationKnown: "locationKnown",
+  locationName: "locationName",
+  locationNameKnown: "locationNameKnown",
+  long: "long",
+  uid: "uid",
+  updateVersion: "updateVersion",
+};
+
+var syncStorageKey = {
+  customFormats: "customFormats",
+  eventStart: "eventStart",
+  // exporter_{names}: "exporter_{names}",
+  exporter_alertMinutes: "exporter_alertMinutes",
+  exporter_exporterDateRange: "exporter_exporterDateRange",
+  exporter_exporterName: "exporter_exporterName",
+  formatToolTip1: "formatToolTip1",
+  formatToolTip2: "formatToolTip2",
+  formatTopDay: "formatTopDay",
+  iftttKey: "iftttKey",
+  includeFeasts: "includeFeasts",
+  includeHolyDays: "includeHolyDays",
+  jumpTo: "jumpTo",
+  language: "language",
+  optOutGa: "optOutGa",
+  planWhat: "planWhat",
+  // planner_{ids}: "planner_{ids}",
+  showPointer: "showPointer",
+  useArNames: "useArNames",
+  zapierWebhook: "zapierWebhook",
+};
+
+var browser = {
+  Chrome: "Chrome",
+  Firefox: "Firefox",
+  Edge: "Edge",
+};
+var browserHostType = browser.Chrome;
+
 var _notificationsEnabled = browserHostType === browser.Chrome; // set to false to disable
 
+var settings = {}; // temp
 
-//const tracker = null;
-var settings = {
-  useArNames: true,
-  rememberFocusTimeMinutes: 5, // show on settings page?
-  optedOutOfGoogleAnalytics: getStorage("optOutGa", -1),
-  //  integrateIntoGoogleCalendar: getStorage('enableGCal', true),
-  iconTextColor: getStorage("iconTextColor", "#000000"),
-};
+async function fillSettings() {
+  settings = {
+    useArNames: true,
+    rememberFocusTimeMinutes: 5, // show on settings page?
+    optedOutOfGoogleAnalytics: await getFromStorageSync(
+      syncStorageKey.optOutGa,
+      -1
+    ),
+    //  integrateIntoGoogleCalendar: await getFromStorageLocal(localStorageKey.enableGCal, true),
+    iconTextColor: await getFromStorageLocal(
+      localStorageKey.iconTextColor,
+      "#000000"
+    ),
+  };
+}
 
 async function loadJsonfile(filePath) {
   try {
@@ -150,14 +209,16 @@ async function loadRawMessages(langCode, cb) {
   }
 }
 
-const prepareShared = async () => {
-  settings.useArNames = getStorage("useArNames", true);
+async function prepareShared() {
+  settings.useArNames = await getFromStorageSync(
+    syncStorageKey.useArNames,
+    true
+  );
 
-  // debugger;
-  _languageCode = getStorage("lang", "en"); //getMessage('translation');
+  _languageCode = await getFromStorageSync(syncStorageKey.language, "en"); //getMessage('translation');
   if (!_languageCode) {
     _languageCode = chrome.i18n.getUILanguage();
-    setStorage("lang", _languageCode);
+    putInStorageSync(syncStorageKey.language, _languageCode);
   }
 
   await loadRawMessages(_languageCode); // default to the current language
@@ -168,8 +229,8 @@ const prepareShared = async () => {
 
   _languageDir = getMessage("textDirection", null, "ltr");
 
-  _locationLat = localStorage.lat;
-  _locationLong = localStorage.long;
+  _locationLat = await getFromStorageLocal(localStorageKey.lat);
+  _locationLong = await getFromStorageLocal(localStorageKey.long);
   holyDays = HolyDays();
 
   // see messages.json for translations and local names
@@ -194,7 +255,7 @@ const prepareShared = async () => {
   elements = getMessage("elements").split(splitSeparator);
 
   use24HourClock = getMessage("use24HourClock") === "true";
-};
+}
 
 function setupLanguageChoice() {
   // debugger;
@@ -474,23 +535,28 @@ function getElementNum(num) {
   return element;
 }
 
-function getToolTipMessageTemplate(lineNum) {
+async function getToolTipMessageTemplate(lineNum) {
   // can be overwritten in the custom page
   switch (lineNum) {
     case 1:
-      return getStorage("formatToolTip1", getMessage("formatIconToolTip"));
+      return await getFromStorageSync(
+        localStorageKey.formatToolTip1,
+        getMessage("formatIconToolTip")
+      );
     case 2:
-      return getStorage("formatToolTip2", "{nearestSunset}");
+      return await getFromStorageSync(
+        localStorageKey.formatToolTip2,
+        "{nearestSunset}"
+      );
   }
   return "";
 }
 
-function showIcon() {
+async function showIcon() {
   const dateInfo = getDateInfo(new Date());
   const tipLines = [];
-
-  tipLines.push(getToolTipMessageTemplate(1).filledWith(dateInfo));
-  tipLines.push(getToolTipMessageTemplate(2).filledWith(dateInfo));
+  tipLines.push((await getToolTipMessageTemplate(1)).filledWith(dateInfo));
+  tipLines.push((await getToolTipMessageTemplate(2)).filledWith(dateInfo));
   tipLines.push("");
 
   if (dateInfo.special1) {
@@ -516,7 +582,7 @@ function showIcon() {
 
   try {
     chrome.action.setIcon({
-      imageData: draw(dateInfo.bMonthNamePri, dateInfo.bDay, "center"),
+      imageData: await draw(dateInfo.bMonthNamePri, dateInfo.bDay, "center"),
     });
     _iconPrepared = true;
   } catch (e) {
@@ -527,7 +593,7 @@ function showIcon() {
   }
 }
 
-function draw(line1, line2, line2Alignment) {
+async function draw(line1, line2, line2Alignment) {
   const canvas = document.createElement("canvas");
   const size = 19;
   canvas.width = size;
@@ -538,7 +604,10 @@ function draw(line1, line2, line2Alignment) {
 
   const fontName = "Tahoma";
 
-  context.fillStyle = getStorage("iconTextColor", "black");
+  context.fillStyle = await getFromStorageLocal(
+    localStorageKey.iconTextColor,
+    "black"
+  );
 
   const line1div = $("<div>{^0}</div>".filledWith(line1)).text();
   const line2div = $("<div>{^0}</div>".filledWith(line2)).text();
@@ -668,7 +737,7 @@ const findName = (typeName, results, getLastMatch) => {
 
 const xhr = null;
 
-function startGetLocationName() {
+async function startGetLocationName() {
   // debugger;
 
   try {
@@ -678,18 +747,18 @@ function startGetLocationName() {
     chrome.runtime.sendMessage(
       {
         action: "getCityName",
-        lat: localStorage.lat,
-        long: localStorage.long,
+        lat: await getFromStorageLocal(localStorageKey.lat),
+        long: await getFromStorageLocal(localStorageKey.long),
         unknownLocation: unknownLocation,
       },
       (response) => {
         const location = response.city || unknownLocation;
         console.log("Location:", location);
 
-        localStorage.locationName = location;
-        setStorage(
-          "locationNameKnown",
-          localStorage.locationName !== unknownLocation
+        putInStorageLocal(localStorageKey.locationName, location);
+        putInStorageLocal(
+          localStorageKey.locationNameKnown,
+          location !== unknownLocation
         );
 
         stopLoaderButton();
@@ -699,81 +768,9 @@ function startGetLocationName() {
         }
       }
     );
-
-    // const geocoder = new google.maps.Geocoder;
-
-    // if (geocoder) {
-    //     geocoder.geocode({ location: { lat: +localStorage.lat, lng: +localStorage.long } }, function (results, status) {
-    //         const unknownLocation = getMessage('noLocationName');
-
-    //         localStorage.locationName =
-    //             // findName('neighborhood', data.results, true) ||
-    //             findName('locality', results) ||
-    //             findName('political', results) ||
-    //             unknownLocation;
-
-    //         setStorage('locationNameKnown', true);
-    //         console.log(localStorage.locationName);
-
-    //         if (localStorage.locationName === unknownLocation) {
-    //             console.log(status, results);
-    //         }
-
-    //         stopLoaderButton();
-
-    //         //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
-
-    //         // if popup is showing...
-    //         if (typeof _inPopupPage !== 'undefined') {
-    //             showLocation();
-    //         }
-    //     });
-    // }
   } catch (error) {
     console.log(error);
   }
-
-  // if (xhr && xhr.readyState !== 4) {
-  //     console.log('xhr call in progress already ' + xhr.readyState);
-  //     return;
-  // }
-  // const url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng={0},{1}&language={2}&key={3}'
-  //     .filledWith(localStorage.lat, localStorage.long, chrome.runtime.getManifest().current_locale,
-  //         'AIzaSyAuSFuKxDtfCgBUGsSFrYZKardnK15Nmjc');
-  // xhr = new XMLHttpRequest();
-  // xhr.open("GET", url, true);
-  // xhr.onreadystatechange = function() {
-  //     //    console.log('new state ' + xhr.readState);
-  //     if (xhr.readyState === 4) {
-  //         const data = JSON.parse(xhr.responseText);
-  //         const unknownLocation = getMessage('noLocationName');
-
-  //         localStorage.locationName =
-  //             // findName('neighborhood', data.results, true) ||
-  //             findName('locality', data.results) ||
-  //             findName('political', data.results) ||
-  //             unknownLocation;
-
-  //         setStorage('locationNameKnown', true);
-  //         console.log(localStorage.locationName);
-
-  //         if (localStorage.locationName === unknownLocation) {
-  //             console.log(data);
-  //         }
-
-  //         stopLoaderButton();
-
-  //         //log('got location name ' + (new Date().getSeconds() + new Date().getMilliseconds() / 1000));
-
-  //         // if popup is showing...
-  //         if (typeof _inPopupPage !== 'undefined') {
-  //             showLocation();
-  //         }
-
-  //         xhr = null;
-  //     }
-  // };
-  // xhr.send();
 }
 
 function stopLoaderButton() {
@@ -781,17 +778,26 @@ function stopLoaderButton() {
 }
 
 function setLocation(position) {
-  localStorage.lat = _locationLat = position.coords.latitude;
-  localStorage.long = _locationLong = position.coords.longitude;
+  _locationLat = position.coords.latitude;
+  putInStorageLocal(localStorageKey.lat, _locationLat);
+
+  _locationLong = position.coords.longitude;
+  putInStorageLocal(localStorageKey.long, _locationLong);
+
   knownDateInfos = {};
 
-  setStorage("locationKnown", true);
-  setStorage("locationNameKnown", false);
-  localStorage.locationName = getMessage("browserActionTitle"); // temp until we get it
+  putInStorageLocal(localStorageKey.locationKnown, true);
+  _locationKnown = true;
+
+  putInStorageLocal(localStorageKey.locationNameKnown, false);
+  putInStorageLocal(
+    localStorageKey.locationName,
+    getMessage("browserActionTitle")
+  ); // temp until we get it
 
   if (typeof _inPopupPage !== "undefined") {
-    $("#inputLat").val(localStorage.lat);
-    $("#inputLng").val(localStorage.long);
+    $("#inputLat").val(_locationLat);
+    $("#inputLng").val(_locationLong);
   }
 
   // startGetLocationName();
@@ -799,29 +805,40 @@ function setLocation(position) {
   refreshDateInfoAndShow();
 }
 
-function noLocation(err) {
-  if (getStorage("locationNameKnown", false)) {
+async function noLocation(err) {
+  if (await getFromStorageLocal(localStorageKey.locationNameKnown, false)) {
     return;
   }
 
-  localStorage.lat = _locationLat = 0;
-  localStorage.long = _locationLong = 0;
+  _locationLat = 0;
+  _locationLong = 0;
+
+  putInStorageLocal(localStorageKey.lat, _locationLong);
+  putInStorageLocal(localStorageKey.long, _locationLong);
+
   knownDateInfos = {};
 
   console.error(err);
 
-  setStorage("locationKnown", false);
-  localStorage.locationName = getMessage("noLocationAvailable");
+  putInStorageLocal(localStorageKey.locationKnown, false);
+  _locationKnown = false;
+
+  putInStorageLocal(
+    localStorageKey.locationName,
+    getMessage("noLocationAvailable")
+  );
 
   stopLoaderButton();
 
   refreshDateInfoAndShow();
 }
 
-function recallFocusAndSettings() {
-  const storedAsOf = +getStorage("focusTimeAsOf");
+async function recallFocusAndSettings() {
+  const storedAsOf = +(await getFromStorageLocal(
+    localStorageKey.focusTimeAsOf
+  ));
   if (!storedAsOf) {
-    setStorage("focusTimeIsEve", null);
+    putInStorageLocal(localStorageKey.focusTimeIsEve, null);
     return;
   }
   const focusTimeAsOf = new Date(storedAsOf);
@@ -829,12 +846,12 @@ function recallFocusAndSettings() {
 
   const now = new Date();
   if (now - focusTimeAsOf < settings.rememberFocusTimeMinutes * 60000) {
-    const focusPage = getStorage("focusPage");
+    const focusPage = await getFromStorageLocal(localStorageKey.focusPage);
     if (focusPage && typeof _currentPageId !== "undefined") {
       _currentPageId = focusPage;
     }
 
-    const stored = +getStorage("focusTime");
+    const stored = +(await StorageLocal(localStorageKey.focusTime));
     if (stored) {
       const time = new Date(stored);
 
@@ -852,7 +869,7 @@ function recallFocusAndSettings() {
       }
     }
   } else {
-    setStorage("focusPage", null);
+    putInStorageLocal(localStorageKey.focusPage, null);
   }
   if (!timeSet) {
     setFocusTime(new Date());
@@ -889,7 +906,11 @@ function refreshDateInfoAndShow(resetToNow) {
   }
 
   if (browserHostType === browser.Chrome) {
-    setAlarmForNextUpdate(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
+    setAlarmForNextUpdate(
+      _di.currentTime,
+      _di.frag2SunTimes.sunset,
+      _di.bNow.eve
+    );
   }
 }
 
@@ -941,43 +962,6 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
       }
     }
   });
-}
-
-// based on code by Sunwapta Solutions Inc.
-
-function setStorage(key, value) {
-  /// <summary>Save this value in the browser's local storage. Dates do NOT get returned as full dates!</summary>
-  /// <param name="key" type="string">The key to use</param>
-  /// <param name="value" type="string">The value to store. Can be a simple or complex object.</param>
-  if (value === null) {
-    localStorage.removeItem(key);
-    return null;
-  }
-  let value2 = value;
-  if (typeof value === "object" || typeof value === "boolean") {
-    const strObj = JSON.stringify(value);
-    value2 = ObjectConstant + strObj;
-  }
-
-  localStorage[key] = `${value2}`;
-
-  return value;
-}
-
-function getStorage(key, defaultValue) {
-  /// <summary>Get a value from storage.</summary>
-  const checkForObject = (obj) => {
-    if (obj.substring(0, ObjectConstant.length) === ObjectConstant) {
-      return $.parseJSON(obj.substring(ObjectConstant.length));
-    }
-    return obj;
-  };
-
-  const value = localStorage[key];
-  if (typeof value !== "undefined" && value != null) {
-    return checkForObject(value);
-  }
-  return defaultValue;
 }
 
 String.prototype.filledWith = function (...args) {
@@ -1195,8 +1179,8 @@ function setFocusTime(t) {
   if (Number.isNaN(_focusTime)) {
     console.log("unexpected 2: ", _focusTime);
   }
-  setStorage("focusTime", t.getTime());
-  setStorage("focusTimeAsOf", new Date().getTime());
+  putInStorageLocal(localStorageKey.focusTime, t.getTime());
+  putInStorageLocal(localStorageKey.focusTimeAsOf, new Date().getTime());
 }
 
 function localizeHtml(host, fnOnEach) {
@@ -1315,15 +1299,17 @@ function shallowCloneOf(obj) {
 // }
 
 // google analytics using Measurement Protocol
-const trackerFunc = () => {
-  if (!localStorage.uid) {
-    localStorage.uid = createGuid();
+const trackerFunc = async () => {
+  let uid = await getFromStorageLocal(localStorageKey.uid);
+  if (!uid) {
+    uid = createGuid();
+    putInStorageLocal(localStorageKey.uid, uid);
   }
   const baseParams = {
     ds: "app",
     tid: "UA-1312528-10",
     v: 1,
-    cid: localStorage.uid,
+    cid: uid,
     an: "BadiWeb",
     ul: navigator.language,
     aid: browserHostType,
@@ -1357,8 +1343,8 @@ const trackerFunc = () => {
   };
 };
 
-function prepareAnalytics() {
-  tracker = trackerFunc();
+async function prepareAnalytics() {
+  tracker = await trackerFunc();
 
   //  if (typeof tracker !== 'undefined') {
   //    const service = analytics.getService('BadiCal');
@@ -1379,7 +1365,7 @@ function createGuid() {
   });
 }
 
-chrome.runtime.onMessage.addListener((payload, sender, callback1) => {
+chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
   const callback = callback1 || (() => {}); // make it optional
 
   switch (payload.cmd) {
@@ -1388,26 +1374,25 @@ chrome.runtime.onMessage.addListener((payload, sender, callback1) => {
       // can adjust per layout
       const di = getDateInfo(new Date(payload.targetDay));
       callback({
-        label: getStorage(
-          "gCalLabel",
+        label: (await getFromStorageLocal(
+          localStorageKey.gCalLabel,
           payload.labelFormat || "{bMonthNamePri} {bDay}"
-        ).filledWith(di),
-        title: getStorage(
-          "gCalTitle",
+        )).filledWith(di),
+        title: (await getFromStorageLocal(
+          localStorageKey.gCalTitle,
           payload.titleFormat ||
             "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"
-        ).filledWith(di),
-        classes:
-          `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
+        )).filledWith(di),
+        classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
       });
       break;
     }
 
-    case "getStorage":
-      callback({
-        value: getStorage(payload.key, payload.defaultValue),
-      });
-      break;
+    // case "getStorage":
+    //   callback({
+    //     value: await getFromStorageLocal(payload.key, payload.defaultValue),
+    //   });
+    //   break;
 
     default:
       callback();
@@ -1433,7 +1418,7 @@ chrome.runtime.onMessageExternal.addListener(
      *  }
      * 
      */
-  (payload, sender, callback1) => {
+  async (payload, sender, callback1) => {
     const callback = callback1 || (() => {}); // make it optional
     switch (payload.cmd) {
       case "getInfo": {
@@ -1451,14 +1436,17 @@ chrome.runtime.onMessageExternal.addListener(
         callback({
           label: (
             payload.labelFormat ||
-            getStorage("gCalLabel", "{bMonthNamePri} {bDay}")
+            (await getFromStorageLocal(
+              localStorageKey.gCalLabel,
+              "{bMonthNamePri} {bDay}"
+            ))
           ).filledWith(di),
           title: (
             payload.titleFormat ||
-            getStorage(
-              "gCalTitle",
+            (await getFromStorageLocal(
+              localStorageKey.gCalTitle,
               "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"
-            )
+            ))
           ).filledWith(di),
           classes: `${di.bDay === 1 ? " firstBDay" : ""} element${
             di.elementNum
@@ -1469,11 +1457,11 @@ chrome.runtime.onMessageExternal.addListener(
         break;
       }
 
-      case "getStorage":
-        callback({
-          value: getStorage(payload.key, payload.defaultValue),
-        });
-        break;
+      // case "getStorage":
+      //   callback({
+      //     value: await getFromStorageLocal(payload.key, payload.defaultValue),
+      //   });
+      //   break;
 
       case "connect":
         callback({
@@ -1488,3 +1476,84 @@ chrome.runtime.onMessageExternal.addListener(
     }
   }
 );
+
+// use Local for ephemeral data, and Sync for settings
+async function putInStorageLocal(key, obj) {
+  await putInStorageRaw("local", key, obj);
+}
+
+async function getFromStorageLocal(key, defaultvalue) {
+  return getFromStorageRaw("local", key, defaultvalue);
+}
+
+async function removeFromStorageLocal(key) {
+  await removeFromStorageRaw("local", key);
+}
+
+// sync versions
+async function putInStorageSync(key, obj) {
+  await putInStorageRaw("sync", key, obj);
+}
+
+async function getFromStorageSync(key, defaultvalue) {
+  return getFromStorageRaw("sync", key, defaultvalue);
+}
+
+async function removeFromStorageSync(key) {
+  await removeFromStorageRaw("sync", key);
+}
+
+/** Generic versions */
+const ObjectConstant = "$****$";
+
+async function putInStorageRaw(storageType, key, value) {
+  if (value === null || value === undefined) {
+    removeFromStorageRaw(storageType, key);
+    return;
+  }
+
+  let value2 = value;
+  if (typeof value === "object" || typeof value === "boolean") {
+    const strObj = JSON.stringify(value);
+    value2 = ObjectConstant + strObj;
+  }
+
+  switch (storageType) {
+    case "sync":
+      await chrome.storage.sync.set({ [key]: `${value2}` });
+      break;
+    default:
+      await chrome.storage.local.set({ [key]: `${value2}` });
+  }
+}
+async function getFromStorageRaw(storageType, key, defaultvalue) {
+  const keyWithDefault = { [key]: defaultvalue };
+  const storedObj =
+    storageType === "sync"
+      ? await chrome.storage.sync.get(keyWithDefault)
+      : await chrome.storage.local.get(keyWithDefault);
+
+  const value = storedObj[key];
+
+  if (typeof value !== "undefined" && value != null) {
+    if (
+      typeof value === "string" &&
+      value.substring(0, ObjectConstant.length) === ObjectConstant
+    ) {
+      return $.parseJSON(value.substring(ObjectConstant.length));
+    }
+    return value;
+  }
+
+  return defaultvalue;
+}
+
+async function removeFromStorageRaw(storageType, key) {
+  switch (storageType) {
+    case "sync":
+      await chrome.storage.sync.remove(key);
+      break;
+    default:
+      await chrome.storage.local.remove(key);
+  }
+}

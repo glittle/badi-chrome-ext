@@ -64,16 +64,19 @@ const PagePlanner = () => {
   }
 
   function saveInputs() {
+    putInStorageSync(syncStorageKey.planWhat, $("#planWhat").val());
     $(".plannerInputs select").each((i, el) => {
-      setStorage(el.id, $(el).val());
+      putInStorageLocal(`planner_${el.id}`, $(el).val());
     });
   }
 
-  function recallInputs() {
-    $("#planWhat").val(getStorage("planWhat")).trigger("adjust");
+  async function recallInputs() {
+    $("#planWhat")
+      .val(await getFromStorageSync(syncStorageKey.planWhat))
+      .trigger("adjust");
 
-    $(".plannerInputs select").each((i, el) => {
-      const value = getStorage(el.id);
+    $(".plannerInputs select").each(async (i, el) => {
+      const value = await getFromStorageLocal(`planner_${el.id}`);
       if (typeof value !== "undefined") {
         const ddl = $(el);
         ddl.val(value);
@@ -98,7 +101,7 @@ const PagePlanner = () => {
     cells.push(`<td>{${frag}WeekdayShort}</td>`.filledWith(targetDi));
   }
 
-  function planEvent1(selectMode) {
+  async function planEvent1(selectMode) {
     const plannerWhatEvent = $("#plannerWhatEvents").val() || "";
 
     const startBDate = holyDays.getBDate(_startGDate);
@@ -208,7 +211,7 @@ const PagePlanner = () => {
     }
     const locationHeader = getMessage(
       "plannerStartSunsetForLocation"
-    ).filledWith(localStorage.locationName);
+    ).filledWith(await getFromStorageLocal(localStorageKey.locationName));
     th1.push("<th rowspan=2>{0}</th>".filledWith(locationHeader));
     th2.push(
       '<th style="display:none" title="{0}"></th>'.filledWith(locationHeader)

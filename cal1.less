@@ -204,10 +204,10 @@ body.inTab {
   .hdHS,
   .hdHO {
     margin: 0 0 2px 3px;
-    width: 12px;
-    height: 12px;
+    width: 14px;
     vertical-align: bottom;
     .starInner {
+      // TODO not working 
       animation: pulse 1s infinite;
       fill: #ffff00;
     }
@@ -216,15 +216,12 @@ body.inTab {
   @keyframes pulse {
     0% {
       fill: #ffff00; /* Bright yellow */
-      stroke: #ffff00;
     }
     50% {
-      fill: red;
-      stroke: red;
+      fill: white;
     }
     100% {
-      fill: #ffff00; /* Bright yellow */
-      stroke: #ffff00;
+      fill: #ffff00;
     }
   }
 }

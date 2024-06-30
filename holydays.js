@@ -202,7 +202,7 @@ var HolyDays = function () {
       return 0;
     });
 
-    //    setStorage('DateInfos' + bYear, _dateInfos);
+    // use cache or chrome.storage?
     return _cachedDateInfos[bYear] = _dateInfos;
   }
 

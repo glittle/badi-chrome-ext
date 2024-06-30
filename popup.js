@@ -1,5 +1,4 @@
 /* Code by Glen Little */
-/* global getStorage */
 /* global getMessage */
 /* global knownDateInfos */
 /* global di */
@@ -42,7 +41,7 @@ chrome.tabs.getCurrent((tab) => {
   }
 });
 
-function attachHandlers() {
+async function attachHandlers() {
   dayjs.extend(window.dayjs_plugin_utc);
   dayjs.extend(window.dayjs_plugin_timezone);
 
@@ -54,7 +53,7 @@ function attachHandlers() {
   $(".btnJumpToday").on("click", () => {
     changeDay(null, 0);
   });
-  $(".jumpTo").val(getStorage("jumpTo", "90"));
+  $(".jumpTo").val(await getFromStorageSync(syncStorageKey.jumpTo, "90"));
 
   $(".bDatePickerInputs input, .bYearPicker").on(
     "change paste keydown keypress",
@@ -68,7 +67,7 @@ function attachHandlers() {
   $("#btnEveOrDay").on("click", toggleEveOrDay);
   $("#datePicker").on("change", jumpToDate);
   $("#eventStart").on("change", () => {
-    setStorage("eventStart", $(this).val());
+    putInStorageSync(syncStorageKey.eventStart, $(this).val());
     _lastSpecialDaysYear = 0;
     BuildSpecialDaysTable(_di);
     $(".eventTime").effect("highlight", 1000);
@@ -90,7 +89,7 @@ function attachHandlers() {
   //});
 
   $("#cbShowPointer").on("change", () => {
-    setStorage("showPointer", $(this).prop("checked"));
+    putInStorageSync(syncStorageKey.showPointer, $(this).prop("checked"));
     _calWheel.showCalendar(_di);
   });
 
@@ -124,7 +123,7 @@ function attachHandlers() {
 
 function ApplyLanguage() {
   UpdateLanguageBtn();
-  setStorage("useArNames", settings.useArNames);
+  putInStorageSync(syncStorageKey.useArNames, settings.useArNames);
   tracker.sendEvent("useArabic", settings.useArNames);
   knownDateInfos = {};
   resetForLanguageChange();
@@ -139,7 +138,7 @@ function ApplyLanguage() {
 let sampleNum = 0;
 let showInfoDelay = null;
 
-function showInfo(di) {
+async function showInfo(di) {
   // debugger;
 
   _showingInfo = true;
@@ -149,14 +148,14 @@ function showInfo(di) {
   updateSpecial(di);
 
   // show current page first, then the others
-  updatePageContent(_currentPageId, di);
+  await updatePageContent(_currentPageId, di);
 
   updateSharedContent(di);
 
   showInfoDelay = setTimeout(() => {
-    $.each(_pageIdList, (i, id) => {
+    $.each(_pageIdList, async (i, id) => {
       if (id !== _currentPageId) {
-        updatePageContent(id, di);
+        await updatePageContent(id, di);
       }
     });
   }, 500);
@@ -188,10 +187,15 @@ function updateSpecial(di) {
   }
 }
 
-function updateSharedContent(di) {
+async function updateSharedContent(di) {
   // debugger;
   $("#day").html(
-    getStorage("formatTopDay", getMessage("bTopDayDisplay")).filledWith(di)
+    (
+      await getFromStorageSync(
+        syncStorageKey.formatTopDay,
+        getMessage("bTopDayDisplay")
+      )
+    ).filledWith(di)
   );
   $("#sunset").html(di.nearestSunset);
   $("#gDay").html(getMessage("gTopDayDisplay", di));
@@ -212,18 +216,18 @@ function updateSharedContent(di) {
   //  BuildSpecialDaysTable(di);
   //}
 
-  if (getStorage("locationNameKnown", false)) {
+  if (await getFromStorageLocal(localStorageKey.locationNameKnown, false)) {
     showLocation();
   } else {
     startGetLocationName();
   }
 }
 
-function changePage(ev, delta) {
+async function changePage(ev, delta) {
   if (ev) {
     const btn = $(ev.target);
     const id = btn.data("page");
-    showPage(id);
+    await showPage(id);
   } else {
     const pageButtons = $(".selectPages button").filter(":visible");
     const lastPageNum = pageButtons.length - 1;
@@ -246,11 +250,11 @@ function changePage(ev, delta) {
         break;
     }
 
-    showPage(pageButtons.eq(num).data("page"));
+    await showPage(pageButtons.eq(num).data("page"));
   }
 }
 
-function showPage(id) {
+async function showPage(id) {
   id = id || _currentPageId || "pageDay";
   const pages = $(".page");
   const btns = $(".selectPages button").filter(":visible");
@@ -309,7 +313,7 @@ function showPage(id) {
   });
 
   if (thisPage.data("diStamp") !== _di.stamp) {
-    updatePageContent(_currentPageId, _di);
+    await updatePageContent(_currentPageId, _di);
     thisPage.data("diStamp", _di.stamp);
   }
 
@@ -496,8 +500,8 @@ function showPage(id) {
 
   updatePageContentWhenVisible(_currentPageId, _di);
 
-  setStorage("focusPage", id);
-  setStorage("focusTimeAsOf", new Date().getTime());
+  putInStorageLocal(localStorageKey.focusPage, id);
+  putInStorageLocal(localStorageKey.focusTimeAsOf, new Date().getTime());
 
   clearTimeout(_pageHitTimeout);
 
@@ -600,7 +604,7 @@ function resetPageForLanguageChange(id) {
   }
 }
 
-function updatePageContent(id, di) {
+async function updatePageContent(id, di) {
   switch (id) {
     case "pageDay": {
       const makeObj = (key, name) => ({
@@ -673,7 +677,7 @@ function updatePageContent(id, di) {
 
     case "pageCal2":
       if (_cal2) {
-        _cal2.showCalendar(di);
+        await _cal2.showCalendar(di);
       }
       break;
 
@@ -890,7 +894,7 @@ function addSamples(di) {
   //<div id=sampleFootnote data-msg="_id_"></div>
 }
 
-function keyPressed(ev) {
+async function keyPressed(ev) {
   if (ev.altKey) {
     return;
   }
@@ -1054,7 +1058,7 @@ function keyPressed(ev) {
       const pageButtons = $(".selectPages button").filter(":visible");
       if (pageNum > 0 && pageNum <= pageButtons.length) {
         const id = pageButtons.eq(pageNum - 1).data("page");
-        showPage(id);
+        await showPage(id);
       }
     }
   }
@@ -1133,7 +1137,7 @@ function toggleEveOrDay(toEve) {
     _focusTime.setHours(12, 0, 0, 0);
   }
 
-  setStorage("focusTimeIsEve", toEve2);
+  putInStorageLocal(localStorageKey.focusTimeIsEve, toEve2);
   if (tracker) {
     tracker.sendEvent("toggleEveDay", toEve2 ? "Eve" : "Day");
   }
@@ -1161,7 +1165,7 @@ function moveDays(ev) {
       }
     }
   }
-  setStorage("jumpTo", days);
+  putInStorageSync(syncStorageKey.jumpTo, days);
   tracker.sendEvent("jumpDays", days);
 
   if (!days) {
@@ -1202,7 +1206,7 @@ function changeDay(ev, delta) {
 
   if (delta2 === 0) {
     // reset to real time
-    setStorage("focusTimeIsEve", null);
+    putInStorageLocal(localStorageKey.focusTimeIsEve, null);
     setFocusTime(new Date());
   } else {
     const time = getFocusTime();
@@ -1222,7 +1226,7 @@ function changeDay(ev, delta) {
   refreshDateInfo();
 
   if (_di.stamp === _initialDiStamp.stamp) {
-    setStorage("focusTimeIsEve", null);
+    putInStorageLocal(localStorageKey.focusTimeIsEve, null);
   }
 
   if (_di.bNow.eve) {
@@ -1248,7 +1252,7 @@ function showWhenResetToNow() {
   }
 }
 
-function fillSetup() {
+async function fillSetup() {
   const optedOut = settings.optedOutOfGoogleAnalytics === true;
   const cb = $("#setupOptOut");
   cb.prop("checked", optedOut);
@@ -1257,7 +1261,7 @@ function fillSetup() {
     if (optingOut) {
       tracker.sendEvent("optOut", optingOut);
     }
-    setStorage("optOutGa", optingOut);
+    putInStorageSync(syncStorageKey.optOutGa, optingOut);
     settings.optedOutOfGoogleAnalytics = optingOut;
 
     if (!optingOut) {
@@ -1273,13 +1277,13 @@ function fillSetup() {
   colorInput.val(settings.iconTextColor);
   colorInput.on("change", () => {
     const newColor = colorInput.val();
-    setStorage("iconTextColor", newColor);
+    putInStorageLocal(localStorageKey.iconTextColor, newColor);
     settings.iconTextColor = newColor;
     showIcon();
   });
 
-  $("#inputLat").val(localStorage.lat);
-  $("#inputLng").val(localStorage.long);
+  $("#inputLat").val(await getFromStorageLocal(localStorageKey.lat));
+  $("#inputLng").val(await getFromStorageLocal(localStorageKey.long));
 }
 
 /**
@@ -1294,11 +1298,11 @@ function startFillingLanguageInput(select) {
       const directoryReader = subDirectoryEntry.createReader();
       directoryReader.readEntries(async (entries) => {
         for (let i = 0; i < entries.length; ++i) {
-          const langToLoad = entries[i].name;
+          const langToLoad = await entries[i].name;
 
           const url = `/_locales/${langToLoad}/messages.json`;
 
-          const messages = await loadJsonfile(url);
+          const messages = loadJsonfile(url);
 
           const langLocalMsg = messages.rbDefLang_Local;
           const name = langLocalMsg ? langLocalMsg.message : langToLoad;
@@ -1364,7 +1368,7 @@ function langSelectChanged() {
   const select = $("#setupLang");
   const lang = select.val();
 
-  setStorage("lang", lang);
+  putInStorageSync(syncStorageKey.language, lang);
 
   if (lang === _languageCode) {
     return;
@@ -1409,19 +1413,25 @@ function updateLocation(immediately) {
 
   let changed = false;
   if (_locationLat !== lat) {
-    localStorage.lat = _locationLat = lat;
+    _locationLat = lat;
+    putInStorageLocal(localStorageKey.lat, lat);
     changed = true;
   }
   if (_locationLong !== lng) {
-    localStorage.long = _locationLong = lng;
+    _locationLong = lng;
+    putInStorageLocal(localStorageKey.long, lng);
     changed = true;
   }
 
   if (changed) {
     knownDateInfos = {};
-    setStorage("locationKnown", true);
-    setStorage("locationNameKnown", false);
-    localStorage.locationName = getMessage("browserActionTitle"); // temp until we get it
+    putInStorageLocal(localStorageKey.locationKnown, true);
+    _locationKnown = true;
+    putInStorageLocal(localStorageKey.locationNameKnown, false);
+    putInStorageLocal(
+      localStorageKey.locationName,
+      getMessage("browserActionTitle")
+    ); // temp until we get it
 
     startGetLocationName();
 
@@ -1477,7 +1487,7 @@ function fillStatic() {
   );
 }
 
-function fillEventStart() {
+async function fillEventStart() {
   // fill ddl
   const startTime = new Date(2000, 5, 5, 0, 0, 0, 0); // random day
   const startTimes = [];
@@ -1495,7 +1505,7 @@ function fillEventStart() {
   }
   $("#eventStart")
     .html("<option value={v}>{t}</option>".filledWithEach(startTimes))
-    .val(getStorage("eventStart") || "1930");
+    .val(await getFromStorageSync(syncStorageKey.eventStart, "1930"));
 }
 
 function SetFiltersForSpecialDaysTable(ev) {
@@ -1517,8 +1527,8 @@ function SetFiltersForSpecialDaysTable(ev) {
     includeHolyDays = $("#includeHolyDays").prop("checked");
   }
 
-  setStorage("includeFeasts", includeFeasts);
-  setStorage("includeHolyDays", includeHolyDays);
+  putInStorageSync(syncStorageKey.includeFeasts, includeFeasts);
+  putInStorageSync(syncStorageKey.includeHolyDays, includeHolyDays);
   $("#specialListsTable")
     .toggleClass("Feasts", includeFeasts)
     .toggleClass("HolyDays", includeHolyDays);
@@ -1526,7 +1536,7 @@ function SetFiltersForSpecialDaysTable(ev) {
 
 let _lastSpecialDaysYear = 0;
 
-function BuildSpecialDaysTable(di) {
+async function BuildSpecialDaysTable(di) {
   const year = di.bNow.y;
   if (_lastSpecialDaysYear === year) {
     return;
@@ -1545,7 +1555,9 @@ function BuildSpecialDaysTable(di) {
     }
   });
 
-  const defaultEventStart = $("#eventStart").val() || getStorage("eventStart");
+  const defaultEventStart =
+    $("#eventStart").val() ||
+    (await getFromStorageSync(syncStorageKey.eventStart));
 
   dayInfos.forEach((dayInfo, i) => {
     const targetDi = getDateInfo(dayInfo.GDate);
@@ -1693,9 +1705,11 @@ function showShortcutKeys() {
   }
 }
 
-function showLocation() {
-  $(".place").html(localStorage.locationName);
-  $("#locationErrorHolder").toggle(!getStorage("locationKnown", false));
+async function showLocation() {
+  $(".place").html(await getFromStorageLocal(localStorageKey.locationName));
+  $("#locationErrorHolder").toggle(
+    !(await getFromStorageLocal(localStorageKey.locationKnown, false))
+  );
 }
 
 function hideCal1() {
@@ -1725,9 +1739,9 @@ function adjustHeight() {
   //}
 }
 
-function prepareDefaults() {
-  let feasts = getStorage("includeFeasts");
-  let holyDays = getStorage("includeHolyDays");
+async function prepareDefaults() {
+  let feasts = await getFromStorageSync(syncStorageKey.includeFeasts);
+  let holyDays = await getFromStorageSync(syncStorageKey.includeHolyDays);
   if (typeof feasts === "undefined" && typeof holyDays === "undefined") {
     feasts = false;
     holyDays = true;
@@ -1736,7 +1750,7 @@ function prepareDefaults() {
   $("#includeFeasts").prop("checked", feasts || false);
   $("#includeHolyDays").prop("checked", holyDays || false);
 
-  let showPointer = getStorage("showPointer");
+  let showPointer = await getFromStorageSync(syncStorageKey.showPointer);
   if (typeof showPointer === "undefined") {
     showPointer = true;
   }
@@ -1781,7 +1795,7 @@ function openInTab() {
   }
 }
 
-function prepare1() {
+async function prepare1() {
   $("#loadingMsg").html(getMessage("browserActionTitle"));
 
   startGettingLocation();
@@ -1812,7 +1826,7 @@ function prepare1() {
     refreshDateInfoAndShow();
   }
 
-  const isEve = getStorage("focusTimeIsEve", "x");
+  const isEve = await getFromStorageLocal(localStorageKey.focusTimeIsEve, "x");
   if (isEve !== "x" && isEve !== _di.bNow.eve) {
     toggleEveOrDay(isEve);
   }
@@ -1827,7 +1841,7 @@ function prepare1() {
   showInfo(_di);
 
   updateLoadProgress("showPage");
-  showPage();
+  await showPage();
 
   updateLoadProgress("shortcut keys");
   showShortcutKeys();
@@ -1877,20 +1891,20 @@ function showBtnOpen() {
 function finishFirstPopup() {
   $(".buttons").removeClass("fakeHover");
   $(".buttons").off("mouseover", finishFirstPopup);
-  setStorage("firstPopup", false);
+  putInStorageLocal(localStorageKey.firstPopup, false);
 }
 
-function prepare2() {
+async function prepare2() {
   _initialStartupDone = true;
 
   updateLoadProgress("prepare2 start");
-  prepareAnalytics();
+  await prepareAnalytics();
 
   updateLoadProgress("send event");
   tracker.sendEvent("opened");
   tracker.sendAppView(_currentPageId);
 
-  if (getStorage("firstPopup", false)) {
+  if (await getFromStorageLocal(localStorageKey.firstPopup, false)) {
     // first time popup is opened after upgrading to newest version
     $(".buttons").addClass("fakeHover").on("mouseover", finishFirstPopup);
     setTimeout(finishFirstPopup, 4000);
@@ -1970,6 +1984,7 @@ function updateLoadProgress(comment) {
 }
 
 $(async () => {
+  await fillSettings();
   await prepareShared();
   prepare1();
 });

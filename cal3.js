@@ -1,5 +1,4 @@
 /* global TweenMax */
-/* global getStorage */
 /* global getMessage */
 /* global di */
 /* global chrome */
@@ -269,7 +268,7 @@ const Cal3 = () => {
     }, 0);
   }
 
-  function buildCalendar() {
+  async function buildCalendar() {
     const bYear = _di.bYear;
     _yearShown = bYear;
     _scrollToMonth = -1;
@@ -285,7 +284,7 @@ const Cal3 = () => {
     for (let m = 1; m <= 19; m++) {
       if (m === 19) {
         // add ayyam-i-ha with Loftiness
-        Array.prototype.push.apply(html, buildMonth(bYear, 0));
+        Array.prototype.push.apply(html, await buildMonth(bYear, 0));
       }
 
       const elementNum = getElementNum(m);
@@ -355,7 +354,7 @@ const Cal3 = () => {
     //    }
   }
 
-  function buildMonth(bYear, bMonth) {
+  async function buildMonth(bYear, bMonth) {
     const focusMonth = bMonth;
 
     const dayCellTemplate = $("#cal3dayCell").html();
@@ -530,7 +529,7 @@ const Cal3 = () => {
       ),
       "<div class=gMonthInfo>{0}<div class=placeName>{1}</div></div>".filledWith(
         gMonthInfo,
-        localStorage.locationName
+        await getFromStorageLocal(localStorageKey.locationName)
       ),
       "<div class=bMonthInfo>{0}</div>".filledWith(bMonthInfo),
       "</div>",

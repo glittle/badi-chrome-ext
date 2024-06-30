@@ -1,5 +1,4 @@
 /* global TweenMax */
-/* global getStorage */
 /* global getMessage */
 /* global di */
 /* global chrome */
@@ -244,12 +243,12 @@ const Cal2 = () => {
   //    }
   //  }
 
-  function showCalendar(newDi) {
+  async function showCalendar(newDi) {
     _di = newDi;
 
     const newYear = newDi.bYear;
     if (newYear !== _yearShown) {
-      buildCalendar();
+      await buildCalendar();
     }
     highlightTargetDay(newDi);
   }
@@ -266,7 +265,7 @@ const Cal2 = () => {
     }, 0);
   }
 
-  function buildCalendar() {
+  async function buildCalendar() {
     const bYear = _di.bYear;
     _yearShown = bYear;
     _scrollToMonth = -1;
@@ -282,7 +281,7 @@ const Cal2 = () => {
     for (let m = 1; m <= 19; m++) {
       if (m === 19) {
         // add ayyam-i-ha with Loftiness
-        Array.prototype.push.apply(html, buildMonth(bYear, 0));
+        Array.prototype.push.apply(html, await buildMonth(bYear, 0));
       }
 
       const elementNum = getElementNum(m);
@@ -295,7 +294,7 @@ const Cal2 = () => {
           break;
       }
 
-      Array.prototype.push.apply(html, buildMonth(bYear, m));
+      Array.prototype.push.apply(html, await buildMonth(bYear, m));
     }
 
     html.push(newRowEnd);
@@ -352,7 +351,7 @@ const Cal2 = () => {
     //    }
   }
 
-  function buildMonth(bYear, bMonth) {
+  async function buildMonth(bYear, bMonth) {
     const focusMonth = bMonth;
     const newRow = '<div class="dayRow elementNum{0}">';
     const newRowEnd = "</div>";
@@ -457,7 +456,10 @@ const Cal2 = () => {
         _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
       }
 
-      const holyDayInfo = $.grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
+      const holyDayInfo = $.grep(
+        _specialDays[bYear],
+        (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode
+      );
 
       if (holyDayInfo.length) {
         di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(
@@ -504,7 +506,9 @@ const Cal2 = () => {
       ),
       "<div class=gMonthInfo>{0}</div>".filledWith(gMonthInfo),
       "<div class=bMonthInfo>{0}</div>".filledWith(bMonthInfo),
-      "<div class=placeName>{0}</div>".filledWith(localStorage.locationName),
+      "<div class=placeName>{0}</div>".filledWith(
+        await getFromStorageLocal(localStorageKey.locationName)
+      ),
       "</div>",
       "<div class=monthDays>",
       "{^0}".filledWith(dayCells.join("")),

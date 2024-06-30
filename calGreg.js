@@ -1,5 +1,4 @@
 /* global getMessage */
-/* global getStorage */
 /* global di */
 /* global chrome */
 /* global $ */
@@ -146,7 +145,7 @@ const CalGreg = (di, host) => {
     //    }
   }
 
-  function buildMonth(gYear1, gMonth1) {
+  async function buildMonth(gYear1, gMonth1) {
     let gDay = 1;
     let gYear = gYear1;
     let gMonth = gMonth1;
@@ -386,7 +385,9 @@ const CalGreg = (di, host) => {
       "<div class=caption>{gMonthName} {gYear} <span>({bMonths})</span></div>".filledWith(
         monthTitleInfo
       ),
-      "<div class=placeName>{0}</div>".filledWith(localStorage.locationName),
+      "<div class=placeName>{0}</div>".filledWith(
+        await getFromStorageLocal(localStorageKey.locationName)
+      ),
       "{^0}".filledWith(
         "<div class=colName><div>{gDayName}</div><div class=weekDay>{arDayName}</div></div>".filledWithEach(
           dayHeaders

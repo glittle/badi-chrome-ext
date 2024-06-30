@@ -25,10 +25,10 @@ const BackgroundModule = () => {
     if (info.reason === "update") {
       setTimeout(() => {
         const newVersion = chrome.runtime.getManifest().version;
-        const oldVersion = localStorage.updateVersion;
+        const oldVersion = await getFromStorageLocal(localStorageKey.updateVersion);
         if (newVersion !== oldVersion) {
           console.log(`${oldVersion} --> ${newVersion}`);
-          localStorage.updateVersion = newVersion;
+          putInStorageLocal(localStorageKey.updateVersion, newVersion());
           chrome.tabs.create({
             url:
               getMessage(`${browserHostType}_History`) +
@@ -721,7 +721,7 @@ const BackgroundReminderEngine = () => {
 
     showAlarmNow(alarmInfo, alarmName);
 
-    localStorage.removeItem(alarmName);
+    removeFromStorageLocal(`${_reminderPrefix}${alarmName}`);
 
     if (!isTest) {
       setAlarmsForRestOfToday();
@@ -788,7 +788,7 @@ const BackgroundReminderEngine = () => {
     }
 
     try {
-      prepareAnalytics();
+      async prepareAnalytics();
 
       tracker.sendEvent(
         "showReminder",
@@ -941,16 +941,19 @@ const BackgroundReminderEngine = () => {
         if (name.startsWith(_reminderPrefix)) {
           //log('removed {0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime)));
           chrome.alarms.clear(name);
-          localStorage.removeItem(name);
+          removeFromStorageLocal(name);
         }
       }
-      for (const key in localStorage) {
-        if (Object.prototype.hasOwnProperty.call(localStorage, key)) {
-          if (key.startsWith(_reminderPrefix)) {
-            localStorage.removeItem(key);
+      debugger; // ensure this works!
+      chrome.storage.sync.get(null, (items) => {
+        for (let key in items) {
+          if (Object.prototype.hasOwnProperty.call(items, key)) {
+            if (key.startsWith(_reminderPrefix)) {
+              removeFromStorageLocal(key);
+            }
           }
         }
-      }
+      });
       if (fnAfter) {
         fnAfter();
       }

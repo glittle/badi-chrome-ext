@@ -241,7 +241,7 @@ var PageCustom = function () {
                 s: div.find(".customIsSample input").is(":checked"),
             });
         });
-        setStorage("customFormats", formats);
+        putInStorageSync("customFormats", formats);
         chrome.storage.local.set({
             customFormats: formats,
         }, function () {
@@ -304,14 +304,14 @@ var PageCustom = function () {
     function getCustomSample() {
         return $("#customSampleTemplate").html().replace('data-x=""', "{checked}");
     }
-    function recallSettings(formats) {
+    async function recallSettings(formats) {
         if (formats === void 0) { formats = null; }
         var formats2 = [];
         if (typeof formats === "string") {
             formats2 = JSON.parse(formats);
         }
         else {
-            formats2 = formats || getStorage("customFormats", []);
+            formats2 = formats || await getFromStorageSync(syncStorageKey.customFormats, []);
         }
         if (formats2 === null || formats2 === void 0 ? void 0 : formats2.length) {
             $.each(formats2, function (i, el) {
@@ -351,12 +351,12 @@ var PageCustom = function () {
     }
     function fillSelectForDefaults() {
         // each item in list is:  letter:'A',format:'{format}'
-        fillSelectDefault("customLoadToolTip1", "formatToolTip1", getMessage("formatIconToolTip"));
-        fillSelectDefault("customLoadToolTip2", "formatToolTip2", getMessage("nearestSunset"));
-        fillSelectDefault("customLoadTopDay", "formatTopDay", getMessage("bTopDayDisplay"));
+        fillSelectDefault("customLoadToolTip1", syncStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
+        fillSelectDefault("customLoadToolTip2", syncStorageKey.formatToolTip2, getMessage("nearestSunset"));
+        fillSelectDefault("customLoadTopDay", syncStorageKey.formatTopDay, getMessage("bTopDayDisplay"));
         updateDefaultDropdowns();
     }
-    function fillSelectDefault(id, storageId, message) {
+    async function fillSelectDefault(id, syncStorageKeyToUse, message) {
         var defaultFormat = message;
         var defaultFound = false;
         var optionsHtml = [
@@ -373,7 +373,7 @@ var PageCustom = function () {
         });
         optionsHtml.push("</optgroup>");
         // add local custom formats
-        var formats = getStorage("customFormats", []);
+        var formats = await getFromStorageSync(syncStorageKey.customFormats, []);
         if (formats.length > 0) {
             optionsHtml.push('<optgroup label="{0}">'.filledWith(getMessage("customFormats")));
             $.each(formats, function (i, el) {
@@ -387,21 +387,21 @@ var PageCustom = function () {
             ? ""
             : "<option value=\"".concat(defaultFormat, "\" data-prefix=\"Default - \" data-format=\"").concat(defaultFormat, "\"></option>")) +
             optionsHtml.join(""));
-        ddl.val(getStorage(storageId, ""));
+        ddl.val(await getFromStorageSync(syncStorageKeyToUse, ""));
         if (!ddl.val()) {
             ddl.val(defaultFormat);
         }
     }
-    function saveTopToolTipFormat1(ev) {
-        setStorage("formatToolTip1", $(ev.target).find("option:selected").data("format"));
-        showIcon();
+    async function saveTopToolTipFormat1(ev) {
+        putInStorageSync(syncStorageKey.formatToolTip1, $(ev.target).find("option:selected").data("format"));
+        await showIcon();
     }
-    function saveTopToolTipFormat2(ev) {
-        setStorage("formatToolTip2", $(ev.target).find("option:selected").data("format"));
-        showIcon();
+    async function saveTopToolTipFormat2(ev) {
+        putInStorageSync(syncStorageKey.formatToolTip2, $(ev.target).find("option:selected").data("format"));
+        await showIcon();
     }
     function saveTopDayFormat(ev) {
-        setStorage("formatTopDay", $(ev.target).find("option:selected").data("format"));
+        putInStorageSync(syncStorageKey.formatTopDay, $(ev.target).find("option:selected").data("format"));
         showInfo(_di);
     }
     function updateDefaultDropdowns() {

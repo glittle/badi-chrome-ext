@@ -1,4 +1,3 @@
-/* global getStorage */
 /* global getMessage */
 /* global di */
 /* global chrome */
