@@ -17,14 +17,14 @@ const Cal3 = () => {
   }
 
   function attachHandlers() {
-    _calendarDiv.on("click", ".dayCell", async (ev) => {
+    _calendarDiv.on("click", ".dayCell", (ev) => {
       const cell = $(ev.target).closest(".dayCell");
       const gDate = cell.data("gdate");
 
       const target = new Date(gDate);
       setFocusTime(target);
       refreshDateInfo();
-      await showInfo(_di);
+      showInfo(_di);
     });
     _page.on("change", "#cbShowTimes", () => {
       _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes").prop("checked"));
@@ -62,7 +62,7 @@ const Cal3 = () => {
     $(document).on("click", "body[data-pageid=pageCal3] .btnChangeMonth", changeMonth);
   }
 
-  async function changeMonth(ev) {
+  function changeMonth(ev) {
     const delta = +$(ev.target).closest("button").data("delta") || 0;
     let currentYear = _di.bYear;
     if (currentYear < 1) return;
@@ -95,7 +95,7 @@ const Cal3 = () => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    await showInfo(_di);
+    showInfo(_di);
     //    } catch (error) {
     //      console.log('Error: ' + error);
     //    }
@@ -258,7 +258,7 @@ const Cal3 = () => {
     }, 0);
   }
 
-  async function buildCalendar() {
+  function buildCalendar() {
     const bYear = _di.bYear;
     _yearShown = bYear;
     _scrollToMonth = -1;
@@ -274,7 +274,7 @@ const Cal3 = () => {
     for (let m = 1; m <= 19; m++) {
       if (m === 19) {
         // add ayyam-i-ha with Loftiness
-        Array.prototype.push.apply(html, await buildMonth(bYear, 0));
+        Array.prototype.push.apply(html, buildMonth(bYear, 0));
       }
 
       const elementNum = getElementNum(m);
@@ -339,7 +339,7 @@ const Cal3 = () => {
     //    }
   }
 
-  async function buildMonth(bYear, bMonth) {
+  function buildMonth(bYear, bMonth) {
     const focusMonth = bMonth;
 
     const dayCellTemplate = $("#cal3dayCell").html();
