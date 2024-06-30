@@ -34,7 +34,7 @@ const Cal1 = (originalDi, originalHost) => {
     $("#pageCal1 .months").on("click", ".bd", clickBd);
   }
 
-  function clickBd(ev) {
+  async function clickBd(ev) {
     const dayDiv = $(ev.target).closest("div.bd");
     const monthDiv = dayDiv.closest("div.bm");
     const day = getNum(dayDiv, "bd");
@@ -44,7 +44,7 @@ const Cal1 = (originalDi, originalHost) => {
 
     setFocusTime(gDate);
     refreshDateInfo();
-    showInfo(_di);
+    await showInfo(_di);
   }
 
   function getNum(el, prefix) {

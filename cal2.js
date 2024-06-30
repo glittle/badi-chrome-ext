@@ -29,24 +29,15 @@ const Cal2 = () => {
       showInfo(_di);
     });
     _page.on("change", "#cbShowTimes", () => {
-      _calendarDiv.toggleClass(
-        "showTimes",
-        !!_page.find("#cbShowTimes").prop("checked")
-      );
+      _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes").prop("checked"));
       // _calendarDiv.find('#cbShowTimes').blur();
     });
     _page.on("change", "#cbCal2Darker", () => {
-      _page.toggleClass(
-        "darkerColors",
-        !!_page.find("#cbCal2Darker").prop("checked")
-      );
+      _page.toggleClass("darkerColors", !!_page.find("#cbCal2Darker").prop("checked"));
       // _calendarDiv.find('#cbCal2Darker').blur();
     });
     _page.on("change", "#cbCal2Print", () => {
-      _page.toggleClass(
-        "forPrint",
-        !!_page.find("#cbCal2Print").prop("checked")
-      );
+      _page.toggleClass("forPrint", !!_page.find("#cbCal2Print").prop("checked"));
     });
 
     // presets
@@ -62,11 +53,7 @@ const Cal2 = () => {
     _page.find("#btnCal2M").click(() => {
       zoomTo("M");
     });
-    $(document).on(
-      "click",
-      "body[data-pageid=pageCal2] .btnChangeMonth",
-      changeMonth
-    );
+    $(document).on("click", "body[data-pageid=pageCal2] .btnChangeMonth", changeMonth);
   }
 
   function changeMonth(ev) {
@@ -243,12 +230,11 @@ const Cal2 = () => {
   //    }
   //  }
 
-  async function showCalendar(newDi) {
+  function showCalendar(newDi) {
     _di = newDi;
-
     const newYear = newDi.bYear;
     if (newYear !== _yearShown) {
-      await buildCalendar();
+      buildCalendar();
     }
     highlightTargetDay(newDi);
   }
@@ -265,7 +251,7 @@ const Cal2 = () => {
     }, 0);
   }
 
-  async function buildCalendar() {
+  function buildCalendar() {
     const bYear = _di.bYear;
     _yearShown = bYear;
     _scrollToMonth = -1;
@@ -281,7 +267,7 @@ const Cal2 = () => {
     for (let m = 1; m <= 19; m++) {
       if (m === 19) {
         // add ayyam-i-ha with Loftiness
-        Array.prototype.push.apply(html, await buildMonth(bYear, 0));
+        Array.prototype.push.apply(html, buildMonth(bYear, 0));
       }
 
       const elementNum = getElementNum(m);
@@ -294,18 +280,13 @@ const Cal2 = () => {
           break;
       }
 
-      Array.prototype.push.apply(html, await buildMonth(bYear, m));
+      Array.prototype.push.apply(html, buildMonth(bYear, m));
     }
 
     html.push(newRowEnd);
 
     for (let i = 1; i <= 19; i++) {
-      html.push(
-        '<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(
-          i,
-          getElementNum(i)
-        )
-      );
+      html.push('<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(i, getElementNum(i)));
     }
 
     _calendarDiv.html(html.join(""));
@@ -351,7 +332,7 @@ const Cal2 = () => {
     //    }
   }
 
-  async function buildMonth(bYear, bMonth) {
+  function buildMonth(bYear, bMonth) {
     const focusMonth = bMonth;
     const newRow = '<div class="dayRow elementNum{0}">';
     const newRowEnd = "</div>";
@@ -408,8 +389,7 @@ const Cal2 = () => {
       }
 
       const startSunset = di.frag1SunTimes.sunset;
-      const startSunsetHr =
-        startSunset.getHours() + startSunset.getMinutes() / 60;
+      const startSunsetHr = startSunset.getHours() + startSunset.getMinutes() / 60;
 
       const sunrise = di.frag2SunTimes.sunrise;
       const sunriseHr = sunrise.getHours() + sunrise.getMinutes() / 60;
@@ -434,17 +414,12 @@ const Cal2 = () => {
 
       if (di.bMonth === 19) {
         $.extend(di, {
-          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(
-            showTime(sunrise)
-          ),
+          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(showTime(sunrise)),
         });
       }
 
       $.extend(di, {
-        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(
-          di.sunriseDiv || "",
-          showTime(di.frag2SunTimes.sunset)
-        ),
+        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(di.sunriseDiv || "", showTime(di.frag2SunTimes.sunset)),
       });
 
       if (bDay === bMonth) {
@@ -456,18 +431,11 @@ const Cal2 = () => {
         _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
       }
 
-      const holyDayInfo = $.grep(
-        _specialDays[bYear],
-        (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode
-      );
+      const holyDayInfo = $.grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
 
       if (holyDayInfo.length) {
-        di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(
-          holyDayInfo[0].Type
-        );
-        di.holyDayAftName = '<div class="hdName">{0}</div>'.filledWith(
-          getMessage(holyDayInfo[0].NameEn)
-        );
+        di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);
+        di.holyDayAftName = '<div class="hdName">{0}</div>'.filledWith(getMessage(holyDayInfo[0].NameEn));
         di.classesOuter.push(`hdDay${holyDayInfo[0].Type}`);
       }
       di.DayOfWeek = getMessage("DayOfWeek");
@@ -484,31 +452,17 @@ const Cal2 = () => {
       bYear: bYear,
     };
 
-    const monthElement =
-      bMonth === 0
-        ? ""
-        : "<div class=monthElement>{element}</div>".filledWith(day1Di);
-    const bMonthInfo =
-      (bMonth === 0
-        ? "{bMonthNameSec}"
-        : "{bMonth} &#8230; {bMonthNameSec}"
-      ).filledWith(day1Di) + monthElement;
+    const monthElement = bMonth === 0 ? "" : "<div class=monthElement>{element}</div>".filledWith(day1Di);
+    const bMonthInfo = (bMonth === 0 ? "{bMonthNameSec}" : "{bMonth} &#8230; {bMonthNameSec}").filledWith(day1Di) + monthElement;
     const gMonthInfo = `${gMonths.join(", ")} ${gYear}`;
 
     const html = [
-      '<div class="month elementNum{1}" id=cal2_m{0}>'.filledWith(
-        focusMonth,
-        elementNum
-      ),
+      '<div class="month elementNum{1}" id=cal2_m{0}>'.filledWith(focusMonth, elementNum),
       "<div class=caption>",
-      "<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>".filledWith(
-        monthTitleInfo
-      ),
+      "<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>".filledWith(monthTitleInfo),
       "<div class=gMonthInfo>{0}</div>".filledWith(gMonthInfo),
       "<div class=bMonthInfo>{0}</div>".filledWith(bMonthInfo),
-      "<div class=placeName>{0}</div>".filledWith(
-        await getFromStorageLocal(localStorageKey.locationName)
-      ),
+      "<div class=placeName>{0}</div>".filledWith(common.locationName),
       "</div>",
       "<div class=monthDays>",
       "{^0}".filledWith(dayCells.join("")),
@@ -526,9 +480,7 @@ const Cal2 = () => {
     const currentTime = new Date();
     const nowDi = getDateInfo(currentTime);
 
-    const dayCell = _calendarDiv.find(
-      "#cal2_igd{bMonth}_{bDay}".filledWith(nowDi)
-    );
+    const dayCell = _calendarDiv.find("#cal2_igd{bMonth}_{bDay}".filledWith(nowDi));
     dayCell.addClass("today");
 
     const start = dayjs(nowDi.frag1SunTimes.sunset);
@@ -550,13 +502,7 @@ const Cal2 = () => {
     if (pct > 99) pct = 99;
 
     // ~~ is like Math.floor()
-    dayCell.append(
-      '<div class=todayTime title="{1} {2}" style="left:{0}%"></div>'.filledWith(
-        ~~pct,
-        getMessage("Now"),
-        now.format("HH:mm")
-      )
-    );
+    dayCell.append('<div class=todayTime title="{1} {2}" style="left:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format("HH:mm")));
 
     clearTimeout(_timeoutTime);
     _timeoutTime = setTimeout(showTodayTime, 15 * 60 * 1000); // 15 minutes

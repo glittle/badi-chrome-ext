@@ -63,7 +63,7 @@ const CalWheel = () => {
 
         slice.find(".monthNum").html(bm);
         slice.find(".monthNameAr").html(forSvg(bMonthNamePri[bm]));
-        //log(bMonthNamePri[bm] + ' - ' + settings.useArNames + ' - ' + bMonthNameSec[bm]);
+        //log(bMonthNamePri[bm] + ' - ' + common.useArNames + ' - ' + bMonthNameSec[bm]);
         slice.find(".monthName").html(forSvg(bMonthNameSec[bm]));
 
         const gd = holyDays.getGDate(di.bYear, bm, 1, false);
@@ -139,12 +139,12 @@ const CalWheel = () => {
   //    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase();
   //  }
 
-  function gotoYear(year) {
+  async function gotoYear(year) {
     const year2 = year || 173;
     const gDate = holyDays.getGDate(+year2, 1, 1, true);
     setFocusTime(gDate);
     refreshDateInfo();
-    showInfo(_di);
+    await showInfo(_di);
   }
 
   function rotateYear(year, speed) {

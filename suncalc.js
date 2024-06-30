@@ -123,7 +123,7 @@ var createSunCalc = function () {
 
   SunCalc.getTimes = function (date, lat, lng) {
     // Glen - override
-    if (!_locationKnown) {
+    if (!common.locationKnown) {
       var dt2 = dayjs(date).toDate();
       dt2.setHours(18, 30, 0, 0);
       var dt3 = dayjs(date).toDate();

@@ -5,7 +5,7 @@
 /* global _initialDiStamp */
 /* global _currentPageId */
 /* global chrome */
-/* global _languageCode */
+/* global common.languageCode */
 /* global $ */
 let _showingInfo = false;
 let _changingBDate = false;
@@ -30,7 +30,6 @@ let _loadingNum = 0;
 // let _lastLoadingComment = null;
 let _inTab = false;
 const _pageIdList = [];
-let tracker;
 
 const _remindersEnabled = browserHostType === browser.Chrome;
 
@@ -55,14 +54,8 @@ async function attachHandlers() {
   });
   $(".jumpTo").val(await getFromStorageSync(syncStorageKey.jumpTo, "90"));
 
-  $(".bDatePickerInputs input, .bYearPicker").on(
-    "change paste keydown keypress",
-    changeToBDate
-  );
-  $(".bKullishayPicker, .bVahidPicker, .bYearInVahidPicker").on(
-    "change paste keydown keypress",
-    changeInVahid
-  );
+  $(".bDatePickerInputs input, .bYearPicker").on("change paste keydown keypress", changeToBDate);
+  $(".bKullishayPicker, .bVahidPicker, .bYearInVahidPicker").on("change paste keydown keypress", changeInVahid);
 
   $("#btnEveOrDay").on("click", toggleEveOrDay);
   $("#datePicker").on("change", jumpToDate);
@@ -114,7 +107,7 @@ async function attachHandlers() {
     });
 
   $("input:radio[name=language]").click((ev) => {
-    settings.useArNames = ev.target.value === "Ar";
+    common.useArNames = ev.target.value === "Ar";
     ApplyLanguage();
   });
 
@@ -123,8 +116,8 @@ async function attachHandlers() {
 
 function ApplyLanguage() {
   UpdateLanguageBtn();
-  putInStorageSync(syncStorageKey.useArNames, settings.useArNames);
-  tracker.sendEvent("useArabic", settings.useArNames);
+  putInStorageSync(syncStorageKey.useArNames, common.useArNames);
+  tracker.sendEvent("useArabic", common.useArNames);
   knownDateInfos = {};
   resetForLanguageChange();
   refreshDateInfoAndShow();
@@ -138,7 +131,7 @@ function ApplyLanguage() {
 let sampleNum = 0;
 let showInfoDelay = null;
 
-async function showInfo(di) {
+function showInfo(di) {
   // debugger;
 
   _showingInfo = true;
@@ -148,7 +141,7 @@ async function showInfo(di) {
   updateSpecial(di);
 
   // show current page first, then the others
-  await updatePageContent(_currentPageId, di);
+  updatePageContent(_currentPageId, di);
 
   updateSharedContent(di);
 
@@ -187,16 +180,9 @@ function updateSpecial(di) {
   }
 }
 
-async function updateSharedContent(di) {
+function updateSharedContent(di) {
   // debugger;
-  $("#day").html(
-    (
-      await getFromStorageSync(
-        syncStorageKey.formatTopDay,
-        getMessage("bTopDayDisplay")
-      )
-    ).filledWith(di)
-  );
+  $("#day").html(common.formatTopDay.filledWith(di));
   $("#sunset").html(di.nearestSunset);
   $("#gDay").html(getMessage("gTopDayDisplay", di));
 
@@ -216,11 +202,7 @@ async function updateSharedContent(di) {
   //  BuildSpecialDaysTable(di);
   //}
 
-  if (await getFromStorageLocal(localStorageKey.locationNameKnown, false)) {
-    showLocation();
-  } else {
-    startGetLocationName();
-  }
+  showLocation();
 }
 
 async function changePage(ev, delta) {
@@ -265,24 +247,19 @@ async function showPage(id) {
   }); // reduce flicker?
 
   const other = ".vahidInputs"; // don't fit on any page... likely need to remove it
-  const pageDay =
-    "#gDay, #showUpcoming, .explains, .normal, #show, .iconArea, #special";
+  const pageDay = "#gDay, #showUpcoming, .explains, .normal, #show, .iconArea, #special";
   const pageEvents = "#yearSelector, .iconArea, #specialDaysTitle";
   const pageCal1 = "#yearSelector, .JumpDays, #show, #gDay, #special";
   const pageCalWheel = "#yearSelector, #show, #gDay, #special, .iconArea";
-  const pageCalGreg =
-    "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
-  const pageCal2 =
-    "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
-  const pageCal3 =
-    "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
+  const pageCalGreg = "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
+  const pageCal2 = "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
+  const pageCal3 = "#yearSelector, .JumpDays, #show, #gDay, #special, .iconArea, .monthNav";
   const pageLists = "#gDay, #show, .iconArea, #special";
   const pageFast = "#yearSelector, .iconArea";
   const pageReminders = ".iconArea, #otherPageTitle";
   const pageExporter = "#yearSelector, .iconArea, #otherPageTitle";
   const pagePlanner = ".iconArea, #otherPageTitle";
-  const pageCustom =
-    "#yearSelector, .JumpDays, #show, #gDay, .iconArea, #special";
+  const pageCustom = "#yearSelector, .JumpDays, #show, #gDay, .iconArea, #special";
   const pageSetup = "#otherPageTitle, .iconArea";
 
   $(
@@ -369,10 +346,7 @@ async function showPage(id) {
             return 6;
           }
           //log(holyDays.daysInAyyamiHa(_di.bYear));
-          return (
-            holyDays.daysInAyyamiHa(_di.bYear) -
-            (bDay > 3 ? 1 + holyDays.daysInAyyamiHa(_di.bYear) - bDay : 0)
-          );
+          return holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? 1 + holyDays.daysInAyyamiHa(_di.bYear) - bDay : 0);
         }
         switch (direction) {
           case -1: // up
@@ -403,11 +377,7 @@ async function showPage(id) {
             if (bDay <= 16) {
               return 6;
             }
-            return (
-              19 +
-              (bMonth === 18 ? holyDays.daysInAyyamiHa(_di.bYear) : 3) -
-              bDay
-            );
+            return 19 + (bMonth === 18 ? holyDays.daysInAyyamiHa(_di.bYear) : 3) - bDay;
         }
         return 0;
       };
@@ -604,7 +574,7 @@ function resetPageForLanguageChange(id) {
   }
 }
 
-async function updatePageContent(id, di) {
+function updatePageContent(id, di) {
   switch (id) {
     case "pageDay": {
       const makeObj = (key, name) => ({
@@ -616,10 +586,7 @@ async function updatePageContent(id, di) {
         makeObj("DayOfMonth"),
         {
           name: getMessage("Month"),
-          value: getMessage(
-            di.bMonth ? "MonthFormatNormal" : "MonthFormatAyyam",
-            di
-          ),
+          value: getMessage(di.bMonth ? "MonthFormatNormal" : "MonthFormatAyyam", di),
         },
         makeObj("YearOfVahid"),
         makeObj("Vahid", di.VahidLabelPri),
@@ -634,18 +601,11 @@ async function updatePageContent(id, di) {
       $("#explain").html(explain1);
       $("#explain2").html(explain2);
       $("#ayyamIs0").html(getMessage("ayyamIs0").filledWith(bMonthNamePri[0]));
-      $("#dayDetails").html(
-        `<dl>${"<dt>{^name}</dt><dd>{^value}</dd>".filledWithEach(
-          dayDetails
-        )}</dl>`
-      );
+      $("#dayDetails").html(`<dl>${"<dt>{^name}</dt><dd>{^value}</dd>".filledWithEach(dayDetails)}</dl>`);
 
       $("#gDate").html(getMessage("gregorianDateDisplay", di));
       $("#gDateDesc").html("({^currentRelationToSunset})".filledWith(di));
-      $("button.today").toggleClass(
-        "notToday",
-        di.stamp !== _initialDiStamp.stamp
-      );
+      $("button.today").toggleClass("notToday", di.stamp !== _initialDiStamp.stamp);
       $("#datePicker").val(di.currentDateString);
 
       addSamples(di);
@@ -677,7 +637,7 @@ async function updatePageContent(id, di) {
 
     case "pageCal2":
       if (_cal2) {
-        await _cal2.showCalendar(di);
+        _cal2.showCalendar(di);
       }
       break;
 
@@ -691,13 +651,9 @@ async function updatePageContent(id, di) {
       $("#pageLists table tr.selected").removeClass("selected");
       $("#pageLists table tr.selectedDay").removeClass("selectedDay");
 
-      $(
-        ".yearListNum{bYearInVahid}, .monthListNum{bMonth}".filledWith(di)
-      ).addClass("selected");
+      $(".yearListNum{bYearInVahid}, .monthListNum{bMonth}".filledWith(di)).addClass("selected");
       if (di.bMonth !== 0) {
-        $(
-          ".dayListNum{bDay}, .weekdayListNum{bWeekday}".filledWith(di)
-        ).addClass("selectedDay");
+        $(".dayListNum{bDay}, .weekdayListNum{bWeekday}".filledWith(di)).addClass("selectedDay");
       } else {
         // ayyam-i-ha
         $(".weekdayListNum{bWeekday}".filledWith(di)).addClass("selectedDay");
@@ -816,14 +772,11 @@ function changeInVahid(ev) {
 
   tracker.sendEvent("changeInVahid", `${bKullishay}-${bVahid}-${bYearInVahid}`);
 
-  const year = Math.min(
-    1000,
-    19 * 19 * (bKullishay - 1) + 19 * (bVahid - 1) + bYearInVahid
-  );
+  const year = Math.min(1000, 19 * 19 * (bKullishay - 1) + 19 * (bVahid - 1) + bYearInVahid);
   changeYear(null, null, year);
 }
 
-function changeToBDate(ev) {
+async function changeToBDate(ev) {
   if (_showingInfo) {
     return;
   }
@@ -834,9 +787,7 @@ function changeToBDate(ev) {
   }
 
   const input = $(ev.target);
-  let bYear = input.hasClass("bYearPicker")
-    ? input.val()
-    : $(".bYearPicker").val(); // we have 2... use this one
+  let bYear = input.hasClass("bYearPicker") ? input.val() : $(".bYearPicker").val(); // we have 2... use this one
   if (bYear === "") return;
   bYear = +bYear;
   // fix to our supported range
@@ -859,7 +810,7 @@ function changeToBDate(ev) {
     refreshDateInfo();
 
     //    _changingBDate = true;
-    showInfo(_di);
+    await showInfo(_di);
     _changingBDate = false;
   } catch (error) {
     console.log(error);
@@ -872,7 +823,6 @@ function addSamples(di) {
 
   let msg;
   const notInMessagesJson = "_$$$_";
-
   if (_pageCustom) {
     _pageCustom.clearFromFirstPage();
   }
@@ -904,14 +854,15 @@ async function keyPressed(ev) {
   }
   const key = String.fromCharCode(ev.which) || "";
   switch (ev.which) {
-    case 65: // Ctrl+Shift+A -- change lang to/from Arabic - mostly for during development and demos, not translatable
-      if (ev.shiftKey && ev.ctrlKey) {
-        settings.useArNames = !settings.useArNames;
-        ApplyLanguage();
-        ev.preventDefault();
-        return;
-      }
-      break;
+    // case 'A':
+    //    // Ctrl+Shift+A -- change lang to/from Arabic - mostly for during development and demos, not translatable
+    //   if (ev.shiftKey && ev.ctrlKey) {
+    //     common.useArNames = !common.useArNames;
+    //     ApplyLanguage();
+    //     ev.preventDefault();
+    //     return;
+    //   }
+    //   break;
 
     case 18:
       return; // 08 (ALT) causes a crashes
@@ -1253,7 +1204,7 @@ function showWhenResetToNow() {
 }
 
 async function fillSetup() {
-  const optedOut = settings.optedOutOfGoogleAnalytics === true;
+  const optedOut = common.optedOutOfGoogleAnalytics === true;
   const cb = $("#setupOptOut");
   cb.prop("checked", optedOut);
   cb.on("change", () => {
@@ -1262,7 +1213,7 @@ async function fillSetup() {
       tracker.sendEvent("optOut", optingOut);
     }
     putInStorageSync(syncStorageKey.optOutGa, optingOut);
-    settings.optedOutOfGoogleAnalytics = optingOut;
+    common.optedOutOfGoogleAnalytics = optingOut;
 
     if (!optingOut) {
       tracker.sendEvent("optOut", optingOut);
@@ -1274,11 +1225,11 @@ async function fillSetup() {
   // console.log('finished call to start filling')
 
   const colorInput = $("#setupColor");
-  colorInput.val(settings.iconTextColor);
+  colorInput.val(common.iconTextColor);
   colorInput.on("change", () => {
     const newColor = colorInput.val();
     putInStorageLocal(localStorageKey.iconTextColor, newColor);
-    settings.iconTextColor = newColor;
+    common.iconTextColor = newColor;
     showIcon();
   });
 
@@ -1314,9 +1265,7 @@ function startFillingLanguageInput(select) {
             code: langToLoad,
             name: name || "",
             english: english === name || english === langToLoad ? "" : english,
-            pct: Math.round(
-              (Object.keys(messages).length / _numMessagesEn) * 100
-            ),
+            pct: Math.round((Object.keys(messages).length / _numMessagesEn) * 100),
           };
           info.sort = info.english || info.name || info.code;
           langs.push(info);
@@ -1327,18 +1276,13 @@ function startFillingLanguageInput(select) {
         for (i = 0; i < langs.length; i++) {
           const info = langs[i];
           options.push(
-            "<option value={0}>{3}{1} ... {0} ... {2}%</option>".filledWith(
-              info.code,
-              info.name,
-              info.pct,
-              info.english ? `${info.english} / ` : ""
-            )
+            "<option value={0}>{3}{1} ... {0} ... {2}%</option>".filledWith(info.code, info.name, info.pct, info.english ? `${info.english} / ` : "")
           );
         }
         select.html(options.join(""));
         // console.log('lang list filled')
 
-        select.val(_languageCode);
+        select.val(common.languageCode);
 
         if (select[0].selectedIndex === -1) {
           // code was not in the list
@@ -1350,11 +1294,7 @@ function startFillingLanguageInput(select) {
           pctSpan.hide();
         } else {
           const msg =
-            _rawMessageTranslationPct === 100
-              ? getMessage("setupLangPct100")
-              : getMessage("setupLangPct").filledWith(
-                  _rawMessageTranslationPct
-                );
+            _rawMessageTranslationPct === 100 ? getMessage("setupLangPct100") : getMessage("setupLangPct").filledWith(_rawMessageTranslationPct);
           pctSpan.html(msg).show();
         }
 
@@ -1370,7 +1310,7 @@ function langSelectChanged() {
 
   putInStorageSync(syncStorageKey.language, lang);
 
-  if (lang === _languageCode) {
+  if (lang === common.languageCode) {
     return;
   }
 
@@ -1412,13 +1352,13 @@ function updateLocation(immediately) {
   inputLng.removeClass("error");
 
   let changed = false;
-  if (_locationLat !== lat) {
-    _locationLat = lat;
+  if (common.locationLat !== lat) {
+    common.locationLat = lat;
     putInStorageLocal(localStorageKey.lat, lat);
     changed = true;
   }
-  if (_locationLong !== lng) {
-    _locationLong = lng;
+  if (common.locationLong !== lng) {
+    common.locationLong = lng;
     putInStorageLocal(localStorageKey.long, lng);
     changed = true;
   }
@@ -1426,12 +1366,9 @@ function updateLocation(immediately) {
   if (changed) {
     knownDateInfos = {};
     putInStorageLocal(localStorageKey.locationKnown, true);
-    _locationKnown = true;
+    common.locationKnown = true;
     putInStorageLocal(localStorageKey.locationNameKnown, false);
-    putInStorageLocal(
-      localStorageKey.locationName,
-      getMessage("browserActionTitle")
-    ); // temp until we get it
+    putInStorageLocal(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
 
     startGetLocationName();
 
@@ -1450,9 +1387,7 @@ function fillStatic() {
     });
   }
   $("#monthListBody").html(
-    '<tr class="dayListNum{num} monthListNum{num}"><td>{num}</td><td>{arabic}</td><td>{meaning}</td></tr>'.filledWithEach(
-      nameList
-    )
+    '<tr class="dayListNum{num} monthListNum{num}"><td>{num}</td><td>{arabic}</td><td>{meaning}</td></tr>'.filledWithEach(nameList)
   );
 
   nameList = [];
@@ -1467,9 +1402,7 @@ function fillStatic() {
     });
   }
   $("#weekdayListBody").html(
-    "<tr class=weekdayListNum{num}><td>{num}</td><td>{arabic}</td><td>{meaning}</td><td>{equiv}</td></tr>".filledWithEach(
-      nameList
-    )
+    "<tr class=weekdayListNum{num}><td>{num}</td><td>{arabic}</td><td>{meaning}</td><td>{equiv}</td></tr>".filledWithEach(nameList)
   );
 
   nameList = [];
@@ -1480,11 +1413,7 @@ function fillStatic() {
       meaning: bYearInVahidMeaning[i],
     });
   }
-  $("#yearListBody").html(
-    "<tr class=yearListNum{num}><td>{num}</td><td>{arabic}</td><td>{meaning}</td></tr>".filledWithEach(
-      nameList
-    )
-  );
+  $("#yearListBody").html("<tr class=yearListNum{num}><td>{num}</td><td>{arabic}</td><td>{meaning}</td></tr>".filledWithEach(nameList));
 }
 
 async function fillEventStart() {
@@ -1516,9 +1445,7 @@ function SetFiltersForSpecialDaysTable(ev) {
     if (ev) {
       // both turned off?  turn on one
       const clicked = $(ev.target).closest("input").attr("id");
-      $(
-        clicked === "includeFeasts" ? "#includeHolyDays" : "#includeFeasts"
-      ).prop("checked", true);
+      $(clicked === "includeFeasts" ? "#includeHolyDays" : "#includeFeasts").prop("checked", true);
     } else {
       //default to holy days
       $("#includeHolyDays").prop("checked", true);
@@ -1529,9 +1456,7 @@ function SetFiltersForSpecialDaysTable(ev) {
 
   putInStorageSync(syncStorageKey.includeFeasts, includeFeasts);
   putInStorageSync(syncStorageKey.includeHolyDays, includeHolyDays);
-  $("#specialListsTable")
-    .toggleClass("Feasts", includeFeasts)
-    .toggleClass("HolyDays", includeHolyDays);
+  $("#specialListsTable").toggleClass("Feasts", includeFeasts).toggleClass("HolyDays", includeHolyDays);
 }
 
 let _lastSpecialDaysYear = 0;
@@ -1555,9 +1480,7 @@ async function BuildSpecialDaysTable(di) {
     }
   });
 
-  const defaultEventStart =
-    $("#eventStart").val() ||
-    (await getFromStorageSync(syncStorageKey.eventStart));
+  const defaultEventStart = $("#eventStart").val() || (await getFromStorageSync(syncStorageKey.eventStart));
 
   dayInfos.forEach((dayInfo, i) => {
     const targetDi = getDateInfo(dayInfo.GDate);
@@ -1592,9 +1515,7 @@ async function BuildSpecialDaysTable(di) {
     if (dayInfo.Type === "Fast") {
       const sunrise = targetDi.frag2SunTimes.sunrise;
       dayInfo.FastSunrise = sunrise ? showTime(sunrise) : "?";
-      dayInfo.FastSunset = sunrise
-        ? showTime(targetDi.frag2SunTimes.sunset)
-        : "?";
+      dayInfo.FastSunset = sunrise ? showTime(targetDi.frag2SunTimes.sunset) : "?";
       dayInfo.FastDay = getMessage("mainPartOfDay", targetDi);
       if (targetDi.frag2Weekday === 6) {
         dayInfo.RowClass = "FastSat";
@@ -1662,16 +1583,10 @@ async function BuildSpecialDaysTable(di) {
   rowTemplate.push("<td>{D}</td>");
   rowTemplate.push("<td class=name>{A}</td>"); //{STColSpan}
   rowTemplate.push("<td class=forHD>{NoWork}</td>");
-  rowTemplate.push(
-    '<td class=eventTime>{EventTime}<div class="forHD time">{ST}</div></td>'
-  ); // {isEve}
+  rowTemplate.push('<td class=eventTime>{EventTime}<div class="forHD time">{ST}</div></td>'); // {isEve}
   rowTemplate.push("<td>{G}</td>");
   rowTemplate.push("</tr>");
-  $("#specialListBody").html(
-    rowTemplate
-      .join("")
-      .filledWithEach(dayInfos.filter((el) => el.Type !== "Fast"))
-  );
+  $("#specialListBody").html(rowTemplate.join("").filledWithEach(dayInfos.filter((el) => el.Type !== "Fast")));
 
   $("#specialDaysTitle").html(getMessage("specialDaysTitle", di));
 
@@ -1683,11 +1598,7 @@ async function BuildSpecialDaysTable(di) {
   fastRowTemplate.push("<td>{FastDay}</td>");
   fastRowTemplate.push("</tr>");
 
-  $("#fastListBody").html(
-    fastRowTemplate
-      .join("")
-      .filledWithEach(dayInfos.filter((el) => el.Type === "Fast"))
-  );
+  $("#fastListBody").html(fastRowTemplate.join("").filledWithEach(dayInfos.filter((el) => el.Type === "Fast")));
 
   $("#fastDaysTitle").html(getMessage("fastDaysTitle", di));
 }
@@ -1705,11 +1616,9 @@ function showShortcutKeys() {
   }
 }
 
-async function showLocation() {
-  $(".place").html(await getFromStorageLocal(localStorageKey.locationName));
-  $("#locationErrorHolder").toggle(
-    !(await getFromStorageLocal(localStorageKey.locationKnown, false))
-  );
+function showLocation() {
+  $(".place").html(common.locationName);
+  $("#locationErrorHolder").toggle(!common.locationKnown);
 }
 
 function hideCal1() {
@@ -1758,7 +1667,7 @@ async function prepareDefaults() {
 }
 
 function UpdateLanguageBtn() {
-  $(`#rbDefLang_${settings.useArNames ? "Ar" : "Local"}`).prop("checked", true);
+  $(`#rbDefLang_${common.useArNames ? "Ar" : "Local"}`).prop("checked", true);
 }
 
 function openInTab() {
@@ -1795,77 +1704,6 @@ function openInTab() {
   }
 }
 
-async function prepare1() {
-  $("#loadingMsg").html(getMessage("browserActionTitle"));
-
-  startGettingLocation();
-
-  const langCode = _languageCode.slice(0, 2);
-  $("body")
-    .addClass(_languageCode)
-    .addClass(_languageDir)
-    .addClass(langCode)
-    .addClass(browserHostType)
-    .attr("lang", _languageCode)
-    .attr("dir", _languageDir);
-
-  _initialDiStamp = getDateInfo(new Date(), true);
-
-  recallFocusAndSettings();
-
-  updateLoadProgress("refresh date info");
-
-  UpdateLanguageBtn();
-
-  updateLoadProgress("defaults");
-  prepareDefaults();
-
-  if (_iconPrepared) {
-    refreshDateInfo();
-  } else {
-    refreshDateInfoAndShow();
-  }
-
-  const isEve = await getFromStorageLocal(localStorageKey.focusTimeIsEve, "x");
-  if (isEve !== "x" && isEve !== _di.bNow.eve) {
-    toggleEveOrDay(isEve);
-  }
-
-  updateLoadProgress("localize");
-  localizeHtml();
-
-  updateLoadProgress("page custom");
-  _pageCustom = PageCustom();
-
-  updateLoadProgress("showInfo");
-  showInfo(_di);
-
-  updateLoadProgress("showPage");
-  await showPage();
-
-  updateLoadProgress("shortcut keys");
-  showShortcutKeys();
-
-  updateLoadProgress("handlers");
-  attachHandlers();
-
-  updateLoadProgress("btn open");
-  showBtnOpen();
-
-  updateLoadProgress("tab names");
-  updateTabNames();
-
-  updateLoadProgress("prepare2 soon");
-
-  setTimeout(prepare2, 0);
-
-  // if viewing first page, show now
-  if (_currentPageId === "pageDay") {
-    adjustHeight();
-    $("#initialCover").hide();
-  }
-}
-
 function updateTabNames() {
   $(".selectPages button")
     .filter(":visible")
@@ -1898,7 +1736,6 @@ async function prepare2() {
   _initialStartupDone = true;
 
   updateLoadProgress("prepare2 start");
-  await prepareAnalytics();
 
   updateLoadProgress("send event");
   tracker.sendEvent("opened");
@@ -1955,10 +1792,7 @@ async function prepare2() {
   updateLoadProgress("finish");
   $("#version").attr("href", getMessage(`${browserHostType}_History`));
   $("#linkWebStore").attr("href", getMessage(`${browserHostType}_WebStore`));
-  $("#linkWebStoreSupport").attr(
-    "href",
-    getMessage(`${browserHostType}_WebStoreSupport`)
-  );
+  $("#linkWebStoreSupport").attr("href", getMessage(`${browserHostType}_WebStoreSupport`));
 
   if (_currentPageId !== "pageDay") {
     adjustHeight();
@@ -1984,7 +1818,6 @@ function updateLoadProgress(comment) {
 }
 
 $(async () => {
-  await fillSettings();
-  await prepareShared();
-  prepare1();
+  await prepareForBackgroundAndPopup();
+  await prepareSharedForPopup();
 });

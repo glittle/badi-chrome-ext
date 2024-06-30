@@ -17,27 +17,21 @@ const Cal3 = () => {
   }
 
   function attachHandlers() {
-    _calendarDiv.on("click", ".dayCell", (ev) => {
+    _calendarDiv.on("click", ".dayCell", async (ev) => {
       const cell = $(ev.target).closest(".dayCell");
       const gDate = cell.data("gdate");
 
       const target = new Date(gDate);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      await showInfo(_di);
     });
     _page.on("change", "#cbShowTimes", () => {
-      _calendarDiv.toggleClass(
-        "showTimes",
-        !!_page.find("#cbShowTimes").prop("checked")
-      );
+      _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes").prop("checked"));
       // _calendarDiv.find('#cbShowTimes').blur();
     });
     _page.on("change", "#cbCal3Darker", () => {
-      _page.toggleClass(
-        "darkerColors",
-        !!_page.find("#cbCal3Darker").prop("checked")
-      );
+      _page.toggleClass("darkerColors", !!_page.find("#cbCal3Darker").prop("checked"));
       // _calendarDiv.find('#cbCal3Darker').blur();
     });
     _page.on("change", "#cbCal3Print", () => {
@@ -65,14 +59,10 @@ const Cal3 = () => {
     _page.find("#btnCal3M").click(() => {
       zoomTo("M");
     });
-    $(document).on(
-      "click",
-      "body[data-pageid=pageCal3] .btnChangeMonth",
-      changeMonth
-    );
+    $(document).on("click", "body[data-pageid=pageCal3] .btnChangeMonth", changeMonth);
   }
 
-  function changeMonth(ev) {
+  async function changeMonth(ev) {
     const delta = +$(ev.target).closest("button").data("delta") || 0;
     let currentYear = _di.bYear;
     if (currentYear < 1) return;
@@ -105,7 +95,7 @@ const Cal3 = () => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    showInfo(_di);
+    await showInfo(_di);
     //    } catch (error) {
     //      console.log('Error: ' + error);
     //    }
@@ -303,12 +293,7 @@ const Cal3 = () => {
     html.push(newRowEnd);
 
     for (let i = 1; i <= 19; i++) {
-      html.push(
-        '<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(
-          i,
-          getElementNum(i)
-        )
-      );
+      html.push('<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(i, getElementNum(i)));
     }
 
     _calendarDiv.html(html.join(""));
@@ -381,9 +366,7 @@ const Cal3 = () => {
       dayCells.push(
         `<div style="grid-area: {row} / {column}" class="weekdayTitle">
             <div class=b><span class=a>{arabic}</span><span class=m>({meaning})</span></div>
-            <div class=g><span class=e>{gEve}</span><span class=d>{gDay}</span></div></div>`.filledWith(
-          wdInfo
-        )
+            <div class=g><span class=e>{gEve}</span><span class=d>{gDay}</span></div></div>`.filledWith(wdInfo)
       );
     }
 
@@ -433,8 +416,7 @@ const Cal3 = () => {
       }
 
       const startSunset = di.frag1SunTimes.sunset;
-      const startSunsetHr =
-        startSunset.getHours() + startSunset.getMinutes() / 60;
+      const startSunsetHr = startSunset.getHours() + startSunset.getMinutes() / 60;
 
       const sunrise = di.frag2SunTimes.sunrise;
       const sunriseHr = sunrise.getHours() + sunrise.getMinutes() / 60;
@@ -459,17 +441,12 @@ const Cal3 = () => {
 
       if (di.bMonth === 19) {
         $.extend(di, {
-          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(
-            showTime(sunrise)
-          ),
+          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(showTime(sunrise)),
         });
       }
 
       $.extend(di, {
-        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(
-          di.sunriseDiv || "",
-          showTime(di.frag2SunTimes.sunset)
-        ),
+        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(di.sunriseDiv || "", showTime(di.frag2SunTimes.sunset)),
       });
 
       if (bDay === bMonth) {
@@ -481,18 +458,11 @@ const Cal3 = () => {
         _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
       }
 
-      const holyDayInfo = $.grep(
-        _specialDays[bYear],
-        (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode
-      );
+      const holyDayInfo = $.grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
 
       if (holyDayInfo.length) {
-        di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(
-          holyDayInfo[0].Type
-        );
-        di.holyDayAftName = '<div class="hdName">{0}</div>'.filledWith(
-          getMessage(holyDayInfo[0].NameEn)
-        );
+        di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);
+        di.holyDayAftName = '<div class="hdName">{0}</div>'.filledWith(getMessage(holyDayInfo[0].NameEn));
         di.classesOuter.push(`hdDay${holyDayInfo[0].Type}`);
       }
       di.DayOfWeek = getMessage("DayOfWeek");
@@ -507,30 +477,15 @@ const Cal3 = () => {
       bYear: bYear,
     };
 
-    const monthElement =
-      bMonth === 0
-        ? ""
-        : "<div class=monthElement>{element}</div>".filledWith(day1Di);
-    const bMonthInfo =
-      (bMonth === 0
-        ? "{bMonthNameSec}"
-        : "{bMonth} - {bMonthNameSec}"
-      ).filledWith(day1Di) + monthElement; //&#8230;
+    const monthElement = bMonth === 0 ? "" : "<div class=monthElement>{element}</div>".filledWith(day1Di);
+    const bMonthInfo = (bMonth === 0 ? "{bMonthNameSec}" : "{bMonth} - {bMonthNameSec}").filledWith(day1Di) + monthElement; //&#8230;
     const gMonthInfo = `${gMonths.join(", ")} ${gYear}`;
 
     const html = [
-      '<div class="month elementNum{1}" id=cal3_m{0}>'.filledWith(
-        focusMonth,
-        elementNum
-      ),
+      '<div class="month elementNum{1}" id=cal3_m{0}>'.filledWith(focusMonth, elementNum),
       "<div class=caption>",
-      "<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>".filledWith(
-        monthTitleInfo
-      ),
-      "<div class=gMonthInfo>{0}<div class=placeName>{1}</div></div>".filledWith(
-        gMonthInfo,
-        await getFromStorageLocal(localStorageKey.locationName)
-      ),
+      "<div class=monthNames>{bMonthName}<span class=year> {bYear}</span></div>".filledWith(monthTitleInfo),
+      "<div class=gMonthInfo>{0}<div class=placeName>{1}</div></div>".filledWith(gMonthInfo, common.locationName),
       "<div class=bMonthInfo>{0}</div>".filledWith(bMonthInfo),
       "</div>",
       "<div class=monthDays>",
@@ -549,9 +504,7 @@ const Cal3 = () => {
     const currentTime = new Date();
     const nowDi = getDateInfo(currentTime);
 
-    const dayCell = _calendarDiv.find(
-      "#cal3_igd{bMonth}_{bDay}".filledWith(nowDi)
-    );
+    const dayCell = _calendarDiv.find("#cal3_igd{bMonth}_{bDay}".filledWith(nowDi));
     dayCell.addClass("today");
 
     const start = dayjs(nowDi.frag1SunTimes.sunset);
@@ -573,13 +526,7 @@ const Cal3 = () => {
     if (pct > 99) pct = 99;
 
     // ~~ is like Math.floor()
-    dayCell.append(
-      '<div class=todayTime title="{1} {2}" style="left:{0}%"></div>'.filledWith(
-        ~~pct,
-        getMessage("Now"),
-        now.format("HH:mm")
-      )
-    );
+    dayCell.append('<div class=todayTime title="{1} {2}" style="left:{0}%"></div>'.filledWith(~~pct, getMessage("Now"), now.format("HH:mm")));
 
     clearTimeout(_timeoutTime);
     _timeoutTime = setTimeout(showTodayTime, 15 * 60 * 1000); // 15 minutes

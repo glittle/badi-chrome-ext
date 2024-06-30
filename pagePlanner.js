@@ -21,22 +21,14 @@ const PagePlanner = () => {
     const now = new Date();
     switch (planFromWhen) {
       case "by0":
-        _startGDate = new Date(
-          holyDays.getGDate(getBadiYear(now), 1, 1).getTime()
-        );
+        _startGDate = new Date(holyDays.getGDate(getBadiYear(now), 1, 1).getTime());
         break;
       case "by1":
-        _startGDate = new Date(
-          holyDays.getGDate(getBadiYear(now) + 1, 1, 1).getTime()
-        );
+        _startGDate = new Date(holyDays.getGDate(getBadiYear(now) + 1, 1, 1).getTime());
         break;
       // case 'today':
       default:
-        _startGDate = new Date(
-          now.getFullYear(),
-          now.getMonth(),
-          now.getDate()
-        );
+        _startGDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         break;
     }
 
@@ -88,16 +80,10 @@ const PagePlanner = () => {
   }
 
   function addColSet(cells, frag, targetDi) {
-    const displayDate =
-      `{${frag}Year}-{${frag}Month00}-{${frag}Day00}`.filledWith(targetDi);
+    const displayDate = `{${frag}Year}-{${frag}Month00}-{${frag}Day00}`.filledWith(targetDi);
     const excelDate = ""; //('{' + frag + 'Month00}/{' + frag + 'Day00}/{' + frag + 'Year}').filledWith(targetDi);
 
-    cells.push(
-      '<td class=plannerDate data-csv="{1}">{0}</td>'.filledWith(
-        displayDate,
-        excelDate
-      )
-    );
+    cells.push('<td class=plannerDate data-csv="{1}">{0}</td>'.filledWith(displayDate, excelDate));
     cells.push(`<td>{${frag}WeekdayShort}</td>`.filledWith(targetDi));
   }
 
@@ -113,20 +99,12 @@ const PagePlanner = () => {
       const dayInfos = holyDays.prepareDateInfos(targetYear);
       dayInfos.forEach((dayInfo, i) => {
         let name = "";
-        if (
-          plannerWhatEvent === dayInfo.NameEn ||
-          plannerWhatEvent.includes(dayInfo.NameEn)
-        ) {
+        if (plannerWhatEvent === dayInfo.NameEn || plannerWhatEvent.includes(dayInfo.NameEn)) {
           // HD
           name = getMessage(dayInfo.NameEn);
-        } else if (
-          plannerWhatEvent === `M_${dayInfo.MonthNum}` ||
-          plannerWhatEvent.includes(`M_${dayInfo.MonthNum}`)
-        ) {
+        } else if (plannerWhatEvent === `M_${dayInfo.MonthNum}` || plannerWhatEvent.includes(`M_${dayInfo.MonthNum}`)) {
           // month
-          name = getMessage("FeastOf").filledWith(
-            bMonthNamePri[dayInfo.MonthNum]
-          );
+          name = getMessage("FeastOf").filledWith(bMonthNamePri[dayInfo.MonthNum]);
         } else {
           return;
         }
@@ -142,12 +120,7 @@ const PagePlanner = () => {
         const thisYear = targetDi.bYear;
         const cells = [
           "<td>{0}</td>".filledWith(name),
-          '<td class="{1}">{0}</td>'.filledWith(
-            thisYear,
-            selectMode === "event2" && thisYear !== yearShown
-              ? "plannerNewYear"
-              : ""
-          ),
+          '<td class="{1}">{0}</td>'.filledWith(thisYear, selectMode === "event2" && thisYear !== yearShown ? "plannerNewYear" : ""),
         ];
         yearShown = thisYear;
 
@@ -170,59 +143,35 @@ const PagePlanner = () => {
     }
 
     const th1 = ["<th colspan=2></th>"];
-    const th2 = [
-      "<th>{0}</th>".filledWith("Event"),
-      "<th>{0}</th>".filledWith("Year"),
-    ];
+    const th2 = ["<th>{0}</th>".filledWith("Event"), "<th>{0}</th>".filledWith("Year")];
 
     switch (_plannerShowWhat) {
       case "both": {
-        const frag1 = $(
-          '#plannerShowWhat option[value="{0}"]'.filledWith("frag1")
-        ).text();
-        const frag2 = $(
-          '#plannerShowWhat option[value="{0}"]'.filledWith("frag2")
-        ).text();
+        const frag1 = $('#plannerShowWhat option[value="{0}"]'.filledWith("frag1")).text();
+        const frag2 = $('#plannerShowWhat option[value="{0}"]'.filledWith("frag2")).text();
 
-        th1.push(
-          "<th class=plannerThTitle colspan=2>{0}</th>".filledWith(frag1)
-        );
+        th1.push("<th class=plannerThTitle colspan=2>{0}</th>".filledWith(frag1));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Date", frag1));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Weekday", frag1));
 
-        th1.push(
-          "<th class=plannerThTitle colspan=2>{0}</th>".filledWith(frag2)
-        );
+        th1.push("<th class=plannerThTitle colspan=2>{0}</th>".filledWith(frag2));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Date", frag2));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Weekday", frag2));
         break;
       }
       default: {
-        const fragSingle = $(
-          '#plannerShowWhat option[value="{0}"]'.filledWith(_plannerShowWhat)
-        ).text();
-        th1.push(
-          "<th class=plannerThTitle colspan=2>{0}</th>".filledWith(fragSingle)
-        );
+        const fragSingle = $('#plannerShowWhat option[value="{0}"]'.filledWith(_plannerShowWhat)).text();
+        th1.push("<th class=plannerThTitle colspan=2>{0}</th>".filledWith(fragSingle));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Date", fragSingle));
         th2.push('<th title="{1}">{0}</th>'.filledWith("Weekday", fragSingle));
         break;
       }
     }
-    const locationHeader = getMessage(
-      "plannerStartSunsetForLocation"
-    ).filledWith(await getFromStorageLocal(localStorageKey.locationName));
+    const locationHeader = getMessage("plannerStartSunsetForLocation").filledWith(common.locationName);
     th1.push("<th rowspan=2>{0}</th>".filledWith(locationHeader));
-    th2.push(
-      '<th style="display:none" title="{0}"></th>'.filledWith(locationHeader)
-    );
+    th2.push('<th style="display:none" title="{0}"></th>'.filledWith(locationHeader));
 
-    $("#plannerResultsHead").html(
-      [
-        `<tr>${th1.join("")}</tr>`,
-        `<tr class=plannerHeaders>${th2.join("")}</tr>`,
-      ].join("")
-    );
+    $("#plannerResultsHead").html([`<tr>${th1.join("")}</tr>`, `<tr class=plannerHeaders>${th2.join("")}</tr>`].join(""));
     $("#plannerResultsBody").html(results.join(""));
   }
 
@@ -237,26 +186,16 @@ const PagePlanner = () => {
           break;
         case "M":
           fOptions.push({
-            t: getMessage("FeastOf").filledWith(
-              bMonthNamePri[dayInfo.MonthNum]
-            ),
+            t: getMessage("FeastOf").filledWith(bMonthNamePri[dayInfo.MonthNum]),
             v: `M_${dayInfo.MonthNum}`,
           });
           break;
       }
     });
-    $("#planWhatHdGroup").html(
-      "<option value={v}>{t}</option>".filledWithEach(hdOptions)
-    );
-    $("#planWhatFeastGroup").html(
-      "<option value={v}>{t}</option>".filledWithEach(fOptions)
-    );
+    $("#planWhatHdGroup").html("<option value={v}>{t}</option>".filledWithEach(hdOptions));
+    $("#planWhatFeastGroup").html("<option value={v}>{t}</option>".filledWithEach(fOptions));
 
-    $("#planUntilNum").html(
-      '<option value="{0}">{0}</option>'.filledWithEach(
-        $.map($(Array(19)), (val, i) => 1 + i)
-      )
-    );
+    $("#planUntilNum").html('<option value="{0}">{0}</option>'.filledWithEach($.map($(Array(19)), (val, i) => 1 + i)));
   }
 
   function startup() {
@@ -319,10 +258,7 @@ const PagePlanner = () => {
     //var rawText = lines.join('\r\n');
 
     //;charset=utf-8
-    element.setAttribute(
-      "href",
-      `${"data:{0};charset=utf-8,".filledWith(mimeType)}\ufeff${rawText}`
-    );
+    element.setAttribute("href", `${"data:{0};charset=utf-8,".filledWith(mimeType)}\ufeff${rawText}`);
     element.setAttribute("download", filename);
 
     element.style.display = "none";

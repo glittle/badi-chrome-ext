@@ -15,7 +15,7 @@ const CalGreg = (di, host) => {
   }
 
   function attachHandlers() {
-    _calendarDiv.on("click", ".morn, .aft, .outside", function (ev) {
+    _calendarDiv.on("click", ".morn, .aft, .outside", async function (ev) {
       const cell = $(this).closest(".outside, .gd");
       const id = cell.attr("id").substring(3).split("_");
       const month = +id[0];
@@ -24,9 +24,9 @@ const CalGreg = (di, host) => {
       const target = new Date(_yearShown, month, day);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      await showInfo(_di);
     });
-    _calendarDiv.on("click", ".eve", function (ev) {
+    _calendarDiv.on("click", ".eve", async function (ev) {
       const cell = $(this).closest(".gd");
       const id = cell.attr("id").substring(3).split("_");
       const month = +id[0];
@@ -36,17 +36,13 @@ const CalGreg = (di, host) => {
       target.setDate(target.getDate() + 1);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      await showInfo(_di);
     });
 
-    $(document).on(
-      "click",
-      "body[data-pageid=pageCalGreg] .btnChangeMonth",
-      changeMonth
-    );
+    $(document).on("click", "body[data-pageid=pageCalGreg] .btnChangeMonth", changeMonth);
   }
 
-  function changeMonth(ev) {
+  async function changeMonth(ev) {
     const delta = +$(ev.target).closest("button").data("delta") || 0;
 
     // rough... if 29,30,31 may skip two months...
@@ -56,7 +52,7 @@ const CalGreg = (di, host) => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    showInfo(_di);
+    await showInfo(_di);
   }
 
   function showCalendar(newDi) {
@@ -77,19 +73,12 @@ const CalGreg = (di, host) => {
   }
 
   function highlightTargetDay(di) {
-    _calendarDiv
-      .find(".morn.selected, .aft.selected, .eve.selected, .gd.selected")
-      .removeClass("selected");
-    _calendarDiv
-      .find(".morn.today, .aft.today, .eve.today, .gd.today")
-      .removeClass("today");
-    let sel =
-      ".bMonth{bMonth}.bDay{bDay}, #gd{frag2Month}_{frag2Day}".filledWith(di);
+    _calendarDiv.find(".morn.selected, .aft.selected, .eve.selected, .gd.selected").removeClass("selected");
+    _calendarDiv.find(".morn.today, .aft.today, .eve.today, .gd.today").removeClass("today");
+    let sel = ".bMonth{bMonth}.bDay{bDay}, #gd{frag2Month}_{frag2Day}".filledWith(di);
     _calendarDiv.find(sel).addClass("selected");
 
-    sel = ".bMonth{bMonth}.bDay{bDay}, #gd{frag2Month}_{frag2Day}".filledWith(
-      getDateInfo(new Date())
-    );
+    sel = ".bMonth{bMonth}.bDay{bDay}, #gd{frag2Month}_{frag2Day}".filledWith(getDateInfo(new Date()));
     _calendarDiv.find(sel).addClass("today");
 
     if (_scrollToMonth !== di.frag2Month) {
@@ -200,9 +189,7 @@ const CalGreg = (di, host) => {
       }
 
       const thisDayInfo = getDateInfo(gDate);
-      const tomorrowDayInfo = getDateInfo(
-        new Date(gDate.getFullYear(), gDate.getMonth(), 1 + gDate.getDate())
-      );
+      const tomorrowDayInfo = getDateInfo(new Date(gDate.getFullYear(), gDate.getMonth(), 1 + gDate.getDate()));
 
       const sunrise = thisDayInfo.frag2SunTimes.sunrise;
       const sunriseHr = sunrise.getHours() + sunrise.getMinutes() / 60;
@@ -254,64 +241,43 @@ const CalGreg = (di, host) => {
         tomorrowDay: tomorrowDayInfo.bDay,
         monthName:
           tomorrowDayInfo.bDay === 1
-            ? tomorrowDayInfo.bMonthNamePri +
-              "<span>{0}</span>".filledWith(tomorrowDayInfo.bMonth)
+            ? tomorrowDayInfo.bMonthNamePri + "<span>{0}</span>".filledWith(tomorrowDayInfo.bMonth)
             : gDay === 1
             ? thisDayInfo.bMonthNamePri
             : "",
-        isFirst:
-          tomorrowDayInfo.bDay === 1 ? "first" : gDay === 1 ? "continuing" : "",
+        isFirst: tomorrowDayInfo.bDay === 1 ? "first" : gDay === 1 ? "continuing" : "",
       });
 
       if (thisDayInfo.bMonth === 19) {
         $.extend(thisDayInfo, {
-          sunriseDiv: "<span class=sunrise>{0}</span>".filledWith(
-            showTime(sunrise)
-          ),
+          sunriseDiv: "<span class=sunrise>{0}</span>".filledWith(showTime(sunrise)),
         });
       }
 
       // add holy days
       if (!_specialDays[thisDayInfo.bYear]) {
-        _specialDays[thisDayInfo.bYear] = holyDays.prepareDateInfos(
-          thisDayInfo.bYear
-        );
+        _specialDays[thisDayInfo.bYear] = holyDays.prepareDateInfos(thisDayInfo.bYear);
       }
       if (!_specialDays[tomorrowDayInfo.bYear]) {
-        _specialDays[tomorrowDayInfo.bYear] = holyDays.prepareDateInfos(
-          tomorrowDayInfo.bYear
-        );
+        _specialDays[tomorrowDayInfo.bYear] = holyDays.prepareDateInfos(tomorrowDayInfo.bYear);
       }
 
       let holyDayInfo = $.grep(
         _specialDays[thisDayInfo.bYear],
-        (el, i) =>
-          !outside &&
-          el.Type.substring(0, 1) === "H" &&
-          el.BDateCode === thisDayInfo.bDateCode
+        (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === thisDayInfo.bDateCode
       );
       if (holyDayInfo.length) {
-        thisDayInfo.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(
-          holyDayInfo[0].Type
-        );
-        thisDayInfo.holyDayAftName =
-          '<span class="hdName">{0}</span>'.filledWith(
-            getMessage(holyDayInfo[0].NameEn)
-          );
+        thisDayInfo.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);
+        thisDayInfo.holyDayAftName = '<span class="hdName">{0}</span>'.filledWith(getMessage(holyDayInfo[0].NameEn));
         thisDayInfo.classesOuter.push(`hdDay${holyDayInfo[0].Type}`);
       }
 
       holyDayInfo = $.grep(
         _specialDays[tomorrowDayInfo.bYear],
-        (el, i) =>
-          !outside &&
-          el.Type.substring(0, 1) === "H" &&
-          el.BDateCode === tomorrowDayInfo.bDateCode
+        (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === tomorrowDayInfo.bDateCode
       );
       if (holyDayInfo.length) {
-        thisDayInfo.holyDayEveStar = '<span class="hd{0}"></span>'.filledWith(
-          holyDayInfo[0].Type
-        );
+        thisDayInfo.holyDayEveStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);
         thisDayInfo.classesOuter.push(`hdEve${holyDayInfo[0].Type}`);
       }
 
@@ -382,17 +348,9 @@ const CalGreg = (di, host) => {
     // tried to use real caption, but gets messed on on some print pages
     const html = [
       "<div class=month id=m{0}>".filledWith(focusMonth),
-      "<div class=caption>{gMonthName} {gYear} <span>({bMonths})</span></div>".filledWith(
-        monthTitleInfo
-      ),
-      "<div class=placeName>{0}</div>".filledWith(
-        await getFromStorageLocal(localStorageKey.locationName)
-      ),
-      "{^0}".filledWith(
-        "<div class=colName><div>{gDayName}</div><div class=weekDay>{arDayName}</div></div>".filledWithEach(
-          dayHeaders
-        )
-      ),
+      "<div class=caption>{gMonthName} {gYear} <span>({bMonths})</span></div>".filledWith(monthTitleInfo),
+      "<div class=placeName>{0}</div>".filledWith(common.locationName),
+      "{^0}".filledWith("<div class=colName><div>{gDayName}</div><div class=weekDay>{arDayName}</div></div>".filledWithEach(dayHeaders)),
       "{^0}".filledWith(weeks.join("\n")),
       "</div>",
     ];

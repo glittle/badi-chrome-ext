@@ -1339,7 +1339,7 @@
         "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be needed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
     },
     "tipsText": {
-        "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!\nPress Ctrl+Shift+A to change language."
+        "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!"
     },
     "title": {
         "message": "Badíʿ Calendar",

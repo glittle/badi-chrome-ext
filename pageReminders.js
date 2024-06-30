@@ -44,9 +44,7 @@ const PageReminders = () => {
     for (const prop in reminder) {
       if (Object.prototype.hasOwnProperty.call(reminder, prop)) {
         // do id and class
-        _page
-          .find("#reminder_{0}, .reminder_{0}".filledWith(prop))
-          .val(reminder[prop]);
+        _page.find("#reminder_{0}, .reminder_{0}".filledWith(prop)).val(reminder[prop]);
       }
     }
 
@@ -57,7 +55,7 @@ const PageReminders = () => {
     if (!_page.find("form")[0].checkValidity()) {
       return;
     }
-    
+
     let mode = newMode;
     if (!_currentEditId || mode === saveMode.saveNew) {
       mode = saveMode.saveNew;
@@ -116,11 +114,7 @@ const PageReminders = () => {
 
     if (saveToBackground) {
       try {
-        tracker.sendEvent(
-          "saveReminder",
-          r.trigger,
-          `${r.delta * r.num} ${r.units}`
-        );
+        tracker.sendEvent("saveReminder", r.trigger, `${r.delta * r.num} ${r.units}`);
       } catch (e) {
         console.log("Error", e);
       }
@@ -140,9 +134,7 @@ const PageReminders = () => {
     };
 
     _page
-      .find(
-        '#reminder_trigger, .reminderEditInputs *[id^="reminder_"]:input, .reminderEditInputs *[class*="reminder_"]:input'
-      )
+      .find('#reminder_trigger, .reminderEditInputs *[id^="reminder_"]:input, .reminderEditInputs *[class*="reminder_"]:input')
       .filter((i, el) => $(el).parent().is(":visible"))
       .each((i, el) => {
         const input = $(el);
@@ -150,9 +142,7 @@ const PageReminders = () => {
         if (el.id.startsWith("reminder_")) {
           name = el.id;
         } else {
-          const classes = $.grep(el.className.split(" "), (n, g) =>
-            n.startsWith("reminder_")
-          );
+          const classes = $.grep(el.className.split(" "), (n, g) => n.startsWith("reminder_"));
           if (classes.length) {
             name = classes[0];
           }
@@ -173,9 +163,7 @@ const PageReminders = () => {
         }
         if (input[0].id === "reminder_trigger") {
           const selectedOption = input.find(":selected");
-          r.model =
-            selectedOption.data("model") ||
-            selectedOption.closest("optgroup").data("model");
+          r.model = selectedOption.data("model") || selectedOption.closest("optgroup").data("model");
         }
       });
 
@@ -205,10 +193,7 @@ const PageReminders = () => {
     }
 
     r.delta = r.delta || BEFORE;
-    r.deltaText =
-      r.delta === BEFORE
-        ? getMessage("reminderBefore")
-        : getMessage("reminderAfter");
+    r.deltaText = r.delta === BEFORE ? getMessage("reminderBefore") : getMessage("reminderAfter");
     r.api = r.api || "html";
 
     //log(r);
@@ -218,11 +203,7 @@ const PageReminders = () => {
 
   async function updateEditArea(focusOnFirstInput) {
     // turn everything off
-    _page
-      .find(
-        ".reminderModel, .reminderEditInputs, .reminderAction, .reminderCalcType"
-      )
-      .hide();
+    _page.find(".reminderModel, .reminderEditInputs, .reminderAction, .reminderCalcType").hide();
     _page.find(".reminderModel :input").each((i, input) => {
       $(input).prop("disabled", true);
     });
@@ -235,9 +216,7 @@ const PageReminders = () => {
 
     // find what model to show
     const selectedOption = _page.find("#reminder_trigger option:selected");
-    const model =
-      selectedOption.data("model") ||
-      selectedOption.closest("optgroup").data("model");
+    const model = selectedOption.data("model") || selectedOption.closest("optgroup").data("model");
 
     if (model) {
       const modelArea = _page.find("#model_{0}".filledWith(model));
@@ -353,9 +332,7 @@ const PageReminders = () => {
       }
 
       if (r.action) {
-        lines.push(
-          " ({0})".filledWith(getMessage(`reminderAction_${r.action}`))
-        );
+        lines.push(" ({0})".filledWith(getMessage(`reminderAction_${r.action}`)));
       }
 
       html.push(
@@ -368,11 +345,7 @@ const PageReminders = () => {
     });
 
     if (html.length === 0) {
-      html.push(
-        "<button class=button id=makeSamples>{0}</button>".filledWith(
-          getMessage("noReminders")
-        )
-      );
+      html.push("<button class=button id=makeSamples>{0}</button>".filledWith(getMessage("noReminders")));
     }
 
     listing.html(html.join("\n"));
@@ -388,16 +361,14 @@ const PageReminders = () => {
     }
 
     //update heading
-    _page
-      .find("#remindersScheduled")
-      .html(getMessage("remindersScheduled", { time: showTime(new Date()) }));
+    _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: showTime(new Date()) }));
 
     // blank out the list
     const alarmList = _page.find(".alarms");
     alarmList.html("");
 
     chrome.alarms.getAll(async (alarms) => {
-      alarms.sort((a, b) => a.scheduledTime < b.scheduledTime ? -1 : 1);
+      alarms.sort((a, b) => (a.scheduledTime < b.scheduledTime ? -1 : 1));
 
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
@@ -495,7 +466,7 @@ const PageReminders = () => {
     }
 
     const num = +(r.num || 0);
-    result += (`000${500 + delta * num}`).slice(-3);
+    result += `000${500 + delta * num}`.slice(-3);
 
     if (r.triggerTimeRaw) {
       result += r.triggerTimeRaw;
@@ -637,12 +608,7 @@ const PageReminders = () => {
 
   function determineTriggerTimeToday(reminder) {
     const date = new Date();
-    date.setHours(
-      reminder.triggerTimeRaw.substr(0, 2),
-      reminder.triggerTimeRaw.substr(3, 2),
-      0,
-      0
-    );
+    date.setHours(reminder.triggerTimeRaw.substr(0, 2), reminder.triggerTimeRaw.substr(3, 2), 0, 0);
     return date;
   }
 
@@ -656,9 +622,7 @@ const PageReminders = () => {
       for (let i = 0; i < voices.length; i++) {
         const voice = voices[i];
         if (voice.lang) {
-          options.push(
-            '<option data-lang="{lang}">{voiceName}</option>'.filledWith(voice)
-          );
+          options.push('<option data-lang="{lang}">{voiceName}</option>'.filledWith(voice));
         }
         // https://developer.chrome.com/extensions/tts
       }
@@ -667,9 +631,9 @@ const PageReminders = () => {
 
       // pre-select best match
       //full match
-      let match = $.grep(voices, (v) => v.lang === _languageCode);
+      let match = $.grep(voices, (v) => v.lang === common.languageCode);
       if (!match.length) {
-        match = $.grep(voices, (v) => v.lang?.startsWith(_languageCode));
+        match = $.grep(voices, (v) => v.lang?.startsWith(common.languageCode));
         if (!match.length) {
           match = $.grep(voices, (v) => v.lang?.startsWith("en"));
         }

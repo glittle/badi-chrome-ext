@@ -13,8 +13,7 @@ const PageExporter = () => {
   let _includeAlert = false;
 
   const prepareInputs = () => {
-    const template =
-      '{title}<label><input type="checkbox" value="{val}" data-num="{n}" /><span>{name}</span></label>';
+    const template = '{title}<label><input type="checkbox" value="{val}" data-num="{n}" /><span>{name}</span></label>';
     const items = [
       { val: "Date_AllDay", n: 365 },
       { val: "Date_BeginningSunset", n: 365 },
@@ -37,9 +36,7 @@ const PageExporter = () => {
       item.name = getMessage(`exportOption_${type}`);
       const what = valParts[0];
       if (what !== lastWhat) {
-        item.title = "<div class=exportItemTitle>{0}</div>".filledWith(
-          getMessage(`exportOption_${what}`)
-        );
+        item.title = "<div class=exportItemTitle>{0}</div>".filledWith(getMessage(`exportOption_${what}`));
         lastWhat = what;
       } else {
         item.title = "";
@@ -68,9 +65,7 @@ const PageExporter = () => {
     $.each(alerts, (i, a) => {
       a.t = getMessage(`exportAlert_${a.v}`);
     });
-    $("#exporterIncludeAlertMin").html(
-      '<option value="{v}">{t}</option>'.filledWithEach(alerts)
-    );
+    $("#exporterIncludeAlertMin").html('<option value="{v}">{t}</option>'.filledWithEach(alerts));
 
     setByYear();
   };
@@ -93,12 +88,7 @@ const PageExporter = () => {
   };
   const calFormat = (date, addHours, addMinutes) => {
     if (addHours + addMinutes) {
-      date.setHours(
-        date.getHours() + addHours,
-        date.getMinutes() + addMinutes,
-        0,
-        0
-      );
+      date.setHours(date.getHours() + addHours, date.getMinutes() + addMinutes, 0, 0);
     }
     return `${
       date
@@ -122,7 +112,7 @@ const PageExporter = () => {
     addLine(`X-WR-TIMEZONE:${dayjs.tz.guess()}`);
     addLine(
       `X-WR-CALDESC:${getMessage("exportCalendarDescription", {
-        location: await getFromStorageLocal(localStorageKey.locationName),
+        location: common.locationName,
       })}`
     );
 
@@ -237,9 +227,7 @@ END:VEVENT
 
     switch (variation) {
       case "AllDay":
-        addLine(
-          `DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`
-        );
+        addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`);
         addLine(`SUMMARY:${dayInfo}${" ⇨{endingSunsetDesc}".filledWith(di)}`);
         noTimes = true;
         break;
@@ -260,9 +248,7 @@ END:VEVENT
 
     addDescription(getMessage("exporterItemDescDay"), variation === "AllDay");
 
-    addLine(
-      _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-    );
+    addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
     addEndOfEntry();
   };
 
@@ -270,11 +256,7 @@ END:VEVENT
     if (!_specialDays[di.bYear]) {
       _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
     }
-    let holyDayInfo = $.grep(
-      _specialDays[di.bYear],
-      (el, i) =>
-        el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode
-    );
+    let holyDayInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
 
     if (!holyDayInfo.length) {
       return;
@@ -320,9 +302,7 @@ END:VEVENT
 
     switch (variation) {
       case "AllDay":
-        addLine(
-          `DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`
-        );
+        addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`);
         break;
       case "Sun":
         addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
@@ -340,7 +320,7 @@ END:VEVENT
 
     let key;
     const extraInfo = {
-      location: await getFromStorageLocal(localStorageKey.locationName),
+      location: common.locationName,
     };
 
     if (holyDayInfo.Time) {
@@ -352,9 +332,7 @@ END:VEVENT
 
     addDescription(getMessage(key, extraInfo), variation === "AllDay");
 
-    addLine(
-      _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-    );
+    addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
     addEndOfEntry();
   };
 
@@ -362,11 +340,7 @@ END:VEVENT
     if (!_specialDays[di.bYear]) {
       _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
     }
-    let feastInfo = $.grep(
-      _specialDays[di.bYear],
-      (el, i) =>
-        el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode
-    );
+    let feastInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
 
     if (!feastInfo.length) {
       return;
@@ -397,9 +371,7 @@ END:VEVENT
 
     switch (variation) {
       case "AllDay":
-        addLine(
-          `DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`
-        );
+        addLine(`DTSTART;VALUE=DATE:${di.currentDateString.replace(/\-/g, "")}`);
         break;
       case "Sun":
         addLine(`DTSTART:${calFormat(di.frag1SunTimes.sunset)}`);
@@ -420,14 +392,9 @@ END:VEVENT
         break;
     }
 
-    addDescription(
-      getMessage("exporterItemDescGeneralTime"),
-      variation === "AllDay"
-    );
+    addDescription(getMessage("exporterItemDescGeneralTime"), variation === "AllDay");
 
-    addLine(
-      _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-    );
+    addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
     addEndOfEntry();
   };
 
@@ -449,9 +416,7 @@ END:VEVENT
         addLine(`SUMMARY:${summary}`);
         addAlert(summary);
 
-        addLine(
-          _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-        );
+        addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
         addEndOfEntry();
 
         break;
@@ -465,9 +430,7 @@ END:VEVENT
         addLine(`SUMMARY:${summary}`);
         addAlert(summary);
 
-        addLine(
-          _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-        );
+        addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
         addEndOfEntry();
         break;
 
@@ -480,9 +443,7 @@ END:VEVENT
         addLine(`SUMMARY:${summary}`);
         addAlert(summary);
 
-        addLine(
-          _uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation)
-        );
+        addLine(_uidPrefix + "{0}//{1}-{2}".filledWith(di.stampDay, type, variation));
         addEndOfEntry();
         break;
       default:
@@ -515,7 +476,7 @@ END:VEVENT
     let msg = originalMsg; // Use a local variable instead of reassigning the parameter
     if (!allDay) {
       const extraInfo = {
-        location: await getFromStorageLocal(localStorageKey.locationName),
+        location: common.locationName,
       };
       const timesLocation = getMessage("exporterItemDescShared", extraInfo);
       msg = `${msg} ${timesLocation}`; // Now modifying the local variable
@@ -539,9 +500,7 @@ END:VEVENT
     addLine(`DTSTAMP:${_nowCalDate}`);
     addLine(`LAST-MODIFIED:${_nowCalDate}`);
     if (_includeLocation) {
-      addLine(
-        `LOCATION:${await getFromStorageLocal(localStorageKey.locationName)}`
-      );
+      addLine(`LOCATION:${common.locationName}`);
     }
     addLine("END:VEVENT");
 
@@ -592,17 +551,9 @@ END:VEVENT
         const wantedEventTypes = $(".exportOptionList input:checked")
           .map((i, el) => el.value.replace(/\_/g, ""))
           .get();
-        const filename = "Badi__{0}_{1}.ics".filledWith(
-          wantedEventTypes.join("_"),
-          dayjs().format("DDHHmmss")
-        );
+        const filename = "Badi__{0}_{1}.ics".filledWith(wantedEventTypes.join("_"), dayjs().format("DDHHmmss"));
         const element = document.createElement("a");
-        element.setAttribute(
-          "href",
-          `data:text/plain;charset=utf-8,${encodeURIComponent(
-            _lines.join("\r\n")
-          )}`
-        );
+        element.setAttribute("href", `data:text/plain;charset=utf-8,${encodeURIComponent(_lines.join("\r\n"))}`);
         element.setAttribute("download", filename);
 
         element.style.display = "none";
@@ -627,18 +578,14 @@ END:VEVENT
     putInStorageSync(`exporter_${input.id}`, input.value);
   };
   const clearQuickPick = () => {
-    $("#pageExporter input[type=checkbox]:checked, #exporterIncludeAlert").each(
-      (i, el) => {
-        $(el).prop("checked", false).trigger("change");
-      }
-    );
+    $("#pageExporter input[type=checkbox]:checked, #exporterIncludeAlert").each((i, el) => {
+      $(el).prop("checked", false).trigger("change");
+    });
   };
   const setQuickPicks = (list, alert) => {
     clearQuickPick();
     $.each(list, (i, l) => {
-      $("#pageExporter input[value={0}]".filledWith(l))
-        .prop("checked", true)
-        .trigger("change");
+      $("#pageExporter input[value={0}]".filledWith(l)).prop("checked", true).trigger("change");
     });
     if (alert) {
       $("#exporterIncludeAlertMin").val(alert).trigger("change");
@@ -685,33 +632,20 @@ END:VEVENT
       $("#exporterTest").hide();
       $(this).hide();
     });
-    $("#exporterIncludeAlert, #exporterIncludeAlertMin").on(
-      "change",
-      refreshAlert
-    );
+    $("#exporterIncludeAlert, #exporterIncludeAlertMin").on("change", refreshAlert);
   };
-  const recallSettings = async () => {
+  const recallSettings = () => {
     $("#pageExporter input[type=checkbox]").each(async (i, el) => {
       const cb = $(el);
-      cb.prop(
-        "checked",
-        await getFromStorageSync(`exporter_${cb.val()}`, false)
-      );
+      cb.prop("checked", await getFromStorageSync(`exporter_${cb.val()}`, false));
     });
-    $("#exporterName").val(
-      await getFromStorageSync(
-        syncStorageKey.exporter_exporterName,
-        getMessage("title")
-      )
-    );
+    $("#exporterName").val(common.exporter_exporterName);
     const ddlRange = $("#exporterDateRange");
-    ddlRange.val(await getFromStorageSync(syncStorageKey.exporter_exporterDateRange));
+    ddlRange.val(common.exporter_exporterDateRange);
     if (!ddlRange.val()) {
       ddlRange[0].selectedIndex = 0;
     }
-    $("#exporterIncludeAlertMin").val(
-        await getFromStorageSync(syncStorageKey.exporter_alertMinutes, "B0")
-    );
+    $("#exporterIncludeAlertMin").val(common.exporter_alertMinutes);
   };
   const refreshAlert = () => {
     const ddl = $("#exporterIncludeAlertMin");

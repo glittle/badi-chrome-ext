@@ -6,71 +6,71 @@
  *
  */
 
-const _isBackgroundPage = true;
+// const _isBackgroundPage = true;
 let _backgroundReminderEngine = {};
-const popupUrl = chrome.extension.getURL("popup.html");
+// const popupUrl = chrome.extension.getURL("popup.html");
 
 const BackgroundModule = () => {
-  const alarmHandler = (alarm) => {
-    if (alarm.name.startsWith("refresh")) {
-      console.log(`ALARM: ${alarm.name}`);
-      refreshDateInfoAndShow();
-      _backgroundReminderEngine.setAlarmsForRestOfToday();
-    } else if (alarm.name.startsWith("alarm_")) {
-      _backgroundReminderEngine.triggerAlarmNow(alarm.name);
-    }
-  };
+  // const alarmHandler = (alarm) => {
+  //   if (alarm.name.startsWith("refresh")) {
+  //     console.log(`ALARM: ${alarm.name}`);
+  //     refreshDateInfoAndShow();
+  //     _backgroundReminderEngine.setAlarmsForRestOfToday();
+  //   } else if (alarm.name.startsWith("alarm_")) {
+  //     _backgroundReminderEngine.triggerAlarmNow(alarm.name);
+  //   }
+  // };
 
-  function installed(info) {
-    if (info.reason === "update") {
-      setTimeout(() => {
-        const newVersion = chrome.runtime.getManifest().version;
-        const oldVersion = await getFromStorageLocal(localStorageKey.updateVersion);
-        if (newVersion !== oldVersion) {
-          console.log(`${oldVersion} --> ${newVersion}`);
-          putInStorageLocal(localStorageKey.updateVersion, newVersion());
-          chrome.tabs.create({
-            url:
-              getMessage(`${browserHostType}_History`) +
-              "?{0}:{1}".filledWith(
-                chrome.runtime.getManifest().version,
-                _languageCode
-              ),
-          });
+  // function installed(info) {
+  //   if (info.reason === "update") {
+  //     setTimeout(() => {
+  //       const newVersion = chrome.runtime.getManifest().version;
+  //       const oldVersion = await getFromStorageLocal(localStorageKey.updateVersion);
+  //       if (newVersion !== oldVersion) {
+  //         console.log(`${oldVersion} --> ${newVersion}`);
+  //         putInStorageLocal(localStorageKey.updateVersion, newVersion());
+  //         chrome.tabs.create({
+  //           url:
+  //             getMessage(`${browserHostType}_History`) +
+  //             "?{0}:{1}".filledWith(
+  //               chrome.runtime.getManifest().version,
+  //               common.languageCode
+  //             ),
+  //         });
 
-          setStorage("firstPopup", true);
+  //         setStorage("firstPopup", true);
 
-          try {
-            tracker.sendEvent("updated", getVersionInfo());
-          } catch (e) {
-            console.log(e);
-          }
-        } else {
-          console.log(newVersion);
-        }
-      }, 1000);
-    } else {
-      console.log(info);
-    }
-  }
+  //         try {
+  //           tracker.sendEvent("updated", getVersionInfo());
+  //         } catch (e) {
+  //           console.log(e);
+  //         }
+  //       } else {
+  //         console.log(newVersion);
+  //       }
+  //     }, 1000);
+  //   } else {
+  //     console.log(info);
+  //   }
+  // }
 
   //  function messageHandler(request, sender, sendResponse) {
   //    //log(request, sender, sendResponse);
   //    console.log('message received: ' + request.code);
   //  }
 
-  function showErrors() {
-    const msg = chrome.runtime.lastError;
-    if (msg) {
-      console.log(msg);
-    }
-  }
+  // function showErrors() {
+  //   const msg = chrome.runtime.lastError;
+  //   if (msg) {
+  //     console.log(msg);
+  //   }
+  // }
 
-  function makeTab() {
-    chrome.tabs.create({ url: popupUrl }, (newTab) => {
-      setStorage("tabId", newTab.id);
-    });
-  }
+  // function makeTab() {
+  //   chrome.tabs.create({ url: popupUrl }, (newTab) => {
+  //     setStorage("tabId", newTab.id);
+  //   });
+  // }
 
   function prepare() {
     startGettingLocation();
@@ -80,9 +80,9 @@ const BackgroundModule = () => {
     }
 
     if (browserHostType === browser.Chrome) {
-      chrome.alarms.clearAll();
-      chrome.alarms.onAlarm.addListener(alarmHandler);
-      chrome.runtime.onInstalled.addListener(installed);
+      // chrome.alarms.clearAll();
+      // chrome.alarms.onAlarm.addListener(alarmHandler);
+      // chrome.runtime.onInstalled.addListener(installed);
     }
 
     if (browserHostType === browser.Firefox) {
@@ -272,33 +272,11 @@ const BackgroundReminderEngine = () => {
 
     _now = new Date();
     _nowDi = getDateInfo(_now);
-    _nowNoon = new Date(
-      _now.getFullYear(),
-      _now.getMonth(),
-      _now.getDate(),
-      12,
-      0,
-      0,
-      0
-    );
-    _nowAlmostMidnight = new Date(
-      _now.getFullYear(),
-      _now.getMonth(),
-      _now.getDate(),
-      23,
-      59,
-      0,
-      0
-    );
-    _nowSunTimes = sunCalculator.getTimes(
-      _nowNoon,
-      _locationLat,
-      _locationLong
-    );
+    _nowNoon = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 12, 0, 0, 0);
+    _nowAlmostMidnight = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 23, 59, 0, 0);
+    _nowSunTimes = sunCalculator.getTimes(_nowNoon, common.locationLat, common.locationLong);
 
-    console.log(
-      `checking ${_remindersDefined.length} reminders at ${new Date()}`
-    );
+    console.log(`checking ${_remindersDefined.length} reminders at ${new Date()}`);
 
     for (let i = 0; i < _remindersDefined.length; i++) {
       const reminder = _remindersDefined[i];
@@ -373,10 +351,7 @@ const BackgroundReminderEngine = () => {
       triggerDate = _now;
     }
 
-    if (
-      _now.toDateString() !== triggerDate.toDateString() ||
-      triggerDate < _now
-    ) {
+    if (_now.toDateString() !== triggerDate.toDateString() || triggerDate < _now) {
       // desired time for reminder has already past for today
       return;
     }
@@ -391,10 +366,7 @@ const BackgroundReminderEngine = () => {
   function tryAddEventAlarm(reminder, isTest) {
     let triggerDate = determineTriggerTimeToday(reminder);
 
-    if (
-      _now.toDateString() !== triggerDate.toDateString() ||
-      triggerDate < _now
-    ) {
+    if (_now.toDateString() !== triggerDate.toDateString() || triggerDate < _now) {
       // desired time for reminder has already past for today
       return;
     }
@@ -515,10 +487,7 @@ const BackgroundReminderEngine = () => {
     switch (alarmInfo.trigger) {
       case "sunrise":
       case "sunset":
-        messageType =
-          alarmInfo.calcType === "Absolute" || alarmInfo.num === 0
-            ? "Time"
-            : "DeltaTime";
+        messageType = alarmInfo.calcType === "Absolute" || alarmInfo.num === 0 ? "Time" : "DeltaTime";
         break;
 
       case "midnight":
@@ -528,10 +497,7 @@ const BackgroundReminderEngine = () => {
 
       case "holyday":
         messageType = alarmInfo.num === 0 ? "StartTime" : "StartDeltaTime";
-        triggerDisplayName = getMessage(
-          "reminderHolyDay",
-          getMessage(holyDayInfo.NameEn)
-        );
+        triggerDisplayName = getMessage("reminderHolyDay", getMessage(holyDayInfo.NameEn));
         break;
 
       case "feast": {
@@ -556,17 +522,10 @@ const BackgroundReminderEngine = () => {
     }
 
     const triggerDate = new Date(alarmInfo.triggerTime);
-    const showDate = new Date(
-      alarmInfo.testForTime ? alarmInfo.testForTime : triggerDate.getTime()
-    );
-    alarmInfo.triggerTimeDisplay = getFullTime(
-      showDate.getTime(),
-      showDate,
-      true
-    );
+    const showDate = new Date(alarmInfo.testForTime ? alarmInfo.testForTime : triggerDate.getTime());
+    alarmInfo.triggerTimeDisplay = getFullTime(showDate.getTime(), showDate, true);
 
-    const futurePast =
-      alarmInfo.eventTime > showDate.getTime() ? "Future" : "Past";
+    const futurePast = alarmInfo.eventTime > showDate.getTime() ? "Future" : "Past";
     const messageKey = "{0}_{1}".filledWith(futurePast, messageType);
 
     const unitInfo = getMessage("reminderNum_{0}_1_more".filledWith(units));
@@ -605,17 +564,12 @@ const BackgroundReminderEngine = () => {
     }
     const otherDay = { time: eventDate };
     addEventTime(otherDay);
-    return getMessage(
-      onlyDateIfOther ? "reminderDayDetailsTest" : "reminderDayDetails",
-      otherDay
-    );
+    return getMessage(onlyDateIfOther ? "reminderDayDetailsTest" : "reminderDayDetails", otherDay);
   };
 
   const getMatchingEventDateFor = (testDayDi, typeWanted) => {
     if (!_specialDays[testDayDi.bYear]) {
-      _specialDays[testDayDi.bYear] = holyDays.prepareDateInfos(
-        testDayDi.bYear
-      );
+      _specialDays[testDayDi.bYear] = holyDays.prepareDateInfos(testDayDi.bYear);
     }
 
     const specialDays = _specialDays[testDayDi.bYear];
@@ -632,12 +586,7 @@ const BackgroundReminderEngine = () => {
     }
 
     // GDate is the 00:00 in the middle of the date, so start is the day before
-    holyDayInfo = $.grep(
-      specialDays,
-      (el, i) =>
-        el.Type.substring(0, 1) === typeWanted &&
-        el.BDateCode === testDayDi.bDateCode
-    );
+    holyDayInfo = $.grep(specialDays, (el, i) => el.Type.substring(0, 1) === typeWanted && el.BDateCode === testDayDi.bDateCode);
 
     if (holyDayInfo.length) {
       //log('LENGTH', holyDayInfo.length, holyDayInfo[0])
@@ -673,12 +622,7 @@ const BackgroundReminderEngine = () => {
 
   function determineTriggerTimeToday(reminder) {
     const date = new Date();
-    date.setHours(
-      +reminder.triggerTimeRaw.substr(0, 2),
-      +reminder.triggerTimeRaw.substr(3, 2),
-      0,
-      0
-    );
+    date.setHours(+reminder.triggerTimeRaw.substr(0, 2), +reminder.triggerTimeRaw.substr(3, 2), 0, 0);
     return date;
   }
 
@@ -780,21 +724,17 @@ const BackgroundReminderEngine = () => {
       //    icon: iconUrl,
 
       //    body: alarmInfo.messageBody + '\n\n' + tagLine,
-      //    lang: _languageCode,
-      //    dir: _languageDir,
+      //    lang: common.languageCode,
+      //    dir: common.languageDir,
       //    tag: 'html' + alarmName
       //  });
       //  break;
     }
 
     try {
-      async prepareAnalytics();
+      // prepareAnalytics();
 
-      tracker.sendEvent(
-        "showReminder",
-        alarmInfo.trigger,
-        `${alarmInfo.delta * alarmInfo.num} ${alarmInfo.units} ${api}`
-      );
+      tracker.sendEvent("showReminder", alarmInfo.trigger, `${alarmInfo.delta * alarmInfo.num} ${alarmInfo.units} ${api}`);
     } catch (e) {
       console.log(e);
     }
@@ -808,28 +748,21 @@ const BackgroundReminderEngine = () => {
     switch (alarmInfo.action) {
       case "speak": {
         const options = {
-          //'lang': _languageCode,
+          //'lang': common.languageCode,
           voiceName: alarmInfo.speakVoice,
           enqueue: true,
         };
         console.log(options);
-        chrome.tts.speak(
-          "{title}.\n\n {messageBody}".filledWith(alarmInfo),
-          options,
-          () => {
-            if (chrome.runtime.lastError) {
-              console.log(`Error: ${chrome.runtime.lastError}`);
-            }
+        chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(alarmInfo), options, () => {
+          if (chrome.runtime.lastError) {
+            console.log(`Error: ${chrome.runtime.lastError}`);
           }
-        );
+        });
 
         break;
       }
       case "ifttt": {
-        const url =
-          "https://maker.ifttt.com/trigger/{iftttEvent}/with/key/{iftttKey}".filledWith(
-            alarmInfo
-          );
+        const url = "https://maker.ifttt.com/trigger/{iftttEvent}/with/key/{iftttKey}".filledWith(alarmInfo);
         const content = {
           value1: alarmInfo.title,
           value2: alarmInfo.messageBody,
@@ -964,12 +897,7 @@ const BackgroundReminderEngine = () => {
     chrome.alarms.getAll((alarms) => {
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
-        console.log(
-          "{0} {1}".filledWith(
-            alarm.name,
-            new Date(alarm.scheduledTime).toLocaleString()
-          )
-        );
+        console.log("{0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
         console.log(getStorage(alarm.name));
       }
     });
@@ -1014,9 +942,7 @@ const BackgroundReminderEngine = () => {
           }
 
           if (items.reminders) {
-            console.log(
-              `reminders loaded from local: ${items.reminders.length}`
-            );
+            console.log(`reminders loaded from local: ${items.reminders.length}`);
             _remindersDefined = items.reminders || [];
           }
 
@@ -1036,9 +962,7 @@ const BackgroundReminderEngine = () => {
           }
 
           if (items.reminders) {
-            console.log(
-              `reminders loaded from sync: ${items.reminders.length}`
-            );
+            console.log(`reminders loaded from sync: ${items.reminders.length}`);
             _remindersDefined = items.reminders || [];
           }
 
