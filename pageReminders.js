@@ -25,7 +25,8 @@ const PageReminders = () => {
   let _currentEditId = 0;
 
   function editReminder(id) {
-    const matchingReminders = $.grep(_reminders, (r, i) => r.displayId === id);
+    // const matchingReminders = $ .grep(_reminders, (r, i) => r.displayId === id);
+    const matchingReminders = _reminders.filter((r) => r.displayId === id);
     if (!matchingReminders.length) {
       return;
     }
@@ -142,7 +143,8 @@ const PageReminders = () => {
         if (el.id.startsWith("reminder_")) {
           name = el.id;
         } else {
-          const classes = $.grep(el.className.split(" "), (n, g) => n.startsWith("reminder_"));
+          // const classes = $ .grep(el.className.split(" "), (n, g) => n.startsWith("reminder_"));
+          const classes = el.className.split(" ").filter((n) => n.startsWith("reminder_"));
           if (classes.length) {
             name = classes[0];
           }
@@ -507,6 +509,7 @@ const PageReminders = () => {
         editReminder(+$(ev.target).data("id"));
       })
       .on("click", "#makeSamples", (ev) => {
+        debugger;
         _reminderModulePort.postMessage({ code: "makeSamples" });
       })
       .on("mouseover", ".alarmInfo, .reminderInfo", (ev) => {
@@ -631,11 +634,14 @@ const PageReminders = () => {
 
       // pre-select best match
       //full match
-      let match = $.grep(voices, (v) => v.lang === common.languageCode);
+      // let match = $ .grep(voices, (v) => v.lang === common.languageCode);
+      let match = voices.filter((v) => v.lang === common.languageCode);
       if (!match.length) {
-        match = $.grep(voices, (v) => v.lang?.startsWith(common.languageCode));
+        // match = $ .grep(voices, (v) => v.lang?.startsWith(common.languageCode));
+        match = voices.filter((v) => v.lang?.startsWith(common.languageCode));
         if (!match.length) {
-          match = $.grep(voices, (v) => v.lang?.startsWith("en"));
+          // match = $ .grep(voices, (v) => v.lang?.startsWith("en"));
+          match = voices.filter((v) => v.lang?.startsWith("en"));
         }
       }
       if (match.length) {

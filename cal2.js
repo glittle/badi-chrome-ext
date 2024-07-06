@@ -404,7 +404,7 @@ const Cal2 = () => {
       //let mornSize = +(sunriseHr * hourFactor - (eveExtra > 0 ? eveExtra : 0)).toFixed(3);
       //let aftSize = total - eveSize - mornSize; //  +((sunsetHr - sunriseHr) * hourFactor).toFixed(3);
 
-      $.extend(di, {
+      Object.assign(di, {
         classesOuter: ["gd"],
         cellId: `gd${bMonth}_${bDay}`,
         //mornSize: mornSize,
@@ -413,12 +413,12 @@ const Cal2 = () => {
       });
 
       if (di.bMonth === 19) {
-        $.extend(di, {
+        Object.assign(di, {
           sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(showTime(sunrise)),
         });
       }
 
-      $.extend(di, {
+      Object.assign(di, {
         sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(di.sunriseDiv || "", showTime(di.frag2SunTimes.sunset)),
       });
 
@@ -431,7 +431,8 @@ const Cal2 = () => {
         _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
       }
 
-      const holyDayInfo = $.grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
+      // const holyDayInfo = $ .grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
+      const holyDayInfo = _specialDays[bYear].filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);
 
       if (holyDayInfo.length) {
         di.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);

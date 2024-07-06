@@ -15,8 +15,8 @@ const CalGreg = (di, host) => {
   }
 
   function attachHandlers() {
-    _calendarDiv.on("click", ".morn, .aft, .outside", async function (ev) {
-      const cell = $(this).closest(".outside, .gd");
+    _calendarDiv.on("click", ".morn, .aft, .outside", async (ev) => {
+      const cell = $(ev.target).closest(".outside, .gd");
       const id = cell.attr("id").substring(3).split("_");
       const month = +id[0];
       const day = +id[1];
@@ -26,8 +26,8 @@ const CalGreg = (di, host) => {
       refreshDateInfo();
       await showInfo(_di);
     });
-    _calendarDiv.on("click", ".eve", async function (ev) {
-      const cell = $(this).closest(".gd");
+    _calendarDiv.on("click", ".eve", async (ev) => {
+      const cell = $(ev.target).closest(".gd");
       const id = cell.attr("id").substring(3).split("_");
       const month = +id[0];
       const day = +id[1];
@@ -230,7 +230,7 @@ const CalGreg = (di, host) => {
       const eveSize = 0.28 * total;
       const aftSize = total - eveSize - mornSize; //  +((sunsetHr - sunriseHr) * hourFactor).toFixed(3);
 
-      $.extend(thisDayInfo, {
+      Object.assign(thisDayInfo, {
         classesInner: [],
         classesOuter: ["gd"],
         cellId: `gd${gMonth}_${gDay}`,
@@ -249,7 +249,7 @@ const CalGreg = (di, host) => {
       });
 
       if (thisDayInfo.bMonth === 19) {
-        $.extend(thisDayInfo, {
+        Object.assign(thisDayInfo, {
           sunriseDiv: "<span class=sunrise>{0}</span>".filledWith(showTime(sunrise)),
         });
       }
@@ -262,9 +262,12 @@ const CalGreg = (di, host) => {
         _specialDays[tomorrowDayInfo.bYear] = holyDays.prepareDateInfos(tomorrowDayInfo.bYear);
       }
 
-      let holyDayInfo = $.grep(
-        _specialDays[thisDayInfo.bYear],
-        (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === thisDayInfo.bDateCode
+      // let holyDayInfo = $ .grep(
+      //   _specialDays[thisDayInfo.bYear],
+      //   (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === thisDayInfo.bDateCode
+      // );
+      let holyDayInfo = _specialDays[thisDayInfo.bYear].filter(
+        (el) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === thisDayInfo.bDateCode
       );
       if (holyDayInfo.length) {
         thisDayInfo.holyDayAftStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);
@@ -272,9 +275,12 @@ const CalGreg = (di, host) => {
         thisDayInfo.classesOuter.push(`hdDay${holyDayInfo[0].Type}`);
       }
 
-      holyDayInfo = $.grep(
-        _specialDays[tomorrowDayInfo.bYear],
-        (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === tomorrowDayInfo.bDateCode
+      // holyDayInfo = $ .grep(
+      //   _specialDays[tomorrowDayInfo.bYear],
+      //   (el, i) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === tomorrowDayInfo.bDateCode
+      // );
+      holyDayInfo = _specialDays[tomorrowDayInfo.bYear].filter(
+        (el) => !outside && el.Type.substring(0, 1) === "H" && el.BDateCode === tomorrowDayInfo.bDateCode
       );
       if (holyDayInfo.length) {
         thisDayInfo.holyDayEveStar = '<span class="hd{0}"></span>'.filledWith(holyDayInfo[0].Type);

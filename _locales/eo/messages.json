@@ -198,7 +198,7 @@
     "message": "Naŭa tago de Ridván"
   },
   "iftttInfo": {
-    "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
+    "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
     "description": "info and link to ifttt page"
   },
   "MonthFormatAyyam": {

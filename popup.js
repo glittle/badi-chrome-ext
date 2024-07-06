@@ -41,9 +41,6 @@ chrome.tabs.getCurrent((tab) => {
 });
 
 async function attachHandlers() {
-  dayjs.extend(window.dayjs_plugin_utc);
-  dayjs.extend(window.dayjs_plugin_timezone);
-
   $("#samples").on("click", "button", copySample);
   $(".btnChangeDay").on("click", changeDay);
   $(".btnChangeYear").on("click", changeYear);
@@ -59,8 +56,10 @@ async function attachHandlers() {
 
   $("#btnEveOrDay").on("click", toggleEveOrDay);
   $("#datePicker").on("change", jumpToDate);
-  $("#eventStart").on("change", () => {
-    putInStorageSync(syncStorageKey.eventStart, $(this).val());
+  $("#eventStart").on("change", (ev) => {
+    const value = $(ev.target).val();
+    putInStorageSync(syncStorageKey.eventStart, value);
+    common.eventStart = value;
     _lastSpecialDaysYear = 0;
     BuildSpecialDaysTable(_di);
     $(".eventTime").effect("highlight", 1000);
@@ -81,8 +80,8 @@ async function attachHandlers() {
   //  chrome.tabs.create({ active: true, url: this.href });
   //});
 
-  $("#cbShowPointer").on("change", () => {
-    putInStorageSync(syncStorageKey.showPointer, $(this).prop("checked"));
+  $("#cbShowPointer").on("change", (ev) => {
+    putInStorageSync(syncStorageKey.showPointer, $(ev.target).prop("checked"));
     _calWheel.showCalendar(_di);
   });
 
@@ -853,10 +852,11 @@ async function keyPressed(ev) {
     return;
   }
   const key = String.fromCharCode(ev.which) || "";
+  // console.log(key, ev.which, ev.ctrlKey, ev.shiftKey, ev.altKey, ev.metaKey, ev.target.tagName, ev.target.type);
   switch (ev.which) {
-    // case 'A':
-    //    // Ctrl+Shift+A -- change lang to/from Arabic - mostly for during development and demos, not translatable
-    //   if (ev.shiftKey && ev.ctrlKey) {
+    // case 65:
+    //   // Alt+A -- change lang to/from Arabic - mostly for during development and demos, not translatable
+    //   if (ev.altKey) {
     //     common.useArNames = !common.useArNames;
     //     ApplyLanguage();
     //     ev.preventDefault();
@@ -1031,7 +1031,7 @@ function addSample(info, format, group) {
   if (typeof info === "string") {
     sample.value = info;
   } else {
-    $.extend(sample, info);
+    Object.assign(sample, info);
   }
   sample.currentNote = sample.currentTime ? " *" : "";
 
@@ -1416,7 +1416,7 @@ function fillStatic() {
   $("#yearListBody").html("<tr class=yearListNum{num}><td>{num}</td><td>{arabic}</td><td>{meaning}</td></tr>".filledWithEach(nameList));
 }
 
-async function fillEventStart() {
+function fillEventStart() {
   // fill ddl
   const startTime = new Date(2000, 5, 5, 0, 0, 0, 0); // random day
   const startTimes = [];
@@ -1432,9 +1432,7 @@ async function fillEventStart() {
       }
     }
   }
-  $("#eventStart")
-    .html("<option value={v}>{t}</option>".filledWithEach(startTimes))
-    .val(await getFromStorageSync(syncStorageKey.eventStart, "1930"));
+  $("#eventStart").html("<option value={v}>{t}</option>".filledWithEach(startTimes)).val(common.eventStart);
 }
 
 function SetFiltersForSpecialDaysTable(ev) {
@@ -1461,7 +1459,7 @@ function SetFiltersForSpecialDaysTable(ev) {
 
 let _lastSpecialDaysYear = 0;
 
-async function BuildSpecialDaysTable(di) {
+function BuildSpecialDaysTable(di) {
   const year = di.bNow.y;
   if (_lastSpecialDaysYear === year) {
     return;
@@ -1480,7 +1478,7 @@ async function BuildSpecialDaysTable(di) {
     }
   });
 
-  const defaultEventStart = $("#eventStart").val() || (await getFromStorageSync(syncStorageKey.eventStart));
+  const defaultEventStart = $("#eventStart").val() || common.eventStart;
 
   dayInfos.forEach((dayInfo, i) => {
     const targetDi = getDateInfo(dayInfo.GDate);
@@ -1649,15 +1647,15 @@ function adjustHeight() {
 }
 
 async function prepareDefaults() {
-  let feasts = await getFromStorageSync(syncStorageKey.includeFeasts);
-  let holyDays = await getFromStorageSync(syncStorageKey.includeHolyDays);
-  if (typeof feasts === "undefined" && typeof holyDays === "undefined") {
-    feasts = false;
-    holyDays = true;
+  let includeFeasts = await getFromStorageSync(syncStorageKey.includeFeasts);
+  let includeHolyDays = await getFromStorageSync(syncStorageKey.includeHolyDays);
+  if (typeof includeFeasts === "undefined" && typeof includeHolyDays === "undefined") {
+    includeFeasts = false;
+    includeHolyDays = true;
   }
 
-  $("#includeFeasts").prop("checked", feasts || false);
-  $("#includeHolyDays").prop("checked", holyDays || false);
+  $("#includeFeasts").prop("checked", includeFeasts || false);
+  $("#includeHolyDays").prop("checked", includeHolyDays || false);
 
   let showPointer = await getFromStorageSync(syncStorageKey.showPointer);
   if (typeof showPointer === "undefined") {

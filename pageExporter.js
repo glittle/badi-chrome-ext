@@ -256,7 +256,8 @@ END:VEVENT
     if (!_specialDays[di.bYear]) {
       _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
     }
-    let holyDayInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+    // let holyDayInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+    let holyDayInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
 
     if (!holyDayInfo.length) {
       return;
@@ -340,7 +341,8 @@ END:VEVENT
     if (!_specialDays[di.bYear]) {
       _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
     }
-    let feastInfo = $.grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
+    // let feastInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
+    let feastInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
 
     if (!feastInfo.length) {
       return;
@@ -628,9 +630,9 @@ END:VEVENT
       makeEntries(true);
       sendTo("test");
     });
-    $("#btnHideSample").click(() => {
+    $("#btnHideSample").click((ev) => {
       $("#exporterTest").hide();
-      $(this).hide();
+      $(ev.target).hide();
     });
     $("#exporterIncludeAlert, #exporterIncludeAlertMin").on("change", refreshAlert);
   };

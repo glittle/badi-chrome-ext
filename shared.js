@@ -14,6 +14,7 @@ var _cachedMessageUseCount = 0;
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _focusTime = null;
+
 var holyDays = null;
 var knownDateInfos = {};
 var _di = {};
@@ -48,6 +49,7 @@ var tracker; // google
 
 var use24HourClock;
 var _iconPrepared = false;
+var _backgroundReminderEngine; // don't create until needed in the service worker
 
 // in alphabetical order
 var localStorageKey = {
@@ -111,6 +113,9 @@ chrome.notifications.getPermissionLevel((level) => {
 var common = {};
 
 async function prepareForBackgroundAndPopup() {
+  dayjs.extend(dayjs_plugin_utc);
+  dayjs.extend(dayjs_plugin_timezone);
+
   common.languageCode = await getFromStorageSync(syncStorageKey.language, "");
 
   if (!common.languageCode) {
@@ -131,7 +136,39 @@ async function prepareForBackgroundAndPopup() {
   common.customFormats = await getFromStorageSync(syncStorageKey.customFormats, null);
   common.googleUid = await getFromStorageLocal(localStorageKey.googleUid, null);
 
+  common.eventStart = await getFromStorageSync(syncStorageKey.eventStart, "1930");
+
+  bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
+  bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
+
+  bWeekdayNameAr = getMessage("bWeekdayNameAr").split(splitSeparator); // from Saturday
+  bWeekdayMeaning = getMessage("bWeekdayMeaning").split(splitSeparator);
+
+  bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(splitSeparator);
+  bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(splitSeparator);
+
+  gWeekdayLong = getMessage("gWeekdayLong").split(splitSeparator);
+  gWeekdayShort = getMessage("gWeekdayShort").split(splitSeparator);
+  gMonthLong = getMessage("gMonthLong").split(splitSeparator);
+  gMonthShort = getMessage("gMonthShort").split(splitSeparator);
+
+  ordinal = getMessage("ordinal").split(splitSeparator);
+  ordinalNames = getMessage("ordinalNames").split(splitSeparator);
+  elements = getMessage("elements").split(splitSeparator);
+
+  use24HourClock = getMessage("use24HourClock") === "true";
+
+  setupLanguageChoice();
+
+  holyDays = HolyDays();
+
   prepareAnalytics();
+
+  if (_backgroundReminderEngine) {
+    if (_notificationsEnabled) {
+      _backgroundReminderEngine = new BackgroundReminderEngine();
+    }
+  }
 }
 
 async function prepareSharedForPopup() {
@@ -150,30 +187,7 @@ async function prepareSharedForPopup() {
   // must be set immediately for tab managers to see this name
   $("#windowTitle").text(getMessage("title"));
 
-  holyDays = HolyDays();
-
   // see messages.json for translations and local names
-  bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
-  bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
-
-  bWeekdayNameAr = getMessage("bWeekdayNameAr").split(splitSeparator); // from Saturday
-  bWeekdayMeaning = getMessage("bWeekdayMeaning").split(splitSeparator);
-
-  bYearInVahidNameAr = getMessage("bYearInVahidNameAr").split(splitSeparator);
-  bYearInVahidMeaning = getMessage("bYearInVahidMeaning").split(splitSeparator);
-
-  setupLanguageChoice();
-
-  gWeekdayLong = getMessage("gWeekdayLong").split(splitSeparator);
-  gWeekdayShort = getMessage("gWeekdayShort").split(splitSeparator);
-  gMonthLong = getMessage("gMonthLong").split(splitSeparator);
-  gMonthShort = getMessage("gMonthShort").split(splitSeparator);
-
-  ordinal = getMessage("ordinal").split(splitSeparator);
-  ordinalNames = getMessage("ordinalNames").split(splitSeparator);
-  elements = getMessage("elements").split(splitSeparator);
-
-  use24HourClock = getMessage("use24HourClock") === "true";
 
   $("#loadingMsg").html(getMessage("browserActionTitle"));
 
@@ -1316,14 +1330,17 @@ const prepareAnalytics = () => {
       console.log("opted out of analytics");
       return;
     }
-    const data = $.extend(info, baseParams);
+    const data = Object.assign(info, baseParams);
 
     const useDebug = false; // turn on during initial testing
-    if (useDebug) {
-      $.post("https://www.google-analytics.com/debug/collect", data);
-    } else {
-      $.post("https://www.google-analytics.com/collect", data);
-    }
+    const url = useDebug ? "https://www.google-analytics.com/debug/collect" : "https://www.google-analytics.com/collect";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
   };
 
   const sendEvent = (category, action) => {
@@ -1403,7 +1420,8 @@ chrome.runtime.onMessageExternal.addListener(
         // layout, targetDay
         // can adjust per layout
         const di = getDateInfo(new Date(payload.targetDay));
-        const holyDay = $.grep(holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        // const holyDay = $ .grep(holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        const holyDay = holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
         const holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
 
         callback({
@@ -1510,5 +1528,12 @@ async function removeFromStorageRaw(storageType, key) {
       break;
     default:
       await chrome.storage.local.remove(key);
+  }
+}
+
+function showLastError() {
+  const msg = chrome.runtime.lastError;
+  if (msg) {
+    console.log("lastError", msg);
   }
 }
