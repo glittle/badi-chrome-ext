@@ -24,7 +24,7 @@ const CalGreg = (di, host) => {
       const target = new Date(_yearShown, month, day);
       setFocusTime(target);
       refreshDateInfo();
-      await showInfo(_di);
+      showInfo(_di);
     });
     _calendarDiv.on("click", ".eve", async (ev) => {
       const cell = $(ev.target).closest(".gd");
@@ -36,13 +36,13 @@ const CalGreg = (di, host) => {
       target.setDate(target.getDate() + 1);
       setFocusTime(target);
       refreshDateInfo();
-      await showInfo(_di);
+      showInfo(_di);
     });
 
     $(document).on("click", "body[data-pageid=pageCalGreg] .btnChangeMonth", changeMonth);
   }
 
-  async function changeMonth(ev) {
+  function changeMonth(ev) {
     const delta = +$(ev.target).closest("button").data("delta") || 0;
 
     // rough... if 29,30,31 may skip two months...
@@ -52,7 +52,7 @@ const CalGreg = (di, host) => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    await showInfo(_di);
+    showInfo(_di);
   }
 
   function showCalendar(newDi) {
@@ -134,7 +134,7 @@ const CalGreg = (di, host) => {
     //    }
   }
 
-  async function buildMonth(gYear1, gMonth1) {
+  function buildMonth(gYear1, gMonth1) {
     let gDay = 1;
     let gYear = gYear1;
     let gMonth = gMonth1;
@@ -256,10 +256,10 @@ const CalGreg = (di, host) => {
 
       // add holy days
       if (!_specialDays[thisDayInfo.bYear]) {
-        _specialDays[thisDayInfo.bYear] = holyDays.prepareDateInfos(thisDayInfo.bYear);
+        _specialDays[thisDayInfo.bYear] = _holyDays.prepareDateInfos(thisDayInfo.bYear);
       }
       if (!_specialDays[tomorrowDayInfo.bYear]) {
-        _specialDays[tomorrowDayInfo.bYear] = holyDays.prepareDateInfos(tomorrowDayInfo.bYear);
+        _specialDays[tomorrowDayInfo.bYear] = _holyDays.prepareDateInfos(tomorrowDayInfo.bYear);
       }
 
       // let holyDayInfo = $ .grep(

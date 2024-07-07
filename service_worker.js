@@ -1,57 +1,76 @@
+console.log("Loading service worker...");
+
 self.addEventListener("install", (event) => {
+  console.log("Service Worker installed");
+
   self.skipWaiting(); // Forces the waiting service worker to become the active service worker
 });
 
-// self.addEventListener("activate", (event) => {
-//   event.waitUntil(clients.claim()); // Claims control of all clients
-// });
-
-importScripts("third-party/dayjs.min.js");
-importScripts("third-party/utc.js");
-importScripts("third-party/timezone.js");
-
-importScripts("suncalc.js");
-importScripts("holydays.js");
-importScripts("shared.js");
-importScripts("service_worker_reminders.js");
-
-prepareForBackgroundAndPopup();
-
-_backgroundReminderEngine = {};
-
-chrome.notifications.getPermissionLevel((level) => {
-  // ensure flag is off if user has disabled them
-  if (level !== "granted") {
-    _notificationsEnabled = false;
-  }
+self.addEventListener("activate", (event) => {
+  console.log("Service Worker activated");
+  event.waitUntil(clients.claim()); // Claims control of all clients
 });
 
-chrome.contextMenus.create(
-  {
-    id: "openInTab",
-    title: getMessage("browserMenuOpen"),
-    contexts: ["browser_action"],
-  },
-  showLastError
-);
+importScripts("third-party/dayjs.min.js");
+console.log("Loaded dayjs");
+importScripts("third-party/utc.js");
+console.log("Loaded utc");
+importScripts("third-party/timezone.js");
+console.log("Loaded timezone");
+
+importScripts("suncalc.js");
+console.log("Loaded suncalc");
+importScripts("holyDays.js");
+console.log("Loaded holydays");
+importScripts("shared.js");
+console.log("Loaded shared");
+
+console.log("starting to prepare for background and popup");
+
+// can't use async/await here, so have to build a pending function queue
+prepareForBackgroundAndPopup();
+
+chrome.notifications.getPermissionLevel(configureNotifications);
+chrome.notifications.onPermissionLevelChanged.addListener(configureNotifications);
+
+var _notificationsEnabled = false;
+var _remindersEngineLoaded = false;
+
+function configureNotifications(level) {
+  _notificationsEnabled = level === "granted";
+
+  console.log("Notifications permission level:", level);
+
+  if (_notificationsEnabled) {
+    if (!_remindersEngineLoaded) {
+      importScripts("reminders_engine.js");
+      console.log("Loaded reminders_engine.js");
+      _remindersEngineLoaded = true;
+      _remindersEngine = new RemindersEngine();
+    }
+    AddFunctionToPendingInstallFunctions(_remindersEngine.initialize);
+  } else {
+    console.log("Notifications are disabled");
+  }
+}
 
 chrome.runtime.onInstalled.addListener((info) => {
   console.log("onInstalled", info);
   if (info.reason === "update") {
     setTimeout(async () => {
       const newVersion = chrome.runtime.getManifest().version;
-      const oldVersion = await getFromStorageLocal(localStorageKey.updateVersion);
+      const oldVersion = await getFromStorageLocalAsync(localStorageKey.updateVersion);
       if (!oldVersion) {
         console.log("no old version found, likely dev or first use");
       } else {
         if (newVersion !== oldVersion) {
           console.log(`${oldVersion} --> ${newVersion}`);
-          putInStorageLocal(localStorageKey.updateVersion, newVersion);
+          putInStorageLocalAsync(localStorageKey.updateVersion, newVersion);
           chrome.tabs.create({
             url: getMessage(`${browserHostType}_History`) + "?{0}:{1}".filledWith(chrome.runtime.getManifest().version, common.languageCode),
           });
 
-          putInStorageLocal(localStorageKey.firstPopup, true);
+          putInStorageLocalAsync(localStorageKey.firstPopup, true);
 
           try {
             tracker.sendEvent("updated", getVersionInfo());
@@ -66,41 +85,18 @@ chrome.runtime.onInstalled.addListener((info) => {
   } else {
     console.log("onInstalled", info);
   }
-});
-
-chrome.alarms.clearAll();
-chrome.alarms.onAlarm.addListener((alarm) => {
-  debugger;
-  if (alarm.name.startsWith("refresh")) {
-    console.log("ALARM:", alarm);
-    refreshDateInfoAndShow();
-    _backgroundReminderEngine.setAlarmsForRestOfToday();
-  } else if (alarm.name.startsWith("alarm_")) {
-    _backgroundReminderEngine.triggerAlarmNow(alarm.name);
-  }
-});
-
-// Example service worker script
-// self.addEventListener("install", (event) => {
-// console.log("addEventListener install", event);
-//   setAlarm("test", 1);
-// });
-
-// self.addEventListener("activate", (event) => {
-//   console.log("addEventListener activate", event);
-// });
-
-async function setAlarm(name, delayInMinutes) {
-  console.log("startAlarm:", name, delayInMinutes);
-  await chrome.alarms.create(name, { delayInMinutes: delayInMinutes });
-}
-
-chrome.alarms.onAlarm.addListener((alarm) => {
-  console.log("Alarm fired:", alarm);
+  chrome.contextMenus.create(
+    {
+      id: "openInTab",
+      title: getMessage("browserMenuOpen"),
+      contexts: ["browser_action"],
+    },
+    showLastError
+  );
 });
 
 chrome.storage.onChanged.addListener((changes, namespace) => {
-  // watch for alarms to change?
+  // watch for storage changes
   console.log("Storage changed in namespace:", namespace, changes);
   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
     console.log(`Storage key "${key}" in namespace "${namespace}" changed.`, `Old value was "${oldValue}", new value is "${newValue}".`);
@@ -108,8 +104,14 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("request:", request.action);
-  debugger;
+  console.log("on message:", request, "from:", sender);
+
+  if (request.action === "Wake Up") {
+    console.log("Waking up...");
+    sendResponse({ message: "Thanks. I'm awake now!" });
+    return { message: "Test 123" };
+  }
+
   if (request.action === "getCityName") {
     const lat = request.lat;
     const long = request.long;

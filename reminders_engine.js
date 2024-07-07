@@ -1,6 +1,22 @@
-function BackgroundReminderEngine() {
+/**
+ *
+ * Reminders are a superset of alarms, with full information about the event, alarm time, etc.
+ *
+ * Alarms are the techincal way to trigger a reminder event.
+ *
+ * On each day, alarms are cleared at midnight, then set up for the rest of the day. At startup also, alarms are set up for the rest of the day.
+ *
+ * Because alarms are cleared each day, reminders are stored in local storage and must be created in the service worker each day.
+ *
+ * All reminders are stored in local storage, not in sync storage. If the user uses multiple devices, they will have to set up reminders on each device.
+ *
+ * This code runs only in the service worker.
+ *
+ */
+
+function RemindersEngine() {
+  console.log("RemindersEngine created");
   const _ports = [];
-  const _reminderPrefix = "alarm_";
   const _specialDays = {};
   const _reminderInfoShown = null;
   let _remindersDefined = [];
@@ -14,10 +30,46 @@ function BackgroundReminderEngine() {
   const BEFORE = -1;
   const AFTER = 1;
 
+  function initialize() {
+    console.log("RemindersEngine initializing");
+
+    prepareBaseImageAsync();
+
+    connectToPort();
+
+    loadRemindersAsync();
+
+    setAlarmsForRestOfToday(true);
+  }
+
   function setAlarmsForRestOfToday(initialLoad) {
     // clear, then set again
     clearReminderAlarms(() => {
       setAlarmsInternal(initialLoad);
+    });
+  }
+
+  function xxxx() {
+    // on startup, clear all alarms and set the refresh alarm
+    chrome.alarms.clearAll();
+    chrome.alarms.onAlarm.addListener((alarm) => {
+      // debugger;
+      if (alarm.name.startsWith("refresh")) {
+        console.log("ALARM:", alarm);
+        refreshDateInfoAndShow();
+        _remindersEngine.setAlarmsForRestOfToday();
+      } else if (alarm.name.startsWith("alarm_")) {
+        _remindersEngine.triggerAlarmNow(alarm.name);
+      }
+    });
+
+    async function setAlarmAsync(name, delayInMinutes) {
+      console.log("startAlarm:", name, delayInMinutes);
+      await chrome.alarms.create(name, { delayInMinutes: delayInMinutes });
+    }
+
+    chrome.alarms.onAlarm.addListener((alarm) => {
+      console.log("Alarm fired:", alarm);
     });
   }
 
@@ -323,7 +375,7 @@ function BackgroundReminderEngine() {
 
   const getMatchingEventDateFor = (testDayDi, typeWanted) => {
     if (!_specialDays[testDayDi.bYear]) {
-      _specialDays[testDayDi.bYear] = holyDays.prepareDateInfos(testDayDi.bYear);
+      _specialDays[testDayDi.bYear] = _holyDays.prepareDateInfos(testDayDi.bYear);
     }
 
     const specialDays = _specialDays[testDayDi.bYear];
@@ -396,7 +448,7 @@ function BackgroundReminderEngine() {
 
   function saveAllReminders(newSetOfReminders) {
     _remindersDefined = newSetOfReminders || [];
-    storeReminders();
+    storeRemindersAysnc();
   }
 
   function triggerAlarmNow(alarmName) {
@@ -420,7 +472,7 @@ function BackgroundReminderEngine() {
 
     showAlarmNow(alarmInfo, alarmName);
 
-    removeFromStorageLocal(`${_reminderPrefix}${alarmName}`);
+    removeFromStorageLocalAsync(`${_reminderPrefix}${alarmName}`);
 
     if (!isTest) {
       setAlarmsForRestOfToday();
@@ -540,7 +592,7 @@ function BackgroundReminderEngine() {
               console.log(JSON.stringify(request));
               console.log(JSON.stringify(error));
               console.log(request.statusText);
-              debugger;
+              debugger; // stop on error
             });
 
           // $ .ajax({
@@ -594,7 +646,7 @@ function BackgroundReminderEngine() {
             .catch((error) => {
               const msg = `Request: ${JSON.stringify(request)}`;
               console.log(msg);
-              debugger;
+              debugger; // stop on error
             });
 
           // $ .ajax({
@@ -638,16 +690,11 @@ function BackgroundReminderEngine() {
     return icon;
   }
 
-  async function prepareImage() {
+  async function prepareBaseImageAsync() {
     const imageUrl = "imagesForReminders/bday.jpg";
     const response = await fetch(imageUrl);
     const blob = await response.blob();
     _baseBDayImage = await createImageBitmap(blob);
-
-    // _baseBDayImage = new Image();
-    // _baseBDayImage.src =
-    //   "data:image/jpeg;base64,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";
-    //_baseBDayImage.onload = function () { console.log('loaded'); };
   }
 
   function makeBadiNum(num) {
@@ -665,26 +712,17 @@ function BackgroundReminderEngine() {
   }
 
   function clearReminderAlarms(fnAfter) {
-    chrome.alarms.getAll((alarms) => {
+    chrome.alarms.getAll(async (alarms) => {
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
+        console.log("found alarm", alarm);
         const name = alarm.name;
         if (name.startsWith(_reminderPrefix)) {
-          //log('removed {0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime)));
-          chrome.alarms.clear(name);
-          removeFromStorageLocal(name);
+          console.log("removed alarm", alarm);
+          Promise.all([chrome.alarms.clear(name), removeFromStorageLocalAsync(name)]);
         }
       }
-      // ensure this works!
-      chrome.storage.sync.get(null, (items) => {
-        for (let key in items) {
-          if (Object.prototype.hasOwnProperty.call(items, key)) {
-            if (key.startsWith(_reminderPrefix)) {
-              removeFromStorageLocal(key);
-            }
-          }
-        }
-      });
+
       if (fnAfter) {
         fnAfter();
       }
@@ -701,36 +739,15 @@ function BackgroundReminderEngine() {
     });
   }
 
-  function storeReminders() {
-    chrome.storage.local.set(
-      {
-        reminders: _remindersDefined,
-      },
-      () => {
-        console.log("stored reminders with local");
-        if (chrome.runtime.lastError) {
-          console.log(chrome.runtime.lastError);
-        }
-      }
-    );
-    if (browserHostType === browser.Chrome) {
-      chrome.storage.sync.set(
-        {
-          reminders: _remindersDefined,
-        },
-        () => {
-          console.log("stored reminders with sync");
-          if (chrome.runtime.lastError) {
-            console.log(chrome.runtime.lastError);
-          }
-        }
-      );
-    }
+  function storeRemindersAysnc() {
+    putInStorageLocalAsync(localStorageKey.reminders, _remindersDefined);
   }
 
   function connectToPort() {
     console.log("listening for new ports");
     chrome.runtime.onConnect.addListener((port) => {
+      console.log("port", port.name, port.sender.id);
+
       if (port.name !== "reminderModule") {
         return; // not for us
       }
@@ -752,7 +769,7 @@ function BackgroundReminderEngine() {
       });
 
       port.onMessage.addListener((msg) => {
-        console.log("received: ", msg);
+        console.log("port received: ", msg);
 
         switch (msg.code) {
           case "getReminders":
@@ -784,52 +801,40 @@ function BackgroundReminderEngine() {
     });
   }
 
-  function loadReminders() {
-    const loadLocal = () => {
-      chrome.storage.local.get(
-        {
-          reminders: [],
-        },
-        (items) => {
-          if (chrome.runtime.lastError) {
-            console.log(chrome.runtime.lastError);
-          }
-
-          if (items.reminders) {
-            console.log(`reminders loaded from local: ${items.reminders.length}`);
-            _remindersDefined = items.reminders || [];
-          }
-
-          setAlarmsForRestOfToday(true);
-        }
-      );
-    };
-
-    if (browserHostType === browser.Chrome) {
-      chrome.storage.sync.get(
-        {
-          reminders: [],
-        },
-        (items) => {
-          if (chrome.runtime.lastError) {
-            console.log(chrome.runtime.lastError);
-          }
-
-          if (items.reminders) {
-            console.log(`reminders loaded from sync: ${items.reminders.length}`);
-            _remindersDefined = items.reminders || [];
-          }
-
-          if (_remindersDefined.length !== 0) {
-            setAlarmsForRestOfToday(true);
-          } else {
-            loadLocal();
-          }
-        }
-      );
-    } else {
-      loadLocal();
+  async function loadRemindersAsync() {
+    const items = await getFromStorageLocalAsync(localStorageKey.reminders);
+    if (items?.reminders) {
+      console.log(`reminders loaded from local: ${items.reminders.length}`);
+      _remindersDefined = items.reminders || [];
     }
+
+    // setAlarmsForRestOfToday(true);
+
+    // if (browserHostType === browser.Chrome) {
+    //   chrome.storage.sync.get(
+    //     {
+    //       reminders: [],
+    //     },
+    //     (items) => {
+    //       if (chrome.runtime.lastError) {
+    //         console.log(chrome.runtime.lastError);
+    //       }
+
+    //       if (items.reminders) {
+    //         console.log(`reminders loaded from sync: ${items.reminders.length}`);
+    //         _remindersDefined = items.reminders || [];
+    //       }
+
+    //       if (_remindersDefined.length !== 0) {
+    //         setAlarmsForRestOfToday(true);
+    //       } else {
+    //         loadLocal();
+    //       }
+    //     }
+    //   );
+    // } else {
+    //   loadLocal();
+    // }
   }
 
   function makeSamples() {
@@ -864,7 +869,7 @@ function BackgroundReminderEngine() {
         units: "days",
       },
     ];
-    storeReminders();
+    storeRemindersAysnc();
   }
 
   function broadcast(msg) {
@@ -874,29 +879,19 @@ function BackgroundReminderEngine() {
     }
   }
 
-  // startup
-  prepareImage();
-
-  connectToPort();
-
-  loadReminders();
-
-  //broadcast({ code: 'remindersEnabled' });
-
   return {
     // called from background
+    initialize: initialize,
     setAlarmsForRestOfToday: setAlarmsForRestOfToday,
     triggerAlarmNow: triggerAlarmNow,
 
-    // for testing
+    // for testing...
     dumpAlarms: dumpAlarms,
     clearReminderAlarms: clearReminderAlarms,
     saveAllReminders: saveAllReminders,
     _specialDays: _specialDays, // testing
     makeBadiNum: makeBadiNum,
-    eraseReminders: () => {
-      saveAllReminders();
-    },
+    eraseReminders: () => saveAllReminders(),
     getReminders: () => _remindersDefined,
   };
 }

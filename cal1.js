@@ -34,17 +34,17 @@ const Cal1 = (originalDi, originalHost) => {
     $("#pageCal1 .months").on("click", ".bd", clickBd);
   }
 
-  async function clickBd(ev) {
+  function clickBd(ev) {
     const dayDiv = $(ev.target).closest("div.bd");
     const monthDiv = dayDiv.closest("div.bm");
     const day = getNum(dayDiv, "bd");
     const month = getNum(monthDiv, "bm");
 
-    const gDate = holyDays.getGDate(di.bYear, month, day, di.bNow.eve);
+    const gDate = _holyDays.getGDate(di.bYear, month, day, di.bNow.eve);
 
     setFocusTime(gDate);
     refreshDateInfo();
-    await showInfo(_di);
+    showInfo(_di);
   }
 
   function getNum(el, prefix) {
@@ -62,7 +62,7 @@ const Cal1 = (originalDi, originalHost) => {
   function showCalendar(newDi) {
     di = newDi;
     if (newDi.bYear !== _yearShown) {
-      holyDays.prepareDateInfos(newDi.bYear);
+      _holyDays.prepareDateInfos(newDi.bYear);
       buildCalendar();
     }
     highlightTargetDay();
@@ -70,11 +70,8 @@ const Cal1 = (originalDi, originalHost) => {
 
   function highlightTargetDay() {
     const cal = $("#pageCal1 .months");
-    cal
-      .find(".bd.selected, .gd.selected, .bm.selected")
-      .removeClass("selected");
-    const sel =
-      `.bm{bMonth}, .bm{bMonth} .bd{bDay}, .g${gDaySerial}`.filledWith(di);
+    cal.find(".bd.selected, .gd.selected, .bm.selected").removeClass("selected");
+    const sel = `.bm{bMonth}, .bm{bMonth} .bd{bDay}, .g${gDaySerial}`.filledWith(di);
     cal.find(sel).addClass("selected");
   }
 
@@ -106,33 +103,21 @@ const Cal1 = (originalDi, originalHost) => {
 
       if (mGroup && mGroup !== lastMGroup) {
         lastMGroup = mGroup;
-        monthGroup.push(
-          '<div class="element mGroup{1}">{0}</div>'.filledWith(
-            host.elements[mGroup - 1],
-            mGroup
-          )
-        );
+        monthGroup.push('<div class="element mGroup{1}">{0}</div>'.filledWith(host.elements[mGroup - 1], mGroup));
       }
 
       bMonthHtml.push('<div class="bm bm{0}">'.filledWith(bm));
-      bMonthHtml.push(
-        "<div class=bmName><span><i>{^1}</i>{0}</span></div>".filledWith(
-          host.bMonthNamePri[bm],
-          bm === 0 ? "" : bm
-        )
-      );
+      bMonthHtml.push("<div class=bmName><span><i>{^1}</i>{0}</span></div>".filledWith(host.bMonthNamePri[bm], bm === 0 ? "" : bm));
 
       gMonthHtml.push("<div class=gm>");
 
-      let gd = holyDays.getGDate(di.bYear, bm, 1, false);
+      let gd = _holyDays.getGDate(di.bYear, bm, 1, false);
       let gMonthName = host.gMonthShort[gd.getMonth()];
-      gMonthHtml.push(
-        '<div class="gmInitial gma0">{0}</div>'.filledWith(gMonthName)
-      );
+      gMonthHtml.push('<div class="gmInitial gma0">{0}</div>'.filledWith(gMonthName));
 
       for (let bd = 1; bd <= 19; bd++) {
         //try {
-        gd = holyDays.getGDate(di.bYear, bm, bd, false);
+        gd = _holyDays.getGDate(di.bYear, bm, bd, false);
         //}
         if (!gd) {
           //          if (bm === 0 && e == 'invalid Badi date') {
@@ -154,15 +139,7 @@ const Cal1 = (originalDi, originalHost) => {
 
         const dow = gd.getDay();
 
-        bMonthHtml.push(
-          '<div class="bd bd{0} dow{1} mGroup{2}"{^4}><b>{0}</b>{^3}</div>'.filledWith(
-            bd,
-            dow,
-            mGroup,
-            holyDayMarker,
-            bdTip
-          )
-        );
+        bMonthHtml.push('<div class="bd bd{0} dow{1} mGroup{2}"{^4}><b>{0}</b>{^3}</div>'.filledWith(bd, dow, mGroup, holyDayMarker, bdTip));
 
         const gDayClass = gDaySerial.filledWith({
           currentYear: gd.getFullYear(),
@@ -173,20 +150,12 @@ const Cal1 = (originalDi, originalHost) => {
         if (gDayOfMonth === 1 && bd !== 1) {
           gMonthName = host.gMonthShort[gd.getMonth()];
           gMonthAlt = 1 - gMonthAlt;
-          gMonthHtml.push(
-            `<div class="gd gd1 dow${dow} gma${gMonthAlt}${
-              bd === 19 ? " gLast" : ""
-            } g${gDayClass}"><i>${gMonthName} 1</i></div>`
-          );
+          gMonthHtml.push(`<div class="gd gd1 dow${dow} gma${gMonthAlt}${bd === 19 ? " gLast" : ""} g${gDayClass}"><i>${gMonthName} 1</i></div>`);
         } else {
           gMonthHtml.push(
-            `<div class="gd dow${dow}${
-              gDayOfMonth === 1 && bd !== 1 ? " gd1" : ""
-            }${gDayOfMonth % 2 ? " gAlt" : ""} gma${gMonthAlt}${
+            `<div class="gd dow${dow}${gDayOfMonth === 1 && bd !== 1 ? " gd1" : ""}${gDayOfMonth % 2 ? " gAlt" : ""} gma${gMonthAlt}${
               bd === 19 ? " gLast" : ""
-            } g${gDayClass}"><b>${gDayOfMonth}</b>${
-              host.gWeekdayShort[dow]
-            }</div>`
+            } g${gDayClass}"><b>${gDayOfMonth}</b>${host.gWeekdayShort[dow]}</div>`
           );
         }
       }

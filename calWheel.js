@@ -66,11 +66,9 @@ const CalWheel = () => {
         //log(bMonthNamePri[bm] + ' - ' + common.useArNames + ' - ' + bMonthNameSec[bm]);
         slice.find(".monthName").html(forSvg(bMonthNameSec[bm]));
 
-        const gd = holyDays.getGDate(di.bYear, bm, 1, false);
+        const gd = _holyDays.getGDate(di.bYear, bm, 1, false);
 
-        slice
-          .find(".firstDayG")
-          .html(forSvg(`${gMonthShort[gd.getMonth()]} ${gd.getDate()}`));
+        slice.find(".firstDayG").html(forSvg(`${gMonthShort[gd.getMonth()]} ${gd.getDate()}`));
         slice.find(".firstDayWk").html(forSvg(gWeekdayShort[gd.getDay()]));
         slice.find(".firstDayYr").html(gd.getFullYear());
 
@@ -139,18 +137,18 @@ const CalWheel = () => {
   //    return ("0" + (Number(d).toString(16))).slice(-2).toUpperCase();
   //  }
 
-  async function gotoYear(year) {
+  function gotoYear(year) {
     const year2 = year || 173;
-    const gDate = holyDays.getGDate(+year2, 1, 1, true);
+    const gDate = _holyDays.getGDate(+year2, 1, 1, true);
     setFocusTime(gDate);
     refreshDateInfo();
-    await showInfo(_di);
+    showInfo(_di);
   }
 
   function rotateYear(year, speed) {
     const year2 = year || 173;
     const speed2 = speed || 100;
-    const gDate = holyDays.getGDate(+year2, 1, 1, true);
+    const gDate = _holyDays.getGDate(+year2, 1, 1, true);
 
     $("#cbShowPointer").prop("checked", true);
     $("#askShowPointer").hide();

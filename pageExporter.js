@@ -139,9 +139,9 @@ const PageExporter = () => {
     // what range of dates?
     switch (rangeType) {
       case "Badi":
-        date = new Date(holyDays.getGDate(year, 1, 1).getTime());
+        date = new Date(_holyDays.getGDate(year, 1, 1).getTime());
         date.setHours(12, 0, 0, 0);
-        nextYearStarts = new Date(holyDays.getGDate(year + 1, 1, 1).getTime());
+        nextYearStarts = new Date(_holyDays.getGDate(year + 1, 1, 1).getTime());
         nextYearStarts.setHours(12, 0, 0, 0);
         break;
       case "Greg":
@@ -254,7 +254,7 @@ END:VEVENT
 
   const addHolyDay = async (type, di, variation) => {
     if (!_specialDays[di.bYear]) {
-      _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
+      _specialDays[di.bYear] = _holyDays.prepareDateInfos(di.bYear);
     }
     // let holyDayInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
     let holyDayInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
@@ -339,7 +339,7 @@ END:VEVENT
 
   const addFeast = (type, di, variation) => {
     if (!_specialDays[di.bYear]) {
-      _specialDays[di.bYear] = holyDays.prepareDateInfos(di.bYear);
+      _specialDays[di.bYear] = _holyDays.prepareDateInfos(di.bYear);
     }
     // let feastInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
     let feastInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
@@ -469,7 +469,7 @@ END:VEVENT
 
     //BEGIN:VALARM
     //ACTION:DISPLAY
-    //DESCRIPTION:This is an event reminder
+    //DESCRIPTION:This is an event description
     //TRIGGER:-P0DT0H10M0S
     //END:VALARM
   };
@@ -577,7 +577,7 @@ END:VEVENT
   };
   const saveValue = (ev) => {
     const input = ev.target;
-    putInStorageSync(`exporter_${input.id}`, input.value);
+    putInStorageSyncAsync(`exporter_${input.id}`, input.value);
   };
   const clearQuickPick = () => {
     $("#pageExporter input[type=checkbox]:checked, #exporterIncludeAlert").each((i, el) => {
@@ -597,7 +597,7 @@ END:VEVENT
   const attachHandlers = () => {
     $("#pageExporter").on("change", "input[type=checkbox]", (ev) => {
       const cb = $(ev.target);
-      putInStorageSync(`exporter_${cb.val()}`, cb.is(":checked"));
+      putInStorageSyncAsync(`exporter_${cb.val()}`, cb.is(":checked"));
       updateTotalToExport();
     });
     $("#exporterName, #exporterDateRange").on("change", saveValue);
@@ -639,7 +639,7 @@ END:VEVENT
   const recallSettings = () => {
     $("#pageExporter input[type=checkbox]").each(async (i, el) => {
       const cb = $(el);
-      cb.prop("checked", await getFromStorageSync(`exporter_${cb.val()}`, false));
+      cb.prop("checked", await getFromStorageSyncAsync(`exporter_${cb.val()}`, false));
     });
     $("#exporterName").val(common.exporter_exporterName);
     const ddlRange = $("#exporterDateRange");
@@ -652,7 +652,7 @@ END:VEVENT
   const refreshAlert = () => {
     const ddl = $("#exporterIncludeAlertMin");
     ddl.toggle($("#exporterIncludeAlert").is(":checked"));
-    putInStorageSync(syncStorageKey.exporter_alertMinutes, ddl.val());
+    putInStorageSyncAsync(syncStorageKey.exporter_alertMinutes, ddl.val());
   };
 
   function startup() {

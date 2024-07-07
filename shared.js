@@ -4,6 +4,7 @@
 
 // these use VAR to be globally available
 var splitSeparator = /[,،]+/;
+var prepared = false;
 
 var _currentPageId = null;
 var _rawMessages = {};
@@ -11,12 +12,14 @@ var _rawMessageTranslationPct = 0;
 var _numMessagesEn = 0;
 var _cachedMessages = {};
 var _cachedMessageUseCount = 0;
+var _pendingInstallFunctionsQueue = [];
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _focusTime = null;
+var _reminderPrefix = "reminder_";
 
-var holyDays = null;
-var knownDateInfos = {};
+var _holyDays = null;
+var _knownDateInfos = {};
 var _di = {};
 var _initialDiStamp;
 var _firstLoad = true;
@@ -49,12 +52,10 @@ var tracker; // google
 
 var use24HourClock;
 var _iconPrepared = false;
-var _backgroundReminderEngine; // don't create until needed in the service worker
+var _remindersEngine = {};
 
 // in alphabetical order
 var localStorageKey = {
-  // alarm_{name}: "alarm_{name}",
-  //enableGCal: "enableGCal",
   firstPopup: "firstPopup",
   focusPage: "focusPage",
   focusTimeAsOf: "focusTimeAsOf",
@@ -62,13 +63,15 @@ var localStorageKey = {
   focusTimeIsEve: "focusTimeIsEve",
   gCalLabel: "gCalLabel",
   gCalTitle: "gCalTitle",
+  googleUid: "uid",
   iconTextColor: "iconTextColor",
   lat: "lat",
   locationKnown: "locationKnown",
   locationName: "locationName",
   locationNameKnown: "locationNameKnown",
   long: "long",
-  googleUid: "uid",
+  reminders: "reminders",
+  // reminder_{name}: "reminder_{name}",
   updateVersion: "updateVersion",
 };
 
@@ -102,41 +105,46 @@ var browser = {
 };
 var browserHostType = browser.Chrome;
 
-var _notificationsEnabled = true;
-chrome.notifications.getPermissionLevel((level) => {
-  // ensure flag is off if user has disabled them
-  if (level !== "granted") {
-    _notificationsEnabled = false;
-  }
-});
-
 var common = {};
 
+/**
+ * Set up everything that is needed by the service worker and the popup
+ */
 async function prepareForBackgroundAndPopup() {
   dayjs.extend(dayjs_plugin_utc);
   dayjs.extend(dayjs_plugin_timezone);
 
-  common.languageCode = await getFromStorageSync(syncStorageKey.language, "");
+  common.languageCode = await getFromStorageSyncAsync(syncStorageKey.language, "");
 
   if (!common.languageCode) {
     common.languageCode = chrome.i18n.getUILanguage();
-    putInStorageSync(syncStorageKey.language, common.languageCode);
+    putInStorageSyncAsync(syncStorageKey.language, common.languageCode);
   }
 
   await loadRawMessages(common.languageCode);
 
-  common.useArNames = await getFromStorageSync(syncStorageKey.useArNames, true);
-  common.iconTextColor = await getFromStorageLocal(localStorageKey.iconTextColor, "#000000");
+  common.useArNames = await getFromStorageSyncAsync(syncStorageKey.useArNames, true);
+  common.iconTextColor = await getFromStorageLocalAsync(localStorageKey.iconTextColor, "#000000");
 
   common.languageDir = getMessage("textDirection", null, "ltr");
 
-  common.locationLat = await getFromStorageLocal(localStorageKey.lat);
-  common.locationLong = await getFromStorageLocal(localStorageKey.long);
+  common.locationLat = await getFromStorageLocalAsync(localStorageKey.lat);
+  common.locationLong = await getFromStorageLocalAsync(localStorageKey.long);
 
-  common.customFormats = await getFromStorageSync(syncStorageKey.customFormats, null);
-  common.googleUid = await getFromStorageLocal(localStorageKey.googleUid, null);
+  common.customFormats = await getFromStorageSyncAsync(syncStorageKey.customFormats, []);
+  common.googleUid = await getFromStorageLocalAsync(localStorageKey.googleUid, null);
 
-  common.eventStart = await getFromStorageSync(syncStorageKey.eventStart, "1930");
+  common.eventStart = await getFromStorageSyncAsync(syncStorageKey.eventStart, "1930");
+  common.jumpTo = await getFromStorageSyncAsync(syncStorageKey.jumpTo, "90");
+  common.ifttt = await getFromStorageSyncAsync(syncStorageKey.iftttKey, "");
+  common.zapierWebhook = await getFromStorageSyncAsync(syncStorageKey.zapierWebhook, "");
+  common.firstPopup = await getFromStorageLocalAsync(localStorageKey.firstPopup, false);
+  common.includeFeasts = await getFromStorageSyncAsync(syncStorageKey.includeFeasts, true);
+  common.includeHolyDays = await getFromStorageSyncAsync(syncStorageKey.includeHolyDays, true);
+  common.showPointer = await getFromStorageSyncAsync(syncStorageKey.showPointer, true);
+  common.focusTimeAsOf = await getFromStorageSyncAsync(syncStorageKey.focusTimeAsOf, "0");
+  common.focusPage = await getFromStorageLocalAsync(localStorageKey.focusPage);
+  common.focusTime = await getFromStorageSyncAsync(syncStorageKey.focusTime, "B0");
 
   bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
   bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
@@ -160,29 +168,28 @@ async function prepareForBackgroundAndPopup() {
 
   setupLanguageChoice();
 
-  holyDays = HolyDays();
+  _holyDays = new HolyDays();
+  console.log(`Created _holyDays ${_holyDays}`);
 
   prepareAnalytics();
 
-  if (_backgroundReminderEngine) {
-    if (_notificationsEnabled) {
-      _backgroundReminderEngine = new BackgroundReminderEngine();
-    }
-  }
+  prepared = true;
+  console.log("Finished preparing for background and popup");
+  FlushPendingInstallFunctions();
 }
 
 async function prepareSharedForPopup() {
-  common.formatTopDay = await getFromStorageSync(syncStorageKey.formatTopDay, getMessage("bTopDayDisplay"));
-  common.formatToolTip1 = await getFromStorageSync(syncStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
-  common.formatToolTip2 = await getFromStorageSync(syncStorageKey.formatToolTip2, "{nearestSunset}");
+  common.formatTopDay = await getFromStorageSyncAsync(syncStorageKey.formatTopDay, getMessage("bTopDayDisplay"));
+  common.formatToolTip1 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
+  common.formatToolTip2 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip2, "{nearestSunset}");
 
-  common.exporter_exporterName = await getFromStorageSync(syncStorageKey.exporter_exporterName, getMessage("title"));
-  common.exporter_exporterDateRange = await getFromStorageSync(syncStorageKey.exporter_exporterDateRange);
-  common.exporter_alertMinutes = await getFromStorageSync(syncStorageKey.exporter_alertMinutes, "B0");
+  common.exporter_exporterName = await getFromStorageSyncAsync(syncStorageKey.exporter_exporterName, getMessage("title"));
+  common.exporter_exporterDateRange = await getFromStorageSyncAsync(syncStorageKey.exporter_exporterDateRange);
+  common.exporter_alertMinutes = await getFromStorageSyncAsync(syncStorageKey.exporter_alertMinutes, "B0");
 
-  common.optedOutOfGoogleAnalytics = await getFromStorageSync(syncStorageKey.optOutGa, -1);
+  common.optedOutOfGoogleAnalytics = await getFromStorageSyncAsync(syncStorageKey.optOutGa, -1);
   common.rememberFocusTimeMinutes = 5; // show on settings page?
-  //  integrateIntoGoogleCalendar: await getFromStorageLocal(localStorageKey.enableGCal, true),
+  //  integrateIntoGoogleCalendar: await getFromStorageLocalAsync(localStorageKey.enableGCal, true),
 
   // must be set immediately for tab managers to see this name
   $("#windowTitle").text(getMessage("title"));
@@ -204,14 +211,14 @@ async function prepareSharedForPopup() {
 
   _initialDiStamp = getDateInfo(new Date(), true);
 
-  recallFocusAndSettings();
+  recallFocusAndSettingsAsync();
 
   updateLoadProgress("refresh date info");
 
   UpdateLanguageBtn();
 
   updateLoadProgress("defaults");
-  prepareDefaults();
+  prepareDefaultsInPopup();
 
   if (_iconPrepared) {
     refreshDateInfo();
@@ -219,7 +226,7 @@ async function prepareSharedForPopup() {
     refreshDateInfoAndShow();
   }
 
-  const isEve = await getFromStorageLocal(localStorageKey.focusTimeIsEve, "x");
+  const isEve = await getFromStorageLocalAsync(localStorageKey.focusTimeIsEve, "x");
   if (isEve !== "x" && isEve !== _di.bNow.eve) {
     toggleEveOrDay(isEve);
   }
@@ -240,7 +247,7 @@ async function prepareSharedForPopup() {
   showShortcutKeys();
 
   updateLoadProgress("handlers");
-  attachHandlers();
+  attachHandlersInPopup();
 
   updateLoadProgress("btn open");
   showBtnOpen();
@@ -259,7 +266,7 @@ async function prepareSharedForPopup() {
   }
 }
 
-async function loadJsonfile(filePath) {
+async function loadJsonfileAsync(filePath) {
   try {
     const url = chrome.runtime.getURL(filePath);
     const response = await fetch(url);
@@ -295,7 +302,7 @@ async function loadRawMessages(langCode, cb) {
     const url = `/_locales/${langToLoad}/messages.json`;
     console.log("shared", langNum, langToLoad, url);
 
-    const messages = await loadJsonfile(url);
+    const messages = await loadJsonfileAsync(url);
 
     if (!messages) {
       console.log("no source found for", langToLoad);
@@ -367,14 +374,14 @@ function getDateInfo(currentTime1, onlyStamp) {
     }
   }
 
-  const known = knownDateInfos[currentTime];
+  const known = _knownDateInfos[currentTime];
   if (known) {
     return known;
   }
 
   // debugger;
 
-  const bNow = holyDays.getBDate(currentTime);
+  const bNow = _holyDays.getBDate(currentTime);
   if (onlyStamp) {
     return {
       stamp: JSON.stringify(bNow),
@@ -547,7 +554,7 @@ function getDateInfo(currentTime1, onlyStamp) {
   //  getUpcoming(di);
   //}
 
-  knownDateInfos[currentTime] = di;
+  _knownDateInfos[currentTime] = di;
 
   return di;
 }
@@ -572,13 +579,13 @@ function getElementNum(num) {
   return element;
 }
 
-async function getToolTipMessageTemplate(lineNum) {
+function getToolTipMessageTemplate(lineNum) {
   // can be overwritten in the custom page
   switch (lineNum) {
     case 1:
-      return common.formatToolTip1; // await getFromStorageSync(localStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
+      return common.formatToolTip1; // await getFromStorageSyncAsync(localStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
     case 2:
-      return common.formatToolTip2; // await getFromStorageSync(localStorageKey.formatToolTip2, "{nearestSunset}");
+      return common.formatToolTip2; // await getFromStorageSyncAsync(localStorageKey.formatToolTip2, "{nearestSunset}");
   }
   return "";
 }
@@ -668,7 +675,7 @@ function getUpcoming(di) {
   if (di.upcomingHtml) {
     return; // already done
   }
-  const dayInfos = holyDays.getUpcoming(di, 3);
+  const dayInfos = _holyDays.getUpcoming(di, 3);
   const today = dayjs(di.frag2);
   today.hour(0);
   di.special1 = null;
@@ -757,8 +764,8 @@ async function startGetLocationName() {
 
   try {
     const unknownLocation = getMessage("noLocationName");
-    const lat = await getFromStorageLocal(localStorageKey.lat);
-    const long = await getFromStorageLocal(localStorageKey.long);
+    const lat = common.locationLat;
+    const long = common.locationLong;
     if (!lat || !long) {
       common.locationName = unknownLocation;
       console.log("No location, so not getting location name");
@@ -778,11 +785,11 @@ async function startGetLocationName() {
         const location = response.city || unknownLocation;
         console.log("Location:", location);
 
-        putInStorageLocal(localStorageKey.locationName, location);
+        putInStorageLocalAsync(localStorageKey.locationName, location);
         common.locationName = location;
 
         const known = location !== unknownLocation;
-        putInStorageLocal(localStorageKey.locationNameKnown, known);
+        putInStorageLocalAsync(localStorageKey.locationNameKnown, known);
         common.locationNameKnown = known;
 
         stopLoaderButton();
@@ -803,20 +810,20 @@ function stopLoaderButton() {
 
 function setLocation(position) {
   common.locationLat = position.coords.latitude;
-  putInStorageLocal(localStorageKey.lat, common.locationLat);
+  putInStorageLocalAsync(localStorageKey.lat, common.locationLat);
 
   common.locationLong = position.coords.longitude;
-  putInStorageLocal(localStorageKey.long, common.locationLong);
+  putInStorageLocalAsync(localStorageKey.long, common.locationLong);
 
-  knownDateInfos = {};
+  _knownDateInfos = {};
 
-  putInStorageLocal(localStorageKey.locationKnown, true);
+  putInStorageLocalAsync(localStorageKey.locationKnown, true);
   common.locationKnown = true;
 
-  putInStorageLocal(localStorageKey.locationNameKnown, false);
+  putInStorageLocalAsync(localStorageKey.locationNameKnown, false);
   common.locationNameKnown = false;
 
-  putInStorageLocal(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
+  putInStorageLocalAsync(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
 
   if (typeof _inPopupPage !== "undefined") {
     $("#inputLat").val(common.locationLat);
@@ -828,7 +835,7 @@ function setLocation(position) {
   refreshDateInfoAndShow();
 }
 
-async function noLocation(err) {
+function noLocation(err) {
   if (common.locationNameKnown) {
     return;
   }
@@ -836,18 +843,18 @@ async function noLocation(err) {
   common.locationLat = 0;
   common.locationLong = 0;
 
-  putInStorageLocal(localStorageKey.lat, common.locationLong);
-  putInStorageLocal(localStorageKey.long, common.locationLong);
+  putInStorageLocalAsync(localStorageKey.lat, common.locationLong);
+  putInStorageLocalAsync(localStorageKey.long, common.locationLong);
 
-  knownDateInfos = {};
+  _knownDateInfos = {};
 
   console.error(err);
 
-  putInStorageLocal(localStorageKey.locationKnown, false);
+  putInStorageLocalAsync(localStorageKey.locationKnown, false);
   common.locationKnown = false;
 
   const noLocAvail = getMessage("noLocationAvailable");
-  putInStorageLocal(localStorageKey.locationName, noLocAvail);
+  putInStorageLocalAsync(localStorageKey.locationName, noLocAvail);
   common.locationName = noLocAvail;
 
   stopLoaderButton();
@@ -855,10 +862,11 @@ async function noLocation(err) {
   refreshDateInfoAndShow();
 }
 
-async function recallFocusAndSettings() {
-  const storedAsOf = +(await getFromStorageLocal(localStorageKey.focusTimeAsOf));
+async function recallFocusAndSettingsAsync() {
+  const storedAsOf = +common.focusTimeAsOf;
   if (!storedAsOf) {
-    putInStorageLocal(localStorageKey.focusTimeIsEve, null);
+    common.focusTimeIsEve = null;
+    putInStorageLocalAsync(localStorageKey.focusTimeIsEve, null);
     return;
   }
   const focusTimeAsOf = new Date(storedAsOf);
@@ -866,12 +874,12 @@ async function recallFocusAndSettings() {
 
   const now = new Date();
   if (now - focusTimeAsOf < common.rememberFocusTimeMinutes * 60000) {
-    const focusPage = await getFromStorageLocal(localStorageKey.focusPage);
+    const focusPage = common.focusPage;
     if (focusPage && typeof _currentPageId !== "undefined") {
       _currentPageId = focusPage;
     }
 
-    const stored = +(await StorageLocal(localStorageKey.focusTime));
+    const stored = +common.focusTime;
     if (stored) {
       const time = new Date(stored);
 
@@ -889,7 +897,7 @@ async function recallFocusAndSettings() {
       }
     }
   } else {
-    putInStorageLocal(localStorageKey.focusPage, null);
+    putInStorageLocalAsync(localStorageKey.focusPage, null);
   }
   if (!timeSet) {
     setFocusTime(new Date());
@@ -912,7 +920,7 @@ function refreshDateInfoAndShow(resetToNow) {
     setFocusTime(new Date());
   } else {
     // will reset to now after a few minutes
-    recallFocusAndSettings();
+    recallFocusAndSettingsAsync();
   }
   console.log("refreshDateInfoAndShow at", new Date());
   refreshDateInfo();
@@ -1187,8 +1195,10 @@ function setFocusTime(t) {
   if (Number.isNaN(_focusTime)) {
     console.log("unexpected 2: ", _focusTime);
   }
-  putInStorageLocal(localStorageKey.focusTime, t.getTime());
-  putInStorageLocal(localStorageKey.focusTimeAsOf, new Date().getTime());
+  putInStorageLocalAsync(localStorageKey.focusTime, t.getTime());
+  common.focusTime = t.getTime();
+  putInStorageLocalAsync(localStorageKey.focusTimeAsOf, new Date().getTime());
+  common.focusTimeAsOf = new Date().getTime();
 }
 
 function localizeHtml(host, fnOnEach) {
@@ -1311,7 +1321,7 @@ const prepareAnalytics = () => {
   let uid = common.googleUid;
   if (!uid) {
     uid = createGuid();
-    putInStorageLocal(localStorageKey.uid, uid);
+    putInStorageLocalAsync(localStorageKey.uid, uid);
     common.googleUid = uid;
   }
   const baseParams = {
@@ -1374,9 +1384,9 @@ chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
       // can adjust per layout
       const di = getDateInfo(new Date(payload.targetDay));
       callback({
-        label: (await getFromStorageLocal(localStorageKey.gCalLabel, payload.labelFormat || "{bMonthNamePri} {bDay}")).filledWith(di),
+        label: (await getFromStorageLocalAsync(localStorageKey.gCalLabel, payload.labelFormat || "{bMonthNamePri} {bDay}")).filledWith(di),
         title: (
-          await getFromStorageLocal(localStorageKey.gCalTitle, payload.titleFormat || "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}")
+          await getFromStorageLocalAsync(localStorageKey.gCalTitle, payload.titleFormat || "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}")
         ).filledWith(di),
         classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
       });
@@ -1385,7 +1395,7 @@ chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
 
     // case "getStorage":
     //   callback({
-    //     value: await getFromStorageLocal(payload.key, payload.defaultValue),
+    //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
     //   });
     //   break;
 
@@ -1420,14 +1430,15 @@ chrome.runtime.onMessageExternal.addListener(
         // layout, targetDay
         // can adjust per layout
         const di = getDateInfo(new Date(payload.targetDay));
-        // const holyDay = $ .grep(holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
-        const holyDay = holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        // const holyDay = $ .grep_holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        const holyDay = _holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
         const holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
 
         callback({
-          label: (payload.labelFormat || (await getFromStorageLocal(localStorageKey.gCalLabel, "{bMonthNamePri} {bDay}"))).filledWith(di),
+          label: (payload.labelFormat || (await getFromStorageLocalAsync(localStorageKey.gCalLabel, "{bMonthNamePri} {bDay}"))).filledWith(di),
           title: (
-            payload.titleFormat || (await getFromStorageLocal(localStorageKey.gCalTitle, "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"))
+            payload.titleFormat ||
+            (await getFromStorageLocalAsync(localStorageKey.gCalTitle, "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"))
           ).filledWith(di),
           classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
           di: di,
@@ -1438,7 +1449,7 @@ chrome.runtime.onMessageExternal.addListener(
 
       // case "getStorage":
       //   callback({
-      //     value: await getFromStorageLocal(payload.key, payload.defaultValue),
+      //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
       //   });
       //   break;
 
@@ -1457,37 +1468,37 @@ chrome.runtime.onMessageExternal.addListener(
 );
 
 // use Local for ephemeral data, and Sync for settings
-async function putInStorageLocal(key, obj) {
-  await putInStorageRaw("local", key, obj);
+async function putInStorageLocalAsync(key, obj) {
+  await putInStorageRawAsync("local", key, obj);
 }
 
-async function getFromStorageLocal(key, defaultvalue) {
-  return getFromStorageRaw("local", key, defaultvalue);
+async function getFromStorageLocalAsync(key, defaultvalue) {
+  return getFromStorageRawAsync("local", key, defaultvalue);
 }
 
-async function removeFromStorageLocal(key) {
-  await removeFromStorageRaw("local", key);
+async function removeFromStorageLocalAsync(key) {
+  await removeFromStorageRawAsync("local", key);
 }
 
 // sync versions
-async function putInStorageSync(key, obj) {
-  await putInStorageRaw("sync", key, obj);
+async function putInStorageSyncAsync(key, obj) {
+  await putInStorageRawAsync("sync", key, obj);
 }
 
-async function getFromStorageSync(key, defaultvalue) {
-  return getFromStorageRaw("sync", key, defaultvalue);
+async function getFromStorageSyncAsync(key, defaultvalue) {
+  return getFromStorageRawAsync("sync", key, defaultvalue);
 }
 
-async function removeFromStorageSync(key) {
-  await removeFromStorageRaw("sync", key);
+async function removeFromStorageSyncAsync(key) {
+  await removeFromStorageRawAsync("sync", key);
 }
 
 /** Generic versions */
 const ObjectConstant = "$****$";
 
-async function putInStorageRaw(storageType, key, value) {
+async function putInStorageRawAsync(storageType, key, value) {
   if (value === null || value === undefined) {
-    removeFromStorageRaw(storageType, key);
+    removeFromStorageRawAsync(storageType, key);
     return;
   }
 
@@ -1504,10 +1515,18 @@ async function putInStorageRaw(storageType, key, value) {
     default:
       await chrome.storage.local.set({ [key]: `${value2}` });
   }
+
+  if (chrome.runtime.lastError) {
+    console.log(`Error putting into ${storageType} storage "${key}": ${chrome.runtime.lastError}`);
+  }
 }
-async function getFromStorageRaw(storageType, key, defaultvalue) {
+async function getFromStorageRawAsync(storageType, key, defaultvalue) {
   const keyWithDefault = { [key]: defaultvalue };
   const storedObj = storageType === "sync" ? await chrome.storage.sync.get(keyWithDefault) : await chrome.storage.local.get(keyWithDefault);
+
+  if (chrome.runtime.lastError) {
+    console.log(`Error getting from ${storageType} storage "${key}": ${chrome.runtime.lastError}`);
+  }
 
   const value = storedObj[key];
 
@@ -1521,7 +1540,7 @@ async function getFromStorageRaw(storageType, key, defaultvalue) {
   return defaultvalue;
 }
 
-async function removeFromStorageRaw(storageType, key) {
+async function removeFromStorageRawAsync(storageType, key) {
   switch (storageType) {
     case "sync":
       await chrome.storage.sync.remove(key);
@@ -1535,5 +1554,23 @@ function showLastError() {
   const msg = chrome.runtime.lastError;
   if (msg) {
     console.log("lastError", msg);
+    debugger; // stop on error
+  }
+}
+
+function AddFunctionToPendingInstallFunctions(func) {
+  if (prepared) {
+    console.log("Running function immediately");
+    func();
+  } else {
+    console.log("Adding function to pending list");
+    _pendingInstallFunctionsQueue.push(func);
+  }
+}
+function FlushPendingInstallFunctions() {
+  console.log(`Flushing functions: ${_pendingInstallFunctionsQueue.length}`);
+  while (_pendingInstallFunctionsQueue.length > 0) {
+    const fn = _pendingInstallFunctionsQueue.shift();
+    fn();
   }
 }

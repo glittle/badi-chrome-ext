@@ -2176,10 +2176,10 @@ var HolyDays = function () {
 
 // helpers for holyDays
 function getNawRuzFromDate(d) {
-  return holyDays.getNawRuz(d.getFullYear());
+  return_holyDays.getNawRuz(d.getFullYear());
 }
 function isAfterNawRuz(d) {
-  return d.getTime() >= holyDays.getNawRuz(d.getFullYear()).getTime();
+  return d.getTime() >= _holyDays.getNawRuz(d.getFullYear()).getTime();
 }
 function getBadiYear(d) {
   return d.getFullYear() - 1843 - (isAfterNawRuz(d) ? 0 : 1);

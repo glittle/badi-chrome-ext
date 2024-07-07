@@ -240,7 +240,7 @@ var PageCustom = function () {
         s: div.find(".customIsSample input").is(":checked"),
       });
     });
-    putInStorageSync(syncStorageKey.customFormats, formats);
+    putInStorageSyncAsync(syncStorageKey.customFormats, formats);
     common.customFormats = formats;
     updateFirstPageSamples(true);
     fillSelectForDefaults();
@@ -249,7 +249,8 @@ var PageCustom = function () {
   function getCustomSample() {
     return $("#customSampleTemplate").html().replace('data-x=""', "{checked}");
   }
-  async function recallSettings(formats) {
+
+  function recallSettings(formats) {
     if (formats === void 0) {
       formats = null;
     }
@@ -302,7 +303,7 @@ var PageCustom = function () {
     fillSelectDefault("customLoadTopDay", common.formatTopDay, getMessage("bTopDayDisplay"));
     updateDefaultDropdowns();
   }
-  async function fillSelectDefault(id, value, message) {
+  function fillSelectDefault(id, value, message) {
     var defaultFormat = message;
     var defaultFound = false;
     var optionsHtml = ['<optgroup label="{0}">'.filledWith(getMessage("standardFormats"))];
@@ -323,8 +324,8 @@ var PageCustom = function () {
     });
     optionsHtml.push("</optgroup>");
     // add local custom formats
-    var formats = await getFromStorageSync(syncStorageKey.customFormats, []);
-    if (formats.length > 0) {
+    var formats = common.customFormats;
+    if (formats?.length > 0) {
       optionsHtml.push('<optgroup label="{0}">'.filledWith(getMessage("customFormats")));
       $.each(formats, function (i, el) {
         var format = el.f;
@@ -347,21 +348,21 @@ var PageCustom = function () {
       ddl.val(defaultFormat);
     }
   }
-  async function saveTopToolTipFormat1(ev) {
+  function saveTopToolTipFormat1(ev) {
     const value = $(ev.target).find("option:selected").data("format");
-    putInStorageSync(syncStorageKey.formatToolTip1, value);
     common.formatToolTip1 = value;
-    await showIcon();
+    showIcon();
+    putInStorageSyncAsync(syncStorageKey.formatToolTip1, value);
   }
-  async function saveTopToolTipFormat2(ev) {
+  function saveTopToolTipFormat2(ev) {
     const value = $(ev.target).find("option:selected").data("format");
-    putInStorageSync(syncStorageKey.formatToolTip2, value);
     common.formatToolTip2 = value;
-    await showIcon();
+    showIcon();
+    putInStorageSyncAsync(syncStorageKey.formatToolTip2, value);
   }
   function saveTopDayFormat(ev) {
     const value = $(ev.target).find("option:selected").data("format");
-    putInStorageSync(syncStorageKey.formatTopDay, value);
+    putInStorageSyncAsync(syncStorageKey.formatTopDay, value);
     common.formatTopDay = value;
     showInfo();
   }
@@ -371,13 +372,15 @@ var PageCustom = function () {
       option.html(option.data("prefix") + option.data("format").filledWith(_di));
     });
   }
-  async function startup() {
+  function startup() {
     recallSettings(); // do local storage quickly... let sync storage overwrite later
     preparePartsList();
     attachHandlers();
     $(".customSelect").html(getMessage("customSelectForFrontPage").filledWith(getMessage("pick_pageDay")));
   }
+
   startup();
+
   return {
     updateDate: showForCurrentDate,
     updateFirstPage: updateFirstPageSamples,

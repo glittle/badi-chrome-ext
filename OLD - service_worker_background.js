@@ -7,7 +7,7 @@
  */
 
 // const _isBackgroundPage = true;
-let _backgroundReminderEngine = {};
+let _remindersEngine = {};
 // const popupUrl = chrome.extension.getURL("popup.html");
 
 const BackgroundModule = () => {
@@ -15,9 +15,9 @@ const BackgroundModule = () => {
   //   if (alarm.name.startsWith("refresh")) {
   //     console.log(`ALARM: ${alarm.name}`);
   //     refreshDateInfoAndShow();
-  //     _backgroundReminderEngine.setAlarmsForRestOfToday();
+  //     _remindersEngine.setAlarmsForRestOfToday();
   //   } else if (alarm.name.startsWith("alarm_")) {
-  //     _backgroundReminderEngine.triggerAlarmNow(alarm.name);
+  //     _remindersEngine.triggerAlarmNow(alarm.name);
   //   }
   // };
 
@@ -25,10 +25,10 @@ const BackgroundModule = () => {
   //   if (info.reason === "update") {
   //     setTimeout(() => {
   //       const newVersion = chrome.runtime.getManifest().version;
-  //       const oldVersion = await getFromStorageLocal(localStorageKey.updateVersion);
+  //       const oldVersion = await getFromStorageLocalAsync(localStorageKey.updateVersion);
   //       if (newVersion !== oldVersion) {
   //         console.log(`${oldVersion} --> ${newVersion}`);
-  //         putInStorageLocal(localStorageKey.updateVersion, newVersion());
+  //         putInStorageLocalAsync(localStorageKey.updateVersion, newVersion());
   //         chrome.tabs.create({
   //           url:
   //             getMessage(`${browserHostType}_History`) +
@@ -76,7 +76,7 @@ const BackgroundModule = () => {
     startGettingLocation();
 
     if (_notificationsEnabled) {
-      _backgroundReminderEngine = new BackgroundReminderEngine();
+      _remindersEngine = new RemindersEngine();
     }
 
     if (browserHostType === browser.Chrome) {
@@ -108,7 +108,7 @@ const BackgroundModule = () => {
         }
       });
     }
-    debugger;
+    // debugger;
     chrome.contextMenus.create(
       {
         id: "openInTab",
@@ -244,7 +244,7 @@ if (_notificationsEnabled && browserHostType === browser.Chrome) {
   });
 }
 
-const BackgroundReminderEngine = () => {
+const RemindersEngine = () => {
   const _ports = [];
   const _reminderPrefix = "alarm_";
   const _specialDays = {};
@@ -569,7 +569,7 @@ const BackgroundReminderEngine = () => {
 
   const getMatchingEventDateFor = (testDayDi, typeWanted) => {
     if (!_specialDays[testDayDi.bYear]) {
-      _specialDays[testDayDi.bYear] = holyDays.prepareDateInfos(testDayDi.bYear);
+      _specialDays[testDayDi.bYear] = _holyDays.prepareDateInfos(testDayDi.bYear);
     }
 
     const specialDays = _specialDays[testDayDi.bYear];
@@ -642,7 +642,7 @@ const BackgroundReminderEngine = () => {
 
   const saveAllReminders = (newSetOfReminders) => {
     _remindersDefined = newSetOfReminders || [];
-    storeReminders();
+    storeRemindersAysnc();
   };
 
   function triggerAlarmNow(alarmName) {
@@ -666,7 +666,7 @@ const BackgroundReminderEngine = () => {
 
     showAlarmNow(alarmInfo, alarmName);
 
-    removeFromStorageLocal(`${_reminderPrefix}${alarmName}`);
+    removeFromStorageLocalAsync(`${_reminderPrefix}${alarmName}`);
 
     if (!isTest) {
       setAlarmsForRestOfToday();
@@ -875,15 +875,15 @@ const BackgroundReminderEngine = () => {
         if (name.startsWith(_reminderPrefix)) {
           //log('removed {0} {1}'.filledWith(alarm.name, new Date(alarm.scheduledTime)));
           chrome.alarms.clear(name);
-          removeFromStorageLocal(name);
+          removeFromStorageLocalAsync(name);
         }
       }
-      debugger; // ensure this works!
+      // debugger; // ensure this works!
       chrome.storage.sync.get(null, (items) => {
         for (let key in items) {
           if (Object.prototype.hasOwnProperty.call(items, key)) {
             if (key.startsWith(_reminderPrefix)) {
-              removeFromStorageLocal(key);
+              removeFromStorageLocalAsync(key);
             }
           }
         }
@@ -904,7 +904,7 @@ const BackgroundReminderEngine = () => {
     });
   }
 
-  function storeReminders() {
+  function storeRemindersAysnc() {
     chrome.storage.local.set(
       {
         reminders: _remindersDefined,
@@ -1011,7 +1011,7 @@ const BackgroundReminderEngine = () => {
         units: "days",
       },
     ];
-    storeReminders();
+    storeRemindersAysnc();
   }
 
   function connectToPort() {

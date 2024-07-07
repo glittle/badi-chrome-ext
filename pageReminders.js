@@ -6,8 +6,6 @@
 //},
 
 const PageReminders = () => {
-  const _reminderPrefix = "alarm_";
-
   const saveMode = {
     save: 1,
     saveNew: 2,
@@ -72,11 +70,11 @@ const PageReminders = () => {
 
     if (r.iftttKey) {
       // store this, for other reminders to use
-      putInStorageSync(syncStorageKey.iftttKey, r.iftttKey);
+      putInStorageSyncAsync(syncStorageKey.iftttKey, r.iftttKey);
     }
     if (r.zapierWebhook) {
       // store this, for other reminders to use
-      putInStorageSync(syncStorageKey.zapierWebhook, r.zapierWebhook);
+      putInStorageSyncAsync(syncStorageKey.zapierWebhook, r.zapierWebhook);
     }
 
     let saveToBackground = true;
@@ -203,7 +201,7 @@ const PageReminders = () => {
     return r;
   }
 
-  async function updateEditArea(focusOnFirstInput) {
+  function updateEditArea(focusOnFirstInput) {
     // turn everything off
     _page.find(".reminderModel, .reminderEditInputs, .reminderAction, .reminderCalcType").hide();
     _page.find(".reminderModel :input").each((i, input) => {
@@ -248,7 +246,7 @@ const PageReminders = () => {
         case "ifttt": {
           const id = $(".reminder_iftttKey");
           if (!id.val()) {
-            id.val(await getFromStorageSync(syncStorageKey.iftttKey, ""));
+            id.val(common.iftttKey);
           }
           const eventName = $(".reminder_iftttEvent");
           if (!eventName.val()) {
@@ -259,7 +257,7 @@ const PageReminders = () => {
         case "zapier": {
           const url = $(".reminder_zapierWebhook");
           if (!url.val()) {
-            url.val(await getFromStorageSync(syncStorageKey.zapierWebhook, ""));
+            url.val(common.zapierWebhook);
           }
           break;
         }
@@ -375,7 +373,7 @@ const PageReminders = () => {
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         if (alarm.name.startsWith(_reminderPrefix)) {
-          const alarmInfo = await getFromStorageLocal(alarm.name);
+          const alarmInfo = await getFromStorageLocalAsync(alarm.name);
           if (!alarmInfo) {
             console.log(`No alarmInfo for ${alarm.name}`);
             continue;
@@ -509,7 +507,7 @@ const PageReminders = () => {
         editReminder(+$(ev.target).data("id"));
       })
       .on("click", "#makeSamples", (ev) => {
-        debugger;
+        // debugger;
         _reminderModulePort.postMessage({ code: "makeSamples" });
       })
       .on("mouseover", ".alarmInfo, .reminderInfo", (ev) => {

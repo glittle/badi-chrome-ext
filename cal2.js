@@ -84,7 +84,7 @@ const Cal2 = () => {
     }
 
     //    try {
-    const gDate = holyDays.getGDate(currentYear, currentMonth, _di.bDay, true);
+    const gDate = _holyDays.getGDate(currentYear, currentMonth, _di.bDay, true);
 
     setFocusTime(gDate);
     refreshDateInfo();
@@ -347,7 +347,7 @@ const Cal2 = () => {
     for (let bDay = 1; bDay <= 19; bDay++) {
       const bDateCode = `${bMonth}.${bDay}`;
       //      try {
-      const gDate = holyDays.getGDate(bYear, bMonth, bDay, false);
+      const gDate = _holyDays.getGDate(bYear, bMonth, bDay, false);
       if (!gDate) {
         break;
       }
@@ -428,7 +428,7 @@ const Cal2 = () => {
 
       // add holy days
       if (!_specialDays[bYear]) {
-        _specialDays[bYear] = holyDays.prepareDateInfos(bYear);
+        _specialDays[bYear] = _holyDays.prepareDateInfos(bYear);
       }
 
       // const holyDayInfo = $ .grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);

@@ -1,6 +1,6 @@
 ﻿/* global getMessage */
 
-const PagePlanner = () => {
+const PagePlannerAsync = async () => {
   const _page = $("#pagePlanner");
   let _startGDate = null;
   let _endGDate = null;
@@ -21,10 +21,10 @@ const PagePlanner = () => {
     const now = new Date();
     switch (planFromWhen) {
       case "by0":
-        _startGDate = new Date(holyDays.getGDate(getBadiYear(now), 1, 1).getTime());
+        _startGDate = new Date(_holyDays.getGDate(getBadiYear(now), 1, 1).getTime());
         break;
       case "by1":
-        _startGDate = new Date(holyDays.getGDate(getBadiYear(now) + 1, 1, 1).getTime());
+        _startGDate = new Date(_holyDays.getGDate(getBadiYear(now) + 1, 1, 1).getTime());
         break;
       // case 'today':
       default:
@@ -56,19 +56,19 @@ const PagePlanner = () => {
   }
 
   function saveInputs() {
-    putInStorageSync(syncStorageKey.planWhat, $("#planWhat").val());
+    putInStorageSyncAsync(syncStorageKey.planWhat, $("#planWhat").val());
     $(".plannerInputs select").each((i, el) => {
-      putInStorageLocal(`planner_${el.id}`, $(el).val());
+      putInStorageLocalAsync(`planner_${el.id}`, $(el).val());
     });
   }
 
-  async function recallInputs() {
+  async function recallInputsAsync() {
     $("#planWhat")
-      .val(await getFromStorageSync(syncStorageKey.planWhat))
+      .val(await getFromStorageSyncAsync(syncStorageKey.planWhat))
       .trigger("adjust");
 
     $(".plannerInputs select").each(async (i, el) => {
-      const value = await getFromStorageLocal(`planner_${el.id}`);
+      const value = await getFromStorageLocalAsync(`planner_${el.id}`);
       if (typeof value !== "undefined") {
         const ddl = $(el);
         ddl.val(value);
@@ -87,16 +87,16 @@ const PagePlanner = () => {
     cells.push(`<td>{${frag}WeekdayShort}</td>`.filledWith(targetDi));
   }
 
-  async function planEvent1(selectMode) {
+  function planEvent1(selectMode) {
     const plannerWhatEvent = $("#plannerWhatEvents").val() || "";
 
-    const startBDate = holyDays.getBDate(_startGDate);
-    const endBDate = holyDays.getBDate(_endGDate);
+    const startBDate = _holyDays.getBDate(_startGDate);
+    const endBDate = _holyDays.getBDate(_endGDate);
     const results = [];
     let targetYear = startBDate.y;
     let yearShown = 0;
     while (targetYear <= endBDate.y) {
-      const dayInfos = holyDays.prepareDateInfos(targetYear);
+      const dayInfos = _holyDays.prepareDateInfos(targetYear);
       dayInfos.forEach((dayInfo, i) => {
         let name = "";
         if (plannerWhatEvent === dayInfo.NameEn || plannerWhatEvent.includes(dayInfo.NameEn)) {
@@ -176,7 +176,7 @@ const PagePlanner = () => {
   }
 
   function fillInputs() {
-    const dayInfos = holyDays.prepareDateInfos(_di.bYear); // can be any year... use current
+    const dayInfos = _holyDays.prepareDateInfos(_di.bYear); // can be any year... use current
     const hdOptions = [];
     const fOptions = [];
     dayInfos.forEach((dayInfo, i) => {
@@ -198,21 +198,21 @@ const PagePlanner = () => {
     $("#planUntilNum").html('<option value="{0}">{0}</option>'.filledWithEach($.map($(Array(19)), (val, i) => 1 + i)));
   }
 
-  function startup() {
+  async function startupAsync() {
     fillInputs();
     // some defaults
     $("#planUntilNum").val(5);
 
     attachHandlers();
-    recallInputs();
+    await recallInputsAsync();
 
     $("#planWhat").trigger("adjust");
     generate();
   }
 
-  function resetPageForLanguageChange() {
+  async function resetPageForLanguageChangeAsync() {
     fillInputs();
-    recallInputs();
+    await recallInputsAsync();
     $("#planWhat").trigger("adjust");
     generate();
   }
@@ -333,9 +333,9 @@ const PagePlanner = () => {
     });
   }
 
-  startup();
+  startupAsync();
 
   return {
-    resetPageForLanguageChange: resetPageForLanguageChange,
+    resetPageForLanguageChange: resetPageForLanguageChangeAsync,
   };
 };
