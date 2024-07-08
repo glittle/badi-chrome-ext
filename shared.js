@@ -12,6 +12,7 @@ var _rawMessageTranslationPct = 0;
 var _numMessagesEn = 0;
 var _cachedMessages = {};
 var _cachedMessageUseCount = 0;
+
 var _pendingInstallFunctionsQueue = [];
 
 var _nextFilledWithEach_UsesExactMatchOnly = false;
@@ -277,7 +278,7 @@ async function loadJsonfileAsync(filePath) {
     const jsonData = await response.json();
     return jsonData;
   } catch (error) {
-    console.error(`Error fetching file ${filePath}:`, error);
+    // console.error(`Error fetching file ${filePath}:`, error);
     return null;
   }
 }
@@ -1375,97 +1376,35 @@ function createGuid() {
   });
 }
 
-chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
-  const callback = callback1 || (() => {}); // make it optional
+// chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
+//   const callback = callback1 || (() => {}); // make it optional
 
-  switch (payload.cmd) {
-    case "getInfo": {
-      // layout, targetDay
-      // can adjust per layout
-      const di = getDateInfo(new Date(payload.targetDay));
-      callback({
-        label: (await getFromStorageLocalAsync(localStorageKey.gCalLabel, payload.labelFormat || "{bMonthNamePri} {bDay}")).filledWith(di),
-        title: (
-          await getFromStorageLocalAsync(localStorageKey.gCalTitle, payload.titleFormat || "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}")
-        ).filledWith(di),
-        classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
-      });
-      break;
-    }
+//   switch (payload.cmd) {
+//     case "getInfo": {
+//       // layout, targetDay
+//       // can adjust per layout
+//       const di = getDateInfo(new Date(payload.targetDay));
+//       callback({
+//         label: (await getFromStorageLocalAsync(localStorageKey.gCalLabel, payload.labelFormat || "{bMonthNamePri} {bDay}")).filledWith(di),
+//         title: (
+//           await getFromStorageLocalAsync(localStorageKey.gCalTitle, payload.titleFormat || "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}")
+//         ).filledWith(di),
+//         classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
+//       });
+//       break;
+//     }
 
-    // case "getStorage":
-    //   callback({
-    //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
-    //   });
-    //   break;
+//     // case "getStorage":
+//     //   callback({
+//     //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
+//     //   });
+//     //   break;
 
-    default:
-      callback();
-      break;
-  }
-});
-
-chrome.runtime.onMessageExternal.addListener(
-  /*
-    cmd options:  getInfo, connect
-  
-     * payload:
-     *  { 
-     *    cmd: 'getInfo'
-     *    targetDay: date/datestring for new Date(targetDay)
-     *    labelFormat: '{bDay}' (optional)
-     *  }
-     * returns:
-     *  {
-     *   label: {bMonthNamePri} {bDay}
-     *   title:
-     *   classes: '[firstBDay] element4'
-     *  }
-     * 
-     */
-  async (payload, sender, callback1) => {
-    const callback = callback1 || (() => {}); // make it optional
-    switch (payload.cmd) {
-      case "getInfo": {
-        // layout, targetDay
-        // can adjust per layout
-        const di = getDateInfo(new Date(payload.targetDay));
-        // const holyDay = $ .grep_holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
-        const holyDay = _holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
-        const holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
-
-        callback({
-          label: (payload.labelFormat || (await getFromStorageLocalAsync(localStorageKey.gCalLabel, "{bMonthNamePri} {bDay}"))).filledWith(di),
-          title: (
-            payload.titleFormat ||
-            (await getFromStorageLocalAsync(localStorageKey.gCalTitle, "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"))
-          ).filledWith(di),
-          classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
-          di: di,
-          hd: holyDayName,
-        });
-        break;
-      }
-
-      // case "getStorage":
-      //   callback({
-      //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
-      //   });
-      //   break;
-
-      case "connect":
-        callback({
-          value: "Wondrous Calendar!",
-          id: chrome.runtime.id,
-        });
-        break;
-
-      default:
-        callback();
-        break;
-    }
-  }
-);
+//     default:
+//       callback();
+//       break;
+//   }
+// });
 
 // use Local for ephemeral data, and Sync for settings
 async function putInStorageLocalAsync(key, obj) {

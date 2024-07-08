@@ -356,9 +356,10 @@ const PageReminders = () => {
   }
 
   function showActiveAlarms() {
-    if (browserHostType !== browser.Chrome) {
-      return;
-    }
+    // if (browserHostType !== browser.Chrome) {
+    //   return;
+    // }
+    debugger;
 
     //update heading
     _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: showTime(new Date()) }));

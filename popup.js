@@ -12,7 +12,9 @@ console.log("Popup.js starting");
 
 chrome.runtime.sendMessage({ action: "Wake Up" }, (response) => {
   showLastError();
-  console.log("Woke up service worker:", response);
+  console.log("Woke up service worker:", response.message);
+  // console.log(_rawMessages, _cachedMessages);
+  // future optimization - load the loaded language info here
 });
 
 let _showingInfo = false;
@@ -93,12 +95,14 @@ function attachHandlersInPopup() {
     _calWheel.showCalendar(_di);
   });
 
-  //chrome.alarms.onAlarm.addListener(function (alarm) {
-  //  console.log(alarm.name);
-  //  console.log(new Date(alarm.scheduledTime));
-  //  chrome.alarms.clear(alarm.name, function (wasCleared) { console.log(wasCleared); });
-  //  refreshDateInfoAndShow();
-  //});
+  chrome.alarms.onAlarm.addListener(function (alarm) {
+    console.log(alarm.name);
+    console.log(new Date(alarm.scheduledTime));
+    chrome.alarms.clear(alarm.name, function (wasCleared) {
+      console.log(wasCleared);
+    });
+    refreshDateInfoAndShow();
+  });
 
   $("#btnOpen").click(openInTab);
   $("#btnPrint").click(() => {
@@ -125,6 +129,7 @@ function ApplyLanguage() {
   UpdateLanguageBtn();
   putInStorageSyncAsync(syncStorageKey.useArNames, common.useArNames);
   tracker.sendEvent("useArabic", common.useArNames);
+
   _knownDateInfos = {};
   resetForLanguageChange();
   refreshDateInfoAndShow();
@@ -1255,13 +1260,13 @@ function startFillingLanguageInput(select) {
   chrome.runtime.getPackageDirectoryEntry((directoryEntry) => {
     directoryEntry.getDirectory("_locales", {}, (subDirectoryEntry) => {
       const directoryReader = subDirectoryEntry.createReader();
-      directoryReader.readEntries((entries) => {
+      directoryReader.readEntries(async (entries) => {
         for (let i = 0; i < entries.length; ++i) {
           const langToLoad = entries[i].name;
 
           const url = `/_locales/${langToLoad}/messages.json`;
 
-          const messages = loadJsonfileAsync(url);
+          const messages = await loadJsonfileAsync(url);
 
           const langLocalMsg = messages.rbDefLang_Local;
           const name = langLocalMsg ? langLocalMsg.message : langToLoad;
@@ -1322,7 +1327,9 @@ function langSelectChanged() {
     return;
   }
 
-  // reload to apply new language
+  chrome.runtime.sendMessage({ action: "languageChanged" });
+
+  // reload to apply new language?
   // location.reload(false);
   // biome-ignore lint/correctness/noSelfAssign: <explanation>
   location.href = location.href;

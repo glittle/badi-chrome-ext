@@ -4,9 +4,9 @@
  *
  * Alarms are the techincal way to trigger a reminder event.
  *
- * On each day, alarms are cleared at midnight, then set up for the rest of the day. At startup also, alarms are set up for the rest of the day.
+ * On each day, alarms are cleared at midnight and sunset, then set up for the rest of the day. At startup also, alarms are set up for the rest of the day.
  *
- * Because alarms are cleared each day, reminders are stored in local storage and must be created in the service worker each day.
+ * Because alarms are cleared regularly, reminders are stored in local storage and must be created in the service worker each day.
  *
  * All reminders are stored in local storage, not in sync storage. If the user uses multiple devices, they will have to set up reminders on each device.
  *
@@ -44,8 +44,8 @@ function RemindersEngine() {
 
   function setAlarmsForRestOfToday(initialLoad) {
     // clear, then set again
-    clearReminderAlarms(() => {
-      setAlarmsInternal(initialLoad);
+    clearReminderAlarms(async () => {
+      await setAlarmsInternalAsync(initialLoad);
     });
   }
 
@@ -73,7 +73,7 @@ function RemindersEngine() {
     });
   }
 
-  function setAlarmsInternal(initialLoad) {
+  async function setAlarmsInternalAsync(initialLoad) {
     if (!_notificationsEnabled) return;
 
     _now = new Date();
@@ -83,7 +83,7 @@ function RemindersEngine() {
     _nowSunTimes = sunCalculator.getTimes(_nowNoon, common.locationLat, common.locationLong);
 
     console.log(`checking ${_remindersDefined.length} reminders at ${new Date()}`);
-
+    debugger;
     for (let i = 0; i < _remindersDefined.length; i++) {
       const reminder = _remindersDefined[i];
       if (reminder.trigger === "load" && !initialLoad) {
@@ -93,7 +93,7 @@ function RemindersEngine() {
       }
 
       try {
-        tryAddAlarmFor[reminder.trigger](reminder);
+        await tryAddAlarmForAsync[reminder.trigger](reminder);
       } catch (e) {
         console.log(e.message);
       }
@@ -102,40 +102,40 @@ function RemindersEngine() {
     broadcast({ code: "alarmsUpdated" });
   }
 
-  const tryAddAlarmFor = {
-    load: (reminder, isTest) => {
+  const tryAddAlarmForAsync = {
+    load: async (reminder, isTest) => {
       const eventDate = new Date();
-      tryAddTimeAlarm(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(eventDate, reminder, isTest);
     },
-    sunset: (reminder, isTest) => {
+    sunset: async (reminder, isTest) => {
       const eventDate = _nowSunTimes.sunset;
-      tryAddTimeAlarm(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(eventDate, reminder, isTest);
     },
-    sunrise: (reminder, isTest) => {
+    sunrise: async (reminder, isTest) => {
       const eventDate = _nowSunTimes.sunrise;
-      tryAddTimeAlarm(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(eventDate, reminder, isTest);
     },
-    noon: (reminder, isTest) => {
+    noon: async (reminder, isTest) => {
       const eventDate = _nowNoon;
-      tryAddTimeAlarm(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(eventDate, reminder, isTest);
     },
-    midnight: (reminder, isTest) => {
+    midnight: async (reminder, isTest) => {
       const eventDate = new Date();
       eventDate.setHours(24, 0, 0, 0); // midnight coming tonight
-      tryAddTimeAlarm(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(eventDate, reminder, isTest);
     },
-    feast: (reminder, isTest) => {
-      tryAddEventAlarm(reminder, isTest);
+    feast: async (reminder, isTest) => {
+      await addEventAlarmAsync(reminder, isTest);
     },
-    holyday: (reminder, isTest) => {
-      tryAddEventAlarm(reminder, isTest);
+    holyday: async (reminder, isTest) => {
+      await addEventAlarmAsync(reminder, isTest);
     },
-    bday: (reminder, isTest) => {
-      tryAddBDayAlarm(reminder, isTest);
+    bday: async (reminder, isTest) => {
+      await tryAddBDayAlarm(reminder, isTest);
     },
   };
 
-  function tryAddTimeAlarm(eventDate, reminder, isTest) {
+  async function addTimeAlarmAsync(eventDate, reminder, isTest) {
     const alarmInfo = shallowCloneOf(reminder);
     alarmInfo.eventTime = eventDate.getTime();
 
@@ -166,10 +166,10 @@ function RemindersEngine() {
 
     buildUpAlarmInfo(alarmInfo, null, null);
 
-    createAlarm(alarmInfo, isTest);
+    await createAlarmAsync(alarmInfo, isTest);
   }
 
-  function tryAddEventAlarm(reminder, isTest) {
+  async function addEventAlarmAsync(reminder, isTest) {
     let triggerDate = determineTriggerTimeToday(reminder);
 
     if (_now.toDateString() !== triggerDate.toDateString() || triggerDate < _now) {
@@ -235,7 +235,7 @@ function RemindersEngine() {
 
     buildUpAlarmInfo(alarmInfo, testDayDi, holyDayInfo);
 
-    createAlarm(alarmInfo, isTest);
+    await createAlarmAsync(alarmInfo, isTest);
   }
 
   function tryAddBDayAlarm(reminder, isTest) {
@@ -276,7 +276,7 @@ function RemindersEngine() {
 
     buildUpAlarmInfo(alarmInfo, testDI, null);
 
-    createAlarm(alarmInfo, isTest);
+    createAlarmAsync(alarmInfo, isTest);
   }
 
   function buildUpAlarmInfo(alarmInfo, testDayDi, holyDayInfo) {
@@ -354,8 +354,9 @@ function RemindersEngine() {
     alarmInfo.messageBody = getMessage("messageBody", info);
   }
 
-  const createAlarm = (alarmInfo, isTest) => {
-    chrome.alarms.create(storeAlarmReminder(alarmInfo, isTest), {
+  const createAlarmAsync = async (alarmInfo, isTest) => {
+    const alarmKey = await makeAndStoreKeyAsync(alarmInfo, isTest);
+    chrome.alarms.create(alarmKey, {
       when: alarmInfo.triggerTime,
     });
   };
@@ -433,14 +434,14 @@ function RemindersEngine() {
     return date;
   }
 
-  function storeAlarmReminder(reminder, isTest) {
+  async function makeAndStoreKeyAsync(reminder, isTest) {
     // store, and give back key to get it later
     for (let nextKey = 0; ; nextKey++) {
       const publicKey = nextKey + (isTest ? "TEST" : "");
       const fullKey = _reminderPrefix + publicKey;
-      if (getStorage(fullKey, "") === "") {
+      if ((await getFromStorageLocalAsync(fullKey, "")) === "") {
         // empty slot
-        setStorage(fullKey, reminder);
+        await putInStorageLocalAsync(fullKey, reminder);
         return fullKey;
       }
     }
@@ -451,13 +452,13 @@ function RemindersEngine() {
     storeRemindersAysnc();
   }
 
-  function triggerAlarmNow(alarmName) {
+  async function triggerAlarmNowAsync(alarmName) {
     if (!alarmName.startsWith(_reminderPrefix)) {
       console.log(`unexpected reminder alarm: ${alarmName}`);
       return;
     }
 
-    const alarmInfo = getStorage(alarmName);
+    const alarmInfo = await getFromStorageLocalAsync(alarmName);
     if (!alarmInfo) {
       console.log(`no info for ${alarmName}`);
       return;
@@ -472,7 +473,7 @@ function RemindersEngine() {
 
     showAlarmNow(alarmInfo, alarmName);
 
-    removeFromStorageLocalAsync(`${_reminderPrefix}${alarmName}`);
+    await removeFromStorageLocalAsync(`${_reminderPrefix}${alarmName}`);
 
     if (!isTest) {
       setAlarmsForRestOfToday();
@@ -480,7 +481,7 @@ function RemindersEngine() {
   }
 
   function showTestAlarm(reminder) {
-    tryAddAlarmFor[reminder.trigger](reminder, true);
+    tryAddAlarmForAsync[reminder.trigger](reminder, true);
   }
 
   function showAlarmNow(alarmInfo, alarmName) {
@@ -730,11 +731,11 @@ function RemindersEngine() {
   }
 
   function dumpAlarms() {
-    chrome.alarms.getAll((alarms) => {
+    chrome.alarms.getAll(async (alarms) => {
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         console.log("{0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
-        console.log(getStorage(alarm.name));
+        console.log(await getFromStorageLocalAsync(alarm.name));
       }
     });
   }
@@ -880,10 +881,10 @@ function RemindersEngine() {
   }
 
   return {
-    // called from background
+    // called from service worker
     initialize: initialize,
     setAlarmsForRestOfToday: setAlarmsForRestOfToday,
-    triggerAlarmNow: triggerAlarmNow,
+    triggerAlarmNowAsync: triggerAlarmNowAsync,
 
     // for testing...
     dumpAlarms: dumpAlarms,

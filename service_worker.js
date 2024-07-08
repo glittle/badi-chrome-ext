@@ -1,3 +1,11 @@
+/**
+ *  Likely many improvements to be made here, but this is a start.
+ *
+ * This service worker is used to handle background tasks and notifications.
+ * It also needs to respond to external messages from associated extensions.
+ *
+ */
+
 console.log("Loading service worker...");
 
 self.addEventListener("install", (event) => {
@@ -104,12 +112,20 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("on message:", request, "from:", sender);
+  console.log("on message:", request);
 
   if (request.action === "Wake Up") {
     console.log("Waking up...");
     sendResponse({ message: "Thanks. I'm awake now!" });
-    return { message: "Test 123" };
+    // sendResponse({ message: "Thanks. I'm awake now!", _rawMessages, _cachedMessages });
+    // console.log(_rawMessages, _cachedMessages);
+    return true; // Indicate that we will respond asynchronously
+  }
+
+  if (request.action === "languageChanged") {
+    _knownDateInfos = {};
+    prepareForBackgroundAndPopup();
+    return true;
   }
 
   if (request.action === "getCityName") {
@@ -147,3 +163,67 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true;
   }
 });
+
+chrome.runtime.onMessageExternal.addListener(
+  /*
+    cmd options:  getInfo, connect
+  
+     * payload:
+     *  { 
+     *    cmd: 'getInfo'
+     *    targetDay: date/datestring for new Date(targetDay)
+     *    labelFormat: '{bDay}' (optional)
+     *  }
+     * returns:
+     *  {
+     *   label: {bMonthNamePri} {bDay}
+     *   title:
+     *   classes: '[firstBDay] element4'
+     *  }
+     * 
+     */
+  async (payload, sender, callback1) => {
+    console.log("onMessageExternal:", payload);
+
+    const callback = callback1 || (() => {}); // make it optional
+    switch (payload.cmd) {
+      case "getInfo": {
+        // layout, targetDay
+        // can adjust per layout
+        const di = getDateInfo(new Date(payload.targetDay));
+        // const holyDay = $ .grep_holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        const holyDay = _holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        const holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
+
+        callback({
+          label: (payload.labelFormat || (await getFromStorageLocalAsync(localStorageKey.gCalLabel, "{bMonthNamePri} {bDay}"))).filledWith(di),
+          title: (
+            payload.titleFormat ||
+            (await getFromStorageLocalAsync(localStorageKey.gCalTitle, "⇨ {endingSunsetDesc}\n{bYear}.{bMonth}.{bDay}\n{element}"))
+          ).filledWith(di),
+          classes: `${di.bDay === 1 ? " firstBDay" : ""} element${di.elementNum}`,
+          di: di,
+          hd: holyDayName,
+        });
+        break;
+      }
+
+      // case "getStorage":
+      //   callback({
+      //     value: await getFromStorageLocalAsync(payload.key, payload.defaultValue),
+      //   });
+      //   break;
+
+      case "connect":
+        callback({
+          value: "Wondrous Calendar!",
+          id: chrome.runtime.id,
+        });
+        break;
+
+      default:
+        callback();
+        break;
+    }
+  }
+);
