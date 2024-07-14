@@ -18,6 +18,7 @@ var _pendingInstallFunctionsQueue = [];
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _focusTime = null;
 var _reminderPrefix = "reminder_";
+var _refreshPrefix = "refresh_";
 
 var _holyDays = null;
 var _knownDateInfos = {};
@@ -948,11 +949,11 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
     // in eve, after sunset, so update after midnight
     const midnight = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 1).getTime();
     whenTime = midnight + 1000; // to be safe, set at least 1 second after midnight
-    alarmName = "refresh_midnight";
+    alarmName = _refreshPrefix + "midnight";
   } else {
     // in the day, so update right at the sunset
     whenTime = sunset.getTime();
-    alarmName = "refresh_sunset";
+    alarmName = _refreshPrefix + "sunset";
   }
 
   // odd bug... sometimes gets called many times over - is alarm being set in the past?
@@ -974,7 +975,7 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
   chrome.alarms.getAll((alarms) => {
     for (let i = 0; i < alarms.length; i++) {
       const alarm = alarms[i];
-      if (alarm.name.startsWith("refresh_")) {
+      if (alarm.name.startsWith(_refreshPrefix)) {
         console.log(alarm.name, new Date(alarm.scheduledTime));
       } else {
         console.log(alarm.name);

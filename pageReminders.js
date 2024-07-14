@@ -390,6 +390,8 @@ const PageReminders = () => {
               getMessage("btnReminderEdit")
             )
           );
+        } else if (alarm.name.startsWith(_refreshPrefix)) {
+          console.log(`Unexpected alarm ${alarm.name}`);
         } else {
           console.log(`Unexpected alarm ${alarm.name}`);
         }
