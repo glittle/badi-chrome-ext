@@ -62,19 +62,19 @@ const PageReminders = () => {
       console.log("new reminder");
     }
 
-    const r = buildReminder(_currentEditId);
+    const reminder = buildReminder(_currentEditId);
 
-    if (r.triggerTimeRaw) {
-      r.triggerTimeRawDisplay = showTime(determineTriggerTimeToday(r));
+    if (reminder.triggerTimeRaw) {
+      reminder.triggerTimeRawDisplay = getTimeDisplay(determineTriggerTimeToday(reminder));
     }
 
-    if (r.iftttKey) {
+    if (reminder.iftttKey) {
       // store this, for other reminders to use
-      putInStorageSyncAsync(syncStorageKey.iftttKey, r.iftttKey);
+      putInStorageSyncAsync(syncStorageKey.iftttKey, reminder.iftttKey);
     }
-    if (r.zapierWebhook) {
+    if (reminder.zapierWebhook) {
       // store this, for other reminders to use
-      putInStorageSyncAsync(syncStorageKey.zapierWebhook, r.zapierWebhook);
+      putInStorageSyncAsync(syncStorageKey.zapierWebhook, reminder.zapierWebhook);
     }
 
     let saveToBackground = true;
@@ -84,9 +84,9 @@ const PageReminders = () => {
       case saveMode.save:
       case saveMode.saveFast:
         // find and replace
-        $.each(_reminders, (i, el) => {
-          if (el.displayId === r.displayId) {
-            _reminders[i] = r;
+        _reminders.forEach((el, i) => {
+          if (el.displayId === reminder.displayId) {
+            _reminders[i] = reminder;
             return false; // done
           }
         });
@@ -98,13 +98,13 @@ const PageReminders = () => {
 
       case saveMode.saveNew:
         // add to the list
-        _reminders.push(r);
+        _reminders.push(reminder);
         break;
 
       case saveMode.test:
         _reminderModulePort.postMessage({
           code: "showTestAlarm",
-          reminder: r,
+          reminder: reminder,
         });
         resetAfter = false;
         saveToBackground = false;
@@ -113,7 +113,7 @@ const PageReminders = () => {
 
     if (saveToBackground) {
       try {
-        tracker.sendEvent("saveReminder", r.trigger, `${r.delta * r.num} ${r.units}`);
+        tracker.sendEvent("saveReminder", reminder.trigger, `${reminder.delta * reminder.num} ${reminder.units}`);
       } catch (e) {
         console.log("Error", e);
       }
@@ -291,7 +291,7 @@ const PageReminders = () => {
     let displayId = 1;
     // console.log('show reminders');
     _reminders.sort(reminderSort);
-    $.each(_reminders, (i, r) => {
+    _reminders.forEach((r) => {
       const lines = [];
 
       r.displayId = displayId;
@@ -362,7 +362,7 @@ const PageReminders = () => {
     debugger;
 
     //update heading
-    _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: showTime(new Date()) }));
+    _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: getTimeDisplay(new Date()) }));
 
     // blank out the list
     const alarmList = _page.find(".alarms");
@@ -390,6 +390,8 @@ const PageReminders = () => {
               getMessage("btnReminderEdit")
             )
           );
+        } else {
+          console.log(`Unexpected alarm ${alarm.name}`);
         }
       }
     });
@@ -535,7 +537,7 @@ const PageReminders = () => {
       .on("click", "#btnReminderDelete", () => {
         if (_currentEditId) {
           let deleted = false;
-          $.each(_reminders, (i, r) => {
+          _reminders.forEach((r, i) => {
             if (r.displayId === _currentEditId) {
               _reminders.splice(i, 1);
               deleted = true;
@@ -568,10 +570,10 @@ const PageReminders = () => {
   }
 
   function establishPortToBackground() {
-    console.log("making port");
+    console.log("making port for reminderModule");
     _reminderModulePort = chrome.runtime.connect({ name: "reminderModule" });
     _reminderModulePort.onMessage.addListener((msg) => {
-      console.log("received:", msg);
+      console.log("pageReminders port received:", msg);
 
       // these are return call in response to our matching request
       switch (msg.code) {
@@ -594,7 +596,7 @@ const PageReminders = () => {
           showReminders();
 
           // need to "edit" each of the samples to get all the settings!
-          $.each(_reminders, (i, r) => {
+          _reminders.forEach((r) => {
             editReminder(r.displayId);
             _currentEditId = r.displayId;
             save(saveMode.saveFast);

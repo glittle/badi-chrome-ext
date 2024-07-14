@@ -97,7 +97,7 @@ const PagePlannerAsync = async () => {
     let yearShown = 0;
     while (targetYear <= endBDate.y) {
       const dayInfos = _holyDays.prepareDateInfos(targetYear);
-      dayInfos.forEach((dayInfo, i) => {
+      dayInfos.forEach((dayInfo) => {
         let name = "";
         if (plannerWhatEvent === dayInfo.NameEn || plannerWhatEvent.includes(dayInfo.NameEn)) {
           // HD
@@ -179,7 +179,7 @@ const PagePlannerAsync = async () => {
     const dayInfos = _holyDays.prepareDateInfos(_di.bYear); // can be any year... use current
     const hdOptions = [];
     const fOptions = [];
-    dayInfos.forEach((dayInfo, i) => {
+    dayInfos.forEach((dayInfo) => {
       switch (dayInfo.Type[0]) {
         case "H":
           hdOptions.push({ t: getMessage(dayInfo.NameEn), v: dayInfo.NameEn });

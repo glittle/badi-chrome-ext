@@ -30,7 +30,7 @@ const PageExporter = () => {
       { val: "Fast_SunriseToSunset", n: 19 },
     ];
     let lastWhat = "";
-    $.each(items, (i, item) => {
+    items.forEach((item) => {
       const valParts = item.val.split("_");
       const type = valParts[1];
       item.name = getMessage(`exportOption_${type}`);
@@ -62,7 +62,7 @@ const PageExporter = () => {
       { v: "B60" },
       // can't go after...
     ];
-    $.each(alerts, (i, a) => {
+    alerts.forEach((a) => {
       a.t = getMessage(`exportAlert_${a.v}`);
     });
     $("#exporterIncludeAlertMin").html('<option value="{v}">{t}</option>'.filledWithEach(alerts));
@@ -407,7 +407,7 @@ END:VEVENT
 
     addDescription(getMessage("exporterItemDescFast"));
 
-    //        di.sunriseDesc = showTime(di.frag2SunTimes.sunrise);
+    //        di.sunriseDesc = getTimeDisplay(di.frag2SunTimes.sunrise);
     switch (variation) {
       case "SunriseToSunset": {
         addLine("BEGIN:VEVENT");
@@ -586,7 +586,7 @@ END:VEVENT
   };
   const setQuickPicks = (list, alert) => {
     clearQuickPick();
-    $.each(list, (i, l) => {
+    list.forEach((l) => {
       $("#pageExporter input[value={0}]".filledWith(l)).prop("checked", true).trigger("change");
     });
     if (alert) {

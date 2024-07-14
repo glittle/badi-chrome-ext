@@ -261,7 +261,7 @@ var PageCustom = function () {
       formats2 = formats || common.customFormats;
     }
     if (formats2 === null || formats2 === void 0 ? void 0 : formats2.length) {
-      $.each(formats2, function (i, el) {
+      formats2.forEach((el) => {
         el.checked = el.s ? "checked" : "";
         //log(el);
       });
@@ -307,7 +307,7 @@ var PageCustom = function () {
     var defaultFormat = message;
     var defaultFound = false;
     var optionsHtml = ['<optgroup label="{0}">'.filledWith(getMessage("standardFormats"))];
-    $.each(_itemsForDefaultSelects, function (i, el) {
+    _itemsForDefaultSelects.forEach((el) => {
       var format = el.format;
       var isDefault = false;
       if (format === defaultFormat) {
@@ -327,7 +327,7 @@ var PageCustom = function () {
     var formats = common.customFormats;
     if (formats?.length > 0) {
       optionsHtml.push('<optgroup label="{0}">'.filledWith(getMessage("customFormats")));
-      $.each(formats, function (i, el) {
+      formats.forEach((el, i) => {
         var format = el.f;
         optionsHtml.push(
           '<option value="'

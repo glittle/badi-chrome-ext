@@ -36,15 +36,15 @@ console.log("Loaded shared");
 console.log("starting to prepare for background and popup");
 
 // can't use async/await here, so have to build a pending function queue
-prepareForBackgroundAndPopup();
+prepareForBackgroundAndPopupAsync();
 
-chrome.notifications.getPermissionLevel(configureNotifications);
-chrome.notifications.onPermissionLevelChanged.addListener(configureNotifications);
+chrome.notifications.getPermissionLevel(configureNotificationsAsync);
+chrome.notifications.onPermissionLevelChanged.addListener(configureNotificationsAsync);
 
 var _notificationsEnabled = false;
 var _remindersEngineLoaded = false;
 
-function configureNotifications(level) {
+async function configureNotificationsAsync(level) {
   _notificationsEnabled = level === "granted";
 
   console.log("Notifications permission level:", level);
@@ -56,7 +56,7 @@ function configureNotifications(level) {
       _remindersEngineLoaded = true;
       _remindersEngine = new RemindersEngine();
     }
-    AddFunctionToPendingInstallFunctions(_remindersEngine.initialize);
+    await AddFunctionToPendingInstallFunctionsAsync(_remindersEngine.initializeAsync);
   } else {
     console.log("Notifications are disabled");
   }
@@ -111,7 +111,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   }
 });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
   console.log("on message:", request);
 
   if (request.action === "Wake Up") {
@@ -124,7 +124,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
   if (request.action === "languageChanged") {
     _knownDateInfos = {};
-    prepareForBackgroundAndPopup();
+    await prepareForBackgroundAndPopup();
     return true;
   }
 

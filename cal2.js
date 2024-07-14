@@ -414,12 +414,12 @@ const Cal2 = () => {
 
       if (di.bMonth === 19) {
         Object.assign(di, {
-          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(showTime(sunrise)),
+          sunriseDiv: "<div class=sunrise>{0}</div>".filledWith(getTimeDisplay(sunrise)),
         });
       }
 
       Object.assign(di, {
-        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(di.sunriseDiv || "", showTime(di.frag2SunTimes.sunset)),
+        sunsetDesc: "<div class=sunsetEnd>{0}{1}</div>".filledWith(di.sunriseDiv || "", getTimeDisplay(di.frag2SunTimes.sunset)),
       });
 
       if (bDay === bMonth) {

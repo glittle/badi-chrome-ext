@@ -1,8 +1,8 @@
 /**
  *
- * Reminders are a superset of alarms, with full information about the event, alarm time, etc.
+ * Reminders are a superset of alarms, with full information about the event, alarm time, etc. They exist regardless of times.
  *
- * Alarms are the techincal way to trigger a reminder event.
+ * Alarms are the techincal way to schedule a Reminder event.
  *
  * On each day, alarms are cleared at midnight and sunset, then set up for the rest of the day. At startup also, alarms are set up for the rest of the day.
  *
@@ -17,112 +17,90 @@
 function RemindersEngine() {
   console.log("RemindersEngine created");
   const _ports = [];
-  const _specialDays = {};
-  const _reminderInfoShown = null;
-  let _remindersDefined = [];
+  let _specialDays = {};
+  let _allReminders = [];
   let _now = new Date();
-  let _nowDi = null;
+  // let _nowDi = null;
   let _nowNoon = null;
   let _nowSunTimes = null;
   let _nowAlmostMidnight = null;
+  let _nowMidnight = null;
   let _baseBDayImage;
 
   const BEFORE = -1;
   const AFTER = 1;
 
-  function initialize() {
+  async function initializeAsync() {
     console.log("RemindersEngine initializing");
 
     prepareBaseImageAsync();
 
     connectToPort();
 
-    loadRemindersAsync();
+    chrome.alarms.onAlarm.addListener((alarm) => {
+      triggerAlarmNowAsync(alarm); // no need to await it
+    });
 
-    setAlarmsForRestOfToday(true);
+    _allReminders = (await getFromStorageLocalAsync(localStorageKey.reminders)) || [];
+
+    await setAlarmsForRestOfTodayAsync(true);
+
+    dumpAlarms(); // for debugging
   }
 
-  function setAlarmsForRestOfToday(initialLoad) {
+  async function setAlarmsForRestOfTodayAsync(initialLoad) {
+    if (!_notificationsEnabled) return;
+
     // clear, then set again
-    clearReminderAlarms(async () => {
+    await clearReminderAlarmsAsync(async () => {
       await setAlarmsInternalAsync(initialLoad);
     });
   }
 
-  function xxxx() {
-    // on startup, clear all alarms and set the refresh alarm
-    chrome.alarms.clearAll();
-    chrome.alarms.onAlarm.addListener((alarm) => {
-      // debugger;
-      if (alarm.name.startsWith("refresh")) {
-        console.log("ALARM:", alarm);
-        refreshDateInfoAndShow();
-        _remindersEngine.setAlarmsForRestOfToday();
-      } else if (alarm.name.startsWith("alarm_")) {
-        _remindersEngine.triggerAlarmNow(alarm.name);
-      }
-    });
-
-    async function setAlarmAsync(name, delayInMinutes) {
-      console.log("startAlarm:", name, delayInMinutes);
-      await chrome.alarms.create(name, { delayInMinutes: delayInMinutes });
-    }
-
-    chrome.alarms.onAlarm.addListener((alarm) => {
-      console.log("Alarm fired:", alarm);
-    });
-  }
-
+  /** Assumes all alarms are cleared */
   async function setAlarmsInternalAsync(initialLoad) {
-    if (!_notificationsEnabled) return;
-
     _now = new Date();
-    _nowDi = getDateInfo(_now);
+    // _nowDi = getDateInfo(_now);
     _nowNoon = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 12, 0, 0, 0);
-    _nowAlmostMidnight = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 23, 59, 0, 0);
     _nowSunTimes = sunCalculator.getTimes(_nowNoon, common.locationLat, common.locationLong);
 
-    console.log(`checking ${_remindersDefined.length} reminders at ${new Date()}`);
-    debugger;
-    for (let i = 0; i < _remindersDefined.length; i++) {
-      const reminder = _remindersDefined[i];
+    _nowMidnight = new Date();
+    _nowMidnight.setHours(24, 0, 0, 0); // midnight coming tonight
+    _nowAlmostMidnight = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 23, 59, 0, 0);
+
+    console.log(`processing ${_allReminders.length} reminder(s) at ${_now}`);
+
+    for (let i = 0; i < _allReminders.length; i++) {
+      const reminder = _allReminders[i];
       if (reminder.trigger === "load" && !initialLoad) {
-        // skip load triggers
-        //log('load ' + initialLoad)
         continue;
       }
 
       try {
-        await tryAddAlarmForAsync[reminder.trigger](reminder);
+        await addTypedAlarmAsync[reminder.trigger](reminder);
       } catch (e) {
-        console.log(e.message);
+        console.log("Error adding alarm", reminder, e.message);
       }
     }
 
     broadcast({ code: "alarmsUpdated" });
   }
 
-  const tryAddAlarmForAsync = {
+  const addTypedAlarmAsync = {
     load: async (reminder, isTest) => {
-      const eventDate = new Date();
-      await addTimeAlarmAsync(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(new Date(), reminder, isTest);
     },
     sunset: async (reminder, isTest) => {
-      const eventDate = _nowSunTimes.sunset;
-      await addTimeAlarmAsync(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(_nowSunTimes.sunset, reminder, isTest);
     },
     sunrise: async (reminder, isTest) => {
-      const eventDate = _nowSunTimes.sunrise;
-      await addTimeAlarmAsync(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(_nowSunTimes.sunrise, reminder, isTest);
     },
     noon: async (reminder, isTest) => {
-      const eventDate = _nowNoon;
-      await addTimeAlarmAsync(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(_nowNoon, reminder, isTest);
     },
     midnight: async (reminder, isTest) => {
-      const eventDate = new Date();
-      eventDate.setHours(24, 0, 0, 0); // midnight coming tonight
-      await addTimeAlarmAsync(eventDate, reminder, isTest);
+      await addTimeAlarmAsync(_nowMidnight, reminder, isTest);
     },
     feast: async (reminder, isTest) => {
       await addEventAlarmAsync(reminder, isTest);
@@ -131,10 +109,11 @@ function RemindersEngine() {
       await addEventAlarmAsync(reminder, isTest);
     },
     bday: async (reminder, isTest) => {
-      await tryAddBDayAlarm(reminder, isTest);
+      await addBDayAlarmAsync(reminder, isTest);
     },
   };
 
+  /** Add time-based alarm */
   async function addTimeAlarmAsync(eventDate, reminder, isTest) {
     const alarmInfo = shallowCloneOf(reminder);
     alarmInfo.eventTime = eventDate.getTime();
@@ -169,6 +148,7 @@ function RemindersEngine() {
     await createAlarmAsync(alarmInfo, isTest);
   }
 
+  /** Add event-based alarm */
   async function addEventAlarmAsync(reminder, isTest) {
     let triggerDate = determineTriggerTimeToday(reminder);
 
@@ -238,7 +218,8 @@ function RemindersEngine() {
     await createAlarmAsync(alarmInfo, isTest);
   }
 
-  function tryAddBDayAlarm(reminder, isTest) {
+  /** Add Badi-date alarm */
+  async function addBDayAlarmAsync(reminder, isTest) {
     let triggerDate = determineTriggerTimeToday(reminder);
     if (triggerDate < _now && !isTest) {
       // desired time for reminder has already past for today
@@ -269,14 +250,14 @@ function RemindersEngine() {
     alarmInfo.triggerTime = triggerDate.getTime();
 
     alarmInfo.eventTime = testDI.frag1SunTimes.sunset.getTime();
-    //alarmInfo.delta = alarmInfo.eventTime > alarmInfo.triggerTime ? BEFORE : AFTER;
+    alarmInfo.delta = alarmInfo.eventTime > alarmInfo.triggerTime ? BEFORE : AFTER; // TODO - verify
 
     // add extra for debugging
     alarmInfo.DI = testDI;
 
     buildUpAlarmInfo(alarmInfo, testDI, null);
 
-    createAlarmAsync(alarmInfo, isTest);
+    await createAlarmAsync(alarmInfo, isTest);
   }
 
   function buildUpAlarmInfo(alarmInfo, testDayDi, holyDayInfo) {
@@ -355,16 +336,48 @@ function RemindersEngine() {
   }
 
   const createAlarmAsync = async (alarmInfo, isTest) => {
-    const alarmKey = await makeAndStoreKeyAsync(alarmInfo, isTest);
-    chrome.alarms.create(alarmKey, {
+    const alarmName = await storeAlarmAsync(alarmInfo, isTest);
+    await chrome.alarms.create(alarmName, {
       when: alarmInfo.triggerTime,
     });
   };
 
+  async function storeAlarmAsync(alarmInfo, isTest) {
+    // store, and give back key to get it later
+    // need to start with a prefix, so we can find them all and end with TEST if it is a test
+    const alarmName = `${_reminderPrefix}-${alarmInfo.trigger}-${randomUUID()}-${isTest ? "TEST" : ""}`;
+
+    alarmInfo.alarmName = alarmName; // store, so we can use it later
+
+    await putInStorageLocalAsync(alarmName, alarmInfo);
+    return alarmName;
+  }
+
+  async function clearReminderAlarmsAsync(fnAfter) {
+    console.log("clearReminderAlarms");
+    await chrome.alarms.getAll(async (alarms) => {
+      console.log("found alarms", alarms);
+      for (let i = 0; i < alarms.length; i++) {
+        const alarm = alarms[i];
+        const alarmName = alarm.name;
+        if (alarmName.startsWith(_reminderPrefix)) {
+          console.log("removing alarm", alarm);
+          Promise.all([chrome.alarms.clear(alarmName), removeFromStorageLocalAsync(alarmName)]);
+        } else {
+          console.log("not a reminder", alarm);
+        }
+      }
+    });
+    if (fnAfter) {
+      console.log("fnAfter");
+      fnAfter();
+    }
+  }
+
   const getFullTime = (eventDateTime, triggerDate, onlyDateIfOther) => {
     // determine time to show
     const eventDate = new Date(eventDateTime);
-    const eventTime = showTime(eventDate);
+    const eventTime = getTimeDisplay(eventDate);
     const today = _now.toDateString() === triggerDate.toDateString();
     if (today) {
       return eventTime;
@@ -434,25 +447,17 @@ function RemindersEngine() {
     return date;
   }
 
-  async function makeAndStoreKeyAsync(reminder, isTest) {
-    // store, and give back key to get it later
-    for (let nextKey = 0; ; nextKey++) {
-      const publicKey = nextKey + (isTest ? "TEST" : "");
-      const fullKey = _reminderPrefix + publicKey;
-      if ((await getFromStorageLocalAsync(fullKey, "")) === "") {
-        // empty slot
-        await putInStorageLocalAsync(fullKey, reminder);
-        return fullKey;
-      }
+  async function triggerAlarmNowAsync(alarm) {
+    const alarmName = alarm.name;
+    //TODO
+    if (alarmName.startsWith(_reminderPrefix)) {
+      console.log("Reminder:", alarm);
+      refreshDateInfoAndShow();
+      setAlarmsForRestOfToday();
+    } else if (alarmName.startsWith("alarm_")) {
+      triggerAlarmNowAsync(alarmName);
     }
-  }
 
-  function saveAllReminders(newSetOfReminders) {
-    _remindersDefined = newSetOfReminders || [];
-    storeRemindersAysnc();
-  }
-
-  async function triggerAlarmNowAsync(alarmName) {
     if (!alarmName.startsWith(_reminderPrefix)) {
       console.log(`unexpected reminder alarm: ${alarmName}`);
       return;
@@ -464,7 +469,7 @@ function RemindersEngine() {
       return;
     }
 
-    const isTest = alarmName.substr(-4) === "TEST";
+    const isTest = alarmName.endsWith("TEST");
 
     if (!isTest && alarmInfo.triggerTime + 1000 < new Date().getTime()) {
       console.log("reminder requested, but past trigger.", alarmInfo);
@@ -473,15 +478,15 @@ function RemindersEngine() {
 
     showAlarmNow(alarmInfo, alarmName);
 
-    await removeFromStorageLocalAsync(`${_reminderPrefix}${alarmName}`);
+    await removeFromStorageLocalAsync(alarmInfo.alarmKey);
 
     if (!isTest) {
-      setAlarmsForRestOfToday();
+      setAlarmsForRestOfTodayAsync();
     }
   }
 
   function showTestAlarm(reminder) {
-    tryAddAlarmForAsync[reminder.trigger](reminder, true);
+    addTypedAlarmAsync[reminder.trigger](reminder, true);
   }
 
   function showAlarmNow(alarmInfo, alarmName) {
@@ -494,7 +499,7 @@ function RemindersEngine() {
       });
     } else {
       tagLine = getMessage("reminderTagline").filledWith({
-        when: showTime(new Date()),
+        when: getTimeDisplay(new Date()),
       });
     }
 
@@ -502,9 +507,7 @@ function RemindersEngine() {
     alarmInfo.alarmName = alarmName;
 
     console.log("DISPLAYED {alarmName}: {messageBody} ".filledWith(alarmInfo));
-    //log(alarmInfo);
 
-    //    const api = alarmInfo.api || 'html';
     const api = "chrome"; // for now, ONLY use Chrome
 
     switch (api) {
@@ -546,134 +549,106 @@ function RemindersEngine() {
     }
 
     if (alarmInfo.action) {
-      doAdditionalActions(alarmInfo);
+      doAdditionalAction(alarmInfo);
     }
   }
 
-  function doAdditionalActions(alarmInfo) {
+  function doAdditionalAction(alarmInfo) {
     switch (alarmInfo.action) {
       case "speak": {
-        const options = {
-          //'lang': common.languageCode,
-          voiceName: alarmInfo.speakVoice,
-          enqueue: true,
-        };
-        console.log(options);
-        chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(alarmInfo), options, () => {
-          if (chrome.runtime.lastError) {
-            console.log(`Error: ${chrome.runtime.lastError}`);
-          }
-        });
-
+        speakAlarm(alarmInfo);
         break;
       }
+
       case "ifttt": {
-        const url = "https://maker.ifttt.com/trigger/{iftttEvent}/with/key/{iftttKey}".filledWith(alarmInfo);
-        const content = {
-          value1: alarmInfo.title,
-          value2: alarmInfo.messageBody,
-          value3: alarmInfo.tagLine,
-        };
-        try {
-          fetch(url, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(content), // Use only for POST or PUT requests
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              chrome.notifications.create(null, {
-                type: "basic",
-                iconUrl: "badi19a-128.png",
-                title: alarmInfo.actionDisplay,
-                message: data,
-              });
-            })
-            .catch((error) => {
-              console.log(JSON.stringify(request));
-              console.log(JSON.stringify(error));
-              console.log(request.statusText);
-              debugger; // stop on error
-            });
-
-          // $ .ajax({
-          //   url: url,
-          //   data: content,
-          //   success: (data) => {
-          //     chrome.notifications.create(null, {
-          //       type: "basic",
-          //       iconUrl: "badi19a-128.png",
-          //       title: alarmInfo.actionDisplay,
-          //       message: data,
-          //     });
-          //   },
-          //   error: (request, error) => {
-          //     console.log(JSON.stringify(request));
-          //     console.log(JSON.stringify(error));
-
-          //     alert(request.statusText);
-          //   },
-          // });
-        } catch (e) {
-          console.log(e);
-        }
-
+        sendIFTTT(alarmInfo);
         break;
       }
 
       case "zapier": {
-        const zap = {
-          title: alarmInfo.title,
-          body: alarmInfo.messageBody,
-          tag: alarmInfo.tagLine,
-          time: new Date(),
-        };
-        try {
-          fetch(alarmInfo.zapierWebhook, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(zap),
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              chrome.notifications.create(null, {
-                type: "basic",
-                iconUrl: "badi19a-128.png",
-                title: alarmInfo.actionDisplay,
-                message: data.status,
-              });
-              console.log(data);
-            })
-            .catch((error) => {
-              const msg = `Request: ${JSON.stringify(request)}`;
-              console.log(msg);
-              debugger; // stop on error
-            });
-
-          // $ .ajax({
-          //   url: alarmInfo.zapierWebhook,
-          //   data: zap,
-          //   success: (data) => {
-          //     chrome.notifications.create(null, {
-          //       type: "basic",
-          //       iconUrl: "badi19a-128.png",
-          //       title: alarmInfo.actionDisplay,
-          //       message: data.status,
-          //     });
-          //     console.log(data);
-          //   },
-          //   error: (request, error) => {
-          //     const msg = `Request: ${JSON.stringify(request)}`;
-          //     console.log(msg);
-          //     alert(msg);
-          //   },
-          // });
-        } catch (e) {
-          console.log(e);
-        }
-
+        sendZapier(alarmInfo);
         break;
       }
+    }
+  }
+
+  function speakAlarm(alarmInfo) {
+    const options = {
+      //'lang': common.languageCode,
+      voiceName: alarmInfo.speakVoice,
+      enqueue: true,
+    };
+    console.log(options);
+    chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(alarmInfo), options, () => {
+      if (chrome.runtime.lastError) {
+        console.log(`Error: ${chrome.runtime.lastError}`);
+      }
+    });
+  }
+
+  function sendIFTTT(alarmInfo) {
+    const url = "https://maker.ifttt.com/trigger/{iftttEvent}/with/key/{iftttKey}".filledWith(alarmInfo);
+    const content = {
+      value1: alarmInfo.title,
+      value2: alarmInfo.messageBody,
+      value3: alarmInfo.tagLine,
+    };
+    try {
+      fetch(url, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(content), // Use only for POST or PUT requests
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          chrome.notifications.create(null, {
+            type: "basic",
+            iconUrl: "badi19a-128.png",
+            title: alarmInfo.actionDisplay,
+            message: data,
+          });
+        })
+        .catch((error) => {
+          console.log(JSON.stringify(request));
+          console.log(JSON.stringify(error));
+          console.log(request.statusText);
+          debugger; // stop on error
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  function sendZapier(alarmInfo) {
+    const zap = {
+      title: alarmInfo.title,
+      body: alarmInfo.messageBody,
+      tag: alarmInfo.tagLine,
+      time: new Date(),
+    };
+    try {
+      fetch(alarmInfo.zapierWebhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(zap),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          chrome.notifications.create(null, {
+            type: "basic",
+            iconUrl: "badi19a-128.png",
+            title: alarmInfo.actionDisplay,
+            message: data.status,
+          });
+          console.log(data);
+        })
+        .catch((error) => {
+          const msg = `Request: ${JSON.stringify(request)}`;
+          console.log(msg);
+          debugger; // stop on error
+        });
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -712,26 +687,10 @@ function RemindersEngine() {
     return canvas.toDataURL("image/png");
   }
 
-  function clearReminderAlarms(fnAfter) {
-    chrome.alarms.getAll(async (alarms) => {
-      for (let i = 0; i < alarms.length; i++) {
-        const alarm = alarms[i];
-        console.log("found alarm", alarm);
-        const name = alarm.name;
-        if (name.startsWith(_reminderPrefix)) {
-          console.log("removed alarm", alarm);
-          Promise.all([chrome.alarms.clear(name), removeFromStorageLocalAsync(name)]);
-        }
-      }
-
-      if (fnAfter) {
-        fnAfter();
-      }
-    });
-  }
-
   function dumpAlarms() {
+    console.log("dumping alarms");
     chrome.alarms.getAll(async (alarms) => {
+      console.log(`found ${alarms.length} alarms`);
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         console.log("{0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
@@ -740,14 +699,15 @@ function RemindersEngine() {
     });
   }
 
-  function storeRemindersAysnc() {
-    putInStorageLocalAsync(localStorageKey.reminders, _remindersDefined);
+  async function saveAllReminders(newSetOfReminders) {
+    _allReminders = newSetOfReminders || [];
+    await putInStorageLocalAsync(localStorageKey.reminders, _allReminders);
   }
 
   function connectToPort() {
     console.log("listening for new ports");
     chrome.runtime.onConnect.addListener((port) => {
-      console.log("port", port.name, port.sender.id);
+      console.log("received on part", port.name, port.sender.id);
 
       if (port.name !== "reminderModule") {
         return; // not for us
@@ -769,22 +729,22 @@ function RemindersEngine() {
         }
       });
 
-      port.onMessage.addListener((msg) => {
+      port.onMessage.addListener(async (msg) => {
         console.log("port received: ", msg);
 
         switch (msg.code) {
           case "getReminders":
             // send back the list
-            msg.reminders = _remindersDefined;
+            msg.reminders = _allReminders;
             port.postMessage(msg);
             break;
 
           case "saveAllReminders":
-            saveAllReminders(msg.reminders);
+            await saveAllReminders(msg.reminders);
             // send back (to all ports)
             broadcast(msg);
 
-            setAlarmsForRestOfToday();
+            setAlarmsForRestOfTodayAsync();
             break;
 
           case "showTestAlarm":
@@ -792,9 +752,9 @@ function RemindersEngine() {
             break;
 
           case "makeSamples":
-            makeSamples();
+            await makeSamples();
 
-            msg.reminders = _remindersDefined;
+            msg.reminders = _allReminders;
             port.postMessage(msg);
             break;
         }
@@ -802,44 +762,8 @@ function RemindersEngine() {
     });
   }
 
-  async function loadRemindersAsync() {
-    const items = await getFromStorageLocalAsync(localStorageKey.reminders);
-    if (items?.reminders) {
-      console.log(`reminders loaded from local: ${items.reminders.length}`);
-      _remindersDefined = items.reminders || [];
-    }
-
-    // setAlarmsForRestOfToday(true);
-
-    // if (browserHostType === browser.Chrome) {
-    //   chrome.storage.sync.get(
-    //     {
-    //       reminders: [],
-    //     },
-    //     (items) => {
-    //       if (chrome.runtime.lastError) {
-    //         console.log(chrome.runtime.lastError);
-    //       }
-
-    //       if (items.reminders) {
-    //         console.log(`reminders loaded from sync: ${items.reminders.length}`);
-    //         _remindersDefined = items.reminders || [];
-    //       }
-
-    //       if (_remindersDefined.length !== 0) {
-    //         setAlarmsForRestOfToday(true);
-    //       } else {
-    //         loadLocal();
-    //       }
-    //     }
-    //   );
-    // } else {
-    //   loadLocal();
-    // }
-  }
-
-  function makeSamples() {
-    _remindersDefined = [
+  async function makeSamples() {
+    const samples = [
       {
         calcType: "Relative",
         delta: -1,
@@ -870,7 +794,7 @@ function RemindersEngine() {
         units: "days",
       },
     ];
-    storeRemindersAysnc();
+    await saveAllReminders(samples);
   }
 
   function broadcast(msg) {
@@ -882,17 +806,17 @@ function RemindersEngine() {
 
   return {
     // called from service worker
-    initialize: initialize,
-    setAlarmsForRestOfToday: setAlarmsForRestOfToday,
+    initializeAsync: initializeAsync,
+    setAlarmsForRestOfTodayAsync: setAlarmsForRestOfTodayAsync,
     triggerAlarmNowAsync: triggerAlarmNowAsync,
 
     // for testing...
     dumpAlarms: dumpAlarms,
-    clearReminderAlarms: clearReminderAlarms,
+    clearReminderAlarms: clearReminderAlarmsAsync,
     saveAllReminders: saveAllReminders,
     _specialDays: _specialDays, // testing
     makeBadiNum: makeBadiNum,
     eraseReminders: () => saveAllReminders(),
-    getReminders: () => _remindersDefined,
+    getReminders: () => _allReminders,
   };
 }

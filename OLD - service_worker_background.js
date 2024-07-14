@@ -557,7 +557,7 @@ const RemindersEngine = () => {
   const getFullTime = (eventDateTime, triggerDate, onlyDateIfOther) => {
     // determine time to show
     const eventDate = new Date(eventDateTime);
-    const eventTime = showTime(eventDate);
+    const eventTime = getTimeDisplay(eventDate);
     const today = _now.toDateString() === triggerDate.toDateString();
     if (today) {
       return eventTime;
@@ -687,7 +687,7 @@ const RemindersEngine = () => {
       });
     } else {
       tagLine = getMessage("reminderTagline").filledWith({
-        when: showTime(new Date()),
+        when: getTimeDisplay(new Date()),
       });
     }
 

@@ -158,7 +158,7 @@ function showInfo(di) {
   updateSharedContent(di);
 
   showInfoDelay = setTimeout(() => {
-    $.each(_pageIdList, async (i, id) => {
+    _pageIdList.forEach(async (id) => {
       if (id !== _currentPageId) {
         updatePageContent(id, di);
       }
@@ -173,7 +173,7 @@ function showInfo(di) {
 function resetForLanguageChange() {
   setupLanguageChoice();
   _lastSpecialDaysYear = 0;
-  $.each(_pageIdList, (i, id) => {
+  _pageIdList.forEach((id) => {
     resetPageForLanguageChange(id);
   });
 }
@@ -1440,7 +1440,7 @@ function fillEventStart() {
       startTime.setHours(h / 100, m);
       startTimes.push({
         v: h + m,
-        t: showTime(startTime),
+        t: getTimeDisplay(startTime),
       });
       if (h === 2000) {
         break; // to end at 8pm
@@ -1495,7 +1495,7 @@ function BuildSpecialDaysTable(di) {
 
   const defaultEventStart = $("#eventStart").val() || common.eventStart;
 
-  dayInfos.forEach((dayInfo, i) => {
+  dayInfos.forEach((dayInfo) => {
     const targetDi = getDateInfo(dayInfo.GDate);
     let tempDate = null;
     dayInfo.di = targetDi;
@@ -1527,8 +1527,8 @@ function BuildSpecialDaysTable(di) {
 
     if (dayInfo.Type === "Fast") {
       const sunrise = targetDi.frag2SunTimes.sunrise;
-      dayInfo.FastSunrise = sunrise ? showTime(sunrise) : "?";
-      dayInfo.FastSunset = sunrise ? showTime(targetDi.frag2SunTimes.sunset) : "?";
+      dayInfo.FastSunrise = sunrise ? getTimeDisplay(sunrise) : "?";
+      dayInfo.FastSunset = sunrise ? getTimeDisplay(targetDi.frag2SunTimes.sunset) : "?";
       dayInfo.FastDay = getMessage("mainPartOfDay", targetDi);
       if (targetDi.frag2Weekday === 6) {
         dayInfo.RowClass = "FastSat";
@@ -1546,7 +1546,7 @@ function BuildSpecialDaysTable(di) {
         time: tempDate,
       };
 
-      dayInfo.StartTime = showTime(dayInfo.Event.time);
+      dayInfo.StartTime = getTimeDisplay(dayInfo.Event.time);
       addEventTime(dayInfo.Event);
       dayInfo.EventTime = getMessage("eventTime", dayInfo.Event);
     } else if (targetTime) {
@@ -1570,7 +1570,7 @@ function BuildSpecialDaysTable(di) {
       dayInfo.Event = {
         time: tempDate,
       };
-      dayInfo.StartTime = showTime(dayInfo.Event.time);
+      dayInfo.StartTime = getTimeDisplay(dayInfo.Event.time);
       addEventTime(dayInfo.Event);
       dayInfo.EventTime = getMessage("eventTime", dayInfo.Event);
     }
@@ -1831,6 +1831,6 @@ function updateLoadProgress(comment) {
 }
 
 $(async () => {
-  await prepareForBackgroundAndPopup();
+  await prepareForBackgroundAndPopupAsync();
   await prepareSharedForPopup();
 });

@@ -250,7 +250,7 @@ const CalGreg = (di, host) => {
 
       if (thisDayInfo.bMonth === 19) {
         Object.assign(thisDayInfo, {
-          sunriseDiv: "<span class=sunrise>{0}</span>".filledWith(showTime(sunrise)),
+          sunriseDiv: "<span class=sunrise>{0}</span>".filledWith(getTimeDisplay(sunrise)),
         });
       }
 

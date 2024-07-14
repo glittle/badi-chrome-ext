@@ -111,7 +111,7 @@ var common = {};
 /**
  * Set up everything that is needed by the service worker and the popup
  */
-async function prepareForBackgroundAndPopup() {
+async function prepareForBackgroundAndPopupAsync() {
   dayjs.extend(dayjs_plugin_utc);
   dayjs.extend(dayjs_plugin_timezone);
 
@@ -176,7 +176,7 @@ async function prepareForBackgroundAndPopup() {
 
   prepared = true;
   console.log("Finished preparing for background and popup");
-  FlushPendingInstallFunctions();
+  await FlushPendingInstallFunctionsAsync();
 }
 
 async function prepareSharedForPopup() {
@@ -426,15 +426,15 @@ function getDateInfo(currentTime1, onlyStamp) {
     currentWeekday: currentTime.getDay(),
     currentTime: currentTime,
 
-    startingSunsetDesc12: showTime(frag1SunTimes.sunset),
-    startingSunsetDesc24: showTime(frag1SunTimes.sunset, 24),
-    endingSunsetDesc12: showTime(frag2SunTimes.sunset),
-    endingSunsetDesc24: showTime(frag2SunTimes.sunset, 24),
+    startingSunsetDesc12: getTimeDisplay(frag1SunTimes.sunset),
+    startingSunsetDesc24: getTimeDisplay(frag1SunTimes.sunset, 24),
+    endingSunsetDesc12: getTimeDisplay(frag2SunTimes.sunset),
+    endingSunsetDesc24: getTimeDisplay(frag2SunTimes.sunset, 24),
     frag1SunTimes: frag1SunTimes,
     frag2SunTimes: frag2SunTimes,
 
-    sunriseDesc12: showTime(frag2SunTimes.sunrise),
-    sunriseDesc24: showTime(frag2SunTimes.sunrise, 24),
+    sunriseDesc12: getTimeDisplay(frag2SunTimes.sunrise),
+    sunriseDesc24: getTimeDisplay(frag2SunTimes.sunrise, 24),
 
     bNow: bNow,
     bDay: bNow.d,
@@ -607,7 +607,7 @@ function showIcon() {
   }
 
   if (dateInfo.bMonth === 19) {
-    tipLines.push(`${getMessage("sunriseFastHeading")} - ${showTime(dateInfo.frag2SunTimes.sunrise)}`);
+    tipLines.push(`${getMessage("sunriseFastHeading")} - ${getTimeDisplay(dateInfo.frag2SunTimes.sunrise)}`);
     tipLines.push("");
   }
 
@@ -682,7 +682,7 @@ function getUpcoming(di) {
   di.special1 = null;
   di.special2 = null;
 
-  dayInfos.forEach((dayInfo, i) => {
+  dayInfos.forEach((dayInfo) => {
     const targetDi = getDateInfo(dayInfo.GDate);
     if (dayInfo.Type === "M") {
       dayInfo.A = getMessage("FeastOf").filledWith(targetDi.bMonthNameSec);
@@ -723,7 +723,7 @@ function determineDaysAway(di, moment1, moment2, sameDay) {
   return getMessage(days === 1 ? "1day" : "otherDays").filledWith(days);
 }
 
-function showTime(d, use24) {
+function getTimeDisplay(d, use24) {
   const hoursType = use24HourClock || use24 === 24 ? 24 : 0;
   const show24Hour = hoursType === 24;
   const hours24 = d.getHours();
@@ -934,9 +934,9 @@ function refreshDateInfoAndShow(resetToNow) {
     showWhenResetToNow();
   }
 
-  if (browserHostType === browser.Chrome) {
-    setAlarmForNextUpdate(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
-  }
+  // if (browserHostType === browser.Chrome) {
+  setAlarmForNextUpdate(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
+  // }
 }
 
 const refreshAlarms = {};
@@ -1175,7 +1175,7 @@ function addEventTime(obj) {
   obj.eventWeekdayLong = gWeekdayLong[obj.eventWeekday];
   obj.eventWeekdayShort = gWeekdayShort[obj.eventWeekday];
 
-  obj.eventTime = showTime(eventTime);
+  obj.eventTime = getTimeDisplay(eventTime);
 }
 
 function getFocusTime() {
@@ -1497,19 +1497,19 @@ function showLastError() {
   }
 }
 
-function AddFunctionToPendingInstallFunctions(func) {
+async function AddFunctionToPendingInstallFunctionsAsync(func) {
   if (prepared) {
-    console.log("Running function immediately");
-    func();
+    console.log("pending function - running immediately");
+    await func();
   } else {
-    console.log("Adding function to pending list");
+    console.log("pending function - add to pending list");
     _pendingInstallFunctionsQueue.push(func);
   }
 }
-function FlushPendingInstallFunctions() {
+async function FlushPendingInstallFunctionsAsync() {
   console.log(`Flushing functions: ${_pendingInstallFunctionsQueue.length}`);
   while (_pendingInstallFunctionsQueue.length > 0) {
     const fn = _pendingInstallFunctionsQueue.shift();
-    fn();
+    await fn();
   }
 }
