@@ -14,7 +14,7 @@ const PageReminders = () => {
   };
 
   let _reminderModulePort = {};
-  let _reminders = [];
+  let _reminderDefinitions = [];
 
   const BEFORE = -1;
   const AFTER = 1;
@@ -22,13 +22,13 @@ const PageReminders = () => {
   const _page = $("#pageReminders");
   let _currentEditId = 0;
 
-  function editReminder(id) {
+  function editReminderDefnition(id) {
     // const matchingReminders = $ .grep(_reminders, (r, i) => r.displayId === id);
-    const matchingReminders = _reminders.filter((r) => r.displayId === id);
-    if (!matchingReminders.length) {
+    const matchingDefinitions = _reminderDefinitions.filter((r) => r.displayId === id);
+    if (!matchingDefinitions.length) {
       return;
     }
-    const reminder = matchingReminders[0];
+    const reminderDefinition = matchingDefinitions[0];
 
     resetInputs();
 
@@ -38,12 +38,12 @@ const PageReminders = () => {
 
     _page.find("#btnReminderSave").show();
 
-    reminder.delta = reminder.delta || BEFORE;
+    reminderDefinition.delta = reminderDefinition.delta || BEFORE;
 
-    for (const prop in reminder) {
-      if (Object.prototype.hasOwnProperty.call(reminder, prop)) {
+    for (const prop in reminderDefinition) {
+      if (Object.prototype.hasOwnProperty.call(reminderDefinition, prop)) {
         // do id and class
-        _page.find("#reminder_{0}, .reminder_{0}".filledWith(prop)).val(reminder[prop]);
+        _page.find("#reminder_{0}, .reminder_{0}".filledWith(prop)).val(reminderDefinition[prop]);
       }
     }
 
@@ -58,23 +58,23 @@ const PageReminders = () => {
     let mode = newMode;
     if (!_currentEditId || mode === saveMode.saveNew) {
       mode = saveMode.saveNew;
-      _currentEditId = _reminders.length;
+      _currentEditId = _reminderDefinitions.length;
       console.log("new reminder");
     }
 
-    const reminder = buildReminder(_currentEditId);
+    const reminderDefintion = buildReminder(_currentEditId);
 
-    if (reminder.triggerTimeRaw) {
-      reminder.triggerTimeRawDisplay = getTimeDisplay(determineTriggerTimeToday(reminder));
+    if (reminderDefintion.triggerTimeRaw) {
+      reminderDefintion.triggerTimeRawDisplay = getTimeDisplay(determineTriggerTimeToday(reminderDefintion));
     }
 
-    if (reminder.iftttKey) {
+    if (reminderDefintion.iftttKey) {
       // store this, for other reminders to use
-      putInStorageSyncAsync(syncStorageKey.iftttKey, reminder.iftttKey);
+      putInStorageSyncAsync(syncStorageKey.iftttKey, reminderDefintion.iftttKey);
     }
-    if (reminder.zapierWebhook) {
+    if (reminderDefintion.zapierWebhook) {
       // store this, for other reminders to use
-      putInStorageSyncAsync(syncStorageKey.zapierWebhook, reminder.zapierWebhook);
+      putInStorageSyncAsync(syncStorageKey.zapierWebhook, reminderDefintion.zapierWebhook);
     }
 
     let saveToBackground = true;
@@ -84,9 +84,9 @@ const PageReminders = () => {
       case saveMode.save:
       case saveMode.saveFast:
         // find and replace
-        _reminders.forEach((el, i) => {
-          if (el.displayId === reminder.displayId) {
-            _reminders[i] = reminder;
+        _reminderDefinitions.forEach((el, i) => {
+          if (el.displayId === reminderDefintion.displayId) {
+            _reminderDefinitions[i] = reminderDefintion;
             return false; // done
           }
         });
@@ -98,13 +98,13 @@ const PageReminders = () => {
 
       case saveMode.saveNew:
         // add to the list
-        _reminders.push(reminder);
+        _reminderDefinitions.push(reminderDefintion);
         break;
 
       case saveMode.test:
         _reminderModulePort.postMessage({
           code: "showTestAlarm",
-          reminder: reminder,
+          reminderDefinition: reminderDefintion,
         });
         resetAfter = false;
         saveToBackground = false;
@@ -113,13 +113,13 @@ const PageReminders = () => {
 
     if (saveToBackground) {
       try {
-        tracker.sendEvent("saveReminder", reminder.trigger, `${reminder.delta * reminder.num} ${reminder.units}`);
+        tracker.sendEvent("saveReminder", reminderDefintion.trigger, `${reminderDefintion.delta * reminderDefintion.num} ${reminderDefintion.units}`);
       } catch (e) {
         console.log("Error", e);
       }
       _reminderModulePort.postMessage({
         code: "saveAllReminders",
-        reminders: _reminders,
+        reminderDefinitions: _reminderDefinitions,
       });
     }
     if (resetAfter) {
@@ -278,20 +278,20 @@ const PageReminders = () => {
     });
   }
 
-  function setAsCurrentDisplay(id) {
-    _currentEditId = id;
+  function setAsCurrentDisplay(reminderDefinitionId) {
+    _currentEditId = reminderDefinitionId;
     _page.find(".reminders > div, .alarms > li").removeClass("inEdit");
-    _page.find(`#r_${id}`).addClass("inEdit");
-    _page.find(`#a_${id}`).addClass("inEdit");
+    _page.find(`#r_${reminderDefinitionId}`).addClass("inEdit");
+    _page.find(`#a_${reminderDefinitionId}`).addClass("inEdit");
   }
 
-  function showReminders() {
+  function showReminderDefinitions() {
     const listing = _page.find(".reminders");
     const html = [];
     let displayId = 1;
     // console.log('show reminders');
-    _reminders.sort(reminderSort);
-    _reminders.forEach((r) => {
+    _reminderDefinitions.sort(reminderSort);
+    _reminderDefinitions.forEach((r) => {
       const lines = [];
 
       r.displayId = displayId;
@@ -348,6 +348,8 @@ const PageReminders = () => {
       html.push("<button class=button id=makeSamples>{0}</button>".filledWith(getMessage("noReminders")));
     }
 
+    // html.push("<button class=button id=refreshAlarms>{0}</button>".filledWith("TEST: Refresh Alarms"));
+
     listing.html(html.join("\n"));
 
     showActiveAlarms();
@@ -359,9 +361,6 @@ const PageReminders = () => {
     // if (browserHostType !== browser.Chrome) {
     //   return;
     // }
-    debugger;
-
-    //update heading
     _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: getTimeDisplay(new Date()) }));
 
     // blank out the list
@@ -373,7 +372,8 @@ const PageReminders = () => {
 
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
-        if (alarm.name.startsWith(_reminderPrefix)) {
+        if (alarm.name.startsWith(_alarmNamePrefix)) {
+          console.log("Custom alarm", alarm);
           const alarmInfo = await getFromStorageLocalAsync(alarm.name);
           if (!alarmInfo) {
             console.log(`No alarmInfo for ${alarm.name}`);
@@ -391,9 +391,9 @@ const PageReminders = () => {
             )
           );
         } else if (alarm.name.startsWith(_refreshPrefix)) {
-          console.log(`Unexpected alarm ${alarm.name}`);
+          console.log("Alarm for refresh", alarm);
         } else {
-          console.log(`Unexpected alarm ${alarm.name}`);
+          console.log("Unexpected alarm", alarm);
         }
       }
     });
@@ -506,15 +506,18 @@ const PageReminders = () => {
 
     _page
       .on("click", ".reminders button", (ev) => {
-        editReminder(+$(ev.target).data("id"));
+        editReminderDefnition(+$(ev.target).data("id"));
       })
       .on("click", ".alarms button", (ev) => {
-        editReminder(+$(ev.target).data("id"));
+        editReminderDefnition(+$(ev.target).data("id"));
       })
       .on("click", "#makeSamples", (ev) => {
         // debugger;
         _reminderModulePort.postMessage({ code: "makeSamples" });
       })
+      // .on("click", "#refreshAlarms", (ev) => {
+      //   _reminderModulePort.postMessage({ code: "refreshAlarms" });
+      // })
       .on("mouseover", ".alarmInfo, .reminderInfo", (ev) => {
         $(".reminderInfo, .alarmInfo").removeClass("tempHover");
         const id = $(ev.target).closest(".alarmInfo, .reminderInfo")[0].id;
@@ -539,9 +542,9 @@ const PageReminders = () => {
       .on("click", "#btnReminderDelete", () => {
         if (_currentEditId) {
           let deleted = false;
-          _reminders.forEach((r, i) => {
+          _reminderDefinitions.forEach((r, i) => {
             if (r.displayId === _currentEditId) {
-              _reminders.splice(i, 1);
+              _reminderDefinitions.splice(i, 1);
               deleted = true;
               _currentEditId = 0;
               return false;
@@ -550,7 +553,7 @@ const PageReminders = () => {
           if (deleted) {
             _reminderModulePort.postMessage({
               code: "saveAllReminders",
-              reminders: _reminders,
+              reminderDefinitions: _reminderDefinitions,
             });
             resetInputs();
           }
@@ -580,8 +583,8 @@ const PageReminders = () => {
       // these are return call in response to our matching request
       switch (msg.code) {
         case "getReminders":
-          _reminders = msg.reminders || [];
-          showReminders();
+          _reminderDefinitions = msg.reminderDefinitions || [];
+          showReminderDefinitions();
           break;
 
         case "alarmsUpdated":
@@ -589,32 +592,32 @@ const PageReminders = () => {
           break;
 
         case "saveAllReminders":
-          _reminders = msg.reminders || [];
-          showReminders();
+          _reminderDefinitions = msg.reminderDefinitions || [];
+          showReminderDefinitions();
           break;
 
         case "makeSamples":
-          _reminders = msg.reminders || [];
-          showReminders();
+          _reminderDefinitions = msg.reminderDefinitions || [];
+          showReminderDefinitions();
 
           // need to "edit" each of the samples to get all the settings!
-          _reminders.forEach((r) => {
-            editReminder(r.displayId);
+          _reminderDefinitions.forEach((r) => {
+            editReminderDefnition(r.displayId);
             _currentEditId = r.displayId;
             save(saveMode.saveFast);
           });
           _reminderModulePort.postMessage({
             code: "saveAllReminders",
-            reminders: _reminders,
+            reminderDefinitions: _reminderDefinitions,
           });
           break;
       }
     });
   }
 
-  function determineTriggerTimeToday(reminder) {
+  function determineTriggerTimeToday(reminderDefinition) {
     const date = new Date();
-    date.setHours(reminder.triggerTimeRaw.substr(0, 2), reminder.triggerTimeRaw.substr(3, 2), 0, 0);
+    date.setHours(reminderDefinition.triggerTimeRaw.substr(0, 2), reminderDefinition.triggerTimeRaw.substr(3, 2), 0, 0);
     return date;
   }
 
@@ -664,6 +667,6 @@ const PageReminders = () => {
   startup();
 
   return {
-    showReminders: showReminders,
+    showReminders: showReminderDefinitions,
   };
 };

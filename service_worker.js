@@ -20,23 +20,34 @@ self.addEventListener("activate", (event) => {
 });
 
 importScripts("third-party/dayjs.min.js");
-console.log("Loaded dayjs");
+// console.log("Loaded dayjs");
 importScripts("third-party/utc.js");
-console.log("Loaded utc");
+// console.log("Loaded utc");
 importScripts("third-party/timezone.js");
-console.log("Loaded timezone");
+// console.log("Loaded timezone");
 
 importScripts("suncalc.js");
-console.log("Loaded suncalc");
+// console.log("Loaded suncalc");
 importScripts("holyDays.js");
-console.log("Loaded holydays");
+// console.log("Loaded holydays");
 importScripts("shared.js");
-console.log("Loaded shared");
+// console.log("Loaded shared");
 
-console.log("starting to prepare for background and popup");
+// chrome.storage.local.getBytesInUse().then((bytesInUse) => {
+//   console.log("Space used by local storage", bytesInUse, "bytes");
+// });
+// chrome.storage.local.get().then((storage) => {
+//   console.log("Local storage", storage);
+// });
+
+// chrome.storage.sync.getBytesInUse().then((bytesInUse) => {
+//   console.log("Space used by sync storage", bytesInUse, "bytes");
+// });
+// chrome.storage.sync.get().then((storage) => {
+//   console.log("Sync storage", storage);
+// });
 
 // can't use async/await here, so have to build a pending function queue
-prepareForBackgroundAndPopupAsync();
 
 chrome.notifications.getPermissionLevel(configureNotificationsAsync);
 chrome.notifications.onPermissionLevelChanged.addListener(configureNotificationsAsync);
@@ -65,11 +76,12 @@ async function configureNotificationsAsync(level) {
 chrome.runtime.onInstalled.addListener((info) => {
   console.log("onInstalled", info);
   if (info.reason === "update") {
+    // delay this, to let everything settle before opening the page
     setTimeout(async () => {
       const newVersion = chrome.runtime.getManifest().version;
       const oldVersion = await getFromStorageLocalAsync(localStorageKey.updateVersion);
       if (!oldVersion) {
-        console.log("no old version found, likely dev or first use");
+        console.log("Version check... no old version found, likely dev or first use");
       } else {
         if (newVersion !== oldVersion) {
           console.log(`${oldVersion} --> ${newVersion}`);
@@ -103,66 +115,80 @@ chrome.runtime.onInstalled.addListener((info) => {
   );
 });
 
-chrome.storage.onChanged.addListener((changes, namespace) => {
-  // watch for storage changes
-  console.log("Storage changed in namespace:", namespace, changes);
-  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-    console.log(`Storage key "${key}" in namespace "${namespace}" changed.`, `Old value was "${oldValue}", new value is "${newValue}".`);
-  }
+//--> Keep for debugging
+// chrome.storage.onChanged.addListener((changes, namespace) => {
+//   // watch for storage changes
+//   console.log("Storage changed in namespace:", namespace, changes);
+//   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+//     console.log(`Storage key "${key}" in namespace "${namespace}" changed.`, `Old value was "${oldValue}", new value is "${newValue}".`);
+//   }
+// });
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log("onMessage received:", request);
+
+  (async () => {
+    switch (request.action) {
+      case "Wake Up":
+        console.log("Waking up...");
+        sendResponse({ message: "Thanks. I'm awake now!" });
+        break;
+
+      case "languageChanged":
+        _knownDateInfos = {};
+        await prepareForBackgroundAndPopupAsync();
+        sendResponse({ message: "Language changed" });
+        break;
+
+      case "getCityName":
+        const lat = request.lat;
+        const long = request.long;
+        const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
+        const unknownLocation = request.unknownLocation || "Unknown location";
+        console.log("getting City name... lat:", lat, "long:", long, "key:", key);
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const error = data.error_message;
+            if (error) {
+              console.error("Error fetching city name:", error);
+              sendResponse({ city: "Error" });
+              return;
+            }
+
+            const status = data.status;
+            const results = data.results;
+            if (results.length > 0) {
+              console.log(results);
+              const city = findLocationName("locality", results) || findLocationName("political", results) || unknownLocation;
+              console.log("city:", city);
+              sendResponse({ city });
+            } else {
+              sendResponse({ city: unknownLocation });
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching city name:", error);
+            sendResponse({ city: "Error" });
+          });
+        break;
+    }
+  })();
+
+  return true;
 });
 
-chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  console.log("on message:", request);
-
-  if (request.action === "Wake Up") {
-    console.log("Waking up...");
-    sendResponse({ message: "Thanks. I'm awake now!" });
-    // sendResponse({ message: "Thanks. I'm awake now!", _rawMessages, _cachedMessages });
-    // console.log(_rawMessages, _cachedMessages);
-    return true; // Indicate that we will respond asynchronously
+const findLocationName = (typeName, results, getLastMatch) => {
+  let match = null;
+  for (let r = 0; r < results.length; r++) {
+    const result = results[r];
+    if (result.types.indexOf(typeName) !== -1) {
+      match = result.formatted_address;
+      if (!getLastMatch) return match;
+    }
   }
-
-  if (request.action === "languageChanged") {
-    _knownDateInfos = {};
-    await prepareForBackgroundAndPopup();
-    return true;
-  }
-
-  if (request.action === "getCityName") {
-    const lat = request.lat;
-    const long = request.long;
-    const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
-    const unknownLocation = request.unknownLocation || "Unknown location";
-    console.log("lat:", lat, "long:", long, "key:", key, "unknownLocation:", unknownLocation);
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const error = data.error_message;
-        if (error) {
-          console.error("Error fetching city name:", error);
-          sendResponse({ city: "Error" });
-          return;
-        }
-
-        const status = data.status;
-        const results = data.results;
-        if (results.length > 0) {
-          const city = findName("locality", results) || findName("political", results) || unknownLocation;
-
-          sendResponse({ city });
-        } else {
-          sendResponse({ city: unknownLocation });
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching city name:", error);
-        sendResponse({ city: "Error" });
-      });
-
-    // Return true to indicate you want to send a response asynchronously
-    return true;
-  }
-});
+  return match;
+};
 
 chrome.runtime.onMessageExternal.addListener(
   /*
@@ -192,7 +218,7 @@ chrome.runtime.onMessageExternal.addListener(
         // can adjust per layout
         const di = getDateInfo(new Date(payload.targetDay));
         // const holyDay = $ .grep_holyDays.prepareDateInfos(di.bYear), (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
-        const holyDay = _holyDays.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
+        const holyDay = _holyDaysEngine.prepareDateInfos(di.bYear).filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
         const holyDayName = holyDay.length > 0 ? getMessage(holyDay[0].NameEn) : null;
 
         callback({
@@ -227,3 +253,7 @@ chrome.runtime.onMessageExternal.addListener(
     }
   }
 );
+
+(async () => {
+  await prepareForBackgroundAndPopupAsync();
+})();

@@ -11,7 +11,11 @@
     <link href="cal3.css" rel="stylesheet" />
     <link href="calWheel.css" rel="stylesheet" />
     <link href="calGreg.css" rel="stylesheet" />
-    <link href="fonts.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet" />
     <script src="third-party/jquery-3.7.1.min.js"></script>
     <script src="third-party/dayjs.min.js"></script>
   </head>
@@ -231,10 +235,10 @@
           <div class="months"></div>
         </div>
         <div id="pageCal2" class="fullPage page">
-          <div id="cal2options">
+          <div id="cal2options" class="calOptions">
             <label>
-              <input type="checkbox" id="cbShowTimes" />
-              <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
+              <input type="checkbox" id="cbShowTimes2" />
+              <span data-msg="cal2ShowTimes,extractAccessKeyFor:cbShowTimes2"></span>
             </label>
             <label>
               <input type="checkbox" id="cbCal2Darker" />
@@ -252,10 +256,10 @@
           <div class="calendar zoomM"></div>
         </div>
         <div id="pageCal3" class="fullPage page">
-          <div id="cal3options">
+          <div id="cal3options" class="calOptions">
             <label>
-              <input type="checkbox" id="cbShowTimes" />
-              <span data-msg="cal3ShowTimes,extractAccessKeyFor:cbShowTimes"></span>
+              <input type="checkbox" id="cbShowTimes3" />
+              <span data-msg="cal3ShowTimes,extractAccessKeyFor:cbShowTimes3"></span>
             </label>
             <label>
               <input type="checkbox" id="cbCal3Print" />

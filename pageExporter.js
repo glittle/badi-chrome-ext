@@ -139,9 +139,9 @@ const PageExporter = () => {
     // what range of dates?
     switch (rangeType) {
       case "Badi":
-        date = new Date(_holyDays.getGDate(year, 1, 1).getTime());
+        date = new Date(_holyDaysEngine.getGDate(year, 1, 1).getTime());
         date.setHours(12, 0, 0, 0);
-        nextYearStarts = new Date(_holyDays.getGDate(year + 1, 1, 1).getTime());
+        nextYearStarts = new Date(_holyDaysEngine.getGDate(year + 1, 1, 1).getTime());
         nextYearStarts.setHours(12, 0, 0, 0);
         break;
       case "Greg":
@@ -254,7 +254,7 @@ END:VEVENT
 
   const addHolyDay = async (type, di, variation) => {
     if (!_specialDays[di.bYear]) {
-      _specialDays[di.bYear] = _holyDays.prepareDateInfos(di.bYear);
+      _specialDays[di.bYear] = _holyDaysEngine.prepareDateInfos(di.bYear);
     }
     // let holyDayInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
     let holyDayInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "H" && el.BDateCode === di.bDateCode);
@@ -339,7 +339,7 @@ END:VEVENT
 
   const addFeast = (type, di, variation) => {
     if (!_specialDays[di.bYear]) {
-      _specialDays[di.bYear] = _holyDays.prepareDateInfos(di.bYear);
+      _specialDays[di.bYear] = _holyDaysEngine.prepareDateInfos(di.bYear);
     }
     // let feastInfo = $ .grep(_specialDays[di.bYear], (el, i) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);
     let feastInfo = _specialDays[di.bYear].filter((el) => el.Type.substring(0, 1) === "M" && el.BDateCode === di.bDateCode);

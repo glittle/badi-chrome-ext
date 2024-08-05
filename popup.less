@@ -1,35 +1,43 @@
-@green: #77b55a;
 body {
+  font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.9em; // for in popup
   margin: 0;
 
-  font-family: "Segoe UI", sans-serif;
-  font-size: 0.9rem;
+  button {
+    font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
+  }
 
   &.rtl {
     direction: rtl;
   }
 
   &.inTab {
-    font-size: 1rem;
     #mainBody {
-      width: 100%;
+      width: 100%; // override
       max-width: 1000px;
       margin: 0 auto;
     }
+
     #pageEvents {
       max-height: none;
     }
+
     .explains {
       display: block;
     }
   }
 }
 
+@green: #77b55a;
+
+.inTab {
+  font-size: 1rem;
+}
+
 #mainBody {
   margin: 0 auto;
   width: 800px;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 
 #initialCover {
@@ -53,11 +61,9 @@ body {
   // font-size: 1em;
 }
 
-#loadingMsg {
-}
+#loadingMsg {}
 
-#loadingCount {
-}
+#loadingCount {}
 
 .mainTop {
   display: flex;
@@ -115,9 +121,11 @@ body {
     padding: 1px 0;
     list-style-type: none;
     margin-left: -20px;
+
     &.inEdit {
       background: #eee;
     }
+
     &.tempHover {
       background: #dfd;
     }
@@ -125,7 +133,7 @@ body {
 }
 
 #pageReminders {
-  > div {
+  >div {
     border: 1px solid @green;
     border-radius: 3px;
     margin-left: 4px;
@@ -136,38 +144,48 @@ body {
       border-color: rgba(0, 3, 255, 0.67);
     }*/
   }
+
   .reminderEditInputs {
     margin-left: 10px;
   }
+
   #reminderTrigger {
     margin-bottom: 9px;
   }
+
   .reminderEdit {
     margin: 0 5px 25px 10px;
     position: relative;
+
     .reminder_num {
       width: 3em;
     }
+
     textarea {
       display: block;
       margin-left: 20px;
       width: 80%;
     }
+
     div {
       margin: 3px 0 3px 10px;
     }
   }
+
   .reminderModel {
     display: none;
     margin: 1px 0 1px 20px;
   }
+
   div.reminderShared {
     margin: 20px 0 5px -10px;
   }
+
   .reminders {
-    > div {
+    >div {
       padding: 1px 0;
       display: flex;
+
       button {
         padding-left: 3px;
         padding-right: 3px;
@@ -175,58 +193,70 @@ body {
         flex-shrink: 0;
         align-self: baseline;
       }
+
       &.inEdit {
         background: #eee;
       }
+
       &.tempHover {
         background: #dfd;
       }
-      > div {
+
+      >div {
         display: block;
         margin-left: 7px;
       }
     }
   }
+
   .reminder_iftttEvent {
     width: 10em;
   }
+
   #reminderAction_ifttt {
     border: 1px solid #ddd;
     background-color: #eee;
     padding: 1px 5px;
     margin-left: 10px;
   }
+
   div.reminderComment {
     margin-left: 20px;
   }
+
   .reminderAction {
     display: none;
   }
+
   .reminderNum {
     min-width: 15px;
     margin-right: 5px;
     display: block;
     text-align: right;
   }
+
   #btnReminderSave {
     display: none;
   }
+
   #btnReminderDelete {
     position: absolute;
     right: 2px;
     margin-top: 3px;
   }
+
   div.reminderSaveBtns {
     margin: 10px 30px 0 0;
     line-height: 21px; // for when they wrap
   }
+
   #btnReminderCancel {
     margin-right: 20px;
   }
 }
 
 #pageSetup {
-  > div {
+  >div {
     border: 1px solid @green;
     border-radius: 3px;
     margin-left: 4px;
@@ -234,40 +264,50 @@ body {
     flex: 0 1 100%;
     padding: 10px;
   }
+
   .pageSetupInput {
     margin: -1em 0 1em 2em;
   }
+
   .pageSetupInput2 {
     margin: 0.7em 0 1em 2em;
   }
+
   #setupColor {
     padding: 0px 1px;
     height: 19px;
     margin: -1px 0 -3px 2px;
   }
+
   h3 {
     margin-bottom: -0.5em;
     clear: both;
   }
+
   h3.setupPlace {
     .btnRetry {
       margin-top: 1px;
       float: none;
+
       .btnRetryImg {
         background: url(ajax-loader-white-img.gif) no-repeat;
       }
     }
+
     .btnRetry.active {
       .btnRetryImg {
         background: url(ajax-loader-white.gif) no-repeat;
       }
     }
   }
+
   div.setupPlace {
     margin: 0.7em 0 1em 2em;
+
     div {
       margin: 0 0 2px 0;
     }
+
     .place {
       // font-size: 100%;
       color: #000;
@@ -276,16 +316,24 @@ body {
       padding: 0 4px;
       font-style: italic;
     }
+
+    label {
+      white-space: nowrap;
+    }
+
     input {
       width: 95px;
+
       &.error {
         border-color: red;
       }
     }
   }
+
   #setupLang {
     width: 200px;
   }
+
   #setupLangPct {
     display: none;
     margin-left: 5px;
@@ -293,72 +341,87 @@ body {
 }
 
 #pageExporter {
-  > div {
+  >div {
     border: 1px solid @green;
     border-radius: 3px;
     margin-left: 4px;
     justify-content: flex-end;
     flex: 0 1 100%;
     display: flex;
-    > div {
+
+    >div {
       margin-left: 4px;
       justify-content: flex-end;
       flex: 0 1 100%;
       padding: 5px 10px 10px 10px;
     }
   }
+
   .exportNum {
     margin: 10px 0 0;
   }
+
   em {
     color: #999;
   }
+
   .exportIncludeAlert {
     display: inline-flex;
     vertical-align: top;
     margin-top: -2px;
   }
+
   #exporterIncludeAlertMin {
     display: block;
     margin: 0 0 0 35px;
   }
+
   .exportItemTitle {
     font-weight: bold;
     margin-top: 6px;
+
     em {
       font-weight: normal;
     }
   }
+
   .exporterButtons {
     label {
       display: inline-block;
       font-size: 90%;
       margin: 0;
+
       input {
         margin: 0;
         vertical-align: middle;
       }
     }
+
     .exportTest {
       float: right;
     }
   }
+
   input,
   select {
     margin-left: 20px;
   }
+
   label {
     display: block;
     margin: 5px 0 2px 0;
+
     select {
       margin-left: 0;
     }
   }
+
   .exportOtherSettings {
     button {
       display: inline-block;
       margin: 5px 0 0 0;
     }
+
     #exporterTest {
       display: none;
       background-color: #eee;
@@ -366,34 +429,40 @@ body {
       width: 350px;
       white-space: pre-line;
       font-size: 90%;
-      font-family: sans-serif;
+      // font-family: sans-serif;
     }
+
     #btnHideSample {
       display: none;
       float: right;
       margin-right: 15px;
     }
   }
+
   .exportOptionList {
     label {
       margin: 0;
     }
+
     span.comment {
       font-weight: 700;
       color: #000;
     }
   }
+
   .QuickPickTitle {
     font-weight: bold;
     font-style: italic;
     margin-top: 6px;
   }
+
   .QuickPicks {
     div {
       display: flex;
       margin-left: 10px;
       align-items: flex-start;
     }
+
     button {
       margin: 1px 4px 0 0;
       flex-shrink: 0;
@@ -403,7 +472,7 @@ body {
 }
 
 #pageCustom {
-  > div {
+  >div {
     border: 1px solid @green;
     border-radius: 3px;
     margin-left: 4px;
@@ -411,63 +480,79 @@ body {
     flex: 0 1 60%;
     padding: 2px 6px;
   }
+
   .customBuilderDiv {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .customHint {
     margin-left: 10px;
     color: #999;
     font-size: 90%;
   }
+
   .customPartsListDiv {
     flex: 0 1 40%;
+
     h2 {
       text-align: center;
     }
+
     button.button {
       background: transparent;
       color: green;
     }
   }
+
   #customSampleTemplate {
     display: none;
   }
+
   .customLoadLettersDiv {
     margin: 5px 0 0 5px;
+
     button {
       margin: 0 1px;
       background: transparent;
       color: green;
     }
   }
+
   .customLoadDefaults {
     margin: 3px -4px 0px -4px;
     background: #eee;
     border-radius: 3px;
     padding: 3px 5px 4px;
-    > span {
+
+    >span {
       margin: 1px 0;
       display: block;
     }
-    > div {
+
+    >div {
       display: flex;
       margin: 0 0 0 5px;
     }
+
     select {
       max-width: 80%;
       margin: 1px 0 0 5px;
     }
   }
+
   p {
     margin: 0;
   }
+
   .customDefinedTitleDiv {
     position: relative;
+
     h2 {
       margin-bottom: 0;
     }
+
     .customIntroSelectSome {
       position: absolute;
       text-align: right;
@@ -477,34 +562,43 @@ body {
       right: 0;
     }
   }
+
   #customBuilder {
     margin-bottom: 2em;
   }
+
   #customBuilderInputDiv {
     margin: 3px 30px 6px 10px;
   }
+
   #customBuilderInput {
     width: 100%;
+
     &.hasError {
       background-color: rgba(255, 0, 0, 0.17);
     }
   }
+
   #customBuilderEcho {
     margin: 2px 26px 0 10px;
     border: 1px solid #ccc;
     padding: 2px;
     white-space: pre-wrap;
   }
+
   #partsList {
     max-height: 450px;
     overflow: auto;
-    > div {
+
+    >div {
       display: table-row;
+
       button {
         padding: 0 2px;
         margin: 0 3px;
       }
     }
+
     .customPart {
       display: table-cell;
       vertical-align: top;
@@ -512,21 +606,25 @@ body {
       padding-right: 2px;
       white-space: nowrap;
     }
+
     .customPartSample {
       display: table-cell;
       padding-left: 2px;
       margin-left: 2px;
       white-space: normal;
     }
+
     .part_object {
       color: red;
     }
   }
+
   .customFormats {
     clear: both;
     max-height: 168px;
     overflow: auto;
     border-bottom: 1px solid #eee;
+
     .customFormatDiv {
       margin: 1px 0;
       border-top: 1px solid #eee;
@@ -535,55 +633,68 @@ body {
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
+
       &.inEdit {
         background-color: #efe;
       }
+
       .customFormatInfo {
         text-align: right;
         white-space: nowrap;
       }
     }
+
     .customSampleContent {
       width: 100%;
       position: relative;
     }
+
     .btnCopy {
       display: inline-block;
       padding: 0 3px;
     }
+
     .customSample {
       background-color: #eee;
       display: inline-block;
       padding: 0 4px 2px 3px;
     }
+
     .customFormat {
       color: #999;
       padding: 0 4px 2px 2px;
       margin: 0 30px 2px 0;
       display: inline-block;
     }
+
     .customIsSample {
       display: inline-block;
+
       input {
         vertical-align: text-top;
       }
     }
+
     .customFormatsButtons {
       padding-right: 4px;
+
       button {
         display: block;
         margin-bottom: 1px;
       }
     }
   }
+
   .customBuilderButtons {
     width: 40%;
     margin: 5px 0 0 10px;
+
     button:disabled {
       cursor: default;
       background: #ddd;
       border-color: #ddd;
     }
+
     .btnDelete {
       float: right;
     }
@@ -591,7 +702,7 @@ body {
 }
 
 #pagePlanner {
-  > div {
+  >div {
     border: 1px solid @green;
     border-radius: 3px;
     margin-left: 4px;
@@ -599,63 +710,80 @@ body {
     flex: 0 1 100%;
     padding: 5px 10px 10px 10px;
   }
+
   .plannerInputs {
     flex: 0 1;
+
     select {
       margin: 0 0 1px 0;
       font-size: 1em;
     }
-    > ol {
+
+    >ol {
       -webkit-padding-start: 13px;
+
       li {
         margin: 0 0 5px 0;
       }
     }
   }
+
   #plannerResultsDiv {
     max-height: 450px;
     overflow: auto;
   }
+
   .plannerResultButtons {
     float: right;
     text-align: right;
+
     button {
       margin: 1px 0;
     }
   }
+
   #btnPlanGenerate {
     float: right;
   }
+
   .plannerResults {
     td {
       text-align: center;
       vertical-align: top;
+
       &:first-child {
         text-align: left;
         white-space: nowrap;
       }
+
       &.plannerNewYear {
         font-weight: bold;
       }
+
       &.plannerDate {
         white-space: nowrap;
       }
     }
+
     th {
       vertical-align: bottom;
+
       &:first-child {
         text-align: left;
       }
     }
+
     th.plannerThTitle {
       border-bottom: 1px solid #ccc;
     }
+
     tbody {
       tr:nth-child(even) {
         background-color: #fafdff;
       }
     }
   }
+
   .plannerWhatHelpers {
     .button {
       font-size: 90%;
@@ -667,7 +795,7 @@ body {
 }
 
 #pageDay {
-  > div {
+  >div {
     margin-left: 4px;
     justify-content: flex-end;
     flex: 0 1 100%;
@@ -795,11 +923,9 @@ div.selectPages {
   top: 0;
   right: 0;
   pointer-events: none;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1) 100%
-  );
+  background-image: linear-gradient(to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1) 100%);
   height: 100%;
   width: 9px;
 }
@@ -837,6 +963,7 @@ div.selectPages {
   top: 0;
   font-size: 85%;
   color: #999;
+
   span {
     margin-right: 30px;
   }
@@ -866,14 +993,17 @@ div.selectPages {
   margin-left: 5px;
   position: relative;
   padding: 0;
+
   &.button {
     background: #ad0000;
     border-color: #ad0000;
     margin-left: 0;
   }
+
   .text {
     padding: 0 5px;
   }
+
   .btnRetryImg {
     background: url(./ajax-loader-img.gif) no-repeat;
     width: 16px;
@@ -893,7 +1023,8 @@ div.selectPages {
   font-size: 85%;
   color: gray;
   margin-bottom: 1px;
-  margin-top: -2px;}
+  margin-top: -2px;
+}
 
 #gDay {
   margin-bottom: 3px;
@@ -904,6 +1035,7 @@ div.selectPages {
 #gDay {
   padding: 0 3px;
   border-radius: 3px;
+
   &.notToday {
     background-color: rgba(255, 255, 0, 0.25);
   }
@@ -931,15 +1063,18 @@ tr.OtherRange {
   padding: 5px;
   /*display: table-cell;*/
   vertical-align: top;
+
   dl {
     margin: 0;
     width: 160px;
   }
+
   dt {
     color: green;
     opacity: 0.7;
     white-space: nowrap;
   }
+
   dd {
     margin-left: 9px;
     margin-bottom: 0.4em;
@@ -1231,30 +1366,30 @@ h3 {
 }
 
 button.button {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, @green),
-    color-stop(1, #72b352)
-  );
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0.05, @green),
+      color-stop(1, #72b352));
   background-color: @green;
   border-radius: 4px;
   border: 1px solid #4b8f29;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Geneva, "Segoe UI";
+  // font-family: Geneva, "Segoe UI";
   font-size: 85%;
   line-height: 1em;
   padding: 0.25em 0.4em 0.4em;
   transition: color 0.4s ease-out;
   text-decoration: none;
   min-width: 15px;
+
   &.btnDelete {
     background: red;
     border-color: red;
   }
+
   &.btnCancel {
     background: coral;
     border-color: coral;
@@ -1267,26 +1402,22 @@ button.button {
 }
 
 button.today.notToday {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #b5775a),
-    color-stop(1, #b37252)
-  );
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0.05, #b5775a),
+      color-stop(1, #b37252));
   background-color: #b5775a;
   border: 1px solid #8f4b29;
 }
 
 #samples button {
   vertical-align: text-bottom;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, @green),
-    color-stop(1, #72b352)
-  );
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0.05, @green),
+      color-stop(1, #72b352));
   background-color: @green;
   border-radius: 4px;
   border: 1px solid #4b8f29;
@@ -1298,17 +1429,15 @@ button.today.notToday {
   transition: color 0.4s ease-out;
   padding: 1px 2px;
   text-decoration: none;
-  min-width: 15px;
+  min-width: 1.25em;
 }
 
 #samples button:hover {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    color-stop(0.05, #72b352),
-    color-stop(1, @green)
-  );
+  background: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      color-stop(0.05, #72b352),
+      color-stop(1, @green));
   background: -webkit-linear-gradient(top, #72b352 5%, @green 100%);
   background: linear-gradient(to bottom, #72b352 5%, @green 100%);
   background-color: #72b352;
@@ -1394,9 +1523,14 @@ button.today.notToday {
 
 .setupLangOption {
   margin-left: 10px;
+
   input {
     vertical-align: bottom;
   }
+}
+
+.calOptions {
+  font-size: 85%;
 }
 
 #bDatePickerTitleTip {
@@ -1411,8 +1545,7 @@ button.today.notToday {
   text-decoration: underline;
 }
 
-body.ta #upcomingTitle {
-}
+body.ta #upcomingTitle {}
 
 #upcoming {
   width: 100%;
@@ -1440,7 +1573,7 @@ body.ta #upcomingTitle {
   display: block;
   margin: 0 0 2px 10px;
   text-align: center;
-  font-family: Geneva, "Segoe UI";
+  // font-family: Geneva, "Segoe UI";
   font-size: 85%;
 }
 
@@ -1465,7 +1598,7 @@ a.textLink:hover {
 
 .bDatePickerInputs input {
   font-size: 85%;
-  font-family: Geneva, "Segoe UI";
+  // font-family: Geneva, "Segoe UI";
   text-align: center;
   margin: 0;
   width: 33px;
@@ -1481,7 +1614,7 @@ input.bYearPicker {
   align-items: flex-end;
 }
 
-#yearSelector > div {
+#yearSelector>div {
   margin: 2px 5px;
   background-color: rgb(237, 246, 233);
   padding: 2px;
@@ -1491,7 +1624,7 @@ input.bYearPicker {
 
 #yearSelector input {
   font-size: 85%;
-  font-family: Geneva, "Segoe UI";
+  // font-family: Geneva, "Segoe UI";
   text-align: center;
   margin: 0;
 }
@@ -1528,11 +1661,11 @@ input.bYearPicker {
   display: block;
 }
 
-.vahidInputs > div {
+.vahidInputs>div {
   display: inline-block;
 }
 
-.vahidInputs > div > span {
+.vahidInputs>div>span {
   display: block;
 }
 
@@ -1557,12 +1690,14 @@ body[data-pageid="pageSetup"] {
     margin: 15mm 15mm;
     size: portrait;
   }
+
   #yearSelector,
   .selectPages,
   .iconArea,
   .NoPrint {
     display: none !important;
   }
+
   #pageEvents,
   #pageFast,
   #pageLists,
@@ -1577,38 +1712,47 @@ body[data-pageid="pageSetup"] {
     border: none;
     padding: 10px 0 0 0;
   }
+
   #includeWhat,
   #askShowPointer {
     display: none;
     z-index: 1;
   }
+
   #eventStart {
     -webkit-appearance: none;
     border: none;
     padding: 0;
     margin: 0;
   }
+
   #specialLists {
     max-height: none;
   }
+
   #specialDaysTitle {
     margin: 0;
   }
+
   #fastListTable caption {
     margin-bottom: 20px;
   }
+
   #pagePlanner {
-    > div {
+    >div {
       border: none;
       margin: 0 auto;
     }
+
     .plannerInputs {
       display: none;
     }
+
     .plannerResultButtons {
       display: none;
     }
   }
+
   body.Chrome {
     * {
       -webkit-print-color-adjust: exact;
@@ -1617,6 +1761,7 @@ body[data-pageid="pageSetup"] {
 }
 
 @media (min-width: 900px) {
+
   /*body {
         background: url('Sea of Fog.jpg') #fff no-repeat center;
     }*/
@@ -1624,22 +1769,27 @@ body[data-pageid="pageSetup"] {
     width: auto;
     align-items: flex-start;
   }
+
   .selectPages .buttons button:after {
     z-index: -1;
   }
+
   .selectPages .buttons:hover {
     align-items: flex-start;
     width: auto;
   }
+
   .selectPages .buttons button {
     border-radius: 2px;
     padding: 2px 6px 2px 3px;
     width: auto;
   }
+
   .selectPages .buttons:hover button {
     border-radius: 2px;
     padding: 2px 6px 2px 3px;
   }
+
   .selectPages .buttons button.showing {
     width: auto;
     border-top-left-radius: 2px;
@@ -1654,13 +1804,16 @@ body.Firefox {
   #btnPageReminders {
     display: none;
   }
+
   #samples button {
     width: 16px;
     padding: 0;
   }
-  #sampleList1 > div {
+
+  #sampleList1>div {
     margin: 1px 0 0 0;
   }
+
   .setupLangOption input {
     vertical-align: bottom;
   }

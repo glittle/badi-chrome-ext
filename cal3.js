@@ -26,9 +26,9 @@ const Cal3 = () => {
       refreshDateInfo();
       showInfo(_di);
     });
-    _page.on("change", "#cbShowTimes", () => {
-      _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes").prop("checked"));
-      // _calendarDiv.find('#cbShowTimes').blur();
+    _page.on("change", "#cbShowTimes3", () => {
+      _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes3").prop("checked"));
+      // _calendarDiv.find('#cbShowTimes3').blur();
     });
     _page.on("change", "#cbCal3Darker", () => {
       _page.toggleClass("darkerColors", !!_page.find("#cbCal3Darker").prop("checked"));
@@ -50,7 +50,7 @@ const Cal3 = () => {
     // _page.addClass('forPrint');
     // _page.find('#cbCal3Print').prop('checked', true)
 
-    _page.find("#cbShowTimes").prop("checked", true);
+    _page.find("#cbShowTimes3").prop("checked", true);
     _calendarDiv.addClass("showTimes");
 
     _page.find("#btnCal3Y").click(() => {
@@ -90,7 +90,7 @@ const Cal3 = () => {
     }
 
     //    try {
-    const gDate = _holyDays.getGDate(currentYear, currentMonth, _di.bDay, true);
+    const gDate = _holyDaysEngine.getGDate(currentYear, currentMonth, _di.bDay, true);
 
     setFocusTime(gDate);
     refreshDateInfo();
@@ -373,7 +373,7 @@ const Cal3 = () => {
     for (let bDay = 1; bDay <= 19; bDay++) {
       const bDateCode = `${bMonth}.${bDay}`;
       //      try {
-      const gDate = _holyDays.getGDate(bYear, bMonth, bDay, false);
+      const gDate = _holyDaysEngine.getGDate(bYear, bMonth, bDay, false);
       if (!gDate) {
         break;
       }
@@ -455,7 +455,7 @@ const Cal3 = () => {
 
       // add holy days
       if (!_specialDays[bYear]) {
-        _specialDays[bYear] = _holyDays.prepareDateInfos(bYear);
+        _specialDays[bYear] = _holyDaysEngine.prepareDateInfos(bYear);
       }
 
       // const holyDayInfo = $ .grep(_specialDays[bYear], (el, i) => el.Type.substring(0, 1) === "H" && el.BDateCode === bDateCode);

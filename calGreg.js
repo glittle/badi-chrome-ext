@@ -256,10 +256,10 @@ const CalGreg = (di, host) => {
 
       // add holy days
       if (!_specialDays[thisDayInfo.bYear]) {
-        _specialDays[thisDayInfo.bYear] = _holyDays.prepareDateInfos(thisDayInfo.bYear);
+        _specialDays[thisDayInfo.bYear] = _holyDaysEngine.prepareDateInfos(thisDayInfo.bYear);
       }
       if (!_specialDays[tomorrowDayInfo.bYear]) {
-        _specialDays[tomorrowDayInfo.bYear] = _holyDays.prepareDateInfos(tomorrowDayInfo.bYear);
+        _specialDays[tomorrowDayInfo.bYear] = _holyDaysEngine.prepareDateInfos(tomorrowDayInfo.bYear);
       }
 
       // let holyDayInfo = $ .grep(

@@ -569,7 +569,7 @@ const RemindersEngine = () => {
 
   const getMatchingEventDateFor = (testDayDi, typeWanted) => {
     if (!_specialDays[testDayDi.bYear]) {
-      _specialDays[testDayDi.bYear] = _holyDays.prepareDateInfos(testDayDi.bYear);
+      _specialDays[testDayDi.bYear] = _holyDaysEngine.prepareDateInfos(testDayDi.bYear);
     }
 
     const specialDays = _specialDays[testDayDi.bYear];

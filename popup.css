@@ -1,13 +1,13 @@
 body {
+  font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.9em;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 0.9rem;
+}
+body button {
+  font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
 }
 body.rtl {
   direction: rtl;
-}
-body.inTab {
-  font-size: 1rem;
 }
 body.inTab #mainBody {
   width: 100%;
@@ -20,11 +20,13 @@ body.inTab #pageEvents {
 body.inTab .explains {
   display: block;
 }
+.inTab {
+  font-size: 1rem;
+}
 #mainBody {
   margin: 0 auto;
   width: 800px;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 #initialCover {
   position: absolute;
@@ -242,6 +244,9 @@ body.inTab .explains {
   padding: 0 4px;
   font-style: italic;
 }
+#pageSetup div.setupPlace label {
+  white-space: nowrap;
+}
 #pageSetup div.setupPlace input {
   width: 95px;
 }
@@ -325,7 +330,6 @@ body.inTab .explains {
   width: 350px;
   white-space: pre-line;
   font-size: 90%;
-  font-family: sans-serif;
 }
 #pageExporter .exportOtherSettings #btnHideSample {
   display: none;
@@ -1083,7 +1087,6 @@ button.button {
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Geneva, "Segoe UI";
   font-size: 85%;
   line-height: 1em;
   padding: 0.25em 0.4em 0.4em;
@@ -1122,7 +1125,7 @@ button.today.notToday {
   transition: color 0.4s ease-out;
   padding: 1px 2px;
   text-decoration: none;
-  min-width: 15px;
+  min-width: 1.25em;
 }
 #samples button:hover {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
@@ -1199,6 +1202,9 @@ button.today.notToday {
 .setupLangOption input {
   vertical-align: bottom;
 }
+.calOptions {
+  font-size: 85%;
+}
 #bDatePickerTitleTip {
   float: right;
   color: #999;
@@ -1230,7 +1236,6 @@ button.today.notToday {
   display: block;
   margin: 0 0 2px 10px;
   text-align: center;
-  font-family: Geneva, "Segoe UI";
   font-size: 85%;
 }
 .textLink {
@@ -1250,7 +1255,6 @@ a.textLink:hover {
 }
 .bDatePickerInputs input {
   font-size: 85%;
-  font-family: Geneva, "Segoe UI";
   text-align: center;
   margin: 0;
   width: 33px;
@@ -1272,7 +1276,6 @@ input.bYearPicker {
 }
 #yearSelector input {
   font-size: 85%;
-  font-family: Geneva, "Segoe UI";
   text-align: center;
   margin: 0;
 }

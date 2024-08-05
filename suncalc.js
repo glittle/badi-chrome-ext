@@ -82,9 +82,11 @@ var createSunCalc = function () {
 
   var SunCalc = {};
 
+  var _knownTimes = {};
+
   // sun times configuration (angle, morning name, evening name)
 
-  var times = (SunCalc.times = [
+  var _times = (SunCalc.times = [
     [-0.833, "sunrise", "sunset"],
     //[  -0.3, 'sunriseEnd',    'sunsetStart' ],
     //[    -6, 'dawn',          'dusk'        ],
@@ -122,6 +124,13 @@ var createSunCalc = function () {
   // calculates sun times for a given date and latitude/longitude
 
   SunCalc.getTimes = function (date, lat, lng) {
+    const key = `${date.toISOString()}${lat}${lng}`;
+
+    if (_knownTimes[key]) {
+      // console.log("%csuncalc re-use known:", "color:lightgreen", key);
+      return _knownTimes[key];
+    }
+
     // Glen - override
     if (!common.locationKnown) {
       var dt2 = dayjs(date).toDate();
@@ -154,8 +163,8 @@ var createSunCalc = function () {
       nadir: fromJulian(Jnoon - 0.5),
     };
 
-    for (i = 0, len = times.length; i < len; i += 1) {
-      time = times[i];
+    for (i = 0, len = _times.length; i < len; i += 1) {
+      time = _times[i];
 
       Jset = getSetJ(time[0] * rad, lw, phi, dec, n, M, L);
       Jrise = Jnoon - (Jset - Jnoon);
@@ -164,6 +173,9 @@ var createSunCalc = function () {
       result[time[2]] = fromJulian(Jset);
     }
 
+    // console.log("%csuncalc sunset:", "color:lightgreen", result.sunset, key);
+
+    _knownTimes[key] = result;
     return result;
   };
 

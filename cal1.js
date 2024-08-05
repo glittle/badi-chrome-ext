@@ -40,7 +40,7 @@ const Cal1 = (originalDi, originalHost) => {
     const day = getNum(dayDiv, "bd");
     const month = getNum(monthDiv, "bm");
 
-    const gDate = _holyDays.getGDate(di.bYear, month, day, di.bNow.eve);
+    const gDate = _holyDaysEngine.getGDate(di.bYear, month, day, di.bNow.eve);
 
     setFocusTime(gDate);
     refreshDateInfo();
@@ -62,7 +62,7 @@ const Cal1 = (originalDi, originalHost) => {
   function showCalendar(newDi) {
     di = newDi;
     if (newDi.bYear !== _yearShown) {
-      _holyDays.prepareDateInfos(newDi.bYear);
+      _holyDaysEngine.prepareDateInfos(newDi.bYear);
       buildCalendar();
     }
     highlightTargetDay();
@@ -111,13 +111,13 @@ const Cal1 = (originalDi, originalHost) => {
 
       gMonthHtml.push("<div class=gm>");
 
-      let gd = _holyDays.getGDate(di.bYear, bm, 1, false);
+      let gd = _holyDaysEngine.getGDate(di.bYear, bm, 1, false);
       let gMonthName = host.gMonthShort[gd.getMonth()];
       gMonthHtml.push('<div class="gmInitial gma0">{0}</div>'.filledWith(gMonthName));
 
       for (let bd = 1; bd <= 19; bd++) {
         //try {
-        gd = _holyDays.getGDate(di.bYear, bm, bd, false);
+        gd = _holyDaysEngine.getGDate(di.bYear, bm, bd, false);
         //}
         if (!gd) {
           //          if (bm === 0 && e == 'invalid Badi date') {

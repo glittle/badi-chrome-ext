@@ -9,6 +9,7 @@
 /* global $ */
 
 console.log("Popup.js starting");
+const _inPopupPage = true;
 
 chrome.runtime.sendMessage({ action: "Wake Up" }, (response) => {
   showLastError();
@@ -79,6 +80,7 @@ function attachHandlersInPopup() {
   $(".btnRetry").on("click", () => {
     $(".setupPlace .place").text(""); //blank the copy on the setup page
     $(".btnRetry").addClass("active").blur();
+    common.locationNameKnown = false;
     startGettingLocation();
   });
   $("#datePicker").on("keydown", (ev) => {
@@ -101,7 +103,7 @@ function attachHandlersInPopup() {
     chrome.alarms.clear(alarm.name, function (wasCleared) {
       console.log(wasCleared);
     });
-    refreshDateInfoAndShow();
+    refreshDateInfoAndShowAsync();
   });
 
   $("#btnOpen").click(openInTab);
@@ -111,10 +113,10 @@ function attachHandlersInPopup() {
 
   $(".setupPlace")
     .on("paste keydown keypress", "input", () => {
-      updateLocation(false);
+      updateLocationAsync(false);
     })
     .on("change", "input", () => {
-      updateLocation(true);
+      updateLocationAsync(true);
     });
 
   $("input:radio[name=language]").click((ev) => {
@@ -132,7 +134,7 @@ function ApplyLanguage() {
 
   _knownDateInfos = {};
   resetForLanguageChange();
-  refreshDateInfoAndShow();
+  refreshDateInfoAndShowAsync();
 
   // find and update some html
   $("*[data-msg-di]").each((i, el) => {
@@ -358,13 +360,13 @@ function showPage(id) {
             return 6;
           }
           //log_holyDays.daysInAyyamiHa(_di.bYear));
-          return _holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? 1 + _holyDays.daysInAyyamiHa(_di.bYear) - bDay : 0);
+          return _holyDaysEngine.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? 1 + _holyDaysEngine.daysInAyyamiHa(_di.bYear) - bDay : 0);
         }
         switch (direction) {
           case -1: // up
             if (bDay <= 3) {
               if (bMonth === 19) {
-                return _holyDays.daysInAyyamiHa(_di.bYear);
+                return _holyDaysEngine.daysInAyyamiHa(_di.bYear);
               }
               return 6;
             }
@@ -389,7 +391,7 @@ function showPage(id) {
             if (bDay <= 16) {
               return 6;
             }
-            return 19 + (bMonth === 18 ? _holyDays.daysInAyyamiHa(_di.bYear) : 3) - bDay;
+            return 19 + (bMonth === 18 ? _holyDaysEngine.daysInAyyamiHa(_di.bYear) : 3) - bDay;
         }
         return 0;
       };
@@ -408,7 +410,7 @@ function showPage(id) {
         //         return 7;
         //     }
         //     //log_holyDays.daysInAyyamiHa(_di.bYear));
-        //     return_holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? (1 +_holyDays.daysInAyyamiHa(_di.bYear) - bDay) : 0);
+        //     return_holyDays.daysInAyyamiHa(_di.bYear) - (bDay > 3 ? (1 +_holyDaysEngine.daysInAyyamiHa(_di.bYear) - bDay) : 0);
         // }
         switch (direction) {
           case -1: // up
@@ -815,7 +817,7 @@ function changeToBDate(ev) {
   tracker.sendEvent("changeToBDate", `${bYear}.${bMonth}.${bDay}`);
 
   try {
-    const gDate = _holyDays.getGDate(+bYear, +bMonth, +bDay, true);
+    const gDate = _holyDaysEngine.getGDate(+bYear, +bMonth, +bDay, true);
 
     setFocusTime(gDate);
 
@@ -1156,7 +1158,7 @@ function changeYear(ev, delta, targetYear) {
   const delta2 = ev ? +$(ev.target).data("delta") : +delta;
 
   const year = targetYear ? targetYear : _di.bYear + delta2;
-  const gDate = _holyDays.getGDate(year, _di.bMonth, _di.bDay, true);
+  const gDate = _holyDaysEngine.getGDate(year, _di.bMonth, _di.bDay, true);
   setFocusTime(gDate);
 
   tracker.sendEvent("changeYear", delta2);
@@ -1337,11 +1339,11 @@ function langSelectChanged() {
 
 let updateLocationTimer = null;
 
-function updateLocation(immediately) {
+async function updateLocationAsync(immediately) {
   if (!immediately) {
     clearTimeout(updateLocationTimer);
-    updateLocationTimer = setTimeout(() => {
-      updateLocation(true);
+    updateLocationTimer = setTimeout(async () => {
+      await updateLocationAsync(true);
     }, 1000);
     return;
   }
@@ -1366,28 +1368,28 @@ function updateLocation(immediately) {
   inputLat.removeClass("error");
   inputLng.removeClass("error");
 
-  let changed = false;
+  let updateNeeded = !common.locationNameKnown; // if we don't have the name, we need to get it
   if (common.locationLat !== lat) {
     common.locationLat = lat;
-    putInStorageLocalAsync(localStorageKey.lat, lat);
-    changed = true;
+    putInStorageLocalAsync(localStorageKey.locationLat, lat);
+    updateNeeded = true;
   }
   if (common.locationLong !== lng) {
     common.locationLong = lng;
-    putInStorageLocalAsync(localStorageKey.long, lng);
-    changed = true;
+    putInStorageLocalAsync(localStorageKey.locationLong, lng);
+    updateNeeded = true;
   }
 
-  if (changed) {
+  if (updateNeeded) {
     _knownDateInfos = {};
     putInStorageLocalAsync(localStorageKey.locationKnown, true);
     common.locationKnown = true;
     putInStorageLocalAsync(localStorageKey.locationNameKnown, false);
     putInStorageLocalAsync(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
 
-    startGetLocationName();
+    await startGetLocationNameAsync();
 
-    refreshDateInfoAndShow();
+    // refreshDateInfoAndShowAsync();
   }
 }
 
@@ -1481,7 +1483,7 @@ function BuildSpecialDaysTable(di) {
   }
 
   _lastSpecialDaysYear = year;
-  const dayInfos = _holyDays.prepareDateInfos(year);
+  const dayInfos = _holyDaysEngine.prepareDateInfos(year);
 
   SetFiltersForSpecialDaysTable();
 
@@ -1793,7 +1795,7 @@ function prepare2() {
   _cal3.showCalendar(_di);
 
   if (_remindersEnabled) {
-    updateLoadProgress("reminders");
+    updateLoadProgress("reminder definitions");
     _pageReminders = PageReminders();
   }
   $("#btnPageReminders").toggle(_remindersEnabled);

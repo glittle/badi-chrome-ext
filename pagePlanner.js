@@ -21,10 +21,10 @@ const PagePlannerAsync = async () => {
     const now = new Date();
     switch (planFromWhen) {
       case "by0":
-        _startGDate = new Date(_holyDays.getGDate(getBadiYear(now), 1, 1).getTime());
+        _startGDate = new Date(_holyDaysEngine.getGDate(getBadiYear(now), 1, 1).getTime());
         break;
       case "by1":
-        _startGDate = new Date(_holyDays.getGDate(getBadiYear(now) + 1, 1, 1).getTime());
+        _startGDate = new Date(_holyDaysEngine.getGDate(getBadiYear(now) + 1, 1, 1).getTime());
         break;
       // case 'today':
       default:
@@ -90,13 +90,13 @@ const PagePlannerAsync = async () => {
   function planEvent1(selectMode) {
     const plannerWhatEvent = $("#plannerWhatEvents").val() || "";
 
-    const startBDate = _holyDays.getBDate(_startGDate);
-    const endBDate = _holyDays.getBDate(_endGDate);
+    const startBDate = _holyDaysEngine.getBDate(_startGDate);
+    const endBDate = _holyDaysEngine.getBDate(_endGDate);
     const results = [];
     let targetYear = startBDate.y;
     let yearShown = 0;
     while (targetYear <= endBDate.y) {
-      const dayInfos = _holyDays.prepareDateInfos(targetYear);
+      const dayInfos = _holyDaysEngine.prepareDateInfos(targetYear);
       dayInfos.forEach((dayInfo) => {
         let name = "";
         if (plannerWhatEvent === dayInfo.NameEn || plannerWhatEvent.includes(dayInfo.NameEn)) {
@@ -176,7 +176,7 @@ const PagePlannerAsync = async () => {
   }
 
   function fillInputs() {
-    const dayInfos = _holyDays.prepareDateInfos(_di.bYear); // can be any year... use current
+    const dayInfos = _holyDaysEngine.prepareDateInfos(_di.bYear); // can be any year... use current
     const hdOptions = [];
     const fOptions = [];
     dayInfos.forEach((dayInfo) => {
