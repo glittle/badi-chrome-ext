@@ -36,7 +36,7 @@ body {
 
 #mainBody {
   margin: 0 auto;
-  width: 800px;
+  width: 780px; // for popup
   box-sizing: border-box;
 }
 
@@ -818,6 +818,7 @@ body {
   font-size: 90%;
   text-align: center;
   padding-right: 30px;
+  min-height: 4em; // enough to show with special row too
 }
 
 #day {
@@ -825,7 +826,7 @@ body {
 }
 
 #day.withSpecial {
-  font-size: 90%;
+  font-size: .7em;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1103,8 +1104,8 @@ tr.OtherRange {
 
 #sampleTitle {
   color: green;
-  opacity: 0.7;
-  width: 370px;
+  opacity: 0.8;
+  font-size: 95%;
   white-space: normal;
 }
 
@@ -1424,12 +1425,12 @@ button.today.notToday {
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  /*font-family: Geneva;*/
   font-size: 85%;
   transition: color 0.4s ease-out;
-  padding: 1px 2px;
+  padding: 0 2px 1px;
   text-decoration: none;
-  min-width: 1.25em;
+  min-width: 1.5em;
+  margin: 0.5px 0;
 }
 
 #samples button:hover {
@@ -1683,6 +1684,12 @@ body[data-pageid="pageSetup"] {
 
 .nobreak {
   white-space: nowrap;
+}
+
+.inTab {
+  #specialLists {
+    max-height: 85vh;
+  }
 }
 
 @media print {

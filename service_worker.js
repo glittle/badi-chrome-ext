@@ -19,6 +19,8 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim()); // Claims control of all clients
 });
 
+importScripts("third-party/browser-polyfill.min.js");
+
 importScripts("third-party/dayjs.min.js");
 // console.log("Loaded dayjs");
 importScripts("third-party/utc.js");

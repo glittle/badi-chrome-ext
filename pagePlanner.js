@@ -336,6 +336,6 @@ const PagePlannerAsync = async () => {
   startupAsync();
 
   return {
-    resetPageForLanguageChange: resetPageForLanguageChangeAsync,
+    resetPageForLanguageChangeAsync: resetPageForLanguageChangeAsync,
   };
 };

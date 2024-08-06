@@ -42,7 +42,7 @@ let _loadingNum = 0;
 let _inTab = false;
 const _pageIdList = [];
 
-const _remindersEnabled = browserHostType === browser.Chrome;
+const _remindersEnabled = browserHostType === browserType.Chrome;
 
 chrome.tabs.getCurrent((tab) => {
   if (tab) {
@@ -97,11 +97,12 @@ function attachHandlersInPopup() {
     _calWheel.showCalendar(_di);
   });
 
-  chrome.alarms.onAlarm.addListener(function (alarm) {
-    console.log(alarm.name);
-    console.log(new Date(alarm.scheduledTime));
+  chrome.alarms.onAlarm.addListener((alarm) => {
+    // the service worker is also listening for this, so it can update the badge
+    // we just refresh the date info and update our display
+    console.log("Alarm triggered in popup:", alarm.name, new Date(alarm.scheduledTime));
     chrome.alarms.clear(alarm.name, function (wasCleared) {
-      console.log(wasCleared);
+      console.log("Cleared in popup:", wasCleared);
     });
     refreshDateInfoAndShowAsync();
   });
@@ -190,6 +191,8 @@ function updateSpecial(di) {
       $("#special2").html(` - ${di.special2}`).show();
     }
   } else {
+    $("#special1").html("");
+    $("#special2").html("");
     $("#day").removeClass("withSpecial");
   }
 }
@@ -582,7 +585,7 @@ function resetPageForLanguageChange(id) {
       break;
     case "pagePlanner":
       if (_pagePlanner) {
-        _pagePlanner.resetPageForLanguageChange();
+        _pagePlanner.resetPageForLanguageChangeAsync(); // not using await
       }
       break;
   }
@@ -862,8 +865,9 @@ function keyPressed(ev) {
   if (ev.altKey) {
     return;
   }
+
   if (ev.target.tagName === "INPUT" && ev.target.type === "text") {
-    //don't intercept
+    //don't intercept in text
     return;
   }
   const key = String.fromCharCode(ev.which) || "";
@@ -981,23 +985,24 @@ function keyPressed(ev) {
 
   if (ev.target.tagName !== "INPUT" && ev.target.tagName !== "TEXTAREA") {
     let pageNum = +key;
+    const keyCode = key.charCodeAt(0);
     // biome-ignore lint/suspicious/noDoubleEquals: <explanation>
-    let validPagePicker = key == pageNum; // don't use ===
+    let validPagePicker = key == pageNum && keyCode > 32; // don't use ===
     if (!validPagePicker) {
       if (key >= "a" && key <= "i") {
-        pageNum = key.charCodeAt(0) - 96;
+        pageNum = keyCode - 96;
         validPagePicker = true;
       }
 
       let extraKeys;
       switch (browserHostType) {
-        case browser.Chrome:
+        case browserType.Chrome:
           extraKeys = {
             dash: 189,
             equal: 187,
           };
           break;
-        case browser.Firefox:
+        case browserType.Firefox:
           extraKeys = {
             dash: 173,
             equal: 61,
@@ -1619,7 +1624,7 @@ function BuildSpecialDaysTable(di) {
 }
 
 function showShortcutKeys() {
-  if (chrome.commands && browserHostType === browser.Chrome) {
+  if (chrome.commands && browserHostType === browserType.Chrome) {
     chrome.commands.getAll((cmd) => {
       for (let i = 0; i < cmd.length; i++) {
         const a = cmd[i];
@@ -1691,7 +1696,7 @@ function openInTab() {
   }
   const url = chrome.runtime.getURL("popup.html");
 
-  if (browserHostType === browser.Chrome) {
+  if (browserHostType === browserType.Chrome) {
     chrome.tabs.query(
       {
         url: url,
@@ -1747,7 +1752,7 @@ function finishFirstPopup() {
   putInStorageLocalAsync(localStorageKey.firstPopup, false);
 }
 
-function prepare2() {
+async function prepare2() {
   _initialStartupDone = true;
 
   updateLoadProgress("prepare2 start");
@@ -1802,7 +1807,7 @@ function prepare2() {
 
   updateLoadProgress("export & planner");
   _pageExporter = PageExporter();
-  _pagePlanner = PagePlannerAsync();
+  _pagePlanner = await PagePlannerAsync();
 
   updateLoadProgress("finish");
   $("#version").attr("href", getMessage(`${browserHostType}_History`));

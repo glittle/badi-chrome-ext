@@ -10,7 +10,7 @@ const PageReminders = () => {
     save: 1,
     saveNew: 2,
     test: 3,
-    saveFast: 4,
+    savingInBatch: 4,
   };
 
   let _reminderModulePort = {};
@@ -55,11 +55,9 @@ const PageReminders = () => {
       return;
     }
 
-    let mode = newMode;
-    if (!_currentEditId || mode === saveMode.saveNew) {
-      mode = saveMode.saveNew;
+    if (!_currentEditId) {
       _currentEditId = _reminderDefinitions.length;
-      console.log("new reminder");
+      console.log("new reminder", _currentEditId);
     }
 
     const reminderDefintion = buildReminder(_currentEditId);
@@ -80,9 +78,9 @@ const PageReminders = () => {
     let saveToBackground = true;
     let resetAfter = true;
 
-    switch (mode) {
+    switch (newMode) {
       case saveMode.save:
-      case saveMode.saveFast:
+      case saveMode.savingInBatch:
         // find and replace
         _reminderDefinitions.forEach((el, i) => {
           if (el.displayId === reminderDefintion.displayId) {
@@ -91,7 +89,7 @@ const PageReminders = () => {
           }
         });
 
-        if (mode === saveMode.saveFast) {
+        if (newMode === saveMode.savingInBatch) {
           saveToBackground = false;
         }
         break;
@@ -358,7 +356,7 @@ const PageReminders = () => {
   }
 
   function showActiveAlarms() {
-    // if (browserHostType !== browser.Chrome) {
+    // if (browserHostType !== browserType.Chrome) {
     //   return;
     // }
     _page.find("#remindersScheduled").html(getMessage("remindersScheduled", { time: getTimeDisplay(new Date()) }));
@@ -604,7 +602,7 @@ const PageReminders = () => {
           _reminderDefinitions.forEach((r) => {
             editReminderDefnition(r.displayId);
             _currentEditId = r.displayId;
-            save(saveMode.saveFast);
+            save(saveMode.savingInBatch);
           });
           _reminderModulePort.postMessage({
             code: "saveAllReminders",
@@ -622,7 +620,7 @@ const PageReminders = () => {
   }
 
   function loadVoices() {
-    if (browserHostType !== browser.Chrome) {
+    if (browserHostType !== browserType.Chrome) {
       return;
     }
 

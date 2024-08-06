@@ -45,7 +45,7 @@ const CalWheel = () => {
         const bm = i + 1;
         const angle = i * angle1;
         const css =
-          browserHostType === browser.Chrome
+          browserHostType === browserType.Chrome
             ? {
                 transform: `rotate(${angle}deg)`,
                 transformOrigin: "39px 335px", //x + ' ' + y

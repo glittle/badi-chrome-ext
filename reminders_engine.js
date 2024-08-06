@@ -17,6 +17,7 @@
 function RemindersEngine() {
   console.log("RemindersEngine created");
   const _ports = [];
+  const _testAlarmText = "_TEST";
   let _specialDays = {};
   let _reminderDefinitions = [];
   let _now = new Date();
@@ -58,8 +59,11 @@ function RemindersEngine() {
 
   /** Assumes all alarms are cleared */
   async function setAlarmsInternalAsync(initialLoad) {
-    // clear all alarms
+    // clear all active alarms
     await chrome.alarms.clearAll();
+
+    // remove all stored instances
+    await removeFromStorageByPrefixLocalAsync(_alarmNamePrefix);
 
     _now = new Date();
     // _nowDi = getDateInfo(_now);
@@ -338,7 +342,7 @@ function RemindersEngine() {
   }
 
   const createAlarmAsync = async (reminderInstance, isTest) => {
-    const alarmName = await storeInstanceAndGetName(reminderInstance, isTest);
+    const alarmName = await storeInstanceAndMakeName(reminderInstance, isTest);
     await chrome.alarms.create(alarmName, {
       when: reminderInstance.triggerTime,
     });
@@ -346,14 +350,13 @@ function RemindersEngine() {
 
   const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-  async function storeInstanceAndGetName(reminderInstance, isTest) {
+  async function storeInstanceAndMakeName(reminderInstance, isTest) {
     // store, and give back key to get it later
     // need to start with a prefix, so we can find them all and end with TEST if it is a test
     // use a random number to avoid collisions
-    const alarmName = `${_alarmNamePrefix}${reminderInstance.displayId}_${reminderInstance.trigger}${isTest ? "-TEST" : ""}_${randomNumber(
-      1000,
-      9999
-    )}`;
+    const alarmName = `${_alarmNamePrefix}${reminderInstance.displayId} ${reminderInstance.trigger} ${reminderInstance.triggerTimeDisplay}${
+      isTest ? _testAlarmText : ""
+    } ${randomNumber(1000, 9999)}`;
 
     reminderInstance.alarmName = alarmName; // store, so we can use it later
 
@@ -436,19 +439,19 @@ function RemindersEngine() {
 
   async function triggerAlarmNowAsync(alarm) {
     const alarmName = alarm.name;
-    //TODO
-    if (alarmName.startsWith(_alarmNamePrefix)) {
-      console.log("Reminder:", alarm);
-      refreshDateInfoAndShowAsync();
-      setAlarmsForRestOfToday();
-    } else if (alarmName.startsWith("alarm_")) {
-      triggerAlarmNowAsync(alarmName);
-    }
+    console.log("Alarm triggered in service worker:", alarm);
 
-    if (!alarmName.startsWith(_alarmNamePrefix)) {
-      console.log(`unexpected reminderDefinition alarm: ${alarmName}`);
-      return;
-    }
+    // if (alarmName.startsWith(_alarmNamePrefix)) {
+    //   refreshDateInfoAndShowAsync();
+    //   await setAlarmsForRestOfTodayAsync();
+    // } else if (alarmName.startsWith("alarm_")) {
+    //   await triggerAlarmNowAsync(alarmName);
+    // }
+
+    // if (!alarmName.startsWith(_alarmNamePrefix)) {
+    //   console.log(`unexpected reminderDefinition alarm: ${alarmName}`);
+    //   return;
+    // }
 
     const reminderInstance = await getFromStorageLocalAsync(alarmName);
     if (!reminderInstance) {
@@ -456,7 +459,7 @@ function RemindersEngine() {
       return;
     }
 
-    const isTest = alarmName.endsWith("TEST");
+    const isTest = alarmName.includes(_testAlarmText);
 
     if (!isTest && reminderInstance.triggerTime + 1000 < new Date().getTime()) {
       console.log("reminderDefinition requested, but past trigger.", reminderInstance);
@@ -465,7 +468,7 @@ function RemindersEngine() {
 
     showAlarmNow(reminderInstance, alarmName);
 
-    await removeFromStorageLocalAsync(reminderInstance.alarmKey);
+    await removeFromStorageLocalAsync(reminderInstance.alarmName);
 
     if (!isTest) {
       setAlarmsForRestOfTodayAsync();
@@ -803,7 +806,6 @@ function RemindersEngine() {
     // called from service worker
     initializeAsync: initializeAsync,
     setAlarmsForRestOfTodayAsync: setAlarmsForRestOfTodayAsync,
-    triggerAlarmNowAsync: triggerAlarmNowAsync,
 
     // for testing...
     dumpAlarms: dumpAlarms,

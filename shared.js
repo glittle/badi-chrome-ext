@@ -18,7 +18,7 @@ var _pendingInstallFunctionsQueue = [];
 var _nextFilledWithEach_UsesExactMatchOnly = false;
 var _focusTime = null;
 var _alarmNamePrefix = "alarm_";
-var _refreshPrefix = "refreshAlarm_";
+var _refreshPrefix = "refreshAlarm ";
 
 var _holyDaysEngine = null;
 var _knownDateInfos = {};
@@ -99,12 +99,12 @@ var syncStorageKey = {
   zapierWebhook: "zapierWebhook",
 };
 
-var browser = {
+var browserType = {
   Chrome: "Chrome",
   Firefox: "Firefox",
   Edge: "Edge",
 };
-var browserHostType = browser.Chrome;
+var browserHostType = browserType.Chrome;
 
 var common = {};
 
@@ -627,7 +627,7 @@ function showIcon() {
 
   try {
     chrome.action.setIcon({
-      imageData: draw(dateInfo.bMonthNamePri, dateInfo.bDay, "center"),
+      imageData: drawIconImage(dateInfo.bMonthNamePri, dateInfo.bDay, "center"),
     });
     _iconPrepared = true;
   } catch (e) {
@@ -638,7 +638,7 @@ function showIcon() {
   }
 }
 
-function draw(line1, line2, line2Alignment) {
+function drawIconImage(line1, line2, line2Alignment) {
   const canvas = document.createElement("canvas");
   const size = 19;
   canvas.width = size;
@@ -937,14 +937,12 @@ async function refreshDateInfoAndShowAsync(resetToNow) {
     showWhenResetToNow();
   }
 
-  // if (browserHostType === browser.Chrome) {
-  setAlarmForNextUpdate(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
-  // }
+  setAlarmForNextRefresh(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
 }
 
 const refreshAlarms = {};
 
-function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
+function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
   let whenTime;
   let alarmName;
   if (inEvening) {
@@ -965,7 +963,7 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
   //}
 
   if (whenTime < new Date().getTime()) {
-    console.log("ignored attempt to set {0} alarm in the past".filledWith(alarmName));
+    console.warn("ignored attempt to set {0} alarm in the past".filledWith(alarmName));
     return;
   }
 
@@ -975,6 +973,7 @@ function setAlarmForNextUpdate(currentTime, sunset, inEvening) {
 
   // debug - show alarm that was set
   chrome.alarms.getAll((alarms) => {
+    console.log("Active Alarms", alarms.length);
     for (let i = 0; i < alarms.length; i++) {
       const alarm = alarms[i];
       console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime));
@@ -1418,6 +1417,10 @@ async function removeFromStorageLocalAsync(key) {
   await removeFromStorageRawAsync("local", key);
 }
 
+async function removeFromStorageByPrefixLocalAsync(prefix) {
+  await removeFromStorageByPrefixRawAsync("local", prefix);
+}
+
 // sync versions
 async function putInStorageSyncAsync(key, obj) {
   await putInStorageRawAsync("sync", key, obj);
@@ -1429,6 +1432,10 @@ async function getFromStorageSyncAsync(key, defaultvalue) {
 
 async function removeFromStorageSyncAsync(key) {
   await removeFromStorageRawAsync("sync", key);
+}
+
+async function removeFromStorageByPrefixSyncAsync(prefix) {
+  await removeFromStorageByPrefixRawAsync("sync", prefix);
 }
 
 /** Generic versions */
@@ -1492,6 +1499,15 @@ async function removeFromStorageRawAsync(storageType, key) {
     default:
       await chrome.storage.local.remove(key);
   }
+}
+
+async function removeFromStorageByPrefixRawAsync(storageType, prefix) {
+  const allDict = await (storageType === "sync" ? chrome.storage.sync.get() : chrome.storage.local.get());
+  Object.keys(allDict).forEach(async (key) => {
+    if (key.startsWith(prefix)) {
+      await removeFromStorageRawAsync(storageType, key);
+    }
+  });
 }
 
 function showLastError() {
