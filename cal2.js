@@ -1,8 +1,3 @@
-/* global TweenMax */
-/* global getMessage */
-/* global di */
-/* global chrome */
-/* global $ */
 const Cal2 = () => {
   let _yearShown = null;
   const _specialDays = {};

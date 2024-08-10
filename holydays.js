@@ -1,4 +1,3 @@
-/* global SunCalc */
 var _cachedDateInfos = {};
 
 var HolyDays = function () {

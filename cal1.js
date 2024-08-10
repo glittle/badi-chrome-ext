@@ -1,8 +1,3 @@
-/* global getMessage */
-/* global di */
-/* global chrome */
-/* global $ */
-
 const Cal1 = (originalDi, originalHost) => {
   let host = originalHost;
   let di = originalDi;

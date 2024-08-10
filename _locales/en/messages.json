@@ -1412,7 +1412,7 @@
         "description": "info and link to Zapier"
     },
     "zapierKey": {
-        "message": "Zapier Webhook",
+        "message": "Zapier Webhook URL",
         "description": "url for Zapier"
     }
 }

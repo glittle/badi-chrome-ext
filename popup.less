@@ -18,8 +18,10 @@ body {
       margin: 0 auto;
     }
 
-    #pageEvents {
-      max-height: none;
+    #pageEvents,
+    #pageCustom .customPartsListDiv,
+    #pageCustom .customBuilderDiv {
+      max-height: 90vh;
     }
 
     .explains {
@@ -90,7 +92,6 @@ body {
 #pageReminders,
 #pageExporter,
 #pageSetup,
-#pageCustom,
 #pagePlanner {
   display: flex;
   justify-content: flex-end;
@@ -472,19 +473,23 @@ body {
 }
 
 #pageCustom {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 3px;
+  height: 100%;
+
   >div {
     border: 1px solid @green;
     border-radius: 3px;
-    margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 60%;
     padding: 2px 6px;
   }
 
   .customBuilderDiv {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    max-height: 500px;
+    overflow: auto;
+    justify-content: flex-start;
   }
 
   .customHint {
@@ -494,7 +499,8 @@ body {
   }
 
   .customPartsListDiv {
-    flex: 0 1 40%;
+    max-height: 500px;
+    overflow: auto;
 
     h2 {
       text-align: center;
@@ -521,10 +527,10 @@ body {
   }
 
   .customLoadDefaults {
-    margin: 3px -4px 0px -4px;
+    margin: 8px -5px 0px -5px;
     background: #eee;
     border-radius: 3px;
-    padding: 3px 5px 4px;
+    padding: 5px 5px 4px;
 
     >span {
       margin: 1px 0;
@@ -547,19 +553,21 @@ body {
   }
 
   .customDefinedTitleDiv {
-    position: relative;
+    display: none; // set to flex to show
+    grid-template-columns: auto auto;
+    align-items: self-end;
+
+    &.show {
+      display: grid;
+    }
 
     h2 {
       margin-bottom: 0;
     }
 
     .customIntroSelectSome {
-      position: absolute;
       text-align: right;
       font-size: 90%;
-      max-width: 60%;
-      bottom: 0;
-      right: 0;
     }
   }
 
@@ -587,11 +595,14 @@ body {
   }
 
   #partsList {
-    max-height: 450px;
-    overflow: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1px 0;
 
     >div {
-      display: table-row;
+      display: grid;
+      grid-column: 1/4;
+      grid-template-columns: subgrid;
 
       button {
         padding: 0 2px;
@@ -600,9 +611,6 @@ body {
     }
 
     .customPart {
-      display: table-cell;
-      vertical-align: top;
-      text-align: right;
       padding-right: 2px;
       white-space: nowrap;
     }
@@ -621,8 +629,6 @@ body {
 
   .customFormats {
     clear: both;
-    max-height: 168px;
-    overflow: auto;
     border-bottom: 1px solid #eee;
 
     .customFormatDiv {
@@ -641,6 +647,8 @@ body {
       .customFormatInfo {
         text-align: right;
         white-space: nowrap;
+        display: flex;
+        align-items: center;
       }
     }
 
@@ -651,7 +659,7 @@ body {
 
     .btnCopy {
       display: inline-block;
-      padding: 0 3px;
+      padding: 0.15em 0.4em 0.2em;
     }
 
     .customSample {

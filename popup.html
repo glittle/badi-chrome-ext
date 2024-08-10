@@ -534,8 +534,8 @@
                 <div class="reminderSaveBtns">
                   <button type="submit" class="button" id="btnReminderSave" data-msg="_id_,extractAccessKeyFor:btnReminderSave"></button>
                   <button type="submit" class="button" id="btnReminderSaveNew" data-msg="_id_"></button>
-                  <button type="button" class="button btnCancel" id="btnReminderCancel" data-msg="_id_"></button>
                   <button type="submit" class="button" id="btnReminderTest" data-msg="_id_"></button>
+                  <button type="button" class="button btnCancel" id="btnReminderCancel" data-msg="_id_"></button>
                   <button type="button" class="button btnDelete" id="btnReminderDelete" data-msg="_id_"></button>
                 </div>
               </div>
@@ -646,13 +646,15 @@
             <div class="customDefinedTitleDiv">
               <h2 data-msg="customDefined"></h2>
               <div class="customIntroSelectSome">
-                <div class="customIntroClick" data-msg="customIntroClick"></div>
-                <div class="customSelect"></div>
+                <div class="customIntroClick">
+                  <span data-msg="customIntroClick"></span>
+                  <span class="customSelect"></span>
+                </div>
               </div>
             </div>
             <div class="customFormats"></div>
             <div class="customLoadLettersDiv">
-              <span data-msg="customLoadLetters"></span>
+              <div data-msg="customLoadLetters"></div>
               <span class="customLettersFromFirstPage"></span>
             </div>
             <div class="customLoadDefaults">
@@ -906,6 +908,7 @@
     <script src="suncalc.js"></script>
     <script src="holyDays.js"></script>
     <script src="sharedBrowser.js"></script>
+    <script src="speakShared.js"></script>
     <script src="shared.js"></script>
     <script src="cal1.js"></script>
     <script src="cal2.js"></script>

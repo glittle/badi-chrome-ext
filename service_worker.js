@@ -6,16 +6,16 @@
  *
  */
 
-console.log("Loading service worker...");
+// console.log("Loading service worker...");
 
 self.addEventListener("install", (event) => {
-  console.log("Service Worker installed");
+  // console.log("Service Worker installed");
 
   self.skipWaiting(); // Forces the waiting service worker to become the active service worker
 });
 
 self.addEventListener("activate", (event) => {
-  console.log("Service Worker activated");
+  // console.log("Service Worker activated");
   event.waitUntil(clients.claim()); // Claims control of all clients
 });
 
@@ -33,7 +33,7 @@ importScripts("suncalc.js");
 importScripts("holyDays.js");
 // console.log("Loaded holydays");
 importScripts("shared.js");
-console.log("Loaded shared");
+// console.log("Loaded shared");
 
 // browser.storage.local.getBytesInUse().then((bytesInUse) => {
 //   console.log("Space used by local storage", bytesInUse, "bytes");
@@ -58,12 +58,12 @@ async function configureNotificationsAsync() {
   const permissionLevel = Notification.permission;
   _notificationsEnabled = permissionLevel === "granted";
 
-  console.log("Notifications permission level:", permissionLevel);
+  // console.log("Notifications permission level:", permissionLevel);
 
   if (_notificationsEnabled) {
     if (!_remindersEngineLoaded) {
       importScripts("reminders_engine.js");
-      console.log("Loaded reminders_engine.js");
+      // console.log("Loaded reminders_engine.js");
       _remindersEngineLoaded = true;
       _remindersEngine = new RemindersEngine();
     }
@@ -78,14 +78,14 @@ browser.permissions.onAdded.addListener(configureNotificationsAsync);
 browser.permissions.onRemoved.addListener(configureNotificationsAsync);
 
 browser.runtime.onInstalled.addListener((info) => {
-  console.log("onInstalled", info);
+  // console.log("onInstalled", info);
   if (info.reason === "update") {
     // delay this, to let everything settle before opening the page
     setTimeout(async () => {
       const newVersion = browser.runtime.getManifest().version;
       const oldVersion = await getFromStorageLocalAsync(localStorageKey.updateVersion);
       if (!oldVersion) {
-        console.log("Version check... no old version found, likely dev or first use");
+        // console.log("Version check... no old version found, likely dev or first use");
       } else {
         if (newVersion !== oldVersion) {
           console.log(`${oldVersion} --> ${newVersion}`);
@@ -125,7 +125,7 @@ browser.runtime.onInstalled.addListener((info) => {
           console.error("Error in contextMenus.create", msg);
           debugger; // stop on error in dev mode
         } else {
-          console.log("Context menu created");
+          // console.log("Context menu created");
         }
       }
     );
@@ -147,7 +147,7 @@ browser.runtime.onInstalled.addListener((info) => {
 // });
 
 browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("onMessage received:", request);
+  console.log("message received:", request);
 
   (async () => {
     switch (request.action) {

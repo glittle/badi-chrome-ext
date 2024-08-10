@@ -1,11 +1,4 @@
-﻿/* global getMessage */
-
-//"options_ui": {
-//  "_page": "options.html",
-//  "chrome_style":  true
-//},
-
-const PageReminders = () => {
+﻿const PageReminders = () => {
   const saveMode = {
     save: 1,
     saveNew: 2,
@@ -111,7 +104,11 @@ const PageReminders = () => {
 
     if (saveToBackground) {
       try {
-        tracker.sendEvent("saveReminder", reminderDefintion.trigger, `${reminderDefintion.delta * reminderDefintion.num} ${reminderDefintion.units}`);
+        tracker.sendEvent(
+          "savedReminder",
+          reminderDefintion.trigger,
+          `${reminderDefintion.delta * reminderDefintion.num} ${reminderDefintion.units}`
+        );
       } catch (e) {
         console.log("Error", e);
       }
@@ -269,7 +266,7 @@ const PageReminders = () => {
   }
 
   function getAndShowReminders() {
-    console.log("sending msg");
+    // console.log("sending msg");
 
     _reminderModulePort.postMessage({
       code: "getReminders",
@@ -371,15 +368,12 @@ const PageReminders = () => {
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         if (alarm.name.startsWith(_alarmNamePrefix)) {
-          console.log("Custom alarm", alarm);
+          // console.log("Custom alarm", alarm);
           const alarmInfo = await getFromStorageLocalAsync(alarm.name);
           if (!alarmInfo) {
             console.log(`No alarmInfo for ${alarm.name}`);
             continue;
           }
-
-          //log(alarmInfo);
-          //alarmList.append('<li id=a_{2}>{0} --> {1} <button class=button data-id={2}>{3}</button></li>'.filledWith(alarmInfo.triggerTimeDisplay, alarmInfo.messageBody, alarmInfo.displayId, getMessage('btnReminderEdit')));
 
           alarmList.append(
             "<li id=a_{1} class=alarmInfo><button class=button data-id={1}>{2}</button> {0}</li>".filledWith(
@@ -389,7 +383,7 @@ const PageReminders = () => {
             )
           );
         } else if (alarm.name.startsWith(_refreshPrefix)) {
-          console.log("Alarm for refresh", alarm);
+          // console.log("Alarm for refresh", alarm);
         } else {
           console.log("Unexpected alarm", alarm);
         }
@@ -573,10 +567,10 @@ const PageReminders = () => {
   }
 
   function establishPortToBackground() {
-    console.log("making port for reminderModule");
+    // console.log("making port for reminderModule");
     _reminderModulePort = browser.runtime.connect({ name: "reminderModule" });
     _reminderModulePort.onMessage.addListener((msg) => {
-      console.log("pageReminders port received:", msg);
+      // console.log("pageReminders port received:", msg);
 
       // these are return call in response to our matching request
       switch (msg.code) {
@@ -619,43 +613,38 @@ const PageReminders = () => {
     return date;
   }
 
-  function loadVoices() {
-    if (browserHostType !== browserType.Chrome) {
-      return;
-    }
-
-    chrome.tts.getVoices((voices) => {
+  function showVoicesList() {
+    getVoicesListAsync().then((voices) => {
       const options = [];
-      for (let i = 0; i < voices.length; i++) {
-        const voice = voices[i];
-        if (voice.lang) {
-          options.push('<option data-lang="{lang}">{voiceName}</option>'.filledWith(voice));
-        }
-        // https://developer.chrome.com/extensions/tts
-      }
+      voices.forEach((voice) => {
+        // console.log(voice);
+        options.push(
+          '<option data-lang="{lang}" selected="{default}">{name}</option>'.filledWith({ name: voice.name, lang: voice.lang, default: voice.default })
+        );
+      });
       const ddl = $("#speakVoice");
       ddl.html(options.join(""));
-
-      // pre-select best match
-      //full match
-      // let match = $ .grep(voices, (v) => v.lang === common.languageCode);
-      let match = voices.filter((v) => v.lang === common.languageCode);
-      if (!match.length) {
-        // match = $ .grep(voices, (v) => v.lang?.startsWith(common.languageCode));
-        match = voices.filter((v) => v.lang?.startsWith(common.languageCode));
-        if (!match.length) {
-          // match = $ .grep(voices, (v) => v.lang?.startsWith("en"));
-          match = voices.filter((v) => v.lang?.startsWith("en"));
-        }
-      }
-      if (match.length) {
-        ddl.data("default", match[0].voiceName);
-      }
     });
+
+    // pre-select best match
+    //full match
+    // let match = $ .grep(voices, (v) => v.lang === common.languageCode);
+    // let match = voices.filter((v) => v.lang === common.languageCode);
+    // if (!match.length) {
+    //   // match = $ .grep(voices, (v) => v.lang?.startsWith(common.languageCode));
+    //   match = voices.filter((v) => v.lang?.startsWith(common.languageCode));
+    //   if (!match.length) {
+    //     // match = $ .grep(voices, (v) => v.lang?.startsWith("en"));
+    //     match = voices.filter((v) => v.lang?.startsWith("en"));
+    //   }
+    // }
+    // if (match.length) {
+    //   ddl.data("default", match[0].voiceName);
+    // }
   }
 
   function startup() {
-    loadVoices();
+    showVoicesList();
     establishPortToBackground();
     getAndShowReminders();
     attachHandlers();

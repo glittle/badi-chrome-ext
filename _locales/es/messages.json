@@ -341,7 +341,7 @@
     "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
   },
   "monthNames": {
-    "message": "Nombres del Mes/Dia",
+    "message": "NombTs del Mes/Dia",
     "description": "on List page - table caption"
   },
   "nearestSunsetDay": {

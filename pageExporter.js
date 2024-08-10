@@ -1,6 +1,4 @@
-﻿/* global getMessage */
-
-const PageExporter = () => {
+﻿const PageExporter = () => {
   let _lines = [];
   let _forCsv = false;
   let _doingCsvLine = false;

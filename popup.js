@@ -1,20 +1,10 @@
-/* Code by Glen Little */
-/* global getMessage */
-/* global knownDateInfos */
-/* global di */
-/* global _initialDiStamp */
-/* global _currentPageId */
-/* global chrome */
-/* global common.languageCode */
-/* global $ */
-
-console.log("Popup.js starting");
+// console.log("Popup.js starting");
 const _inPopupPage = true;
 
 browser.runtime
   .sendMessage({ action: "Wake Up" })
   .then((response) => {
-    console.log("Woke up service worker:", response.message);
+    // console.log("Woke up service worker:", response.message);
     // console.log(_rawMessages, _cachedMessages);
     // future optimization - load the loaded language info here
   })
@@ -43,10 +33,10 @@ let _loadingNum = 0;
 // let _lastLoadingComment = null;
 const _pageIdList = [];
 
-const _remindersEnabled = browserHostType === browserType.Chrome;
+const _remindersEnabled = true; // browserHostType === browserType.Chrome;
 
 browser.tabs.getCurrent().then((tab) => {
-  console.log("Current tab:", tab);
+  // console.log("Current tab:", tab);
   if (tab) {
     _inTab = true;
     $("body").addClass("inTab");
@@ -497,7 +487,7 @@ function showPage(id) {
   // delay a bit, to ensure we are not just moving past this page
   if (tracker) {
     _pageHitTimeout = setTimeout(() => {
-      tracker.sendAppView(id);
+      tracker.sendPageId(id);
     }, 500);
   }
 }
@@ -1087,8 +1077,9 @@ function copySample(ev) {
 
   const div = btn.closest("div");
   const text = div.find("span").text();
-  $("#sampleCopy").val(text).focus().select();
-  document.execCommand("copy");
+  navigator.clipboard.writeText(text).catch((error) => {
+    console.warn("Copy failed", error);
+  });
 
   div.addClass("copied");
   btn.text(getMessage("copied"));
@@ -1726,8 +1717,9 @@ async function prepare2() {
   updateLoadProgress("prepare2 start");
 
   updateLoadProgress("send event");
+
   tracker.sendEvent("opened");
-  tracker.sendAppView(_currentPageId);
+  tracker.sendPageId(_currentPageId);
 
   if (common.firstPopup) {
     // first time popup is opened after upgrading to newest version

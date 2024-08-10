@@ -14,8 +14,10 @@ body.inTab #mainBody {
   max-width: 1000px;
   margin: 0 auto;
 }
-body.inTab #pageEvents {
-  max-height: none;
+body.inTab #pageEvents,
+body.inTab #pageCustom .customPartsListDiv,
+body.inTab #pageCustom .customBuilderDiv {
+  max-height: 90vh;
 }
 body.inTab .explains {
   display: block;
@@ -68,7 +70,6 @@ body.inTab .explains {
 #pageReminders,
 #pageExporter,
 #pageSetup,
-#pageCustom,
 #pagePlanner {
   display: flex;
   justify-content: flex-end;
@@ -358,18 +359,23 @@ body.inTab .explains {
   flex-shrink: 0;
   display: block;
 }
+#pageCustom {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 3px;
+  height: 100%;
+}
 #pageCustom > div {
   border: 1px solid #77b55a;
   border-radius: 3px;
-  margin-left: 4px;
-  justify-content: flex-end;
-  flex: 0 1 60%;
   padding: 2px 6px;
 }
 #pageCustom .customBuilderDiv {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  max-height: 500px;
+  overflow: auto;
+  justify-content: flex-start;
 }
 #pageCustom .customHint {
   margin-left: 10px;
@@ -377,7 +383,8 @@ body.inTab .explains {
   font-size: 90%;
 }
 #pageCustom .customPartsListDiv {
-  flex: 0 1 40%;
+  max-height: 500px;
+  overflow: auto;
 }
 #pageCustom .customPartsListDiv h2 {
   text-align: center;
@@ -398,10 +405,10 @@ body.inTab .explains {
   color: green;
 }
 #pageCustom .customLoadDefaults {
-  margin: 3px -4px 0px -4px;
+  margin: 8px -5px 0px -5px;
   background: #eee;
   border-radius: 3px;
-  padding: 3px 5px 4px;
+  padding: 5px 5px 4px;
 }
 #pageCustom .customLoadDefaults > span {
   margin: 1px 0;
@@ -419,18 +426,19 @@ body.inTab .explains {
   margin: 0;
 }
 #pageCustom .customDefinedTitleDiv {
-  position: relative;
+  display: none;
+  grid-template-columns: auto auto;
+  align-items: self-end;
+}
+#pageCustom .customDefinedTitleDiv.show {
+  display: grid;
 }
 #pageCustom .customDefinedTitleDiv h2 {
   margin-bottom: 0;
 }
 #pageCustom .customDefinedTitleDiv .customIntroSelectSome {
-  position: absolute;
   text-align: right;
   font-size: 90%;
-  max-width: 60%;
-  bottom: 0;
-  right: 0;
 }
 #pageCustom #customBuilder {
   margin-bottom: 2em;
@@ -451,20 +459,20 @@ body.inTab .explains {
   white-space: pre-wrap;
 }
 #pageCustom #partsList {
-  max-height: 450px;
-  overflow: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1px 0;
 }
 #pageCustom #partsList > div {
-  display: table-row;
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
 }
 #pageCustom #partsList > div button {
   padding: 0 2px;
   margin: 0 3px;
 }
 #pageCustom #partsList .customPart {
-  display: table-cell;
-  vertical-align: top;
-  text-align: right;
   padding-right: 2px;
   white-space: nowrap;
 }
@@ -479,8 +487,6 @@ body.inTab .explains {
 }
 #pageCustom .customFormats {
   clear: both;
-  max-height: 168px;
-  overflow: auto;
   border-bottom: 1px solid #eee;
 }
 #pageCustom .customFormats .customFormatDiv {
@@ -498,6 +504,8 @@ body.inTab .explains {
 #pageCustom .customFormats .customFormatDiv .customFormatInfo {
   text-align: right;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 #pageCustom .customFormats .customSampleContent {
   width: 100%;
@@ -505,7 +513,7 @@ body.inTab .explains {
 }
 #pageCustom .customFormats .btnCopy {
   display: inline-block;
-  padding: 0 3px;
+  padding: 0.15em 0.4em 0.2em;
 }
 #pageCustom .customFormats .customSample {
   background-color: #eee;

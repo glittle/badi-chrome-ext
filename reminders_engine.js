@@ -15,7 +15,7 @@
  */
 
 function RemindersEngine() {
-  console.log("RemindersEngine created");
+  // console.log("RemindersEngine created");
   const _ports = [];
   const _testAlarmText = "_TEST";
   let _specialDays = {};
@@ -32,7 +32,7 @@ function RemindersEngine() {
   const AFTER = 1;
 
   async function initializeAsync() {
-    console.log("RemindersEngine initializing");
+    // console.log("RemindersEngine initializing");
 
     prepareBaseImageAsync();
 
@@ -44,11 +44,11 @@ function RemindersEngine() {
 
     _reminderDefinitions = (await getFromStorageLocalAsync(localStorageKey.reminderDefinitions)) || [];
 
-    console.log("reminder definitions", _reminderDefinitions);
+    // console.log("reminder definitions", _reminderDefinitions);
 
     await setAlarmsForRestOfTodayAsync(true);
 
-    dumpAlarms(); // for debugging
+    // dumpAlarms(); // for debugging
   }
 
   async function setAlarmsForRestOfTodayAsync(initialLoad) {
@@ -74,7 +74,7 @@ function RemindersEngine() {
     _nowMidnight.setHours(24, 0, 0, 0); // midnight coming tonight
     _nowAlmostMidnight = new Date(_now.getFullYear(), _now.getMonth(), _now.getDate(), 23, 59, 0, 0);
 
-    console.log(`processing ${_reminderDefinitions.length} reminder definition(s) at ${_now}`);
+    // console.log(`processing ${_reminderDefinitions.length} reminder definition(s) at ${_now}`);
 
     for (let i = 0; i < _reminderDefinitions.length; i++) {
       const reminderDefinition = _reminderDefinitions[i];
@@ -498,44 +498,40 @@ function RemindersEngine() {
 
     console.log("DISPLAYED {alarmName}: {messageBody} ".filledWith(reminderInstance));
 
-    const api = "chrome"; // for now, ONLY use Chrome
+    // const api = "chrome"; // for now, ONLY use Chrome
 
-    switch (api) {
-      case "chrome":
-        // closes automatically after a few seconds
-        browser.notifications
-          .create(null, {
-            type: "basic",
-            iconUrl: iconUrl,
+    // switch (api) {
+    // case "chrome":
+    // closes automatically after a few seconds
+    browser.notifications
+      .create(null, {
+        type: "basic",
+        iconUrl: iconUrl,
 
-            title: reminderInstance.title,
-            message: reminderInstance.messageBody,
-            priority: 2,
-            contextMessage: tagLine,
-          })
-          .then((id) => {
-            //log('chrome notification ' + id);
-          });
-        break;
+        title: reminderInstance.title,
+        message: reminderInstance.messageBody,
+        priority: 2,
+        contextMessage: tagLine,
+      })
+      .then((id) => {
+        //log('chrome notification ' + id);
+      });
+    // break;
 
-      //case 'html':
-      //  const n = new Notification('HTML ' + reminderInstance.title, {
-      //    icon: iconUrl,
+    //case 'html':
+    //  const n = new Notification('HTML ' + reminderInstance.title, {
+    //    icon: iconUrl,
 
-      //    body: reminderInstance.messageBody + '\n\n' + tagLine,
-      //    lang: common.languageCode,
-      //    dir: common.languageDir,
-      //    tag: 'html' + alarmName
-      //  });
-      //  break;
-    }
+    //    body: reminderInstance.messageBody + '\n\n' + tagLine,
+    //    lang: common.languageCode,
+    //    dir: common.languageDir,
+    //    tag: 'html' + alarmName
+    //  });
+    //  break;
+    // }
 
     try {
-      tracker.sendEvent(
-        "showReminder",
-        reminderInstance.trigger,
-        `${reminderInstance.delta * reminderInstance.num} ${reminderInstance.units} ${api}`
-      );
+      tracker.sendEvent("showReminder", reminderInstance.trigger, `${reminderInstance.delta * reminderInstance.num} ${reminderInstance.units}`);
     } catch (e) {
       console.log(e);
     }
@@ -565,18 +561,52 @@ function RemindersEngine() {
   }
 
   function speakAlarm(reminderInstance) {
-    const options = {
-      //'lang': common.languageCode,
-      voiceName: reminderInstance.speakVoice,
-      enqueue: true,
-    };
-    console.log(options);
-    // TODO - how to do this in Firefox?
-    chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(reminderInstance), options, () => {
-      if (browser.runtime.lastError) {
-        console.log(`Error: ${browser.runtime.lastError}`);
+    let createdTabId;
+
+    const listener = async (tabId, changeInfo) => {
+      // console.log("tab updated - id", tabId, changeInfo.status);
+      if (tabId === createdTabId && changeInfo.status === "complete") {
+        browser.runtime.sendMessage({
+          action: "speakNow",
+          voiceName: reminderInstance.speakVoice,
+          title: reminderInstance.title,
+          text: reminderInstance.messageBody,
+        });
+        browser.tabs.onUpdated.removeListener(listener);
       }
-    });
+    };
+
+    browser.tabs.onUpdated.addListener(listener);
+
+    browser.tabs
+      .create({
+        url: "speakNow.html", // A page that contains the speech synthesis logic
+        active: false,
+      })
+      .then((tab) => {
+        // console.log("tab created", tab);
+        createdTabId = tab.id;
+      });
+
+    //--> does not work in a service worker
+    // const utterance = new SpeechSynthesisUtterance(text);
+    // utterance.lang = common.languageCode;
+    // utterance.voice = renderInstance.speakVoice;
+    // window.speechSynthesis.speak(utterance);
+
+    //--> old for Chrome
+    // const options = {
+    //   //'lang': common.languageCode,
+    //   voiceName: reminderInstance.speakVoice,
+    //   enqueue: true,
+    // };
+    // console.log(options);
+    // // TODO - how to do this in Firefox?
+    // chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(reminderInstance), options, () => {
+    //   if (browser.runtime.lastError) {
+    //     console.log(`Error: ${browser.runtime.lastError}`);
+    //   }
+    // });
   }
 
   function sendIFTTT(reminderInstance) {
@@ -587,28 +617,35 @@ function RemindersEngine() {
       value3: reminderInstance.tagLine,
     };
     try {
+      const body = JSON.stringify(content);
+      // const body = content;
+      console.log(body);
       fetch(url, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(content), // Use only for POST or PUT requests
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: body,
       })
-        .then((response) => response.json())
+        .then((data) => data.text())
         .then((data) => {
-          browser.notifications.create(null, {
-            type: "basic",
-            iconUrl: "badi19a-128.png",
-            title: reminderInstance.actionDisplay,
-            message: data,
-          });
+          if (data.startsWith("{")) {
+            const info = JSON.parse(data);
+            info.errors?.forEach((error) => {
+              console.warn("Error from IFTTT:", error.message);
+            });
+            return;
+          }
+          console.log("Response from IFTTT:", data);
         })
         .catch((error) => {
-          console.log(JSON.stringify(request));
-          console.log(JSON.stringify(error));
-          console.log(request.statusText);
-          debugger; // stop on error
+          console.log(error);
+          debugger; // stop on error in dev tools
         });
     } catch (e) {
       console.log(e);
+      debugger; // stop on error in dev tools
     }
   }
 
@@ -627,12 +664,12 @@ function RemindersEngine() {
       })
         .then((response) => response.json())
         .then((data) => {
-          browser.notifications.create(null, {
-            type: "basic",
-            iconUrl: "badi19a-128.png",
-            title: reminderInstance.actionDisplay,
-            message: data.status,
-          });
+          // browser.notifications.create(null, {
+          //   type: "basic",
+          //   iconUrl: "badi19a-128.png",
+          //   title: reminderInstance.actionDisplay,
+          //   message: data.status,
+          // });
           console.log(data);
         })
         .catch((error) => {
@@ -680,17 +717,17 @@ function RemindersEngine() {
     return canvas.toDataURL("image/png");
   }
 
-  function dumpAlarms() {
-    console.log("dumping alarms");
-    browser.alarms.getAll().then(async (alarms) => {
-      console.log(`found ${alarms.length} pending alarms...`);
-      for (let i = 0; i < alarms.length; i++) {
-        const alarm = alarms[i];
-        console.log("Alarm {0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
-        console.log("Reminder instance", await getFromStorageLocalAsync(alarm.name));
-      }
-    });
-  }
+  // function dumpAlarms() {
+  //   // console.log("dumping alarms");
+  //   browser.alarms.getAll().then(async (alarms) => {
+  //     console.log(`found ${alarms.length} active alarms...`);
+  //     for (let i = 0; i < alarms.length; i++) {
+  //       const alarm = alarms[i];
+  //       console.log("Alarm {0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
+  //       console.log("Reminder instance", await getFromStorageLocalAsync(alarm.name));
+  //     }
+  //   });
+  // }
 
   async function saveAllReminders(reminderDefinitions) {
     _reminderDefinitions = reminderDefinitions || [];
@@ -698,16 +735,16 @@ function RemindersEngine() {
   }
 
   function connectToPort() {
-    console.log("listening for new ports");
+    // console.log("listening for new ports");
     browser.runtime.onConnect.addListener((port) => {
-      console.log("received on part", port.name, port.sender.id);
+      // console.log("received on part", port.name, port.sender.id);
 
       if (port.name !== "reminderModule") {
         return; // not for us
       }
 
       _ports.push(port);
-      console.log(`ports: ${_ports.length}`);
+      // console.log(`ports: ${_ports.length}`);
 
       // each popup will have its own port for us to respond to
       console.log("listening to port", port.name, "from", port.sender.id);
@@ -807,7 +844,7 @@ function RemindersEngine() {
     setAlarmsForRestOfTodayAsync: setAlarmsForRestOfTodayAsync,
 
     // for testing...
-    dumpAlarms: dumpAlarms,
+    // dumpAlarms: dumpAlarms,
     // clearReminderAlarms: clearReminderAlarmsAsync,
     saveAllReminders: saveAllReminders,
     _specialDays: _specialDays, // testing

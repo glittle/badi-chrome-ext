@@ -1,6 +1,4 @@
-﻿/* global getMessage */
-
-const PagePlannerAsync = async () => {
+﻿const PagePlannerAsync = async () => {
   const _page = $("#pagePlanner");
   let _startGDate = null;
   let _endGDate = null;

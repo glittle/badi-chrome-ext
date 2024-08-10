@@ -1,5 +1,3 @@
-/* global addSamples */
-// originally from pageCustom.ts but too many typescript issues with .d.ts files
 var PageCustom = function () {
   var _currentEditId = 0;
   var _currentUseForSample = false;
@@ -24,8 +22,9 @@ var PageCustom = function () {
     parts.sort(function (a, b) {
       return a.name < b.name ? -1 : 1;
     });
+    console.log(parts);
     var template =
-      "<div><span class=customPart>#{name}*</span>" +
+      "<div><span class=customPart>{name}</span>" +
       "<button type=button class=button>Add</button>" +
       '<span class="customPartSample part_{type}" data-part="#{name}*"></span></div>';
     var html = template.filledWithEach(parts).replace(/\#/g, "{").replace(/\*/g, "}");
@@ -120,10 +119,14 @@ var PageCustom = function () {
     var btn = $(ev.target);
     var div = btn.closest(".customFormatDiv");
     var format = div.find(".customFormat").html();
-    tracker.sendEvent("customSample", format);
     var text = div.find(".customSample").html();
-    $("#sampleCopy").val(text).focus().select();
-    document.execCommand("copy");
+    // $("#sampleCopy").val(text).focus().select();
+    // document.execCommand("copy");
+    console.log("copying", text);
+    navigator.clipboard.writeText(text).catch((error) => {
+      console.warn("Copy failed", error);
+    });
+
     btn.text(getMessage("copied"));
     setTimeout(function () {
       btn.text(getMessage("customBtnCopy"));
@@ -152,6 +155,7 @@ var PageCustom = function () {
     $("#btnCustomBuilderSave").prop("disabled", notEditingAndBlank);
     $("#btnCustomBuilderDelete").prop("disabled", notEditing);
     $("#btnCustomBuilderCancel").prop("disabled", notEditingAndBlank);
+    $(".customDefinedTitleDiv").toggleClass("show", $(".customFormats .customFormatDiv").length > 0);
   }
   function cancelEditing() {
     $(".customFormats .customFormatDiv").removeClass("inEdit");
@@ -240,6 +244,8 @@ var PageCustom = function () {
         s: div.find(".customIsSample input").is(":checked"),
       });
     });
+    $(".customDefinedTitleDiv").toggleClass("show", formats.length > 0);
+    tracker.sendEvent("modifiedSampleFormats", formats);
     putInStorageSyncAsync(syncStorageKey.customFormats, formats);
     common.customFormats = formats;
     updateFirstPageSamples(true);
@@ -377,6 +383,7 @@ var PageCustom = function () {
     preparePartsList();
     attachHandlers();
     $(".customSelect").html(getMessage("customSelectForFrontPage").filledWith(getMessage("pick_pageDay")));
+    fillSelectForDefaults();
   }
 
   startup();

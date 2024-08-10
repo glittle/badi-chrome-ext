@@ -1,6 +1,4 @@
 ﻿/* Code by Glen Little - 2014 - 2024 */
-/* global HolyDays */
-/* global dayjs */
 
 // these use VAR to be globally available
 var splitSeparator = /[,،]+/;
@@ -106,7 +104,8 @@ var browserType = {
   Firefox: "Firefox",
   Edge: "Edge",
 };
-var browserHostType = browserType.Chrome;
+
+var browserHostType = browserType.Chrome; // hard coded in the Chrome version of the extension
 
 var common = {};
 
@@ -114,7 +113,7 @@ var common = {};
  * Set up everything that is needed by the service worker and the popup
  */
 async function prepareForBackgroundAndPopupAsync() {
-  console.log("%cprepare in shared - started", "color: lightblue");
+  // console.log("%cprepare in shared - started", "color: lightblue");
 
   dayjs.extend(dayjs_plugin_utc);
   dayjs.extend(dayjs_plugin_timezone);
@@ -182,15 +181,15 @@ async function prepareForBackgroundAndPopupAsync() {
 
   _holyDaysEngine = new HolyDays();
   refreshDateInfo();
-  console.log(`Nearest sunset:`, _di.nearestSunset);
+  // console.log(`Nearest sunset:`, _di.nearestSunset);
 
-  prepareAnalytics();
+  prepareAnalyticsTracker();
 
   prepared = true;
-  console.log("Finished preparing for background and popup");
+  // console.log("Finished preparing for background and popup");
   await FlushPendingInstallFunctionsAsync();
 
-  console.log("%cprepare in shared - done", "color: lightblue");
+  // console.log("%cprepare in shared - done", "color: lightblue");
 }
 
 async function prepareSharedForPopup() {
@@ -295,7 +294,7 @@ async function loadJsonfileAsync(filePath) {
 
 async function loadRawMessages(langCode, cb) {
   // load base English, then overwrite with base for language, then with full lang code
-  console.log("loading", langCode);
+  // console.log("loading", langCode);
 
   const rawLangCodes = { en: true };
   if (langCode.length > 2) {
@@ -311,7 +310,7 @@ async function loadRawMessages(langCode, cb) {
   for (let langNum = 0; langNum < langsToLoad.length; langNum++) {
     const langToLoad = langsToLoad[langNum];
     const url = `/_locales/${langToLoad}/messages.json`;
-    console.log("loading lang resource", langNum, langToLoad, url);
+    // console.log("loading lang resource", langNum, langToLoad, url);
 
     const messages = await loadJsonfileAsync(url);
 
@@ -322,7 +321,7 @@ async function loadRawMessages(langCode, cb) {
 
     const keys = Object.keys(messages);
 
-    console.log("loading", keys.length, "keys from", langToLoad);
+    // console.log("loading", keys.length, "keys from", langToLoad);
 
     if (langToLoad === "en") {
       _numMessagesEn = keys.length;
@@ -369,7 +368,7 @@ function setupLanguageChoice() {
 }
 
 function refreshDateInfo() {
-  console.log("Refresh date info for", common.locationLat, common.locationLong);
+  // console.log("Refresh date info for", common.locationLat, common.locationLong);
   _di = getDateInfo(getFocusTime());
 }
 
@@ -747,8 +746,6 @@ function getTimeDisplay(d, use24) {
   return time;
 }
 
-const xhr = null;
-
 async function startGetLocationNameAsync() {
   // debugger;
 
@@ -925,7 +922,7 @@ async function refreshDateInfoAndShowAsync(resetToNow) {
     // will reset to now after a few minutes
     await recallFocusAndSettingsAsync();
   }
-  console.log("refreshDateInfoAndShow at", new Date());
+  // console.log("refreshDateInfoAndShow at", new Date());
   refreshDateInfo();
   _firstLoad = false;
 
@@ -970,14 +967,14 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
 
   browser.alarms.create(alarmName, { when: whenTime });
 
-  // debug - show alarm that was set
-  browser.alarms.getAll().then((alarms) => {
-    console.log("Active Alarms", alarms.length);
-    for (let i = 0; i < alarms.length; i++) {
-      const alarm = alarms[i];
-      console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime));
-    }
-  });
+  // debug - show alarm that are set
+  // browser.alarms.getAll().then((alarms) => {
+  //   console.log("Active Alarms", alarms.length);
+  //   for (let i = 0; i < alarms.length; i++) {
+  //     const alarm = alarms[i];
+  //     console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime));
+  //   }
+  // });
 }
 
 String.prototype.filledWith = function (...args) {
@@ -1327,23 +1324,12 @@ function openInTab() {
   // }
 }
 
-// function console.log() {
-//   // add a timestamp to console log entries
-//   //  const a = ['%c'];
-//   //  a.push('display: block; text-align: right;');
-//   //  a.push(new dayjs().format('DD H:mm:ss'));
-//   //  a.push('\n');
-//   const a = ['\n'];
-//   for (const x in log.arguments) {
-//     if (log.arguments.hasOwnProperty(x)) {
-//       a.push(log.arguments[x]);
-//     }
-//   }
-//   console.log.apply(console, a);
-// }
+// GoogleAanalytics using Measurement Protocol
 
-// google analytics using Measurement Protocol
-const prepareAnalytics = () => {
+let googleSessionId;
+
+const prepareAnalyticsTracker = () => {
+  // console.log("prepareAnalyticsTracker");
   if (tracker) {
     return;
   }
@@ -1354,47 +1340,102 @@ const prepareAnalytics = () => {
     putInStorageLocalAsync(localStorageKey.googleUid, uid);
     common.googleUid = uid;
   }
+
+  // make a new session id when file is loaded
+  let googleSessionId = new Date().getTime();
+
+  // const baseParams = {
+  //   ds: "app",
+  //   tid: "UA-1312528-10",
+  //   v: 1,
+  //   cid: uid,
+  //   an: "BadiWeb",
+  //   ul: navigator.language,
+  //   aid: browserHostType,
+  //   av: browser.runtime.getManifest().version,
+  // };
   const baseParams = {
-    ds: "app",
-    tid: "UA-1312528-10",
-    v: 1,
-    cid: uid,
-    an: "BadiWeb",
-    ul: navigator.language,
-    aid: browserHostType,
-    av: browser.runtime.getManifest().version,
+    user_id: uid,
+    user_properties: {
+      language: {
+        // will also set language on each usage
+        value: common.languageCode,
+      },
+    },
+    client_id: "Chrome Badi Extension",
+    events: [],
   };
 
-  const send = (info) => {
+  const send = (event, useValidation) => {
     if (common.optedOutOfGoogleAnalytics === true) {
-      console.log("opted out of analytics");
+      // console.log("opted out of analytics");
       return;
     }
-    const data = Object.assign(info, baseParams);
 
-    const useDebug = false; // turn on during initial testing
-    const url = useDebug ? "https://www.google-analytics.com/debug/collect" : "https://www.google-analytics.com/collect";
+    const data = { ...baseParams };
+
+    event.params = {
+      ...event.params,
+      session_id: googleSessionId,
+      engagement_time_msec: 100, // TODO make this more meaningful
+    };
+
+    data.events.push(event);
+    data.user_properties.language.value = common.languageCode;
+
+    const body = JSON.stringify(data);
+
+    // the app secret and measurement id cannot be kept secret - they must be embedded in the extension code
+    const url = `https://www.google-analytics.com${
+      useValidation ? "/debug" : ""
+    }/mp/collect?api_secret=xe5xM3KQQB-lvWDz6cSx4A&measurement_id=G-PGLBZZPLJR`;
     fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify(data),
-    });
+      body: body,
+    })
+      .then((response) => {
+        switch (response.status) {
+          case 200:
+            return response?.json();
+          case 204: // calls to the regular URL return 204
+            return {};
+          default:
+            console.error("Error 1 sending analytics", response);
+            return {};
+        }
+      })
+      .then((json) => {
+        if (json.validationMessages?.length) {
+          json.validationMessages?.forEach((msg) => console.warn("Error:", msg.validationCode, msg.description));
+          console.log("sent", url, body);
+        } else if (useValidation) {
+          console.log("no google validation errors");
+        }
+      })
+      .catch((error) => {
+        console.error("Error 2 sending analytics", error);
+      });
   };
 
-  const sendEvent = (category, action) => {
-    send({ t: "event", ec: category, ea: action });
+  const sendEvent = (eventName, params, useValidation) => {
+    send({ name: eventName, params: typeof params === "object" ? params : { value: params } }, useValidation);
   };
-  const sendAppView = (id) => {
-    send({ t: "screenview", cd: id });
+  const sendPageId = (id) => {
+    send({ name: "pageView", params: { page_id: id } });
   };
 
   // assign to global object
   tracker = {
     sendEvent: sendEvent,
-    sendAppView: sendAppView,
+    sendPageId: sendPageId,
   };
+
+  // tracker.sendEvent("installed", getVersionInfo(), true);
+  tracker.sendEvent("installed", getVersionInfo());
 };
 
 function createGuid() {
@@ -1540,23 +1581,23 @@ async function removeFromStorageByPrefixRawAsync(storageType, prefix) {
 
 async function AddFunctionToPendingInstallFunctionsAsync(func) {
   if (prepared) {
-    console.log("pending function - running immediately");
+    // console.log("pending function - running immediately");
     await func();
   } else {
-    console.log("pending function - add to pending list");
+    // console.log("pending function - add to pending list");
     _pendingInstallFunctionsQueue.push(func);
   }
 }
 async function FlushPendingInstallFunctionsAsync() {
   const numToProcess = _pendingInstallFunctionsQueue.length;
   if (!numToProcess) {
-    console.log("No pending functions to process");
+    // console.log("No pending functions to process");
     return;
   }
-  console.log(`Pending functions: ${numToProcess}`);
+  // console.log(`Pending functions: ${numToProcess}`);
   while (_pendingInstallFunctionsQueue.length > 0) {
     const fn = _pendingInstallFunctionsQueue.shift();
     await fn();
   }
-  console.log(`Pending functions done`);
+  // console.log(`Pending functions done`);
 }

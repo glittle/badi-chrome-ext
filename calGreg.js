@@ -1,7 +1,3 @@
-/* global getMessage */
-/* global di */
-/* global chrome */
-/* global $ */
 const CalGreg = (di, host) => {
   let _yearShown = null;
   const _specialDays = {};

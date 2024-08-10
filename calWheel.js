@@ -1,8 +1,3 @@
-/* global getMessage */
-/* global di */
-/* global chrome */
-/* global $ */
-
 const CalWheel = () => {
   let _yearShown = null;
   let _lastAngle = null;
@@ -44,16 +39,19 @@ const CalWheel = () => {
         const slice = $(template);
         const bm = i + 1;
         const angle = i * angle1;
-        const css =
-          browserHostType === browserType.Chrome
-            ? {
-                transform: `rotate(${angle}deg)`,
-                transformOrigin: "39px 335px", //x + ' ' + y
-              }
-            : {
-                transform: `rotate(${angle}deg)`,
-                transformOrigin: "39px 335px", //x + ' ' + y
-              };
+        const css = {
+          transform: `rotate(${angle}deg)`,
+          transformOrigin: "39px 335px", //x + ' ' + y
+        };
+        // browserHostType === browserType.Chrome
+        //   ? {
+        //       transform: `rotate(${angle}deg)`,
+        //       transformOrigin: "39px 335px", //x + ' ' + y
+        //     }
+        //   : {
+        //       transform: `rotate(${angle}deg)`,
+        //       transformOrigin: "39px 335px", //x + ' ' + y
+        //     };
 
         const inner = slice.find(".innerSlice");
         slice.removeAttr("id");
