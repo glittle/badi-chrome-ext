@@ -38,7 +38,7 @@ function RemindersEngine() {
 
     connectToPort();
 
-    chrome.alarms.onAlarm.addListener((alarm) => {
+    browser.alarms.onAlarm.addListener((alarm) => {
       triggerAlarmNowAsync(alarm); // no need to await it
     });
 
@@ -60,7 +60,7 @@ function RemindersEngine() {
   /** Assumes all alarms are cleared */
   async function setAlarmsInternalAsync(initialLoad) {
     // clear all active alarms
-    await chrome.alarms.clearAll();
+    await browser.alarms.clearAll();
 
     // remove all stored instances
     await removeFromStorageByPrefixLocalAsync(_alarmNamePrefix);
@@ -343,7 +343,7 @@ function RemindersEngine() {
 
   const createAlarmAsync = async (reminderInstance, isTest) => {
     const alarmName = await storeInstanceAndMakeName(reminderInstance, isTest);
-    await chrome.alarms.create(alarmName, {
+    await browser.alarms.create(alarmName, {
       when: reminderInstance.triggerTime,
     });
   };
@@ -503,9 +503,8 @@ function RemindersEngine() {
     switch (api) {
       case "chrome":
         // closes automatically after a few seconds
-        chrome.notifications.create(
-          null,
-          {
+        browser.notifications
+          .create(null, {
             type: "basic",
             iconUrl: iconUrl,
 
@@ -513,11 +512,10 @@ function RemindersEngine() {
             message: reminderInstance.messageBody,
             priority: 2,
             contextMessage: tagLine,
-          },
-          (id) => {
+          })
+          .then((id) => {
             //log('chrome notification ' + id);
-          }
-        );
+          });
         break;
 
       //case 'html':
@@ -573,9 +571,10 @@ function RemindersEngine() {
       enqueue: true,
     };
     console.log(options);
+    // TODO - how to do this in Firefox?
     chrome.tts.speak("{title}.\n\n {messageBody}".filledWith(reminderInstance), options, () => {
-      if (chrome.runtime.lastError) {
-        console.log(`Error: ${chrome.runtime.lastError}`);
+      if (browser.runtime.lastError) {
+        console.log(`Error: ${browser.runtime.lastError}`);
       }
     });
   }
@@ -595,7 +594,7 @@ function RemindersEngine() {
       })
         .then((response) => response.json())
         .then((data) => {
-          chrome.notifications.create(null, {
+          browser.notifications.create(null, {
             type: "basic",
             iconUrl: "badi19a-128.png",
             title: reminderInstance.actionDisplay,
@@ -628,7 +627,7 @@ function RemindersEngine() {
       })
         .then((response) => response.json())
         .then((data) => {
-          chrome.notifications.create(null, {
+          browser.notifications.create(null, {
             type: "basic",
             iconUrl: "badi19a-128.png",
             title: reminderInstance.actionDisplay,
@@ -683,8 +682,8 @@ function RemindersEngine() {
 
   function dumpAlarms() {
     console.log("dumping alarms");
-    chrome.alarms.getAll(async (alarms) => {
-      console.log(`found ${alarms.length} alarms...`);
+    browser.alarms.getAll().then(async (alarms) => {
+      console.log(`found ${alarms.length} pending alarms...`);
       for (let i = 0; i < alarms.length; i++) {
         const alarm = alarms[i];
         console.log("Alarm {0} {1}".filledWith(alarm.name, new Date(alarm.scheduledTime).toLocaleString()));
@@ -700,7 +699,7 @@ function RemindersEngine() {
 
   function connectToPort() {
     console.log("listening for new ports");
-    chrome.runtime.onConnect.addListener((port) => {
+    browser.runtime.onConnect.addListener((port) => {
       console.log("received on part", port.name, port.sender.id);
 
       if (port.name !== "reminderModule") {

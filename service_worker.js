@@ -33,34 +33,32 @@ importScripts("suncalc.js");
 importScripts("holyDays.js");
 // console.log("Loaded holydays");
 importScripts("shared.js");
-// console.log("Loaded shared");
+console.log("Loaded shared");
 
-// chrome.storage.local.getBytesInUse().then((bytesInUse) => {
+// browser.storage.local.getBytesInUse().then((bytesInUse) => {
 //   console.log("Space used by local storage", bytesInUse, "bytes");
 // });
-// chrome.storage.local.get().then((storage) => {
+// browser.storage.local.get().then((storage) => {
 //   console.log("Local storage", storage);
 // });
 
-// chrome.storage.sync.getBytesInUse().then((bytesInUse) => {
+// browser.storage.sync.getBytesInUse().then((bytesInUse) => {
 //   console.log("Space used by sync storage", bytesInUse, "bytes");
 // });
-// chrome.storage.sync.get().then((storage) => {
+// browser.storage.sync.get().then((storage) => {
 //   console.log("Sync storage", storage);
 // });
 
 // can't use async/await here, so have to build a pending function queue
 
-chrome.notifications.getPermissionLevel(configureNotificationsAsync);
-chrome.notifications.onPermissionLevelChanged.addListener(configureNotificationsAsync);
-
 var _notificationsEnabled = false;
 var _remindersEngineLoaded = false;
 
-async function configureNotificationsAsync(level) {
-  _notificationsEnabled = level === "granted";
+async function configureNotificationsAsync() {
+  const permissionLevel = Notification.permission;
+  _notificationsEnabled = permissionLevel === "granted";
 
-  console.log("Notifications permission level:", level);
+  console.log("Notifications permission level:", permissionLevel);
 
   if (_notificationsEnabled) {
     if (!_remindersEngineLoaded) {
@@ -75,12 +73,16 @@ async function configureNotificationsAsync(level) {
   }
 }
 
-chrome.runtime.onInstalled.addListener((info) => {
+configureNotificationsAsync();
+browser.permissions.onAdded.addListener(configureNotificationsAsync);
+browser.permissions.onRemoved.addListener(configureNotificationsAsync);
+
+browser.runtime.onInstalled.addListener((info) => {
   console.log("onInstalled", info);
   if (info.reason === "update") {
     // delay this, to let everything settle before opening the page
     setTimeout(async () => {
-      const newVersion = chrome.runtime.getManifest().version;
+      const newVersion = browser.runtime.getManifest().version;
       const oldVersion = await getFromStorageLocalAsync(localStorageKey.updateVersion);
       if (!oldVersion) {
         console.log("Version check... no old version found, likely dev or first use");
@@ -88,8 +90,8 @@ chrome.runtime.onInstalled.addListener((info) => {
         if (newVersion !== oldVersion) {
           console.log(`${oldVersion} --> ${newVersion}`);
           putInStorageLocalAsync(localStorageKey.updateVersion, newVersion);
-          chrome.tabs.create({
-            url: getMessage(`${browserHostType}_History`) + "?{0}:{1}".filledWith(chrome.runtime.getManifest().version, common.languageCode),
+          browser.tabs.create({
+            url: getMessage(`${browserHostType}_History`) + "?{0}:{1}".filledWith(newVersion, common.languageCode),
           });
 
           putInStorageLocalAsync(localStorageKey.firstPopup, true);
@@ -107,18 +109,24 @@ chrome.runtime.onInstalled.addListener((info) => {
   } else {
     console.log("onInstalled", info);
   }
-  chrome.contextMenus.create(
+  browser.menus.create(
     {
       id: "openInTab",
       title: getMessage("browserMenuOpen"),
       contexts: ["browser_action"],
     },
-    showLastError
+    () => {
+      const msg = browser.runtime.lastError;
+      if (msg) {
+        console.log("lastError", msg);
+        debugger; // stop on error
+      }
+    }
   );
 });
 
 //--> Keep for debugging
-// chrome.storage.onChanged.addListener((changes, namespace) => {
+// browser.storage.onChanged.addListener((changes, namespace) => {
 //   // watch for storage changes
 //   console.log("Storage changed in namespace:", namespace, changes);
 //   for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
@@ -126,7 +134,7 @@ chrome.runtime.onInstalled.addListener((info) => {
 //   }
 // });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("onMessage received:", request);
 
   (async () => {
@@ -192,7 +200,7 @@ const findLocationName = (typeName, results, getLastMatch) => {
   return match;
 };
 
-chrome.runtime.onMessageExternal.addListener(
+browser.runtime.onMessageExternal.addListener(
   /*
     cmd options:  getInfo, connect
   
@@ -245,7 +253,7 @@ chrome.runtime.onMessageExternal.addListener(
       case "connect":
         callback({
           value: "Wondrous Calendar!",
-          id: chrome.runtime.id,
+          id: browser.runtime.id,
         });
         break;
 

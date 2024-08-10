@@ -365,7 +365,7 @@ const PageReminders = () => {
     const alarmList = _page.find(".alarms");
     alarmList.html("");
 
-    chrome.alarms.getAll(async (alarms) => {
+    browser.alarms.getAll().then(async (alarms) => {
       alarms.sort((a, b) => (a.scheduledTime < b.scheduledTime ? -1 : 1));
 
       for (let i = 0; i < alarms.length; i++) {
@@ -574,7 +574,7 @@ const PageReminders = () => {
 
   function establishPortToBackground() {
     console.log("making port for reminderModule");
-    _reminderModulePort = chrome.runtime.connect({ name: "reminderModule" });
+    _reminderModulePort = browser.runtime.connect({ name: "reminderModule" });
     _reminderModulePort.onMessage.addListener((msg) => {
       console.log("pageReminders port received:", msg);
 

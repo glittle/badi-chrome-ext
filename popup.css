@@ -1357,7 +1357,7 @@ body[data-pageid="pageSetup"] #show {
     z-index: 1;
   }
   #eventStart {
-    -webkit-appearance: none;
+    appearance: none;
     border: none;
     padding: 0;
     margin: 0;
@@ -1382,7 +1382,7 @@ body[data-pageid="pageSetup"] #show {
     display: none;
   }
   body.Chrome * {
-    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 @media (min-width: 900px) {

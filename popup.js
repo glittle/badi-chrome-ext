@@ -11,12 +11,14 @@
 console.log("Popup.js starting");
 const _inPopupPage = true;
 
-chrome.runtime.sendMessage({ action: "Wake Up" }, (response) => {
-  showLastError();
-  console.log("Woke up service worker:", response.message);
-  // console.log(_rawMessages, _cachedMessages);
-  // future optimization - load the loaded language info here
-});
+browser.runtime
+  .sendMessage({ action: "Wake Up" })
+  .then((response) => {
+    console.log("Woke up service worker:", response.message);
+    // console.log(_rawMessages, _cachedMessages);
+    // future optimization - load the loaded language info here
+  })
+  .catch((msg) => console.log("Error waking up service worker:", msg));
 
 let _showingInfo = false;
 let _changingBDate = false;
@@ -44,7 +46,8 @@ const _pageIdList = [];
 
 const _remindersEnabled = browserHostType === browserType.Chrome;
 
-chrome.tabs.getCurrent((tab) => {
+browser.tabs.getCurrent().then((tab) => {
+  console.log("Current tab:", tab);
   if (tab) {
     _inTab = true;
     $("body").addClass("inTab");
@@ -89,7 +92,7 @@ function attachHandlersInPopup() {
   $(".selectPages").on("click", "button", changePage);
   $(document).on("keydown", keyPressed);
   //$('#btnOpen').click(function () {
-  //  chrome.tabs.create({ active: true, url: this.href });
+  //  browser.tabs.create({ active: true, url: this.href });
   //});
 
   $("#cbShowPointer").on("change", (ev) => {
@@ -97,11 +100,11 @@ function attachHandlersInPopup() {
     _calWheel.showCalendar(_di);
   });
 
-  chrome.alarms.onAlarm.addListener((alarm) => {
+  browser.alarms.onAlarm.addListener((alarm) => {
     // the service worker is also listening for this, so it can update the badge
     // we just refresh the date info and update our display
     console.log("Alarm triggered in popup:", alarm.name, new Date(alarm.scheduledTime));
-    chrome.alarms.clear(alarm.name, function (wasCleared) {
+    browser.alarms.clear(alarm.name).then((wasCleared) => {
       console.log("Cleared in popup:", wasCleared);
     });
     refreshDateInfoAndShowAsync();
@@ -212,7 +215,7 @@ function updateSharedContent(di) {
     $(".bYearInVahidPicker").val(di.bYearInVahid);
   }
 
-  const manifest = chrome.runtime.getManifest();
+  const manifest = browser.runtime.getManifest();
   $("#version").text(getMessage("version", manifest.version));
 
   //if (_initialStartupDone) {
@@ -1264,7 +1267,7 @@ function fillSetup() {
 function startFillingLanguageInput(select) {
   const langs = [];
 
-  chrome.runtime.getPackageDirectoryEntry((directoryEntry) => {
+  browser.runtime.getPackageDirectoryEntry().then((directoryEntry) => {
     directoryEntry.getDirectory("_locales", {}, (subDirectoryEntry) => {
       const directoryReader = subDirectoryEntry.createReader();
       directoryReader.readEntries(async (entries) => {
@@ -1334,7 +1337,7 @@ function langSelectChanged() {
     return;
   }
 
-  chrome.runtime.sendMessage({ action: "languageChanged" });
+  browser.runtime.sendMessage({ action: "languageChanged" });
 
   // reload to apply new language?
   // location.reload(false);
@@ -1624,10 +1627,10 @@ function BuildSpecialDaysTable(di) {
 }
 
 function showShortcutKeys() {
-  if (chrome.commands && browserHostType === browserType.Chrome) {
-    chrome.commands.getAll((cmd) => {
-      for (let i = 0; i < cmd.length; i++) {
-        const a = cmd[i];
+  if (browser.commands && browserHostType === browserType.Chrome) {
+    browser.commands.getAll().then((commands) => {
+      for (let i = 0; i < commands.length; i++) {
+        const a = commands[i];
         if (a.shortcut) {
           $("#shortcutKeys").text(a.shortcut);
         }
@@ -1694,34 +1697,33 @@ function openInTab() {
   if (_inTab) {
     return;
   }
-  const url = chrome.runtime.getURL("popup.html");
+  const url = browser.runtime.getURL("popup.html");
 
-  if (browserHostType === browserType.Chrome) {
-    chrome.tabs.query(
-      {
-        url: url,
-      },
-      (foundTabs) => {
-        if (foundTabs[0]) {
-          chrome.tabs.update(foundTabs[0].id, {
-            active: true,
-          });
-        } else {
-          chrome.tabs.create({
-            url: url,
-          });
-        }
-        window.close();
-        tracker.sendEvent("openInTab");
-      }
-    );
-  } else {
-    chrome.tabs.create({
+  // if (browserHostType === browserType.Chrome) {
+  browser.tabs
+    .query({
       url: url,
+    })
+    .then((foundTabs) => {
+      if (foundTabs[0]) {
+        browser.tabs.update(foundTabs[0].id, {
+          active: true,
+        });
+      } else {
+        browser.tabs.create({
+          url: url,
+        });
+      }
+      window.close();
+      tracker.sendEvent("openInTab");
     });
-    window.close();
-    tracker.sendEvent("openInTab");
-  }
+  // } else {
+  //   browser.tabs.create({
+  //     url: url,
+  //   });
+  //   window.close();
+  //   tracker.sendEvent("openInTab");
+  // }
 }
 
 function updateTabNames() {
@@ -1735,7 +1737,7 @@ function updateTabNames() {
 }
 
 function showBtnOpen() {
-  chrome.tabs.getCurrent((tab) => {
+  browser.tabs.getCurrent().then((tab) => {
     if (tab) {
       _inTab = true;
       $("body").addClass("inTab");

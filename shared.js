@@ -277,7 +277,7 @@ async function prepareSharedForPopup() {
 
 async function loadJsonfileAsync(filePath) {
   try {
-    const url = chrome.runtime.getURL(filePath);
+    const url = browser.runtime.getURL(filePath);
     const response = await fetch(url);
     if (!response.ok) {
       console.log(`File not found: ${filePath}`);
@@ -309,7 +309,7 @@ async function loadRawMessages(langCode, cb) {
   for (let langNum = 0; langNum < langsToLoad.length; langNum++) {
     const langToLoad = langsToLoad[langNum];
     const url = `/_locales/${langToLoad}/messages.json`;
-    console.log("shared", langNum, langToLoad, url);
+    console.log("loading lang resource", langNum, langToLoad, url);
 
     const messages = await loadJsonfileAsync(url);
 
@@ -343,7 +343,7 @@ async function loadRawMessages(langCode, cb) {
   console.log(
     "loaded",
     _numMessagesEn,
-    numMessagesOther,
+    numMessagesOther === -1 ? "n/a" : numMessagesOther,
     langsToLoad,
     Object.keys(_rawMessages).length,
     "keys - ",
@@ -623,10 +623,10 @@ function showIcon() {
 
   tipLines.push(getMessage("formatIconClick"));
 
-  chrome.action.setTitle({ title: tipLines.join("\n") });
+  browser.action.setTitle({ title: tipLines.join("\n") });
 
   try {
-    chrome.action.setIcon({
+    browser.action.setIcon({
       imageData: drawIconImage(dateInfo.bMonthNamePri, dateInfo.bDay, "center"),
     });
     _iconPrepared = true;
@@ -764,14 +764,14 @@ async function startGetLocationNameAsync() {
     console.log("Getting location name for", lat, long);
 
     // Send a message to the background script to get the city name
-    chrome.runtime.sendMessage(
-      {
+    browser.runtime
+      .sendMessage({
         action: "getCityName",
         lat: lat,
         long: long,
         unknownLocation: unknownLocation,
-      },
-      (response) => {
+      })
+      .then((response) => {
         const location = response.city || unknownLocation;
         console.log("Location:", location);
 
@@ -787,8 +787,7 @@ async function startGetLocationNameAsync() {
         if (typeof _inPopupPage !== "undefined") {
           showLocation();
         }
-      }
-    );
+      });
   } catch (error) {
     console.log(error);
   }
@@ -969,10 +968,10 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
 
   refreshAlarms[whenTime] = true;
 
-  chrome.alarms.create(alarmName, { when: whenTime });
+  browser.alarms.create(alarmName, { when: whenTime });
 
   // debug - show alarm that was set
-  chrome.alarms.getAll((alarms) => {
+  browser.alarms.getAll().then((alarms) => {
     console.log("Active Alarms", alarms.length);
     for (let i = 0; i < alarms.length; i++) {
       const alarm = alarms[i];
@@ -1272,7 +1271,7 @@ function localizeHtml(host, fnOnEach) {
 
 function getVersionInfo() {
   const info = "{0}:{1} ({2})".filledWith(
-    chrome.runtime.getManifest().version,
+    browser.runtime.getManifest().version,
     common.languageCode,
     navigator.languages ? navigator.languages.slice(0, 2).join(",") : ""
   );
@@ -1331,7 +1330,7 @@ const prepareAnalytics = () => {
     an: "BadiWeb",
     ul: navigator.language,
     aid: browserHostType,
-    av: chrome.runtime.getManifest().version,
+    av: browser.runtime.getManifest().version,
   };
 
   const send = (info) => {
@@ -1374,7 +1373,7 @@ function createGuid() {
   });
 }
 
-// chrome.runtime.onMessage.addListener(async (payload, sender, callback1) => {
+// browser.runtime.onMessage.addListener(async (payload, sender, callback1) => {
 //   const callback = callback1 || (() => {}); // make it optional
 
 //   switch (payload.cmd) {
@@ -1455,14 +1454,14 @@ async function putInStorageRawAsync(storageType, key, value) {
 
   switch (storageType) {
     case "sync":
-      await chrome.storage.sync.set({ [key]: `${value2}` });
+      await browser.storage.sync
+        .set({ [key]: `${value2}` })
+        .catch((msg) => console.log(`Error putting into ${storageType} storage "${key}": ${msg}`));
       break;
     default:
-      await chrome.storage.local.set({ [key]: `${value2}` });
-  }
-
-  if (chrome.runtime.lastError) {
-    console.log(`Error putting into ${storageType} storage "${key}": ${chrome.runtime.lastError}`);
+      await browser.storage.local
+        .set({ [key]: `${value2}` })
+        .catch((msg) => console.log(`Error putting into ${storageType} storage "${key}": ${msg}`));
   }
 }
 async function getFromStorageRawAsync(storageType, key, defaultValue) {
@@ -1471,13 +1470,9 @@ async function getFromStorageRawAsync(storageType, key, defaultValue) {
     // debugger;
     return defaultValue;
   }
-  // const keyWithDefault = { [key]: defaultvalue };
-  // const storedObj = storageType === "sync" ? await chrome.storage.sync.get(keyWithDefault) : await chrome.storage.local.get(keyWithDefault);
-  const storedDict = await (storageType === "sync" ? chrome.storage.sync.get(key) : chrome.storage.local.get(key));
-  // console.log("get from storage: ", key, storedDict);
-  if (chrome.runtime.lastError) {
-    console.log(`Error getting from ${storageType} storage "${key}": ${chrome.runtime.lastError}`);
-  }
+
+  const storageArea = storageType === "sync" ? browser.storage.sync : browser.storage.local;
+  const storedDict = await storageArea.get(key).catch((msg) => console.log(`Error getting from ${storageType} storage "${key}": ${msg}`));
 
   const value = storedDict[key] ?? defaultValue;
 
@@ -1494,28 +1489,21 @@ async function getFromStorageRawAsync(storageType, key, defaultValue) {
 async function removeFromStorageRawAsync(storageType, key) {
   switch (storageType) {
     case "sync":
-      await chrome.storage.sync.remove(key);
+      await browser.storage.sync.remove(key);
       break;
     default:
-      await chrome.storage.local.remove(key);
+      await browser.storage.local.remove(key);
   }
 }
 
 async function removeFromStorageByPrefixRawAsync(storageType, prefix) {
-  const allDict = await (storageType === "sync" ? chrome.storage.sync.get() : chrome.storage.local.get());
+  const storageArea = storageType === "sync" ? browser.storage.sync : browser.storage.local;
+  const allDict = await storageArea.get().catch((msg) => console.log(`Error getting all from ${storageType} storage: ${msg}`));
   Object.keys(allDict).forEach(async (key) => {
     if (key.startsWith(prefix)) {
       await removeFromStorageRawAsync(storageType, key);
     }
   });
-}
-
-function showLastError() {
-  const msg = chrome.runtime.lastError;
-  if (msg) {
-    console.log("lastError", msg);
-    debugger; // stop on error
-  }
 }
 
 async function AddFunctionToPendingInstallFunctionsAsync(func) {
