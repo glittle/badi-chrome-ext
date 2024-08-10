@@ -27,7 +27,7 @@
     "storage",
     "notifications",
     "geolocation",
-    "menus",
+    "contextMenus",
     "clipboardWrite",
     "tts"
   ],

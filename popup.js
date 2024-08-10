@@ -41,7 +41,6 @@ let _initialStartupDone = false;
 let _loadingNum = 0;
 // let _lastLoadingTime = null;
 // let _lastLoadingComment = null;
-let _inTab = false;
 const _pageIdList = [];
 
 const _remindersEnabled = browserHostType === browserType.Chrome;
@@ -1691,39 +1690,6 @@ function prepareDefaultsInPopup() {
 
 function UpdateLanguageBtn() {
   $(`#rbDefLang_${common.useArNames ? "Ar" : "Local"}`).prop("checked", true);
-}
-
-function openInTab() {
-  if (_inTab) {
-    return;
-  }
-  const url = browser.runtime.getURL("popup.html");
-
-  // if (browserHostType === browserType.Chrome) {
-  browser.tabs
-    .query({
-      url: url,
-    })
-    .then((foundTabs) => {
-      if (foundTabs[0]) {
-        browser.tabs.update(foundTabs[0].id, {
-          active: true,
-        });
-      } else {
-        browser.tabs.create({
-          url: url,
-        });
-      }
-      window.close();
-      tracker.sendEvent("openInTab");
-    });
-  // } else {
-  //   browser.tabs.create({
-  //     url: url,
-  //   });
-  //   window.close();
-  //   tracker.sendEvent("openInTab");
-  // }
 }
 
 function updateTabNames() {

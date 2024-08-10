@@ -109,20 +109,32 @@ browser.runtime.onInstalled.addListener((info) => {
   } else {
     console.log("onInstalled", info);
   }
-  browser.menus.create(
-    {
-      id: "openInTab",
-      title: getMessage("browserMenuOpen"),
-      contexts: ["browser_action"],
-    },
-    () => {
-      const msg = browser.runtime.lastError;
-      if (msg) {
-        console.log("lastError", msg);
-        debugger; // stop on error
+  setTimeout(async () => {
+    // let the language resources load first
+    showIcon();
+    browser.contextMenus.create(
+      {
+        id: "openInTab",
+        type: "normal",
+        title: getMessage("browserMenuOpen"),
+        contexts: ["all"],
+      },
+      () => {
+        const msg = browser.runtime.lastError;
+        if (msg) {
+          console.error("Error in contextMenus.create", msg);
+          debugger; // stop on error in dev mode
+        } else {
+          console.log("Context menu created");
+        }
       }
-    }
-  );
+    );
+    browser.contextMenus.onClicked.addListener((info) => {
+      if (info.menuItemId === "openInTab") {
+        openInTab();
+      }
+    });
+  }, 1000);
 });
 
 //--> Keep for debugging

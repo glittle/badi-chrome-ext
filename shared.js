@@ -56,6 +56,8 @@ var use24HourClock;
 var _iconPrepared = false;
 var _remindersEngine = {};
 
+var _inTab = false;
+
 // in alphabetical order
 var localStorageKey = {
   firstPopup: "firstPopup",
@@ -152,6 +154,10 @@ async function prepareForBackgroundAndPopupAsync() {
   common.focusPage = await getFromStorageLocalAsync(localStorageKey.focusPage);
   common.focusTime = await getFromStorageLocalAsync(localStorageKey.focusTime, "B0");
 
+  common.formatTopDay = await getFromStorageSyncAsync(syncStorageKey.formatTopDay, getMessage("bTopDayDisplay"));
+  common.formatToolTip1 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
+  common.formatToolTip2 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip2, "{nearestSunset}");
+
   bMonthNameAr = getMessage("bMonthNameAr").split(splitSeparator);
   bMonthMeaning = getMessage("bMonthMeaning").split(splitSeparator);
 
@@ -188,10 +194,6 @@ async function prepareForBackgroundAndPopupAsync() {
 }
 
 async function prepareSharedForPopup() {
-  common.formatTopDay = await getFromStorageSyncAsync(syncStorageKey.formatTopDay, getMessage("bTopDayDisplay"));
-  common.formatToolTip1 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip1, getMessage("formatIconToolTip"));
-  common.formatToolTip2 = await getFromStorageSyncAsync(syncStorageKey.formatToolTip2, "{nearestSunset}");
-
   common.exporter_exporterName = await getFromStorageSyncAsync(syncStorageKey.exporter_exporterName, getMessage("title"));
   common.exporter_exporterDateRange = await getFromStorageSyncAsync(syncStorageKey.exporter_exporterDateRange);
   common.exporter_alertMinutes = await getFromStorageSyncAsync(syncStorageKey.exporter_alertMinutes, "B0");
@@ -639,10 +641,8 @@ function showIcon() {
 }
 
 function drawIconImage(line1, line2, line2Alignment) {
-  const canvas = document.createElement("canvas");
   const size = 19;
-  canvas.width = size;
-  canvas.height = size;
+  const canvas = new OffscreenCanvas(size, size);
 
   const context = canvas.getContext("2d");
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -651,11 +651,11 @@ function drawIconImage(line1, line2, line2Alignment) {
 
   context.fillStyle = common.iconTextColor;
 
-  const line1div = $("<div>{^0}</div>".filledWith(line1)).text();
-  const line2div = $("<div>{^0}</div>".filledWith(line2)).text();
+  // const line1div = "<div>{^0}</div>".filledWith(line1);
+  // const line2div = "<div>{^0}</div>".filledWith(line2);
 
   context.font = `${size / 2 - 1}px ${fontName}`;
-  context.fillText(line1div, 0, 7);
+  context.fillText(line1, 0, 7);
 
   context.font = `${size / 2 + 1}px ${fontName}`;
   context.textAlign = line2Alignment;
@@ -668,7 +668,7 @@ function drawIconImage(line1, line2, line2Alignment) {
     //      x = size;
     //      break;
   }
-  context.fillText(line2div, x, size);
+  context.fillText(line2, x, size);
 
   return context.getImageData(0, 0, size, size);
 }
@@ -1293,6 +1293,38 @@ function shallowCloneOf(obj) {
     }
   }
   return clone;
+}
+
+function openInTab() {
+  if (_inTab) {
+    return;
+  }
+  const url = browser.runtime.getURL("popup.html");
+
+  // if (browserHostType === browserType.Chrome) {
+  browser.tabs
+    .query({
+      url: url,
+    })
+    .then((foundTabs) => {
+      if (foundTabs[0]) {
+        browser.tabs.update(foundTabs[0].id, {
+          active: true,
+        });
+      } else {
+        browser.tabs.create({
+          url: url,
+        });
+      }
+      tracker.sendEvent("openInTab");
+    });
+  // } else {
+  //   browser.tabs.create({
+  //     url: url,
+  //   });
+  //   window.close();
+  //   tracker.sendEvent("openInTab");
+  // }
 }
 
 // function console.log() {
