@@ -629,7 +629,7 @@
     "description": "name of 'Event' for IFTTT Maker channel"
   },
   "iftttInfo": {
-    "message": "Voot details of om in te schrijven, zie <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. De gebeurtenis bevat de volgende velden: title, body, tag",
+    "message": "Voot details of om in te schrijven, zie <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. De gebeurtenis bevat de volgende velden: title, body, tag",
     "description": "info and link to ifttt page"
   },
   "iftttKey": {

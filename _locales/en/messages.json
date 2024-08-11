@@ -404,7 +404,7 @@
         "message": "Title for Exported Calendar (may not be used)"
     },
     "exportNumToInclude": {
-        "message": "Number of calendar entries that will be created (approximately):"
+        "message": "Number of calendar entries included (approximately):"
     },
     "exportOption_AllDay": {
         "message": "All-day event from midnight <em>(1 day long)</em>"
@@ -644,7 +644,7 @@
         "description": "name of 'Event' for IFTTT Maker channel"
     },
     "iftttInfo": {
-        "message": "For details or to sign up, see <a href='https://ifttt.com/maker' target=ifttt>IFTTT Maker Channel</a>. The event will contain these fields: title, body, tag",
+        "message": "For details or to sign up, see <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. The event will contain these fields: title, body, tag",
         "description": "info and link to ifttt page"
     },
     "iftttKey": {
@@ -1237,7 +1237,8 @@
         "description": "on setup page"
     },
     "setupLangPct": {
-        "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?"
+        "message": "{0}% translated. Can <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>you help</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
     },
     "setupLangPct100": {
         "message": "100% translated!"
@@ -1339,7 +1340,7 @@
         "message": "Dates until 221 B.E. (2064 A.D.) are known. After that, updates may be needed as astronomical observations improve. Please don't use this to finalize your plans more than 50 years in the future! See the website for more details."
     },
     "tipsText": {
-        "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!\nPress Ctrl+Shift+A to change language."
+        "message": "Press PgUp/PgDn keys to select panels.\nPress Right/Left arrow keys to change days.\nPress / to switch before/after sunset.\nPress Home to return to today!"
     },
     "title": {
         "message": "Badíʿ Calendar",
@@ -1411,7 +1412,7 @@
         "description": "info and link to Zapier"
     },
     "zapierKey": {
-        "message": "Zapier Webhook",
+        "message": "Zapier Webhook URL",
         "description": "url for Zapier"
     }
 }

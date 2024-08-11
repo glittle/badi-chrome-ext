@@ -1,4 +1,10 @@
-﻿#pageCalWheel {
+.inTab #pageCalWheel {
+  height: 685px;
+}
+.inTab #pageCalWheel #wheelHolder {
+  transform: scale(1);
+}
+#pageCalWheel {
   position: relative;
   overflow: hidden;
 }
@@ -18,30 +24,31 @@
   transform: rotate(0deg);
 }
 #pageCalWheel #wheel.rotating {
-  -webkit-animation-name: spinner;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-duration: .25s;
-  -webkit-animation-fill-mode: forwards;
+  animation-name: spinner;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
 }
 #pageCalWheel #wheelYearHolder {
   z-index: 22;
+  margin-top: 1.5em;
 }
 #pageCalWheel #wheelYear {
-  font-size: 24pt;
+  font-size: 2.5em;
   font-weight: 500;
-  fill: #999;
+  fill: #666;
 }
 #pageCalWheel #pointerToday {
   position: absolute;
   left: 300px;
   top: 0;
-  font-size: 15pt;
   z-index: 21;
 }
 #pageCalWheel #pointerToday text {
-  stroke: #999;
-  fill: #999;
+  fill: #333;
+  font-weight: bold;
+  font-size: 1.75em;
 }
 #pageCalWheel #pointerToday line {
   stroke: #333;
@@ -58,43 +65,31 @@
   text-anchor: middle;
   font-size: 20pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel svg .firstDayG {
   text-anchor: middle;
   font-size: 15pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel svg .firstDayWk {
   text-anchor: middle;
   font-size: 11pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel svg .firstDayYr {
   text-anchor: middle;
   font-size: 13pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel svg .monthNameAr {
   text-anchor: start;
   font-size: 24pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel svg .monthName {
   text-anchor: start;
   font-size: 16pt;
   fill: #fff;
-  stroke: #fff;
-  stroke-width: .5px;
 }
 #pageCalWheel #slice1 {
   fill: #ED312F;
@@ -175,4 +170,3 @@ body.rtl #pageCalWheel #pointerToday text {
     display: none;
   }
 }
-/*# sourceMappingURL=data:application/json;base64,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 */

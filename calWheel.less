@@ -1,3 +1,14 @@
+@wheelSize: 685px;
+
+.inTab {
+  #pageCalWheel {
+    height: @wheelSize;
+
+    #wheelHolder {
+      transform: scale(1);
+    }
+  }
+}
 
 #pageCalWheel {
   position: relative;
@@ -23,39 +34,40 @@
     transform: rotate(0deg);
 
     &.rotating {
-      -webkit-animation-name: spinner;
-      -webkit-animation-timing-function: ease;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-duration: .25s;
-      -webkit-animation-fill-mode: forwards;
+      animation-name: spinner;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-duration: .25s;
+      animation-fill-mode: forwards;
     }
   }
 
   #wheelYearHolder {
     z-index: 22;
+    margin-top: 1.5em; // ensure the year is in the middle of the circle
   }
 
   #wheelYear {
-    font-size: 24pt;
+    font-size: 2.5em;
     font-weight: 500;
-    fill: #999;
+    fill: #666;
   }
 
   #pointerToday {
     position: absolute;
     left: 300px;
     top: 0;
-    font-size: 15pt;
     z-index: 21;
-  }
 
-  #pointerToday text {
-    stroke: #999;
-    fill: #999;
-  }
+    text {
+      fill: #333;
+      font-weight: bold;
+      font-size: 1.75em;
+    }
 
-  #pointerToday line {
-    stroke: #333;
+    line {
+      stroke: #333;
+    }
   }
 
   .u {
@@ -72,48 +84,36 @@
     text-anchor: middle;
     font-size: 20pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   svg .firstDayG {
     text-anchor: middle;
     font-size: 15pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   svg .firstDayWk {
     text-anchor: middle;
     font-size: 11pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   svg .firstDayYr {
     text-anchor: middle;
     font-size: 13pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   svg .monthNameAr {
     text-anchor: start;
     font-size: 24pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   svg .monthName {
     text-anchor: start;
     font-size: 16pt;
     fill: #fff;
-    stroke: #fff;
-    stroke-width: .5px;
   }
 
   #slice1 {
@@ -203,7 +203,9 @@
 body.rtl {
   #pageCalWheel {
     svg {
-      .monthNameAr, .monthName {
+
+      .monthNameAr,
+      .monthName {
         text-anchor: end;
       }
     }
