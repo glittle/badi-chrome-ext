@@ -30,9 +30,6 @@
     "contextMenus",
     "clipboardWrite"
   ],
-  "host_permissions": [
-    "https://www.google-analytics.com/"
-  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   },

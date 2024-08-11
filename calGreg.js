@@ -20,7 +20,7 @@ const CalGreg = (di, host) => {
       const target = new Date(_yearShown, month, day);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      showInfo();
     });
     _calendarDiv.on("click", ".eve", async (ev) => {
       const cell = $(ev.target).closest(".gd");
@@ -32,7 +32,7 @@ const CalGreg = (di, host) => {
       target.setDate(target.getDate() + 1);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      showInfo();
     });
 
     $(document).on("click", "body[data-pageid=pageCalGreg] .btnChangeMonth", changeMonth);
@@ -48,7 +48,7 @@ const CalGreg = (di, host) => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    showInfo(_di);
+    showInfo();
   }
 
   function showCalendar(newDi) {

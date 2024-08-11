@@ -17,7 +17,7 @@ body.inTab #mainBody {
 body.inTab #pageEvents,
 body.inTab #pageCustom .customPartsListDiv,
 body.inTab #pageCustom .customBuilderDiv {
-  max-height: 90vh;
+  max-height: 85vh;
 }
 body.inTab .explains {
   display: block;

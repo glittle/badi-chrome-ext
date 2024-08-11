@@ -104,11 +104,7 @@
 
     if (saveToBackground) {
       try {
-        tracker.sendEvent(
-          "savedReminder",
-          reminderDefintion.trigger,
-          `${reminderDefintion.delta * reminderDefintion.num} ${reminderDefintion.units}`
-        );
+        tracker.sendEvent("savedReminder", { trigger: reminderDefintion.trigger, delta: reminderDefintion.delta, units: reminderDefintion.units });
       } catch (e) {
         console.log("Error", e);
       }

@@ -39,7 +39,7 @@ const Cal1 = (originalDi, originalHost) => {
 
     setFocusTime(gDate);
     refreshDateInfo();
-    showInfo(_di);
+    showInfo();
   }
 
   function getNum(el, prefix) {

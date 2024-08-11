@@ -21,7 +21,7 @@ const Cal2 = () => {
       const target = new Date(gDate);
       setFocusTime(target);
       refreshDateInfo();
-      showInfo(_di);
+      showInfo();
     });
     _page.on("change", "#cbShowTimes2", () => {
       _calendarDiv.toggleClass("showTimes", !!_page.find("#cbShowTimes2").prop("checked"));
@@ -84,7 +84,7 @@ const Cal2 = () => {
     setFocusTime(gDate);
     refreshDateInfo();
 
-    showInfo(_di);
+    showInfo();
     //    } catch (error) {
     //      console.log('Error: ' + error);
     //    }
@@ -481,15 +481,7 @@ const Cal2 = () => {
 
     const start = dayjs(nowDi.frag1SunTimes.sunset);
     const end = dayjs(nowDi.frag2SunTimes.sunset);
-    const now = dayjs(currentTime); // moment seems to cache the time when the page loads
-
-    //    console.log('------');
-    //    console.log('start ' + start.format());
-    //    console.log('end ' + end.format());
-    //
-    //    console.log('now ' + now.format());
-    //    console.log('end->start ' + start.diff(now));
-    //    console.log('now->start ' + now.diff(start));
+    const now = dayjs(currentTime);
 
     let pct = (now.diff(start) / end.diff(start)) * 100;
 

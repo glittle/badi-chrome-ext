@@ -22,7 +22,7 @@ var PageCustom = function () {
     parts.sort(function (a, b) {
       return a.name < b.name ? -1 : 1;
     });
-    console.log(parts);
+
     var template =
       "<div><span class=customPart>{name}</span>" +
       "<button type=button class=button>Add</button>" +
@@ -122,7 +122,7 @@ var PageCustom = function () {
     var text = div.find(".customSample").html();
     // $("#sampleCopy").val(text).focus().select();
     // document.execCommand("copy");
-    console.log("copying", text);
+    // console.log("copying", text);
     navigator.clipboard.writeText(text).catch((error) => {
       console.warn("Copy failed", error);
     });
@@ -168,18 +168,18 @@ var PageCustom = function () {
   function addFromFirstPage(letter, format) {
     var button = '<button type=button class="button btnLoadCustom" data-format="'.concat(format, '">').concat(letter, "</button>");
     $(".customLettersFromFirstPage").append(button);
-    if (!_samplesAddedToFirstPage) {
-      _itemsForDefaultSelects.push({
-        letter: letter,
-        format: format,
-      });
-    }
+    // if (!_samplesAddedToFirstPage) {
+    _itemsForDefaultSelects.push({
+      letter: letter,
+      format: format,
+    });
+    // }
   }
   function clearFromFirstPage() {
     $(".customLettersFromFirstPage").html("");
   }
   function updateFirstPageSamples(forceRefresh) {
-    if (forceRefresh === void 0) {
+    if (!forceRefresh) {
       forceRefresh = null;
     }
     if (!_samplesAddedToFirstPage || forceRefresh) {
@@ -194,8 +194,8 @@ var PageCustom = function () {
     var selected = [];
     var nextItemNumber = 1 + $("#sampleList1 > div").length;
     if (nextItemNumber === 1) {
-      _samplesAddedToFirstPage = true;
       addSamples(_di);
+      _samplesAddedToFirstPage = true;
       return;
     }
     $(".customFormats .customFormatDiv").each(function (i, el) {
@@ -257,16 +257,13 @@ var PageCustom = function () {
   }
 
   function recallSettings(formats) {
-    if (formats === void 0) {
-      formats = null;
-    }
     var formats2 = [];
     if (typeof formats === "string") {
       formats2 = JSON.parse(formats);
     } else {
       formats2 = formats || common.customFormats;
     }
-    if (formats2 === null || formats2 === void 0 ? void 0 : formats2.length) {
+    if (formats2?.length) {
       formats2.forEach((el) => {
         el.checked = el.s ? "checked" : "";
         //log(el);
@@ -383,7 +380,6 @@ var PageCustom = function () {
     preparePartsList();
     attachHandlers();
     $(".customSelect").html(getMessage("customSelectForFrontPage").filledWith(getMessage("pick_pageDay")));
-    fillSelectForDefaults();
   }
 
   startup();

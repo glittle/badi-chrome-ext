@@ -92,9 +92,9 @@ function attachHandlersInPopup() {
   browser.alarms.onAlarm.addListener((alarm) => {
     // the service worker is also listening for this, so it can update the badge
     // we just refresh the date info and update our display
-    console.log("Alarm triggered in popup:", alarm.name, new Date(alarm.scheduledTime));
+    // console.log("Alarm triggered in popup:", alarm.name, new Date(alarm.scheduledTime));
     browser.alarms.clear(alarm.name).then((wasCleared) => {
-      console.log("Cleared in popup:", wasCleared);
+      // console.log("Cleared in popup:", wasCleared);
     });
     refreshDateInfoAndShowAsync();
   });
@@ -139,7 +139,7 @@ let sampleNum = 0;
 let showInfoDelay = null;
 
 function showInfo(di) {
-  // debugger;
+  di = di || _di;
 
   _showingInfo = true;
   clearTimeout(showInfoDelay);
@@ -819,7 +819,7 @@ function changeToBDate(ev) {
     refreshDateInfo();
 
     //    _changingBDate = true;
-    showInfo(_di);
+    showInfo();
     _changingBDate = false;
   } catch (error) {
     console.log(error);
@@ -1046,7 +1046,6 @@ function addSample(info, format, group) {
     Object.assign(sample, info);
   }
   sample.currentNote = sample.currentTime ? " *" : "";
-
   if (_pageCustom) {
     _pageCustom.addFromFirstPage(letter, format);
   }
@@ -1107,7 +1106,7 @@ function toggleEveOrDay(toEve) {
   }
 
   refreshDateInfo();
-  showInfo(_di);
+  showInfo();
 }
 
 function moveDays(ev) {
@@ -1139,7 +1138,7 @@ function moveDays(ev) {
   target.setTime(target.getTime() + days * 864e5);
   setFocusTime(target);
   refreshDateInfo();
-  showInfo(_di);
+  showInfo();
 }
 
 function jumpToDate(ev) {
@@ -1148,7 +1147,7 @@ function jumpToDate(ev) {
     setFocusTime(date);
 
     refreshDateInfo();
-    showInfo(_di);
+    showInfo();
   }
 }
 
@@ -1162,7 +1161,7 @@ function changeYear(ev, delta, targetYear) {
   tracker.sendEvent("changeYear", delta2);
 
   refreshDateInfo();
-  showInfo(_di);
+  showInfo();
 }
 
 function changeDay(ev, delta) {
@@ -1199,7 +1198,7 @@ function changeDay(ev, delta) {
     _focusTime.setHours(12, 0, 0, 0);
   }
 
-  showInfo(_di);
+  showInfo();
 
   if (delta2 === 0) {
     showWhenResetToNow();

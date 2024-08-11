@@ -1,4 +1,4 @@
-*.zip
+*.zip*
 *.xpi
 *.sln
 *.user
@@ -14,7 +14,10 @@
 .settings
 .vs
 .vscode
+.prettierrc
 MakeZip*
 Readme.md
 tsconfig*
 compilerconfig*
+OLD - *
+package*

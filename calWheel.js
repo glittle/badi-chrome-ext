@@ -140,7 +140,7 @@ const CalWheel = () => {
     const gDate = _holyDaysEngine.getGDate(+year2, 1, 1, true);
     setFocusTime(gDate);
     refreshDateInfo();
-    showInfo(_di);
+    showInfo();
   }
 
   function rotateYear(year, speed) {

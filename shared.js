@@ -248,7 +248,7 @@ async function prepareSharedForPopup() {
   _pageCustom = PageCustom();
 
   updateLoadProgress("showInfo");
-  showInfo(_di);
+  showInfo();
 
   updateLoadProgress("showPage");
   await showPage();
@@ -755,10 +755,10 @@ async function startGetLocationNameAsync() {
     const long = common.locationLong;
     if (!lat || !long) {
       common.locationName = unknownLocation;
-      console.log("No location, so not getting location name");
+      // console.log("No location, so not getting location name");
       return;
     }
-    console.log("Getting location name for", lat, long);
+    // console.log("Getting location name for", lat, long);
 
     // Send a message to the background script to get the city name
     browser.runtime
@@ -770,7 +770,7 @@ async function startGetLocationNameAsync() {
       })
       .then((response) => {
         const location = response.city || unknownLocation;
-        console.log("Location:", location);
+        // console.log("Location:", location);
 
         putInStorageLocalAsync(localStorageKey.locationName, location);
         common.locationName = location;
@@ -848,7 +848,7 @@ async function noLocationAsync(err) {
 
   _knownDateInfos = {};
 
-  console.error(err);
+  console.warn(err);
 
   putInStorageLocalAsync(localStorageKey.locationKnown, false);
   common.locationKnown = false;
@@ -929,7 +929,7 @@ async function refreshDateInfoAndShowAsync(resetToNow) {
   showIcon();
   if (typeof showInfo !== "undefined") {
     // are we inside the open popup?
-    showInfo(_di);
+    showInfo();
     showWhenResetToNow();
   }
 
@@ -1413,7 +1413,7 @@ const prepareAnalyticsTracker = () => {
           json.validationMessages?.forEach((msg) => console.warn("Error:", msg.validationCode, msg.description));
           console.log("sent", url, body);
         } else if (useValidation) {
-          console.log("no google validation errors");
+          // console.log("no google validation errors");
         }
       })
       .catch((error) => {
@@ -1422,7 +1422,7 @@ const prepareAnalyticsTracker = () => {
   };
 
   const sendEvent = (eventName, params, useValidation) => {
-    send({ name: eventName, params: typeof params === "object" ? params : { value: params } }, useValidation);
+    send({ name: eventName, params: typeof params === "object" ? params : { value: params } }, useValidation === true);
   };
   const sendPageId = (id) => {
     send({ name: "pageView", params: { page_id: id } });

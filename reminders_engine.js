@@ -531,7 +531,13 @@ function RemindersEngine() {
     // }
 
     try {
-      tracker.sendEvent("showReminder", reminderInstance.trigger, `${reminderInstance.delta * reminderInstance.num} ${reminderInstance.units}`);
+      tracker.sendEvent("showReminder", {
+        trigger: reminderInstance.trigger,
+        action: reminderInstance.action,
+        calcType: reminderInstance.calcType,
+        units: reminderInstance.units,
+        num: reminderInstance.num,
+      });
     } catch (e) {
       console.log(e);
     }
