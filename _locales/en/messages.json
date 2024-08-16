@@ -115,7 +115,7 @@
         "description": "Save the changes and close the edit area"
     },
     "btnReminderSaveNew": {
-        "message": "Save as New Reminder",
+        "message": "Duplicate",
         "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
     },
     "btnReminderTest": {

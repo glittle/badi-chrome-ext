@@ -1005,18 +1005,7 @@ String.prototype.filledWith = function (...args) {
         value = `{${token}}`;
       } else if (values === null) {
         value = "";
-      }
-      //else if (testForFunc.test(token)) {
-      //  try {
-      //    console.log('eval... ' + token);
-      //    value = eval(token.substring(1));
-      //  }
-      //  catch (e) {
-      //    // if the token cannot be executed, then pass it through intact
-      //    value = '{' + token + '}';
-      //  }
-      //}
-      else if (testForElementAttribute.test(token)) {
+      } else if (testForElementAttribute.test(token)) {
         value = quoteattr(values[token.substring(1)]);
       } else if (testDoNotEscpaeHtmlButToken.test(token)) {
         value = values[token.substring(1)].replace(/{/g, "&#123;");
