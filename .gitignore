@@ -3,3 +3,6 @@ extension.*.zip
 *.suo
 *.zip
 *.user
+.vscode
+*.code-workspace
+.vscode/settings.json

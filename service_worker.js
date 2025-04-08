@@ -117,7 +117,7 @@ browser.runtime.onInstalled.addListener((info) => {
         id: "openInTab",
         type: "normal",
         title: getMessage("browserMenuOpen"),
-        contexts: ["all"],
+        contexts: ["action"], // Changed from "all" to "action" to show on extension icon
       },
       () => {
         const msg = browser.runtime.lastError;

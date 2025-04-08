@@ -56,6 +56,10 @@ var _remindersEngine = {};
 
 var _inTab = false;
 
+function openInTab() {
+  browser.tabs.create({ url: "popup.html" });
+}
+
 // in alphabetical order
 var localStorageKey = {
   firstPopup: "firstPopup",
