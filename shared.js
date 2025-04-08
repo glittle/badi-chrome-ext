@@ -963,6 +963,12 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
     return;
   }
 
+  // handle invalid times
+  if (isNaN(whenTime) || whenTime === 0 || whenTime === Infinity) {
+    console.warn("ignored attempt to set {0} alarm with invalid time".filledWith(alarmName));
+    return;
+  }
+
   refreshAlarms[whenTime] = true;
 
   browser.alarms.create(alarmName, { when: whenTime });
