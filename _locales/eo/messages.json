@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Piktogramkoloro",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Aŭtomata (sekvi sisteman temon)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Manlibra",
+    "description": "Label for manual icon color option"
+  },
   "bDatePickerTitle": {
     "message": "Iri al <u>B</u>adí'-dato",
     "description": "added <u></u> - should have one letter between <u> and </u>"

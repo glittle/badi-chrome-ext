@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Цвет значка",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Автоматически (следовать теме системы)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Вручную",
+    "description": "Label for manual icon color option"
+  },
   "am": {
     "message": "a.m.",
     "description": "displayed in 'timeFormat12' if not using 24 hours clock"

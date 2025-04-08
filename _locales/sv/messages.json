@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Ikonfärg",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Automatisk (följ systemtema)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Manuell",
+    "description": "Label for manual icon color option"
+  },
   "rbDefLang_Local": {
     "message": "Swedish",
     "description": "put your language here, in your script"

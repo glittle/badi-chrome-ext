@@ -1,4 +1,16 @@
 {
+    "iconColor": {
+        "message": "Ikonfarve",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automatisk (følg systemtema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manuel",
+        "description": "Label for manual icon color option"
+    },
     "title": {
         "message": "Badíʿ Calendar",
         "description": "The title of the extension. Shown in a number of locations."

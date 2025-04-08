@@ -1,4 +1,16 @@
 {
+    "iconColor": {
+        "message": "Cor do ícone",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automático (seguir tema do sistema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
     "title": {
         "message": "Calendário Badíʿ",
         "description": "The title of the extension. Shown in a number of locations."

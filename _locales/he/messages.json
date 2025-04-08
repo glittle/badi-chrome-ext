@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "צבע סמל",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "אוטומטי (עקוב אחר ערכת הנושא של המערכת)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "ידני",
+    "description": "Label for manual icon color option"
+  },
   "bMonthMeaning": {
     "message": "ימי הַאאְ,זוהר,תהילה,יופי,גדולה,אור,רחמים,מילים,שלמות,שמות,עוצמה,רצון,ידע,כוח,נאום,שאלות,כבוד,ריבונות,שלטון,רוממות",
     "description": "Names of days/months, with first one being Ayyam-i-ha"

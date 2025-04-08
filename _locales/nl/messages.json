@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Pictogramkleur",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Automatisch (systeemthema volgen)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Handmatig",
+    "description": "Label for manual icon color option"
+  },
   "1day": {
     "message": "over {0} dag",
     "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "

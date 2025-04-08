@@ -3,6 +3,18 @@
         "message": "in {0} day",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
     },
+    "iconColor": {
+        "message": "Icon Color",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Auto (follow system theme)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
     "actionSpeakDesc": {
         "message": "The reminder will be read aloud using this voice: ",
         "description": "in edit area when asking for a relative time"

@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Symbol-Farbe",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Automatisch (Systemdesign folgen)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Manuell",
+    "description": "Label for manual icon color option"
+  },
   "actionSpeakDesc": {
     "message": "Die Erinnerung wird in dieser Stimme vorgelesen:",
     "description": "in edit area when asking for a relative time"

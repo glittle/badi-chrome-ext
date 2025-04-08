@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "आइकन रंग",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "स्वचालित (सिस्टम थीम का अनुसरण करें)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "मैनुअल",
+    "description": "Label for manual icon color option"
+  },
   "elements": {
     "message": "आग, वायु, जल, पृथ्वी",
     "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "

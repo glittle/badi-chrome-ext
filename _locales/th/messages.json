@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "สีไอคอน",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "อัตโนมัติ (ตามธีมของระบบ)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "ด้วยตนเอง",
+    "description": "Label for manual icon color option"
+  },
   "am": {
     "message": "น",
     "description": "displayed in 'timeFormat12' if not using 24 hours clock"

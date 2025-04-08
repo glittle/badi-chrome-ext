@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "சின்ன நிறம்",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "தானியங்கி (கணினி தீம் பின்பற்றவும்)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "கைமுறை",
+    "description": "Label for manual icon color option"
+  },
   "1day": {
     "message": "{0} நாளில்",
     "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "

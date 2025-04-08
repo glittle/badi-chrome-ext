@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "رنگ آیکون",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "خودکار (پیروی از تم سیستم)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "دستی",
+    "description": "Label for manual icon color option"
+  },
   "1day": {
     "message": "تا {0} روز دیگر",
     "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "

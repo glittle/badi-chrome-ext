@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Couleur de l'icône",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Automatique (suivre le thème du système)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Manuel",
+    "description": "Label for manual icon color option"
+  },
   "1day": {
     "message": "dans {0} jour",
     "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "

@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "Kuvakkeen väri",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "Automaattinen (seuraa järjestelmän teemaa)",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "Manuaalinen",
+    "description": "Label for manual icon color option"
+  },
   "bMonthMeaning": {
     "message": ",Hán päivät,Kirkkaus,Loisto,Kauneus,Suurus,Valo,Armo,Sanat,Täydellisyys,Nimet,Mahti,Tahto,Tieto,Voima,Puhe,Kysymykset,Kunnia,Yliherruus,Valta,Ylevyys",
     "description": "Names of days/months, with first one being Ayyam-i-ha"

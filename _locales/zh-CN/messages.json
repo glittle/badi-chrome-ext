@@ -1,4 +1,16 @@
 {
+  "iconColor": {
+    "message": "图标颜色",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "自动（跟随系统主题）",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "手动",
+    "description": "Label for manual icon color option"
+  },
   "arabic": {
     "message": "名称",
     "description": "on List page - table heading"
