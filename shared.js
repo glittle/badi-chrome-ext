@@ -938,6 +938,9 @@ async function refreshDateInfoAndShowAsync(resetToNow) {
   }
 
   setAlarmForNextRefresh(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
+  
+  // Set a backup periodic alarm to ensure the icon is refreshed even if the sunset/midnight alarms fail
+  browser.alarms.create("periodic_refresh", { periodInMinutes: 60 });
 }
 
 const refreshAlarms = {};
