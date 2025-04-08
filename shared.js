@@ -56,8 +56,82 @@ var _remindersEngine = {};
 
 var _inTab = false;
 
+// Make sure this function is globally accessible
 function openInTab() {
+  console.log("Opening popup in a new tab from shared.js");
   browser.tabs.create({ url: "popup.html" });
+}
+
+// Function to update icon color based on browser color scheme
+// Function to show the icon with the current date and color
+function showIcon() {
+  try {
+    if (!_di || !_di.bDay) {
+      console.log("Date info not available yet for icon");
+      return;
+    }
+
+    // Use the color from common settings
+    const textColor = common.iconTextColor || "#000000";
+    
+    // Create a dynamic icon with the current Badí' day
+    const canvas = new OffscreenCanvas(48, 48);
+    const ctx = canvas.getContext("2d");
+    
+    // Clear canvas
+    ctx.clearRect(0, 0, 48, 48);
+    
+    // Background
+    ctx.fillStyle = "transparent";
+    ctx.fillRect(0, 0, 48, 48);
+    
+    // Text settings
+    ctx.fillStyle = textColor;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    
+    // Draw day number
+    ctx.font = "bold 24px Arial";
+    ctx.fillText(_di.bDay.toString(), 24, 24);
+    
+    // Convert to ImageData and set as icon
+    const imageData = ctx.getImageData(0, 0, 48, 48);
+    
+    // Set the icon
+    browser.action.setIcon({ imageData: imageData });
+    
+    // Set the title (tooltip)
+    const title = common.formatToolTip1.filledWith(_di) + "\n" + common.formatToolTip2.filledWith(_di);
+    browser.action.setTitle({ title: title });
+    
+    _iconPrepared = true;
+    console.log("Icon updated with color:", textColor);
+  } catch (error) {
+    console.error("Error updating icon:", error);
+  }
+}
+
+function updateIconColorBasedOnColorScheme(event) {
+  if (common.iconTextColorMode === "auto") {
+    let isDarkMode = false;
+    
+    // Check if window exists (not in service worker context)
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } else {
+      // In service worker context, default to light mode
+      // or try to get from storage if available
+      console.log("Window not available, defaulting to light mode");
+    }
+    
+    common.iconTextColor = isDarkMode ? "#FFFFFF" : "#000000"; // White for dark mode, black for light mode
+    
+    if (event) {
+      console.log("Color scheme changed to:", isDarkMode ? "dark" : "light");
+      // Refresh the icon with the new color
+      showIcon();
+    }
+  }
 }
 
 // in alphabetical order
@@ -71,6 +145,7 @@ var localStorageKey = {
   gCalTitle: "gCalTitle",
   googleUid: "googleUid",
   iconTextColor: "iconTextColor",
+  iconTextColorMode: "iconTextColorMode", // "auto", "manual"
   locationLat: "locationLat",
   locationKnown: "locationKnown",
   locationName: "locationName",
@@ -132,7 +207,33 @@ async function prepareForBackgroundAndPopupAsync() {
   await loadRawMessages(common.languageCode);
 
   common.useArNames = await getFromStorageSyncAsync(syncStorageKey.useArNames, true);
+  
+  // Get user's preferred icon color or use auto mode
+  common.iconTextColorMode = await getFromStorageLocalAsync(localStorageKey.iconTextColorMode, "auto");
   common.iconTextColor = await getFromStorageLocalAsync(localStorageKey.iconTextColor, "#000000");
+  
+  // If in auto mode, set the color based on the browser's color scheme
+  if (common.iconTextColorMode === "auto") {
+    updateIconColorBasedOnColorScheme();
+    
+    // Add listener for color scheme changes - only in window context (not in service worker)
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      try {
+        const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Modern browsers
+        if (colorSchemeMediaQuery.addEventListener) {
+          colorSchemeMediaQuery.addEventListener('change', updateIconColorBasedOnColorScheme);
+        } 
+        // Older browsers
+        else if (colorSchemeMediaQuery.addListener) {
+          colorSchemeMediaQuery.addListener(updateIconColorBasedOnColorScheme);
+        }
+      } catch (error) {
+        console.log("Could not set up color scheme listener:", error);
+      }
+    }
+  }
 
   common.languageDir = getMessage("textDirection", null, "ltr");
 
@@ -948,6 +1049,13 @@ const refreshAlarms = {};
 function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
   let whenTime;
   let alarmName;
+  
+  // Validate inputs first
+  if (!currentTime || !(currentTime instanceof Date)) {
+    console.warn("Invalid currentTime provided to setAlarmForNextRefresh:", currentTime);
+    currentTime = new Date(); // Use current time as fallback
+  }
+  
   if (inEvening) {
     // in eve, after sunset, so update after midnight
     const midnight = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 1).getTime();
@@ -955,39 +1063,83 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
     alarmName = _refreshPrefix + "midnight";
   } else {
     // in the day, so update right at the sunset
+    // Check if sunset is valid
+    if (!sunset || !(sunset instanceof Date) || isNaN(sunset.getTime())) {
+      console.warn("Invalid sunset time:", sunset);
+      // Calculate a fallback sunset time (approximately 6 PM)
+      const fallbackSunset = new Date(currentTime);
+      fallbackSunset.setHours(18, 0, 0, 0);
+      
+      // If fallback is in the past, use tomorrow
+      if (fallbackSunset < currentTime) {
+        fallbackSunset.setDate(fallbackSunset.getDate() + 1);
+      }
+      
+      sunset = fallbackSunset;
+      console.log("Using fallback sunset time:", sunset);
+    }
+    
     whenTime = sunset.getTime();
     alarmName = _refreshPrefix + "sunset";
   }
 
-  // odd bug... sometimes gets called many times over - is alarm being set in the past?
-  //if (refreshAlarms[whenTime]) {
-  //  // already set before
-  //  return;
-  //}
-
-  if (whenTime < new Date().getTime()) {
-    console.warn("ignored attempt to set {0} alarm in the past".filledWith(alarmName));
-    return;
+  // Check if the alarm time is in the past
+  const now = new Date().getTime();
+  if (whenTime < now) {
+    console.warn("Attempted to set {0} alarm in the past. Current time: {1}, Alarm time: {2}"
+      .filledWith(alarmName, new Date(now).toISOString(), new Date(whenTime).toISOString()));
+    
+    // Set alarm for 1 minute in the future as a fallback
+    whenTime = now + 60000;
+    console.log("Using fallback time 1 minute from now:", new Date(whenTime));
   }
 
-  // handle invalid times
+  // Final validation for invalid times
   if (isNaN(whenTime) || whenTime === 0 || whenTime === Infinity) {
-    console.warn("ignored attempt to set {0} alarm with invalid time".filledWith(alarmName));
-    return;
+    console.error("Invalid time calculated for {0} alarm. Using fallback.".filledWith(alarmName));
+    whenTime = now + 3600000; // 1 hour from now as a last resort
+    console.log("Using last resort fallback time 1 hour from now:", new Date(whenTime));
   }
 
   refreshAlarms[whenTime] = true;
 
-  browser.alarms.create(alarmName, { when: whenTime });
-
-  // debug - show alarm that are set
-  // browser.alarms.getAll().then((alarms) => {
-  //   console.log("Active Alarms", alarms.length);
-  //   for (let i = 0; i < alarms.length; i++) {
-  //     const alarm = alarms[i];
-  //     console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime));
-  //   }
-  // });
+  try {
+    browser.alarms.create(alarmName, { when: whenTime });
+    console.log("Successfully set {0} alarm for {1}".filledWith(alarmName, new Date(whenTime).toISOString()));
+    
+    // Debug: show the alarm that was just set
+    browser.alarms.get(alarmName).then((alarm) => {
+      if (alarm) {
+        console.log("Verified alarm:", alarm.name, "scheduled for", new Date(alarm.scheduledTime).toISOString());
+      } else {
+        console.warn("Failed to verify alarm:", alarmName);
+      }
+    }).catch(error => {
+      console.error("Error verifying alarm:", error);
+    });
+  } catch (error) {
+    console.error("Error creating alarm:", error);
+    
+    // Try one more time with a different approach
+    try {
+      const delayInMinutes = Math.max(1, (whenTime - Date.now()) / 60000);
+      browser.alarms.create(alarmName, { delayInMinutes: delayInMinutes });
+      console.log("Created fallback alarm with delay of", delayInMinutes, "minutes");
+    } catch (secondError) {
+      console.error("Failed to create fallback alarm:", secondError);
+    }
+  }
+  
+  // List all active alarms for debugging
+  browser.alarms.getAll().then((alarms) => {
+    console.log("Active Alarms:", alarms.length);
+    for (let i = 0; i < alarms.length; i++) {
+      const alarm = alarms[i];
+      console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime).toISOString());
+    }
+  }).catch(error => {
+    console.error("Error listing alarms:", error);
+  });
 }
 
 String.prototype.filledWith = function (...args) {

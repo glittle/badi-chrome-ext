@@ -772,12 +772,17 @@
           <div>
             <h3 data-msg="setupColorH3"></h3>
             <div>
-              <p class="pageSetupInput2">
-                <label>
-                  <span data-msg="setupColor"></span>
-                  <input type="color" id="setupColor" value="#000000" />
-                </label>
-              </p>
+              <div class="pageSetupInput2">
+                <div class="setupColorOption">
+                  <input type="radio" name="iconColorMode" value="auto" id="rbIconColor_Auto" />
+                  <label for="rbIconColor_Auto" data-msg="iconColorAuto"></label>
+                </div>
+                <div class="setupColorOption">
+                  <input type="radio" name="iconColorMode" value="manual" id="rbIconColor_Manual" />
+                  <label for="rbIconColor_Manual" data-msg="iconColorManual"></label>
+                  <input type="color" id="iconColorPicker" />
+                </div>
+              </div>
             </div>
             <h3 data-msg="setupLangH3"></h3>
             <div>

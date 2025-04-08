@@ -131,7 +131,9 @@ browser.runtime.onInstalled.addListener((info) => {
     );
     browser.contextMenus.onClicked.addListener((info) => {
       if (info.menuItemId === "openInTab") {
-        openInTab();
+        // Define the function directly here to ensure it works in the service worker context
+        browser.tabs.create({ url: "popup.html" });
+        console.log("Opening popup in a new tab");
       }
     });
   }, 1000);
