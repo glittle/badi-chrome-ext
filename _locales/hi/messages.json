@@ -650,5 +650,52 @@
   },
   "Vahid": {
     "message": "वाहिद"
+  },
+  "VahidFormat": {
+    "message": "{bVahid}"
+  },
+  "VahidLocal": {
+    "message": "एकता"
+  },
+  "version": {
+    "message": "संस्करण {0}"
+  },
+  "webstore": {
+    "message": "वेबस्टोर"
+  },
+  "weekDayNames": {
+    "message": "सप्ताह के दिनों के नाम",
+    "description": "on List page - table caption"
+  },
+  "YearOfEra": {
+    "message": "बहाई युग का वर्ष"
+  },
+  "YearOfEraFormat": {
+    "message": "{bYear}"
+  },
+  "YearOfVahid": {
+    "message": "वाहिद का वर्ष"
+  },
+  "YearOfVahidFormat": {
+    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "yearWithEra": {
+    "message": "{bYear} {bEraAbbrev}"
+  },
+  "titleDesc": {
+    "message": "बदी कैलेंडर (अद्भुत) में आज की तिथि दिखाता है, जो बहाई धर्म का आधिकारिक कैलेंडर है।",
+    "description": "Used in the manifest"
+  },
+  "rbDefLang_Local": {
+    "message": "हिन्दी",
+    "description": "put your language here, in your script"
+  },
+  "zapierInfo": {
+    "message": "अधिक जानकारी या साइन अप के लिए, <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> देखें। Zap में ये फ़ील्ड होंगे: title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "Zapier Webhook URL",
+    "description": "url for Zapier"
   }
 }

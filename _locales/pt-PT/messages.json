@@ -821,5 +821,23 @@
   },
   "YearOfVahidFormat": {
     "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "yearWithEra": {
+    "message": "{bYear} {bEraAbbrev}"
+  },
+  "VahidLocal": {
+    "message": "Unidade"
+  },
+  "rbDefLang_Local": {
+    "message": "Português (Portugal)",
+    "description": "put your language here, in your script"
+  },
+  "zapierInfo": {
+    "message": "Para mais detalhes ou para se inscrever, veja <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. O Zap conterá estes campos: title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "URL do Zapier Webhook",
+    "description": "url for Zapier"
   }
 }

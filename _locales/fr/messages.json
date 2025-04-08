@@ -162,6 +162,187 @@
   "example2": {
     "message": "{bDay} {bMonthNamePri} {dayStartedLower} au coucher du soleil (à {startingSunsetDesc}) {frag1WeekdayLong} {frag1Day} {frag1MonthShort}  et {dayEndedLower} au coucher du soleil (à {endingSunsetDesc}) {frag2WeekdayLong} {frag2Day} {frag2MonthShort}."
   },
+  "exportAlert_B0": {
+    "message": "Quand ça commence"
+  },
+  "exportAlert_B1": {
+    "message": "1 minute avant"
+  },
+  "exportAlert_B5": {
+    "message": "5 minutes avant"
+  },
+  "exportAlert_B10": {
+    "message": "10 minutes avant"
+  },
+  "exportAlert_B15": {
+    "message": "15 minutes avant"
+  },
+  "exportAlert_B30": {
+    "message": "30 minutes avant"
+  },
+  "exportAlert_B60": {
+    "message": "60 minutes avant"
+  },
+  "exportBadiYear0": {
+    "message": "Année Badíʿ - {0} E.B."
+  },
+  "exportBadiYear1": {
+    "message": "Année Badíʿ - {0} E.B."
+  },
+  "exportCalendarDescription": {
+    "message": "Dates dans le calendrier Badíʿ pour {location}",
+    "description": "title on page"
+  },
+  "exportDayFromSunset": {
+    "message": "Début de {0}"
+  },
+  "exporterDateRange": {
+    "message": "Plage de dates à exporter (basée sur l'année actuellement sélectionnée)"
+  },
+  "exporterFastEnd": {
+    "message": "Fin du jeûne",
+    "description": "when the fast ends at sunset"
+  },
+  "exporterFastStart": {
+    "message": "Début du jeûne",
+    "description": "when the fast starts at sunrise"
+  },
+  "exporterFastUntil": {
+    "message": "Jeûne jusqu'à {endingSunsetDesc}"
+  },
+  "exporterItemDescDay": {
+    "message": "Un jour dans le calendrier Badíʿ.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescFast": {
+    "message": "Horaires pour le jeûne annuel Bahá'í.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescGeneralTime": {
+    "message": "Le rassemblement peut commencer à tout moment de ce jour Badíʿ.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterItemDescShared": {
+    "message": "Les heures de lever et de coucher du soleil indiquées sont pour {location}. Généré avec http://bit.ly/BadiChrome.",
+    "description": "Be sure the URL is not translated!"
+  },
+  "exporterItemDescSpecialTime": {
+    "message": "{SpecialTime}.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterTitle": {
+    "message": "Exportateur de calendrier Badíʿ",
+    "description": "title on page"
+  },
+  "exportFile": {
+    "message": "Télécharger le fichier iCalendar (.ics)"
+  },
+  "exportGregYear0": {
+    "message": "Année grégorienne - {0} apr. J.-C."
+  },
+  "exportGregYear1": {
+    "message": "Année grégorienne - {0} apr. J.-C."
+  },
+  "exportHideTest": {
+    "message": "Masquer"
+  },
+  "exportIncludeAlert": {
+    "message": "Ajouter une alerte à chaque événement (peut ne pas se charger dans Google Calendar)"
+  },
+  "exportIncludeLocation": {
+    "message": "Informations de localisation"
+  },
+  "exportIntro": {
+    "message": "Important ! Consultez <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">cette page web</a> pour des informations et des mises en garde !",
+    "description": "Be sure the URL remains in English, to find the webpage!"
+  },
+  "exportName": {
+    "message": "Titre du calendrier exporté (peut ne pas être utilisé)"
+  },
+  "exportNumToInclude": {
+    "message": "Nombre d'entrées de calendrier incluses (approximativement) :"
+  },
+  "exportOption_AllDay": {
+    "message": "Événement d'une journée entière à partir de minuit <em>(durée d'1 jour)</em>"
+  },
+  "exportOption_BeginningSunset": {
+    "message": "Au coucher du soleil de début seulement"
+  },
+  "exportOption_Date": {
+    "message": "Jours Badíʿ <em>(365/366 jours)</em>"
+  },
+  "exportOption_Fast": {
+    "message": "Jours de jeûne <em>(19 jours)</em>"
+  },
+  "exportOption_Feast": {
+    "message": "Fêtes <em>(19 jours)</em>"
+  },
+  "exportOption_Hd": {
+    "message": "Jours saints <em>(11 jours)</em>"
+  },
+  "exportOption_Start": {
+    "message": "Événement à l'heure d'observation désignée ou à l'heure habituelle de réunion"
+  },
+  "exportOption_Sun": {
+    "message": "Du coucher du soleil au coucher du soleil <em>(environ 24 heures)</em>"
+  },
+  "exportOption_Sunrise": {
+    "message": "Au lever du soleil seulement"
+  },
+  "exportOption_SunriseToSunset": {
+    "message": "Événement du lever au coucher du soleil <em>(environ 12 heures)</em>"
+  },
+  "exportOption_Sunset": {
+    "message": "Au coucher du soleil seulement"
+  },
+  "exportOption_Usual": {
+    "message": "Événement à l'heure habituelle de réunion (voir la page Événements)"
+  },
+  "exportOtherSettings": {
+    "message": "Autres paramètres"
+  },
+  "exportQuickDesc": {
+    "message": "Exportez chaque ensemble, puis chargez-les tous dans le même calendrier !"
+  },
+  "exportQuickPick1": {
+    "message": "1. Calendrier complet"
+  },
+  "exportQuickPick1Text": {
+    "message": "Afficher chaque jour Badíʿ, ainsi que les jours saints et les heures de fête. Pas d'alertes."
+  },
+  "exportQuickPick2": {
+    "message": "2. Heure de jeûne - Matin"
+  },
+  "exportQuickPick2Text": {
+    "message": "Lever du soleil, avec une alerte juste avant."
+  },
+  "exportQuickPick3": {
+    "message": "3. Heure de jeûne - Soir"
+  },
+  "exportQuickPick3Text": {
+    "message": "Coucher du soleil, avec une alerte."
+  },
+  "exportQuickPickClearText": {
+    "message": "Réinitialiser les options"
+  },
+  "exportQuickPicks": {
+    "message": "Ensembles d'événements recommandés"
+  },
+  "exportRangeFullRange": {
+    "message": "Exporter toutes les entrées du calendrier. (Si non coché, exporter uniquement un ensemble d'exemples.)"
+  },
+  "exportTest": {
+    "message": "Afficher pour copier"
+  },
+  "exportTestCsv": {
+    "message": "CSV"
+  },
+  "exportWhatTitle": {
+    "message": "Sélectionnez ce qui doit être exporté."
+  },
+  "exportWhatToInclude": {
+    "message": "Options"
+  },
   "facebook": {
     "message": "Facebook",
     "description": "ALT for icon at bottom of page"
@@ -448,6 +629,14 @@
     "message": "français",
     "description": "put your language here, in your script"
   },
+  "translation": {
+    "message": "fr",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "French",
+    "description": "The name of this language, in English"
+  },
   "reminderList_timeRelative": {
     "message": "{num} {units} {deltaText}",
     "description": "in list of defined reminders"
@@ -526,6 +715,10 @@
     "description": "The title of the extension. Shown in a number of locations."
   },
   "titleDesc": {
+    "message": "Affiche la date du jour dans le calendrier Badíʿ (Merveilleux), le calendrier officiel de la Foi bahá'íe.",
+    "description": "Used in the manifest"
+  },
+  "titleDesc": {
     "message": "Fournit la date du jour selon le Calendrier Badíʿ, le calendrier officiel de la Foi Bahá'íe.",
     "description": "Used in the manifest"
   },
@@ -558,6 +751,9 @@
   "VahidFormat": {
     "message": "{bVahid}"
   },
+  "VahidLocal": {
+    "message": "Unité"
+  },
   "version": {
     "message": "Version {0}"
   },
@@ -579,5 +775,16 @@
   },
   "YearOfVahidFormat": {
     "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "yearWithEra": {
+    "message": "{bYear} {bEraAbbrev}"
+  },
+  "zapierInfo": {
+    "message": "Pour plus de détails ou pour vous inscrire, consultez <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Le Zap contiendra ces champs : title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "URL Zapier Webhook",
+    "description": "url for Zapier"
   }
 }

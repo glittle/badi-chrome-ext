@@ -1333,5 +1333,25 @@
   "zapierKey": {
     "message": "Zapier Webhook",
     "description": "url for Zapier"
+  },
+  "title": {
+    "message": "Badíʿ Kalender",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "Toont de huidige datum in de Badíʿ-kalender (Wonderbaarlijk), de officiële kalender van het Bahá'í-geloof.",
+    "description": "Used in the manifest"
+  },
+  "translation": {
+    "message": "nl",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "Dutch",
+    "description": "The name of this language, in English"
+  },
+  "rbDefLang_Local": {
+    "message": "Nederlands",
+    "description": "put your language here, in your script"
   }
 }

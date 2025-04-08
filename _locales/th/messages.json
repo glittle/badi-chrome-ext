@@ -11,6 +11,59 @@
     "message": "ด้วยตนเอง",
     "description": "Label for manual icon color option"
   },
+  "1day": {
+    "message": "อีก {0} วัน",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+  },
+  "afterSunset": {
+    "message": "เย็น - หลังพระอาทิตย์ตก"
+  },
+  "actionSpeakDesc": {
+    "message": "การแจ้งเตือนจะถูกอ่านออกเสียงโดยใช้เสียงนี้:",
+    "description": "in edit area when asking for a relative time"
+  },
+  "arabic": {
+    "message": "ชื่อ",
+    "description": "on List page - table heading"
+  },
+  "ayyamIs0": {
+    "message": "(ป ด ว) 0 = อัยยัม-อี-ฮา",
+    "description": "(updated) in Badi date picker area"
+  },
+  "bDatePickerTitle": {
+    "message": "เลือกวันที่<u>บ</u>าดีอ์",
+    "description": "added <u></u> - should have one letter between <u> and </u>"
+  },
+  "beforeSunset": {
+    "message": "กลางวัน - ก่อนพระอาทิตย์ตก"
+  },
+  "bMonthMeaning": {
+    "message": ",วันฮา,ความรุ่งโรจน์,ความสง่างาม,ความงาม,ความยิ่งใหญ่,แสงสว่าง,ความเมตตา,พระวจนะ,ความสมบูรณ์,พระนาม,อำนาจ,พระประสงค์,ความรู้,อานุภาพ,คำพูด,คำถาม,เกียรติ,อธิปไตย,อำนาจปกครอง,ความสูงส่ง",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "อัยยัม-อี-ฮา,บะฮา,จะลาล,จะมาล,อะซะมัต,นูร,ระห์มัต,กะลิมัต,กะมาล,อัสมา,อิซซัต,มะชียยัต,อิลม์,กุดรัต,เกาล์,มะซาอิล,ชะรัฟ,สุลฏอน,มุลก์,อะลา",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "browserActionTitle": {
+    "message": "กำลังโหลด...",
+    "description": "Shown until the dynamic tip is created"
+  },
+  "browserMenuOpen": {
+    "message": "เปิดในแท็บ",
+    "description": "shown as menu item when right-clicking on the browser icon"
+  },
+  "btnCal2M": {
+    "message": "ซูมไปที่เดือน",
+    "description": "on button"
+  },
+  "btnCal2Y": {
+    "message": "ซูมไปที่ปี",
+    "description": "on button"
+  },
+  "btnCustomBuilderCancel": {
+    "message": "ยกเลิก / ใหม่"
+  },
   "am": {
     "message": "น",
     "description": "displayed in 'timeFormat12' if not using 24 hours clock"

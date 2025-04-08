@@ -162,9 +162,186 @@
   "example2": {
     "message": "{bMonthNamePri} {bDay} {dayStartedLower} al caer el sol (mas o menos {startingSunsetDesc}) el {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} y {dayEndedLower} al atardecer (mas o menos {endingSunsetDesc}) el  {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
   },
+  "exportAlert_B0": {
+    "message": "Cuando comienza"
+  },
+  "exportAlert_B1": {
+    "message": "1 minuto antes"
+  },
+  "exportAlert_B5": {
+    "message": "5 minutos antes"
+  },
+  "exportAlert_B10": {
+    "message": "10 minutos antes"
+  },
+  "exportAlert_B15": {
+    "message": "15 minutos antes"
+  },
+  "exportAlert_B30": {
+    "message": "30 minutos antes"
+  },
+  "exportAlert_B60": {
+    "message": "60 minutos antes"
+  },
+  "exportBadiYear0": {
+    "message": "Año Badíʿ - {0} E.B."
+  },
+  "exportBadiYear1": {
+    "message": "Año Badíʿ - {0} E.B."
+  },
+  "exportCalendarDescription": {
+    "message": "Fechas en el calendario Badíʿ para {location}",
+    "description": "title on page"
+  },
+  "exportDayFromSunset": {
+    "message": "Inicio de {0}"
+  },
+  "exporterDateRange": {
+    "message": "Rango de fechas para exportar (basado en el año actualmente seleccionado)"
+  },
+  "exporterFastEnd": {
+    "message": "Fin del ayuno",
+    "description": "when the fast ends at sunset"
+  },
+  "exporterFastStart": {
+    "message": "Inicio del ayuno",
+    "description": "when the fast starts at sunrise"
+  },
+  "exporterFastUntil": {
+    "message": "Ayuno hasta {endingSunsetDesc}"
+  },
+  "exporterItemDescDay": {
+    "message": "Un día en el calendario Badíʿ.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescFast": {
+    "message": "Horarios para el ayuno anual Bahá'í.",
+    "description": "Included as the description in every calendar entry"
+  },
+  "exporterItemDescGeneralTime": {
+    "message": "La reunión puede comenzar en cualquier momento de este día Badíʿ.",
+    "description": "For when a Holy Day as a particular time"
+  },
+  "exporterItemDescShared": {
+    "message": "Las horas de amanecer y atardecer mostradas son para {location}. Generado con http://bit.ly/BadiChrome.",
+    "description": "Be sure the URL is not translated!"
+  },
   "exporterItemDescSpecialTime": {
     "message": "{SpecialTime}.",
     "description": "For when a Holy Day as a particular time"
+  },
+  "exporterTitle": {
+    "message": "Exportador de calendario Badíʿ",
+    "description": "title on page"
+  },
+  "exportFile": {
+    "message": "Descargar archivo iCalendar (.ics)"
+  },
+  "exportGregYear0": {
+    "message": "Año gregoriano - {0} d.C."
+  },
+  "exportGregYear1": {
+    "message": "Año gregoriano - {0} d.C."
+  },
+  "exportHideTest": {
+    "message": "Ocultar"
+  },
+  "exportIncludeAlert": {
+    "message": "Añadir una alerta a cada evento (puede no cargarse en Google Calendar)"
+  },
+  "exportIncludeLocation": {
+    "message": "Información de ubicación"
+  },
+  "exportIntro": {
+    "message": "¡Importante! Consulte <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">esta página web</a> para obtener información y advertencias.",
+    "description": "Be sure the URL remains in English, to find the webpage!"
+  },
+  "exportName": {
+    "message": "Título del calendario exportado (puede no utilizarse)"
+  },
+  "exportNumToInclude": {
+    "message": "Número de entradas de calendario incluidas (aproximadamente):"
+  },
+  "exportOption_AllDay": {
+    "message": "Evento de día completo desde medianoche <em>(duración de 1 día)</em>"
+  },
+  "exportOption_BeginningSunset": {
+    "message": "Solo al atardecer de inicio"
+  },
+  "exportOption_Date": {
+    "message": "Días Badíʿ <em>(365/366 días)</em>"
+  },
+  "exportOption_Fast": {
+    "message": "Días de ayuno <em>(19 días)</em>"
+  },
+  "exportOption_Feast": {
+    "message": "Fiestas <em>(19 días)</em>"
+  },
+  "exportOption_Hd": {
+    "message": "Días sagrados <em>(11 días)</em>"
+  },
+  "exportOption_Start": {
+    "message": "Evento a la hora de observación designada o a la hora habitual de reunión"
+  },
+  "exportOption_Sun": {
+    "message": "Del atardecer al atardecer <em>(aproximadamente 24 horas)</em>"
+  },
+  "exportOption_Sunrise": {
+    "message": "Solo al amanecer"
+  },
+  "exportOption_SunriseToSunset": {
+    "message": "Evento desde el amanecer hasta el atardecer <em>(aproximadamente 12 horas)</em>"
+  },
+  "exportOption_Sunset": {
+    "message": "Solo al atardecer"
+  },
+  "exportOption_Usual": {
+    "message": "Evento a la hora habitual de reunión (ver página de Eventos)"
+  },
+  "exportOtherSettings": {
+    "message": "Otros ajustes"
+  },
+  "exportQuickDesc": {
+    "message": "¡Exporte cada conjunto y luego cárguelos todos en el mismo calendario!"
+  },
+  "exportQuickPick1": {
+    "message": "1. Calendario completo"
+  },
+  "exportQuickPick1Text": {
+    "message": "Mostrar cada día Badíʿ, junto con los días sagrados y las horas de fiesta. Sin alertas."
+  },
+  "exportQuickPick2": {
+    "message": "2. Hora de ayuno - Mañana"
+  },
+  "exportQuickPick2Text": {
+    "message": "Amanecer, con una alerta justo antes."
+  },
+  "exportQuickPick3": {
+    "message": "3. Hora de ayuno - Tarde"
+  },
+  "exportQuickPick3Text": {
+    "message": "Atardecer, con una alerta."
+  },
+  "exportQuickPickClearText": {
+    "message": "Restablecer opciones"
+  },
+  "exportQuickPicks": {
+    "message": "Conjuntos de eventos recomendados"
+  },
+  "exportRangeFullRange": {
+    "message": "Exportar todas las entradas del calendario. (Si no está marcado, exportar solo un conjunto de ejemplos.)"
+  },
+  "exportTest": {
+    "message": "Mostrar para copiar"
+  },
+  "exportTestCsv": {
+    "message": "CSV"
+  },
+  "exportWhatTitle": {
+    "message": "Seleccione lo que debe exportarse."
+  },
+  "exportWhatToInclude": {
+    "message": "Opciones"
   },
   "facebook": {
     "message": "Facebook",
@@ -585,5 +762,33 @@
   },
   "yearWithEra": {
     "message": "{bYear} {bEraAbbrev}"
+  },
+  "title": {
+    "message": "Calendario Badíʿ",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "titleDesc": {
+    "message": "Muestra la fecha actual en el calendario Badíʿ (Maravilloso), el calendario oficial de la Fe Bahá'í.",
+    "description": "Used in the manifest"
+  },
+  "translation": {
+    "message": "es",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "Spanish",
+    "description": "The name of this language, in English"
+  },
+  "rbDefLang_Local": {
+    "message": "español",
+    "description": "put your language here, in your script"
+  },
+  "zapierInfo": {
+    "message": "Para más detalles o para registrarse, vea <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. El Zap contendrá estos campos: title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "URL de Zapier Webhook",
+    "description": "url for Zapier"
   }
 }

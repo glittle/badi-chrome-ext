@@ -650,5 +650,60 @@
     },
     "Vahid": {
         "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unidade"
+    },
+    "version": {
+        "message": "Versão {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nomes dos dias da semana",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Ano da Era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Ano do {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "title": {
+        "message": "Calendário Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Mostra a data atual no calendário Badíʿ (Maravilhoso), o calendário oficial da Fé Bahá'í.",
+        "description": "Used in the manifest"
+    },
+    "translation": {
+        "message": "pt-BR",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Portuguese (Brazil)",
+        "description": "The name of this language, in English"
+    },
+    "zapierInfo": {
+        "message": "Para mais detalhes ou para se inscrever, veja <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. O Zap conterá estes campos: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL do Zapier Webhook",
+        "description": "url for Zapier"
     }
 }

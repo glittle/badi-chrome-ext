@@ -231,8 +231,39 @@
   "example2": {
     "message": "{bMonthNamePri} {bDay} {dayStartedLower} bei Sonnenuntergang (etwa {startingSunsetDesc}) auf {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} und {dayEndedLower} bei Sonnenuntergang (etwa {endingSunsetDesc}) auf {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
   },
+  "exportAlert_B0": {
+    "message": "Wenn es beginnt"
+  },
   "exportAlert_B1": {
     "message": "1 Minute vor"
+  },
+  "exportAlert_B5": {
+    "message": "5 Minuten vor"
+  },
+  "exportAlert_B10": {
+    "message": "10 Minuten vor"
+  },
+  "exportAlert_B15": {
+    "message": "15 Minuten vor"
+  },
+  "exportAlert_B30": {
+    "message": "30 Minuten vor"
+  },
+  "exportAlert_B60": {
+    "message": "60 Minuten vor"
+  },
+  "exportBadiYear0": {
+    "message": "Badíʿ Jahr - {0} B.E."
+  },
+  "exportBadiYear1": {
+    "message": "Badíʿ Jahr - {0} B.E."
+  },
+  "exportCalendarDescription": {
+    "message": "Daten im Badíʿ Kalender für {location}",
+    "description": "title on page"
+  },
+  "exportDayFromSunset": {
+    "message": "Beginn von {0}"
   },
   "exporterDateRange": {
     "message": "Export-Datumsspanne (laut aktuell gewähltem Jahr)"
@@ -263,6 +294,10 @@
   "exporterItemDescShared": {
     "message": "Sonnenauf- und untergangszeiten für {location}. Generiert mit http://bit.ly/BadiChrome.",
     "description": "Be sure the URL is not translated!"
+  },
+  "exporterItemDescSpecialTime": {
+    "message": "{SpecialTime}.",
+    "description": "For when a Holy Day as a particular time"
   },
   "exporterTitle": {
     "message": "Badíʿ Kalender Exporter",
@@ -296,6 +331,18 @@
   "exportNumToInclude": {
     "message": "Anzahl der Kalendereinträge die erstellt werden (ungefähr):"
   },
+  "exportQuickPick1": {
+    "message": "1. Vollständiger Kalender"
+  },
+  "exportQuickPick1Text": {
+    "message": "Zeigt jeden Badíʿ Tag, zusammen mit Feiertagen und Festzeiten an. Keine Alarme."
+  },
+  "exportQuickPick2": {
+    "message": "2. Fastenzeit - Morgen"
+  },
+  "exportQuickPick2Text": {
+    "message": "Sonnenaufgang, mit einem Alarm kurz davor."
+  },
   "exportQuickPick3": {
     "message": "3. Fastenzeit - Abend"
   },
@@ -319,6 +366,42 @@
   },
   "exportWhatToInclude": {
     "message": "Optionen"
+  },
+  "exportOption_AllDay": {
+    "message": "Ganztägiges Ereignis ab Mitternacht <em>(1 Tag lang)</em>"
+  },
+  "exportOption_BeginningSunset": {
+    "message": "Nur bei Sonnenuntergang am Anfang"
+  },
+  "exportOption_Date": {
+    "message": "Badíʿ Tage <em>(365/366 Tage)</em>"
+  },
+  "exportOption_Fast": {
+    "message": "Fastentage <em>(19 Tage)</em>"
+  },
+  "exportOption_Feast": {
+    "message": "19-Tage-Feste <em>(19 Tage)</em>"
+  },
+  "exportOption_Hd": {
+    "message": "Feiertage <em>(11 Tage)</em>"
+  },
+  "exportOption_Start": {
+    "message": "Ereignis zur festgelegten Beobachtungszeit oder üblichen Treffzeit"
+  },
+  "exportOption_Sun": {
+    "message": "Von Sonnenuntergang bis Sonnenuntergang <em>(etwa 24 Stunden)</em>"
+  },
+  "exportOption_Sunrise": {
+    "message": "Nur bei Sonnenaufgang"
+  },
+  "exportOption_SunriseToSunset": {
+    "message": "Ereignis von Sonnenaufgang bis Sonnenuntergang <em>(etwa 12 Stunden)</em>"
+  },
+  "exportOption_Sunset": {
+    "message": "Nur bei Sonnenuntergang"
+  },
+  "exportOption_Usual": {
+    "message": "Ereignis zur üblichen Treffzeit (siehe Ereignisse-Seite)"
   },
   "facebook": {
     "message": "Facebook",
@@ -732,5 +815,19 @@
   },
   "YearOfVahid": {
     "message": "Jahr im {VahidLabelPri}"
+  },
+  "YearOfVahidFormat": {
+    "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+  },
+  "yearWithEra": {
+    "message": "{bYear} {bEraAbbrev}"
+  },
+  "zapierInfo": {
+    "message": "Für Details oder zur Anmeldung, siehe <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Der Zap wird diese Felder enthalten: title, body, tag, time",
+    "description": "info and link to Zapier"
+  },
+  "zapierKey": {
+    "message": "Zapier Webhook URL",
+    "description": "url for Zapier"
   }
 }
