@@ -686,10 +686,6 @@
     "message": "बदी कैलेंडर (अद्भुत) में आज की तिथि दिखाता है, जो बहाई धर्म का आधिकारिक कैलेंडर है।",
     "description": "Used in the manifest"
   },
-  "rbDefLang_Local": {
-    "message": "हिन्दी",
-    "description": "put your language here, in your script"
-  },
   "zapierInfo": {
     "message": "अधिक जानकारी या साइन अप के लिए, <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> देखें। Zap में ये फ़ील्ड होंगे: title, body, tag, time",
     "description": "info and link to Zapier"

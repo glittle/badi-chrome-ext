@@ -34,7 +34,7 @@
     "description": "on List page - table heading"
   },
   "ayyamIs0": {
-    "message": "(س م ر) 0 = ایام هاء",
+    "message": "(س م ر) 0 = {0}",
     "description": "(updated) in Badi date picker area"
   },
   "bDatePickerTitle": {
@@ -494,7 +494,7 @@
     "description": "Shown on the main page (see screenshot in PhraseApp)"
   },
   "rbDefLang_Local": {
-    "message": "Persian",
+    "message": "فارسی",
     "description": "put your language here, in your script"
   },
   "reminderAction_zapier": {

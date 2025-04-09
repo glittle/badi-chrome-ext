@@ -349,9 +349,6 @@
   "gDatePickerTitle": {
     "message": "תאריך גרגוריאני"
   },
-  "gMonthLong": {
-    "message": "ינואר,פברואר,מרץ,אפריל,מאי,יוני,יולי,אוגוסט,ספטמבר,אוקטובר,נובמבר,דצמבר"
-  },
   "gMonthShort": {
     "message": "ינו,פבר,מרץ,אפר,מאי,יוני,יולי,אוג,ספט,אוק,נוב,דצמ"
   },
@@ -468,14 +465,6 @@
   "suggestionsTitle": {
     "message": "הקלד כאן הצעות לשיפור לוח השנה הזה"
   },
-  "textDirection": {
-    "message": "rtl",
-    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
-  },
-  "titleDesc": {
-    "message": "השתמש בלוח השנה הבדיעי",
-    "description": "Used in the manifest"
-  },
   "Tonight": {
     "message": "הערב",
     "description": "Shown in the upcoming dates area"
@@ -513,14 +502,7 @@
     "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
   },
   "gMonthLong": {
-    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
-  },
-  "gMonthShort": {
-    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
-  },
-  "gWeekdayShort": {
-    "message": "א,ב,ג,ד,ה,ו,ש",
-    "description": "start with Sun"
+    "message": "ינואר,פברואר,מרץ,אפריל,מאי,יוני,יולי,אוגוסט,ספטמבר,אוקטובר,נובמבר,דצמבר"
   },
   "HolyDay_AscAbdul": {
     "message": "יום פטירת עבד אלבהאא"
@@ -563,21 +545,9 @@
     "message": "לוח השנה הבהאי",
     "description": "The title of the extension. Shown in a number of locations."
   },
-  "translation": {
-    "message": "he",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Hebrew",
-    "description": "The name of this language, in English"
-  },
   "titleDesc": {
     "message": "מציג את התאריך הנוכחי בלוח השנה הבדיע (המופלא), לוח השנה הרשמי של האמונה הבהאית.",
     "description": "Used in the manifest"
-  },
-  "rbDefLang_Local": {
-    "message": "עברית",
-    "description": "put your language here, in your script"
   },
   "yearWithEra": {
     "message": "{bYear} {bEraAbbrev}"

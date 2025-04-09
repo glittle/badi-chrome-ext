@@ -780,7 +780,7 @@
     "description": "Shown in the upcoming dates area"
   },
   "translation": {
-    "message": "pt_PT",
+    "message": "pt-PT",
     "description": "This needs to be the international language code for this language, shown in English letters."
   },
   "translationEnglishName": {
@@ -827,10 +827,6 @@
   },
   "VahidLocal": {
     "message": "Unidade"
-  },
-  "rbDefLang_Local": {
-    "message": "Português (Portugal)",
-    "description": "put your language here, in your script"
   },
   "zapierInfo": {
     "message": "Para mais detalhes ou para se inscrever, veja <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. O Zap conterá estes campos: title, body, tag, time",

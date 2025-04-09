@@ -370,9 +370,6 @@
     "message": "Sunnuntai,Maanantai,Tiistai,Keskiviikko,Torstai,Perjantai,Lauantai",
     "description": "start with Sunday"
   },
-  "gMonthLong": {
-    "message": "Tammi-,helmi-,maalis-,huhti-,touko-,kesä-,heinä-,elo-,syys-,loka-,marras-,joulu-"
-  },
   "gWeekdayShort": {
     "message": "su,ma,ti,ke,to,pe,la",
     "description": "start with Sun"
@@ -524,10 +521,6 @@
     "message": "Bahai-kalenteri",
     "description": "The title of the extension. Shown in a number of locations."
   },
-  "translation": {
-    "message": "fi",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
   "translationEnglishName": {
     "message": "Finnish",
     "description": "The name of this language, in English"
@@ -559,26 +552,6 @@
   },
   "YearOfVahidFormat": {
     "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
-  },
-  "title": {
-    "message": "Badíʿ-kalenteri",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "titleDesc": {
-    "message": "Näyttää tämän päivän Badíʿ-kalenterissa (Ihmeellinen), joka on Bahá'í-uskon virallinen kalenteri.",
-    "description": "Used in the manifest"
-  },
-  "translation": {
-    "message": "fi",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Finnish",
-    "description": "The name of this language, in English"
-  },
-  "rbDefLang_Local": {
-    "message": "suomi",
-    "description": "put your language here, in your script"
   },
   "yearWithEra": {
     "message": "{bYear} {bEraAbbrev}"

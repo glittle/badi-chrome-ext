@@ -618,26 +618,6 @@
     "message": "Zapier Webhook (reta hoko)",
     "description": "url for Zapier"
   },
-  "title": {
-    "message": "Badu00edu02bf-kalendaro",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "titleDesc": {
-    "message": "Montras la nunan daton en la Badu00edu02bf-kalendaro (Mirinda), la oficiala kalendaro de la Bahaa Kredo.",
-    "description": "Used in the manifest"
-  },
-  "translation": {
-    "message": "eo",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Esperanto",
-    "description": "The name of this language, in English"
-  },
-  "rbDefLang_Local": {
-    "message": "esperanto",
-    "description": "put your language here, in your script"
-  },
   "yearWithEra": {
     "message": "{bYear} {bEraAbbrev}"
   }

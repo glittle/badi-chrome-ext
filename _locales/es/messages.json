@@ -16,7 +16,7 @@
     "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
   },
   "afterSunset": {
-    "message": "al anochecer - depues de la caida del sol"
+    "message": "tarde - después del atardecer"
   },
   "arabic": {
     "message": "Nombre",
@@ -762,26 +762,6 @@
   },
   "yearWithEra": {
     "message": "{bYear} {bEraAbbrev}"
-  },
-  "title": {
-    "message": "Calendario Badíʿ",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "titleDesc": {
-    "message": "Muestra la fecha actual en el calendario Badíʿ (Maravilloso), el calendario oficial de la Fe Bahá'í.",
-    "description": "Used in the manifest"
-  },
-  "translation": {
-    "message": "es",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Spanish",
-    "description": "The name of this language, in English"
-  },
-  "rbDefLang_Local": {
-    "message": "español",
-    "description": "put your language here, in your script"
   },
   "zapierInfo": {
     "message": "Para más detalles o para registrarse, vea <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. El Zap contendrá estos campos: title, body, tag, time",

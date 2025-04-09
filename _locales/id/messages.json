@@ -31,7 +31,7 @@
         "description": "on List page - table heading"
     },
     "ayyamIs0": {
-        "message": "(T B H) 0={0}",
+        "message": "(T B H) 0 = {0}",
         "description": "(updated) in Badi date picker area"
     },
     "bDatePickerTitle": {

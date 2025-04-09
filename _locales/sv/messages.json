@@ -690,14 +690,6 @@
     "message": "ltr",
     "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
   },
-  "titleDesc": {
-    "message": "Använd Badíʿ-kalendern",
-    "description": "Used in the manifest"
-  },
-  "title": {
-    "message": "Badíʿ-kalender",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
   "Tonight": {
     "message": "Ikväll",
     "description": "Shown in the upcoming dates area"
@@ -760,17 +752,8 @@
     "message": "true",
     "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
-  "Vahid": {
-    "message": "Váḥid"
-  },
-  "VahidFormat": {
-    "message": "{bVahid}"
-  },
   "VahidLocal": {
     "message": "Enhet"
-  },
-  "version": {
-    "message": "Version {0}"
   },
   "webstore": {
     "message": "Webbutik"

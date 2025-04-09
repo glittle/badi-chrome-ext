@@ -785,7 +785,7 @@
     "message": "Zukünftige Feste, Feiertage und andere Ereignisse"
   },
   "use24HourClock": {
-    "message": "nein",
+    "message": "false",
     "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
   },
   "Vahid": {
