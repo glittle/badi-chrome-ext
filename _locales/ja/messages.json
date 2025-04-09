@@ -1,0 +1,707 @@
+{
+    "1day": {
+        "message": "{0}日後",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "iconColor": {
+        "message": "アイコンの色",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "自動（システムテーマに従う）",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "手動",
+        "description": "Label for manual icon color option"
+    },
+    "actionSpeakDesc": {
+        "message": "リマインダーはこの音声で読み上げられます：",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "夕方（日没後）"
+    },
+    "am": {
+        "message": "午前",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "名前",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "（年月日）0={0}",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "<u>バ</u>ディーウ暦の日付に移動",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "日中（日没前）"
+    },
+    "bMonthMeaning": {
+        "message": "挿入日,輝き,栄光,美,壮大,光,慈悲,言葉,完全,名前,力,意志,知識,力,言葉,質問,栄誉,主権,支配,高貴",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "アイヤーミハー,バハー,ジャラール,ジャマール,アザマト,ヌール,ラフマト,カリマート,カマール,アスマー,イッザト,マ<u>シ</u>ーヤト,イルム,クドラト,カウル,マサーイル,<u>シ</u>ャラフ,スルターン,ムルク,アラー",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "読み込み中",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "タブで開く",
+        "description": "shown as menu item when right-clicking on the browser icon "
+    },
+    "btnCal2M": {
+        "message": "月表示に拡大",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "年表示に拡大",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "キャンセル/新規"
+    },
+    "btnEveOrDay": {
+        "message": "日没前/日没後"
+    },
+    "btnJumpTo": {
+        "message": "移動"
+    },
+    "btnJumpToTitle": {
+        "message": "この日数分前後に移動",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Excelにエクスポート",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ICALエクスポート",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "祝宴",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "聖日（休業）",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "すべての聖日",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "なし",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "リドヴァーン",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "双子の誕生日",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "キャンセル",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "削除",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "編集",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>保</u>存",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "複製",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "今すぐテスト",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "今すぐ再読み込み"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",栄光,美,完全,恵み,正義,威厳,独立",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",ジャラール,ジャマール,カマール,フィダール,イダール,イスティジラール,イスティクラール",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,父,D,門,V,永遠,寛大,輝き,愛,喜び,答え,単一,豊か,愛情,始まり,輝く,最も輝く,統一",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",アリフ,バー,アブ,ダール,バーブ,ヴァーヴ,アバド,ジャード,バハー,フッブ,バッハージ,ジャヴァーブ,アハド,ヴァッハーブ,ヴィダード,バディーウ,バヒー,アブハー,ヴァーヒド",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "より<u>暗</u>い色",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "<u>印</u>刷時にすべての月",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "<u>時</u>間を表示",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "<u>印</u>刷時にすべての月",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "<u>時</u>間を表示",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "コピーしました！",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "今日",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "コピー"
+    },
+    "customBuilder": {
+        "message": "カスタム日付形式を作成"
+    },
+    "customBuilderEcho": {
+        "message": "結果（現在選択されている日用 - 日を変更するにはヒントとキーを参照）"
+    },
+    "customBuilderIntro": {
+        "message": "このボックスに形式を入力してください。<span class=customHint title='...NamePri = 主要言語で\n...NameSec = 二次言語で\nfrag1... = 日没から真夜中まで\nfrag2... = 真夜中から日没まで'>（ヒントを表示）</span><br>利用可能な日付パーツの「追加」ボタンをクリックして現在の位置に挿入します。"
+    },
+    "customDefined": {
+        "message": "カスタム日付形式"
+    },
+    "customFormats": {
+        "message": "カスタム形式",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "'コピー'をクリックして書式設定された日付をクリップボードにコピーします。"
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Chromeアイコンのツールチップに表示する形式："
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "1行目"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "2行目"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "ほとんどのページの上部に表示する形式："
+    },
+    "customLoadLetters": {
+        "message": "標準形式からコピーするにはクリック："
+    },
+    "customPartsList": {
+        "message": "利用可能な日付パーツ"
+    },
+    "customSelectForFrontPage": {
+        "message": "{0}ページに表示するにはボックスにチェックを入れてください。"
+    },
+    "customUseAsSample": {
+        "message": "サンプルとして使用しますか？"
+    },
+    "dateHeading": {
+        "message": "日",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "終了"
+    },
+    "dayEndedPast": {
+        "message": "終了しました"
+    },
+    "DayOfMonth": {
+        "message": "月の日"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "曜日"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "開始"
+    },
+    "dayStartedPast": {
+        "message": "開始しました"
+    },
+    "defaultFormat": {
+        "message": "（デフォルト）",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "火,空気,水,土",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "終了しました",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "{0}の日没で終了"
+    },
+    "equiv": {
+        "message": "同等",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "バハーイー紀元"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "通常の会合時間",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "会合/特別時間",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay}は{frag1WeekdayLong}、{frag1MonthShort} {frag1Day}の日没（約{startingSunsetDesc}）に{dayStartedLower}、{frag2WeekdayLong}、{frag2MonthShort} {frag2Day}の日没（約{endingSunsetDesc}）に{dayEndedLower}。"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear}の断食時間"
+    },
+    "fastGDate": {
+        "message": "日付",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0}の祝宴",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "リドヴァーン祭"
+    },
+    "formatIconClick": {
+        "message": "（詳細はクリック）"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
+    },
+    "gMonthShort": {
+        "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
+    },
+    "gotoNow": {
+        "message": "今"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}、{currentYear}年{currentMonthLong}{currentDay}日",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}、{currentYear}年{currentMonthLong}{currentDay}日 {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "日曜日,月曜日,火曜日,水曜日,木曜日,金曜日,土曜日",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "日,月,火,水,木,金,土",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "アブドゥル・バハーの昇天"
+    },
+    "HolyDay_AscBaha": {
+        "message": "バハーウッラーの昇天"
+    },
+    "HolyDay_BirthBab": {
+        "message": "バーブの誕生日"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "バハーウッラーの誕生日"
+    },
+    "HolyDay_Covenant": {
+        "message": "契約の日"
+    },
+    "HolyDay_DeclBab": {
+        "message": "バーブの宣言"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "バーブの殉教"
+    },
+    "HolyDay_NawRuz": {
+        "message": "ナウ・ルーズ"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "リドヴァーン第1日"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "リドヴァーン第12日"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "リドヴァーン第9日"
+    },
+    "includeFeasts": {
+        "message": "<u>祝</u>宴",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>聖</u>日",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "表示",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "挿入日"
+    },
+    "jumpTo": {
+        "message": "<u>移</u>動±日",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Kullishay": {
+        "message": "クッリ・<u>シ</u>ャイ"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "すべてのもの",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "現在地を特定できません。\n\n拡張機能は毎日の日没時間として18:30を使用します。",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "意味",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "月"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "月/日の名前",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{endingSunsetDesc}の日没で{dayEnded}"
+    },
+    "nearestSunsetEve": {
+        "message": "{startingSunsetDesc}の日没で{dayStarted}"
+    },
+    "next": {
+        "message": "次へ &rarr;"
+    },
+    "nextYear": {
+        "message": "来年",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "来年を見るにはShift+右矢印キーを押してください",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "（場所不明 - 日没時間18:30）",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "（現在地）",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "今",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "第,第1,第2,第3",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",第1,第2,第3,第4,第5,第6,第7,第8,第9,第10,第11,第12,第13,第14,第15,第16,第17,第18,第19"
+    },
+    "otherDays": {
+        "message": "{0}日後",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "年"
+    },
+    "pick_pageCalGreg": {
+        "message": "グレゴリオ暦年",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "ホイール",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "日"
+    },
+    "pick_pageEvents": {
+        "message": "イベント",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "断食"
+    },
+    "pick_pageLists": {
+        "message": "リスト"
+    },
+    "pm": {
+        "message": "午後",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "キーを押すか{0}を入力してください。",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "クリップボードにコピーする形式を選択：",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; 前へ"
+    },
+    "prevYear": {
+        "message": "前年",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "前年を見るにはShift+左矢印キーを押してください",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "日本語",
+        "description": "put your language here, in your script"
+    },
+    "shoghiExample": {
+        "message": "今日は{bWeekdayNamePri}の日、{bDayNamePri}の日、{bMonthNamePri}の月、{bYearInVahidNamePri}の年、{bVahidOrdinalName}{VahidLabelPri}、{bKullishayOrdinalName}{KullishayLabelPri}です。",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Chromeのどこからでもカレンダーを開くには、このキーの組み合わせを押してください。"
+    },
+    "showPointer": {
+        "message": "ポインターを表示"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear}の祝宴と聖日"
+    },
+    "specialTime_0100S": {
+        "message": "午前1時（標準時）",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "午前3時（標準時）",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "正午（標準時）",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "午後3時（標準時）",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "日没後約2時間",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "{0}の日没で開始"
+    },
+    "startTimeOption": {
+        "message": "通常の会合時間：",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "提案？"
+    },
+    "suggestionsTitle": {
+        "message": "ここをクリックして、この拡張機能を改善するための提案を送信してください！"
+    },
+    "sunriseFastHeading": {
+        "message": "日の出",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "日没",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "バディーウ暦の日の始まり",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "仕事の休止",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "ヒント＆キー",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "精度？"
+    },
+    "tipsAboutText": {
+        "message": "221 B.E.（2064年）までの日付は既知です。それ以降は、天文観測の向上に伴い更新が必要になる場合があります。50年以上先の計画を確定するためにこれを使用しないでください！詳細はウェブサイトをご覧ください。"
+    },
+    "tipsText": {
+        "message": "PgUp/PgDnキーでパネルを選択します。\n右/左矢印キーで日を変更します。\n/キーで日没前/後を切り替えます。\nHomeキーで今日に戻ります！"
+    },
+    "title": {
+        "message": "バディーウ暦",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "バハーイー教の公式カレンダーであるバディーウ（素晴らしい）暦での今日の日付を表示します。",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "今夜",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ja",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Japanese",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "今後の祝宴、聖日、その他のイベント"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "ヴァーヒド"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "ヴァーヒド",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "ヴァーヒド",
+        "description": "Label for Vahid in secondary language"
+    },
+    "webstore": {
+        "message": "ウェブストア"
+    },
+    "weekDayNames": {
+        "message": "曜日名",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "バハーイー紀元の年"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "{VahidLabelPri}の年"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "詳細またはサインアップについては、<a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>をご覧ください。Zapには次のフィールドが含まれます：title、body、tag、time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}
