@@ -1302,9 +1302,7 @@ function startFillingLanguageInput(select) {
         for (let i = 0; i < entries.length; ++i) {
           const langToLoad = entries[i].name;
 
-          const url = `/_locales/${langToLoad}/messages.json`;
-
-          const messages = await loadJsonfileAsync(url);
+          const messages = await loadLocaleMessageFileAsync(langToLoad);
 
           const langLocalMsg = messages.rbDefLang_Local;
           const name = langLocalMsg ? langLocalMsg.message : langToLoad;

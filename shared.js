@@ -73,37 +73,37 @@ function showIcon() {
 
     // Use the color from common settings
     const textColor = common.iconTextColor || "#000000";
-    
+
     // Create a dynamic icon with the current Badí' day
     const canvas = new OffscreenCanvas(48, 48);
     const ctx = canvas.getContext("2d");
-    
+
     // Clear canvas
     ctx.clearRect(0, 0, 48, 48);
-    
+
     // Background
     ctx.fillStyle = "transparent";
     ctx.fillRect(0, 0, 48, 48);
-    
+
     // Text settings
     ctx.fillStyle = textColor;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    
+
     // Draw day number
     ctx.font = "bold 24px Arial";
     ctx.fillText(_di.bDay.toString(), 24, 24);
-    
+
     // Convert to ImageData and set as icon
     const imageData = ctx.getImageData(0, 0, 48, 48);
-    
+
     // Set the icon
     browser.action.setIcon({ imageData: imageData });
-    
+
     // Set the title (tooltip)
     const title = common.formatToolTip1.filledWith(_di) + "\n" + common.formatToolTip2.filledWith(_di);
     browser.action.setTitle({ title: title });
-    
+
     _iconPrepared = true;
     console.log("Icon updated with color:", textColor);
   } catch (error) {
@@ -114,18 +114,18 @@ function showIcon() {
 function updateIconColorBasedOnColorScheme(event) {
   if (common.iconTextColorMode === "auto") {
     let isDarkMode = false;
-    
+
     // Check if window exists (not in service worker context)
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (typeof window !== "undefined" && window.matchMedia) {
+      isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     } else {
       // In service worker context, default to light mode
       // or try to get from storage if available
       console.log("Window not available, defaulting to light mode");
     }
-    
+
     common.iconTextColor = isDarkMode ? "#FFFFFF" : "#000000"; // White for dark mode, black for light mode
-    
+
     if (event) {
       console.log("Color scheme changed to:", isDarkMode ? "dark" : "light");
       // Refresh the icon with the new color
@@ -207,24 +207,24 @@ async function prepareForBackgroundAndPopupAsync() {
   await loadRawMessages(common.languageCode);
 
   common.useArNames = await getFromStorageSyncAsync(syncStorageKey.useArNames, true);
-  
+
   // Get user's preferred icon color or use auto mode
   common.iconTextColorMode = await getFromStorageLocalAsync(localStorageKey.iconTextColorMode, "auto");
   common.iconTextColor = await getFromStorageLocalAsync(localStorageKey.iconTextColor, "#000000");
-  
+
   // If in auto mode, set the color based on the browser's color scheme
   if (common.iconTextColorMode === "auto") {
     updateIconColorBasedOnColorScheme();
-    
+
     // Add listener for color scheme changes - only in window context (not in service worker)
-    if (typeof window !== 'undefined' && window.matchMedia) {
+    if (typeof window !== "undefined" && window.matchMedia) {
       try {
-        const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        
+        const colorSchemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
         // Modern browsers
         if (colorSchemeMediaQuery.addEventListener) {
-          colorSchemeMediaQuery.addEventListener('change', updateIconColorBasedOnColorScheme);
-        } 
+          colorSchemeMediaQuery.addEventListener("change", updateIconColorBasedOnColorScheme);
+        }
         // Older browsers
         else if (colorSchemeMediaQuery.addListener) {
           colorSchemeMediaQuery.addListener(updateIconColorBasedOnColorScheme);
@@ -381,11 +381,11 @@ async function prepareSharedForPopup() {
   }
 }
 
-async function loadJsonfileAsync(filePath) {
+async function loadJsonfileAsync(filePath, num) {
   try {
     const url = browser.runtime.getURL(filePath);
     const response = await fetch(url);
-    if (!response.ok) {
+    if (!response.ok && num === 1) {
       console.log(`File not found: ${filePath}`);
       return null;
     }
@@ -395,6 +395,28 @@ async function loadJsonfileAsync(filePath) {
     // console.error(`Error fetching file ${filePath}:`, error);
     return null;
   }
+}
+
+async function loadLocaleMessageFileAsync(langToLoad, fileCount = 5) {
+  // Create array of URLs dynamically based on fileCount
+  const urls = Array.from({ length: fileCount }, (_, i) => {
+    return {
+      path: `/_locales/${langToLoad}/messages${i + 1}.json`,
+      num: i
+    };
+  });
+
+  const loadPromises = urls.map((url) => loadJsonfileAsync(url.path, url.num).then((data) => ({ value: data })));
+
+  const results = await Promise.allSettled(loadPromises);
+
+  // Combine all successful results into a single object
+  const combinedMessages = results
+    .filter((result) => result.value)
+    .map((result) => result.value)
+    .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+
+  return combinedMessages;
 }
 
 async function loadRawMessages(langCode, cb) {
@@ -414,10 +436,8 @@ async function loadRawMessages(langCode, cb) {
 
   for (let langNum = 0; langNum < langsToLoad.length; langNum++) {
     const langToLoad = langsToLoad[langNum];
-    const url = `/_locales/${langToLoad}/messages.json`;
-    // console.log("loading lang resource", langNum, langToLoad, url);
 
-    const messages = await loadJsonfileAsync(url);
+    const messages = await loadLocaleMessageFileAsync(langToLoad);
 
     if (!messages) {
       console.log("no source found for", langToLoad);
@@ -1039,7 +1059,7 @@ async function refreshDateInfoAndShowAsync(resetToNow) {
   }
 
   setAlarmForNextRefresh(_di.currentTime, _di.frag2SunTimes.sunset, _di.bNow.eve);
-  
+
   // Set a backup periodic alarm to ensure the icon is refreshed even if the sunset/midnight alarms fail
   browser.alarms.create("periodic_refresh", { periodInMinutes: 60 });
 }
@@ -1049,13 +1069,13 @@ const refreshAlarms = {};
 function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
   let whenTime;
   let alarmName;
-  
+
   // Validate inputs first
   if (!currentTime || !(currentTime instanceof Date)) {
     console.warn("Invalid currentTime provided to setAlarmForNextRefresh:", currentTime);
     currentTime = new Date(); // Use current time as fallback
   }
-  
+
   if (inEvening) {
     // in eve, after sunset, so update after midnight
     const midnight = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 1).getTime();
@@ -1069,16 +1089,16 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
       // Calculate a fallback sunset time (approximately 6 PM)
       const fallbackSunset = new Date(currentTime);
       fallbackSunset.setHours(18, 0, 0, 0);
-      
+
       // If fallback is in the past, use tomorrow
       if (fallbackSunset < currentTime) {
         fallbackSunset.setDate(fallbackSunset.getDate() + 1);
       }
-      
+
       sunset = fallbackSunset;
       console.log("Using fallback sunset time:", sunset);
     }
-    
+
     whenTime = sunset.getTime();
     alarmName = _refreshPrefix + "sunset";
   }
@@ -1086,9 +1106,14 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
   // Check if the alarm time is in the past
   const now = new Date().getTime();
   if (whenTime < now) {
-    console.warn("Attempted to set {0} alarm in the past. Current time: {1}, Alarm time: {2}"
-      .filledWith(alarmName, new Date(now).toISOString(), new Date(whenTime).toISOString()));
-    
+    console.warn(
+      "Attempted to set {0} alarm in the past. Current time: {1}, Alarm time: {2}".filledWith(
+        alarmName,
+        new Date(now).toISOString(),
+        new Date(whenTime).toISOString()
+      )
+    );
+
     // Set alarm for 1 minute in the future as a fallback
     whenTime = now + 60000;
     console.log("Using fallback time 1 minute from now:", new Date(whenTime));
@@ -1106,20 +1131,23 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
   try {
     browser.alarms.create(alarmName, { when: whenTime });
     console.log("Successfully set {0} alarm for {1}".filledWith(alarmName, new Date(whenTime).toISOString()));
-    
+
     // Debug: show the alarm that was just set
-    browser.alarms.get(alarmName).then((alarm) => {
-      if (alarm) {
-        console.log("Verified alarm:", alarm.name, "scheduled for", new Date(alarm.scheduledTime).toISOString());
-      } else {
-        console.warn("Failed to verify alarm:", alarmName);
-      }
-    }).catch(error => {
-      console.error("Error verifying alarm:", error);
-    });
+    browser.alarms
+      .get(alarmName)
+      .then((alarm) => {
+        if (alarm) {
+          console.log("Verified alarm:", alarm.name, "scheduled for", new Date(alarm.scheduledTime).toISOString());
+        } else {
+          console.warn("Failed to verify alarm:", alarmName);
+        }
+      })
+      .catch((error) => {
+        console.error("Error verifying alarm:", error);
+      });
   } catch (error) {
     console.error("Error creating alarm:", error);
-    
+
     // Try one more time with a different approach
     try {
       const delayInMinutes = Math.max(1, (whenTime - Date.now()) / 60000);
@@ -1129,17 +1157,20 @@ function setAlarmForNextRefresh(currentTime, sunset, inEvening) {
       console.error("Failed to create fallback alarm:", secondError);
     }
   }
-  
+
   // List all active alarms for debugging
-  browser.alarms.getAll().then((alarms) => {
-    console.log("Active Alarms:", alarms.length);
-    for (let i = 0; i < alarms.length; i++) {
-      const alarm = alarms[i];
-      console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime).toISOString());
-    }
-  }).catch(error => {
-    console.error("Error listing alarms:", error);
-  });
+  browser.alarms
+    .getAll()
+    .then((alarms) => {
+      console.log("Active Alarms:", alarms.length);
+      for (let i = 0; i < alarms.length; i++) {
+        const alarm = alarms[i];
+        console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime).toISOString());
+      }
+    })
+    .catch((error) => {
+      console.error("Error listing alarms:", error);
+    });
 }
 
 String.prototype.filledWith = function (...args) {

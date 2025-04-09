@@ -1,0 +1,654 @@
+{
+  "iconColor": {
+    "message": "图标颜色",
+    "description": "Title for icon color settings section"
+  },
+  "iconColorAuto": {
+    "message": "自动（跟随系统主题）",
+    "description": "Label for automatic icon color option"
+  },
+  "iconColorManual": {
+    "message": "手动",
+    "description": "Label for manual icon color option"
+  },
+  "1day": {
+    "message": "在{0}天内",
+    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+  },
+  "actionSpeakDesc": {
+    "message": "提醒将使用此语音朗读：",
+    "description": "in edit area when asking for a relative time"
+  },
+  "afterSunset": {
+    "message": "晚上（日落后）"
+  },
+  "am": {
+    "message": "上午",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "arabic": {
+    "message": "名称",
+    "description": "on List page - table heading"
+  },
+  "ayyamIs0": {
+    "message": "(年 月 日) 0 = 阿亚米哈",
+    "description": "(updated) in Badi date picker area"
+  },
+  "bDatePickerTitle": {
+    "message": "前往<u>巴</u>迪历日期",
+    "description": "added <u></u> - should have one letter between <u> and </u>"
+  },
+  "beforeSunset": {
+    "message": "白天（日落前）"
+  },
+  "bMonthMeaning": {
+    "message": "'哈'之日,荣,华,美,耀,光,恩,道,全,名,力,志,智,权,言,问,尊,治,统,崇",
+    "description": "Names of days/months, with first one being Ayyam-i-ha"
+  },
+  "bMonthNameAr": {
+    "message": "阿亚米哈,巴哈,贾拉勒,贾迈勒,阿泽迈特,努尔,拉赫迈特,凯利马特,卡迈勒,埃斯玛,伊扎特,迈希耶特,伊勒姆,古德雷特,高勒,迈萨伊勒,谢拉夫,苏丹,穆勒克,阿拉",
+    "description": "month names, start with Ayyam-i-Ha"
+  },
+  "browserActionTitle": {
+    "message": "加载中",
+    "description": "Shown until the dynamic tip is created"
+  },
+  "browserMenuOpen": {
+    "message": "在标签页中打开",
+    "description": "shown as menu item when right-clicking on the browser icon"
+  },
+  "btnCal2M": {
+    "message": "缩放至月",
+    "description": "on button"
+  },
+  "btnCal2Y": {
+    "message": "缩放至年",
+    "description": "on button"
+  },
+  "btnCustomBuilderCancel": {
+    "message": "取消/新建"
+  },
+  "btnEveOrDay": {
+    "message": "日落前/后"
+  },
+  "btnJumpTo": {
+    "message": "前往"
+  },
+  "btnJumpToTitle": {
+    "message": "向前或向后移动这么多天",
+    "description": "tooltip"
+  },
+  "btnPlannerExportCsv": {
+    "message": "导出到Excel",
+    "description": "button - export to Comma Separated Value format for import into Excel"
+  },
+  "btnPlannerExportICal": {
+    "message": "导出ICAL",
+    "description": "button - export to iCalendar format"
+  },
+  "btnPlannerHelperFeasts": {
+    "message": "十九日灵宴会",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD1": {
+    "message": "圣日（不工作）",
+    "description": "helper button"
+  },
+  "btnPlannerHelperHD2": {
+    "message": "所有圣日",
+    "description": "helper button"
+  },
+  "btnPlannerHelperNone": {
+    "message": "无",
+    "description": "helper button"
+  },
+  "btnPlannerHelperRid": {
+    "message": "里兹万节",
+    "description": "helper button"
+  },
+  "btnPlannerHelperTHB": {
+    "message": "双圣诞辰",
+    "description": "helper button"
+  },
+  "btnReminderCancel": {
+    "message": "取消",
+    "description": "cancel changes and close the edit area"
+  },
+  "btnReminderDelete": {
+    "message": "删除",
+    "description": "delete a reminder"
+  },
+  "btnReminderEdit": {
+    "message": "编辑",
+    "description": "shown next to each reminder. Click to edit the reminder."
+  },
+  "btnReminderSave": {
+    "message": "<u>保</u>存",
+    "description": "Save the changes and close the edit area"
+  },
+  "btnReminderSaveNew": {
+    "message": "复制",
+    "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+  },
+  "btnReminderTest": {
+    "message": "立即测试",
+    "description": "show a sample of the reminder now"
+  },
+  "btnRetry2": {
+    "message": "立即重新加载"
+  },
+  "bTopDayDisplay": {
+    "message": "{bYear}年 {bMonthNamePri}月 {bDay}日",
+    "description": "top right corner"
+  },
+  "bWeekDayMeaning": {
+    "message": ",荣耀,美丽,完美,优雅,正义,高贵,独立",
+    "description": "start with Saturday and a leading comma"
+  },
+  "bWeekdayNameAr": {
+    "message": ",贾拉勒,贾迈勒,卡迈勒,菲达勒,伊达勒,伊斯提杰拉勒,伊斯提格拉勒",
+    "description": "weekday names, with leading , "
+  },
+  "bYearInVahidMeaning": {
+    "message": ",甲,乙,父,丁,门,己,永恒,慷慨,荣耀,爱,喜悦,回应,唯一,慈悲,亲密,始,光明,至光明,合一",
+    "description": "Vahid names, with leading , "
+  },
+  "bYearInVahidNameAr": {
+    "message": ",艾利夫,巴,阿巴,达勒,巴孛,瓦乌,阿巴德,贾德,巴哈,胡卜,巴哈杰,贾瓦卜,阿哈德,瓦哈卜,维达德,巴迪,巴希,阿卜哈,瓦希德",
+    "description": "Arabic names of years in a Vahid, with leading , "
+  },
+  "cal2DarkerColors": {
+    "message": "深色<u>颜</u>色",
+    "description": "a check box on the calendar. If checked, darker colors are used."
+  },
+  "cal2ForPrint": {
+    "message": "<u>打</u>印时显示所有月份",
+    "description": "a check box on the calendar. If checked, formating is improved for printing."
+  },
+  "cal2ShowTimes": {
+    "message": "显示<u>时</u>间",
+    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+  },
+  "cal3ForPrint": {
+    "message": "<u>打</u>印时显示所有月份",
+    "description": "a check box on the calendar. If checked, formating is improved for printing."
+  },
+  "cal3ShowTimes": {
+    "message": "显示<u>时</u>间",
+    "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+  },
+  "Chrome_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+    "description": "about page"
+  },
+  "Chrome_WebStore": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+    "description": "link to Webstore when running in Chrome"
+  },
+  "Chrome_WebStoreSupport": {
+    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+    "description": "link to Webstore support link when running in Chrome"
+  },
+  "copied": {
+    "message": "已复制！",
+    "description": "short message that replaces sample format button text when button is clicked"
+  },
+  "currentFocus": {
+    "message": "当前日期",
+    "description": "in wheel, points to today, or whatever day is currently selected"
+  },
+  "customBtnCopy": {
+    "message": "复制"
+  },
+  "customBuilder": {
+    "message": "创建自定义日期格式"
+  },
+  "customBuilderEcho": {
+    "message": "结果（当前选择的日期 - 参见提示和按键以更改日期）"
+  },
+  "customBuilderIntro": {
+    "message": "在此框中输入格式。<span class=customHint title='...NamePri = 主要语言\n...NameSec = 次要语言\nfrag1... = 日落至午夜\nfrag2... = 午夜至日落'>(查看提示)</span><br>点击'可用日期部分'中的'添加'按钮在当前位置插入。"
+  },
+  "customDefined": {
+    "message": "自定义日期格式"
+  },
+  "customFormats": {
+    "message": "自定义格式",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
+  },
+  "customIntroClick": {
+    "message": "点击'复制'将格式化的日期复制到剪贴板。"
+  },
+  "customLoadDefaultToolTip": {
+    "message": "Chrome图标工具提示中显示的格式："
+  },
+  "customLoadDefaultToolTip1": {
+    "message": "第1行"
+  },
+  "customLoadDefaultToolTip2": {
+    "message": "第2行"
+  },
+  "customLoadDefaultTopDay": {
+    "message": "在大多数页面顶部显示的格式："
+  },
+  "customLoadLetters": {
+    "message": "点击从标准格式复制："
+  },
+  "customPartsList": {
+    "message": "可用日期部分"
+  },
+  "customSelectForFrontPage": {
+    "message": "勾选以在{0}页面上显示。"
+  },
+  "customUseAsSample": {
+    "message": "用作示例？"
+  },
+  "dateHeading": {
+    "message": "日期",
+    "description": "heading in Events listing"
+  },
+  "dayEndedFuture": {
+    "message": "结束"
+  },
+  "dayEndedPast": {
+    "message": "已结束"
+  },
+  "DayOfMonth": {
+    "message": "月中日"
+  },
+  "DayOfMonthFormat": {
+    "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+  },
+  "DayOfWeek": {
+    "message": "星期"
+  },
+  "DayOfWeekFormat": {
+    "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+  },
+  "dayStartedFuture": {
+    "message": "开始"
+  },
+  "dayStartedPast": {
+    "message": "已开始"
+  },
+  "defaultFormat": {
+    "message": "（默认）",
+    "description": "in the list of formats at the bottom of of the 'Custom' page"
+  },
+  "elements": {
+    "message": "火,氣,水,土",
+    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+  },
+  "Ended": {
+    "message": "已结束",
+    "description": "Shown in the upcoming dates area"
+  },
+  "endingWithSunset": {
+    "message": "在{0}日落时结束"
+  },
+  "equiv": {
+    "message": "等价",
+    "description": "on List page - table heading"
+  },
+  "eraAbbrev": {
+    "message": "B.E."
+  },
+  "eraLong": {
+    "message": "巴哈伊纪元"
+  },
+  "eraShort": {
+    "message": "BE"
+  },
+  "eventTime": {
+    "message": "{eventYear}年{eventMonthShort}{eventDay}日 {eventWeekdayShort} {eventTime}",
+    "description": "show start time in Events listing"
+  },
+  "eventTimeHeading1": {
+    "message": "常规会议时间",
+    "description": "heading in Events listing (if not showing Holy Days)"
+  },
+  "eventTimeHeading2": {
+    "message": "会议/特殊时间",
+    "description": "heading in Events listing (if showing Holy Days)"
+  },
+  "evePartOfDay": {
+    "message": "{frag1Year}年{frag1MonthShort}{frag1Day}日 {frag1WeekdayShort} {startingSunsetDesc}",
+    "description": "show start time in Events listing"
+  },
+  "example2": {
+    "message": "{bMonthNamePri}月{bDay}日{dayStartedLower}于日落时（约{startingSunsetDesc}）在{frag1Year}年{frag1MonthShort}{frag1Day}日{frag1WeekdayLong}，并{dayEndedLower}于日落时（约{endingSunsetDesc}）在{frag2Year}年{frag2MonthShort}{frag2Day}日{frag2WeekdayLong}。"
+  },
+  "facebook": {
+    "message": "Facebook",
+    "description": "ALT for icon at bottom of page"
+  },
+  "fastDaysTitle": {
+    "message": "{bYear}年斋戒时间"
+  },
+  "fastGDate": {
+    "message": "日期",
+    "description": "heading in Fast days listing"
+  },
+  "FeastOf": {
+    "message": "{0}灵宴会",
+    "description": "The localized name of the Feast will be put into {0}"
+  },
+  "FestivalRidvan": {
+    "message": "里兹万节"
+  },
+  "Firefox_History": {
+    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+    "description": "about page"
+  },
+  "Firefox_WebStore": {
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+    "description": "link to Webstore when running in Firefox"
+  },
+  "Firefox_WebStoreSupport": {
+    "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+    "description": "link to Webstore support link when running in Firefox"
+  },
+  "formatIconClick": {
+    "message": "（点击获取更多详情）"
+  },
+  "formatIconToolTip": {
+    "message": "{bYear}年 {bMonthNamePri}月 {bDay}日",
+    "description": "text when mouse is over the extension icon"
+  },
+  "gMonthLong": {
+    "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+  },
+  "gMonthShort": {
+    "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+  },
+  "googlePlus": {
+    "message": "Google+",
+    "description": "ALT for icon at bottom of page"
+  },
+  "gotoNow": {
+    "message": "今天"
+  },
+  "gregorianDateDisplay": {
+    "message": "{currentYear}年{currentMonthLong}{currentDay}日 {currentWeekdayShort}",
+    "description": "in left panel"
+  },
+  "gTopDayDisplay": {
+    "message": "{currentYear}年{currentMonthLong}{currentDay}日 {currentWeekdayShort} {currentRelationToSunset}",
+    "description": "top right corner"
+  },
+  "gWeekdayLong": {
+    "message": "星期日,星期一,星期二,星期三,星期四,星期五,星期六",
+    "description": "start with Sunday"
+  },
+  "gWeekdayShort": {
+    "message": "周日,周一,周二,周三,周四,周五,周六",
+    "description": "start with Sun"
+  },
+  "HolyDay_AscAbdul": {
+    "message": "阿博都-巴哈升天日"
+  },
+  "HolyDay_AscBaha": {
+    "message": "巴哈欧拉升天日"
+  },
+  "HolyDay_BirthBab": {
+    "message": "巴孛诞辰"
+  },
+  "HolyDay_BirthBaha": {
+    "message": "巴哈欧拉诞辰"
+  },
+  "HolyDay_Covenant": {
+    "message": "圣约日"
+  },
+  "HolyDay_DeclBab": {
+    "message": "巴孛宣示日"
+  },
+  "HolyDay_Martyrdom": {
+    "message": "巴孛殉道日"
+  },
+  "HolyDay_NawRuz": {
+    "message": "诺鲁孜节"
+  },
+  "HolyDay_Ridvan1": {
+    "message": "里兹万节的第一日"
+  },
+  "HolyDay_Ridvan12": {
+    "message": "里兹万节的第十二日"
+  },
+  "HolyDay_Ridvan9": {
+    "message": "里兹万节的第九日"
+  },
+  "includeFeasts": {
+    "message": "<u>灵</u>宴会",
+    "description": "choosing what to include in the listing"
+  },
+  "includeHolyDays": {
+    "message": "<u>圣</u>日",
+    "description": "choosing what to include in the listing"
+  },
+  "includeThese": {
+    "message": "显示",
+    "description": "choosing what to include in the listing"
+  },
+  "Intercalary": {
+    "message": "阿亚米哈"
+  },
+  "jumpTo": {
+    "message": "<u>跳</u>转±天数",
+    "description": "user can enter a day after/before currently selected day"
+  },
+  "keyToOpenInTab": {
+    "message": "T",
+    "description": "Press Shift+(this letter) to open into a tab"
+  },
+  "Kullishay": {
+    "message": "库勒谢"
+  },
+  "KullishayFormat": {
+    "message": "{bKullishay}"
+  },
+  "locationError": {
+    "message": "无法确定您当前的位置。\n\n扩展将使用下午6:30作为每天的日落时间。",
+    "description": "If the system cannot determine the location, this is shown in an alert window."
+  },
+  "mainPartOfDay": {
+    "message": "{frag2Year}年{frag2MonthShort}{frag2Day}日 {frag2WeekdayShort}",
+    "description": "show start time in Events listing"
+  },
+  "meaning": {
+    "message": "含义",
+    "description": "on List page - table heading"
+  },
+  "Month": {
+    "message": "月"
+  },
+  "MonthFormatAyyam": {
+    "message": "{bMonthNamePri} ({bMonthNameSec})"
+  },
+  "MonthFormatNormal": {
+    "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+  },
+  "monthNames": {
+    "message": "月/日名称",
+    "description": "on List page - table caption"
+  },
+  "nearestSunsetDay": {
+    "message": "{dayEnded}于日落时{endingSunsetDesc}"
+  },
+  "nearestSunsetEve": {
+    "message": "{dayStarted}于日落时{startingSunsetDesc}"
+  },
+  "next": {
+    "message": "下一个 &rarr;"
+  },
+  "nextRefreshAlarm": {
+    "message": "下次刷新计划在{0}后：{1}",
+    "description": "only shown in the debug console"
+  },
+  "nextYear": {
+    "message": "下一年",
+    "description": "hold Shift and press right arrow key"
+  },
+  "nextYearTitle": {
+    "message": "按Shift + 右箭头查看下一年",
+    "description": "hold Shift and press right arrow key"
+  },
+  "noLocationAvailable": {
+    "message": "（未知位置 - 下午6:30日落时间）",
+    "description": "If the system does not know the location of this computer."
+  },
+  "noLocationName": {
+    "message": "（当前位置）",
+    "description": "If the internet is not available, to get the name of the current location."
+  },
+  "Now": {
+    "message": "现在",
+    "description": "Shown in the upcoming dates area"
+  },
+  "num": {
+    "message": "#",
+    "description": "on List page - table heading"
+  },
+  "numUnits": {
+    "message": "{num} {units}",
+    "description": "eg. 5 days, 1 minute, 3 hours"
+  },
+  "ordinal": {
+    "message": "第,第,第,第",
+    "description": "x,1,2,3"
+  },
+  "ordinalNames": {
+    "message": ",一,二,三,四,五,六,七,八,九,十,十一,十二,十三,十四,十五,十六,十七,十八,十九"
+  },
+  "otherDays": {
+    "message": "在{0}天内",
+    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+  },
+  "pick_pageCal1": {
+    "message": "年"
+  },
+  "pick_pageCalGreg": {
+    "message": "公历年",
+    "description": "tab name"
+  },
+  "pick_pageCalWheel": {
+    "message": "轮盘",
+    "description": "tab name"
+  },
+  "pick_pageDay": {
+    "message": "日"
+  },
+  "pick_pageEvents": {
+    "message": "事件",
+    "description": "showing Feast and Holy Days"
+  },
+  "pick_pageFast": {
+    "message": "斋戒"
+  },
+  "pick_pageLists": {
+    "message": "列表"
+  },
+  "pm": {
+    "message": "下午",
+    "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+  },
+  "pressKeyOrClick": {
+    "message": "点击按钮或按{0}键。",
+    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+  },
+  "pressToCopy": {
+    "message": "选择一种格式复制到剪贴板：",
+    "description": "Can click button with mouse, or press matching key on keyboard"
+  },
+  "prev": {
+    "message": "&larr; 上一个"
+  },
+  "prevYear": {
+    "message": "上一年",
+    "description": "hold Shift and press left arrow key"
+  },
+  "prevYearTitle": {
+    "message": "按Shift + 左箭头查看上一年",
+    "description": "hold Shift and press left arrow key"
+  },
+  "rbDefLang_Local": {
+    "message": "中文",
+    "description": "put your language here, in your script"
+  },
+  "shoghiExample": {
+    "message": "第{KullishayLabelPri}个库勒谢的第{VahidLabelPri}个瓦希德的{bYearInVahidNamePri}年{bMonthNamePri}月{bDayNamePri}日一周当中的{bWeekdayNamePri}日",
+    "description": "Example given by Shoghi Effendi"
+  },
+  "shortcutKeyTitle": {
+    "message": "按此键组合可从Chrome中的任何位置打开日历。"
+  },
+  "showPointer": {
+    "message": "显示指针"
+  },
+  "specialDaysTitle": {
+    "message": "{bYear}年灵宴会和圣日"
+  },
+  "specialTime_0100S": {
+    "message": "凌晨1点（标准时间）",
+    "description": "Ascension of `Abdu'l-Bahá"
+  },
+  "specialTime_0300S": {
+    "message": "凌晨3点（标准时间）",
+    "description": "Ascension of Baha'u'llah"
+  },
+  "specialTime_1200S": {
+    "message": "中午（标准时间）",
+    "description": "Martyrdom of the Bab"
+  },
+  "specialTime_1500S": {
+    "message": "下午3点（标准时间）",
+    "description": "First day of Ridvan"
+  },
+  "specialTime_SS2": {
+    "message": "日落后约2小时",
+    "description": "Declaration of the Bab"
+  },
+  "startedWithSunset": {
+    "message": "在{0}日落时开始"
+  },
+  "startTimeOption": {
+    "message": "常规会议时间：",
+    "description": "above Events listing"
+  },
+  "suggestions": {
+    "message": "建议？"
+  },
+  "suggestionsTitle": {
+    "message": "点击此处提交如何改进此扩展的建议！"
+  },
+  "sunriseFastHeading": {
+    "message": "日出",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetFastHeading": {
+    "message": "日落",
+    "description": "heading in Fast days listing"
+  },
+  "sunsetHeading": {
+    "message": "巴迪日开始",
+    "description": "heading in Events listing"
+  },
+  "suspendWorkHeading": {
+    "message": "停止工作",
+    "description": "heading in Events listing"
+  },
+  "title": {
+    "message": "巴迪历",
+    "description": "The title of the extension. Shown in a number of locations."
+  },
+  "translation": {
+    "message": "zh-CN",
+    "description": "This needs to be the international language code for this language, shown in English letters."
+  },
+  "translationEnglishName": {
+    "message": "Chinese",
+    "description": "The name of this language, in English"
+  },
+  "Vahid": {
+    "message": "瓦希德"
+  }
+}
