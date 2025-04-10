@@ -1,0 +1,247 @@
+{
+    "exporterItemDescDay": {
+        "message": "วันในปฏิทินบะดีอ์",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "เวลาสำหรับการถือศีลอดประจำปีของบาไฮ",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "การรวมตัวอาจเริ่มได้ทุกเวลาในวันบะดีอ์นี้",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "เวลาพระอาทิตย์ขึ้นหรือพระอาทิตย์ตกที่แสดงเป็นสำหรับ {location} สร้างโดยใช้ http://bit.ly/BadiChrome",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "ตัวส่งออกปฏิทินบะดีอ์",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "ดาวน์โหลดไฟล์ iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "ปีคริสต์ศักราช - {0} ค.ศ."
+    },
+    "exportGregYear1": {
+        "message": "ปีคริสต์ศักราช - {0} ค.ศ."
+    },
+    "exportHideTest": {
+        "message": "ซ่อน"
+    },
+    "exportIncludeAlert": {
+        "message": "เพิ่มการแจ้งเตือนในแต่ละกิจกรรม (อาจไม่โหลดเข้าปฏิทิน Google)"
+    },
+    "exportIncludeLocation": {
+        "message": "ข้อมูลตำแหน่ง"
+    },
+    "exportIntro": {
+        "message": "สำคัญ! ดู <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">หน้าเว็บนี้</a> สำหรับข้อมูลและข้อควรระวัง!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "ชื่อสำหรับปฏิทินที่ส่งออก (อาจไม่ได้ใช้)"
+    },
+    "exportNumToInclude": {
+        "message": "จำนวนรายการปฏิทินที่รวมไว้ (โดยประมาณ):"
+    },
+    "exportOption_AllDay": {
+        "message": "กิจกรรมทั้งวันจากเที่ยงคืน <em>(ยาว 1 วัน)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "ที่พระอาทิตย์ตกเริ่มต้นเท่านั้น"
+    },
+    "exportOption_Date": {
+        "message": "วันบะดีอ์ <em>(365/366 วัน)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "วันถือศีลอด <em>(19 วัน)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "ฉลองบุญ <em>(19 วัน)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "วันบุญ <em>(11 วัน)</em>"
+    },
+    "exportOption_Start": {
+        "message": "กิจกรรมในเวลาที่กำหนดไว้สำหรับการสังเกตหรือเวลาประชุมปกติ"
+    },
+    "exportOption_Sun": {
+        "message": "จากพระอาทิตย์ตกถึงพระอาทิตย์ตก <em>(ประมาณ 24 ชั่วโมง)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "ที่พระอาทิตย์ขึ้นเท่านั้น"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "กิจกรรมจากพระอาทิตย์ขึ้นถึงพระอาทิตย์ตก <em>(ประมาณ 12 ชั่วโมง)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "ที่พระอาทิตย์ตกเท่านั้น"
+    },
+    "exportOption_Usual": {
+        "message": "กิจกรรมในเวลาประชุมปกติ (ดูหน้ากิจกรรม)"
+    },
+    "exportOtherSettings": {
+        "message": "การตั้งค่าอื่นๆ"
+    },
+    "exportQuickDesc": {
+        "message": "ส่งออกแต่ละชุด แล้วโหลดทั้งหมดเข้าปฏิทินเดียวกัน!"
+    },
+    "exportQuickPick1": {
+        "message": "1. ปฏิทินเต็ม"
+    },
+    "exportQuickPick1Text": {
+        "message": "แสดงแต่ละวันบะดีอ์ พร้อมกับวันบุญและเวลาฉลองบุญ ไม่มีการแจ้งเตือน"
+    },
+    "exportQuickPick2": {
+        "message": "2. เวลาถือศีลอด - เช้า"
+    },
+    "exportQuickPick2Text": {
+        "message": "พระอาทิตย์ขึ้น พร้อมการแจ้งเตือนก่อนเล็กน้อย"
+    },
+    "exportQuickPick3": {
+        "message": "3. เวลาถือศีลอด - เย็น"
+    },
+    "exportQuickPick3Text": {
+        "message": "พระอาทิตย์ตก พร้อมการแจ้งเตือน"
+    },
+    "exportQuickPickClearText": {
+        "message": "รีเซ็ตตัวเลือก"
+    },
+    "exportQuickPicks": {
+        "message": "ชุดกิจกรรมที่แนะนำ"
+    },
+    "exportRangeFullRange": {
+        "message": "ส่งออกรายการปฏิทินทั้งหมด (หากไม่ได้เลือก จะส่งออกเฉพาะชุดตัวอย่าง)"
+    },
+    "exportTest": {
+        "message": "แ<u>ส</u>ดงเพื่อคัดลอก"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "เลือกสิ่งที่ควรส่งออก"
+    },
+    "exportWhatToInclude": {
+        "message": "ตัวเลือก"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "เวลาถือศีลอดใน {bYear}"
+    },
+    "fastGDate": {
+        "message": "วันที่",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "ฉลองบุญ{0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "เทศกาลริซวาน"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(คลิกเพื่อดูรายละเอียดเพิ่มเติม)"
+    },
+    "formatIconToolTip": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "เริ่มเวลา {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "จะเป็นใน {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "จะเป็นใน {numUnits} เวลา {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "จะเริ่มใน {numUnits} เวลา {time}"
+    },
+    "future_StartTime": {
+        "message": "จะเริ่มเวลา {time}"
+    },
+    "future_Time": {
+        "message": "จะเป็นเวลา {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "วันที่คริสต์ศักราช"
+    },
+    "gDatePickerTitle2": {
+        "message": "ไปที่วันที่<u>ค</u>ริสต์ศักราช",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "มกราคม,กุมภาพันธ์,มีนาคม,เมษายน,พฤษภาคม,มิถุนายน,กรกฎาคม,สิงหาคม,กันยายน,ตุลาคม,พฤศจิกายน,ธันวาคม"
+    },
+    "gMonthShort": {
+        "message": "ม.ค.,ก.พ.,มี.ค.,เม.ย.,พ.ค.,มิ.ย.,ก.ค.,ส.ค.,ก.ย.,ต.ค.,พ.ย.,ธ.ค."
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "iconColor": {
+        "message": "สีไอคอน",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "อัตโนมัติ (ตามธีมของระบบ)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "ด้วยตนเอง",
+        "description": "Label for manual icon color option"
+    }
+}

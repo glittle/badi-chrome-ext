@@ -1,0 +1,707 @@
+{
+    "1day": {
+        "message": "{0} دن میں",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "actionSpeakDesc": {
+        "message": "یاد دہانی اس آواز کا استعمال کرتے ہوئے پڑھی جائے گی: ",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "شام (غروب آفتاب کے بعد)"
+    },
+    "am": {
+        "message": "صبح",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "نام",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(س م د) 0={0}",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "<u>ب</u>دیع تاریخ پر جائیں",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "دن (غروب آفتاب سے پہلے)"
+    },
+    "bMonthMeaning": {
+        "message": "ایام ہا,شان,جلال,جمال,عظمت,نور,رحمت,کلمات,کمال,اسماء,عزت,مشیت,علم,قدرت,قول,مسائل,شرف,سلطان,ملک,علاء",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "ایّام الہاء,بهاء,جلال,جمال,عظمة,نور,رحمة,کلمات,کمال,أسماء,عزّة,م<u>ش</u>یّة,علم,قدرة,قول,مسائل,<u>ش</u>رف,سلطان,ملک,علاء",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "لوڈ ہو رہا ہے",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "ٹیب میں کھولیں",
+        "description": "shown as menu item when right-clicking on the browser icon "
+    },
+    "btnCal2M": {
+        "message": "مہینے تک زوم کریں",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "سال تک زوم کریں",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "منسوخ کریں / نیا"
+    },
+    "btnEveOrDay": {
+        "message": "غروب آفتاب سے پہلے / بعد"
+    },
+    "btnJumpTo": {
+        "message": "جائیں"
+    },
+    "btnJumpToTitle": {
+        "message": "دنوں کی اس تعداد سے آگے یا پیچھے جائیں",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "ایکسل میں برآمد کریں",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ICAL برآمد کریں",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "ضیافتیں",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "مقدس دن (کام نہیں)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "تمام مقدس دن",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "کوئی نہیں",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "رضوان",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "جڑواں سالگرہ",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "منسوخ کریں",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "حذف کریں",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "ترمیم کریں",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "م<u>ح</u>فوظ کریں",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "نقل کریں",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "ابھی ٹیسٹ کریں",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "ابھی دوبارہ لوڈ کریں"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",جلال,جمال,کمال,فضال,عدال,استجلال,استقلال",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",جلال,جمال,کمال,فضال,عدال,استجلال,استقلال",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",الف,ب,اب,د,باب,و,ابد,جود,بهاء,حب,بهاج,جواب,احد,وهاب,وداد,بدیع,بهی,ابهی,واحد",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",الف,باء,اب,دال,باب,واو,ابد,جاد,بهاء,حب,بهاج,جواب,احد,وهاب,وداد,بدیع,بهی,ابهی,واحد",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "گہرے <u>ر</u>نگ",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "<u>پ</u>رنٹ کرتے وقت تمام مہینے",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "اوقات <u>د</u>کھائیں",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "<u>پ</u>رنٹ کرتے وقت تمام مہینے",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "اوقات <u>د</u>کھائیں",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "کاپی ہو گیا!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "موجودہ دن",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "کاپی کریں"
+    },
+    "customBuilder": {
+        "message": "اپنی مرضی کا تاریخ فارمیٹ بنائیں"
+    },
+    "customBuilderEcho": {
+        "message": "نتائج (فی الحال منتخب دن کے لیے - دن تبدیل کرنے کے لیے ٹپس اور کیز دیکھیں)"
+    },
+    "customBuilderIntro": {
+        "message": "اس باکس میں فارمیٹ ٹائپ کریں۔ <span class=customHint title='...NamePri = بنیادی زبان میں\n...NameSec = ثانوی زبان میں\nfrag1... = غروب آفتاب سے آدھی رات تک\nfrag2... = آدھی رات سے غروب آفتاب تک'>(ہنٹس دیکھیں)</span><br>موجودہ مقام پر داخل کرنے کے لیے دستیاب تاریخ کے حصوں میں 'شامل کریں' بٹن پر کلک کریں۔"
+    },
+    "customDefined": {
+        "message": "اپنی مرضی کے تاریخ فارمیٹس"
+    },
+    "customFormats": {
+        "message": "اپنی مرضی کے فارمیٹس",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "فارمیٹ شدہ تاریخ کو کلپ بورڈ پر کاپی کرنے کے لیے 'کاپی کریں' پر کلک کریں۔"
+    },
+    "customLoadDefaultToolTip": {
+        "message": "کروم آئیکن ٹول ٹپ میں دکھانے کے لیے فارمیٹ:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "لائن 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "لائن 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "زیادہ تر صفحات کے اوپر دکھانے کے لیے فارمیٹ:"
+    },
+    "customLoadLetters": {
+        "message": "معیاری فارمیٹ سے کاپی کرنے کے لیے کلک کریں: "
+    },
+    "customPartsList": {
+        "message": "دستیاب تاریخ کے حصے"
+    },
+    "customSelectForFrontPage": {
+        "message": "{0} صفحہ پر دکھانے کے لیے باکس پر نشان لگائیں۔"
+    },
+    "customUseAsSample": {
+        "message": "نمونے کے طور پر استعمال کریں؟"
+    },
+    "dateHeading": {
+        "message": "دن",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "ختم ہوتا ہے"
+    },
+    "dayEndedPast": {
+        "message": "ختم ہوا"
+    },
+    "DayOfMonth": {
+        "message": "مہینے کا دن"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "ہفتے کا دن"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "شروع ہوتا ہے"
+    },
+    "dayStartedPast": {
+        "message": "شروع ہوا"
+    },
+    "defaultFormat": {
+        "message": "(ڈیفالٹ) ",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "آگ,ہوا,پانی,زمین",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "ختم ہوا",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "{0} پر غروب آفتاب کے ساتھ ختم ہوتا ہے"
+    },
+    "equiv": {
+        "message": "مساوی",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "بہائی دور"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "معمول کا میٹنگ ٹائم",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "میٹنگ/خصوصی وقت",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} غروب آفتاب پر (تقریباً {startingSunsetDesc}) {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} کو اور {dayEndedLower} غروب آفتاب پر (تقریباً {endingSunsetDesc}) {frag2WeekdayLong}, {frag2MonthShort} {frag2Day} کو۔"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear} میں روزے کے اوقات"
+    },
+    "fastGDate": {
+        "message": "تاریخ",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "ضیافت {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "رضوان کا تہوار"
+    },
+    "formatIconClick": {
+        "message": "(تفصیلات کے لیے کلک کریں)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "جنوری,فروری,مارچ,اپریل,مئی,جون,جولائی,اگست,ستمبر,اکتوبر,نومبر,دسمبر"
+    },
+    "gMonthShort": {
+        "message": "جنوری,فروری,مارچ,اپریل,مئی,جون,جولائی,اگست,ستمبر,اکتوبر,نومبر,دسمبر"
+    },
+    "gotoNow": {
+        "message": "ابھی"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "عبدالبہاء کا عروج"
+    },
+    "HolyDay_AscBaha": {
+        "message": "بہاء اللہ کا عروج"
+    },
+    "HolyDay_BirthBab": {
+        "message": "باب کی ولادت"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "بہاء اللہ کی ولادت"
+    },
+    "HolyDay_Covenant": {
+        "message": "عہد کا دن"
+    },
+    "HolyDay_DeclBab": {
+        "message": "باب کا اعلان"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "باب کی شہادت"
+    },
+    "HolyDay_NawRuz": {
+        "message": "نوروز"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "رضوان کا پہلا دن"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "رضوان کا بارہواں دن"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "رضوان کا نواں دن"
+    },
+    "iconColor": {
+        "message": "آئیکن کا رنگ",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "خودکار (سسٹم تھیم کی پیروی کریں)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "دستی",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>ض</u>یافتیں",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>م</u>قدس دن",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "دکھائیں",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "ایام ہا"
+    },
+    "jumpTo": {
+        "message": "<u>ج</u>ائیں ± دن",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Kullishay": {
+        "message": "کل <u>ش</u>ئی"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "ہر چیز",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "آپ کا موجودہ مقام تعین نہیں کیا جا سکتا۔\n\nایکسٹینشن ہر دن غروب آفتاب کے وقت کے لیے 18:30 استعمال کرے گا۔",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "معنی",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "مہینہ"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "مہینے/دن کے نام",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} غروب آفتاب کے ساتھ {endingSunsetDesc} پر"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} غروب آفتاب کے ساتھ {startingSunsetDesc} پر"
+    },
+    "next": {
+        "message": "اگلا &rarr;"
+    },
+    "nextYear": {
+        "message": "اگلا سال",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "اگلا سال دیکھنے کے لیے شفٹ + دائیں تیر دبائیں",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(مقام نامعلوم - غروب آفتاب کا وقت 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(موجودہ مقام)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "ابھی",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "واں,پہلا,دوسرا,تیسرا",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",پہلا,دوسرا,تیسرا,چوتھا,پانچواں,چھٹا,ساتواں,آٹھواں,نواں,دسواں,گیارہواں,بارہواں,تیرہواں,چودہواں,پندرہواں,سولہواں,سترہواں,اٹھارہواں,انیسواں"
+    },
+    "otherDays": {
+        "message": "{0} دنوں میں",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "سال"
+    },
+    "pick_pageCalGreg": {
+        "message": "گریگوری سال",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "پہیہ",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "دن"
+    },
+    "pick_pageEvents": {
+        "message": "تقریبات",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "روزہ"
+    },
+    "pick_pageLists": {
+        "message": "فہرستیں"
+    },
+    "pm": {
+        "message": "شام",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "کلید دبائیں یا {0} ٹائپ کریں۔",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "کلپ بورڈ پر کاپی کرنے کے لیے فارمیٹ منتخب کریں:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; پچھلا"
+    },
+    "prevYear": {
+        "message": "پچھلا سال",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "پچھلا سال دیکھنے کے لیے شفٹ + بائیں تیر دبائیں",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "اردو",
+        "description": "put your language here, in your script"
+    },
+    "shoghiExample": {
+        "message": "آج {bWeekdayNamePri} کا دن ہے، {bDayNamePri} کا دن، {bMonthNamePri} کا مہینہ، {bYearInVahidNamePri} کا سال، {bVahidOrdinalName} {VahidLabelPri}، {bKullishayOrdinalName} {KullishayLabelPri}۔",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "کروم میں کہیں سے بھی کیلنڈر کھولنے کے لیے یہ کی کمبینیشن دبائیں۔"
+    },
+    "showPointer": {
+        "message": "پوائنٹر دکھائیں"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear} میں ضیافتیں اور مقدس دن"
+    },
+    "specialTime_0100S": {
+        "message": "صبح 1 بجے (معیاری وقت)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "صبح 3 بجے (معیاری وقت)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "دوپہر (معیاری وقت)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "شام 3 بجے (معیاری وقت)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "غروب آفتاب کے تقریباً 2 گھنٹے بعد",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "{0} پر غروب آفتاب کے ساتھ شروع ہوا"
+    },
+    "startTimeOption": {
+        "message": "معمول کا میٹنگ ٹائم: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "تجاویز؟"
+    },
+    "suggestionsTitle": {
+        "message": "براہ کرم یہاں کلک کریں اور اس ایکسٹینشن کو بہتر بنانے کے لیے کوئی تجاویز جمع کرائیں!"
+    },
+    "sunriseFastHeading": {
+        "message": "طلوع آفتاب",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "غروب آفتاب",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "بدیع دن کا آغاز",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "کام معطل کریں",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "rtl",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "ٹپس اور کیز",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "درستگی؟"
+    },
+    "tipsAboutText": {
+        "message": "221 B.E. (2064 A.D.) تک کی تاریخیں معلوم ہیں۔ اس کے بعد، فلکیاتی مشاہدات میں بہتری کے ساتھ اپ ڈیٹس کی ضرورت پڑ سکتی ہے۔ براہ کرم اپنے منصوبوں کو 50 سال سے زیادہ مستقبل میں حتمی شکل دینے کے لیے اس کا استعمال نہ کریں! مزید تفصیلات کے لیے ویب سائٹ دیکھیں۔"
+    },
+    "tipsText": {
+        "message": "پینلز کو منتخب کرنے کے لیے PgUp/PgDn کلیدیں دبائیں۔\nدن تبدیل کرنے کے لیے دائیں/بائیں تیر کلیدیں دبائیں۔\nغروب آفتاب سے پہلے/بعد سوئچ کرنے کے لیے / دبائیں۔\nآج واپس آنے کے لیے Home دبائیں!"
+    },
+    "title": {
+        "message": "بدیع کیلنڈر",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "بدیع (حیرت انگیز) کیلنڈر میں آج کی تاریخ دکھاتا ہے، جو بہائی مذہب کا سرکاری کیلنڈر ہے۔",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "آج رات",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ur",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Urdu",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "آنے والی ضیافتیں، مقدس دن، اور دیگر تقریبات"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "واحد"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "واحد",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "واحد",
+        "description": "Label for Vahid in secondary language"
+    },
+    "webstore": {
+        "message": "ویب سٹور"
+    },
+    "weekDayNames": {
+        "message": "ہفتے کے دنوں کے نام",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "بہائی دور کا سال"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "{VahidLabelPri} کا سال"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "تفصیلات یا سائن اپ کرنے کے لیے، <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> دیکھیں۔ Zap میں یہ فیلڈز ہوں گی: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

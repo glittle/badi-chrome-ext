@@ -1,0 +1,109 @@
+{
+    "FeastOf": {
+        "message": "Праздник {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Фестиваль Ридван"
+    },
+    "formatIconClick": {
+        "message": "(нажмите для подробностей)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
+    },
+    "gMonthShort": {
+        "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
+    },
+    "gotoNow": {
+        "message": "Сейчас"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Воскресенье,понедельник,вторник,среда,четверг,пятница,суббота",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Вс,Пн,Вт,Ср,Чт,Пт,Сб",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Вознесение Абдул-Баха"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Вознесение Бахауллы"
+    },
+    "HolyDay_BirthBab": {
+        "message": "День рождения Баба"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "День рождения Бахауллы"
+    },
+    "HolyDay_Covenant": {
+        "message": "День Завета"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Возвещение Бабa"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Мученическая смерть Баба"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Нау-Рӯз"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Первый день Рид̣вāна"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Двенадцатый день Рид̣вāна"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Девятый день Рид̣вāна"
+    },
+    "iconColor": {
+        "message": "Цвет значка",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Автоматически (следовать теме системы)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Вручную",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>П</u>раздники",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>С</u>вятые дни",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Показать",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Вставные дни"
+    },
+    "jumpTo": {
+        "message": "<u>П</u>ерейти ± дней",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

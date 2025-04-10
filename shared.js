@@ -385,7 +385,7 @@ async function loadJsonfileAsync(filePath, num) {
   try {
     const url = browser.runtime.getURL(filePath);
     const response = await fetch(url);
-    if (!response.ok && num === 1) {
+    if (!response.ok && num === 0) {
       console.log(`File not found: ${filePath}`);
       return null;
     }
@@ -397,12 +397,13 @@ async function loadJsonfileAsync(filePath, num) {
   }
 }
 
-async function loadLocaleMessageFileAsync(langToLoad, fileCount = 5) {
+async function loadLocaleMessageFileAsync(langToLoad, fileCount = 4) {
   // Create array of URLs dynamically based on fileCount
+  // we currently have exactly 4 files in each _locales folder
   const urls = Array.from({ length: fileCount }, (_, i) => {
     return {
-      path: `/_locales/${langToLoad}/messages${i + 1}.json`,
-      num: i
+      path: `/_locales/${langToLoad}/messages${i > 0 ? i + 1 : ""}.json`,
+      num: i,
     };
   });
 
@@ -412,8 +413,8 @@ async function loadLocaleMessageFileAsync(langToLoad, fileCount = 5) {
 
   // Combine all successful results into a single object
   const combinedMessages = results
-    .filter((result) => result.value)
-    .map((result) => result.value)
+    .map((result) => result.value.value)
+    .filter((curr) => curr)
     .reduce((acc, curr) => ({ ...acc, ...curr }), {});
 
   return combinedMessages;
@@ -447,6 +448,7 @@ async function loadRawMessages(langCode, cb) {
     const keys = Object.keys(messages);
 
     // console.log("loading", keys.length, "keys from", langToLoad);
+    // console.log(keys);
 
     if (langToLoad === "en") {
       _numMessagesEn = keys.length;

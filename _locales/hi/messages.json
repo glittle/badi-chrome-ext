@@ -1,0 +1,309 @@
+{
+    "1day": {
+        "message": "{0} दिन में",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "रिमाइंडर इस आवाज़ का उपयोग करके पढ़ा जाएगा:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "शाम (सूर्यास्त के बाद)"
+    },
+    "am": {
+        "message": "पूर्वाह्न",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "नाम",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(वर्ष माह दिन) 0 = अय्याम-ए-हा",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "<u>ब</u>दी' तिथि पर जाएँ",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "दिन (सूर्यास्त से पहले)"
+    },
+    "bMonthMeaning": {
+        "message": "अंतर्वेशित दिन,भव्यता,महिमा,सौंदर्य,महानता,प्रकाश,दया,शब्द,पूर्णता,नाम,शक्ति,इच्छा,ज्ञान,सामर्थ्य,वाणी,प्रश्न,सम्मान,प्रभुत्व,राज्य,उच्चता",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "अय्याम-ए-हा,बहा,जलाल,जमाल,अज़मत,नूर,रहमत,कलिमात,कमाल,अस्मा,इज़्ज़त,मशीय्यत,इल्म,क़ुदरत,क़ौल,मसाइल,शरफ़,सुल्तान,मुल्क,अला",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "लोड हो रहा है",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "टैब में खोलें",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "माह पर ज़ूम करें",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "वर्ष पर ज़ूम करें",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "रद्द करें / नया"
+    },
+    "btnEveOrDay": {
+        "message": "सूर्यास्त से पहले / बाद"
+    },
+    "btnJumpTo": {
+        "message": "जाएँ"
+    },
+    "btnJumpToTitle": {
+        "message": "इतने दिनों के आगे या पीछे जाएँ",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "एक्सेल में निर्यात करें",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ICAL निर्यात करें",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "उत्सव",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "पवित्र दिवस (कार्य नहीं)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "सभी पवित्र दिवस",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "कोई नहीं",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "रिज़वान",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "जुड़वाँ जन्मदिन",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "रद्द करें",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "हटाएँ",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "संपादित करें",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>स</u>हेजें",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "डुप्लिकेट",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "अभी परीक्षण करें",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "अभी पुनः लोड करें"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",महिमा,सौंदर्य,पूर्णता,अनुग्रह,न्याय,प्रताप,स्वतंत्रता",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",जलाल,जमाल,कमाल,फिदाल,इदाल,इस्तिजलाल,इस्तिक़लाल",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",अ,ब,पिता,द,द्वार,व,अनंतता,उदारता,भव्यता,प्रेम,आनंददायक,उत्तर,एकल,दयालु,स्नेह,आरंभ,प्रकाशमान,अत्यंत प्रकाशमान,एकता",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",अलिफ़,बा,अब,दाल,बाब,वाव,अबद,जाद,बहा,हुब्ब,बह्हाज,जवाब,अहद,वह्हाब,विदाद,बदीअ,बही,अभा,वाहिद",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "गहरे <u>रं</u>ग",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "<u>मु</u>द्रण के समय सभी माह",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "<u>स</u>मय दिखाएँ",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "<u>मु</u>द्रण के समय सभी माह",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "<u>स</u>मय दिखाएँ",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "कॉपी किया गया!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "वर्तमान दिन",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "कॉपी करें"
+    },
+    "customBuilder": {
+        "message": "कस्टम तिथि प्रारूप बनाएँ"
+    },
+    "customBuilderEcho": {
+        "message": "परिणाम (वर्तमान में चयनित दिन के लिए - दिन बदलने के लिए युक्तियाँ और कुंजियाँ देखें)"
+    },
+    "customBuilderIntro": {
+        "message": "इस बॉक्स में प्रारूप टाइप करें। <span class=customHint title='...NamePri = प्राथमिक भाषा में\n...NameSec = द्वितीयक भाषा में\nfrag1... = सूर्यास्त से मध्यरात्रि तक\nfrag2... = मध्यरात्रि से सूर्यास्त तक'>(युक्तियाँ देखें)</span><br>वर्तमान स्थान पर डालने के लिए उपलब्ध तिथि भागों में 'जोड़ें' बटन पर क्लिक करें।"
+    },
+    "customDefined": {
+        "message": "कस्टम तिथि प्रारूप"
+    },
+    "customFormats": {
+        "message": "कस्टम प्रारूप",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "फॉर्मेटेड तिथि को क्लिपबोर्ड पर कॉपी करने के लिए 'कॉपी करें' पर क्लिक करें।"
+    },
+    "customLoadDefaultToolTip": {
+        "message": "क्रोम आइकन टूलटिप में दिखाने के लिए प्रारूप:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "पंक्ति 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "पंक्ति 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "अधिकांश पृष्ठों के शीर्ष पर दिखाने के लिए प्रारूप:"
+    },
+    "customLoadLetters": {
+        "message": "मानक प्रारूप से कॉपी करने के लिए क्लिक करें:"
+    },
+    "customPartsList": {
+        "message": "उपलब्ध तिथि भाग"
+    },
+    "customSelectForFrontPage": {
+        "message": "{0} पृष्ठ पर दिखाने के लिए बॉक्स पर टिक करें।"
+    },
+    "customUseAsSample": {
+        "message": "उदाहरण के रूप में उपयोग करें?"
+    },
+    "dateHeading": {
+        "message": "दिन",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "समाप्त होगा"
+    },
+    "dayEndedPast": {
+        "message": "समाप्त हुआ"
+    },
+    "DayOfMonth": {
+        "message": "माह का दिन"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "सप्ताह का दिन"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "शुरू होगा"
+    },
+    "dayStartedPast": {
+        "message": "शुरू हुआ"
+    },
+    "defaultFormat": {
+        "message": "(डिफ़ॉल्ट)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "आग, वायु, जल, पृथ्वी",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "समाप्त हुआ",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "{0} पर सूर्यास्त के साथ समाप्त होता है"
+    },
+    "equiv": {
+        "message": "समतुल्य",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "बी.ई."
+    },
+    "eraLong": {
+        "message": "बहाई युग"
+    },
+    "eraShort": {
+        "message": "बीई"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "सामान्य मिलने का समय",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "मिलने/विशेष समय",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} सूर्यास्त पर (लगभग {startingSunsetDesc}) {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} को और {dayEndedLower} सूर्यास्त पर (लगभग {endingSunsetDesc}) {frag2WeekdayLong}, {frag2MonthShort} {frag2Day} को।"
+    }
+}

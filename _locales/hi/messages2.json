@@ -1,0 +1,136 @@
+{
+    "facebook": {
+        "message": "फेसबुक",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear} में उपवास समय"
+    },
+    "fastGDate": {
+        "message": "तिथि",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0} का उत्सव",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "रिज़वान उत्सव"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(अधिक जानकारी के लिए क्लिक करें)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "जनवरी, फरवरी, मार्च, अप्रैल, मई, जून, जुलाई, अगस्त, सितंबर, अक्टूबर, नवंबर, दिसंबर"
+    },
+    "gMonthShort": {
+        "message": "जन, फर, मार्च, अप्रैल, मई, जून, जुल, अग, सित, अक्टू, नव, दिस"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "अभी"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "रविवार,सोमवार,मंगलवार,बुधवार,गुरुवार,शुक्रवार,शनिवार",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "रवि,सोम,मंगल,बुध,गुरु,शुक्र,शनि",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "अब्दुल-बहा का स्वर्गारोहण"
+    },
+    "HolyDay_AscBaha": {
+        "message": "बहाउल्लाह का स्वर्गारोहण"
+    },
+    "HolyDay_BirthBab": {
+        "message": "बाब का जन्म"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "बहाउल्लाह का जन्म"
+    },
+    "HolyDay_Covenant": {
+        "message": "वाचा दिवस"
+    },
+    "HolyDay_DeclBab": {
+        "message": "बाब की घोषणा"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "बाब का शहादत"
+    },
+    "HolyDay_NawRuz": {
+        "message": "नव-रूज़"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "रिज़वान का पहला दिन"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "रिज़वान का बारहवां दिन"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "रिज़वान का नौवां दिन"
+    },
+    "iconColor": {
+        "message": "आइकन रंग",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "स्वचालित (सिस्टम थीम का अनुसरण करें)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "मैनुअल",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>उ</u>त्सव",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>प</u>वित्र दिवस",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "दिखाएँ",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "अंतर्वेशित दिन"
+    },
+    "jumpTo": {
+        "message": "<u>ज</u>म्प ± दिन",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

@@ -1,0 +1,242 @@
+{
+    "reminderNum_days": {
+        "message": "Dia(s)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "dia; dias",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "hora(s)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "hora; horas"
+    },
+    "reminderNum_minutes": {
+        "message": "minuto(s)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minuto; minutos"
+    },
+    "reminderNum_seconds": {
+        "message": "segundo(s)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "segundo; segundos"
+    },
+    "remindersDefined": {
+        "message": "Os seus Lembretes",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Adicionar Lembrete",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Mostrar em ",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Marcar hoje até à meia-noite",
+        "description": "title on left side"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Mostrar {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "anunciado às {triggerTimeRawDisplay}",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Dia Badi",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Dia de Festa",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Dia Sagrado",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "A Carregar",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Meia-Noite",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Meio-Dia",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Nascer-do-Sol",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Pôr-do-Sol",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Dias Especiais",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Outros Eventos",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Hora do Dia",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Evento",
+        "description": "in front of the trigger selector"
+    },
+    "shoghiExample": {
+        "message": "Este é o dia {bDayNamePri}, da semana {bWeekdayNamePri}, do mês {bMonthNamePri}, do ano {bYearInVahidNamePri}, do {bVahidOrdinalName} {VahidLabelPri}, do {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Prima esta combinação de teclas para abrir o calendário em qualquer área do Chrome."
+    },
+    "showPointer": {
+        "message": "mostrar ponteiro"
+    },
+    "specialDaysTitle": {
+        "message": "Festas e Dis Sagrados em {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "01H00 (GMT)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "03H00 (GMT)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Meio-Dia (GMT)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "15H00  (GMT)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Duas horas após pôr-do-sol",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Inicia-se ao pôr-do-sol às {0}"
+    },
+    "startTimeOption": {
+        "message": "Hora normal da reunião: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Sugestões?"
+    },
+    "suggestionsTitle": {
+        "message": "Clique aqui e envie envie qualquer sugestão para melhorar esta extensão!"
+    },
+    "sunriseFastHeading": {
+        "message": "Nascer do Sol",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Pôr-do-Sol",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Início do Dia Badíʿ",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspensão de trabalho",
+        "description": "heading in Events listing"
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Sugestões",
+        "description": "hints of how to use the tool"
+    },
+    "tipsText": {
+        "message": "Usar teclas PgUp/PgDn para seleccionar paineis.\nUsar setas Esquerda/Direita para mudar os dias.\nUsar / para alternar entre antes/depois do pôr-do-sol."
+    },
+    "title": {
+        "message": "Calendário Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Mostrar a data de hoje no calendário Badíʿ, o calendário official da Fé Bahá'í.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Hoje à noite",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "pt-PT",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Portuguese (PT)",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Festas, Dias Sagrados e outros eventos seguintes"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unidade"
+    },
+    "version": {
+        "message": "Version {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nomes Dias da Semana",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Ano da Era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Ano do {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Para mais detalhes ou para se inscrever, veja <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. O Zap conterá estes campos: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL do Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

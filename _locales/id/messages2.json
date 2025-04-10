@@ -1,0 +1,116 @@
+{
+    "fastDaysTitle": {
+        "message": "Waktu Puasa di {bYear}"
+    },
+    "fastGDate": {
+        "message": "Tanggal",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Perayaan {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival Ridván"
+    },
+    "formatIconClick": {
+        "message": "(klik untuk detail)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "Januari,Februari,Maret,April,Mei,Juni,Juli,Agustus,September,Oktober,November,Desember"
+    },
+    "gMonthShort": {
+        "message": "Jan,Feb,Mar,Apr,Mei,Jun,Jul,Agt,Sep,Okt,Nov,Des"
+    },
+    "gotoNow": {
+        "message": "Sekarang"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Minggu,Senin,Selasa,Rabu,Kamis,Jumat,Sabtu",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Min,Sen,Sel,Rab,Kam,Jum,Sab",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Kenaikan Abdul-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Kenaikan Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Kelahiran Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Kelahiran Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Hari Perjanjian"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Deklarasi Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Kesyahidan Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw-Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Hari Pertama Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Hari Kedua Belas Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Hari Kesembilan Ridván"
+    },
+    "iconColor": {
+        "message": "Warna Ikon",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Otomatis (ikuti tema sistem)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>P</u>erayaan",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>ari Suci",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Tampilkan",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Hari Sisipan"
+    },
+    "jumpTo": {
+        "message": "<u>P</u>indah ± hari",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

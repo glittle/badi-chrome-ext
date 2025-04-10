@@ -1,0 +1,139 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "Todas-las-Cosas",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "incapaz de determinar su actual localizacion.\n\nLa extension usara 6:30pm para la caida del sol cada dia.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Significado",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "Month": {
+        "message": "Mes"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "NombTs del Mes/Dia",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} con ocaso {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} con ocaso al {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Próximo &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "Siguiente refresh schedule {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Proximo Año",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Presione Shift + Right flecha para mirar el año siguiente",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(localizacion desconocida - 6:30pm hora de la caida del sol)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(localidad actual)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "ahora",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "th,st,nd,rd",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",Primero,segundo,tercero,cuarto,quint,sexto,septimo,octavo,noveno,decimo,decimo primero,decimo segundo,decimo tercero,decimo cuarto,decimo quinto,decimo sexto,decimo septimo,decimo octavo,decimo noveno"
+    },
+    "otherDays": {
+        "message": "en {0} dias",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "Año"
+    },
+    "pick_pageCalGreg": {
+        "message": "Calendario Cristiano",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Wheel",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Dia"
+    },
+    "pick_pageEvents": {
+        "message": "Events",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Fast"
+    },
+    "pick_pageLists": {
+        "message": "Listas"
+    },
+    "pressKeyOrClick": {
+        "message": "Presione el boton {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Presiona la tecla para copiar la hora del formato al portapapeles",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Previo"
+    },
+    "prevYear": {
+        "message": "Años Anteriores",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Presione Shift + Left flecha para mirar los años anteriores",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Español",
+        "description": "put your language here, in your script"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayLocal": {
+        "message": "Alla ting",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Din plats kunde inte identifieras.\n\nTillägget kommer att använda 18:30 som solnedgångstid för alla dagar.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "Betydelse",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "Månad"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} vid solnedgång kl {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Nästa &rarr;"
+    },
+    "noLocationAvailable": {
+        "message": "(Okänd plats - 18:30 solnedgångstid)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Aktuell plats)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Nu",
+        "description": "Shown in the upcoming dates area"
+    },
+    "ordinalNames": {
+        "message": "första,andra,tredje,fjärde,femte,sjätte,sjunde,åttonde,nionde,tionde,elfte,tolfte,trettonde,fjortonde,femtonde,sextonde,sjuttonde,artonde,nittonde"
+    },
+    "otherDays": {
+        "message": "om {0} dagar",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "började kl {time}",
+        "description": "shown after midnight of the day"
+    },
+    "pick_pageCustom": {
+        "message": "Anpassad",
+        "description": "page tab name and page title"
+    },
+    "planFromWhenNextYear": {
+        "message": "Från början av nästa Badíʿ-år",
+        "description": "answer for planFromWhen"
+    },
+    "plannerShowWhat": {
+        "message": "Vad ska visas?",
+        "description": "First question in inputs"
+    },
+    "pm": {
+        "message": "em",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Tryck på knappen eller tangenten {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Tryck på en tangent för att kopiera formaterat datum till urklipp",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Föregående"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabiska",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Swedish",
+        "description": "put your language here, in your script"
+    }
+}

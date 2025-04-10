@@ -1,0 +1,357 @@
+{
+    "1day": {
+        "message": "om {0} dag",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "Påminnelsen kommer att läsas upp med denna röst:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "kväll - efter solnedgång"
+    },
+    "am": {
+        "message": "fm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Namn",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(Å M D) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Välj <u>B</u>adíʿ-datum",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "dag - före solnedgång"
+    },
+    "bMonthMeaning": {
+        "message": ",Há-dagar,Prakt,Härlighet,Skönhet,Storhet,Ljus,Barmhärtighet,Ord,Fullkomlighet,Namn,Makt,Vilja,Kunskap,Kraft,Tal,Frågor,Ära,Suveränitet,Herravälde,Upphöjdhet",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá',`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá'",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Laddar...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Öppna i flik",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "Zooma till månad",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Zooma till år",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Avbryt / Ny"
+    },
+    "btnEveOrDay": {
+        "message": "Före / Efter solnedgång"
+    },
+    "btnJumpTo": {
+        "message": "Gå"
+    },
+    "btnJumpToTitle": {
+        "message": "Gå framåt eller bakåt detta antal dagar",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Exportera till CSV",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Exportera till iCal",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Nittondagarsfester",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Heliga dagar (arbetsfria)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "Alla heliga dagar",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "Inga",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Riḍván",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Tvillingfödelsedagar",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Avbryt",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Ta bort",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Redigera",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>S</u>para",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Spara som ny påminnelse",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Testa nu",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Ladda om nu"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Härlighet,Skönhet,Fullkomlighet,Nåd,Rättvisa,Majestät,Självständighet",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,'Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Fader,D,Port,V,Evighet,Generositet,Prakt,Kärlek,Glädje,Svar,En,Frikostig,Tillgivenhet,Början,Strålande,Mest Strålande,Enhet",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá',Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "<u>M</u>örkare färger",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Alla månader för <u>u</u>tskrift",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Visa <u>t</u>ider",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Alla månader för <u>u</u>tskrift",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Visa <u>t</u>ider",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "Kopierad!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Aktuell dag",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Kopiera"
+    },
+    "customBuilder": {
+        "message": "Bygg anpassat datumformat"
+    },
+    "customBuilderEcho": {
+        "message": "Resultat (för den valda dagen - se Tips & Tangenter för att ändra dag)"
+    },
+    "customBuilderIntro": {
+        "message": "Skriv formatet i denna ruta. Klicka på någon 'Lägg till'-knapp i Tillgängliga datumdelar för att lägga till den datumdelen vid aktuell position. Tips: 'frag1' = solnedgång till midnatt; 'frag2' = midnatt till solnedgång."
+    },
+    "customDefined": {
+        "message": "Anpassade datumformat"
+    },
+    "customFormats": {
+        "message": "Anpassade format",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Klicka på Kopiera för att kopiera det formaterade datumet till urklipp."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Format för Chrome-ikonens verktygstips:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Rad 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Rad 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Format för visning överst på de flesta sidor:"
+    },
+    "customLoadLetters": {
+        "message": "Klicka för att börja från ett standardformat:"
+    },
+    "customPartsList": {
+        "message": "Tillgängliga datumdelar"
+    },
+    "customSelectForFrontPage": {
+        "message": "Markera för att visa på {0}-sidan."
+    },
+    "customUseAsSample": {
+        "message": "Använd som exempel?"
+    },
+    "dateHeading": {
+        "message": "Dag",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "slutar"
+    },
+    "dayEndedPast": {
+        "message": "slutade"
+    },
+    "DayOfMonth": {
+        "message": "Dag i månaden"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Veckodag"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "börjar"
+    },
+    "dayStartedPast": {
+        "message": "började"
+    },
+    "defaultFormat": {
+        "message": "(Standard)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "Eld,luft,vatten,jord",
+        "description": "the Bab's designations"
+    },
+    "Ended": {
+        "message": "Avslutad",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Slutar vid solnedgång kl {0}"
+    },
+    "equiv": {
+        "message": "Motsvarighet",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "Bahá'í Era"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Vanlig mötestid",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Mötes-/Högtidstid",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} vid solnedgång (ungefär {startingSunsetDesc}) på {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} och {dayEndedLower} vid solnedgång (ungefär {endingSunsetDesc}) på {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "När det börjar"
+    },
+    "exportAlert_B1": {
+        "message": "1 minut före"
+    },
+    "exportAlert_B10": {
+        "message": "10 minuter före"
+    },
+    "exportAlert_B15": {
+        "message": "15 minuter före"
+    },
+    "exportAlert_B30": {
+        "message": "30 minuter före"
+    },
+    "exportAlert_B5": {
+        "message": "5 minuter före"
+    },
+    "exportAlert_B60": {
+        "message": "60 minuter före"
+    },
+    "exportBadiYear0": {
+        "message": "Badíʿ-år - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "Badíʿ-år - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "Datum i Badíʿ-kalendern för {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "Början av {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>I</u>ntervall av datum att exportera (baserat på aktuellt valt år)"
+    },
+    "exporterFastEnd": {
+        "message": "Fastan slutar",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Fastan börjar",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Fasta till {endingSunsetDesc}"
+    }
+}

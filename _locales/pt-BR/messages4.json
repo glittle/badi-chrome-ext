@@ -1,0 +1,122 @@
+{
+    "shoghiExample": {
+        "message": "Hoje é o dia de {bWeekdayNamePri}, o dia de {bDayNamePri}, do mês de {bMonthNamePri}, do ano {bYearInVahidNamePri}, do {bVahidOrdinalName} {VahidLabelPri}, do {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Pressione esta combinação de teclas para abrir o Calendário de qualquer lugar no Chrome."
+    },
+    "showPointer": {
+        "message": "Mostrar ponteiro"
+    },
+    "specialDaysTitle": {
+        "message": "Festas e Dias Sagrados em {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 AM (Horário Padrão)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 AM (Horário Padrão)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Meio-dia (Horário Padrão)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 PM (Horário Padrão)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Aproximadamente 2 horas após o pôr do sol",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Começa com o pôr do sol em {0}"
+    },
+    "startTimeOption": {
+        "message": "Horário habitual de reunião: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Sugestões?"
+    },
+    "suggestionsTitle": {
+        "message": "Clique aqui para enviar sugestões sobre como melhorar esta extensão!"
+    },
+    "sunriseFastHeading": {
+        "message": "Nascer do Sol",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Pôr do Sol",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Dia Badí' Começa",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspender Trabalho",
+        "description": "heading in Events listing"
+    },
+    "title": {
+        "message": "Calendário Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Mostra a data atual no calendário Badíʿ (Maravilhoso), o calendário oficial da Fé Bahá'í.",
+        "description": "Used in the manifest"
+    },
+    "translation": {
+        "message": "pt-BR",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Portuguese (Brazil)",
+        "description": "The name of this language, in English"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unidade"
+    },
+    "version": {
+        "message": "Versão {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nomes dos dias da semana",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Ano da Era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Ano do {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Para mais detalhes ou para se inscrever, veja <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. O Zap conterá estes campos: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL do Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

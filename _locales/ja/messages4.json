@@ -1,0 +1,160 @@
+{
+    "shoghiExample": {
+        "message": "今日は{bWeekdayNamePri}の日、{bDayNamePri}の日、{bMonthNamePri}の月、{bYearInVahidNamePri}の年、{bVahidOrdinalName}{VahidLabelPri}、{bKullishayOrdinalName}{KullishayLabelPri}です。",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Chromeのどこからでもカレンダーを開くには、このキーの組み合わせを押してください。"
+    },
+    "showPointer": {
+        "message": "ポインターを表示"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear}の祝宴と聖日"
+    },
+    "specialTime_0100S": {
+        "message": "午前1時（標準時）",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "午前3時（標準時）",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "正午（標準時）",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "午後3時（標準時）",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "日没後約2時間",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "{0}の日没で開始"
+    },
+    "startTimeOption": {
+        "message": "通常の会合時間：",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "提案？"
+    },
+    "suggestionsTitle": {
+        "message": "ここをクリックして、この拡張機能を改善するための提案を送信してください！"
+    },
+    "sunriseFastHeading": {
+        "message": "日の出",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "日没",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "バディーウ暦の日の始まり",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "仕事の休止",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "ヒント＆キー",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "精度？"
+    },
+    "tipsAboutText": {
+        "message": "221 B.E.（2064年）までの日付は既知です。それ以降は、天文観測の向上に伴い更新が必要になる場合があります。50年以上先の計画を確定するためにこれを使用しないでください！詳細はウェブサイトをご覧ください。"
+    },
+    "tipsText": {
+        "message": "PgUp/PgDnキーでパネルを選択します。\n右/左矢印キーで日を変更します。\n/キーで日没前/後を切り替えます。\nHomeキーで今日に戻ります！"
+    },
+    "title": {
+        "message": "バディーウ暦",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "バハーイー教の公式カレンダーであるバディーウ（素晴らしい）暦での今日の日付を表示します。",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "今夜",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ja",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Japanese",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "今後の祝宴、聖日、その他のイベント"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "ヴァーヒド"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "ヴァーヒド",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "ヴァーヒド",
+        "description": "Label for Vahid in secondary language"
+    },
+    "webstore": {
+        "message": "ウェブストア"
+    },
+    "weekDayNames": {
+        "message": "曜日名",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "バハーイー紀元の年"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "{VahidLabelPri}の年"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "詳細またはサインアップについては、<a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>をご覧ください。Zapには次のフィールドが含まれます：title、body、tag、time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

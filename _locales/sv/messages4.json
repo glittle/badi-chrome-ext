@@ -1,0 +1,135 @@
+{
+    "specialTime_1200": {
+        "message": "Middag"
+    },
+    "specialTime_1200S": {
+        "message": "Middag (normaltid)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500": {
+        "message": "15:00"
+    },
+    "specialTime_1500S": {
+        "message": "15:00 (normaltid)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS": {
+        "message": "Vid solnedgång"
+    },
+    "specialTime_SS2": {
+        "message": "Ungefär 2 timmar efter solnedgång",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "Standardformat",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "Började vid solnedgång kl {0}"
+    },
+    "startTimeOption": {
+        "message": "Vanlig mötestid: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Förslag"
+    },
+    "suggestionsTitle": {
+        "message": "Skriv in förslag här för att förbättra denna kalender"
+    },
+    "sunriseFastHeading": {
+        "message": "Soluppgång",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Solnedgång",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Början på Badíʿ-dagen",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "tipsAboutText": {
+        "message": "Datum fram till 221 B.E. (2064 e.Kr.) är kända. Efter det kan uppdateringar behövas när astronomiska observationer förbättras. Använd inte detta för att slutföra dina planer mer än 50 år framåt! Se webbplatsen för mer information."
+    },
+    "tipsText": {
+        "message": "Tryck på PgUp/PgDn-tangenterna för att välja paneler.\nTryck på höger/vänster piltangenter för att ändra dagar.\nTryck på / för att växla före/efter solnedgång.\nTryck på Home för att återgå till idag!"
+    },
+    "title": {
+        "message": "Badíʿ-kalender",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Visar dagens datum i Badíʿ-kalendern (Underbara kalendern), den officiella kalendern för Bahá'í-tron.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Ikväll",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "sv",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Swedish",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Kommande fester och heliga dagar"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Enhet"
+    },
+    "version": {
+        "message": "Version {0}"
+    },
+    "webstore": {
+        "message": "Webbutik"
+    },
+    "weekDayNames": {
+        "message": "Veckodagsnamn",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "År i Bahá'í-eran"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "År i Váḥid"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "För detaljer eller för att registrera dig, se <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Zap kommer att innehålla dessa fält: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "meaning": {
+        "message": "ความหมาย",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "เดือน"
+    },
+    "nextYear": {
+        "message": "ปีหน้า",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noon": {
+        "message": "เที่ยง",
+        "description": "nice way to say noon"
+    },
+    "pm": {
+        "message": "น",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "prevYear": {
+        "message": "ปีก่อน",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Thai",
+        "description": "put your language here, in your script"
+    }
+}

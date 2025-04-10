@@ -1,0 +1,84 @@
+{
+    "Kullishay": {
+        "message": "כול-אי-<u>ש</u>יי"
+    },
+    "KullishayLocal": {
+        "message": "כל הדברים",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "לא ניתן לזהות את מיקומך.\n\nההרחבה תשתמש ב-18:30 כזמן שקיעה לכל הימים.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "משמעות",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "חודש"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} בשקיעה בשעה {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "הבא &rarr;"
+    },
+    "noLocationAvailable": {
+        "message": "(מיקום לא ידוע - 18:30 זמן שקיעה)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(מיקום נוכחי)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "עכשיו",
+        "description": "Shown in the upcoming dates area"
+    },
+    "ordinalNames": {
+        "message": "ראשון,שני,שלישי,רביעי,חמישי,שישי,שביעי,שמיני,תשיעי,עשירי,אחד עשר,שנים עשר,שלושה עשר,ארבעה עשר,חמישה עשר,שישה עשר,שבעה עשר,שמונה עשר,תשעה עשר"
+    },
+    "otherDays": {
+        "message": "בעוד {0} ימים",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "התחיל בשעה {time}",
+        "description": "shown after midnight of the day"
+    },
+    "pick_pageCustom": {
+        "message": "מותאם אישית",
+        "description": "page tab name and page title"
+    },
+    "planFromWhenNextYear": {
+        "message": "מתחילת השנה הבדיעית הבאה",
+        "description": "answer for planFromWhen"
+    },
+    "plannerShowWhat": {
+        "message": "מה להציג?",
+        "description": "First question in inputs"
+    },
+    "pm": {
+        "message": "אחה״צ",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "לחץ על הכפתור או הקש {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "לחץ מקש כדי להעתיק תאריך מעוצב ללוח",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; הקודם"
+    },
+    "rbDefLang_Ar": {
+        "message": "ערבית",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "עברית",
+        "description": "put your language here, in your script"
+    }
+}

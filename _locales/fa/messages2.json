@@ -1,0 +1,117 @@
+{
+    "exportFile": {
+        "message": "فایل (iCalendar(.ics را دانلود کنید"
+    },
+    "exportIncludeAlert": {
+        "message": "به هر جلسه یک اخطار اضافه کنید (ممکن است در تقویم گوگل نیاید)"
+    },
+    "exportOption_Date": {
+        "message": "روز های تقیم بدیع <em>(365/366 days)</em><em>(365/366 days)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "ضیافات <em>(19 days)</em>"
+    },
+    "exportOption_Usual": {
+        "message": "جلسه در همان موقع معمولی جلسه (به صفحه ی جلسه مراجعه کنید)"
+    },
+    "exportQuickPick1": {
+        "message": "تقویم کامل "
+    },
+    "exportRangeFullRange": {
+        "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
+    },
+    "FeastOf": {
+        "message": "ضیافت {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "عید رضوان"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "formatIconClick": {
+        "message": "ای اظلاعات بیشتر Click کنید"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay}{bMonthNamePri}{bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Time": {
+        "message": "در{time} خواهد بود"
+    },
+    "gDatePickerTitle": {
+        "message": "تاریخ میلادی"
+    },
+    "gMonthLong": {
+        "message": "ژانویه، فوریه، مارس، آوریل، مه، ژوئن، ژوئیه، اوت، سپتامبر، اکتبر، نوامبر، دسامبر"
+    },
+    "googlePlus": {
+        "message": "گوگل پلاس",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "فعلی"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gWeekdayLong": {
+        "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "یکشنبه،دوشنبه،سه شنبه،چهار شنبه،پنجشنبه،جمعه،شنبه",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "صعود حضرت عبدالبهاء"
+    },
+    "HolyDay_AscBaha": {
+        "message": "صعود حضرت بهاءالله"
+    },
+    "HolyDay_BirthBab": {
+        "message": "تولد حضرت اعلی"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "تولد حضرت بهاءالله"
+    },
+    "HolyDay_Covenant": {
+        "message": "روز عهد و میثاق"
+    },
+    "HolyDay_DeclBab": {
+        "message": "اظهار امر حضرت باب"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "شهادت حضرت اعلی"
+    },
+    "HolyDay_NawRuz": {
+        "message": "نوروز"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "اول عیذ رضوان"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "دوازدهم عید رضوان"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "نهنم عید رضوان"
+    },
+    "iconColor": {
+        "message": "رنگ آیکون",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "خودکار (پیروی از تم سیستم)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "دستی",
+        "description": "Label for manual icon color option"
+    },
+    "Intercalary": {
+        "message": "ایام هاء"
+    }
+}

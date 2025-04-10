@@ -1,0 +1,14 @@
+{
+    "title": {
+        "message": "Badíʿ Calendar",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "translation": {
+        "message": "da",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Danish",
+        "description": "The name of this language, in English"
+    }
+}

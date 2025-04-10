@@ -1,0 +1,106 @@
+{
+    "fastDaysTitle": {
+        "message": "זמני צום בשנת {bYear}"
+    },
+    "fastGDate": {
+        "message": "תאריך",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "חגיגת {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "פסטיבל רידואן"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "formatIconClick": {
+        "message": "(לחץ לפרטים נוספים)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Time": {
+        "message": "יהיה בשעה {time}"
+    },
+    "gDatePickerTitle": {
+        "message": "תאריך גרגוריאני"
+    },
+    "gMonthLong": {
+        "message": "ינואר,פברואר,מרץ,אפריל,מאי,יוני,יולי,אוגוסט,ספטמבר,אוקטובר,נובמבר,דצמבר"
+    },
+    "gMonthShort": {
+        "message": "ינו,פבר,מרץ,אפר,מאי,יוני,יולי,אוג,ספט,אוק,נוב,דצמ"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "עכשיו"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} ב{currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gWeekdayLong": {
+        "message": "ראשון,שני,שלישי,רביעי,חמישי,שישי,שבת",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "א,ב,ג,ד,ה,ו,ש",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "יום פטירת עבד אלבהאא"
+    },
+    "HolyDay_AscBaha": {
+        "message": "פטירת בהאא אללאה"
+    },
+    "HolyDay_BirthBab": {
+        "message": "יום הולדת הבאב"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "יום הולדת בהאא אללאה"
+    },
+    "HolyDay_Covenant": {
+        "message": "יום הברית"
+    },
+    "HolyDay_DeclBab": {
+        "message": "הכרזת הבאב על התגלותו"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "הריגת הבאב"
+    },
+    "HolyDay_NawRuz": {
+        "message": "נו רוז"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "היום הראשון של רזואן"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "היום השנים עשר של רזואן"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "היום התשיעי של רזואן"
+    },
+    "iconColor": {
+        "message": "צבע סמל",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "אוטומטי (עקוב אחר ערכת הנושא של המערכת)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "ידני",
+        "description": "Label for manual icon color option"
+    },
+    "Intercalary": {
+        "message": "ימי הא"
+    }
+}

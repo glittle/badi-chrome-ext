@@ -1,0 +1,206 @@
+{
+    "exporterItemDescDay": {
+        "message": "En dag i Badíʿ-kalendern.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Tider för den årliga Bahá'í-fastan.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Samling kan börja när som helst under denna Badíʿ-dag.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Soluppgångs- eller solnedgångstider som visas är för {location}. Genererad med http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ-kalender Exporterare",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Ladda ner iCalendar-fil (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregorianskt år - {0} e.Kr."
+    },
+    "exportGregYear1": {
+        "message": "Gregorianskt år - {0} e.Kr."
+    },
+    "exportHideTest": {
+        "message": "Dölj"
+    },
+    "exportIncludeAlert": {
+        "message": "Lägg till en påminnelse för varje händelse (kanske inte fungerar med Google-kalender)"
+    },
+    "exportIncludeLocation": {
+        "message": "Platsinformation"
+    },
+    "exportIntro": {
+        "message": "Viktigt! Se <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">denna webbsida</a> för information och varningar!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Titel för exporterad kalender (kanske inte används)"
+    },
+    "exportNumToInclude": {
+        "message": "Antal kalenderposter som inkluderas (ungefärligt):"
+    },
+    "exportOption_AllDay": {
+        "message": "Heldagshändelse från midnatt <em>(1 dag lång)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Endast vid början av solnedgång"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-dagar <em>(365/366 dagar)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fastedagar <em>(19 dagar)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Fester <em>(19 dagar)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Heliga dagar <em>(11 dagar)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Händelse vid angiven observationstid eller vanlig mötestid"
+    },
+    "exportOption_Sun": {
+        "message": "Från solnedgång till solnedgång <em>(ungefär 24 timmar)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Endast vid soluppgång"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Händelse från soluppgång till solnedgång <em>(ungefär 12 timmar)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Endast vid solnedgång"
+    },
+    "exportOption_Usual": {
+        "message": "Händelse vid vanlig mötestid (se Händelser-sidan)"
+    },
+    "exportOtherSettings": {
+        "message": "Andra inställningar"
+    },
+    "exportQuickDesc": {
+        "message": "Exportera varje uppsättning och ladda sedan in dem alla i samma kalender!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Fullständig kalender"
+    },
+    "exportQuickPick1Text": {
+        "message": "Visa varje Badíʿ-dag, tillsammans med heliga dagar och festtider. Inga påminnelser."
+    },
+    "exportQuickPick2": {
+        "message": "2. Fastetid - Morgon"
+    },
+    "exportQuickPick2Text": {
+        "message": "Soluppgång, med en påminnelse strax före."
+    },
+    "exportQuickPick3": {
+        "message": "3. Fastetid - Kväll"
+    },
+    "exportQuickPick3Text": {
+        "message": "Solnedgång, med en påminnelse."
+    },
+    "exportQuickPickClearText": {
+        "message": "Återställ alternativ"
+    },
+    "exportQuickPicks": {
+        "message": "Rekommenderade uppsättningar av händelser"
+    },
+    "exportRangeFullRange": {
+        "message": "Exportera alla kalenderposter. (Om ej markerad, exportera endast ett urval.)"
+    },
+    "exportTest": {
+        "message": "Vi<u>s</u>a för kopiering"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Välj vad som ska exporteras."
+    },
+    "exportWhatToInclude": {
+        "message": "Alternativ"
+    },
+    "fastDaysTitle": {
+        "message": "Fastetider år {bYear}"
+    },
+    "fastGDate": {
+        "message": "Datum",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0}s fest",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Riḍvánfestivalen"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "formatIconClick": {
+        "message": "(klicka för mer information)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Time": {
+        "message": "blir kl {time}"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregorianskt datum"
+    },
+    "gMonthLong": {
+        "message": "januari,februari,mars,april,maj,juni,juli,augusti,september,oktober,november,december"
+    },
+    "gMonthShort": {
+        "message": "jan,feb,mar,apr,maj,jun,jul,aug,sep,okt,nov,dec"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Nu"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gWeekdayLong": {
+        "message": "söndag,måndag,tisdag,onsdag,torsdag,fredag,lördag",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "sö,må,ti,on,to,fr,lö",
+        "description": "start with Sun"
+    },
+    "iconColor": {
+        "message": "Ikonfärg",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automatisk (följ systemtema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manuell",
+        "description": "Label for manual icon color option"
+    },
+    "Intercalary": {
+        "message": "Há-dagar"
+    }
+}

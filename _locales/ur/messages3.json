@@ -1,0 +1,128 @@
+{
+    "Kullishay": {
+        "message": "کل <u>ش</u>ئی"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "ہر چیز",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "آپ کا موجودہ مقام تعین نہیں کیا جا سکتا۔\n\nایکسٹینشن ہر دن غروب آفتاب کے وقت کے لیے 18:30 استعمال کرے گا۔",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "معنی",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "مہینہ"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "مہینے/دن کے نام",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} غروب آفتاب کے ساتھ {endingSunsetDesc} پر"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} غروب آفتاب کے ساتھ {startingSunsetDesc} پر"
+    },
+    "next": {
+        "message": "اگلا &rarr;"
+    },
+    "nextYear": {
+        "message": "اگلا سال",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "اگلا سال دیکھنے کے لیے شفٹ + دائیں تیر دبائیں",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(مقام نامعلوم - غروب آفتاب کا وقت 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(موجودہ مقام)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "ابھی",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "واں,پہلا,دوسرا,تیسرا",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",پہلا,دوسرا,تیسرا,چوتھا,پانچواں,چھٹا,ساتواں,آٹھواں,نواں,دسواں,گیارہواں,بارہواں,تیرہواں,چودہواں,پندرہواں,سولہواں,سترہواں,اٹھارہواں,انیسواں"
+    },
+    "otherDays": {
+        "message": "{0} دنوں میں",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "سال"
+    },
+    "pick_pageCalGreg": {
+        "message": "گریگوری سال",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "پہیہ",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "دن"
+    },
+    "pick_pageEvents": {
+        "message": "تقریبات",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "روزہ"
+    },
+    "pick_pageLists": {
+        "message": "فہرستیں"
+    },
+    "pm": {
+        "message": "شام",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "کلید دبائیں یا {0} ٹائپ کریں۔",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "کلپ بورڈ پر کاپی کرنے کے لیے فارمیٹ منتخب کریں:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; پچھلا"
+    },
+    "prevYear": {
+        "message": "پچھلا سال",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "پچھلا سال دیکھنے کے لیے شفٹ + بائیں تیر دبائیں",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "اردو",
+        "description": "put your language here, in your script"
+    }
+}

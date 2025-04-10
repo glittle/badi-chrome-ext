@@ -1,0 +1,136 @@
+{
+    "Kullishay": {
+        "message": "कुल्ल-इ-<u>श</u>य"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "locationError": {
+        "message": "आपका वर्तमान स्थान निर्धारित नहीं किया जा सकता।\n\nएक्सटेंशन प्रत्येक दिन के लिए सूर्यास्त समय के रूप में शाम 6:30 का उपयोग करेगा।",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "अर्थ",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "माह"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "माह/दिन नाम",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} सूर्यास्त पर {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} सूर्यास्त पर {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "अगला &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "अगला रिफ्रेश {0} में निर्धारित: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "अगला वर्ष",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "अगला वर्ष देखने के लिए Shift + दाएँ तीर दबाएँ",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(अज्ञात स्थान - शाम 6:30 सूर्यास्त समय)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(वर्तमान स्थान)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "अभी",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "वां,ला,रा,रा",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",पहला,दूसरा,तीसरा,चौथा,पांचवां,छठा,सातवां,आठवां,नौवां,दसवां,ग्यारहवां,बारहवां,तेरहवां,चौदहवां,पंद्रहवां,सोलहवां,सत्रहवां,अठारहवां,उन्नीसवां"
+    },
+    "otherDays": {
+        "message": "{0} दिनों में",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "वर्ष"
+    },
+    "pick_pageCalGreg": {
+        "message": "ग्रेगोरियन वर्ष",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "चक्र",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "दिन"
+    },
+    "pick_pageEvents": {
+        "message": "घटनाएँ",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "उपवास"
+    },
+    "pick_pageLists": {
+        "message": "सूचियाँ"
+    },
+    "pm": {
+        "message": "अपराह्न",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "बटन पर क्लिक करें या {0} टाइप करें।",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "क्लिपबोर्ड पर कॉपी करने के लिए प्रारूप चुनें:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; पिछला"
+    },
+    "prevYear": {
+        "message": "पिछला वर्ष",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "पिछला वर्ष देखने के लिए Shift + बाएँ तीर दबाएँ",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "हिंदी",
+        "description": "put your language here, in your script"
+    }
+}

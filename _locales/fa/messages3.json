@@ -1,0 +1,95 @@
+{
+    "Kullishay": {
+        "message": "کلشیئ"
+    },
+    "KullishayLocal": {
+        "message": "کل شيئ",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "محل شما قابل شناسائی نیست. ساعت 6:30 بعذ لز ظهر برای غروب آفتاب در نظر گرفته خواهد شد.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} از غروب آفتاب {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "&rarr; بعدی"
+    },
+    "noLocationAvailable": {
+        "message": "(مکان نا معلوم - ۶:۳۰ بعد از ظهر ساعات غروب)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(محل فعلی)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "هم اکنون",
+        "description": "Shown in the upcoming dates area"
+    },
+    "ordinalNames": {
+        "message": "اولین، دومین، سومین، چهارمین، پنجمین، ششمین، هفتمین، هشتمین، نهمین، دهمین، یازذهمین، دوازدهمین، سیزدهمین، چهاردهمین، پانزدهمین، شانزدهمین، هفدهمین، هیجدهمین، نوزدهمین"
+    },
+    "otherDays": {
+        "message": "در {0} روز",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "در{time} آغاز شد",
+        "description": "shown after midnight of the day"
+    },
+    "pick_pageCustom": {
+        "message": "دل خواه",
+        "description": "page tab name and page title"
+    },
+    "planFromWhenNextYear": {
+        "message": "شروع سال بعدی بديع ",
+        "description": "answer for planFromWhen"
+    },
+    "plannerShowWhat": {
+        "message": "چه چیزی را نشان بدهد؟ ",
+        "description": "First question in inputs"
+    },
+    "pressKeyOrClick": {
+        "message": "دکمه را فشار دهید یا تایپ کنید {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "برای کُپی کردن تاریخ به کلیپبورد کمه را فشار دهید",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "قبلی\t&larr; "
+    },
+    "rbDefLang_Ar": {
+        "message": "عربی",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "فارسی",
+        "description": "put your language here, in your script"
+    },
+    "reminderAction_zapier": {
+        "message": "زاپیر وبهوک را تریگر شروع کنید",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAfter": {
+        "message": "بعد از"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "در زمان مشخص و معین",
+        "description": "in dropdown"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} در {eventMonthShort}{eventDay}"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} روز(ها) {deltaText}، در{triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num}{units} بعد از",
+        "description": "in list of defined reminders"
+    }
+}

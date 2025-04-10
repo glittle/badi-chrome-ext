@@ -1,0 +1,122 @@
+{
+    "shoghiExample": {
+        "message": "आज {bWeekdayNamePri} का दिन है, {bDayNamePri} का दिन, {bMonthNamePri} का माह, {bYearInVahidNamePri} का वर्ष, {bVahidOrdinalName} {VahidLabelPri}, {bKullishayOrdinalName} {KullishayLabelPri} का।",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "क्रोम में कहीं से भी कैलेंडर खोलने के लिए इस कुंजी संयोजन को दबाएँ।"
+    },
+    "showPointer": {
+        "message": "संकेतक दिखाएँ"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear} में उत्सव और पवित्र दिवस"
+    },
+    "specialTime_0100S": {
+        "message": "सुबह 1 बजे (मानक समय)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "सुबह 3 बजे (मानक समय)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "दोपहर (मानक समय)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "दोपहर 3 बजे (मानक समय)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "सूर्यास्त के लगभग 2 घंटे बाद",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "{0} पर सूर्यास्त के साथ शुरू होता है"
+    },
+    "startTimeOption": {
+        "message": "सामान्य मिलने का समय: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "सुझाव?"
+    },
+    "suggestionsTitle": {
+        "message": "इस एक्सटेंशन को कैसे बेहतर बनाया जाए, इस पर सुझाव भेजने के लिए यहां क्लिक करें!"
+    },
+    "sunriseFastHeading": {
+        "message": "सूर्योदय",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "सूर्यास्त",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "बदी दिन शुरू होता है",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "कार्य निलंबित करें",
+        "description": "heading in Events listing"
+    },
+    "title": {
+        "message": "बदी कैलेंडर",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "बदी कैलेंडर (अद्भुत) में आज की तिथि दिखाता है, जो बहाई धर्म का आधिकारिक कैलेंडर है।",
+        "description": "Used in the manifest"
+    },
+    "translation": {
+        "message": "hi",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Hindi",
+        "description": "The name of this language, in English"
+    },
+    "Vahid": {
+        "message": "वाहिद"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "एकता"
+    },
+    "version": {
+        "message": "संस्करण {0}"
+    },
+    "webstore": {
+        "message": "वेबस्टोर"
+    },
+    "weekDayNames": {
+        "message": "सप्ताह के दिनों के नाम",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "बहाई युग का वर्ष"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "वाहिद का वर्ष"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "अधिक जानकारी या साइन अप के लिए, <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> देखें। Zap में ये फ़ील्ड होंगे: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear}年斋戒时间"
+    },
+    "fastGDate": {
+        "message": "日期",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0}灵宴会",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "里兹万节"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "（点击获取更多详情）"
+    },
+    "formatIconToolTip": {
+        "message": "{bYear}年 {bMonthNamePri}月 {bDay}日",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+    },
+    "gMonthShort": {
+        "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "今天"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentYear}年{currentMonthLong}{currentDay}日 {currentWeekdayShort}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentYear}年{currentMonthLong}{currentDay}日 {currentWeekdayShort} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "星期日,星期一,星期二,星期三,星期四,星期五,星期六",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "周日,周一,周二,周三,周四,周五,周六",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "阿博都-巴哈升天日"
+    },
+    "HolyDay_AscBaha": {
+        "message": "巴哈欧拉升天日"
+    },
+    "HolyDay_BirthBab": {
+        "message": "巴孛诞辰"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "巴哈欧拉诞辰"
+    },
+    "HolyDay_Covenant": {
+        "message": "圣约日"
+    },
+    "HolyDay_DeclBab": {
+        "message": "巴孛宣示日"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "巴孛殉道日"
+    },
+    "HolyDay_NawRuz": {
+        "message": "诺鲁孜节"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "里兹万节的第一日"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "里兹万节的第十二日"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "里兹万节的第九日"
+    },
+    "iconColor": {
+        "message": "图标颜色",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "自动（跟随系统主题）",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "手动",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>灵</u>宴会",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>圣</u>日",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "显示",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "阿亚米哈"
+    },
+    "jumpTo": {
+        "message": "<u>跳</u>转±天数",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

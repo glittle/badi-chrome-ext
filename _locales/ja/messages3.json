@@ -1,0 +1,128 @@
+{
+    "Kullishay": {
+        "message": "クッリ・<u>シ</u>ャイ"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "すべてのもの",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "現在地を特定できません。\n\n拡張機能は毎日の日没時間として18:30を使用します。",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "意味",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "月"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "月/日の名前",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{endingSunsetDesc}の日没で{dayEnded}"
+    },
+    "nearestSunsetEve": {
+        "message": "{startingSunsetDesc}の日没で{dayStarted}"
+    },
+    "next": {
+        "message": "次へ &rarr;"
+    },
+    "nextYear": {
+        "message": "来年",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "来年を見るにはShift+右矢印キーを押してください",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "（場所不明 - 日没時間18:30）",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "（現在地）",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "今",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "第,第1,第2,第3",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",第1,第2,第3,第4,第5,第6,第7,第8,第9,第10,第11,第12,第13,第14,第15,第16,第17,第18,第19"
+    },
+    "otherDays": {
+        "message": "{0}日後",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "年"
+    },
+    "pick_pageCalGreg": {
+        "message": "グレゴリオ暦年",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "ホイール",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "日"
+    },
+    "pick_pageEvents": {
+        "message": "イベント",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "断食"
+    },
+    "pick_pageLists": {
+        "message": "リスト"
+    },
+    "pm": {
+        "message": "午後",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "キーを押すか{0}を入力してください。",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "クリップボードにコピーする形式を選択：",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; 前へ"
+    },
+    "prevYear": {
+        "message": "前年",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "前年を見るにはShift+左矢印キーを押してください",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "日本語",
+        "description": "put your language here, in your script"
+    }
+}

@@ -1,0 +1,774 @@
+{
+    "1day": {
+        "message": "en {0} dia",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "afterSunset": {
+        "message": "tarde - después del atardecer"
+    },
+    "arabic": {
+        "message": "Nombre",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(Y M D) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Elegir la fecha <u>B</u>adí",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "dia - antes del ocaso"
+    },
+    "bMonthMeaning": {
+        "message": "Dias intercalares,Esplendor,Gloria,Belleza,Grandeza,Luz,Misericordia,palabras,Perfecion,Nombres,fuerza,voluntad,concimiento,Poder,discurso,pregunta,Honor,Soverania,Dominio,sublimidad",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Azamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Mashíyyat,`Ilm,Qudrat,Qawl,Masá'il,Sharaf,Sultán,Mulk,`Alá’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Cargando...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "btnEveOrDay": {
+        "message": "antes y despues / de la puesta del sol"
+    },
+    "btnJumpTo": {
+        "message": "ir"
+    },
+    "btnJumpToTitle": {
+        "message": "regresar or avanzar de acuerdo al nuero de dias",
+        "description": "tooltip"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Gloria,Belleza,Perfeccion,Gracia,Justicia,Majestad,Independencia",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Padre,D,portal,V,Eternidad,Generosidad,Esplendor,amor,Delicia,respuesta,unico,Benevolente,Affecto,principio,Luminoso,Mas Luminoso,Unidad",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "copied": {
+        "message": "Copiado!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Current Day",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "dateHeading": {
+        "message": "Day",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "acaba"
+    },
+    "dayEndedPast": {
+        "message": "acabo"
+    },
+    "DayOfMonth": {
+        "message": "Dia del mes"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "dia de la semana"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "empieza"
+    },
+    "dayStartedPast": {
+        "message": "empezo"
+    },
+    "elements": {
+        "message": "Fuego,Aire,Agua,Tierra",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "termino",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Termina al ocaso {0}"
+    },
+    "equiv": {
+        "message": "Equivalente",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "E.B."
+    },
+    "eraLong": {
+        "message": "Era Bahá'í"
+    },
+    "eraShort": {
+        "message": "Ser"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Usual meeting time",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Meeting/Special Time",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} al caer el sol (mas o menos {startingSunsetDesc}) el {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} y {dayEndedLower} al atardecer (mas o menos {endingSunsetDesc}) el  {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Cuando comienza"
+    },
+    "exportAlert_B1": {
+        "message": "1 minuto antes"
+    },
+    "exportAlert_B10": {
+        "message": "10 minutos antes"
+    },
+    "exportAlert_B15": {
+        "message": "15 minutos antes"
+    },
+    "exportAlert_B30": {
+        "message": "30 minutos antes"
+    },
+    "exportAlert_B5": {
+        "message": "5 minutos antes"
+    },
+    "exportAlert_B60": {
+        "message": "60 minutos antes"
+    },
+    "exportBadiYear0": {
+        "message": "Año Badíʿ - {0} E.B."
+    },
+    "exportBadiYear1": {
+        "message": "Año Badíʿ - {0} E.B."
+    },
+    "exportCalendarDescription": {
+        "message": "Fechas en el calendario Badíʿ para {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "Inicio de {0}"
+    },
+    "exporterDateRange": {
+        "message": "Rango de fechas para exportar (basado en el año actualmente seleccionado)"
+    },
+    "exporterFastEnd": {
+        "message": "Fin del ayuno",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Inicio del ayuno",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Ayuno hasta {endingSunsetDesc}"
+    },
+    "exporterItemDescDay": {
+        "message": "Un día en el calendario Badíʿ.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Horarios para el ayuno anual Bahá'í.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "La reunión puede comenzar en cualquier momento de este día Badíʿ.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Las horas de amanecer y atardecer mostradas son para {location}. Generado con http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Exportador de calendario Badíʿ",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Descargar archivo iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Año gregoriano - {0} d.C."
+    },
+    "exportGregYear1": {
+        "message": "Año gregoriano - {0} d.C."
+    },
+    "exportHideTest": {
+        "message": "Ocultar"
+    },
+    "exportIncludeAlert": {
+        "message": "Añadir una alerta a cada evento (puede no cargarse en Google Calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Información de ubicación"
+    },
+    "exportIntro": {
+        "message": "¡Importante! Consulte <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">esta página web</a> para obtener información y advertencias.",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Título del calendario exportado (puede no utilizarse)"
+    },
+    "exportNumToInclude": {
+        "message": "Número de entradas de calendario incluidas (aproximadamente):"
+    },
+    "exportOption_AllDay": {
+        "message": "Evento de día completo desde medianoche <em>(duración de 1 día)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Solo al atardecer de inicio"
+    },
+    "exportOption_Date": {
+        "message": "Días Badíʿ <em>(365/366 días)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Días de ayuno <em>(19 días)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Fiestas <em>(19 días)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Días sagrados <em>(11 días)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento a la hora de observación designada o a la hora habitual de reunión"
+    },
+    "exportOption_Sun": {
+        "message": "Del atardecer al atardecer <em>(aproximadamente 24 horas)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Solo al amanecer"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Evento desde el amanecer hasta el atardecer <em>(aproximadamente 12 horas)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Solo al atardecer"
+    },
+    "exportOption_Usual": {
+        "message": "Evento a la hora habitual de reunión (ver página de Eventos)"
+    },
+    "exportOtherSettings": {
+        "message": "Otros ajustes"
+    },
+    "exportQuickDesc": {
+        "message": "¡Exporte cada conjunto y luego cárguelos todos en el mismo calendario!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Calendario completo"
+    },
+    "exportQuickPick1Text": {
+        "message": "Mostrar cada día Badíʿ, junto con los días sagrados y las horas de fiesta. Sin alertas."
+    },
+    "exportQuickPick2": {
+        "message": "2. Hora de ayuno - Mañana"
+    },
+    "exportQuickPick2Text": {
+        "message": "Amanecer, con una alerta justo antes."
+    },
+    "exportQuickPick3": {
+        "message": "3. Hora de ayuno - Tarde"
+    },
+    "exportQuickPick3Text": {
+        "message": "Atardecer, con una alerta."
+    },
+    "exportQuickPickClearText": {
+        "message": "Restablecer opciones"
+    },
+    "exportQuickPicks": {
+        "message": "Conjuntos de eventos recomendados"
+    },
+    "exportRangeFullRange": {
+        "message": "Exportar todas las entradas del calendario. (Si no está marcado, exportar solo un conjunto de ejemplos.)"
+    },
+    "exportTest": {
+        "message": "Mostrar para copiar"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Seleccione lo que debe exportarse."
+    },
+    "exportWhatToInclude": {
+        "message": "Opciones"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Fasting Times in {bYear}"
+    },
+    "fastGDate": {
+        "message": "Date",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Fiesta de {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival de Ridván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(pulse para mas detalles)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Dia del calendario Gregoriano"
+    },
+    "gDatePickerTitle2": {
+        "message": "Eligir <u>C</u>alendario gregoriano",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octobre,Noviembre,Diciembre"
+    },
+    "gMonthShort": {
+        "message": "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Ahora"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Domingo,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Dom,Lun,Mar,Mier,Jue,Vier,Sab",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Ascension de `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Ascension de Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Nacimiento de El Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Nacimiento de Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Dia del Convenio"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Declaracion de El Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martirio de El Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Primer dia de Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Doceavo dia de Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Noveno dia de Ridván"
+    },
+    "iconColor": {
+        "message": "Color del icono",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automático (seguir tema del sistema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>easts",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>oly Days",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Show",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Dias Intercalarios"
+    },
+    "jumpTo": {
+        "message": "<u>J</u>ump ± dias",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "locationError": {
+        "message": "incapaz de determinar su actual localizacion.\n\nLa extension usara 6:30pm para la caida del sol cada dia.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Significado",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "Month": {
+        "message": "Mes"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "NombTs del Mes/Dia",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} con ocaso {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} con ocaso al {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Próximo &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "Siguiente refresh schedule {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Proximo Año",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Presione Shift + Right flecha para mirar el año siguiente",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(localizacion desconocida - 6:30pm hora de la caida del sol)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(localidad actual)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "ahora",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "th,st,nd,rd",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",Primero,segundo,tercero,cuarto,quint,sexto,septimo,octavo,noveno,decimo,decimo primero,decimo segundo,decimo tercero,decimo cuarto,decimo quinto,decimo sexto,decimo septimo,decimo octavo,decimo noveno"
+    },
+    "otherDays": {
+        "message": "en {0} dias",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "Año"
+    },
+    "pick_pageCalGreg": {
+        "message": "Calendario Cristiano",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Wheel",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Dia"
+    },
+    "pick_pageEvents": {
+        "message": "Events",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Fast"
+    },
+    "pick_pageLists": {
+        "message": "Listas"
+    },
+    "pressKeyOrClick": {
+        "message": "Presione el boton {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Presiona la tecla para copiar la hora del formato al portapapeles",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Previo"
+    },
+    "prevYear": {
+        "message": "Años Anteriores",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Presione Shift + Left flecha para mirar los años anteriores",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Español",
+        "description": "put your language here, in your script"
+    },
+    "shoghiExample": {
+        "message": "este es el dia de {bWeekdayNamePri}, El dia de {bDayNamePri}, del mes de {bMonthNamePri}, del año {bYearInVahidNamePri}, del {bVahidOrdinalName} {VahidLabelPri}, of the {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Presione esta combinacion de teclados para abrir el calendario  desde cualquier parte en Chrome."
+    },
+    "showPointer": {
+        "message": "Show pointer"
+    },
+    "specialDaysTitle": {
+        "message": "Feasts and Holy Days in {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 am (Standard Time)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 am (Standard Time)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Noon (Standard Time)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 pm (Standard Time)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "About 2 hours after sunset",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Comienza al alba {0}"
+    },
+    "startTimeOption": {
+        "message": "Usual meeting time: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Sugerencias?"
+    },
+    "suggestionsTitle": {
+        "message": "Por favor haga click aqui y envie cualquier sugerencia de como mejorar esta extension!"
+    },
+    "sunriseFastHeading": {
+        "message": "Sunrise",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Sunset",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Start of Badíʿ Day",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspend Work",
+        "description": "heading in Events listing"
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Consejo",
+        "description": "hints of how to use the tool"
+    },
+    "tipsText": {
+        "message": "Use PgUp/PgDn teclas para seleccionar paneles.\nUse derecha/iaquierda teclas con flechas para cambiar los dias.\nUse / para cambiar antes/despues ocaso."
+    },
+    "title": {
+        "message": "calendario Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "ensena el dia de hoy en el calendario Badíʿ, el calendario oficial de La Fe Bahá'í.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "esta noche",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "es",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Spanish",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Proximas fiestas de 19 dias, Dias sagrados y otros eventos"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "version": {
+        "message": "Versión {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nombres de los dias de la semana",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "año de la era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "año {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Para más detalles o para registrarse, vea <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. El Zap contendrá estos campos: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL de Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayLocal": {
+        "message": "Kaikki asiat",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Sijaintiasi ei voitu tunnistaa.\n\nLaajennus käyttää klo 18:30 auringonlaskuaikana kaikille päiville.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "Merkitys",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "Kuukausi"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} auringonlaskussa klo {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Seur. &rarr;"
+    },
+    "noLocationAvailable": {
+        "message": "(Sijainti tuntematon - 18:30 auringonlaskuaika)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Nykyinen sijainti)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Nyt",
+        "description": "Shown in the upcoming dates area"
+    },
+    "ordinalNames": {
+        "message": "ensimmäinen,toinen,kolmas,neljäs,viides,kuudes,seitsemäs,kahdeksas,yhdeksäs,kymmenes,yhdestoista,kahdestoista,kolmastoista,neljästoista,viidestoista,kuudestoista,seitsemästoista,kahdeksastoista,yhdeksästoista"
+    },
+    "otherDays": {
+        "message": "{0} päivän kuluttua",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "alkoi klo {time}",
+        "description": "shown after midnight of the day"
+    },
+    "pick_pageCustom": {
+        "message": "Mukautettu",
+        "description": "page tab name and page title"
+    },
+    "planFromWhenNextYear": {
+        "message": "Seuraavan Badíʿ-vuoden alusta",
+        "description": "answer for planFromWhen"
+    },
+    "plannerShowWhat": {
+        "message": "Mitä näytetään?",
+        "description": "First question in inputs"
+    },
+    "pm": {
+        "message": "ip",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Paina painiketta tai näppäintä {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Paina näppäintä kopioidaksesi muotoillun päivämäärän leikepöydälle",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Edell."
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabia",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Suomi",
+        "description": "put your language here, in your script"
+    }
+}

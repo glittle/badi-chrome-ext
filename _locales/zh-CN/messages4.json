@@ -1,0 +1,79 @@
+{
+    "shoghiExample": {
+        "message": "第{KullishayLabelPri}个库勒谢的第{VahidLabelPri}个瓦希德的{bYearInVahidNamePri}年{bMonthNamePri}月{bDayNamePri}日一周当中的{bWeekdayNamePri}日",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "按此键组合可从Chrome中的任何位置打开日历。"
+    },
+    "showPointer": {
+        "message": "显示指针"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear}年灵宴会和圣日"
+    },
+    "specialTime_0100S": {
+        "message": "凌晨1点（标准时间）",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "凌晨3点（标准时间）",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "中午（标准时间）",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "下午3点（标准时间）",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "日落后约2小时",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "在{0}日落时开始"
+    },
+    "startTimeOption": {
+        "message": "常规会议时间：",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "建议？"
+    },
+    "suggestionsTitle": {
+        "message": "点击此处提交如何改进此扩展的建议！"
+    },
+    "sunriseFastHeading": {
+        "message": "日出",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "日落",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "巴迪日开始",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "停止工作",
+        "description": "heading in Events listing"
+    },
+    "title": {
+        "message": "巴迪历",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "translation": {
+        "message": "zh-CN",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Chinese",
+        "description": "The name of this language, in English"
+    },
+    "Vahid": {
+        "message": "瓦希德"
+    }
+}

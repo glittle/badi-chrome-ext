@@ -1,0 +1,321 @@
+{
+    "1day": {
+        "message": "post {0} tago",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "La memorigo estos legita uzante ĉi tiun voĉon:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "Vespero (post sunsubiro)"
+    },
+    "am": {
+        "message": "a.m.",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Nomo",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(J M T) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Iri al <u>B</u>adí'-dato",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "Tago (antaŭ sunsubiro)"
+    },
+    "bMonthMeaning": {
+        "message": "Intermetitaj tagoj,Splendoro,Gloro,Beleco,Grandiozeco,Lumo,Indulgo,Vortoj,Perfekteco,Nomoj,Potenco,Volo,Scio,Povo,Parolo,Demandoj,Honoro,Suvereneco,Regado,Alteco",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahao,Ĵalalo,Ĵamalo,Azamato,Nuro,Ramato,Kalemato,Kamalo,Asmao,Ezato,Maŝijato,Elmo,Godrato,Goŭlo,Masaelo,Ŝarafo,Soltano,Molko,‘Alá’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Ŝargante...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Malfermi en langeto",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "Zomi al monato",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Zomi al jaro",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Nuligi / nova"
+    },
+    "btnEveOrDay": {
+        "message": "Antaŭ / post sunsubiro"
+    },
+    "btnJumpTo": {
+        "message": "Iri"
+    },
+    "btnJumpToTitle": {
+        "message": "Iri tiom da tagoj antaŭen aŭ malantaŭen",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Eksporti al Excel",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Festoj",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Sanktaj tagoj (sen laboro)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "Ĉiuj sanktaj tagoj",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "Neniu",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Ridván",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Ĝemelaj naskiĝtagoj",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Nuligi",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Forigi",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Redakti",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>K</u>onservi",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Duobligi",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Testi nun",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Nun reŝargi"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Gloro,Beleco,Perfekteco,Graco,Justeco,Majesteco,Sendependeco",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Patro,D,Pordego,V,Eterneco,Malavareco,Splendoro,Amo,Rava,Respondo,Unusola,Donacema,Simpatio,Komenco,Luma,Plejluma,Unueco",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá’,Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "Pli malhelaj <u>k</u>oloroj",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Ĉiuj monatoj dum <u>p</u>resado",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Montri <u>h</u>orojn",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Ĉiuj monatoj dum <u>p</u>resado",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Montri <u>h</u>orojn",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "Kopiita!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Nuna tago",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Kopii"
+    },
+    "customBuilder": {
+        "message": "Krei propran datformaton"
+    },
+    "customBuilderEcho": {
+        "message": "Rezulto (por la nune elektita tago - vidu Konsilojn kaj Klavojn por ŝanĝi la tagon)"
+    },
+    "customBuilderIntro": {
+        "message": "Tajpu la formaton en ĉi tiu kesto. <span class=customHint title='...NamePri = nomo en unua lingvo\n...NameSec = nomo en dua lingvo\nfrag1... = sunsubiro ĝis meznokto\nfrag2... = meznokto ĝis sunsubiro'>(vidu konsilojn)</span><br>Alklaku la aldono-butonon en la parto de Haveblaj Dato-partoj por enmeti en la nuna loko."
+    },
+    "customDefined": {
+        "message": "Propraj datformatoj"
+    },
+    "customFormats": {
+        "message": "Propraj formatoj",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Alklaku 'Kopii' por kopii la formatitan daton al la tondujo."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Formato por montri en la Chrome-piktogramo-konsileto:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Linio 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Linio 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Formato por montri supre de plej multaj paĝoj:"
+    },
+    "customLoadLetters": {
+        "message": "Alklaku por kopii el la norma formato:"
+    },
+    "customPartsList": {
+        "message": "Haveblaj dato-partoj"
+    },
+    "customSelectForFrontPage": {
+        "message": "Marku la skatolon por montri sur la paĝo {0}."
+    },
+    "customUseAsSample": {
+        "message": "Uzi kiel ekzemplon?"
+    },
+    "dateHeading": {
+        "message": "Tago",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "Finiĝas"
+    },
+    "dayEndedPast": {
+        "message": "Finiĝis"
+    },
+    "DayOfMonth": {
+        "message": "Tago de monato"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "Komenciĝas"
+    },
+    "dayStartedPast": {
+        "message": "Komenciĝis"
+    },
+    "defaultFormat": {
+        "message": "(Defaŭlta)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "fajro,aero,akvo,tero",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Finiĝis",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Finiĝas kun sunsubiro je {0}"
+    },
+    "equiv": {
+        "message": "Ekvivalento",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "Bahaa Erao"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Kutima renkontiĝa horo",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Renkontiĝa/Speciala horo",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} je sunsubiro (proksimume {startingSunsetDesc}) je {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} kaj {dayEndedLower} je sunsubiro (proksimume {endingSunsetDesc}) je {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Kiam komenciĝas"
+    },
+    "exportAlert_B1": {
+        "message": "1 minuto antaŭe"
+    },
+    "exportBadiYear0": {
+        "message": "Badíʿ-jaro - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "Datoj en la Badíʿ-kalendaro por {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "Komenco de {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>A</u>tingo da tagoj por eksporti (bazita je la nuna elektita jaro)"
+    },
+    "exporterFastUntil": {
+        "message": "Fasto ĝis {endingSunsetDesc}"
+    }
+}

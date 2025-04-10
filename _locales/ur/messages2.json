@@ -1,0 +1,116 @@
+{
+    "fastDaysTitle": {
+        "message": "{bYear} میں روزے کے اوقات"
+    },
+    "fastGDate": {
+        "message": "تاریخ",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "ضیافت {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "رضوان کا تہوار"
+    },
+    "formatIconClick": {
+        "message": "(تفصیلات کے لیے کلک کریں)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "جنوری,فروری,مارچ,اپریل,مئی,جون,جولائی,اگست,ستمبر,اکتوبر,نومبر,دسمبر"
+    },
+    "gMonthShort": {
+        "message": "جنوری,فروری,مارچ,اپریل,مئی,جون,جولائی,اگست,ستمبر,اکتوبر,نومبر,دسمبر"
+    },
+    "gotoNow": {
+        "message": "ابھی"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "عبدالبہاء کا عروج"
+    },
+    "HolyDay_AscBaha": {
+        "message": "بہاء اللہ کا عروج"
+    },
+    "HolyDay_BirthBab": {
+        "message": "باب کی ولادت"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "بہاء اللہ کی ولادت"
+    },
+    "HolyDay_Covenant": {
+        "message": "عہد کا دن"
+    },
+    "HolyDay_DeclBab": {
+        "message": "باب کا اعلان"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "باب کی شہادت"
+    },
+    "HolyDay_NawRuz": {
+        "message": "نوروز"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "رضوان کا پہلا دن"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "رضوان کا بارہواں دن"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "رضوان کا نواں دن"
+    },
+    "iconColor": {
+        "message": "آئیکن کا رنگ",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "خودکار (سسٹم تھیم کی پیروی کریں)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "دستی",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>ض</u>یافتیں",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>م</u>قدس دن",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "دکھائیں",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "ایام ہا"
+    },
+    "jumpTo": {
+        "message": "<u>ج</u>ائیں ± دن",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

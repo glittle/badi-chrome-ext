@@ -1,0 +1,309 @@
+{
+    "1day": {
+        "message": "em {0} dia",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "O lembrete será lido usando esta voz:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "Noite (Após o Pôr do Sol)"
+    },
+    "am": {
+        "message": "AM",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Nome",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(A M D) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Ir para data <u>B</u>adí'",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "Dia (Antes do Pôr do Sol)"
+    },
+    "bMonthMeaning": {
+        "message": "Dias Intercalares,Esplendor,Glória,Beleza,Grandeza,Luz,Misericórdia,Palavras,Perfeição,Nomes,Poder,Vontade,Conhecimento,Força,Fala,Perguntas,Honra,Soberania,Domínio,Sublimidade",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Raḥmat,Kalimát,Kamál,Asmá',`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá'",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Carregando",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Abrir em uma aba",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "Zoom para Mês",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Zoom para Ano",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Cancelar / Novo"
+    },
+    "btnEveOrDay": {
+        "message": "Antes / Após o Pôr do Sol"
+    },
+    "btnJumpTo": {
+        "message": "Ir"
+    },
+    "btnJumpToTitle": {
+        "message": "Avançar ou retroceder este número de dias",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Exportar para Excel",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Exportar ICAL",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Festas",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Dias Sagrados (sem trabalho)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "Todos os Dias Sagrados",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "Nenhum",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Riḍván",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Aniversários Gêmeos",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Cancelar",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Excluir",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Editar",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>S</u>alvar",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Duplicar",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Testar Agora",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Recarregar Agora"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Glória,Beleza,Perfeição,Graça,Justiça,Majestade,Independência",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,'Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Pai,D,Porta,V,Eternidade,Generosidade,Esplendor,Amor,Delicioso,Resposta,Único,Generoso,Afeição,Início,Luminoso,Mais Luminoso,Unidade",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá',Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "<u>C</u>ores mais escuras",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Todos os meses ao <u>i</u>mprimir",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Mostrar <u>h</u>orários",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Todos os meses ao <u>i</u>mprimir",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Mostrar <u>h</u>orários",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "Copiado!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Dia Atual",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Copiar"
+    },
+    "customBuilder": {
+        "message": "Criar Formato de Data Personalizado"
+    },
+    "customBuilderEcho": {
+        "message": "Resultado (para o dia atualmente selecionado - veja Dicas e Teclas para mudar o dia)"
+    },
+    "customBuilderIntro": {
+        "message": "Digite o formato nesta caixa. <span class=customHint title='...NamePri = no idioma primário\n...NameSec = no idioma secundário\nfrag1... = pôr do sol até meia-noite\nfrag2... = meia-noite até pôr do sol'>(Ver Dicas)</span><br>Clique no botão 'Adicionar' nas Partes de Data Disponíveis para inserir na posição atual."
+    },
+    "customDefined": {
+        "message": "Formatos de Data Personalizados"
+    },
+    "customFormats": {
+        "message": "Formatos Personalizados",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Clique em 'Copiar' para copiar a data formatada para a área de transferência."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Formato para mostrar na dica do ícone do Chrome:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Linha 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Linha 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Formato para mostrar no topo da maioria das páginas:"
+    },
+    "customLoadLetters": {
+        "message": "Clique para copiar do formato padrão:"
+    },
+    "customPartsList": {
+        "message": "Partes de Data Disponíveis"
+    },
+    "customSelectForFrontPage": {
+        "message": "Marque a caixa para mostrar na página {0}."
+    },
+    "customUseAsSample": {
+        "message": "Usar como Exemplo?"
+    },
+    "dateHeading": {
+        "message": "Dia",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "Terminará"
+    },
+    "dayEndedPast": {
+        "message": "Terminou"
+    },
+    "DayOfMonth": {
+        "message": "Dia do Mês"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Dia da Semana"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "Começará"
+    },
+    "dayStartedPast": {
+        "message": "Começou"
+    },
+    "defaultFormat": {
+        "message": "(Padrão)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "Fogo, Ar, Água, Terra",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Terminou",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Termina com o pôr do sol em {0}"
+    },
+    "equiv": {
+        "message": "Equivalente",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "E.B."
+    },
+    "eraLong": {
+        "message": "Era Bahá'í"
+    },
+    "eraShort": {
+        "message": "EB"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Horário habitual de reunião",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Reunião/Horário Especial",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} ao pôr do sol (aproximadamente {startingSunsetDesc}) em {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} e {dayEndedLower} ao pôr do sol (aproximadamente {endingSunsetDesc}) em {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    }
+}

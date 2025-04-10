@@ -1,0 +1,77 @@
+{
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nomoj de monatoj/tagoj",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} kun sunsubiro je {endingSunsetDesc}"
+    },
+    "noLocationName": {
+        "message": "(Nuna loko)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Nun",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "a,a,a,a",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",unua,dua,tria,kvara,kvina,sesa,sepa,oka,naŭa,deka,dekunua,dekdua,dektria,dekkvara,dekkvina,deksesa,deksepa,dekoka,deknaŭa"
+    },
+    "past_Delta": {
+        "message": "estis antaŭ {numUnits}"
+    },
+    "past_StartDeltaTime": {
+        "message": "komenciĝis antaŭ {numUnits} je {time}"
+    },
+    "planFromWhenToday": {
+        "message": "Hodiaŭ",
+        "description": "answer for planFromWhen"
+    },
+    "plannerTitle2": {
+        "message": "Elekto de planado",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Kiu?",
+        "description": "which event or events?"
+    },
+    "rbDefLang_Local": {
+        "message": "Esperanto",
+        "description": "put your language here, in your script"
+    },
+    "reminder_nullAction": {
+        "message": "neniu",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderBefore": {
+        "message": "antaŭ"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativa al <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} je {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayWhen": {
+        "message": "Je {num} tago(j) {beforeAfter} ĉiu {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "La festo de {pri}, {sec},"
+    }
+}

@@ -1,0 +1,245 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "locationError": {
+        "message": "Impossível identificar localização actual .\n\nA extensão irá usar 6:30pm como hora de pôr-do-sol em todos os dias.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Significado",
+        "description": "on List page - table heading"
+    },
+    "midnight": {
+        "message": "12:00 meia-noite",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Mês"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nomes Dia/Mês",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} com o pôr-do-sol às {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} com o pôr-do-sol às {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Seg. &#8594;"
+    },
+    "nextRefreshAlarm": {
+        "message": "Próximo refrescamento previsto para após {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Ano seg",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Prima Shift + Seta Direita para ver ano seguinte",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Localização desconhecida - 6:30pm hora de nascer-do-sol)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Localização Actual)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "meio-dia",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Adicionar Lembretes Exemplo ",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Agora",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "º",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",primeiro,segundo,terceiro,quarto,quinto,sexto,sétimo,oitavo,nono,décimo,décimo primeiro,décimo segundo,décimo terceiro,décimo quarto,décimo quinto,décimo sexto,décimo sétimo,décimo oitavo,décimo nono"
+    },
+    "otherDays": {
+        "message": "dentro de {0} dias",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "iniciou-se às {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "realizou-se {numUnits}"
+    },
+    "past_DeltaTime": {
+        "message": "realizou-se {numUnits} às {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "iniciou-se {numUnits} às {time}"
+    },
+    "past_StartTime": {
+        "message": "iniciou-se às {time}"
+    },
+    "past_Time": {
+        "message": "foi às {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Ano"
+    },
+    "pick_pageCalGreg": {
+        "message": "Ano Gregoriano",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Roda",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Dia"
+    },
+    "pick_pageEvents": {
+        "message": "Eventos",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Jejum"
+    },
+    "pick_pageLists": {
+        "message": "Listas"
+    },
+    "pick_pageReminders": {
+        "message": "Lembretes",
+        "description": "page tab name and page title"
+    },
+    "pm": {
+        "message": "pm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Clique no botão ou prima {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Prima uma tecla para copiar data formatada para a área de transferência:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&#8592; Ant."
+    },
+    "prevYear": {
+        "message": "Ano ant",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Prima Shift + seta Esquerda para ver ano anterior ",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "português",
+        "description": "put your language here, in your script"
+    },
+    "reminder_actions": {
+        "message": "Adicionar Acção",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "Nenhuma",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_speak": {
+        "message": "Ler em voz alta",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAddEdit": {
+        "message": "Adicionar/Editar Lembrete",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "após"
+    },
+    "reminderAlarm": {
+        "message": "às",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Dia {num} do mês Badíʿ",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "antes"
+    },
+    "reminderCalcType": {
+        "message": "Mostrar lembrete {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "numa hora específica",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativo a <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} no {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} no {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "No dia {num} do mês Badíʿ",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Quando {num} dia(s) {beforeAfter} cada {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "A Festa de {ar}, {meaning},"
+    },
+    "reminderHolyDay": {
+        "message": "O Dia Sagrado, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "dia {num} às {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} dia(s) {deltaText}, às {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} após",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "anunciado às {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

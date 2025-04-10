@@ -1,0 +1,106 @@
+{
+    "fastDaysTitle": {
+        "message": "Paastoajat vuonna {bYear}"
+    },
+    "fastGDate": {
+        "message": "Päivämäärä",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0}n juhla",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Ridvánin juhla"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "formatIconClick": {
+        "message": "(napsauta lisätietoja varten)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Time": {
+        "message": "on klo {time}"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregoriaaninen päivämäärä"
+    },
+    "gMonthLong": {
+        "message": "Tammi,Helmi,Maalis,Huhti,Touko,Kesä,Heinä,Elo,Syys,Loka,Marras,Joulu"
+    },
+    "gMonthShort": {
+        "message": "Tammi,Helmi,Maalis,Huhti,Touko,Kesä,Heinä,Elo,Syys,Loka,Marras,Joulu"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Nyt"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay}. {currentMonthLong}ta {currentYear}",
+        "description": "in left panel"
+    },
+    "gWeekdayLong": {
+        "message": "Sunnuntai,Maanantai,Tiistai,Keskiviikko,Torstai,Perjantai,Lauantai",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "su,ma,ti,ke,to,pe,la",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Abdu'l Baháin poismenon muistopäivä"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Bahá’u'llahin poismenon muistopäivä"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Babin syntymäpäivä"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Bahá’u'llahin syntymäpäivä"
+    },
+    "HolyDay_Covenant": {
+        "message": "Liiton päivä"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Babin, uskon edelläkävijän, ilmoituksen päivä"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Babin marttyyrikuoleman muistopäivä"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw-Ruz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Ridvanin ensimmäinen päivä"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Ridvanin kahdestoista päivä"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Ridvanin yhdeksäs päivä"
+    },
+    "iconColor": {
+        "message": "Kuvakkeen väri",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automaattinen (seuraa järjestelmän teemaa)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manuaalinen",
+        "description": "Label for manual icon color option"
+    },
+    "Intercalary": {
+        "message": "Hán päivät"
+    }
+}

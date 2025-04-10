@@ -1,0 +1,136 @@
+{
+    "Kullishay": {
+        "message": "Кулл-и Шай’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLabelPri": {
+        "message": "Кулл-и-Шай'",
+        "description": "Label for Kull-i-Shay in primary language"
+    },
+    "KullishayLabelSec": {
+        "message": "Kull-i-Shay'",
+        "description": "Label for Kull-i-Shay in secondary language"
+    },
+    "KullishayLocal": {
+        "message": "всё сущее",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Невозможно определить ваше текущее местоположение.\n\nРасширение будет использовать 18:30 как время заката для каждого дня.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "Значение",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "Месяц"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Названия месяцев/дней",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} с закатом в {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} с закатом в {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Следующий &rarr;"
+    },
+    "nextYear": {
+        "message": "Следующий год",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Нажмите Shift + Стрелка вправо, чтобы увидеть следующий год",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Неизвестное местоположение - время заката 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Текущее местоположение)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Сейчас",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "-й,-й,-й,-й",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",первый,второй,третий,четвертый,пятый,шестой,седьмой,восьмой,девятый,десятый,одиннадцатый,двенадцатый,тринадцатый,четырнадцатый,пятнадцатый,шестнадцатый,семнадцатый,восемнадцатый,девятнадцатый"
+    },
+    "otherDays": {
+        "message": "через {0} дней",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "Год"
+    },
+    "pick_pageCalGreg": {
+        "message": "Григорианский год",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Колесо",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "День"
+    },
+    "pick_pageEvents": {
+        "message": "События",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Пост"
+    },
+    "pick_pageLists": {
+        "message": "Списки"
+    },
+    "pm": {
+        "message": "p.m.",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Нажмите кнопку или введите {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Выберите формат для копирования в буфер обмена:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Предыдущий"
+    },
+    "prevYear": {
+        "message": "Предыдущий год",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Нажмите Shift + Стрелка влево, чтобы увидеть предыдущий год",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Русский",
+        "description": "put your language here, in your script"
+    }
+}

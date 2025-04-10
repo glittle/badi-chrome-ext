@@ -1,0 +1,151 @@
+{
+    "exporterItemDescFast": {
+        "message": "Tempoj por la ĉiujara Bahaa fasto.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Kunveno povas komenciĝi je ajna horo en ĉi tiu Badíʿ-tago",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Sunleviĝo aŭ sunsubiro laŭ horoj de {location}. Generitaj laŭ http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exportGregYear1": {
+        "message": "Gregoria jaro - {0} post Kristo"
+    },
+    "exportIncludeLocation": {
+        "message": "Informoj pri loko"
+    },
+    "exportIntro": {
+        "message": "Grave! Vidu <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">ĉi tiun retpaĝon</a> por informoj kaj avertoj!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportOption_AllDay": {
+        "message": "Tut-taga evento ekde meznokto <em>(dum unu tago)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Sanktaj tagoj <em>(11 tagoj)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento je elektita plenumo-horo aŭ kutima renkontiĝa horo"
+    },
+    "exportOption_Sunset": {
+        "message": "Nur sunsubire"
+    },
+    "exportOtherSettings": {
+        "message": "Aliaj agordoj"
+    },
+    "exportQuickPick2Text": {
+        "message": "Sunleviĝo, kun sciigo tuj antaŭ ĝi."
+    },
+    "exportQuickPick3Text": {
+        "message": "Sunsubiro, kun sciigo."
+    },
+    "exportQuickPicks": {
+        "message": "Rekomendata aro da eventoj"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Fastaj horoj en {bYear}"
+    },
+    "fastGDate": {
+        "message": "Dato",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Festo de {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festivalo de Ridván"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(klaku por detaloj)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "komenciĝas je {time}",
+        "description": "shown in the eve of the day"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gMonthLong": {
+        "message": "januaro,februaro,marto,aprilo,majo,junio,julio,aŭgusto,septembro,oktobro,novembro,decembro"
+    },
+    "gMonthShort": {
+        "message": "jan,feb,mar,apr,maj,jun,jul,aŭg,sep,okt,nov,dec"
+    },
+    "gotoNow": {
+        "message": "Nun"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Forpaso de `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Forpaso de Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Naskiĝo de Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Naskiĝo de Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Tago de la Interligo"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Deklaracio de Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martirigo de Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Noruzo"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Unua tago de Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Dekdua tago de Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Naŭa tago de Ridván"
+    },
+    "iconColor": {
+        "message": "Piktogramkoloro",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Aŭtomata (sekvi sisteman temon)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manlibra",
+        "description": "Label for manual icon color option"
+    },
+    "iftttInfo": {
+        "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
+        "description": "info and link to ifttt page"
+    }
+}

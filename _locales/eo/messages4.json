@@ -1,0 +1,81 @@
+{
+    "reminderNum_minutes_1_more": {
+        "message": "minuto;minutoj"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "startedWithSunset": {
+        "message": "Komenciĝis per sunsubiro je {0}"
+    },
+    "title": {
+        "message": "Badíʿ-kalendaro",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Montras la daton de hodiaŭ en la Badíʿ-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
+        "description": "Used in the manifest"
+    },
+    "translation": {
+        "message": "eo",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Esperanto",
+        "description": "The name of this language, in English"
+    },
+    "upcomingTitle": {
+        "message": "Venontaj festoj, sanktaj tagoj kaj aliaj eventoj"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unueco"
+    },
+    "version": {
+        "message": "Versio {0}"
+    },
+    "webstore": {
+        "message": "Retvendejo"
+    },
+    "weekDayNames": {
+        "message": "Nomoj de la tagoj de la semajno",
+        "description": "on List page - table caption"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook (reta hoko)",
+        "description": "url for Zapier"
+    }
+}

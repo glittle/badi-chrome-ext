@@ -1,0 +1,309 @@
+{
+    "1day": {
+        "message": "{0}日後",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "actionSpeakDesc": {
+        "message": "リマインダーはこの音声で読み上げられます：",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "夕方（日没後）"
+    },
+    "am": {
+        "message": "午前",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "名前",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "（年月日）0={0}",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "<u>バ</u>ディーウ暦の日付に移動",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "日中（日没前）"
+    },
+    "bMonthMeaning": {
+        "message": "挿入日,輝き,栄光,美,壮大,光,慈悲,言葉,完全,名前,力,意志,知識,力,言葉,質問,栄誉,主権,支配,高貴",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "アイヤーミハー,バハー,ジャラール,ジャマール,アザマト,ヌール,ラフマト,カリマート,カマール,アスマー,イッザト,マ<u>シ</u>ーヤト,イルム,クドラト,カウル,マサーイル,<u>シ</u>ャラフ,スルターン,ムルク,アラー",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "読み込み中",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "タブで開く",
+        "description": "shown as menu item when right-clicking on the browser icon "
+    },
+    "btnCal2M": {
+        "message": "月表示に拡大",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "年表示に拡大",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "キャンセル/新規"
+    },
+    "btnEveOrDay": {
+        "message": "日没前/日没後"
+    },
+    "btnJumpTo": {
+        "message": "移動"
+    },
+    "btnJumpToTitle": {
+        "message": "この日数分前後に移動",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Excelにエクスポート",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ICALエクスポート",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "祝宴",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "聖日（休業）",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "すべての聖日",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "なし",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "リドヴァーン",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "双子の誕生日",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "キャンセル",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "削除",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "編集",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>保</u>存",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "複製",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "今すぐテスト",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "今すぐ再読み込み"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",栄光,美,完全,恵み,正義,威厳,独立",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",ジャラール,ジャマール,カマール,フィダール,イダール,イスティジラール,イスティクラール",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,父,D,門,V,永遠,寛大,輝き,愛,喜び,答え,単一,豊か,愛情,始まり,輝く,最も輝く,統一",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",アリフ,バー,アブ,ダール,バーブ,ヴァーヴ,アバド,ジャード,バハー,フッブ,バッハージ,ジャヴァーブ,アハド,ヴァッハーブ,ヴィダード,バディーウ,バヒー,アブハー,ヴァーヒド",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "より<u>暗</u>い色",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "<u>印</u>刷時にすべての月",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "<u>時</u>間を表示",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "<u>印</u>刷時にすべての月",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "<u>時</u>間を表示",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "コピーしました！",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "今日",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "コピー"
+    },
+    "customBuilder": {
+        "message": "カスタム日付形式を作成"
+    },
+    "customBuilderEcho": {
+        "message": "結果（現在選択されている日用 - 日を変更するにはヒントとキーを参照）"
+    },
+    "customBuilderIntro": {
+        "message": "このボックスに形式を入力してください。<span class=customHint title='...NamePri = 主要言語で\n...NameSec = 二次言語で\nfrag1... = 日没から真夜中まで\nfrag2... = 真夜中から日没まで'>（ヒントを表示）</span><br>利用可能な日付パーツの「追加」ボタンをクリックして現在の位置に挿入します。"
+    },
+    "customDefined": {
+        "message": "カスタム日付形式"
+    },
+    "customFormats": {
+        "message": "カスタム形式",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "'コピー'をクリックして書式設定された日付をクリップボードにコピーします。"
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Chromeアイコンのツールチップに表示する形式："
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "1行目"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "2行目"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "ほとんどのページの上部に表示する形式："
+    },
+    "customLoadLetters": {
+        "message": "標準形式からコピーするにはクリック："
+    },
+    "customPartsList": {
+        "message": "利用可能な日付パーツ"
+    },
+    "customSelectForFrontPage": {
+        "message": "{0}ページに表示するにはボックスにチェックを入れてください。"
+    },
+    "customUseAsSample": {
+        "message": "サンプルとして使用しますか？"
+    },
+    "dateHeading": {
+        "message": "日",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "終了"
+    },
+    "dayEndedPast": {
+        "message": "終了しました"
+    },
+    "DayOfMonth": {
+        "message": "月の日"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "曜日"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "開始"
+    },
+    "dayStartedPast": {
+        "message": "開始しました"
+    },
+    "defaultFormat": {
+        "message": "（デフォルト）",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "火,空気,水,土",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "終了しました",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "{0}の日没で終了"
+    },
+    "equiv": {
+        "message": "同等",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.E."
+    },
+    "eraLong": {
+        "message": "バハーイー紀元"
+    },
+    "eraShort": {
+        "message": "BE"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "通常の会合時間",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "会合/特別時間",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay}は{frag1WeekdayLong}、{frag1MonthShort} {frag1Day}の日没（約{startingSunsetDesc}）に{dayStartedLower}、{frag2WeekdayLong}、{frag2MonthShort} {frag2Day}の日没（約{endingSunsetDesc}）に{dayEndedLower}。"
+    }
+}

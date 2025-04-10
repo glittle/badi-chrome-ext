@@ -1,0 +1,136 @@
+{
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Horários de Jejum em {bYear}"
+    },
+    "fastGDate": {
+        "message": "Data",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Festa de {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival de Riḍván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(clique para mais detalhes)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro"
+    },
+    "gMonthShort": {
+        "message": "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Agora"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} de {currentMonthLong} de {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} de {currentMonthLong} de {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Domingo,Segunda-feira,Terça-feira,Quarta-feira,Quinta-feira,Sexta-feira,Sábado",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Dom,Seg,Ter,Qua,Qui,Sex,Sáb",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Ascensão de 'Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Ascensão de Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Nascimento do Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Nascimento de Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Dia da Aliança"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Declaração do Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martírio do Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw-Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Primeiro Dia de Riḍván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Décimo Segundo Dia de Riḍván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Nono Dia de Riḍván"
+    },
+    "iconColor": {
+        "message": "Cor do ícone",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automático (seguir tema do sistema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>estas",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "Dias <u>S</u>agrados",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Mostrar",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Dias Intercalares"
+    },
+    "jumpTo": {
+        "message": "<u>I</u>r ± dias",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

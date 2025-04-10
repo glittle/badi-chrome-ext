@@ -1,0 +1,113 @@
+{
+    "shoghiExample": {
+        "message": "Сегодня день {bWeekdayNamePri}, день {bDayNamePri}, месяц {bMonthNamePri}, год {bYearInVahidNamePri}, {bVahidOrdinalName} {VahidLabelPri}, {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Нажмите эту комбинацию клавиш, чтобы открыть календарь из любого места в Chrome."
+    },
+    "showPointer": {
+        "message": "Показать указатель"
+    },
+    "specialDaysTitle": {
+        "message": "Праздники и святые дни в {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 час ночи (стандартное время)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 часа утра (стандартное время)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Полдень (стандартное время)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 часа дня (стандартное время)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Примерно через 2 часа после заката",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Начинается с закатом в {0}"
+    },
+    "startTimeOption": {
+        "message": "Обычное время встречи: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Предложения?"
+    },
+    "suggestionsTitle": {
+        "message": "Нажмите здесь, чтобы отправить предложения о том, как улучшить это расширение!"
+    },
+    "sunriseFastHeading": {
+        "message": "Восход",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Закат",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Начало дня Бади'",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Приостановка работы",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "title": {
+        "message": "Календарь бахаи",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Показывает сегодняшнюю дату в календаре Бади' (\"Чудесный\"), официальном календаре Веры Бахаи.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Сегодня вечером",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ru",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Russian",
+        "description": "The name of this language, in English"
+    },
+    "upcomingTitle": {
+        "message": "Предстоящие праздники, святые дни и другие события"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Вāх̣ид"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "Вахид",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "Váḥid",
+        "description": "Label for Vahid in secondary language"
+    }
+}

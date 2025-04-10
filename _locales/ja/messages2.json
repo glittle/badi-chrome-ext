@@ -1,0 +1,116 @@
+{
+    "fastDaysTitle": {
+        "message": "{bYear}の断食時間"
+    },
+    "fastGDate": {
+        "message": "日付",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0}の祝宴",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "リドヴァーン祭"
+    },
+    "formatIconClick": {
+        "message": "（詳細はクリック）"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gMonthLong": {
+        "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
+    },
+    "gMonthShort": {
+        "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
+    },
+    "gotoNow": {
+        "message": "今"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}、{currentYear}年{currentMonthLong}{currentDay}日",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}、{currentYear}年{currentMonthLong}{currentDay}日 {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "日曜日,月曜日,火曜日,水曜日,木曜日,金曜日,土曜日",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "日,月,火,水,木,金,土",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "アブドゥル・バハーの昇天"
+    },
+    "HolyDay_AscBaha": {
+        "message": "バハーウッラーの昇天"
+    },
+    "HolyDay_BirthBab": {
+        "message": "バーブの誕生日"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "バハーウッラーの誕生日"
+    },
+    "HolyDay_Covenant": {
+        "message": "契約の日"
+    },
+    "HolyDay_DeclBab": {
+        "message": "バーブの宣言"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "バーブの殉教"
+    },
+    "HolyDay_NawRuz": {
+        "message": "ナウ・ルーズ"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "リドヴァーン第1日"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "リドヴァーン第12日"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "リドヴァーン第9日"
+    },
+    "iconColor": {
+        "message": "アイコンの色",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "自動（システムテーマに従う）",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "手動",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>祝</u>宴",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>聖</u>日",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "表示",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "挿入日"
+    },
+    "jumpTo": {
+        "message": "<u>移</u>動±日",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "segala sesuatu",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Tidak dapat menentukan lokasi Anda saat ini.\n\nEkstensi akan menggunakan 18:30 sebagai waktu matahari terbenam untuk setiap hari.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "meaning": {
+        "message": "Arti",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "Bulan"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nama Bulan/Hari",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} dengan matahari terbenam pada {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} dengan matahari terbenam pada {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Berikutnya &rarr;"
+    },
+    "nextYear": {
+        "message": "Tahun Berikutnya",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Tekan Shift + Panah kanan untuk melihat tahun berikutnya",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Lokasi tidak diketahui - waktu matahari terbenam 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Lokasi saat ini)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Sekarang",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "ordinal": {
+        "message": "ke-,ke-,ke-,ke-",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",pertama,kedua,ketiga,keempat,kelima,keenam,ketujuh,kedelapan,kesembilan,kesepuluh,kesebelas,kedua belas,ketiga belas,keempat belas,kelima belas,keenam belas,ketujuh belas,kedelapan belas,kesembilan belas"
+    },
+    "otherDays": {
+        "message": "dalam {0} hari",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "Tahun"
+    },
+    "pick_pageCalGreg": {
+        "message": "Tahun Gregorian",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Roda",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Hari"
+    },
+    "pick_pageEvents": {
+        "message": "Acara",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Puasa"
+    },
+    "pick_pageLists": {
+        "message": "Daftar"
+    },
+    "pm": {
+        "message": "sore",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Tekan tombol atau ketik {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Pilih format untuk disalin ke clipboard:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Sebelumnya"
+    },
+    "prevYear": {
+        "message": "Tahun Sebelumnya",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Tekan Shift + Panah kiri untuk melihat tahun sebelumnya",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Indonesia",
+        "description": "put your language here, in your script"
+    }
+}

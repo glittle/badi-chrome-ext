@@ -1,0 +1,74 @@
+{
+    "startedWithSunset": {
+        "message": "Alkoi auringonlaskussa klo {0}"
+    },
+    "suggestions": {
+        "message": "Ehdotukset"
+    },
+    "suggestionsTitle": {
+        "message": "Kirjoita tähän ehdotuksia tämän kalenterin parantamiseksi"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "title": {
+        "message": "Bahai-kalenteri",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Käytä Badíʿ-kalenteria",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Tänä iltana",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "fi",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Finnish",
+        "description": "The name of this language, in English"
+    },
+    "upcomingTitle": {
+        "message": "Tulevat juhlat ja pyhät päivät"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "version": {
+        "message": "Versio {0}"
+    },
+    "YearOfEra": {
+        "message": "Bahá'í-aikakauden vuosi"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Váḥidin vuosi"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Lisu00e4tietoja tai rekisteru00f6intiu00e4 varten, katso <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Zap sisu00e4ltu00e4u00e4 nu00e4mu00e4 kentu00e4t: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

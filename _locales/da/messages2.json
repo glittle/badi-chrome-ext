@@ -1,0 +1,84 @@
+{
+    "exporterItemDescDay": {
+        "message": "En dag i Badíʿ-kalenderen.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Tider for den årlige Bahá'í-faste.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Samling kan starte på et hvilket som helst tidspunkt på denne Badíʿ-dag.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Solopgangs- eller solnedgangstider vist er for {location}. Genereret ved hjælp af http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ-kalender eksportør",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Download iCalendar-fil (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoriansk år - {0} e.Kr."
+    },
+    "exportGregYear1": {
+        "message": "Gregoriansk år - {0} e.Kr."
+    },
+    "exportHideTest": {
+        "message": "Skjul"
+    },
+    "exportIncludeAlert": {
+        "message": "Tilføj en påmindelse til hver begivenhed (indlæses muligvis ikke i Google-kalender)"
+    },
+    "exportIncludeLocation": {
+        "message": "Placeringsoplysninger"
+    },
+    "exportIntro": {
+        "message": "Vigtigt! Se <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">denne webside</a> for information og forbehold!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Titel for eksporteret kalender (bruges muligvis ikke)"
+    },
+    "exportNumToInclude": {
+        "message": "Antal kalenderindgange inkluderet (cirka):"
+    },
+    "exportOption_AllDay": {
+        "message": "Heldagsbegivenhed fra midnat <em>(1 dag lang)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Kun ved begyndende solnedgang"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-dage <em>(365/366 dage)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fastedage <em>(19 dage)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Fester <em>(19 dage)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Helligdage <em>(11 dage)</em>"
+    },
+    "iconColor": {
+        "message": "Ikonfarve",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automatisk (følg systemtema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manuel",
+        "description": "Label for manual icon color option"
+    }
+}

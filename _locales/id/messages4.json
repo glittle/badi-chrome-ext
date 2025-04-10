@@ -1,0 +1,160 @@
+{
+    "shoghiExample": {
+        "message": "Hari ini adalah hari {bWeekdayNamePri}, hari {bDayNamePri}, bulan {bMonthNamePri}, tahun {bYearInVahidNamePri}, {bVahidOrdinalName} {VahidLabelPri}, {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Tekan kombinasi tombol ini untuk membuka kalender dari mana saja di Chrome."
+    },
+    "showPointer": {
+        "message": "Tampilkan penunjuk"
+    },
+    "specialDaysTitle": {
+        "message": "Perayaan dan hari suci di {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 pagi (waktu standar)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 pagi (waktu standar)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Tengah hari (waktu standar)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 sore (waktu standar)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Sekitar 2 jam setelah matahari terbenam",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Dimulai dengan matahari terbenam pada {0}"
+    },
+    "startTimeOption": {
+        "message": "Waktu pertemuan biasa: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Saran?"
+    },
+    "suggestionsTitle": {
+        "message": "Silakan klik di sini dan kirimkan saran untuk meningkatkan ekstensi ini!"
+    },
+    "sunriseFastHeading": {
+        "message": "Matahari Terbit",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Matahari Terbenam",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Awal Hari Badíʿ",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Istirahat Kerja",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Tips &amp; Tombol",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "Akurasi?"
+    },
+    "tipsAboutText": {
+        "message": "Tanggal hingga 221 B.E. (2064 M.) sudah diketahui. Setelah itu, pembaruan mungkin diperlukan seiring dengan peningkatan pengamatan astronomi. Harap jangan gunakan ini untuk menyelesaikan rencana Anda lebih dari 50 tahun ke depan! Lihat situs web untuk detail lebih lanjut."
+    },
+    "tipsText": {
+        "message": "Tekan tombol PgUp/PgDn untuk memilih panel.\nTekan tombol panah Kanan/Kiri untuk mengubah hari.\nTekan / untuk beralih sebelum/setelah matahari terbenam.\nTekan Home untuk kembali ke hari ini!"
+    },
+    "title": {
+        "message": "Kalender Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Menampilkan tanggal hari ini dalam kalender Badíʿ (Menakjubkan), kalender resmi Agama Bahá'í.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "Malam ini",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "id",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Indonesian",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Perayaan, hari suci, dan acara lain yang akan datang"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "Váḥid",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "Váḥid",
+        "description": "Label for Vahid in secondary language"
+    },
+    "webstore": {
+        "message": "Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nama Hari Kerja",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Tahun Era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Tahun {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Untuk detail atau mendaftar, lihat <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Zap akan berisi bidang-bidang ini: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL Webhook Zapier",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "Kullishay": {
+        "message": "குல்-இ-ஷே"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLabelPri": {
+        "message": "குல்-இ-ஷே",
+        "description": "Label for Kull-i-Shay in primary language"
+    },
+    "KullishayLabelSec": {
+        "message": "Kull-i-Shay'",
+        "description": "Label for Kull-i-Shay in secondary language"
+    },
+    "locationError": {
+        "message": "உங்களின் தற்போதைய இடத்தைத் தீர்மானிக்க இயலவில்லை.\n\nவிரிவாக்கம், ஒவ்வொரு திகதியின் போதும் அஸ்தமனத்திற்கு 6:30-ஐயே பயன்படுத்தும்.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "அர்த்தம்",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "மாதம்"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "மாதம்/நாள் பெயர்",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} அஸ்தமனத்துடன் {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} அஸ்தமனத்துடன் {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "அடுத்த &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "அடுத்த புதுப்பிப்பு {0}க்குப் பிறகு: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "அடுத்த",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "அடுத்த வருடத்தைக் கண்ணுற (Shift + Right) அம்புவிசையை அழுத்தவும்",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(அறியப்படாத இடம் - மாலை 6:30 அஸ்தமன நேரங்கள்)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(தற்போதைய இடம்)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00",
+        "description": "nice way to say noon"
+    },
+    "Now": {
+        "message": "இப்பொழுது",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "வது,ஆம்,வது,வது",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",முதல்,இரண்டாம்,மூன்றாம்,நான்காம்,ஐந்தாம்,ஆறாம்,ஏழாம்,எட்டாம்,ஒன்பதாம்,பத்தாம்,பதினொன்றாம்,பன்னிரண்டாம்,பதிமூன்றாம்,பதிநான்காம்,பதினைந்தாம்,பதினேழாம்,பதினெட்டாம்,பத்தொன்பதாம்"
+    },
+    "otherDays": {
+        "message": "{0} நாள்களில்",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "வருடம்"
+    },
+    "pick_pageCalGreg": {
+        "message": "கிரேகோரிய வருடம்",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "சக்கரம்",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "நாள்"
+    },
+    "pick_pageEvents": {
+        "message": "நிகழ்ச்சிகள்",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "நோன்பு"
+    },
+    "pick_pageLists": {
+        "message": "பட்டியல்கள்"
+    },
+    "pm": {
+        "message": "மாலை",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "பொத்தானை சொடுக்கவும் அல்லது {0} டைப் செய்யவும்.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "வடிவமைத்திட்ட திகதியைப் பலகையில் ஒட்ட, விசையை அழுத்துக",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; முன்"
+    },
+    "prevYear": {
+        "message": "முந்திய",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "முந்திய வருடத்தைக் கண்ணுற (Shift + Left) அம்புவிடையை அழுத்தவும்",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "தமிழ்",
+        "description": "put your language here, in your script"
+    }
+}

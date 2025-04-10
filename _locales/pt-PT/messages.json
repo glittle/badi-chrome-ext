@@ -1,0 +1,173 @@
+{
+    "1day": {
+        "message": "dentro de {0} dia",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "afterSunset": {
+        "message": "noite - após pôr-do-sol"
+    },
+    "am": {
+        "message": "am",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Nome",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(Y M D) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Escolher Data <u>B</u>adí",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "dia - antes pôr-do-sol"
+    },
+    "bMonthMeaning": {
+        "message": "Dias Intercalares,Esplendor,Glória,Beleza,Grandeza,Luz,Misericórdia,Palavras,Perfeição,Nomes,Potência,Vontade,Conhecimento,Poder,Discurso,Perguntas,Honra,Soberania,Domínio,Sublimidade",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "A carregar...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Abrir num tabulador",
+        "description": "shown as menu item when right-clicking on the browser icon "
+    },
+    "btnEveOrDay": {
+        "message": "Antes / Depois pôr-do-sol"
+    },
+    "btnJumpTo": {
+        "message": "Ir"
+    },
+    "btnJumpToTitle": {
+        "message": "Mover para a frente ou para trás este número de dias",
+        "description": "tooltip"
+    },
+    "btnReminderCancel": {
+        "message": "Cancelar",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Apagar",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Editar",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>G</u>ravar",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Gravar como novo Lembrete",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Testar Agora",
+        "description": "show a sample of the reminder now"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Glória,Beleza,Perfeição,Graça,Justiça,Majestade,Independência",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Pai,D,Porta,V,Eternidade,Generosidade,Esplendor,Amor,Deleite,Resposta,Único,Caridoso,Afecto,Início,Luminosidade,Mais Luminoso,Unidade",
+        "description": "Vahid names, with leading , "
+    },
+    "copied": {
+        "message": "Copiado!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Dia Actual",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "dateHeading": {
+        "message": "Dia",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "Termina"
+    },
+    "dayEndedPast": {
+        "message": "Terminado"
+    },
+    "DayOfMonth": {
+        "message": "Dia do Mês"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Dia da Semana"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "Inicia"
+    },
+    "dayStartedPast": {
+        "message": "Iniciado"
+    },
+    "elements": {
+        "message": "Fogo,Ar,Água,Terra",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Terminado",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Termina ao pôr-do-sol às {0}"
+    },
+    "equiv": {
+        "message": "Equivalente",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "E.B."
+    },
+    "eraLong": {
+        "message": "Era Bahá'í"
+    },
+    "eraShort": {
+        "message": "EB"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Hora normal do encontro ",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Hora excepcional do encontro",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} ao pôr-do-sol (about {startingSunsetDesc}) em {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} and {dayEndedLower} ao pôr-do-sol (about {endingSunsetDesc}) <span class=nobreak>em {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}.</span>"
+    }
+}

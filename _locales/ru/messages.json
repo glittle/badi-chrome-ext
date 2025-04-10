@@ -1,0 +1,157 @@
+{
+    "1day": {
+        "message": "через {0} день",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "afterSunset": {
+        "message": "Вечер (после заката)"
+    },
+    "am": {
+        "message": "a.m.",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Название",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(Г М Д) 0 = Аййам-и-Ха",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Перейти к дате <u>Б</u>ади'",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "День (до заката)"
+    },
+    "bMonthMeaning": {
+        "message": "Вставные дни,Великолепие,Слава,Красота,Величие,Свет,Милость,Слова,Совершенство,Имена,Мощь,Воля,Знание,Могущество,Речь,Вопросы,Честь,Владычество,Господство,Возвышенность",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Аййāм-и Хā',Бахā,Джалāл,Джамāл,‘Аз̣амат,Нӯр,Рах̣мат,Калимāт,Камāл,Асмā’,‘Иззат,Машӣййат,‘Илм,К̣удрат,К̣аул,Масā’ил,Шараф,Султ̣ан,Мулк,‘Алā’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Загрузка...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Открыть в новой вкладке",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "Увеличить до месяца",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Увеличить до года",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Отмена / Новый"
+    },
+    "btnEveOrDay": {
+        "message": "До / После заката"
+    },
+    "btnJumpTo": {
+        "message": "Перейти"
+    },
+    "btnJumpToTitle": {
+        "message": "Перейти на указанное количество дней вперед или назад",
+        "description": "tooltip"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Слава,Красота,Совершенство,Благодать,Справедливость,Величие,Независимость",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Джалāл,Джамāл,Камāл,Фид̣āл,‘Идāл,Истиджлāл,Истик̣лāл",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": "А,Б,Отец,Д,Врата,В,Вечность,Щедрость,Великолепие,Любовь,Восхитительный,Ответ,Единственный,Изобильный,Привязанность,Начало,Лучезарный,Наилучезарнейший,Единство",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": "Алиф,Бā’,Аб,Дāль,Бāб,Вāв,Абад,Джāд,Бахā',Х̣убб,Баххāдж,Джавāб,Ах̣ад,Ваххāб,Видāд,Бадӣ‘,Бахӣ,Абхā,Вāх̣ид",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "copied": {
+        "message": "Скопировано!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Текущий день",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "dateHeading": {
+        "message": "День",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "Закончится"
+    },
+    "dayEndedPast": {
+        "message": "Закончился"
+    },
+    "DayOfMonth": {
+        "message": "День месяца"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "День недели"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "Начнется"
+    },
+    "dayStartedPast": {
+        "message": "Начался"
+    },
+    "elements": {
+        "message": "Огонь,Воздух,Вода,Земля",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Закончился",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Заканчивается с закатом в {0}"
+    },
+    "equiv": {
+        "message": "Эквивалент",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "Б.Э."
+    },
+    "eraLong": {
+        "message": "Эра Бахаи"
+    },
+    "eraShort": {
+        "message": "БЭ"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Обычное время встречи",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Время встречи/особое время",
+        "description": "heading in Events listing (if showing Holy Days)"
+    }
+}

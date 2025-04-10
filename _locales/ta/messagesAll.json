@@ -1,0 +1,735 @@
+{
+    "1day": {
+        "message": "{0} நாளில்",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "actionSpeakDesc": {
+        "message": "நினைவூட்டல் இந்த குரலைப் பயன்படுத்தி படிக்கப்படும்:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "மாலை - அஸ்தமனத்திற்குப் பிறகு"
+    },
+    "am": {
+        "message": "காலை",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "பெயர்",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(வ மா நா) 0 = உபரி நாள்கள்",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "<u>ப</u>டீ திகதியைத் தேர்வு செய்க",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "பகல் - அஸ்தமனத்திற்கு முன்"
+    },
+    "bMonthMeaning": {
+        "message": "உபரி நாள்கள்,பேரொளி,புகழ்,அழகு,சிறப்பு,ஒளி,இரக்கம்,சொற்கள்,நிறைவு,பெயர்,வலிமை,விருப்பம்,அறிவு, சக்தி,உரை,கேள்வி,மதிப்பு,மாட்சிமை,அரசு,உயர்வு",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "பதிவேற்றம்...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "தாவலில் திற",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "மாதத்திற்கு பெரிதாக்கு",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "வருடத்திற்கு பெரிதாக்கு",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "ரத்து செய் / புதிய"
+    },
+    "btnEveOrDay": {
+        "message": "அஸ்தமனத்திற்கு முன் / பிறகு"
+    },
+    "btnJumpTo": {
+        "message": "செல்"
+    },
+    "btnJumpToTitle": {
+        "message": "இத்தனை நாள்கள் முன்னும் பின்னும் செல்",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "எக்செல் ஏற்றுமதி",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ICAL ஏற்றுமதி",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "விருந்துகள்",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "புனித நாட்கள் (வேலை இல்லை)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "அனைத்து புனித நாட்கள்",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "எதுவும் இல்லை",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "ரித்வான்",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "இரட்டை பிறந்தநாட்கள்",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "ரத்து செய்",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "நீக்கு",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "திருத்து",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>சே</u>மி",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "நகலாக்கு",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "இப்போது சோதிக்கவும்",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "இப்போது மீண்டும் ஏற்றவும்"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",புகழ்,அழகு,நிறைவு,கிருபை,நீதி,மாட்சிமை,சுதந்திரம்",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",அ,ப,தந்தை,ட,வாசல்,வ,நித்தியம்,வள்ளன்மை,பேரொளி,அன்பு,மகிழ்ச்சிகரமான,பதில்,தனி,அபரிமிதம்,பாசம்,ஆரம்பம்,ஒளிர்வு,அதி ஒளிர்வு,ஒற்றுமை",
+        "description": "Vahid names, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "அடர் <u>நி</u>றங்கள்",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "<u>அ</u>ச்சிடும்போது அனைத்து மாதங்களும்",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "<u>நே</u>ரங்களைக் காட்டு",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "<u>அ</u>ச்சிடும்போது அனைத்து மாதங்களும்",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "<u>நே</u>ரங்களைக் காட்டு",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "copied": {
+        "message": "நகலெடுக்கப்பட்டுள்ளது!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "தற்போதைய நாள்",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "நகலெடு"
+    },
+    "customBuilder": {
+        "message": "தனிப்பயன் திகதி வடிவமைப்பை உருவாக்கு"
+    },
+    "customBuilderEcho": {
+        "message": "முடிவு (தற்போது தேர்ந்தெடுக்கப்பட்ட நாளுக்கு - நாளை மாற்ற குறிப்புகள் மற்றும் விசைகளைப் பார்க்கவும்)"
+    },
+    "customBuilderIntro": {
+        "message": "இந்த பெட்டியில் வடிவமைப்பை தட்டச்சு செய்யவும். <span class=customHint title='...NamePri = முதன்மை மொழியில்\n...NameSec = இரண்டாம் மொழியில்\nfrag1... = சூரிய அஸ்தமனம் முதல் நள்ளிரவு வரை\nfrag2... = நள்ளிரவு முதல் சூரிய அஸ்தமனம் வரை'>(குறிப்புகளைப் பார்க்கவும்)</span><br>தற்போதைய இடத்தில் செருக கிடைக்கும் திகதி பகுதிகளில் 'சேர்' பொத்தானைக் கிளிக் செய்யவும்."
+    },
+    "customDefined": {
+        "message": "தனிப்பயன் திகதி வடிவமைப்புகள்"
+    },
+    "customFormats": {
+        "message": "தனிப்பயன் வடிவமைப்புகள்",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "வடிவமைக்கப்பட்ட திகதியை கிளிப்போர்டுக்கு நகலெடுக்க 'நகலெடு' என்பதைக் கிளிக் செய்யவும்."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "குரோம் ஐகான் உதவிக்குறிப்பில் காட்ட வடிவமைப்பு:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "வரி 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "வரி 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "பெரும்பாலான பக்கங்களின் மேலே காட்ட வடிவமைப்பு:"
+    },
+    "customLoadLetters": {
+        "message": "நிலையான வடிவமைப்பிலிருந்து நகலெடுக்க கிளிக் செய்யவும்:"
+    },
+    "customPartsList": {
+        "message": "கிடைக்கும் திகதி பகுதிகள்"
+    },
+    "customSelectForFrontPage": {
+        "message": "{0} பக்கத்தில் காட்ட பெட்டியை குறிக்கவும்."
+    },
+    "customUseAsSample": {
+        "message": "உதாரணமாகப் பயன்படுத்தவா?"
+    },
+    "dateHeading": {
+        "message": "நாள்",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "முடிகிறது"
+    },
+    "dayEndedPast": {
+        "message": "முடிவுற்றது"
+    },
+    "DayOfMonth": {
+        "message": "மாத நாள்"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "வாரநாள்"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "ஆரம்பிக்கின்றது"
+    },
+    "dayStartedPast": {
+        "message": "ஆரம்பித்துவிட்டது"
+    },
+    "defaultFormat": {
+        "message": "(இயல்புநிலை)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "தீ,வாயு,நீர்,பூமி",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "முடிவுற்றது",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "அஸ்தமனத்தில் {0} முடிவு"
+    },
+    "equiv": {
+        "message": "இணையான",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "ப.யு."
+    },
+    "eraLong": {
+        "message": "பஹாய் யுகம்"
+    },
+    "eraShort": {
+        "message": "ப.யு."
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "வழக்கமாக ஒன்றுகூடும் நேரம்",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "ஒன்றுகூடும்/விசேஷ நேரம்",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} அஸ்தமனத்தில் (சுமார் {startingSunsetDesc}) அன்று {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} மற்றும் {dayEndedLower} அஸ்தமனத்தில் (சுமார் {endingSunsetDesc}) அன்று {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "facebook": {
+        "message": "முகநூல்",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear} நோன்பு நேரங்கள்"
+    },
+    "fastGDate": {
+        "message": "திகதி",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0} விருந்து",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "ரித்வான் திருவிழா"
+    },
+    "formatIconClick": {
+        "message": "(மேலும் விவரங்களுக்குச் சொடுக்கவும்)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "கிரேகோரிய திகதி"
+    },
+    "gDatePickerTitle2": {
+        "message": "கிரேகோரிய திகதியைத் தேர்வு செய்க",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "ஜனவரி,பிப்ரவரி,மார்ச்,ஏப்ரல்,மே,ஜூன்,ஜூலை,ஆகஸ்ட்,செப்டம்பர்,அக்டோபர்,நவம்பர்,டிசம்பர்"
+    },
+    "gMonthShort": {
+        "message": "ஜன,பிப்,மார்,ஏப்,மே,ஜூன்,ஜூலை,ஆக,செப்,அக்,நவ,டிச"
+    },
+    "googlePlus": {
+        "message": "கூகிள்+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "இப்பொழுது"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "ஞாயிறு,திங்கள்,செவ்வாய்,புதன்,வியாழன்,வெள்ளி,சனி",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "ஞா,திங்,செவ்,புத,வியா,வெ,சனி",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "அப்துல்-பஹாவின் விண்ணேற்றம்"
+    },
+    "HolyDay_AscBaha": {
+        "message": "பஹாவுல்லாவின் விண்ணேற்றம்"
+    },
+    "HolyDay_BirthBab": {
+        "message": "பாப் பெருமானாரின் பிறப்பு"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "பஹாவுல்லாவின் பிறப்பு"
+    },
+    "HolyDay_Covenant": {
+        "message": "ஒப்பந்தத் திருநாள்"
+    },
+    "HolyDay_DeclBab": {
+        "message": "பாப் பெருமானாரின் பிரகடனம்"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "பாப் பெருமானாரின் தியாக மரணம்"
+    },
+    "HolyDay_NawRuz": {
+        "message": "நவ்-ருஸ்"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "ரித்வான் 1-வது நாள்"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "ரித்வான் 12-வது நாள்"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "ரித்வான் 9-வது நாள்"
+    },
+    "iconColor": {
+        "message": "சின்ன நிறம்",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "தானியங்கி (கணினி தீம் பின்பற்றவும்)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "கைமுறை",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>வி</u>ருந்துகள்",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>பு</u>னித நாட்கள்",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "காட்டு",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "உபரி நாள்கள்"
+    },
+    "jumpTo": {
+        "message": "<u>செ</u>ல் ± நாட்கள்",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Kullishay": {
+        "message": "குல்-இ-ஷே"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLabelPri": {
+        "message": "குல்-இ-ஷே",
+        "description": "Label for Kull-i-Shay in primary language"
+    },
+    "KullishayLabelSec": {
+        "message": "Kull-i-Shay'",
+        "description": "Label for Kull-i-Shay in secondary language"
+    },
+    "locationError": {
+        "message": "உங்களின் தற்போதைய இடத்தைத் தீர்மானிக்க இயலவில்லை.\n\nவிரிவாக்கம், ஒவ்வொரு திகதியின் போதும் அஸ்தமனத்திற்கு 6:30-ஐயே பயன்படுத்தும்.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "அர்த்தம்",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "மாதம்"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "மாதம்/நாள் பெயர்",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} அஸ்தமனத்துடன் {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} அஸ்தமனத்துடன் {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "அடுத்த &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "அடுத்த புதுப்பிப்பு {0}க்குப் பிறகு: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "அடுத்த",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "அடுத்த வருடத்தைக் கண்ணுற (Shift + Right) அம்புவிசையை அழுத்தவும்",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(அறியப்படாத இடம் - மாலை 6:30 அஸ்தமன நேரங்கள்)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(தற்போதைய இடம்)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00",
+        "description": "nice way to say noon"
+    },
+    "Now": {
+        "message": "இப்பொழுது",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "வது,ஆம்,வது,வது",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",முதல்,இரண்டாம்,மூன்றாம்,நான்காம்,ஐந்தாம்,ஆறாம்,ஏழாம்,எட்டாம்,ஒன்பதாம்,பத்தாம்,பதினொன்றாம்,பன்னிரண்டாம்,பதிமூன்றாம்,பதிநான்காம்,பதினைந்தாம்,பதினேழாம்,பதினெட்டாம்,பத்தொன்பதாம்"
+    },
+    "otherDays": {
+        "message": "{0} நாள்களில்",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "வருடம்"
+    },
+    "pick_pageCalGreg": {
+        "message": "கிரேகோரிய வருடம்",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "சக்கரம்",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "நாள்"
+    },
+    "pick_pageEvents": {
+        "message": "நிகழ்ச்சிகள்",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "நோன்பு"
+    },
+    "pick_pageLists": {
+        "message": "பட்டியல்கள்"
+    },
+    "pm": {
+        "message": "மாலை",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "பொத்தானை சொடுக்கவும் அல்லது {0} டைப் செய்யவும்.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "வடிவமைத்திட்ட திகதியைப் பலகையில் ஒட்ட, விசையை அழுத்துக",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; முன்"
+    },
+    "prevYear": {
+        "message": "முந்திய",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "முந்திய வருடத்தைக் கண்ணுற (Shift + Left) அம்புவிடையை அழுத்தவும்",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "தமிழ்",
+        "description": "put your language here, in your script"
+    },
+    "shoghiExample": {
+        "message": "இது {bWeekdayNamePri} வாரநாள், {bDayNamePri} மாதநாள், {bMonthNamePri} மாதம், {bYearInVahidNamePri} வருடம், {bVahidOrdinalName} வஹீட், {bKullishayOrdinalName} குல்-இ-ஷே.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "குரோம் உலவியில் எங்கிலுமிருந்து படீ’ நாள்காட்டியைத் திறக்க இவ்விசையை சொடுக்கவும்"
+    },
+    "showPointer": {
+        "message": "சுட்டியைக் காட்டு"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear} த்தில் விருந்துகளும் புனித நாள்களும்"
+    },
+    "specialTime_0100S": {
+        "message": "அதிகாலை 1 மணி (நியம நேரம்)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "காலை 3 மணி (நியம நேரம்)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "நன்பகல் (நியம நேரம்)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "மாலை 3 மணி (நியம நேரம்)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "அஸ்தமனத்திற்குப் பிறகு சுமார் 2 மணி நேரம் கழித்து",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "உதயத்தில் {0} ஆரம்பம்"
+    },
+    "startTimeOption": {
+        "message": "வழக்கமாக ஒன்றுகூடும் நேரம்: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "பரிந்துரைகள்?"
+    },
+    "suggestionsTitle": {
+        "message": "இங்கு சொடுக்கி இவ்விரிவாக்கத்தை எவ்வாறு மேம்படுத்துவது என்பதற்கான பரிந்துரைகளைச் சமர்ப்பிக்கவும்!"
+    },
+    "sunriseFastHeading": {
+        "message": "சூர்யோதயம்",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": " சூர்யஸ்தமனம்",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "படீ' நாளின் ஆரம்பம்",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "பணி விடுப்பு",
+        "description": "heading in Events listing"
+    },
+    "timeFormat12": {
+        "message": "{ampm} {time}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "உதவிக்கு",
+        "description": "hints of how to use the tool"
+    },
+    "tipsText": {
+        "message": "பலகத்தைத் தேர்வு செய்ய பக்.மேல்/பக்.கீழ் விசைகளைப் பயன்படுத்துக. \nநாள்களை மாற்ற வலம்/இடம் அம்புவிசைகளைப் பயன்படுத்துக.அஸ்தமனத்திற்கு முன்/பின் \n / அம்புவிசைகளைப் பயன்படுத்துக."
+    },
+    "title": {
+        "message": "படீ' நாள்காட்டி",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "பஹாய் சமயத்தின் அதிகாரபூர்வ நாள்காட்டியான, படீ’ நாள்காட்டி இன்றைய திகதியைக் காண்பிக்கின்றது.",
+        "description": "Used in the manifest"
+    },
+    "Tonight": {
+        "message": "இன்றிரவு",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ta",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Tamil",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "எதிர்வரும் விருந்துகள், புனித நாள்கள் மற்றும் பிற நிகழ்ச்சிகள்"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "வஹீட்"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "வஹீட்",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "Váḥid",
+        "description": "Label for Vahid in secondary language"
+    },
+    "version": {
+        "message": "பதிப்பு {0}"
+    },
+    "webstore": {
+        "message": "குரோம் இணைய அங்காடி"
+    },
+    "weekDayNames": {
+        "message": "வாரநாள்களின் பெயர்",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "பஹாய் யுக வருடம்"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "வஹீட் வருடம்"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    }
+}

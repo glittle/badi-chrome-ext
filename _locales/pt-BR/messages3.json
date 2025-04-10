@@ -1,0 +1,136 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "locationError": {
+        "message": "Não é possível determinar sua localização atual.\n\nA extensão usará 18:30 como horário do pôr do sol para cada dia.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Significado",
+        "description": "on List page - table heading"
+    },
+    "Month": {
+        "message": "Mês"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nomes de Meses/Dias",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} ao pôr do sol em {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} ao pôr do sol em {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Próximo &rarr;"
+    },
+    "nextRefreshAlarm": {
+        "message": "Próxima atualização agendada em {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Próximo Ano",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Pressione Shift + Seta Direita para ver o próximo Ano",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Local desconhecido - horário do pôr do sol às 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Local atual)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "Now": {
+        "message": "Agora",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "º,º,º,º",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",primeiro,segundo,terceiro,quarto,quinto,sexto,sétimo,oitavo,nono,décimo,décimo primeiro,décimo segundo,décimo terceiro,décimo quarto,décimo quinto,décimo sexto,décimo sétimo,décimo oitavo,décimo nono"
+    },
+    "otherDays": {
+        "message": "em {0} dias",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "pick_pageCal1": {
+        "message": "Ano"
+    },
+    "pick_pageCalGreg": {
+        "message": "Ano Gregoriano",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Roda",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Dia"
+    },
+    "pick_pageEvents": {
+        "message": "Eventos",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageFast": {
+        "message": "Jejum"
+    },
+    "pick_pageLists": {
+        "message": "Listas"
+    },
+    "pm": {
+        "message": "PM",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Clique no botão ou digite {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Selecione um formato para copiar para a área de transferência:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Anterior"
+    },
+    "prevYear": {
+        "message": "Ano Anterior",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Pressione Shift + Seta Esquerda para ver o Ano anterior",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Local": {
+        "message": "Português (Brasil)",
+        "description": "put your language here, in your script"
+    }
+}
