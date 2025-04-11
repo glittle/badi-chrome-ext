@@ -1,24 +1,176 @@
 {
+    "exporterItemDescDay": {
+        "message": "یک روز در تقویم بدیع.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "زمان‌های روزه سالانه بهائی.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "گردهمایی می‌تواند در هر زمانی در این روز بدیع آغاز شود.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "زمان‌های طلوع یا غروب آفتاب نشان داده شده برای {location} است. تولید شده با استفاده از http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "صادرکننده تقویم بدیع",
+        "description": "title on page"
+    },
     "exportFile": {
         "message": "فایل (iCalendar(.ics را دانلود کنید"
+    },
+    "exportGregYear0": {
+        "message": "سال میلادی - {0} م.",
+        "description": "Gregorian year - {0} A.D."
+    },
+    "exportGregYear1": {
+        "message": "سال میلادی - {0} م.",
+        "description": "Gregorian year - {0} A.D."
+    },
+    "exportHideTest": {
+        "message": "پنهان کردن",
+        "description": "Hide"
     },
     "exportIncludeAlert": {
         "message": "به هر جلسه یک اخطار اضافه کنید (ممکن است در تقویم گوگل نیاید)"
     },
+    "exportIncludeLocation": {
+        "message": "اطلاعات مکان",
+        "description": "Location Information"
+    },
+    "exportIntro": {
+        "message": "مهم! برای اطلاعات و هشدارها <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">این صفحه وب</a> را ببینید!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "عنوان برای تقویم صادر شده (ممکن است استفاده نشود)",
+        "description": "Title for Exported Calendar (may not be used)"
+    },
+    "exportNumToInclude": {
+        "message": "تعداد ورودی‌های تقویم شامل شده (تقریباً):",
+        "description": "Number of calendar entries included (approximately):"
+    },
+    "exportOption_AllDay": {
+        "message": "رویداد تمام روز از نیمه شب <em>(1 روز کامل)</em>",
+        "description": "All-day event from midnight <em>(1 day long)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "فقط در غروب آغازین",
+        "description": "At beginning sunset only"
+    },
     "exportOption_Date": {
-        "message": "روز های تقیم بدیع <em>(365/366 days)</em><em>(365/366 days)</em>"
+        "message": "روز های تقیم بدیع <em>(365/366 روز)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "روزهای روزه <em>(19 روز)</em>",
+        "description": "Fast Days <em>(19 days)</em>"
     },
     "exportOption_Feast": {
-        "message": "ضیافات <em>(19 days)</em>"
+        "message": "ضیافات <em>(19 روز)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "ایام متبرکه <em>(11 روز)</em>",
+        "description": "Holy Days <em>(11 days)</em>"
+    },
+    "exportOption_Start": {
+        "message": "رویداد در زمان مشاهده تعیین شده یا زمان معمول جلسه",
+        "description": "Event at designated observation time or usual meeting time"
+    },
+    "exportOption_Sun": {
+        "message": "از غروب تا غروب <em>(حدود 24 ساعت)</em>",
+        "description": "From sunset to sunset <em>(about 24 hours)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "فقط در طلوع آفتاب",
+        "description": "At sunrise only"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "رویداد از طلوع تا غروب آفتاب <em>(حدود 12 ساعت)</em>",
+        "description": "Event from sunrise to sunset <em>(about 12 hours)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "فقط در غروب آفتاب",
+        "description": "At sunset only"
     },
     "exportOption_Usual": {
         "message": "جلسه در همان موقع معمولی جلسه (به صفحه ی جلسه مراجعه کنید)"
     },
+    "exportOtherSettings": {
+        "message": "تنظیمات دیگر",
+        "description": "Other Settings"
+    },
+    "exportQuickDesc": {
+        "message": "هر مجموعه را صادر کنید، سپس همه را در یک تقویم بارگذاری کنید!",
+        "description": "Export each set, then load them all into the same calendar!"
+    },
     "exportQuickPick1": {
-        "message": "تقویم کامل "
+        "message": "1. تقویم کامل"
+    },
+    "exportQuickPick1Text": {
+        "message": "نمایش هر روز بدیع، همراه با ایام متبرکه و زمان‌های ضیافت. بدون هشدار.",
+        "description": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
+    },
+    "exportQuickPick2": {
+        "message": "2. زمان روزه - صبح",
+        "description": "2. Fast Time - Morning"
+    },
+    "exportQuickPick2Text": {
+        "message": "طلوع آفتاب، با هشداری درست قبل از آن.",
+        "description": "Sunrise, with an alert just before it."
+    },
+    "exportQuickPick3": {
+        "message": "3. زمان روزه - عصر",
+        "description": "3. Fast Time - Evening"
+    },
+    "exportQuickPick3Text": {
+        "message": "غروب آفتاب، با هشدار.",
+        "description": "Sunset, with an alert."
+    },
+    "exportQuickPickClearText": {
+        "message": "بازنشانی گزینه‌ها",
+        "description": "Reset options"
+    },
+    "exportQuickPicks": {
+        "message": "مجموعه‌های رویداد توصیه شده",
+        "description": "Recommended sets of Events"
     },
     "exportRangeFullRange": {
         "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
+    },
+    "exportTest": {
+        "message": "نمای<u>ش</u> برای کپی کردن",
+        "description": "Di<u>s</u>play for copying"
+    },
+    "exportTestCsv": {
+        "message": "CSV",
+        "description": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "انتخاب کنید چه چیزی باید صادر شود.",
+        "description": "Select what should be exported."
+    },
+    "exportWhatToInclude": {
+        "message": "گزینه‌ها",
+        "description": "Options"
+    },
+    "facebook": {
+        "message": "فیسبوک",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "زمان‌های روزه در {bYear}",
+        "description": "Fasting Times in {bYear}"
+    },
+    "fastGDate": {
+        "message": "تاریخ",
+        "description": "heading in Fast days listing"
     },
     "FeastOf": {
         "message": "ضیافت {0}",
@@ -31,21 +183,86 @@
         "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
         "description": "about page"
     },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
-        "message": "ای اظلاعات بیشتر Click کنید"
+        "message": "برای اطلاعات بیشتر کلیک کنید",
+        "description": "(click for more details)"
     },
     "formatIconToolTip": {
-        "message": "{bDay}{bMonthNamePri}{bYear}",
+        "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "در {time} شروع می‌شود",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "در {numUnits} خواهد بود",
+        "description": "will be in {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "در {numUnits} در {time} خواهد بود",
+        "description": "will be in {numUnits} at {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "در {numUnits} در {time} شروع خواهد شد",
+        "description": "will start in {numUnits} at {time}"
+    },
+    "future_StartTime": {
+        "message": "در {time} شروع خواهد شد",
+        "description": "will start at {time}"
     },
     "future_Time": {
         "message": "در{time} خواهد بود"
     },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}، {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}، {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}، {frag1Year}/{frag2MonthShort} {frag2Day}، {frag2Year}",
+        "description": "with year"
+    },
     "gDatePickerTitle": {
         "message": "تاریخ میلادی"
     },
+    "gDatePickerTitle2": {
+        "message": "رفتن به تاریخ <u>م</u>یلادی",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}، {bYear}",
+        "description": "{bMonthNamePri} {bDay}, {bYear}"
+    },
     "gMonthLong": {
         "message": "ژانویه، فوریه، مارس، آوریل، مه، ژوئن، ژوئیه، اوت، سپتامبر، اکتبر، نوامبر، دسامبر"
+    },
+    "gMonthShort": {
+        "message": "ژان,فور,مار,آور,مه,ژوئن,ژوئیه,اوت,سپت,اکت,نوا,دسا",
+        "description": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
     },
     "googlePlus": {
         "message": "گوگل پلاس",
@@ -57,6 +274,10 @@
     "gregorianDateDisplay": {
         "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
         "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
     },
     "gWeekdayLong": {
         "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
@@ -91,13 +312,13 @@
         "message": "نوروز"
     },
     "HolyDay_Ridvan1": {
-        "message": "اول عیذ رضوان"
+        "message": "اول عید رضوان"
     },
     "HolyDay_Ridvan12": {
         "message": "دوازدهم عید رضوان"
     },
     "HolyDay_Ridvan9": {
-        "message": "نهنم عید رضوان"
+        "message": "نهم عید رضوان"
     },
     "iconColor": {
         "message": "رنگ آیکون",
@@ -111,7 +332,47 @@
         "message": "دستی",
         "description": "Label for manual icon color option"
     },
+    "iftttEvent": {
+        "message": "نام رویداد IFTTT",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "برای جزئیات یا ثبت‌نام، <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>کانال سازنده IFTTT</a> را ببینید. رویداد شامل این فیلدها خواهد بود: عنوان، متن، برچسب",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "کلید کانال سازنده IFTTT",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>ض</u>یافات",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>ا</u>یام متبرکه",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "نمایش",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "عرض جغرافیایی:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "طول جغرافیایی:",
+        "description": "on setup page"
+    },
     "Intercalary": {
         "message": "ایام هاء"
+    },
+    "jumpTo": {
+        "message": "<u>پ</u>رش ± روزها",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
     }
 }

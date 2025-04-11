@@ -135,5 +135,240 @@
     "rbDefLang_Local": {
         "message": "Español",
         "description": "put your language here, in your script"
+    },
+    "rbDefLang_Ar": {
+        "message": "Árabe",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLangText": {
+        "message": "Idioma de visualización para fechas",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Acción adicional",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "ninguna",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "activar receta IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "leer en voz alta",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "activar Webhook de Zapier",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Añadir/Editar recordatorio",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "después"
+    },
+    "reminderAlarm": {
+        "message": "A las {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Día {num} del mes Badíʿ",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "antes"
+    },
+    "reminderCalcType": {
+        "message": "Mostrar recordatorio {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "a una hora específica",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativo a <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} el {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} el {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "En el día {num} del mes Badíʿ",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Cuando {num} día(s) {beforeAfter} cada {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "La Fiesta de {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "El Día Santo, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "día {num} a las {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} día(s) {deltaText}, a las {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} después",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "anunciar a las {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "midnight": {
+        "message": "12:00 medianoche",
+        "description": "nice way to say midnight"
+    },
+    "noon": {
+        "message": "12:00 mediodía",
+        "description": "nice way to say noon"
+    },
+    "nextMonth": {
+        "message": "Próximo <u>M</u>es",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "prevMonth": {
+        "message": "Mes A<u>n</u>terior",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "past_Day": {
+        "message": "comenzó a las {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "fue hace {numUnits}"
+    },
+    "past_DeltaTime": {
+        "message": "fue hace {numUnits} a las {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "comenzó hace {numUnits} a las {time}"
+    },
+    "past_StartTime": {
+        "message": "comenzó a las {time}"
+    },
+    "past_Time": {
+        "message": "fue a las {time}"
+    },
+    "pick_pageCal2": {
+        "message": "Vista de mes (elementos)"
+    },
+    "pick_pageCal3": {
+        "message": "Vista de mes (semanas)"
+    },
+    "pick_pageCustom": {
+        "message": "Personalizado",
+        "description": "page tab name and page title"
+    },
+    "pick_pageExporter": {
+        "message": "Exportar",
+        "description": "page tab name and page title"
+    },
+    "pick_pagePlanner": {
+        "message": "Planificador",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Recordatorios",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Configuración",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "¿Desde cuándo?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Inicio del próximo año Badíʿ",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Inicio de este año Badíʿ",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Hoy",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "¿Incluir día o víspera?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Ambos",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Día",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Víspera",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Resultados",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "¿Mostrar qué?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Atardecer de inicio en {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Planificador a largo plazo",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Selección de planificación",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "¿Cuál?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "múltiples Días Santos y Fiestas",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "un Día Santo o Fiesta",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "años",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "¿Por cuánto tiempo?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "pm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "noReminders": {
+        "message": "Añadir recordatorios de ejemplo",
+        "description": "shown if there are no reminders"
     }
 }

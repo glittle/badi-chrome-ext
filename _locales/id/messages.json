@@ -305,5 +305,65 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} pada matahari terbenam (sekitar {startingSunsetDesc}) pada {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} dan {dayEndedLower} pada matahari terbenam (sekitar {endingSunsetDesc}) pada {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Saat dimulai",
+        "description": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "1 menit sebelumnya",
+        "description": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "10 menit sebelumnya",
+        "description": "10 minutes before"
+    },
+    "exportAlert_B15": {
+        "message": "15 menit sebelumnya",
+        "description": "15 minutes before"
+    },
+    "exportAlert_B30": {
+        "message": "30 menit sebelumnya",
+        "description": "30 minutes before"
+    },
+    "exportAlert_B5": {
+        "message": "5 menit sebelumnya",
+        "description": "5 minutes before"
+    },
+    "exportAlert_B60": {
+        "message": "60 menit sebelumnya",
+        "description": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "Tahun Badíʿ - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "Tahun Badíʿ - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "Tanggal dalam Kalender Badíʿ untuk {location}",
+        "description": "Dates in the Badíʿ Calendar for {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "Awal {0}",
+        "description": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>R</u>entang tanggal untuk Ekspor (berdasarkan tahun yang dipilih saat ini)",
+        "description": "Range of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "Puasa Berakhir",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Puasa Dimulai",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Puasa sampai {endingSunsetDesc}",
+        "description": "Fast until {endingSunsetDesc}"
     }
 }

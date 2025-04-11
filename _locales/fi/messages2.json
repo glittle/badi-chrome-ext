@@ -102,5 +102,104 @@
     },
     "Intercalary": {
         "message": "Hán päivät"
+    },
+    "iftttEvent": {
+        "message": "IFTTT-tapahtuman nimi",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Lisätietoja tai rekisteröintiä varten, katso <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. Tapahtuma sisältää nämä kentät: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel -avain",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>J</u>uhlat",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>P</u>yhät päivät",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Näytä",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Leveysaste:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Pituusaste:",
+        "description": "on setup page"
+    },
+    "jumpTo": {
+        "message": "<u>S</u>iirry ± päivää",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "future_Day": {
+        "message": "alkaa klo {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "on {numUnits} kuluttua"
+    },
+    "future_DeltaTime": {
+        "message": "on {numUnits} kuluttua klo {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "alkaa {numUnits} kuluttua klo {time}"
+    },
+    "future_StartTime": {
+        "message": "alkaa klo {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle2": {
+        "message": "Siirry <u>g</u>regoriaaniseen päivämäärään",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
     }
 }

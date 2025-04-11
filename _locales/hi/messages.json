@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "बदीअ कैलेंडर",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "बदीअ (अद्भुत) कैलेंडर में आज की तारीख दिखाता है, जो बहाई धर्म का आधिकारिक कैलेंडर है।",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "{0} दिन में",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -305,5 +313,53 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} सूर्यास्त पर (लगभग {startingSunsetDesc}) {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} को और {dayEndedLower} सूर्यास्त पर (लगभग {endingSunsetDesc}) {frag2WeekdayLong}, {frag2MonthShort} {frag2Day} को।"
+    },
+    "exportAlert_B0": {
+        "message": "जब यह शुरू होता है"
+    },
+    "exportAlert_B1": {
+        "message": "1 मिनट पहले"
+    },
+    "exportAlert_B10": {
+        "message": "10 मिनट पहले"
+    },
+    "exportAlert_B15": {
+        "message": "15 मिनट पहले"
+    },
+    "exportAlert_B30": {
+        "message": "30 मिनट पहले"
+    },
+    "exportAlert_B5": {
+        "message": "5 मिनट पहले"
+    },
+    "exportAlert_B60": {
+        "message": "60 मिनट पहले"
+    },
+    "exportBadiYear0": {
+        "message": "बदीअ वर्ष - {0} बी.ई."
+    },
+    "exportBadiYear1": {
+        "message": "बदीअ वर्ष - {0} बी.ई."
+    },
+    "exportCalendarDescription": {
+        "message": "{location} के लिए बदीअ कैलेंडर में तिथियाँ",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "{0} की शुरुआत"
+    },
+    "exporterDateRange": {
+        "message": "निर्यात करने के लिए तिथियों की <u>सी</u>मा (वर्तमान में चयनित वर्ष के आधार पर)"
+    },
+    "exporterFastEnd": {
+        "message": "उपवास समाप्त",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "उपवास शुरू",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "{endingSunsetDesc} तक उपवास"
     }
 }

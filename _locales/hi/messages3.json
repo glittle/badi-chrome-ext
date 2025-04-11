@@ -5,6 +5,10 @@
     "KullishayFormat": {
         "message": "{bKullishay}"
     },
+    "KullishayLocal": {
+        "message": "सभी-वस्तुएँ",
+        "description": "Transalation of Kull-i-Shay"
+    },
     "locationError": {
         "message": "आपका वर्तमान स्थान निर्धारित नहीं किया जा सकता।\n\nएक्सटेंशन प्रत्येक दिन के लिए सूर्यास्त समय के रूप में शाम 6:30 का उपयोग करेगा।",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -16,6 +20,13 @@
     "meaning": {
         "message": "अर्थ",
         "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 मध्यरात्रि",
+        "description": "nice way to say midnight"
     },
     "Month": {
         "message": "माह"
@@ -39,6 +50,10 @@
     "next": {
         "message": "अगला &rarr;"
     },
+    "nextMonth": {
+        "message": "अगला <u>मा</u>ह",
+        "description": "button to move to next month (gregorian or badi)"
+    },
     "nextRefreshAlarm": {
         "message": "अगला रिफ्रेश {0} में निर्धारित: {1}",
         "description": "only shown in the debug console"
@@ -58,6 +73,14 @@
     "noLocationName": {
         "message": "(वर्तमान स्थान)",
         "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 दोपहर",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "नमूना रिमाइंडर जोड़ें",
+        "description": "shown if there are no reminders"
     },
     "Now": {
         "message": "अभी",
@@ -82,8 +105,33 @@
         "message": "{0} दिनों में",
         "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
     },
+    "past_Day": {
+        "message": "{time} पर शुरू हुआ",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "{numUnits} पहले था"
+    },
+    "past_DeltaTime": {
+        "message": "{numUnits} पहले {time} पर था"
+    },
+    "past_StartDeltaTime": {
+        "message": "{numUnits} पहले {time} पर शुरू हुआ"
+    },
+    "past_StartTime": {
+        "message": "{time} पर शुरू हुआ"
+    },
+    "past_Time": {
+        "message": "{time} पर था"
+    },
     "pick_pageCal1": {
-        "message": "वर्ष"
+        "message": "वर्ष दृश्य"
+    },
+    "pick_pageCal2": {
+        "message": "माह दृश्य (तत्व)"
+    },
+    "pick_pageCal3": {
+        "message": "माह दृश्य (सप्ताह)"
     },
     "pick_pageCalGreg": {
         "message": "ग्रेगोरियन वर्ष",
@@ -106,6 +154,98 @@
     "pick_pageLists": {
         "message": "सूचियाँ"
     },
+    "pick_pageCustom": {
+        "message": "कस्टम",
+        "description": "page tab name and page title"
+    },
+    "pick_pageExporter": {
+        "message": "निर्यात",
+        "description": "page tab name and page title"
+    },
+    "pick_pagePlanner": {
+        "message": "प्लानर",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "रिमाइंडर",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "सेटअप",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "कब से शुरू करें?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "अगले बदीअ वर्ष की शुरुआत",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "इस बदीअ वर्ष की शुरुआत",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "आज",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "दिन या शाम शामिल करें?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "दोनों",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "दिन",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "शाम",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "परिणाम",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "क्या दिखाएँ?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "{0} पर शुरुआती सूर्यास्त",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "लंबी अवधि का प्लानर",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "योजना चयन",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "कौन सा?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "कई पवित्र दिवस और उत्सव",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "एक पवित्र दिवस या उत्सव",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "वर्ष",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "कितने समय के लिए?",
+        "description": "another question"
+    },
     "pm": {
         "message": "अपराह्न",
         "description": "displayed in 'timeFormat12' if not using 24 hours clock"
@@ -121,6 +261,10 @@
     "prev": {
         "message": "&larr; पिछला"
     },
+    "prevMonth": {
+        "message": "पिछला मा<u>ह</u>",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
     "prevYear": {
         "message": "पिछला वर्ष",
         "description": "hold Shift and press left arrow key"
@@ -132,5 +276,99 @@
     "rbDefLang_Local": {
         "message": "हिंदी",
         "description": "put your language here, in your script"
+    },
+    "rbDefLang_Ar": {
+        "message": "अरबी",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLangText": {
+        "message": "तिथियों के लिए प्रदर्शन भाषा",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "अतिरिक्त कार्रवाई",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "कोई नहीं",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "IFTTT रेसिपी ट्रिगर करें",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "जोर से पढ़ें",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "Zapier वेबहुक ट्रिगर करें",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "रिमाइंडर जोड़ें/संपादित करें",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "बाद"
+    },
+    "reminderAlarm": {
+        "message": "{triggerTimeDisplay} पर --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "बदीअ माह का दिन {num}",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "पहले"
+    },
+    "reminderCalcType": {
+        "message": "रिमाइंडर दिखाएँ {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "विशिष्ट समय पर",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "<span class=modelTriggerEcho></span> के सापेक्ष",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventWeekdayLong}, {eventMonthLong} {eventDay} को {eventTime}।"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventMonthShort} {eventDay} को {eventTime}"
+    },
+    "reminderDayOfMonth": {
+        "message": "बदीअ माह के दिन {num} पर",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "जब प्रत्येक {event} से {num} दिन {beforeAfter}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "{pri}, {sec} का उत्सव,"
+    },
+    "reminderHolyDay": {
+        "message": "पवित्र दिवस, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "दिन {num} पर {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} दिन {deltaText}, {triggerTimeRawDisplay} पर",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} बाद",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "{triggerTimeRawDisplay} पर घोषणा करें",
+        "description": "in list of defined reminders"
     }
 }

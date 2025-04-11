@@ -1,4 +1,8 @@
 {
+    "exporterItemDescDay": {
+        "message": "Tago en la Badíʿ-kalendaro.",
+        "description": "Included as the description in every calendar entry"
+    },
     "exporterItemDescFast": {
         "message": "Tempoj por la ĉiujara Bahaa fasto.",
         "description": "Included as the description in every calendar entry"
@@ -11,8 +15,28 @@
         "message": "Sunleviĝo aŭ sunsubiro laŭ horoj de {location}. Generitaj laŭ http://bit.ly/BadiChrome.",
         "description": "Be sure the URL is not translated!"
     },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ-Kalendaro Eksportilo",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Elŝuti iCalendar-dosieron (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoria jaro - {0} post Kristo"
+    },
     "exportGregYear1": {
         "message": "Gregoria jaro - {0} post Kristo"
+    },
+    "exportHideTest": {
+        "message": "Kaŝi"
+    },
+    "exportIncludeAlert": {
+        "message": "Aldoni sciigon al ĉiu evento (eble ne ŝargiĝos en Google-kalendaron)"
     },
     "exportIncludeLocation": {
         "message": "Informoj pri loko"
@@ -21,8 +45,26 @@
         "message": "Grave! Vidu <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">ĉi tiun retpaĝon</a> por informoj kaj avertoj!",
         "description": "Be sure the URL remains in English, to find the webpage!"
     },
+    "exportName": {
+        "message": "Titolo por Eksportita Kalendaro (eble ne estos uzata)"
+    },
+    "exportNumToInclude": {
+        "message": "Nombro da kalendaro-enskriboj inkluzivitaj (proksimume):"
+    },
     "exportOption_AllDay": {
         "message": "Tut-taga evento ekde meznokto <em>(dum unu tago)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Nur je komenca sunsubiro"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-Tagoj <em>(365/366 tagoj)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fastaj Tagoj <em>(19 tagoj)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Festoj <em>(19 tagoj)</em>"
     },
     "exportOption_Hd": {
         "message": "Sanktaj tagoj <em>(11 tagoj)</em>"
@@ -30,8 +72,23 @@
     "exportOption_Start": {
         "message": "Evento je elektita plenumo-horo aŭ kutima renkontiĝa horo"
     },
+    "exportOption_Sun": {
+        "message": "De sunsubiro ĝis sunsubiro <em>(proksimume 24 horoj)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Nur je sunleviĝo"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Evento de sunleviĝo ĝis sunsubiro <em>(proksimume 12 horoj)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento je elektita plenumo-horo aŭ kutima renkontiĝa horo"
+    },
     "exportOption_Sunset": {
         "message": "Nur sunsubire"
+    },
+    "exportOption_Usual": {
+        "message": "Evento je kutima renkontiĝa horo (vidu la paĝon Eventoj)"
     },
     "exportOtherSettings": {
         "message": "Aliaj agordoj"
@@ -41,6 +98,30 @@
     },
     "exportQuickPick3Text": {
         "message": "Sunsubiro, kun sciigo."
+    },
+    "exportQuickDesc": {
+        "message": "Eksportu ĉiun aron, poste ŝargu ilin ĉiujn en la saman kalendaron!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Kompleta Kalendaro"
+    },
+    "exportQuickPick1Text": {
+        "message": "Montri ĉiun Badíʿ-tagon, kune kun Sanktaj Tagoj kaj Festaj horoj. Sen sciigoj."
+    },
+    "exportQuickPick2": {
+        "message": "2. Fasta Tempo - Mateno"
+    },
+    "exportQuickPick2Text": {
+        "message": "Sunleviĝo, kun sciigo tuj antaŭ ĝi."
+    },
+    "exportQuickPick3": {
+        "message": "3. Fasta Tempo - Vespero"
+    },
+    "exportQuickPick3Text": {
+        "message": "Sunsubiro, kun sciigo."
+    },
+    "exportQuickPickClearText": {
+        "message": "Rekomenci opciojn"
     },
     "exportQuickPicks": {
         "message": "Rekomendata aro da eventoj"

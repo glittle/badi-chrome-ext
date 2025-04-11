@@ -305,5 +305,189 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} auringonlaskussa (noin {startingSunsetDesc}) {frag1WeekdayLong}na, {frag1MonthShort} {frag1Day} ja {dayEndedLower} auringonlaskussa (noin {endingSunsetDesc}) {frag2WeekdayLong}na, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Kun se alkaa"
+    },
+    "exportAlert_B1": {
+        "message": "1 minuutti ennen"
+    },
+    "exportAlert_B10": {
+        "message": "10 minuuttia ennen"
+    },
+    "exportAlert_B15": {
+        "message": "15 minuuttia ennen"
+    },
+    "exportAlert_B30": {
+        "message": "30 minuuttia ennen"
+    },
+    "exportAlert_B5": {
+        "message": "5 minuuttia ennen"
+    },
+    "exportAlert_B60": {
+        "message": "60 minuuttia ennen"
+    },
+    "exportBadiYear0": {
+        "message": "Badíʿ-vuosi - {0} B.A."
+    },
+    "exportBadiYear1": {
+        "message": "Badíʿ-vuosi - {0} B.A."
+    },
+    "exportCalendarDescription": {
+        "message": "Badíʿ-kalenterin päivämäärät sijainnille {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "{0}n alku"
+    },
+    "exporterDateRange": {
+        "message": "<u>V</u>ientiajanjakso (perustuu valittuun vuoteen)"
+    },
+    "exporterFastEnd": {
+        "message": "Paasto päättyy",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Paasto alkaa",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Paasto klo {endingSunsetDesc} asti"
+    },
+    "exporterItemDescDay": {
+        "message": "Päivä Badíʿ-kalenterissa.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Ajat vuosittaiselle Bahá'í-paastolle.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Kokoontuminen voi alkaa milloin tahansa tänä Badíʿ-päivänä.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Auringonnousu- ja laskuajat ovat sijainnille {location}. Luotu käyttäen http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ-kalenterin vienti",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Lataa iCalendar-tiedosto (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoriaaninen vuosi - {0} jKr."
+    },
+    "exportGregYear1": {
+        "message": "Gregoriaaninen vuosi - {0} jKr."
+    },
+    "exportHideTest": {
+        "message": "Piilota"
+    },
+    "exportIncludeAlert": {
+        "message": "Lisää hälytys jokaiseen tapahtumaan (ei välttämättä lataudu Google-kalenteriin)"
+    },
+    "exportIncludeLocation": {
+        "message": "Sijaintitiedot"
+    },
+    "exportIntro": {
+        "message": "Tärkeää! Katso <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">tämä verkkosivu</a> saadaksesi tietoa ja varoituksia!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Viedyn kalenterin otsikko (ei välttämättä käytetä)"
+    },
+    "exportNumToInclude": {
+        "message": "Kalenterimerkintöjen määrä (noin):"
+    },
+    "exportOption_AllDay": {
+        "message": "Kokopäivän tapahtuma keskiyöstä <em>(1 päivä)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Vain alkavan päivän auringonlaskussa"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-päivät <em>(365/366 päivää)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Paastopäivät <em>(19 päivää)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Juhlat <em>(19 päivää)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Pyhät päivät <em>(11 päivää)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Tapahtuma määrätyllä viettämisajalla tai tavallisella kokoontumisajalla"
+    },
+    "exportOption_Sun": {
+        "message": "Auringonlaskusta auringonlaskuun <em>(noin 24 tuntia)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Vain auringonnousun aikaan"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Tapahtuma auringonnoususta auringonlaskuun <em>(noin 12 tuntia)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Vain auringonlaskun aikaan"
+    },
+    "exportOption_Usual": {
+        "message": "Tapahtuma tavalliseen kokoontumisaikaan (katso Tapahtumat-sivu)"
+    },
+    "exportOtherSettings": {
+        "message": "Muut asetukset"
+    },
+    "exportQuickDesc": {
+        "message": "Vie jokainen sarja ja lataa ne kaikki samaan kalenteriin!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Täysi kalenteri"
+    },
+    "exportQuickPick1Text": {
+        "message": "Näytä jokainen Badíʿ-päivä sekä pyhät päivät ja juhla-ajat. Ei hälytyksiä."
+    },
+    "exportQuickPick2": {
+        "message": "2. Paastoaika - Aamu"
+    },
+    "exportQuickPick2Text": {
+        "message": "Auringonnousu, hälytyksellä juuri ennen sitä."
+    },
+    "exportQuickPick3": {
+        "message": "3. Paastoaika - Ilta"
+    },
+    "exportQuickPick3Text": {
+        "message": "Auringonlasku, hälytyksellä."
+    },
+    "exportQuickPickClearText": {
+        "message": "Nollaa valinnat"
+    },
+    "exportQuickPicks": {
+        "message": "Suositellut tapahtumasarjat"
+    },
+    "exportRangeFullRange": {
+        "message": "Vie kaikki kalenterimerkinnät. (Jos ei valittu, vie vain näytesarja.)"
+    },
+    "exportTest": {
+        "message": "<u>N</u>äytä kopiointia varten"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Valitse mitä viedään."
+    },
+    "exportWhatToInclude": {
+        "message": "Valinnat"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
     }
 }

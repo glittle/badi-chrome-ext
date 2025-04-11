@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Calendario Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Muestra la fecha de hoy en el calendario Badíʿ (Maravilloso), el calendario oficial de la Fe Bahá'í.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "en {0} dia",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
@@ -333,5 +341,25 @@
     },
     "exporterFastUntil": {
         "message": "Ayuno hasta {endingSunsetDesc}"
+    },
+    "cal2DarkerColors": {
+        "message": "<u>C</u>olores más oscuros",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Todos los meses al im<u>p</u>rimir",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Mostrar <u>h</u>orarios",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Todos los meses al im<u>p</u>rimir",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Mostrar <u>h</u>orarios",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
     }
 }

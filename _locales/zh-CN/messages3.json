@@ -5,6 +5,10 @@
     "KullishayFormat": {
         "message": "{bKullishay}"
     },
+    "KullishayLocal": {
+        "message": "万物",
+        "description": "Transalation of Kull-i-Shay"
+    },
     "locationError": {
         "message": "无法确定您当前的位置。\n\n扩展将使用下午6:30作为每天的日落时间。",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -16,6 +20,13 @@
     "meaning": {
         "message": "含义",
         "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "午夜12:00",
+        "description": "nice way to say midnight"
     },
     "Month": {
         "message": "月"
@@ -39,6 +50,10 @@
     "next": {
         "message": "下一个 &rarr;"
     },
+    "nextMonth": {
+        "message": "下一<u>月</u>",
+        "description": "button to move to next month (gregorian or badi)"
+    },
     "nextRefreshAlarm": {
         "message": "下次刷新计划在{0}后：{1}",
         "description": "only shown in the debug console"
@@ -58,6 +73,14 @@
     "noLocationName": {
         "message": "（当前位置）",
         "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "中午12:00",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "添加示例提醒",
+        "description": "shown if there are no reminders"
     },
     "Now": {
         "message": "现在",
@@ -82,8 +105,33 @@
         "message": "在{0}天内",
         "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
     },
+    "past_Day": {
+        "message": "在{time}开始了",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "在{numUnits}前"
+    },
+    "past_DeltaTime": {
+        "message": "在{numUnits}前的{time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "在{numUnits}前的{time}开始了"
+    },
+    "past_StartTime": {
+        "message": "在{time}开始了"
+    },
+    "past_Time": {
+        "message": "在{time}"
+    },
     "pick_pageCal1": {
         "message": "年"
+    },
+    "pick_pageCal2": {
+        "message": "月视图（元素）"
+    },
+    "pick_pageCal3": {
+        "message": "月视图（周）"
     },
     "pick_pageCalGreg": {
         "message": "公历年",
@@ -93,6 +141,10 @@
         "message": "轮盘",
         "description": "tab name"
     },
+    "pick_pageCustom": {
+        "message": "自定义",
+        "description": "page tab name and page title"
+    },
     "pick_pageDay": {
         "message": "日"
     },
@@ -100,11 +152,99 @@
         "message": "事件",
         "description": "showing Feast and Holy Days"
     },
+    "pick_pageExporter": {
+        "message": "导出",
+        "description": "page tab name and page title"
+    },
     "pick_pageFast": {
         "message": "斋戒"
     },
     "pick_pageLists": {
         "message": "列表"
+    },
+    "pick_pagePlanner": {
+        "message": "规划器",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "提醒",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "设置",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "从何时开始？",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "下一个巴迪年的开始",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "本巴迪年的开始",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "今天",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "包括日或夜？",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "两者",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "日",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "夜",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "结果",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "显示什么？",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "{0}的开始日落",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "长期规划器",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "规划选择",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "哪个？",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "多个圣日和灵宴会",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "一个圣日或灵宴会",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "年",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "持续多久？",
+        "description": "another question"
     },
     "pm": {
         "message": "下午",
@@ -121,6 +261,10 @@
     "prev": {
         "message": "&larr; 上一个"
     },
+    "prevMonth": {
+        "message": "上一<u>月</u>",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
     "prevYear": {
         "message": "上一年",
         "description": "hold Shift and press left arrow key"
@@ -129,8 +273,102 @@
         "message": "按Shift + 左箭头查看上一年",
         "description": "hold Shift and press left arrow key"
     },
+    "rbDefLang_Ar": {
+        "message": "阿拉伯语",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
     "rbDefLang_Local": {
         "message": "中文",
         "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "日期显示语言",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "附加操作",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "无",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "触发IFTTT配方",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "朗读",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "触发Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "添加/编辑提醒",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "之后"
+    },
+    "reminderAlarm": {
+        "message": "在{triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "巴迪月的第{num}天",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "之前"
+    },
+    "reminderCalcType": {
+        "message": "显示提醒{calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "在特定时间",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "相对于<span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventWeekdayLong}，{eventMonthLong}{eventDay}日的{eventTime}。"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventMonthShort}{eventDay}日{eventTime}"
+    },
+    "reminderDayOfMonth": {
+        "message": "在巴迪月的第{num}天",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "当每个{event}的{num}天{beforeAfter}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "{pri}，{sec}灵宴会，"
+    },
+    "reminderHolyDay": {
+        "message": "圣日"{0}"，"
+    },
+    "reminderList_bday": {
+        "message": "第{num}天在{triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num}天{deltaText}，在{triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "之后{num} {units}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "在{triggerTimeRawDisplay}通知",
+        "description": "in list of defined reminders"
     }
 }

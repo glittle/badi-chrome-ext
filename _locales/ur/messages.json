@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "بدیع کیلنڈر",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "بدیع (حیرت انگیز) کیلنڈر میں آج کی تاریخ دکھاتا ہے، جو بہائی مذہب کا سرکاری کیلنڈر ہے۔",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "{0} دن میں",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "

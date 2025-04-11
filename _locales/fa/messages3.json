@@ -2,6 +2,10 @@
     "Kullishay": {
         "message": "کلشیئ"
     },
+    "KullishayFormat": {
+        "message": "{bKullishay}",
+        "description": "{bKullishay}"
+    },
     "KullishayLocal": {
         "message": "کل شيئ",
         "description": "Transalation of Kull-i-Shay"
@@ -10,11 +14,63 @@
         "message": "محل شما قابل شناسائی نیست. ساعت 6:30 بعذ لز ظهر برای غروب آفتاب در نظر گرفته خواهد شد.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
     },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}، {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "معنی",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}",
+        "description": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 نیمه شب",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "ماه",
+        "description": "Month"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})",
+        "description": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})",
+        "description": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "نام‌های ماه/روز",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} با غروب آفتاب در {endingSunsetDesc}",
+        "description": "{dayEnded} with sunset at {endingSunsetDesc}"
+    },
     "nearestSunsetEve": {
         "message": "{dayStarted} از غروب آفتاب {startingSunsetDesc}"
     },
     "next": {
         "message": "&rarr; بعدی"
+    },
+    "nextMonth": {
+        "message": "<u>م</u>اه بعد",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "بازخوانی بعدی پس از {0} برنامه‌ریزی شده: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "سال بعد",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "برای مشاهده سال بعد، Shift + کلید جهت راست را فشار دهید",
+        "description": "hold Shift and press right arrow key"
     },
     "noLocationAvailable": {
         "message": "(مکان نا معلوم - ۶:۳۰ بعد از ظهر ساعات غروب)",
@@ -24,9 +80,29 @@
         "message": "(محل فعلی)",
         "description": "If the internet is not available, to get the name of the current location."
     },
+    "noon": {
+        "message": "12:00 ظهر",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "افزودن یادآوری‌های نمونه",
+        "description": "shown if there are no reminders"
+    },
     "Now": {
         "message": "هم اکنون",
         "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "ام,ام,ام,ام",
+        "description": "x,1,2,3"
     },
     "ordinalNames": {
         "message": "اولین، دومین، سومین، چهارمین، پنجمین، ششمین، هفتمین، هشتمین، نهمین، دهمین، یازذهمین، دوازدهمین، سیزدهمین، چهاردهمین، پانزدهمین، شانزدهمین، هفدهمین، هیجدهمین، نوزدهمین"
@@ -39,17 +115,157 @@
         "message": "در{time} آغاز شد",
         "description": "shown after midnight of the day"
     },
+    "past_Delta": {
+        "message": "{numUnits} پیش بود",
+        "description": "was {numUnits} ago"
+    },
+    "past_DeltaTime": {
+        "message": "{numUnits} پیش در {time} بود",
+        "description": "was {numUnits} ago at {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "{numUnits} پیش در {time} شروع شد",
+        "description": "started {numUnits} ago at {time}"
+    },
+    "past_StartTime": {
+        "message": "در {time} شروع شد",
+        "description": "started at {time}"
+    },
+    "past_Time": {
+        "message": "در {time} بود",
+        "description": "was at {time}"
+    },
+    "pick_pageCal1": {
+        "message": "نمای سال",
+        "description": "Year View"
+    },
+    "pick_pageCal2": {
+        "message": "نمای ماه (عناصر)",
+        "description": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "نمای ماه (هفته‌ها)",
+        "description": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "نمای ماه میلادی",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "چرخ",
+        "description": "tab name"
+    },
     "pick_pageCustom": {
         "message": "دل خواه",
         "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "روز",
+        "description": "Day"
+    },
+    "pick_pageEvents": {
+        "message": "رویدادها",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "صادرات",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "روزه",
+        "description": "Fast"
+    },
+    "pick_pageLists": {
+        "message": "فهرست‌ها",
+        "description": "Lists"
+    },
+    "pick_pagePlanner": {
+        "message": "برنامه‌ریز",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "یادآوری‌ها",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "تنظیمات",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "شروع از چه زمانی؟",
+        "description": "another input"
     },
     "planFromWhenNextYear": {
         "message": "شروع سال بعدی بديع ",
         "description": "answer for planFromWhen"
     },
+    "planFromWhenThisYear": {
+        "message": "شروع سال بدیع فعلی",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "امروز",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "شامل روز یا شب؟",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "هر دو",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "روز",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "شب",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "نتایج",
+        "description": "title over results"
+    },
     "plannerShowWhat": {
         "message": "چه چیزی را نشان بدهد؟ ",
         "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "غروب آغازین در {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "برنامه‌ریز بلندمدت",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "انتخاب برنامه‌ریزی",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "کدام؟",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "چندین ایام متبرکه و ضیافات",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "یک روز متبرک یا ضیافت",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "سال‌ها",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "برای چه مدت؟",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "ب.ظ",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
     },
     "pressKeyOrClick": {
         "message": "دکمه را فشار دهید یا تایپ کنید {0}",
@@ -62,6 +278,18 @@
     "prev": {
         "message": "قبلی\t&larr; "
     },
+    "prevMonth": {
+        "message": "ماه <u>ق</u>بل",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "سال قبل",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "برای مشاهده سال قبل، Shift + کلید جهت چپ را فشار دهید",
+        "description": "hold Shift and press left arrow key"
+    },
     "rbDefLang_Ar": {
         "message": "عربی",
         "description": "Shown on the main page (see screenshot in PhraseApp)"
@@ -70,19 +298,87 @@
         "message": "فارسی",
         "description": "put your language here, in your script"
     },
+    "rbDefLangText": {
+        "message": "زبان نمایش برای تاریخ‌ها",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "اقدام اضافی",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "هیچ",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "راه‌اندازی دستور IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "با صدای بلند خواندن",
+        "description": "in dropdown list, to choose to read the alert"
+    },
     "reminderAction_zapier": {
         "message": "زاپیر وبهوک را تریگر شروع کنید",
         "description": "in dropdown list, to choose to use Zapier"
     },
+    "reminderAddEdit": {
+        "message": "افزودن/ویرایش یادآوری",
+        "description": "title on left side"
+    },
     "reminderAfter": {
         "message": "بعد از"
+    },
+    "reminderAlarm": {
+        "message": "در {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "روز {num} ماه بدیع",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "قبل از",
+        "description": "before"
+    },
+    "reminderCalcType": {
+        "message": "نمایش یادآوری {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
     },
     "reminderCalcTypeAbsolute": {
         "message": "در زمان مشخص و معین",
         "description": "in dropdown"
     },
+    "reminderCalcTypeRelative": {
+        "message": "نسبت به <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} در {eventWeekdayLong}، {eventMonthLong} {eventDay}.",
+        "description": "{eventTime} on {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
     "reminderDayDetailsTest": {
         "message": "{eventTime} در {eventMonthShort}{eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "در روز {num} ماه بدیع",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "وقتی {num} روز {beforeAfter} هر {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "ضیافت {pri}، {sec}،",
+        "description": "The Feast of {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "روز متبرک، \"{0}\"،",
+        "description": "The Holy Day, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "روز {num} در {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
     },
     "reminderList_dayEvent": {
         "message": "{num} روز(ها) {deltaText}، در{triggerTimeRawDisplay}",
@@ -90,6 +386,10 @@
     },
     "reminderList_onload": {
         "message": "{num}{units} بعد از",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "اعلام در {triggerTimeRawDisplay}",
         "description": "in list of defined reminders"
     }
 }

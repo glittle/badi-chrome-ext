@@ -1,4 +1,205 @@
 {
+    "reminderList_timeRelative": {
+        "message": "{deltaText}{num} {units}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "天",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "天;天",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "小时"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "小时;小时"
+    },
+    "reminderNum_minutes": {
+        "message": "分钟"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "分钟;分钟"
+    },
+    "reminderNum_seconds": {
+        "message": "秒"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "秒;秒"
+    },
+    "remindersDefined": {
+        "message": "您的提醒",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "添加提醒...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "显示于",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "今天从{time}到午夜的计划",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "（显示于{when}）",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "（将显示于{when}）",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "显示{delta}{num} {units}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0}提醒",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "巴迪日",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "灵宴会",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "圣日",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "加载时",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "午夜",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "中午",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "日出",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "日落",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "特殊日",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "其他事件",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "一天中的时间",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "事件",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bYear}年{bMonthNamePri}（{bMonthNameSec}）月{bDay}日 - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort}{currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentYear}年{currentMonthLong}{currentDay}日 / {bYear}年{bMonthNameSec}月{bDay}日",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentYear}年{currentMonthLong}{currentDay}日 / {bYear}年{bMonthNamePri}月{bDay}日",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日 ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bYear}年{bMonthNamePri}（{bMonthNameSec}）月{bDay}日",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bYear} {bEraAbbrev} {bMonth00} {bMonthNamePri} / {bMonthNameSec} （{currentYear}年{currentMonthLong}{currentDay00}日 {currentWeekdayShort}）",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}，{bYear}年{bMonthNamePri}月第{bDayOrdinal}天",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日 / {currentYear}年{currentMonthLong}{currentDay}日",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>此Web扩展旨在提供您所在位置的巴迪历当前信息。</p><p>欲了解更多信息，请点击下方的"版本"链接或任何图标！</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "关于",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "工具栏图标的文本颜色：",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "图标颜色",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "语言",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}%已翻译。您能<a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>提供帮助</a>吗？",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100%已翻译！"
+    },
+    "setupOptOut": {
+        "message": "选择退出？",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "为了帮助了解此Web扩展的使用情况，每当您在页面之间切换或执行其他主要操作时，都会记录统计数据。这是匿名的，相关报告可由Glen Little查看。如果您希望选择退出并关闭此功能，可以勾选此框：",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "分析",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
     "shoghiExample": {
         "message": "第{KullishayLabelPri}个库勒谢的第{VahidLabelPri}个瓦希德的{bYearInVahidNamePri}年{bMonthNamePri}月{bDayNamePri}日一周当中的{bWeekdayNamePri}日",
         "description": "Example given by Shoghi Effendi"
@@ -32,6 +233,10 @@
         "message": "日落后约2小时",
         "description": "Declaration of the Bab"
     },
+    "standardFormats": {
+        "message": "标准格式",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
     "startedWithSunset": {
         "message": "在{0}日落时开始"
     },
@@ -61,9 +266,30 @@
         "message": "停止工作",
         "description": "heading in Events listing"
     },
-    "title": {
-        "message": "巴迪历",
-        "description": "The title of the extension. Shown in a number of locations."
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "提示和按键",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "准确性？"
+    },
+    "tipsAboutText": {
+        "message": "直到221 B.E.（2064年）的日期是已知的。之后，随着天文观测的改进，可能需要更新。请不要使用此工具来确定50年以后的计划！有关更多详情，请参阅网站。"
+    },
+    "tipsText": {
+        "message": "按PgUp/PgDn键选择面板。\n按右/左箭头键更改日期。\n按/切换日落前/后。\n按Home返回今天！"
+    },
+    "Tonight": {
+        "message": "今晚",
+        "description": "Shown in the upcoming dates area"
     },
     "translation": {
         "message": "zh-CN",
@@ -73,7 +299,58 @@
         "message": "Chinese",
         "description": "The name of this language, in English"
     },
+    "upcomingDateFormat": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日（{gCombined}）",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "即将到来的灵宴会、圣日和其他事件"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
     "Vahid": {
         "message": "瓦希德"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "合一",
+        "description": "Unity"
+    },
+    "version": {
+        "message": "版本 {0}"
+    },
+    "webstore": {
+        "message": "网上应用店"
+    },
+    "weekDayNames": {
+        "message": "星期名称",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "巴哈伊纪元年"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "{VahidLabelPri}年"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "有关详细信息或注册，请参阅<a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>。Zap将包含以下字段：title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
     }
 }

@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "バディーウ暦",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "バハーイー教の公式カレンダーであるバディーウ（素晴らしい）暦での今日の日付を表示します。",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "{0}日後",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
@@ -305,5 +313,65 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay}は{frag1WeekdayLong}、{frag1MonthShort} {frag1Day}の日没（約{startingSunsetDesc}）に{dayStartedLower}、{frag2WeekdayLong}、{frag2MonthShort} {frag2Day}の日没（約{endingSunsetDesc}）に{dayEndedLower}。"
+    },
+    "exportAlert_B0": {
+        "message": "開始時",
+        "description": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "1分前",
+        "description": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "10分前",
+        "description": "10 minutes before"
+    },
+    "exportAlert_B15": {
+        "message": "15分前",
+        "description": "15 minutes before"
+    },
+    "exportAlert_B30": {
+        "message": "30分前",
+        "description": "30 minutes before"
+    },
+    "exportAlert_B5": {
+        "message": "5分前",
+        "description": "5 minutes before"
+    },
+    "exportAlert_B60": {
+        "message": "60分前",
+        "description": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "バディーウ暦年 - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "バディーウ暦年 - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "{location}のバディーウ暦の日付",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "{0}の開始",
+        "description": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "エクスポートする日付の<u>範</u>囲（現在選択されている年に基づく）",
+        "description": "<u>R</u>ange of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "断食終了",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "断食開始",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "{endingSunsetDesc}まで断食",
+        "description": "Fast until {endingSunsetDesc}"
     }
 }

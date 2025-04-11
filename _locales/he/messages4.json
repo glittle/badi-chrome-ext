@@ -1,6 +1,264 @@
 {
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "יום/ימים",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "יום;ימים",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "שעה/שעות"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "שעה;שעות"
+    },
+    "reminderNum_minutes": {
+        "message": "דקה/דקות"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "דקה;דקות"
+    },
+    "reminderNum_seconds": {
+        "message": "שניה/שניות"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "שניה;שניות"
+    },
+    "remindersDefined": {
+        "message": "התזכורות שלך",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "הוסף תזכורת...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "הצג בשעה",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "מתוזמן להיום משעה {time} עד חצות",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(מוצג ב-{when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(יוצג ב-{when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "הצג {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "תזכורת {0}",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "יום בדיע",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "יום חגיגה",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "יום קדוש",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "בטעינה",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "חצות",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "צהריים",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "זריחה",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "שקיעה",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "ימים מיוחדים",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "אירועים אחרים",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "זמן ביום",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "אירוע",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>הרחבת דפדפן זו מיועדת לספק מידע עדכני על לוח השנה הבדיע, מקומי למקום בו אתה נמצא.</p><p>למידע נוסף, אנא לחץ למטה על הקישור 'גרסה', או על כל אחד מהסמלים!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "אודות",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "צבע טקסט לסמל בסרגל הכלים:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "צבע סמל",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "שפה",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% מתורגם. האם <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>תוכל לעזור</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% מתורגם!"
+    },
+    "setupOptOut": {
+        "message": "לבטל?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "כדי לעזור להבין כיצד הרחבת דפדפן זו משמשת, נרשמות סטטיסטיקות בכל פעם שאתה עובר בין דפים או מבצע פעולות משמעותיות אחרות. זה אנונימי, והדוחות הקשורים ניתנים לצפייה על ידי גלן ליטל. אם ברצונך לבטל זאת, תוכל לסמן תיבה זו:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "אנליטיקה",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "זהו יום השבוע של {bWeekdayNamePri}, היום של {bDayNamePri}, של החודש {bMonthNamePri}, של השנה {bYearInVahidNamePri}, של ה{bVahidOrdinalName} {VahidLabelPri}, של ה{bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "לחץ על צירוף מקשים זה כדי לפתוח את לוח השנה מכל מקום בדפדפן."
+    },
+    "showPointer": {
+        "message": "הצג מצביע"
+    },
+    "specialDaysTitle": {
+        "message": "חגיגות וימים קדושים בשנת {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 בבוקר (שעון רגיל)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 בבוקר (שעון רגיל)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "צהריים (שעון רגיל)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 אחה״צ (שעון רגיל)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "בערך שעתיים אחרי השקיעה",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "פורמטים סטנדרטיים",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
     "startedWithSunset": {
         "message": "התחיל בשקיעה בשעה {0}"
+    },
+    "startTimeOption": {
+        "message": "זמן מפגש רגיל: ",
+        "description": "above Events listing"
+    },
+    "sunriseFastHeading": {
+        "message": "זריחה",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "שקיעה",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "תחילת יום בדיע",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "השעיית עבודה",
+        "description": "heading in Events listing"
     },
     "suggestions": {
         "message": "הצעות"
@@ -11,6 +269,23 @@
     "textDirection": {
         "message": "rtl",
         "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "טיפים ומקשים",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "דיוק?"
+    },
+    "tipsAboutText": {
+        "message": "תאריכים עד 221 ע.ב. (2064 לספירה) ידועים. לאחר מכן, ייתכן שיידרשו עדכונים ככל שתצפיות אסטרונומיות משתפרות. אנא אל תשתמש בזה כדי לסיים את תוכניותיך ליותר מ-50 שנה בעתיד! ראה את האתר לפרטים נוספים."
+    },
+    "tipsText": {
+        "message": "לחץ על מקשי PgUp/PgDn כדי לבחור פאנלים.\nלחץ על מקשי חץ ימינה/שמאלה כדי לשנות ימים.\nלחץ על / כדי להחליף לפני/אחרי שקיעה.\nלחץ על Home כדי לחזור להיום!"
     },
     "title": {
         "message": "לוח השנה הבהאי",
@@ -32,8 +307,16 @@
         "message": "Hebrew",
         "description": "The name of this language, in English"
     },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
     "upcomingTitle": {
         "message": "חגיגות וימים קדושים קרובים"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
     },
     "Vahid": {
         "message": "ואחיד"
@@ -41,8 +324,18 @@
     "VahidFormat": {
         "message": "{bVahid}"
     },
+    "VahidLocal": {
+        "message": "אחדות"
+    },
     "version": {
         "message": "גרסה {0}"
+    },
+    "webstore": {
+        "message": "חנות האינטרנט"
+    },
+    "weekDayNames": {
+        "message": "שמות ימי השבוע",
+        "description": "on List page - table caption"
     },
     "YearOfEra": {
         "message": "שנה בעידן הבהאי"

@@ -1,4 +1,137 @@
 {
+    "exporterItemDescDay": {
+        "message": "巴迪历中的一天。",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "巴哈伊年度斋戒的时间。",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "聚会可以在这个巴迪日的任何时间开始。",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "显示的日出或日落时间是针对{location}的。使用http://bit.ly/BadiChrome生成。",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}。",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "巴迪历导出工具",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "下载iCalendar文件（.ics）"
+    },
+    "exportGregYear0": {
+        "message": "公历年 - {0}年"
+    },
+    "exportGregYear1": {
+        "message": "公历年 - {0}年"
+    },
+    "exportHideTest": {
+        "message": "隐藏"
+    },
+    "exportIncludeAlert": {
+        "message": "为每个事件添加提醒（可能无法加载到Google日历）"
+    },
+    "exportIncludeLocation": {
+        "message": "位置信息"
+    },
+    "exportIntro": {
+        "message": "重要！请查看<a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">此网页</a>获取信息和注意事项！",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "导出日历的标题（可能不会使用）"
+    },
+    "exportNumToInclude": {
+        "message": "包含的日历条目数量（大约）："
+    },
+    "exportOption_AllDay": {
+        "message": "从午夜开始的全天事件<em>（1天长）</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "仅在开始日落时"
+    },
+    "exportOption_Date": {
+        "message": "巴迪日<em>（365/366天）</em>"
+    },
+    "exportOption_Fast": {
+        "message": "斋戒日<em>（19天）</em>"
+    },
+    "exportOption_Feast": {
+        "message": "灵宴会<em>（19天）</em>"
+    },
+    "exportOption_Hd": {
+        "message": "圣日<em>（11天）</em>"
+    },
+    "exportOption_Start": {
+        "message": "在指定观察时间或常规会议时间的事件"
+    },
+    "exportOption_Sun": {
+        "message": "从日落到日落<em>（约24小时）</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "仅在日出时"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "从日出到日落的事件<em>（约12小时）</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "仅在日落时"
+    },
+    "exportOption_Usual": {
+        "message": "在常规会议时间的事件（见事件页面）"
+    },
+    "exportOtherSettings": {
+        "message": "其他设置"
+    },
+    "exportQuickDesc": {
+        "message": "导出每个集合，然后将它们全部加载到同一个日历中！"
+    },
+    "exportQuickPick1": {
+        "message": "1. 完整日历"
+    },
+    "exportQuickPick1Text": {
+        "message": "显示每个巴迪日，以及圣日和灵宴会时间。无提醒。"
+    },
+    "exportQuickPick2": {
+        "message": "2. 斋戒时间 - 早晨"
+    },
+    "exportQuickPick2Text": {
+        "message": "日出，带有提前提醒。"
+    },
+    "exportQuickPick3": {
+        "message": "3. 斋戒时间 - 晚上"
+    },
+    "exportQuickPick3Text": {
+        "message": "日落，带有提醒。"
+    },
+    "exportQuickPickClearText": {
+        "message": "重置选项"
+    },
+    "exportQuickPicks": {
+        "message": "推荐的事件集"
+    },
+    "exportRangeFullRange": {
+        "message": "导出所有日历条目。（如果未选中，则仅导出样本集。）"
+    },
+    "exportTest": {
+        "message": "显<u>示</u>以复制"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "选择要导出的内容。"
+    },
+    "exportWhatToInclude": {
+        "message": "选项"
+    },
     "facebook": {
         "message": "Facebook",
         "description": "ALT for icon at bottom of page"
@@ -35,6 +168,59 @@
     "formatIconToolTip": {
         "message": "{bYear}年 {bMonthNamePri}月 {bDay}日",
         "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "在{time}开始",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "将在{numUnits}后"
+    },
+    "future_DeltaTime": {
+        "message": "将在{numUnits}后的{time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "将在{numUnits}后的{time}开始"
+    },
+    "future_StartTime": {
+        "message": "将在{time}开始"
+    },
+    "future_Time": {
+        "message": "将在{time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort}{frag1Day}/{frag2Day}日",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort}{frag1Day}/{frag2MonthShort}{frag2Day}日",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort}{frag1Day}/{frag2MonthShort}{frag2Day}日",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1Year}年{frag1MonthShort}{frag1Day}/{frag2Day}日",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1Year}年{frag1MonthShort}{frag1Day}/{frag2MonthShort}{frag2Day}日",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1Year}年{frag1MonthShort}{frag1Day}日/{frag2Year}年{frag2MonthShort}{frag2Day}日",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "公历日期"
+    },
+    "gDatePickerTitle2": {
+        "message": "前往<u>公</u>历日期",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bYear}年{bMonthNamePri}月{bDay}日"
     },
     "gMonthLong": {
         "message": "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月"
@@ -110,6 +296,18 @@
         "message": "手动",
         "description": "Label for manual icon color option"
     },
+    "iftttEvent": {
+        "message": "IFTTT事件名称",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "有关详细信息或注册，请参阅<a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker频道</a>。事件将包含以下字段：title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker频道密钥",
+        "description": "Key' for IFTTT Maker channel"
+    },
     "includeFeasts": {
         "message": "<u>灵</u>宴会",
         "description": "choosing what to include in the listing"
@@ -121,6 +319,14 @@
     "includeThese": {
         "message": "显示",
         "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "纬度：",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "经度：",
+        "description": "on setup page"
     },
     "Intercalary": {
         "message": "阿亚米哈"

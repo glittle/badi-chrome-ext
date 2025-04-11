@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "לוח השנה הבהאי",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "מציג את התאריך הנוכחי בלוח השנה הבדיע (המופלא), לוח השנה הרשמי של האמונה הבהאית.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "בעוד {0} יום",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -305,5 +313,52 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} בשקיעה (בערך {startingSunsetDesc}) ב{frag1WeekdayLong}, {frag1MonthShort} {frag1Day} ו{dayEndedLower} בשקיעה (בערך {endingSunsetDesc}) ב{frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "כשזה מתחיל"
+    },
+    "exportAlert_B1": {
+        "message": "דקה אחת לפני"
+    },
+    "exportAlert_B10": {
+        "message": "10 דקות לפני"
+    },
+    "exportAlert_B15": {
+        "message": "15 דקות לפני"
+    },
+    "exportAlert_B30": {
+        "message": "30 דקות לפני"
+    },
+    "exportAlert_B5": {
+        "message": "5 דקות לפני"
+    },
+    "exportAlert_B60": {
+        "message": "60 דקות לפני"
+    },
+    "exportBadiYear0": {
+        "message": "שנת בדיע - {0} ע.ב."
+    },
+    "exportBadiYear1": {
+        "message": "שנת בדיע - {0} ע.ב."
+    },
+    "exportCalendarDescription": {
+        "message": "תאריכים בלוח השנה הבדיע עבור {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "תחילת {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>ט</u>ווח תאריכים לייצוא (מבוסס על השנה הנבחרת כעת)"
+    },
+    "exporterFastEnd": {
+        "message": "הצום מסתיים",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "הצום מתחיל",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "צום עד {endingSunsetDesc}"
     }
 }

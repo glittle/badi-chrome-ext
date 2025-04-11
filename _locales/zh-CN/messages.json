@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "巴迪历",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "显示巴哈伊信仰官方历法巴迪（奇妙）历的今日日期。",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "在{0}天内",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -305,5 +313,65 @@
     },
     "example2": {
         "message": "{bMonthNamePri}月{bDay}日{dayStartedLower}于日落时（约{startingSunsetDesc}）在{frag1Year}年{frag1MonthShort}{frag1Day}日{frag1WeekdayLong}，并{dayEndedLower}于日落时（约{endingSunsetDesc}）在{frag2Year}年{frag2MonthShort}{frag2Day}日{frag2WeekdayLong}。"
+    },
+    "exportAlert_B0": {
+        "message": "开始时",
+        "description": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "1分钟前",
+        "description": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "10分钟前",
+        "description": "10 minutes before"
+    },
+    "exportAlert_B15": {
+        "message": "15分钟前",
+        "description": "15 minutes before"
+    },
+    "exportAlert_B30": {
+        "message": "30分钟前",
+        "description": "30 minutes before"
+    },
+    "exportAlert_B5": {
+        "message": "5分钟前",
+        "description": "5 minutes before"
+    },
+    "exportAlert_B60": {
+        "message": "60分钟前",
+        "description": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "巴迪历年 - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "巴迪历年 - {0} B.E.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "{location}的巴迪历日期",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "{0}的开始",
+        "description": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "导出日期的<u>范</u>围（基于当前选择的年份）",
+        "description": "<u>R</u>ange of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "斋戒结束",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "斋戒开始",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "斋戒至{endingSunsetDesc}",
+        "description": "Fast until {endingSunsetDesc}"
     }
 }

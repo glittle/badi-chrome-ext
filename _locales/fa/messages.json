@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "تقویم بدیع",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "تاریخ امروز را در تقویم بدیع (شگفت‌انگیز)، تقویم رسمی آیین بهائی، نشان می‌دهد.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "تا {0} روز دیگر",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
@@ -263,12 +271,20 @@
         "message": "(پیش‌فرض)",
         "description": "in the list of formats at the bottom of of the 'Custom' page"
     },
+    "elements": {
+        "message": "آتش,هوا,آب,خاک",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
     "Ended": {
         "message": "پایان",
         "description": "Shown in the upcoming dates area"
     },
     "endingWithSunset": {
         "message": "پایان در غروب ساعت {0}"
+    },
+    "equiv": {
+        "message": "معادل",
+        "description": "on List page - table heading"
     },
     "eraAbbrev": {
         "message": "د.ب."
@@ -298,17 +314,61 @@
     "example2": {
         "message": "{bMonthNamePri}{bDay}{dayStartedLower} از غروب (تقریباً) {startingSunsetDesc} در {frag1WeekdayLong}{frag1MonthShort}{frag1Day} و {dayEndedLower} غروب تقریباً {endingSunsetDesc} در {frag2WeekdayLong}{frag2MonthShort}{frag2Day}"
     },
+    "exportAlert_B0": {
+        "message": "هنگام شروع",
+        "description": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "یک دقیقه قبل",
+        "description": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "ده دقیقه قبل",
+        "description": "10 minutes before"
+    },
     "exportAlert_B15": {
         "message": "پانزده دقیقه قبل از "
+    },
+    "exportAlert_B30": {
+        "message": "سی دقیقه قبل",
+        "description": "30 minutes before"
     },
     "exportAlert_B5": {
         "message": "پنج دقیقه قبل از "
     },
+    "exportAlert_B60": {
+        "message": "شصت دقیقه قبل",
+        "description": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "سال بدیع - {0} د.ب.",
+        "description": "Badíʿ year - {0} B.E."
+    },
     "exportBadiYear1": {
         "message": "سال {0} بدیع"
+    },
+    "exportCalendarDescription": {
+        "message": "تاریخ‌های تقویم بدیع برای {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "شروع {0}",
+        "description": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>م</u>حدوده تاریخ‌های صادر شده (بر اساس سال انتخاب شده فعلی)",
+        "description": "<u>R</u>ange of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "پایان روزه",
+        "description": "when the fast ends at sunset"
     },
     "exporterFastStart": {
         "message": "روزه آغاز می شود ",
         "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "روزه تا {endingSunsetDesc}",
+        "description": "Fast until {endingSunsetDesc}"
     }
 }

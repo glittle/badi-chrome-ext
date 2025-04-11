@@ -80,5 +80,405 @@
     "rbDefLang_Local": {
         "message": "Suomi",
         "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Päivämäärien näyttökieli",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Lisätoiminto",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "ei mitään",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "käynnistä IFTTT-resepti",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "lue ääneen",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "käynnistä Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Lisää/Muokkaa muistutusta",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "jälkeen"
+    },
+    "reminderAlarm": {
+        "message": "Klo {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Badíʿ-kuukauden päivä {num}",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "ennen"
+    },
+    "reminderCalcType": {
+        "message": "Näytä muistutus {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "tiettyyn aikaan",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "suhteessa <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} {eventWeekdayLong}na, {eventMonthLong}ta {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Badíʿ-kuukauden päivänä {num}",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Kun {num} päivä(ä) {beforeAfter} jokaista {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "{pri}n, {sec}n, juhla"
+    },
+    "reminderHolyDay": {
+        "message": "Pyhä päivä, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "päivä {num} klo {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} päivä(ä) {deltaText}, klo {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} jälkeen",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "ilmoita klo {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "päivä(ä)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "päivä;päivää",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "tunti(a)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "tunti;tuntia"
+    },
+    "reminderNum_minutes": {
+        "message": "minuutti(a)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minuutti;minuuttia"
+    },
+    "reminderNum_seconds": {
+        "message": "sekunti(a)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "sekunti;sekuntia"
+    },
+    "remindersDefined": {
+        "message": "Muistutuksesi",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Lisää muistutus...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Näytä klo",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Ajastettu tänään klo {time} alkaen keskiyöhön asti",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(näytetään klo {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(näytetään klo {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Näytä {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} muistutus",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Badíʿ-päivä",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Juhlapäivä",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Pyhä päivä",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "Ladattaessa",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Keskiyö",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Keskipäivä",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Auringonnousu",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Auringonlasku",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Erityiset päivät",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Muut tapahtumat",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Vuorokaudenaika",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Tapahtuma",
+        "description": "in front of the trigger selector"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "00:00 keskiyö",
+        "description": "nice way to say midnight"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Kuukausi/Päivä nimet",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} auringonlaskussa klo {endingSunsetDesc}"
+    },
+    "nextMonth": {
+        "message": "Seuraava <u>k</u>uukausi",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Seuraava päivitys ajastettu {0} jälkeen: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Seuraava vuosi",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Paina Shift + Oikea nuoli nähdäksesi seuraavan vuoden",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noon": {
+        "message": "12:00 keskipäivä",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Lisää esimerkkimuistutuksia",
+        "description": "shown if there are no reminders"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": ".,.,.",
+        "description": "x,1,2,3"
+    },
+    "past_Delta": {
+        "message": "oli {numUnits} sitten"
+    },
+    "past_DeltaTime": {
+        "message": "oli {numUnits} sitten klo {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "alkoi {numUnits} sitten klo {time}"
+    },
+    "past_StartTime": {
+        "message": "alkoi klo {time}"
+    },
+    "past_Time": {
+        "message": "oli klo {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Vuosinäkymä"
+    },
+    "pick_pageCal2": {
+        "message": "Kuukausinäkymä (elementit)"
+    },
+    "pick_pageCal3": {
+        "message": "Kuukausinäkymä (viikot)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregoriaaninen kuukausinäkymä",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Pyörä",
+        "description": "tab name"
+    },
+    "pick_pageDay": {
+        "message": "Päivä"
+    },
+    "pick_pageEvents": {
+        "message": "Tapahtumat",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Vienti",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Paasto"
+    },
+    "pick_pageLists": {
+        "message": "Listat"
+    },
+    "pick_pagePlanner": {
+        "message": "Suunnittelija",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Muistutukset",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Asetukset",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Mistä alkaen?",
+        "description": "another input"
+    },
+    "planFromWhenThisYear": {
+        "message": "Tämän Badíʿ-vuoden alusta",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Tänään",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Sisällytä päivä vai ilta?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Molemmat",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Päivä",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Ilta",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Tulokset",
+        "description": "title over results"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Alkava auringonlasku sijainnissa {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Pitkän aikavälin suunnittelija",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Suunnitteluvalinnat",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Mikä?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "useita pyhiä päiviä ja juhlia",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "yksi pyhä päivä tai juhla",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "vuotta",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Kuinka pitkäksi aikaa?",
+        "description": "another question"
+    },
+    "prevMonth": {
+        "message": "Edell. <u>k</u>uukausi",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Edell. vuosi",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Paina Shift + Vasen nuoli nähdäksesi edellisen vuoden",
+        "description": "hold Shift and press left arrow key"
     }
 }

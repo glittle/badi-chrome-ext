@@ -1,4 +1,141 @@
 {
+    "exporterItemDescDay": {
+        "message": "バディーウ暦の日。",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "年次バハーイー断食の時間。",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "集会はこのバディーウ暦の日のいつでも始めることができます。",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "表示されている日の出または日没時間は{location}のものです。http://bit.ly/BadiChromeを使用して生成されました。",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}。",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "バディーウ暦エクスポーター",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "iCalendarファイル（.ics）をダウンロード"
+    },
+    "exportGregYear0": {
+        "message": "グレゴリオ暦年 - {0}年"
+    },
+    "exportGregYear1": {
+        "message": "グレゴリオ暦年 - {0}年"
+    },
+    "exportHideTest": {
+        "message": "非表示"
+    },
+    "exportIncludeAlert": {
+        "message": "各イベントにアラートを追加する（Googleカレンダーに読み込めない場合があります）"
+    },
+    "exportIncludeLocation": {
+        "message": "位置情報"
+    },
+    "exportIntro": {
+        "message": "重要！情報と注意事項については<a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">このウェブページ</a>をご覧ください！",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "エクスポートされるカレンダーのタイトル（使用されない場合があります）"
+    },
+    "exportNumToInclude": {
+        "message": "含まれるカレンダーエントリの数（約）："
+    },
+    "exportOption_AllDay": {
+        "message": "深夜からの終日イベント<em>（1日間）</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "開始日没時のみ"
+    },
+    "exportOption_Date": {
+        "message": "バディーウ暦の日<em>（365/366日）</em>"
+    },
+    "exportOption_Fast": {
+        "message": "断食日<em>（19日）</em>"
+    },
+    "exportOption_Feast": {
+        "message": "祝宴<em>（19日）</em>"
+    },
+    "exportOption_Hd": {
+        "message": "聖日<em>（11日）</em>"
+    },
+    "exportOption_Start": {
+        "message": "指定された観察時間または通常の会合時間でのイベント"
+    },
+    "exportOption_Sun": {
+        "message": "日没から日没まで<em>（約24時間）</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "日の出時のみ"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "日の出から日没までのイベント<em>（約12時間）</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "日没時のみ"
+    },
+    "exportOption_Usual": {
+        "message": "通常の会合時間でのイベント（イベントページを参照）"
+    },
+    "exportOtherSettings": {
+        "message": "その他の設定"
+    },
+    "exportQuickDesc": {
+        "message": "各セットをエクスポートし、すべて同じカレンダーに読み込みます！"
+    },
+    "exportQuickPick1": {
+        "message": "1. 完全カレンダー"
+    },
+    "exportQuickPick1Text": {
+        "message": "聖日と祝宴の時間と共に各バディーウ暦の日を表示します。アラートなし。"
+    },
+    "exportQuickPick2": {
+        "message": "2. 断食時間 - 朝"
+    },
+    "exportQuickPick2Text": {
+        "message": "日の出時間、その直前のアラート付き。"
+    },
+    "exportQuickPick3": {
+        "message": "3. 断食時間 - 夕方"
+    },
+    "exportQuickPick3Text": {
+        "message": "日没時間、アラート付き。"
+    },
+    "exportQuickPickClearText": {
+        "message": "オプションをリセット"
+    },
+    "exportQuickPicks": {
+        "message": "推奨イベントセット"
+    },
+    "exportRangeFullRange": {
+        "message": "すべてのカレンダーエントリをエクスポートします。（チェックしない場合、サンプルセットのみエクスポートします。）"
+    },
+    "exportTest": {
+        "message": "コピー用に<u>表</u>示"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "エクスポートする内容を選択してください。"
+    },
+    "exportWhatToInclude": {
+        "message": "オプション"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
     "fastDaysTitle": {
         "message": "{bYear}の断食時間"
     },
@@ -13,6 +150,18 @@
     "FestivalRidvan": {
         "message": "リドヴァーン祭"
     },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "（詳細はクリック）"
     },
@@ -20,11 +169,69 @@
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
     },
+    "future_Day": {
+        "message": "{time}に開始します",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "{numUnits}後です"
+    },
+    "future_DeltaTime": {
+        "message": "{numUnits}後の{time}です"
+    },
+    "future_StartDeltaTime": {
+        "message": "{numUnits}後の{time}に開始します"
+    },
+    "future_StartTime": {
+        "message": "{time}に開始します"
+    },
+    "future_Time": {
+        "message": "{time}です"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "グレゴリオ暦の日付",
+        "description": "Gregorian Date"
+    },
+    "gDatePickerTitle2": {
+        "message": "<u>グ</u>レゴリオ暦の日付に移動",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
     "gMonthLong": {
         "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
     },
     "gMonthShort": {
         "message": "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
     },
     "gotoNow": {
         "message": "今"
@@ -90,6 +297,18 @@
         "message": "手動",
         "description": "Label for manual icon color option"
     },
+    "iftttEvent": {
+        "message": "IFTTTイベント名",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "詳細またはサインアップについては、<a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Makerチャンネル</a>をご覧ください。イベントには次のフィールドが含まれます：title、body、tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Makerチャンネルキー",
+        "description": "Key' for IFTTT Maker channel"
+    },
     "includeFeasts": {
         "message": "<u>祝</u>宴",
         "description": "choosing what to include in the listing"
@@ -101,6 +320,14 @@
     "includeThese": {
         "message": "表示",
         "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "緯度：",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "経度：",
+        "description": "on setup page"
     },
     "Intercalary": {
         "message": "挿入日"

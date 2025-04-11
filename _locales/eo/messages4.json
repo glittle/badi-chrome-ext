@@ -1,6 +1,117 @@
 {
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "tago(j)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "tago;tagoj",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "horo(j)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "horo;horoj"
+    },
+    "reminderNum_minutes": {
+        "message": "minuto(j)"
+    },
     "reminderNum_minutes_1_more": {
         "message": "minuto;minutoj"
+    },
+    "reminderNum_seconds": {
+        "message": "sekundo(j)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "sekundo;sekundoj"
+    },
+    "remindersDefined": {
+        "message": "Viaj Memorigoj",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Aldoni memorigon...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Montri je",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Planitaj hodiaŭ de {time} ĝis meznokto",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(montrita je {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(estos montrita je {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Montri {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} Memorigo",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Badíʿ-Tago",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Festo-tago",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Sankta Tago",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "Je Ŝargo",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Meznokto",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Tagmezo",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Sunleviĝo",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Sunsubiro",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Specialaj Tagoj",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Aliaj Eventoj",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Horo de Tago",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Evento",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
     },
     "sampleGroup1_10": {
         "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
@@ -73,6 +184,19 @@
     },
     "yearWithEra": {
         "message": "{bYear} {bEraAbbrev}"
+    },
+    "YearOfEra": {
+        "message": "Jaro de Bahaa Erao"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Jaro de {VahidLabelPri}"
+    },
+    "zapierInfo": {
+        "message": "Por detaloj aŭ por registriĝi, vidu <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. La Zap enhavos ĉi tiujn kampojn: titolo, korpo, etikedo, tempo",
+        "description": "info and link to Zapier"
     },
     "zapierKey": {
         "message": "Zapier Webhook (reta hoko)",

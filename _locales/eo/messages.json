@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Badíʿ-kalendaro",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Montras la daton de hodiaŭ en la Badíʿ-kalendaro (\"la Mirinda\"), la oficiala kalendaro de la Bahaa kredo.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "post {0} tago",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -69,6 +77,10 @@
     "btnPlannerExportCsv": {
         "message": "Eksporti al Excel",
         "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Eksporti ICAL",
+        "description": "button - export to iCalendar format"
     },
     "btnPlannerHelperFeasts": {
         "message": "Festoj",
@@ -240,6 +252,12 @@
     "DayOfMonth": {
         "message": "Tago de monato"
     },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Tago de semajno"
+    },
     "DayOfWeekFormat": {
         "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
     },
@@ -302,7 +320,25 @@
     "exportAlert_B1": {
         "message": "1 minuto antaŭe"
     },
+    "exportAlert_B10": {
+        "message": "10 minutoj antaŭe"
+    },
+    "exportAlert_B15": {
+        "message": "15 minutoj antaŭe"
+    },
+    "exportAlert_B30": {
+        "message": "30 minutoj antaŭe"
+    },
+    "exportAlert_B5": {
+        "message": "5 minutoj antaŭe"
+    },
+    "exportAlert_B60": {
+        "message": "60 minutoj antaŭe"
+    },
     "exportBadiYear0": {
+        "message": "Badíʿ-jaro - {0} B.E."
+    },
+    "exportBadiYear1": {
         "message": "Badíʿ-jaro - {0} B.E."
     },
     "exportCalendarDescription": {
@@ -317,5 +353,13 @@
     },
     "exporterFastUntil": {
         "message": "Fasto ĝis {endingSunsetDesc}"
+    },
+    "exporterFastEnd": {
+        "message": "Fasto Finiĝas",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Fasto Komenciĝas",
+        "description": "when the fast starts at sunrise"
     }
 }

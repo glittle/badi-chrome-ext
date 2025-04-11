@@ -1,4 +1,141 @@
 {
+    "exporterItemDescDay": {
+        "message": "יום בלוח השנה הבדיע.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "זמנים לצום הבהאי השנתי.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "התכנסות יכולה להתחיל בכל זמן ביום בדיע זה.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "זמני זריחה או שקיעה המוצגים הם עבור {location}. נוצר באמצעות http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "מייצא לוח השנה הבדיע",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "הורד קובץ iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "שנה גרגוריאנית - {0} לספירה"
+    },
+    "exportGregYear1": {
+        "message": "שנה גרגוריאנית - {0} לספירה"
+    },
+    "exportHideTest": {
+        "message": "הסתר"
+    },
+    "exportIncludeAlert": {
+        "message": "הוסף התראה לכל אירוע (ייתכן שלא יטען לתוך לוח השנה של גוגל)"
+    },
+    "exportIncludeLocation": {
+        "message": "מידע על המיקום"
+    },
+    "exportIntro": {
+        "message": "חשוב! ראה <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">דף אינטרנט זה</a> למידע ואזהרות!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "כותרת ללוח השנה המיוצא (ייתכן שלא יהיה בשימוש)"
+    },
+    "exportNumToInclude": {
+        "message": "מספר הרשומות בלוח השנה שנכללו (בקירוב):"
+    },
+    "exportOption_AllDay": {
+        "message": "אירוע יום שלם מחצות <em>(אורך יום אחד)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "בשקיעה המתחילה בלבד"
+    },
+    "exportOption_Date": {
+        "message": "ימי בדיע <em>(365/366 ימים)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "ימי צום <em>(19 ימים)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "חגיגות <em>(19 ימים)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "ימים קדושים <em>(11 ימים)</em>"
+    },
+    "exportOption_Start": {
+        "message": "אירוע בזמן צפייה מיועד או בזמן מפגש רגיל"
+    },
+    "exportOption_Sun": {
+        "message": "משקיעה לשקיעה <em>(בערך 24 שעות)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "בזריחה בלבד"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "אירוע מזריחה לשקיעה <em>(בערך 12 שעות)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "בשקיעה בלבד"
+    },
+    "exportOption_Usual": {
+        "message": "אירוע בזמן מפגש רגיל (ראה דף אירועים)"
+    },
+    "exportOtherSettings": {
+        "message": "הגדרות אחרות"
+    },
+    "exportQuickDesc": {
+        "message": "ייצא כל סט, ואז טען את כולם לאותו לוח שנה!"
+    },
+    "exportQuickPick1": {
+        "message": "1. לוח שנה מלא"
+    },
+    "exportQuickPick1Text": {
+        "message": "הצג כל יום בדיע, יחד עם ימים קדושים וזמני חגיגות. ללא התראות."
+    },
+    "exportQuickPick2": {
+        "message": "2. זמן צום - בוקר"
+    },
+    "exportQuickPick2Text": {
+        "message": "זריחה, עם התראה מעט לפני."
+    },
+    "exportQuickPick3": {
+        "message": "3. זמן צום - ערב"
+    },
+    "exportQuickPick3Text": {
+        "message": "שקיעה, עם התראה."
+    },
+    "exportQuickPickClearText": {
+        "message": "אפס אפשרויות"
+    },
+    "exportQuickPicks": {
+        "message": "סטים מומלצים של אירועים"
+    },
+    "exportRangeFullRange": {
+        "message": "ייצא את כל רשומות לוח השנה. (אם לא מסומן, ייצא רק סט דוגמה.)"
+    },
+    "exportTest": {
+        "message": "ה<u>צ</u>ג להעתקה"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "בחר מה צריך לייצא."
+    },
+    "exportWhatToInclude": {
+        "message": "אפשרויות"
+    },
+    "facebook": {
+        "message": "פייסבוק",
+        "description": "ALT for icon at bottom of page"
+    },
     "fastDaysTitle": {
         "message": "זמני צום בשנת {bYear}"
     },
@@ -17,6 +154,14 @@
         "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
         "description": "about page"
     },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "(לחץ לפרטים נוספים)"
     },
@@ -24,11 +169,58 @@
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
     },
+    "future_Day": {
+        "message": "מתחיל בשעה {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "יהיה בעוד {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "יהיה בעוד {numUnits} בשעה {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "יתחיל בעוד {numUnits} בשעה {time}"
+    },
+    "future_StartTime": {
+        "message": "יתחיל בשעה {time}"
+    },
     "future_Time": {
         "message": "יהיה בשעה {time}"
     },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
     "gDatePickerTitle": {
         "message": "תאריך גרגוריאני"
+    },
+    "gDatePickerTitle2": {
+        "message": "עבור לתאריך <u>ג</u>רגוריאני",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bDay} {bMonthNamePri}, {bYear}"
     },
     "gMonthLong": {
         "message": "ינואר,פברואר,מרץ,אפריל,מאי,יוני,יולי,אוגוסט,ספטמבר,אוקטובר,נובמבר,דצמבר"
@@ -102,5 +294,33 @@
     },
     "Intercalary": {
         "message": "ימי הא"
+    },
+    "includeFeasts": {
+        "message": "<u>ח</u>גיגות",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "ימים <u>ק</u>דושים",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "הצג",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "קו רוחב:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "קו אורך:",
+        "description": "on setup page"
+    },
+    "jumpTo": {
+        "message": "<u>ק</u>פוץ ± ימים",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "ט",
+        "description": "Press Shift+(this letter) to open into a tab"
     }
 }
