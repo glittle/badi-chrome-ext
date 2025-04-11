@@ -3,6 +3,10 @@
         "message": "через {0} день",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
     },
+    "actionSpeakDesc": {
+        "message": "Напоминание будет прочитано вслух этим голосом: ",
+        "description": "in edit area when asking for a relative time"
+    },
     "afterSunset": {
         "message": "Вечер (после заката)"
     },
@@ -30,7 +34,7 @@
         "description": "Names of days/months, with first one being Ayyam-i-ha"
     },
     "bMonthNameAr": {
-        "message": "Аййāм-и Хā',Бахā,Джалāл,Джамāл,‘Аз̣амат,Нӯр,Рах̣мат,Калимāт,Камāл,Асмā’,‘Иззат,Машӣййат,‘Илм,К̣удрат,К̣аул,Масā’ил,Шараф,Султ̣ан,Мулк,‘Алā’",
+        "message": "Аййāм-и Хā',Бахā,Джалāл,Джамāл,'Аз̣амат,Нӯр,Рах̣мат,Калимāт,Камāл,Асмā','Иззат,Машӣййат,'Илм,К̣удрат,К̣аул,Масā'ил,Шараф,Султ̣ан,Мулк,'Алā'",
         "description": "month names, start with Ayyam-i-Ha"
     },
     "browserActionTitle": {
@@ -62,6 +66,65 @@
         "message": "Перейти на указанное количество дней вперед или назад",
         "description": "tooltip"
     },
+    "btnPlannerExportCsv": {
+        "message": "Экспорт в Excel",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Экспорт ICAL",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Праздники",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Святые дни (без работы)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "Все святые дни",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "Нет",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Ридван",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Дни рождения Баба и Бахауллы",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Отмена",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Удалить",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Редактировать",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>С</u>охранить",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Дублировать",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Проверить сейчас",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Перезагрузить сейчас"
+    },
     "bTopDayDisplay": {
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "top right corner"
@@ -71,7 +134,7 @@
         "description": "start with Saturday and a leading comma"
     },
     "bWeekdayNameAr": {
-        "message": ",Джалāл,Джамāл,Камāл,Фид̣āл,‘Идāл,Истиджлāл,Истик̣лāл",
+        "message": ",Джалāл,Джамāл,Камāл,Фид̣āл,'Идāл,Истиджлāл,Истик̣лāл",
         "description": "weekday names, with leading , "
     },
     "bYearInVahidMeaning": {
@@ -79,8 +142,40 @@
         "description": "Vahid names, with leading , "
     },
     "bYearInVahidNameAr": {
-        "message": "Алиф,Бā’,Аб,Дāль,Бāб,Вāв,Абад,Джāд,Бахā',Х̣убб,Баххāдж,Джавāб,Ах̣ад,Ваххāб,Видāд,Бадӣ‘,Бахӣ,Абхā,Вāх̣ид",
+        "message": "Алиф,Бā',Аб,Дāль,Бāб,Вāв,Абад,Джāд,Бахā',Х̣убб,Баххāдж,Джавāб,Ах̣ад,Ваххāб,Видāд,Бадӣ',Бахӣ,Абхā,Вāх̣ид",
         "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "Более темные <u>ц</u>вета",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Все месяцы при <u>п</u>ечати",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Показать <u>в</u>ремя",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Все месяцы при <u>п</u>ечати",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Показать <u>в</u>ремя",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
     },
     "copied": {
         "message": "Скопировано!",
@@ -89,6 +184,52 @@
     "currentFocus": {
         "message": "Текущий день",
         "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Копировать"
+    },
+    "customBuilder": {
+        "message": "Создать пользовательский формат даты"
+    },
+    "customBuilderEcho": {
+        "message": "Результаты (для выбранного дня - см. Советы и клавиши для изменения дня)"
+    },
+    "customBuilderIntro": {
+        "message": "Введите формат в это поле. <span class=customHint title='...NamePri = на основном языке\n...NameSec = на дополнительном языке\nfrag1... = от заката до полуночи\nfrag2... = от полуночи до заката'>(Просмотр подсказок)</span><br>Нажмите кнопку 'Добавить' в разделе Доступные части даты, чтобы вставить в текущее место."
+    },
+    "customDefined": {
+        "message": "Пользовательские форматы даты"
+    },
+    "customFormats": {
+        "message": "Пользовательские форматы",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Нажмите 'Копировать', чтобы скопировать отформатированную дату в буфер обмена."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Формат для отображения в подсказке значка Chrome:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Строка 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Строка 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Формат для отображения в верхней части большинства страниц:"
+    },
+    "customLoadLetters": {
+        "message": "Нажмите, чтобы скопировать из стандартного формата: "
+    },
+    "customPartsList": {
+        "message": "Доступные части даты"
+    },
+    "customSelectForFrontPage": {
+        "message": "Отметьте, чтобы показать на странице {0}."
+    },
+    "customUseAsSample": {
+        "message": "Использовать как образец?"
     },
     "dateHeading": {
         "message": "День",
@@ -117,6 +258,10 @@
     },
     "dayStartedPast": {
         "message": "Начался"
+    },
+    "defaultFormat": {
+        "message": "(По умолчанию) ",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
     },
     "elements": {
         "message": "Огонь,Воздух,Вода,Земля",
@@ -153,5 +298,12 @@
     "eventTimeHeading2": {
         "message": "Время встречи/особое время",
         "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} на закате (около {startingSunsetDesc}) в {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} и {dayEndedLower} на закате (около {endingSunsetDesc}) в {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
     }
 }

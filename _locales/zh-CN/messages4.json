@@ -162,7 +162,7 @@
         "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
     },
     "setupAboutPara": {
-        "message": "<p>此Web扩展旨在提供您所在位置的巴迪历当前信息。</p><p>欲了解更多信息，请点击下方的"版本"链接或任何图标！</p><p></p>",
+        "message": "<p>此Web扩展旨在提供您所在位置的巴迪历当前信息。</p><p>欲了解更多信息，请点击下方的\"版本\"链接或任何图标！</p><p></p>",
         "description": "explanation of "
     },
     "setupAboutTitle": {

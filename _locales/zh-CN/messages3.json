@@ -353,7 +353,7 @@
         "message": "{pri}，{sec}灵宴会，"
     },
     "reminderHolyDay": {
-        "message": "圣日"{0}"，"
+        "message": "圣日\"{0}\"，"
     },
     "reminderList_bday": {
         "message": "第{num}天在{triggerTimeRawDisplay}",
