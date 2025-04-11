@@ -170,7 +170,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
         const unknownLocation = request.unknownLocation || "Unknown location";
         console.log("getting City name... lat:", lat, "long:", long, "key:", key);
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&language=${common.languageCode}&key=${key}`)
           .then((response) => response.json())
           .then((data) => {
             const error = data.error_message;
