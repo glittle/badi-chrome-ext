@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Calendário Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Mostra a data atual no calendário Badíʿ (Maravilhoso), o calendário oficial da Fé Bahá'í.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "em {0} dia",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -305,5 +313,65 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} ao pôr do sol (aproximadamente {startingSunsetDesc}) em {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} e {dayEndedLower} ao pôr do sol (aproximadamente {endingSunsetDesc}) em {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Quando começar",
+        "description": ""
+    },
+    "exportAlert_B1": {
+        "message": "1 minuto antes",
+        "description": ""
+    },
+    "exportAlert_B10": {
+        "message": "10 minutos antes",
+        "description": ""
+    },
+    "exportAlert_B15": {
+        "message": "15 minutos antes",
+        "description": ""
+    },
+    "exportAlert_B30": {
+        "message": "30 minutos antes",
+        "description": ""
+    },
+    "exportAlert_B5": {
+        "message": "5 minutos antes",
+        "description": ""
+    },
+    "exportAlert_B60": {
+        "message": "60 minutos antes",
+        "description": ""
+    },
+    "exportBadiYear0": {
+        "message": "Ano Badíʿ - {0} E.B.",
+        "description": ""
+    },
+    "exportBadiYear1": {
+        "message": "Ano Badíʿ - {0} E.B.",
+        "description": ""
+    },
+    "exportCalendarDescription": {
+        "message": "Datas no Calendário Badíʿ para {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "Início de {0}",
+        "description": ""
+    },
+    "exporterDateRange": {
+        "message": "<u>I</u>ntervalo de datas para Exportar (baseado no ano atualmente selecionado)",
+        "description": ""
+    },
+    "exporterFastEnd": {
+        "message": "Fim do Jejum",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Início do Jejum",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Jejum até {endingSunsetDesc}",
+        "description": ""
     }
 }

@@ -1,4 +1,137 @@
 {
+    "exporterItemDescDay": {
+        "message": "Um dia no calendário Badíʿ.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Horários para o Jejum Bahá'í anual.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "A reunião pode começar a qualquer hora neste dia Badíʿ.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Os horários de nascer e pôr do sol mostrados são para {location}. Gerado usando http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Exportador do Calendário Badíʿ",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Baixar arquivo iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Ano Gregoriano - {0} d.C."
+    },
+    "exportGregYear1": {
+        "message": "Ano Gregoriano - {0} d.C."
+    },
+    "exportHideTest": {
+        "message": "Ocultar"
+    },
+    "exportIncludeAlert": {
+        "message": "Adicionar um alerta a cada evento (pode não carregar no Google Calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Informações de Localização"
+    },
+    "exportIntro": {
+        "message": "Importante! Veja <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">esta página web</a> para informações e avisos!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Título para o Calendário Exportado (pode não ser usado)"
+    },
+    "exportNumToInclude": {
+        "message": "Número de entradas de calendário incluídas (aproximadamente):"
+    },
+    "exportOption_AllDay": {
+        "message": "Evento de dia inteiro a partir da meia-noite <em>(duração de 1 dia)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Apenas no pôr do sol inicial"
+    },
+    "exportOption_Date": {
+        "message": "Dias Badíʿ <em>(365/366 dias)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Dias de Jejum <em>(19 dias)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Festas <em>(19 dias)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Dias Sagrados <em>(11 dias)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento no horário de observação designado ou horário habitual de reunião"
+    },
+    "exportOption_Sun": {
+        "message": "Do pôr do sol ao pôr do sol <em>(cerca de 24 horas)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Apenas ao nascer do sol"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Evento do nascer ao pôr do sol <em>(cerca de 12 horas)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Apenas ao pôr do sol"
+    },
+    "exportOption_Usual": {
+        "message": "Evento no horário habitual de reunião (veja a página Eventos)"
+    },
+    "exportOtherSettings": {
+        "message": "Outras Configurações"
+    },
+    "exportQuickDesc": {
+        "message": "Exporte cada conjunto e depois carregue todos no mesmo calendário!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Calendário Completo"
+    },
+    "exportQuickPick1Text": {
+        "message": "Exibir cada dia Badíʿ, junto com Dias Sagrados e horários de Festa. Sem alertas."
+    },
+    "exportQuickPick2": {
+        "message": "2. Horário de Jejum - Manhã"
+    },
+    "exportQuickPick2Text": {
+        "message": "Nascer do sol, com um alerta logo antes."
+    },
+    "exportQuickPick3": {
+        "message": "3. Horário de Jejum - Noite"
+    },
+    "exportQuickPick3Text": {
+        "message": "Pôr do sol, com um alerta."
+    },
+    "exportQuickPickClearText": {
+        "message": "Redefinir opções"
+    },
+    "exportQuickPicks": {
+        "message": "Conjuntos recomendados de eventos"
+    },
+    "exportRangeFullRange": {
+        "message": "Exportar todas as entradas do calendário. (Se não marcado, exportar apenas um conjunto de amostra.)"
+    },
+    "exportTest": {
+        "message": "Exi<u>b</u>ir para copiar"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Selecione o que deve ser exportado."
+    },
+    "exportWhatToInclude": {
+        "message": "Opções"
+    },
     "facebook": {
         "message": "Facebook",
         "description": "ALT for icon at bottom of page"
@@ -35,6 +168,59 @@
     "formatIconToolTip": {
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "começa às {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "será em {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "será em {numUnits} às {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "começará em {numUnits} às {time}"
+    },
+    "future_StartTime": {
+        "message": "começará às {time}"
+    },
+    "future_Time": {
+        "message": "será às {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Data Gregoriana"
+    },
+    "gDatePickerTitle2": {
+        "message": "Ir para Data <u>G</u>regoriana",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
     },
     "gMonthLong": {
         "message": "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro"
@@ -110,6 +296,18 @@
         "message": "Manual",
         "description": "Label for manual icon color option"
     },
+    "iftttEvent": {
+        "message": "Nome do Evento IFTTT",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Para detalhes ou para se inscrever, veja <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. O evento conterá estes campos: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "Chave do IFTTT Maker Channel",
+        "description": "Key' for IFTTT Maker channel"
+    },
     "includeFeasts": {
         "message": "<u>F</u>estas",
         "description": "choosing what to include in the listing"
@@ -121,6 +319,14 @@
     "includeThese": {
         "message": "Mostrar",
         "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Latitude:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Longitude:",
+        "description": "on setup page"
     },
     "Intercalary": {
         "message": "Dias Intercalares"

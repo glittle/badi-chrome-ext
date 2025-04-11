@@ -9,6 +9,16 @@
         "message": "Ĉio",
         "description": "Transalation of Kull-i-Shay"
     },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "00:00 meznokto",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Monato"
+    },
     "locationError": {
         "message": "Ne eblas determini vian nunan lokon.\n\nLa etendaĵo uzos 18:30 por sunsubiro je ĉiu dato.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -33,6 +43,40 @@
     },
     "nearestSunsetDay": {
         "message": "{dayEnded} kun sunsubiro je {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} kun sunsubiro je {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Sekva &rarr;"
+    },
+    "nextMonth": {
+        "message": "Sekva <u>M</u>onato",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Sekva refreŝigo planita post {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Sekva Jaro",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Premu Shift + Dekstra Sago por vidi la sekvan jaron",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Nekonata Loko - 18:30 sunsubiro-horoj)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noon": {
+        "message": "12:00 tagmezo",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Aldoni Ekzemplajn Memorigojn",
+        "description": "shown if there are no reminders"
     },
     "noLocationName": {
         "message": "(Nuna loko)",
@@ -233,6 +277,14 @@
         "message": "Esperanto",
         "description": "put your language here, in your script"
     },
+    "rbDefLangText": {
+        "message": "Montrolingvo por datoj",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Aldona Ago",
+        "description": "prompt for other actions"
+    },
     "reminder_nullAction": {
         "message": "neniu",
         "description": "in dropdown list, for when no other action is chosen"
@@ -240,12 +292,38 @@
     "reminderBefore": {
         "message": "antaŭ"
     },
+    "reminderAfter": {
+        "message": "post"
+    },
+    "reminderAlarm": {
+        "message": "Je {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Tago {num} de la Badíʿ-monato",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderCalcType": {
+        "message": "Montri memorigon {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "je specifa horo",
+        "description": "in dropdown"
+    },
     "reminderCalcTypeRelative": {
         "message": "relativa al <span class=modelTriggerEcho></span>",
         "description": "in dropdown"
     },
     "reminderDayDetails": {
         "message": "{eventTime} je {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} je {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Je tago {num} de la Badíʿ-monato",
+        "description": "in list of defined reminders"
     },
     "reminderDayWhen": {
         "message": "Je {num} tago(j) {beforeAfter} ĉiu {event}",
@@ -272,5 +350,9 @@
     "reminderList_timeAbsolute": {
         "message": "anonci je {triggerTimeRawDisplay}",
         "description": "in list of defined reminders"
+    },
+    "reminderAction_ifttt": {
+        "message": "lanĉi IFTTT recepton",
+        "description": "in dropdown list, to choose to use IFTTT"
     }
 }

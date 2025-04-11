@@ -140,6 +140,140 @@
     "startedWithSunset": {
         "message": "Komenciĝis per sunsubiro je {0}"
     },
+    "startTimeOption": {
+        "message": "Kutima renkontiĝa horo: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Sugestoj?"
+    },
+    "suggestionsTitle": {
+        "message": "Bonvolu alklaki ĉi tie kaj sendi ajnajn sugestojn por plibonigi ĉi tiun etendaĵon!"
+    },
+    "sunriseFastHeading": {
+        "message": "Sunleviĝo",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Sunsubiro",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Komenco de Badíʿ-Tago",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspendi Laboron",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Konsiloj kaj Klavoj",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "Precizeco?"
+    },
+    "tipsAboutText": {
+        "message": "Datoj ĝis 221 B.E. (2064 p.K.) estas konataj. Post tio, ĝisdatigoj eble estos bezonataj dum astronomiaj observoj pliboniĝas. Bonvolu ne uzi ĉi tion por finaligi viajn planojn pli ol 50 jarojn en la estonteco! Vidu la retejon por pliaj detaloj."
+    },
+    "tipsText": {
+        "message": "Premu PgUp/PgDn klavojn por elekti panelojn.\nPremu Dekstra/Maldekstra sagoklavojn por ŝanĝi tagojn.\nPremu / por ŝanĝi antaŭ/post sunsubiro.\nPremu Home por reveni al hodiaŭ!"
+    },
+    "Tonight": {
+        "message": "Ĉi-vespere",
+        "description": "Shown in the upcoming dates area"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "setupAboutPara": {
+        "message": "<p>Ĉi tiu Retaj Etendaĵo estas desegnita por provizi aktualan informon pri la Badíʿ-kalendaro, loka al kie vi estas.</p><p>Por pliaj informoj, bonvolu alklaki sube la ligilon 'Versio', aŭ iun ajn el la piktogramoj!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "Pri",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "Tekstkoloro por ilobreta piktogramo:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "Piktogramkoloro",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "Lingvo",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% tradukita. Ĉu <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>vi povas helpi</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% tradukita!"
+    },
+    "setupOptOut": {
+        "message": "Malaliĝi?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "Por helpi kompreni kiel ĉi tiu Reta Etendaĵo estas uzata, statistikoj estas registritaj ĉiufoje kiam vi ŝanĝas inter paĝoj aŭ faras aliajn gravajn agojn. Ĉi tio estas anonima, kaj la asociitaj raportoj povas esti viditaj de Glen Little. Se vi deziras malaliĝi kaj malŝalti ĉi tion, vi povas marki ĉi tiun skatolon:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "Analitiko",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "Ĉi tio estas la semajntago de {bWeekdayNamePri}, la tago de {bDayNamePri}, de la monato de {bMonthNamePri}, de la jaro {bYearInVahidNamePri}, de la {bVahidOrdinalName} {VahidLabelPri}, de la {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Premu ĉi tiun klavkombinon por malfermi la Kalendaron de ie ajn en la retumilo."
+    },
+    "showPointer": {
+        "message": "Montri montrilon"
+    },
+    "specialDaysTitle": {
+        "message": "Festoj kaj Sanktaj Tagoj en {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 atm (Norma Tempo)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 atm (Norma Tempo)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Tagmezo (Norma Tempo)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 ptm (Norma Tempo)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Proksimume 2 horojn post sunsubiro",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "Normaj Formatoj",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
     "title": {
         "message": "Badíʿ-kalendaro",
         "description": "The title of the extension. Shown in a number of locations."
