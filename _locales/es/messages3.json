@@ -6,11 +6,11 @@
         "message": "{bKullishay}"
     },
     "KullishayLocal": {
-        "message": "Todas-las-Cosas",
+        "message": "Todas las Cosas",
         "description": "Transalation of Kull-i-Shay"
     },
     "locationError": {
-        "message": "incapaz de determinar su actual localizacion.\n\nLa extension usara 6:30pm para la caida del sol cada dia.",
+        "message": "Incapaz de determinar su ubicación actual.\n\nLa extensión usará 6:30pm para el ocaso cada día.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
     },
     "mainPartOfDay": {
@@ -34,7 +34,7 @@
         "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
     },
     "monthNames": {
-        "message": "NombTs del Mes/Dia",
+        "message": "Nombres de Mes/Día",
         "description": "on List page - table caption"
     },
     "nearestSunsetDay": {
@@ -47,7 +47,7 @@
         "message": "Próximo &rarr;"
     },
     "nextRefreshAlarm": {
-        "message": "Siguiente refresh schedule {0}: {1}",
+        "message": "Siguiente actualización programada después de {0}: {1}",
         "description": "only shown in the debug console"
     },
     "nextYear": {
@@ -59,11 +59,11 @@
         "description": "hold Shift and press right arrow key"
     },
     "noLocationAvailable": {
-        "message": "(localizacion desconocida - 6:30pm hora de la caida del sol)",
+        "message": "(Ubicación desconocida - 6:30pm para el ocaso)",
         "description": "If the system does not know the location of this computer."
     },
     "noLocationName": {
-        "message": "(localidad actual)",
+        "message": "(Ubicación actual)",
         "description": "If the internet is not available, to get the name of the current location."
     },
     "Now": {
@@ -83,7 +83,7 @@
         "description": "x,1,2,3"
     },
     "ordinalNames": {
-        "message": ",Primero,segundo,tercero,cuarto,quint,sexto,septimo,octavo,noveno,decimo,decimo primero,decimo segundo,decimo tercero,decimo cuarto,decimo quinto,decimo sexto,decimo septimo,decimo octavo,decimo noveno"
+        "message": ",primero,segundo,tercero,cuarto,quinto,sexto,séptimo,octavo,noveno,décimo,décimo primero,décimo segundo,décimo tercero,décimo cuarto,décimo quinto,décimo sexto,décimo séptimo,décimo octavo,décimo noveno"
     },
     "otherDays": {
         "message": "en {0} dias",
@@ -97,24 +97,24 @@
         "description": "tab name"
     },
     "pick_pageCalWheel": {
-        "message": "Wheel",
+        "message": "Rueda",
         "description": "tab name"
     },
     "pick_pageDay": {
         "message": "Dia"
     },
     "pick_pageEvents": {
-        "message": "Events",
+        "message": "Eventos",
         "description": "showing Feast and Holy Days"
     },
     "pick_pageFast": {
-        "message": "Fast"
+        "message": "Ayuno"
     },
     "pick_pageLists": {
         "message": "Listas"
     },
     "pressKeyOrClick": {
-        "message": "Presione el boton {0}.",
+        "message": "Haga clic en el botón o presione {0}",
         "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
     },
     "pressToCopy": {
@@ -125,7 +125,7 @@
         "message": "&larr; Previo"
     },
     "prevYear": {
-        "message": "Años Anteriores",
+        "message": "Año anterior",
         "description": "hold Shift and press left arrow key"
     },
     "prevYearTitle": {
@@ -227,7 +227,7 @@
         "description": "in list of defined reminders"
     },
     "reminderList_timeAbsolute": {
-        "message": "anunciar a las {triggerTimeRawDisplay}",
+        "message": "mostrar a las {triggerTimeRawDisplay}",
         "description": "in list of defined reminders"
     },
     "midnight": {

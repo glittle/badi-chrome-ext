@@ -287,14 +287,6 @@
     "tipsText": {
         "message": "پینلز کو منتخب کرنے کے لیے PgUp/PgDn کلیدیں دبائیں۔\nدن تبدیل کرنے کے لیے دائیں/بائیں تیر کلیدیں دبائیں۔\nغروب آفتاب سے پہلے/بعد سوئچ کرنے کے لیے / دبائیں۔\nآج واپس آنے کے لیے Home دبائیں!"
     },
-    "title": {
-        "message": "بدیع کیلنڈر",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "بدیع (حیرت انگیز) کیلنڈر میں آج کی تاریخ دکھاتا ہے، جو بہائی مذہب کا سرکاری کیلنڈر ہے۔",
-        "description": "Used in the manifest"
-    },
     "Tonight": {
         "message": "آج رات",
         "description": "Shown in the upcoming dates area"

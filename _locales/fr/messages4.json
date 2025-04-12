@@ -283,14 +283,6 @@
         "message": "{time} {ampm}",
         "description": "used when use24HourClock is set to false"
     },
-    "title": {
-        "message": "Calendrier Badíʿ",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "Fournit la date du jour selon le Calendrier Badíʿ, le calendrier officiel de la Foi Bahá'íe.",
-        "description": "Used in the manifest"
-    },
     "Tonight": {
         "message": "Ce soir",
         "description": "Shown in the upcoming dates area"

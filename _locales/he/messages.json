@@ -360,5 +360,9 @@
     },
     "exporterFastUntil": {
         "message": "צום עד {endingSunsetDesc}"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
     }
 }

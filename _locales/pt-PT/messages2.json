@@ -150,6 +150,18 @@
     "FestivalRidvan": {
         "message": "Festival de Ridván"
     },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "(clique para mais detalhes)"
     },

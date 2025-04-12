@@ -55,7 +55,7 @@
         "description": "button to move to next month (gregorian or badi)"
     },
     "nextRefreshAlarm": {
-        "message": "Next refresh scheduled after {0}: {1}",
+        "message": "Volgende verversing gepland na {0}: {1}",
         "description": "only shown in the debug console"
     },
     "nextYear": {
@@ -71,7 +71,7 @@
         "description": "If the system does not know the location of this computer."
     },
     "noLocationName": {
-        "message": "(Current Location)",
+        "message": "(Huidige locatie)",
         "description": "If the internet is not available, to get the name of the current location."
     },
     "noon": {
@@ -116,7 +116,7 @@
         "message": "was {numUnits} geleden om {time}"
     },
     "past_StartDeltaTime": {
-        "message": "is {numUnits} geleden begonnen om time}"
+        "message": "is {numUnits} geleden begonnen om {time}"
     },
     "past_StartTime": {
         "message": "begonnen om {time}"
@@ -130,6 +130,10 @@
     "pick_pageCal2": {
         "message": "Kalender"
     },
+    "pick_pageCal3": {
+        "message": "Maandweergave (weken)",
+        "description": "tab name"
+    },
     "pick_pageCalGreg": {
         "message": "Gregoriaans jaar",
         "description": "tab name"
@@ -139,7 +143,7 @@
         "description": "tab name"
     },
     "pick_pageCustom": {
-        "message": "Custom",
+        "message": "Aangepast",
         "description": "page tab name and page title"
     },
     "pick_pageDay": {
@@ -212,7 +216,7 @@
         "description": "First question in inputs"
     },
     "plannerStartSunsetForLocation": {
-        "message": "Beginnend op zonsopgang om {0}",
+        "message": "Beginnend op zonsondergang om {0}",
         "description": "title in results table - sunset at location"
     },
     "plannerTitle": {
@@ -291,7 +295,7 @@
         "description": "in dropdown list, for when no other action is chosen"
     },
     "reminderAction_ifttt": {
-        "message": "trigger IFTTT recipe",
+        "message": "trigger IFTTT recept",
         "description": "in dropdown list, to choose to use IFTTT"
     },
     "reminderAction_speak": {
@@ -347,10 +351,12 @@
         "description": "in list of defined reminders"
     },
     "reminderFeast": {
-        "message": "Het feest van {ar}, {meaning},"
+        "message": "Het feest van {pri}, {sec},",
+        "description": "Feast reminder format"
     },
     "reminderHolyDay": {
-        "message": "De Heilige dag \"{0}"
+        "message": "De Heilige dag \"{0}\"",
+        "description": "Holy day reminder format"
     },
     "reminderList_bday": {
         "message": "dag {num} om {triggerTimeRawDisplay}",

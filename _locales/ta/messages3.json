@@ -13,6 +13,10 @@
         "message": "Kull-i-Shay'",
         "description": "Label for Kull-i-Shay in secondary language"
     },
+    "KullishayLocal": {
+        "message": "அனைத்து-பொருட்கள்",
+        "description": "Transalation of Kull-i-Shay"
+    },
     "locationError": {
         "message": "உங்களின் தற்போதைய இடத்தைத் தீர்மானிக்க இயலவில்லை.\n\nவிரிவாக்கம், ஒவ்வொரு திகதியின் போதும் அஸ்தமனத்திற்கு 6:30-ஐயே பயன்படுத்தும்.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -24,6 +28,13 @@
     "meaning": {
         "message": "அர்த்தம்",
         "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "நள்ளிரவு 12:00",
+        "description": "nice way to say midnight"
     },
     "Month": {
         "message": "மாதம்"
@@ -46,6 +57,10 @@
     },
     "next": {
         "message": "அடுத்த &rarr;"
+    },
+    "nextMonth": {
+        "message": "அடுத்த <u>மா</u>தம்",
+        "description": "button to move to next month (gregorian or badi)"
     },
     "nextRefreshAlarm": {
         "message": "அடுத்த புதுப்பிப்பு {0}க்குப் பிறகு: {1}",
@@ -71,6 +86,10 @@
         "message": "12:00",
         "description": "nice way to say noon"
     },
+    "noReminders": {
+        "message": "மாதிரி நினைவூட்டல்களைச் சேர்க்கவும்",
+        "description": "shown if there are no reminders"
+    },
     "Now": {
         "message": "இப்பொழுது",
         "description": "Shown in the upcoming dates area"
@@ -94,8 +113,35 @@
         "message": "{0} நாள்களில்",
         "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
     },
+    "past_Day": {
+        "message": "{time} இல் தொடங்கியது",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "{numUnits} முன்பு இருந்தது"
+    },
+    "past_DeltaTime": {
+        "message": "{numUnits} முன்பு {time} இல் இருந்தது"
+    },
+    "past_StartDeltaTime": {
+        "message": "{numUnits} முன்பு {time} இல் தொடங்கியது"
+    },
+    "past_StartTime": {
+        "message": "{time} இல் தொடங்கியது"
+    },
+    "past_Time": {
+        "message": "{time} இல் இருந்தது"
+    },
     "pick_pageCal1": {
         "message": "வருடம்"
+    },
+    "pick_pageCal2": {
+        "message": "மாத பார்வை (தனிமங்கள்)",
+        "description": ""
+    },
+    "pick_pageCal3": {
+        "message": "மாத பார்வை (வாரங்கள்)",
+        "description": ""
     },
     "pick_pageCalGreg": {
         "message": "கிரேகோரிய வருடம்",
@@ -105,6 +151,10 @@
         "message": "சக்கரம்",
         "description": "tab name"
     },
+    "pick_pageCustom": {
+        "message": "தனிப்பயன்",
+        "description": "page tab name and page title"
+    },
     "pick_pageDay": {
         "message": "நாள்"
     },
@@ -112,11 +162,99 @@
         "message": "நிகழ்ச்சிகள்",
         "description": "showing Feast and Holy Days"
     },
+    "pick_pageExporter": {
+        "message": "ஏற்றுமதி",
+        "description": "page tab name and page title"
+    },
     "pick_pageFast": {
         "message": "நோன்பு"
     },
     "pick_pageLists": {
         "message": "பட்டியல்கள்"
+    },
+    "pick_pagePlanner": {
+        "message": "திட்டமிடுபவர்",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "நினைவூட்டல்கள்",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "அமைப்பு",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "எப்போதிலிருந்து தொடங்குவது?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "அடுத்த படீ' வருடத்தின் தொடக்கம்",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "இந்த படீ' வருடத்தின் தொடக்கம்",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "இன்று",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "நாள் அல்லது மாலையைச் சேர்க்கவா?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "இரண்டும்",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "நாள்",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "மாலை",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "முடிவுகள்",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "என்ன காட்ட வேண்டும்?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "{0}இல் தொடங்கும் அஸ்தமனம்",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "நீண்ட கால திட்டமிடுபவர்",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "திட்டமிடல் தேர்வு",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "எது?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "பல புனித நாட்கள் மற்றும் விருந்துகள்",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "ஒரு புனித நாள் அல்லது விருந்து",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "வருடங்கள்",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "எவ்வளவு காலத்திற்கு?",
+        "description": "another question"
     },
     "pm": {
         "message": "மாலை",
@@ -133,6 +271,10 @@
     "prev": {
         "message": "&larr; முன்"
     },
+    "prevMonth": {
+        "message": "முந்தைய மா<u>த</u>ம்",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
     "prevYear": {
         "message": "முந்திய",
         "description": "hold Shift and press left arrow key"
@@ -141,13 +283,13 @@
         "message": "முந்திய வருடத்தைக் கண்ணுற (Shift + Left) அம்புவிடையை அழுத்தவும்",
         "description": "hold Shift and press left arrow key"
     },
-    "rbDefLang_Local": {
-        "message": "தமிழ்",
-        "description": "put your language here, in your script"
-    },
     "rbDefLang_Ar": {
         "message": "அரபி",
         "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "தமிழ்",
+        "description": "put your language here, in your script"
     },
     "rbDefLangText": {
         "message": "திகதிகளுக்கான காட்சி மொழி",
@@ -238,116 +380,5 @@
     "reminderList_timeAbsolute": {
         "message": "{triggerTimeRawDisplay} இல் அறிவிக்கவும்",
         "description": "in list of defined reminders"
-    },
-    "KullishayLocal": {
-        "message": "அனைத்து-பொருட்கள்",
-        "description": "Transalation of Kull-i-Shay"
-    },
-    "midnight": {
-        "message": "நள்ளிரவு 12:00",
-        "description": "nice way to say midnight"
-    },
-    "messageBody": {
-        "message": "{triggerDisplayName} {desc}"
-    },
-    "pick_pageCal2": {
-        "message": "மாத பார்வை (தனிமங்கள்)",
-        "description": ""
-    },
-    "pick_pageCal3": {
-        "message": "மாத பார்வை (வாரங்கள்)",
-        "description": ""
-    },
-    "pick_pageCustom": {
-        "message": "தனிப்பயன்",
-        "description": "page tab name and page title"
-    },
-    "pick_pageExporter": {
-        "message": "ஏற்றுமதி",
-        "description": "page tab name and page title"
-    },
-    "pick_pagePlanner": {
-        "message": "திட்டமிடுபவர்",
-        "description": "tab"
-    },
-    "pick_pageReminders": {
-        "message": "நினைவூட்டல்கள்",
-        "description": "page tab name and page title"
-    },
-    "pick_pageSetup": {
-        "message": "அமைப்பு",
-        "description": "page for setup information"
-    },
-    "planFromWhen": {
-        "message": "எப்போதிலிருந்து தொடங்குவது?",
-        "description": "another input"
-    },
-    "planFromWhenNextYear": {
-        "message": "அடுத்த படீ' வருடத்தின் தொடக்கம்",
-        "description": "answer for planFromWhen"
-    },
-    "planFromWhenThisYear": {
-        "message": "இந்த படீ' வருடத்தின் தொடக்கம்",
-        "description": "answer for planFromWhen"
-    },
-    "planFromWhenToday": {
-        "message": "இன்று",
-        "description": "answer for planFromWhen"
-    },
-    "planIncludeWhat": {
-        "message": "நாள் அல்லது மாலையைச் சேர்க்கவா?",
-        "description": "include day or evening or both?"
-    },
-    "planIncludeWhatBoth": {
-        "message": "இரண்டும்",
-        "description": "answer to planIncludeWhat"
-    },
-    "planIncludeWhatDay": {
-        "message": "நாள்",
-        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
-    },
-    "planIncludeWhatEve": {
-        "message": "மாலை",
-        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
-    },
-    "plannerResults": {
-        "message": "முடிவுகள்",
-        "description": "title over results"
-    },
-    "plannerShowWhat": {
-        "message": "என்ன காட்ட வேண்டும்?",
-        "description": "First question in inputs"
-    },
-    "plannerStartSunsetForLocation": {
-        "message": "{0}இல் தொடங்கும் அஸ்தமனம்",
-        "description": "title in results table - sunset at location"
-    },
-    "plannerTitle": {
-        "message": "நீண்ட கால திட்டமிடுபவர்",
-        "description": "page title"
-    },
-    "plannerTitle2": {
-        "message": "திட்டமிடல் தேர்வு",
-        "description": "title over inputs"
-    },
-    "plannerWhatEvent": {
-        "message": "எது?",
-        "description": "which event or events?"
-    },
-    "plannerWhatManyEvents": {
-        "message": "பல புனித நாட்கள் மற்றும் விருந்துகள்",
-        "description": "answer to first question"
-    },
-    "plannerWhatOneEvent": {
-        "message": "ஒரு புனித நாள் அல்லது விருந்து",
-        "description": "answer to first question"
-    },
-    "planUntilUnitsYears": {
-        "message": "வருடங்கள்",
-        "description": "answer to planUntilWhen"
-    },
-    "planUntilWhen": {
-        "message": "எவ்வளவு காலத்திற்கு?",
-        "description": "another question"
     }
 }

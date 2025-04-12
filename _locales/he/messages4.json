@@ -264,7 +264,7 @@
         "message": "הצעות"
     },
     "suggestionsTitle": {
-        "message": "הקלד כאן הצעות לשיפור לוח השנה הזה"
+        "message": "אנא לחץ כאן והגש הצעות כלשהן לשיפור הרחבה זו!"
     },
     "textDirection": {
         "message": "rtl",
@@ -287,14 +287,7 @@
     "tipsText": {
         "message": "לחץ על מקשי PgUp/PgDn כדי לבחור פאנלים.\nלחץ על מקשי חץ ימינה/שמאלה כדי לשנות ימים.\nלחץ על / כדי להחליף לפני/אחרי שקיעה.\nלחץ על Home כדי לחזור להיום!"
     },
-    "title": {
-        "message": "לוח השנה הבהאי",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "מציג את התאריך הנוכחי בלוח השנה הבדיע (המופלא), לוח השנה הרשמי של האמונה הבהאית.",
-        "description": "Used in the manifest"
-    },
+
     "Tonight": {
         "message": "הערב",
         "description": "Shown in the upcoming dates area"

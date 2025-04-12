@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Badíʿ Kalender",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Toont de datum van vandaag in de Badíʿ (Wonderbaarlijke) kalender, de officiële kalender van het Bahá'í-geloof.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "over {0} dag",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
@@ -149,8 +157,20 @@
         "message": "Donkerdere kleuren (<u>c</u>)",
         "description": "a check box on the calendar. If checked, darker colors are used."
     },
+    "cal2ForPrint": {
+        "message": "Alle maanden bij <u>p</u>rinten",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
     "cal2ShowTimes": {
-        "message": "Zonsopgang/ondergang<u>t</u>tijden laten zien?",
+        "message": "Zonsopgang/ondergang<u>t</u>ijden laten zien?",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Alle maanden bij <u>p</u>rinten",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Zonsopgang/ondergang<u>t</u>ijden laten zien?",
         "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
     },
     "Chrome_History": {
@@ -174,26 +194,26 @@
         "description": "in wheel, points to today, or whatever day is currently selected"
     },
     "customBtnCopy": {
-        "message": "Copy"
+        "message": "Kopiëren"
     },
     "customBuilder": {
-        "message": "Build a Custom Date Format"
+        "message": "Maak een aangepast datumformaat"
     },
     "customBuilderEcho": {
-        "message": "Results (for currently selected day - see Tips & Keys to change day)"
+        "message": "Resultaten (voor de huidige geselecteerde dag - zie Tips & Toetsen om de dag te wijzigen)"
     },
     "customBuilderIntro": {
-        "message": "Type the format into this box. Click any 'Add' in the Available Date Parts to add that date part in the current location. Hints: 'frag1' = sunset to midnight; 'frag2' = midnight to sunset."
+        "message": "Typ het formaat in dit vak. <span class=customHint title='...NamePri = in primaire taal\n...NameSec = in secundaire taal\nfrag1... = zonsondergang tot middernacht\nfrag2... = middernacht tot zonsondergang'>(Bekijk hints)</span><br>Klik op een 'Toevoegen' knop in de Beschikbare Datumonderdelen om in te voegen op de huidige locatie."
     },
     "customDefined": {
-        "message": "Custom Date Formats"
+        "message": "Aangepaste datumformaten"
     },
     "customFormats": {
         "message": "Aangepaste formaten",
         "description": "in the list of formats at the bottom of of the 'Custom' page"
     },
     "customIntroClick": {
-        "message": "Click Copy to copy formatted date to the clipboard."
+        "message": "Klik op Kopiëren om de geformatteerde datum naar het klembord te kopiëren."
     },
     "customLoadDefaultToolTip": {
         "message": "Formaat gebruikt in de Chrome icoon-muishint:"
@@ -208,16 +228,16 @@
         "message": "Formaat om bovenaan de meeste pagina's te laten zien:"
     },
     "customLoadLetters": {
-        "message": "Click to start from a standard format: "
+        "message": "Klik om te beginnen met een standaardformaat: "
     },
     "customPartsList": {
-        "message": "Available Date Parts"
+        "message": "Beschikbare datumonderdelen"
     },
     "customSelectForFrontPage": {
-        "message": "Tick box to show on {0} page."
+        "message": "Vink aan om te tonen op de {0} pagina."
     },
     "customUseAsSample": {
-        "message": "Use as Sample?"
+        "message": "Gebruiken als voorbeeld?"
     },
     "dateHeading": {
         "message": "Dag",
@@ -295,51 +315,51 @@
         "message": "{bDay} {bMonthNamePri} {dayStartedLower} bij zonsondergang (ongeveer {startingSunsetDesc}) op {frag1WeekdayLong} {frag1Day} {frag1MonthShort} en {dayEndedLower} bij zonsondergang (ongeveer {endingSunsetDesc}) op {frag2WeekdayLong} {frag2Day} {frag2MonthShort}."
     },
     "exportAlert_B0": {
-        "message": "When it starts"
+        "message": "Wanneer het begint"
     },
     "exportAlert_B1": {
-        "message": "1 minute before"
+        "message": "1 minuut van tevoren"
     },
     "exportAlert_B10": {
-        "message": "10 minutes before"
+        "message": "10 minuten van tevoren"
     },
     "exportAlert_B15": {
-        "message": "15 minutes before"
+        "message": "15 minuten van tevoren"
     },
     "exportAlert_B30": {
-        "message": "30 minutes before"
+        "message": "30 minuten van tevoren"
     },
     "exportAlert_B5": {
-        "message": "5 minutes before"
+        "message": "5 minuten van tevoren"
     },
     "exportAlert_B60": {
-        "message": "60 minutes before"
+        "message": "60 minuten van tevoren"
     },
     "exportBadiYear0": {
-        "message": "Badíʿ year - {0} B.E."
+        "message": "Badíʿ jaar - {0} B.E."
     },
     "exportBadiYear1": {
-        "message": "Badíʿ year - {0} B.E."
+        "message": "Badíʿ jaar - {0} B.E."
     },
     "exportCalendarDescription": {
         "message": "Datums in de Badíʿ-kalender voor {location}",
         "description": "title on page"
     },
     "exportDayFromSunset": {
-        "message": "Start of {0}"
+        "message": "Begin van {0}"
     },
     "exporterDateRange": {
-        "message": "<u>R</u>ange of dates to Export (based on currently selected year)"
+        "message": "<u>B</u>ereik van te exporteren datums (gebaseerd op het huidige geselecteerde jaar)"
     },
     "exporterFastEnd": {
-        "message": "Fast Ends",
+        "message": "Vasten eindigt",
         "description": "when the fast ends at sunset"
     },
     "exporterFastStart": {
-        "message": "Fast Starts",
+        "message": "Vasten begint",
         "description": "when the fast starts at sunrise"
     },
     "exporterFastUntil": {
-        "message": "Fast until {endingSunsetDesc}"
+        "message": "Vasten tot {endingSunsetDesc}"
     }
 }

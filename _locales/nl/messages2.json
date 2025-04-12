@@ -1,14 +1,14 @@
 {
     "exporterItemDescDay": {
-        "message": "A day in the Badíʿ calendar.",
+        "message": "Een dag in de Badíʿ kalender.",
         "description": "Included as the description in every calendar entry"
     },
     "exporterItemDescFast": {
-        "message": "Times for the annual Bahá'í Fast.",
+        "message": "Tijden voor de jaarlijkse Bahá'í vasten.",
         "description": "Included as the description in every calendar entry"
     },
     "exporterItemDescGeneralTime": {
-        "message": "Gathering may start at any time on this Badíʿ day.",
+        "message": "Bijeenkomst kan op elk moment op deze Badíʿ dag beginnen.",
         "description": "For when a Holy Day as a particular time"
     },
     "exporterItemDescShared": {
@@ -24,44 +24,44 @@
         "description": "title on page"
     },
     "exportFile": {
-        "message": "Download iCalendar file (.ics)"
+        "message": "Download iCalendar bestand (.ics)"
     },
     "exportGregYear0": {
-        "message": "Gregorian year - {0} A.D."
+        "message": "Gregoriaans jaar - {0} n.Chr."
     },
     "exportGregYear1": {
-        "message": "Gregorian year - {0} A.D."
+        "message": "Gregoriaans jaar - {0} n.Chr."
     },
     "exportHideTest": {
-        "message": "Hide"
+        "message": "Verbergen"
     },
     "exportIncludeAlert": {
-        "message": "Add an alert to each event (may not load into Google calendar)"
+        "message": "Voeg een waarschuwing toe aan elke gebeurtenis (wordt mogelijk niet in Google agenda geladen)"
     },
     "exportIncludeLocation": {
-        "message": "Location Information"
+        "message": "Locatie-informatie"
     },
     "exportIntro": {
         "message": "Belangrijk! Kijk op <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">deze web pagina</a> voor informatie en waarschuwingen!",
         "description": "Be sure the URL remains in English, to find the webpage!"
     },
     "exportName": {
-        "message": "Title for Exported Calendar (may not be used)"
+        "message": "Titel voor geëxporteerde kalender (wordt mogelijk niet gebruikt)"
     },
     "exportNumToInclude": {
-        "message": "Number of calendar entries that will be created (approximately):"
+        "message": "Aantal kalenderitems dat wordt gemaakt (bij benadering):"
     },
     "exportOption_AllDay": {
-        "message": "All-day event from midnight <em>(1 day long)</em>"
+        "message": "Hele dag gebeurtenis vanaf middernacht <em>(1 dag lang)</em>"
     },
     "exportOption_BeginningSunset": {
-        "message": "At beginning sunset only"
+        "message": "Alleen bij begin zonsondergang"
     },
     "exportOption_Date": {
         "message": "Badíʿ-dagen <em>(365/366 dagen)</em>"
     },
     "exportOption_Fast": {
-        "message": "Fast Days <em>(19 days)</em>"
+        "message": "Vastendagen <em>(19 dagen)</em>"
     },
     "exportOption_Feast": {
         "message": "Feesten <em>(19-daags)</em>"
@@ -70,64 +70,67 @@
         "message": "Heilige dagen <em>(11 dagen)</em>"
     },
     "exportOption_Start": {
-        "message": "Event at designated observation time or usual meeting time"
+        "message": "Gebeurtenis op aangewezen herdenkingstijd of gebruikelijke vergadertijd"
     },
     "exportOption_Sun": {
-        "message": "From sunset to sunset <em>(about 24 hours)</em>"
+        "message": "Van zonsondergang tot zonsondergang <em>(ongeveer 24 uur)</em>"
     },
     "exportOption_Sunrise": {
-        "message": "At sunrise only"
+        "message": "Alleen bij zonsopgang"
     },
     "exportOption_SunriseToSunset": {
-        "message": "Event from sunrise to sunset <em>(about 12 hours)</em>"
+        "message": "Gebeurtenis van zonsopgang tot zonsondergang <em>(ongeveer 12 uur)</em>"
     },
     "exportOption_Sunset": {
-        "message": "At sunset only"
+        "message": "Alleen bij zonsondergang"
     },
     "exportOption_Usual": {
-        "message": "Event at usual meeting time (see Events page)"
+        "message": "Gebeurtenis op gebruikelijke vergadertijd (zie Gebeurtenissen pagina)"
     },
     "exportOtherSettings": {
-        "message": "Other Settings"
+        "message": "Andere instellingen"
     },
     "exportQuickDesc": {
-        "message": "Export each set, then load them all into the same calendar!"
+        "message": "Exporteer elke set en laad ze allemaal in dezelfde kalender!"
     },
     "exportQuickPick1": {
-        "message": "1. Full Calendar"
+        "message": "1. Volledige kalender"
     },
     "exportQuickPick1Text": {
-        "message": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
+        "message": "Toon elke Badíʿ dag, samen met heilige dagen en feesttijden. Geen waarschuwingen."
     },
     "exportQuickPick2": {
-        "message": "2. Fast Time - Morning"
+        "message": "2. Vastentijd - Ochtend"
     },
     "exportQuickPick2Text": {
-        "message": "Sunrise, with an alert just before it."
+        "message": "Zonsopgang, met een waarschuwing vlak ervoor."
     },
     "exportQuickPick3": {
-        "message": "3. Fast Time - Evening"
+        "message": "3. Vastentijd - Avond"
     },
     "exportQuickPick3Text": {
-        "message": "Sunset, with an alert."
+        "message": "Zonsondergang, met een waarschuwing."
     },
     "exportQuickPickClearText": {
-        "message": "Reset options"
+        "message": "Reset opties"
     },
     "exportQuickPicks": {
-        "message": "Recommended sets of Events"
+        "message": "Aanbevolen sets gebeurtenissen"
     },
     "exportRangeFullRange": {
-        "message": "Export all calendar entries. (If not checked, only export a sample set.)"
+        "message": "Exporteer alle kalenderitems. (Indien niet aangevinkt, wordt alleen een voorbeeldset geëxporteerd.)"
     },
     "exportTest": {
-        "message": "Display for copying"
+        "message": "We<u>e</u>rgeven om te kopiëren"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
     },
     "exportWhatTitle": {
-        "message": "Select what should be exported."
+        "message": "Selecteer wat geëxporteerd moet worden."
     },
     "exportWhatToInclude": {
-        "message": "Options"
+        "message": "Opties"
     },
     "facebook": {
         "message": "Facebook",

@@ -5,14 +5,7 @@
     "KullishayFormat": {
         "message": "{bKullishay}"
     },
-    "KullishayLabelPri": {
-        "message": "Кулл-и-Шай'",
-        "description": "Label for Kull-i-Shay in primary language"
-    },
-    "KullishayLabelSec": {
-        "message": "Kull-i-Shay'",
-        "description": "Label for Kull-i-Shay in secondary language"
-    },
+
     "KullishayLocal": {
         "message": "всё сущее",
         "description": "Transalation of Kull-i-Shay"

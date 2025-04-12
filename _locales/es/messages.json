@@ -8,7 +8,7 @@
         "description": "Used in the manifest"
     },
     "1day": {
-        "message": "en {0} dia",
+        "message": "en {0} día",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
     },
     "actionSpeakDesc": {
@@ -27,7 +27,7 @@
         "description": "on List page - table heading"
     },
     "ayyamIs0": {
-        "message": "(Y M D) 0 = Ayyám-i-Há",
+        "message": "(Y M D) 0=Ayyám-i-Há",
         "description": "(updated) in Badi date picker area"
     },
     "bDatePickerTitle": {
@@ -38,7 +38,7 @@
         "message": "dia - antes del ocaso"
     },
     "bMonthMeaning": {
-        "message": "Dias intercalares,Esplendor,Gloria,Belleza,Grandeza,Luz,Misericordia,palabras,Perfecion,Nombres,fuerza,voluntad,concimiento,Poder,discurso,pregunta,Honor,Soverania,Dominio,sublimidad",
+        "message": "Días Intercalares,Esplendor,Gloria,Belleza,Grandeza,Luz,Misericordia,Palabras,Perfección,Nombres,Fuerza,Voluntad,Conocimiento,Poder,Discurso,Preguntas,Honor,Soberanía,Dominio,Sublimidad",
         "description": "Names of days/months, with first one being Ayyam-i-ha"
     },
     "bMonthNameAr": {
@@ -65,13 +65,13 @@
         "message": "Cancelar / Nuevo"
     },
     "btnEveOrDay": {
-        "message": "antes y despues / de la puesta del sol"
+        "message": "Antes/Después del ocaso"
     },
     "btnJumpTo": {
         "message": "ir"
     },
     "btnJumpToTitle": {
-        "message": "regresar or avanzar de acuerdo al nuero de dias",
+        "message": "Avanzar o retroceder según el número de días",
         "description": "tooltip"
     },
     "btnPlannerExportCsv": {
@@ -146,7 +146,7 @@
         "description": "weekday names, with leading , "
     },
     "bYearInVahidMeaning": {
-        "message": ",A,B,Padre,D,portal,V,Eternidad,Generosidad,Esplendor,amor,Delicia,respuesta,unico,Benevolente,Affecto,principio,Luminoso,Mas Luminoso,Unidad",
+        "message": ",A,B,Padre,D,Portal,V,Eternidad,Generosidad,Esplendor,Amor,Delicia,Respuesta,Único,Benevolente,Afecto,Principio,Luminoso,Más Luminoso,Unidad",
         "description": "Vahid names, with leading , "
     },
     "bYearInVahidNameAr": {
@@ -273,7 +273,7 @@
         "message": "Era Bahá'í"
     },
     "eraShort": {
-        "message": "Ser"
+        "message": "EB"
     },
     "eventTime": {
         "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
@@ -292,7 +292,7 @@
         "description": "show start time in Events listing"
     },
     "example2": {
-        "message": "{bMonthNamePri} {bDay} {dayStartedLower} al caer el sol (mas o menos {startingSunsetDesc}) el {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} y {dayEndedLower} al atardecer (mas o menos {endingSunsetDesc}) el  {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} al atardecer (aproximadamente {startingSunsetDesc}) el {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} y {dayEndedLower} al atardecer (aproximadamente {endingSunsetDesc}) el {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
     },
     "exportAlert_B0": {
         "message": "Cuando comienza"
@@ -329,7 +329,7 @@
         "message": "Inicio de {0}"
     },
     "exporterDateRange": {
-        "message": "Rango de fechas para exportar (basado en el año actualmente seleccionado)"
+        "message": "Rango de fechas para <u>e</u>xportar (basado en el año actualmente seleccionado)"
     },
     "exporterFastEnd": {
         "message": "Fin del ayuno",
@@ -351,7 +351,7 @@
         "description": "a check box on the calendar. If checked, formating is improved for printing."
     },
     "cal2ShowTimes": {
-        "message": "Mostrar <u>h</u>orarios",
+        "message": "Mostrar <u>H</u>orarios",
         "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
     },
     "cal3ForPrint": {
@@ -359,7 +359,27 @@
         "description": "a check box on the calendar. If checked, formating is improved for printing."
     },
     "cal3ShowTimes": {
-        "message": "Mostrar <u>h</u>orarios",
+        "message": "Mostrar <u>H</u>orarios",
         "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "iftttEvent": {
+        "message": "Nombre del evento IFTTT",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Para obtener detalles o registrarse, consulte <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>Canal IFTTT Maker</a>. El evento contendrá estos campos: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "Clave del canal IFTTT Maker",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "inputLat": {
+        "message": "Latitud:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Longitud:",
+        "description": "on setup page"
     }
 }

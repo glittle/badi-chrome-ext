@@ -99,7 +99,7 @@
         "description": "x,1,2,3"
     },
     "ordinalNames": {
-        "message": "ראשון,שני,שלישי,רביעי,חמישי,שישי,שביעי,שמיני,תשיעי,עשירי,אחד עשר,שנים עשר,שלושה עשר,ארבעה עשר,חמישה עשר,שישה עשר,שבעה עשר,שמונה עשר,תשעה עשר"
+        "message": ",ראשון,שני,שלישי,רביעי,חמישי,שישי,שביעי,שמיני,תשיעי,עשירי,אחד עשר,שנים עשר,שלושה עשר,ארבעה עשר,חמישה עשר,שישה עשר,שבעה עשר,שמונה עשר,תשעה עשר"
     },
     "otherDays": {
         "message": "בעוד {0} ימים",
@@ -260,6 +260,18 @@
     },
     "prev": {
         "message": "&larr; הקודם"
+    },
+    "prevMonth": {
+        "message": "חודש <u>ק</u>ודם",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "שנה קודמת",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "לחץ Shift + חץ שמאלה לצפייה בשנה הקודמת",
+        "description": "hold Shift and press left arrow key"
     },
     "rbDefLang_Ar": {
         "message": "ערבית",

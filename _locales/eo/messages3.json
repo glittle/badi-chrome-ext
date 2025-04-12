@@ -9,16 +9,6 @@
         "message": "Ĉio",
         "description": "Transalation of Kull-i-Shay"
     },
-    "messageBody": {
-        "message": "{triggerDisplayName} {desc}"
-    },
-    "midnight": {
-        "message": "00:00 meznokto",
-        "description": "nice way to say midnight"
-    },
-    "Month": {
-        "message": "Monato"
-    },
     "locationError": {
         "message": "Ne eblas determini vian nunan lokon.\n\nLa etendaĵo uzos 18:30 por sunsubiro je ĉiu dato.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -30,6 +20,16 @@
     "meaning": {
         "message": "Signifo",
         "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "00:00 meznokto",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Monato"
     },
     "MonthFormatAyyam": {
         "message": "{bMonthNamePri} ({bMonthNameSec})"
@@ -70,6 +70,10 @@
         "message": "(Nekonata Loko - 18:30 sunsubiro-horoj)",
         "description": "If the system does not know the location of this computer."
     },
+    "noLocationName": {
+        "message": "(Nuna loko)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
     "noon": {
         "message": "12:00 tagmezo",
         "description": "nice way to say noon"
@@ -78,10 +82,6 @@
         "message": "Aldoni Ekzemplajn Memorigojn",
         "description": "shown if there are no reminders"
     },
-    "noLocationName": {
-        "message": "(Nuna loko)",
-        "description": "If the internet is not available, to get the name of the current location."
-    },
     "Now": {
         "message": "Nun",
         "description": "Shown in the upcoming dates area"
@@ -89,6 +89,10 @@
     "num": {
         "message": "#",
         "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
     },
     "ordinal": {
         "message": "a,a,a,a",
@@ -105,8 +109,14 @@
         "message": "komenciĝis je {time}",
         "description": "shown after midnight of the day"
     },
+    "past_Delta": {
+        "message": "estis antaŭ {numUnits}"
+    },
     "past_DeltaTime": {
         "message": "estis antaŭ {numUnits} je {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "komenciĝis antaŭ {numUnits} je {time}"
     },
     "past_StartTime": {
         "message": "komenciĝis je {time}"
@@ -175,12 +185,6 @@
     "planFromWhenThisYear": {
         "message": "Komenco de ĉi tiu Badíʿ-jaro",
         "description": "answer for planFromWhen"
-    },
-    "past_Delta": {
-        "message": "estis antaŭ {numUnits}"
-    },
-    "past_StartDeltaTime": {
-        "message": "komenciĝis antaŭ {numUnits} je {time}"
     },
     "planFromWhenToday": {
         "message": "Hodiaŭ",
@@ -289,8 +293,21 @@
         "message": "neniu",
         "description": "in dropdown list, for when no other action is chosen"
     },
-    "reminderBefore": {
-        "message": "antaŭ"
+    "reminderAction_ifttt": {
+        "message": "lanĉi IFTTT recepton",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "legi laŭte",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "lanĉi Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Aldoni/Redakti Memorigon",
+        "description": "title on left side"
     },
     "reminderAfter": {
         "message": "post"
@@ -302,6 +319,9 @@
     "reminderBDay": {
         "message": "Tago {num} de la Badíʿ-monato",
         "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "antaŭ"
     },
     "reminderCalcType": {
         "message": "Montri memorigon {calcTypeInput}",
@@ -350,9 +370,5 @@
     "reminderList_timeAbsolute": {
         "message": "anonci je {triggerTimeRawDisplay}",
         "description": "in list of defined reminders"
-    },
-    "reminderAction_ifttt": {
-        "message": "lanĉi IFTTT recepton",
-        "description": "in dropdown list, to choose to use IFTTT"
     }
 }

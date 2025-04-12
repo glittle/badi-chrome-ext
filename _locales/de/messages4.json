@@ -279,10 +279,6 @@
     "tipsText": {
         "message": "Bild hoch/Bild runter um Unterseite auszuwählen.\nPfeil rechts/links um das Datum zu ändern.\n\"/\" um zwischen vor und nach Sonnenuntergang umzustellen.\nPos 1 um zum heutigen Tag zurückzuschalten!"
     },
-    "title": {
-        "message": "Badíʿ Kalender",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
     "textDirection": {
         "message": "ltr",
         "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
@@ -290,10 +286,6 @@
     "timeFormat12": {
         "message": "{time} {ampm}",
         "description": "used when use24HourClock is set to false"
-    },
-    "titleDesc": {
-        "message": "Zeigt das heutige Datum im Badíʿ Kalender, dem offiziellen Kalender der Bahá'í-Religion, an.",
-        "description": "Used in the manifest"
     },
     "Tonight": {
         "message": "Heute nacht",

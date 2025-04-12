@@ -150,12 +150,43 @@
     "FestivalRidvan": {
         "message": "ரித்வான் திருவிழா"
     },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "(மேலும் விவரங்களுக்குச் சொடுக்கவும்)"
     },
     "formatIconToolTip": {
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "{time}இல் தொடங்குகிறது",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "{numUnits}இல் இருக்கும்"
+    },
+    "future_DeltaTime": {
+        "message": "{numUnits}இல் {time}க்கு இருக்கும்"
+    },
+    "future_StartDeltaTime": {
+        "message": "{numUnits}இல் {time}க்கு தொடங்கும்"
+    },
+    "future_StartTime": {
+        "message": "{time}க்கு தொடங்கும்"
+    },
+    "future_Time": {
+        "message": "{time}க்கு இருக்கும்"
     },
     "gCombined_1": {
         "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
@@ -277,6 +308,14 @@
         "message": "காட்டு",
         "description": "choosing what to include in the listing"
     },
+    "inputLat": {
+        "message": "அட்சரேகை:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "தீர்க்கரேகை:",
+        "description": "on setup page"
+    },
     "Intercalary": {
         "message": "உபரி நாள்கள்"
     },
@@ -287,47 +326,5 @@
     "keyToOpenInTab": {
         "message": "T",
         "description": "Press Shift+(this letter) to open into a tab"
-    },
-    "Firefox_History": {
-        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-        "description": "about page"
-    },
-    "Firefox_WebStore": {
-        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-        "description": "link to Webstore when running in Firefox"
-    },
-    "Firefox_WebStoreSupport": {
-        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-        "description": "link to Webstore support link when running in Firefox"
-    },
-    "formatIconClick": {
-        "message": "(மேலும் விவரங்களுக்குச் சொடுக்கவும்)"
-    },
-    "future_Day": {
-        "message": "{time}இல் தொடங்குகிறது",
-        "description": "shown in the eve of the day"
-    },
-    "future_Delta": {
-        "message": "{numUnits}இல் இருக்கும்"
-    },
-    "future_DeltaTime": {
-        "message": "{numUnits}இல் {time}க்கு இருக்கும்"
-    },
-    "future_StartDeltaTime": {
-        "message": "{numUnits}இல் {time}க்கு தொடங்கும்"
-    },
-    "future_StartTime": {
-        "message": "{time}க்கு தொடங்கும்"
-    },
-    "future_Time": {
-        "message": "{time}க்கு இருக்கும்"
-    },
-    "nextMonth": {
-        "message": "அடுத்த <u>மா</u>தம்",
-        "description": "button to move to next month (gregorian or badi)"
-    },
-    "prevMonth": {
-        "message": "முந்தைய மா<u>த</u>ம்",
-        "description": "button to move to previous month (gregorian or badi)"
     }
 }

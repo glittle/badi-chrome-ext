@@ -42,7 +42,7 @@
         "description": "Names of days/months, with first one being Ayyam-i-ha"
     },
     "bMonthNameAr": {
-        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá',`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá'",
         "description": "month names, start with Ayyam-i-Ha"
     },
     "browserActionTitle": {
@@ -142,12 +142,16 @@
         "description": "start with Saturday and a leading comma"
     },
     "bWeekdayNameAr": {
-        "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,'Idál,Istijlál,Istiqlál",
         "description": "weekday names, with leading , "
     },
     "bYearInVahidMeaning": {
         "message": ",அ,ப,தந்தை,ட,வாசல்,வ,நித்தியம்,வள்ளன்மை,பேரொளி,அன்பு,மகிழ்ச்சிகரமான,பதில்,தனி,அபரிமிதம்,பாசம்,ஆரம்பம்,ஒளிர்வு,அதி ஒளிர்வு,ஒற்றுமை",
         "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá',Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
     },
     "cal2DarkerColors": {
         "message": "அடர் <u>நி</u>றங்கள்",
@@ -168,6 +172,18 @@
     "cal3ShowTimes": {
         "message": "<u>நே</u>ரங்களைக் காட்டு",
         "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
     },
     "copied": {
         "message": "நகலெடுக்கப்பட்டுள்ளது!",
@@ -332,20 +348,20 @@
     "exportDayFromSunset": {
         "message": "{0} ஆரம்பம்"
     },
-    "bYearInVahidNameAr": {
-        "message": ",Alif,Bá',Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
-        "description": "Arabic names of years in a Vahid, with leading , "
+    "exporterDateRange": {
+        "message": "ஏற்றுமதி செய்ய வேண்டிய திகதிகளின் <u>வ</u>ரம்பு (தற்போது தேர்ந்தெடுக்கப்பட்ட ஆண்டின் அடிப்படையில்)",
+        "description": ""
     },
-    "Chrome_History": {
-        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-        "description": "about page"
+    "exporterFastEnd": {
+        "message": "நோன்பு முடிவு",
+        "description": "when the fast ends at sunset"
     },
-    "Chrome_WebStore": {
-        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
-        "description": "link to Webstore when running in Chrome"
+    "exporterFastStart": {
+        "message": "நோன்பு ஆரம்பம்",
+        "description": "when the fast starts at sunrise"
     },
-    "Chrome_WebStoreSupport": {
-        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
-        "description": "link to Webstore support link when running in Chrome"
+    "exporterFastUntil": {
+        "message": "{endingSunsetDesc} வரை நோன்பு",
+        "description": ""
     }
 }

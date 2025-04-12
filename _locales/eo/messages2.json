@@ -117,6 +117,21 @@
     "exportQuickPicks": {
         "message": "Rekomendata aro da eventoj"
     },
+    "exportRangeFullRange": {
+        "message": "Eksporti ĉiujn kalendaro-enskribojn. (Se ne markita, nur eksportu ekzemplon.)"
+    },
+    "exportTest": {
+        "message": "Vi<u>d</u>igi por kopiado"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Elektu kion eksporti."
+    },
+    "exportWhatToInclude": {
+        "message": "Opcioj"
+    },
     "facebook": {
         "message": "Facebook",
         "description": "ALT for icon at bottom of page"
@@ -135,9 +150,17 @@
     "FestivalRidvan": {
         "message": "Festivalo de Ridván"
     },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
     "Firefox_WebStore": {
         "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
         "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
     },
     "formatIconClick": {
         "message": "(klaku por detaloj)"
@@ -150,13 +173,54 @@
         "message": "komenciĝas je {time}",
         "description": "shown in the eve of the day"
     },
+    "future_Delta": {
+        "message": "estos post {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "estos post {numUnits} je {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "komenciĝos post {numUnits} je {time}"
+    },
+    "future_StartTime": {
+        "message": "komenciĝos je {time}"
+    },
+    "future_Time": {
+        "message": "estos je {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
     "gCombined_2": {
         "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
         "description": "day spanning different gregorian months"
     },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
     "gCombinedY_1": {
         "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
         "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregoria Dato"
+    },
+    "gDatePickerTitle2": {
+        "message": "Iri al <u>G</u>regoria Dato",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
     },
     "gMonthLong": {
         "message": "januaro,februaro,marto,aprilo,majo,junio,julio,aŭgusto,septembro,oktobro,novembro,decembro"
@@ -164,12 +228,28 @@
     "gMonthShort": {
         "message": "jan,feb,mar,apr,maj,jun,jul,aŭg,sep,okt,nov,dec"
     },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
     "gotoNow": {
         "message": "Nun"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
     },
     "gTopDayDisplay": {
         "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
         "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "dimanĉo,lundo,mardo,merkredo,ĵaŭdo,vendredo,sabato",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "dim,lun,mar,mer,ĵaŭ,ven,sab",
+        "description": "start with Sun"
     },
     "HolyDay_AscAbdul": {
         "message": "Forpaso de `Abdu'l-Bahá"
@@ -216,13 +296,13 @@
         "message": "Manlibra",
         "description": "Label for manual icon color option"
     },
-    "iftttInfo": {
-        "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
-        "description": "info and link to ifttt page"
-    },
     "iftttEvent": {
         "message": "IFTTT Evento-Nomo",
         "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Por detaloj aŭ por aliĝi, vidu <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. La evento enhavos la sekvajn kampojn: title, body, tag",
+        "description": "info and link to ifttt page"
     },
     "iftttKey": {
         "message": "IFTTT Maker Channel Ŝlosilo",
@@ -258,77 +338,5 @@
     "keyToOpenInTab": {
         "message": "T",
         "description": "Press Shift+(this letter) to open into a tab"
-    },
-    "exportRangeFullRange": {
-        "message": "Eksporti ĉiujn kalendaro-enskribojn. (Se ne markita, nur eksportu ekzemplon.)"
-    },
-    "exportTest": {
-        "message": "Vi<u>d</u>igi por kopiado"
-    },
-    "exportTestCsv": {
-        "message": "CSV"
-    },
-    "exportWhatTitle": {
-        "message": "Elektu kion eksporti."
-    },
-    "exportWhatToInclude": {
-        "message": "Opcioj"
-    },
-    "Firefox_History": {
-        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-        "description": "about page"
-    },
-    "Firefox_WebStoreSupport": {
-        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-        "description": "link to Webstore support link when running in Firefox"
-    },
-    "future_Delta": {
-        "message": "estos post {numUnits}"
-    },
-    "future_DeltaTime": {
-        "message": "estos post {numUnits} je {time}"
-    },
-    "future_StartDeltaTime": {
-        "message": "komenciĝos post {numUnits} je {time}"
-    },
-    "future_StartTime": {
-        "message": "komenciĝos je {time}"
-    },
-    "future_Time": {
-        "message": "estos je {time}"
-    },
-    "gCombined_1": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
-        "description": "day in same gregorian month"
-    },
-    "gCombined_3": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
-        "description": "day spanning different gregorian years"
-    },
-    "gCombinedY_2": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
-        "description": "with year"
-    },
-    "gCombinedY_3": {
-        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
-        "description": "with year"
-    },
-    "gDatePickerTitle": {
-        "message": "Gregoria Dato"
-    },
-    "gDatePickerTitle2": {
-        "message": "Iri al <u>G</u>regoria Dato",
-        "description": "changed in 1.1.2"
-    },
-    "gMonthDayYear": {
-        "message": "{bMonthNamePri} {bDay}, {bYear}"
-    },
-    "googlePlus": {
-        "message": "Google+",
-        "description": "ALT for icon at bottom of page"
-    },
-    "gregorianDateDisplay": {
-        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
-        "description": "in left panel"
     }
 }

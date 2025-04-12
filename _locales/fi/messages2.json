@@ -19,6 +19,123 @@
         "message": "{SpecialTime}.",
         "description": "For when a Holy Day as a particular time"
     },
+    "exporterTitle": {
+        "message": "Badíʿ-kalenterin vienti",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Lataa iCalendar-tiedosto (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoriaaninen vuosi - {0} jKr."
+    },
+    "exportGregYear1": {
+        "message": "Gregoriaaninen vuosi - {0} jKr."
+    },
+    "exportHideTest": {
+        "message": "Piilota"
+    },
+    "exportIncludeAlert": {
+        "message": "Lisää hälytys jokaiseen tapahtumaan (ei välttämättä lataudu Google-kalenteriin)"
+    },
+    "exportIncludeLocation": {
+        "message": "Sijaintitiedot"
+    },
+    "exportIntro": {
+        "message": "Tärkeää! Katso <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">tämä verkkosivu</a> saadaksesi tietoa ja varoituksia!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Viedyn kalenterin otsikko (ei välttämättä käytetä)"
+    },
+    "exportNumToInclude": {
+        "message": "Kalenterimerkintöjen määrä (noin):"
+    },
+    "exportOption_AllDay": {
+        "message": "Kokopäivän tapahtuma keskiyöstä <em>(1 päivä)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Vain alkavan päivän auringonlaskussa"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-päivät <em>(365/366 päivää)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Paastopäivät <em>(19 päivää)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Juhlat <em>(19 päivää)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Pyhät päivät <em>(11 päivää)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Tapahtuma määrätyllä havaintoajalla tai tavallisella kokoontumisajalla"
+    },
+    "exportOption_Sun": {
+        "message": "Auringonlaskusta auringonlaskuun <em>(noin 24 tuntia)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Vain auringonnousussa"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Tapahtuma auringonnoususta auringonlaskuun <em>(noin 12 tuntia)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Vain auringonlaskussa"
+    },
+    "exportOption_Usual": {
+        "message": "Tapahtuma tavalliseen kokoontumisaikaan (katso Tapahtumat-sivu)"
+    },
+    "exportOtherSettings": {
+        "message": "Muut asetukset"
+    },
+    "exportQuickDesc": {
+        "message": "Vie jokainen sarja, ja lataa ne kaikki samaan kalenteriin!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Täysi kalenteri"
+    },
+    "exportQuickPick1Text": {
+        "message": "Näytä jokainen Badíʿ-päivä, sekä pyhät päivät ja juhla-ajat. Ei hälytyksiä."
+    },
+    "exportQuickPick2": {
+        "message": "2. Paastoaika - Aamu"
+    },
+    "exportQuickPick2Text": {
+        "message": "Auringonnousu, hälytyksellä juuri ennen sitä."
+    },
+    "exportQuickPick3": {
+        "message": "3. Paastoaika - Ilta"
+    },
+    "exportQuickPick3Text": {
+        "message": "Auringonlasku, hälytyksellä."
+    },
+    "exportQuickPickClearText": {
+        "message": "Nollaa valinnat"
+    },
+    "exportQuickPicks": {
+        "message": "Suositellut tapahtumasarjat"
+    },
+    "exportRangeFullRange": {
+        "message": "Vie kaikki kalenterimerkinnät. (Jos ei valittu, vie vain näytesarja.)"
+    },
+    "exportTest": {
+        "message": "Näytä kopiointia varten"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Valitse mitä viedään."
+    },
+    "exportWhatToInclude": {
+        "message": "Valinnat"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
     "fastDaysTitle": {
         "message": "Paastoajat vuonna {bYear}"
     },
@@ -37,6 +154,14 @@
         "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
         "description": "about page"
     },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "(napsauta lisätietoja varten)"
     },
@@ -44,11 +169,58 @@
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
     },
+    "future_Day": {
+        "message": "alkaa klo {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "on {numUnits} kuluttua"
+    },
+    "future_DeltaTime": {
+        "message": "on {numUnits} kuluttua klo {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "alkaa {numUnits} kuluttua klo {time}"
+    },
+    "future_StartTime": {
+        "message": "alkaa klo {time}"
+    },
     "future_Time": {
         "message": "on klo {time}"
     },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
     "gDatePickerTitle": {
         "message": "Gregoriaaninen päivämäärä"
+    },
+    "gDatePickerTitle2": {
+        "message": "Siirry <u>g</u>regoriaaniseen päivämäärään",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
     },
     "gMonthLong": {
         "message": "Tammi,Helmi,Maalis,Huhti,Touko,Kesä,Heinä,Elo,Syys,Loka,Marras,Joulu"
@@ -67,6 +239,10 @@
         "message": "{currentWeekdayLong}, {currentDay}. {currentMonthLong}ta {currentYear}",
         "description": "in left panel"
     },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
     "gWeekdayLong": {
         "message": "Sunnuntai,Maanantai,Tiistai,Keskiviikko,Torstai,Perjantai,Lauantai",
         "description": "start with Sunday"
@@ -79,13 +255,13 @@
         "message": "Abdu'l Baháin poismenon muistopäivä"
     },
     "HolyDay_AscBaha": {
-        "message": "Bahá’u'llahin poismenon muistopäivä"
+        "message": "Bahá'u'llahin poismenon muistopäivä"
     },
     "HolyDay_BirthBab": {
         "message": "Babin syntymäpäivä"
     },
     "HolyDay_BirthBaha": {
-        "message": "Bahá’u'llahin syntymäpäivä"
+        "message": "Bahá'u'llahin syntymäpäivä"
     },
     "HolyDay_Covenant": {
         "message": "Liiton päivä"
@@ -120,9 +296,6 @@
         "message": "Manuaalinen",
         "description": "Label for manual icon color option"
     },
-    "Intercalary": {
-        "message": "Hán päivät"
-    },
     "iftttEvent": {
         "message": "IFTTT-tapahtuman nimi",
         "description": "name of 'Event' for IFTTT Maker channel"
@@ -155,6 +328,9 @@
         "message": "Pituusaste:",
         "description": "on setup page"
     },
+    "Intercalary": {
+        "message": "Hán päivät"
+    },
     "jumpTo": {
         "message": "<u>S</u>iirry ± päivää",
         "description": "user can enter a day after/before currently selected day"
@@ -162,64 +338,5 @@
     "keyToOpenInTab": {
         "message": "T",
         "description": "Press Shift+(this letter) to open into a tab"
-    },
-    "Firefox_WebStore": {
-        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-        "description": "link to Webstore when running in Firefox"
-    },
-    "Firefox_WebStoreSupport": {
-        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
-        "description": "link to Webstore support link when running in Firefox"
-    },
-    "future_Day": {
-        "message": "alkaa klo {time}",
-        "description": "shown in the eve of the day"
-    },
-    "future_Delta": {
-        "message": "on {numUnits} kuluttua"
-    },
-    "future_DeltaTime": {
-        "message": "on {numUnits} kuluttua klo {time}"
-    },
-    "future_StartDeltaTime": {
-        "message": "alkaa {numUnits} kuluttua klo {time}"
-    },
-    "future_StartTime": {
-        "message": "alkaa klo {time}"
-    },
-    "gCombined_1": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
-        "description": "day in same gregorian month"
-    },
-    "gCombined_2": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
-        "description": "day spanning different gregorian months"
-    },
-    "gCombined_3": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
-        "description": "day spanning different gregorian years"
-    },
-    "gCombinedY_1": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
-        "description": "with year"
-    },
-    "gCombinedY_2": {
-        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
-        "description": "with year"
-    },
-    "gCombinedY_3": {
-        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
-        "description": "with year"
-    },
-    "gDatePickerTitle2": {
-        "message": "Siirry <u>g</u>regoriaaniseen päivämäärään",
-        "description": "changed in 1.1.2"
-    },
-    "gMonthDayYear": {
-        "message": "{bMonthNamePri} {bDay}, {bYear}"
-    },
-    "gTopDayDisplay": {
-        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
-        "description": "top right corner"
     }
 }

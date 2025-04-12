@@ -109,12 +109,103 @@
         "message": "நிகழ்வு",
         "description": "in front of the trigger selector"
     },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>இந்த வலை விரிவாக்கம் நீங்கள் இருக்கும் இடத்திற்கு உள்ளூர் படீ' நாள்காட்டி பற்றிய தற்போதைய தகவல்களை வழங்க வடிவமைக்கப்பட்டுள்ளது.</p><p>மேலும் தகவலுக்கு, கீழே உள்ள 'பதிப்பு' இணைப்பை அல்லது ஏதேனும் சின்னங்களைக் கிளிக் செய்யவும்!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "பற்றி",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "கருவிப்பட்டை சின்னத்திற்கான உரை நிறம்:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "சின்ன நிறம்",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "மொழி",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% மொழிபெயர்க்கப்பட்டது. <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>நீங்கள் உதவ முடியுமா</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% மொழிபெயர்க்கப்பட்டது!"
+    },
+    "setupOptOut": {
+        "message": "விலகுவதா?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "இந்த வலை விரிவாக்கம் எவ்வாறு பயன்படுத்தப்படுகிறது என்பதைப் புரிந்துகொள்ள உதவ, நீங்கள் பக்கங்களுக்கு இடையே மாறும்போது அல்லது பிற முக்கிய செயல்களைச் செய்யும்போது புள்ளிவிவரங்கள் பதிவு செய்யப்படுகின்றன. இது அநாமதேயமானது, மற்றும் தொடர்புடைய அறிக்கைகளை கிளென் லிட்டில் பார்க்க முடியும். நீங்கள் விலக விரும்பினால் இதை அணைக்க, இந்த பெட்டியை தேர்வு செய்யலாம்:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "பகுப்பாய்வு",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
     "shoghiExample": {
         "message": "இது {bWeekdayNamePri} வாரநாள், {bDayNamePri} மாதநாள், {bMonthNamePri} மாதம், {bYearInVahidNamePri} வருடம், {bVahidOrdinalName} வஹீட், {bKullishayOrdinalName} குல்-இ-ஷே.",
         "description": "Example given by Shoghi Effendi"
     },
     "shortcutKeyTitle": {
-        "message": "குரோம் உலவியில் எங்கிலுமிருந்து படீ’ நாள்காட்டியைத் திறக்க இவ்விசையை சொடுக்கவும்"
+        "message": "குரோம் உலவியில் எங்கிலுமிருந்து படீ' நாள்காட்டியைத் திறக்க இவ்விசையை சொடுக்கவும்"
     },
     "showPointer": {
         "message": "சுட்டியைக் காட்டு"
@@ -142,8 +233,13 @@
         "message": "அஸ்தமனத்திற்குப் பிறகு சுமார் 2 மணி நேரம் கழித்து",
         "description": "Declaration of the Bab"
     },
+    "standardFormats": {
+        "message": "நிலையான வடிவமைப்புகள்",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
     "startedWithSunset": {
-        "message": "உதயத்தில் {0} ஆரம்பம்"
+        "message": "அஸ்தமனத்தில் {0} ஆரம்பித்தது",
+        "description": ""
     },
     "startTimeOption": {
         "message": "வழக்கமாக ஒன்றுகூடும் நேரம்: ",
@@ -171,6 +267,10 @@
         "message": "பணி விடுப்பு",
         "description": "heading in Events listing"
     },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
     "timeFormat12": {
         "message": "{ampm} {time}",
         "description": "used when use24HourClock is set to false"
@@ -179,16 +279,16 @@
         "message": "உதவிக்கு",
         "description": "hints of how to use the tool"
     },
+    "tipsAbout": {
+        "message": "துல்லியம்?",
+        "description": ""
+    },
+    "tipsAboutText": {
+        "message": "221 ப.யு. (2064 கி.பி.) வரையிலான திகதிகள் அறியப்படுகின்றன. அதற்குப் பிறகு, வானியல் அவதானிப்புகள் மேம்படும்போது புதுப்பிப்புகள் தேவைப்படலாம். 50 ஆண்டுகளுக்கு மேல் எதிர்காலத்தில் உங்கள் திட்டங்களை முடிவு செய்ய இதைப் பயன்படுத்த வேண்டாம்! மேலும் விவரங்களுக்கு இணையதளத்தைப் பார்க்கவும்.",
+        "description": ""
+    },
     "tipsText": {
         "message": "பலகத்தைத் தேர்வு செய்ய பக்.மேல்/பக்.கீழ் விசைகளைப் பயன்படுத்துக. \nநாள்களை மாற்ற வலம்/இடம் அம்புவிசைகளைப் பயன்படுத்துக.அஸ்தமனத்திற்கு முன்/பின் \n / அம்புவிசைகளைப் பயன்படுத்துக."
-    },
-    "title": {
-        "message": "படீ' நாள்காட்டி",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "பஹாய் சமயத்தின் அதிகாரபூர்வ நாள்காட்டியான, படீ’ நாள்காட்டி இன்றைய திகதியைக் காண்பிக்கின்றது.",
-        "description": "Used in the manifest"
     },
     "Tonight": {
         "message": "இன்றிரவு",
@@ -227,6 +327,10 @@
         "message": "Váḥid",
         "description": "Label for Vahid in secondary language"
     },
+    "VahidLocal": {
+        "message": "ஒற்றுமை",
+        "description": ""
+    },
     "version": {
         "message": "பதிப்பு {0}"
     },
@@ -248,5 +352,17 @@
     },
     "YearOfVahidFormat": {
         "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}",
+        "description": ""
+    },
+    "zapierInfo": {
+        "message": "விவரங்களுக்கு அல்லது பதிவு செய்ய, <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> ஐப் பார்க்கவும். Zap இல் இந்த புலங்கள் இருக்கும்: தலைப்பு, உடல், குறிச்சொல், நேரம்",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
     }
 }

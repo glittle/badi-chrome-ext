@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Календарь Бади'",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Показывает сегодняшнюю дату в календаре Бади' (\"Чудесный\"), официальном календаре Веры Бахаи.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "через {0} день",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -305,5 +313,41 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} на закате (около {startingSunsetDesc}) в {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} и {dayEndedLower} на закате (около {endingSunsetDesc}) в {frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exporterFastUntil": {
+        "message": "Пост до {endingSunsetDesc}"
+    },
+    "exportAlert_B0": {
+        "message": "Когда начинается"
+    },
+    "exportAlert_B1": {
+        "message": "За 1 минуту до"
+    },
+    "exportAlert_B10": {
+        "message": "За 10 минут до"
+    },
+    "exportAlert_B15": {
+        "message": "За 15 минут до"
+    },
+    "exportAlert_B30": {
+        "message": "За 30 минут до"
+    },
+    "exportAlert_B5": {
+        "message": "За 5 минут до"
+    },
+    "exportAlert_B60": {
+        "message": "За 60 минут до"
+    },
+    "exportBadiYear0": {
+        "message": "Год Бади' - {0} Б.Э."
+    },
+    "exportBadiYear1": {
+        "message": "Год Бади' - {0} Б.Э."
+    },
+    "exportCalendarDescription": {
+        "message": "Даты в календаре Бади' для {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "Начало {0}"
     }
 }

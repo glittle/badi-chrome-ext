@@ -123,6 +123,12 @@
     "pick_pageCal1": {
         "message": "Ano"
     },
+    "pick_pageCal2": {
+        "message": "Mês (elementos)"
+    },
+    "pick_pageCal3": {
+        "message": "Mês (semanas)"
+    },
     "pick_pageCalGreg": {
         "message": "Ano Gregoriano",
         "description": "tab name"
@@ -144,8 +150,95 @@
     "pick_pageLists": {
         "message": "Listas"
     },
+    "pick_pagePlanner": {
+        "message": "Planeador"
+    },
     "pick_pageReminders": {
         "message": "Lembretes",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Configuração",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "A partir de quando?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Início do próximo ano Badíʿ",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Início deste ano Badíʿ",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Hoje",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Incluir Dia ou Noite?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Ambos",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Dia",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Noite",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Resultados",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Mostrar o quê?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Pôr-do-sol inicial em {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Planeador de Longo Prazo",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Seleção de Planeamento",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Qual?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "múltiplos Dias Sagrados e Festas",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "um Dia Sagrado ou Festa",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "anos",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Por quanto tempo?",
+        "description": "another question"
+    },
+    "pick_pageCustom": {
+        "message": "Personalizado",
+        "description": "page tab name and page title"
+    },
+    "pick_pageExporter": {
+        "message": "Exportar",
         "description": "page tab name and page title"
     },
     "pm": {
@@ -163,6 +256,10 @@
     "prev": {
         "message": "&#8592; Ant."
     },
+    "prevMonth": {
+        "message": "Mês A<u>n</u>terior",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
     "prevYear": {
         "message": "Ano ant",
         "description": "hold Shift and press left arrow key"
@@ -171,9 +268,17 @@
         "message": "Prima Shift + seta Esquerda para ver ano anterior ",
         "description": "hold Shift and press left arrow key"
     },
+    "rbDefLang_Ar": {
+        "message": "Árabe",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
     "rbDefLang_Local": {
         "message": "português",
         "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Idioma de exibição para datas",
+        "description": "on first tab... show Arabic names or in your language"
     },
     "reminder_actions": {
         "message": "Adicionar Acção",
@@ -183,9 +288,17 @@
         "message": "Nenhuma",
         "description": "in dropdown list, for when no other action is chosen"
     },
+    "reminderAction_ifttt": {
+        "message": "acionar receita IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
     "reminderAction_speak": {
         "message": "Ler em voz alta",
         "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "acionar Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
     },
     "reminderAddEdit": {
         "message": "Adicionar/Editar Lembrete",
@@ -232,7 +345,7 @@
         "description": "in list of defined reminders"
     },
     "reminderFeast": {
-        "message": "A Festa de {ar}, {meaning},"
+        "message": "A Festa de {pri}, {sec},"
     },
     "reminderHolyDay": {
         "message": "O Dia Sagrado, \"{0}\","

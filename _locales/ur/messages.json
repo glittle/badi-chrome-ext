@@ -313,5 +313,52 @@
     },
     "example2": {
         "message": "{bMonthNamePri} {bDay} {dayStartedLower} غروب آفتاب پر (تقریباً {startingSunsetDesc}) {frag1WeekdayLong}, {frag1MonthShort} {frag1Day} کو اور {dayEndedLower} غروب آفتاب پر (تقریباً {endingSunsetDesc}) {frag2WeekdayLong}, {frag2MonthShort} {frag2Day} کو۔"
+    },
+    "exportAlert_B0": {
+        "message": "جب یہ شروع ہوتا ہے"
+    },
+    "exportAlert_B1": {
+        "message": "1 منٹ پہلے"
+    },
+    "exportAlert_B10": {
+        "message": "10 منٹ پہلے"
+    },
+    "exportAlert_B15": {
+        "message": "15 منٹ پہلے"
+    },
+    "exportAlert_B30": {
+        "message": "30 منٹ پہلے"
+    },
+    "exportAlert_B5": {
+        "message": "5 منٹ پہلے"
+    },
+    "exportAlert_B60": {
+        "message": "60 منٹ پہلے"
+    },
+    "exportBadiYear0": {
+        "message": "بدیع سال - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "بدیع سال - {0} B.E."
+    },
+    "exportCalendarDescription": {
+        "message": "{location} کے لیے بدیع کیلنڈر میں تاریخیں"
+    },
+    "exportDayFromSunset": {
+        "message": "{0} کا آغاز"
+    },
+    "exporterDateRange": {
+        "message": "برآمد کرنے کے لیے تاریخوں کی <u>ح</u>د (فی الحال منتخب سال کی بنیاد پر)"
+    },
+    "exporterFastEnd": {
+        "message": "روزہ ختم ہوتا ہے",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "روزہ شروع ہوتا ہے",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "{endingSunsetDesc} تک روزہ"
     }
 }

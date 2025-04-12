@@ -223,7 +223,7 @@
         "message": "{bMonthNamePri} {bDay}, {bYear}"
     },
     "gMonthLong": {
-        "message": "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octobre,Noviembre,Diciembre"
+        "message": "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre"
     },
     "gMonthShort": {
         "message": "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic"
@@ -244,11 +244,11 @@
         "description": "top right corner"
     },
     "gWeekdayLong": {
-        "message": "Domingo,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado",
+        "message": "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado",
         "description": "start with Sunday"
     },
     "gWeekdayShort": {
-        "message": "Dom,Lun,Mar,Mier,Jue,Vier,Sab",
+        "message": "Dom,Lun,Mar,Miér,Jue,Vier,Sáb",
         "description": "start with Sun"
     },
     "HolyDay_AscAbdul": {
@@ -312,7 +312,7 @@
         "message": "Dias Intercalarios"
     },
     "jumpTo": {
-        "message": "<u>J</u>ump ± dias",
+        "message": "<u>S</u>altar ± días",
         "description": "user can enter a day after/before currently selected day"
     },
     "keyToOpenInTab": {

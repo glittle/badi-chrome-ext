@@ -322,5 +322,21 @@
     "keyToOpenInTab": {
         "message": "ט",
         "description": "Press Shift+(this letter) to open into a tab"
+    },
+    "VahidLabelPri": {
+        "message": "ואחיד",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "ואחיד",
+        "description": "Label for Vahid in secondary language"
+    },
+    "KullishayLabelPri": {
+        "message": "כול-אי-שיי",
+        "description": "Label for Kullishay in primary language"
+    },
+    "KullishayLabelSec": {
+        "message": "כול-אי-שיי",
+        "description": "Label for Kullishay in secondary language"
     }
 }

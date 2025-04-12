@@ -27,7 +27,7 @@
         "description": "on List page - table heading"
     },
     "ayyamIs0": {
-        "message": "(J M T) 0 = Ayyám-i-Há",
+        "message": "(J M T) 0 = {0}",
         "description": "(updated) in Badi date picker area"
     },
     "bDatePickerTitle": {

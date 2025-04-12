@@ -287,14 +287,6 @@
     "tipsText": {
         "message": "Нажмите клавиши PgUp/PgDn для выбора панелей.\nНажмите клавиши со стрелками вправо/влево для изменения дней.\nНажмите / для переключения до/после заката.\nНажмите Home, чтобы вернуться к сегодняшнему дню!"
     },
-    "title": {
-        "message": "Календарь бахаи",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "Показывает сегодняшнюю дату в календаре Бади' (\"Чудесный\"), официальном календаре Веры Бахаи.",
-        "description": "Used in the manifest"
-    },
     "Tonight": {
         "message": "Сегодня вечером",
         "description": "Shown in the upcoming dates area"
@@ -323,14 +315,6 @@
     },
     "VahidFormat": {
         "message": "{bVahid}"
-    },
-    "VahidLabelPri": {
-        "message": "Вахид",
-        "description": "Label for Vahid in primary language"
-    },
-    "VahidLabelSec": {
-        "message": "Váḥid",
-        "description": "Label for Vahid in secondary language"
     },
     "VahidLocal": {
         "message": "Единство",

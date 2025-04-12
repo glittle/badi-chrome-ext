@@ -287,14 +287,6 @@
     "tipsText": {
         "message": "Tekan tombol PgUp/PgDn untuk memilih panel.\nTekan tombol panah Kanan/Kiri untuk mengubah hari.\nTekan / untuk beralih sebelum/setelah matahari terbenam.\nTekan Home untuk kembali ke hari ini!"
     },
-    "title": {
-        "message": "Kalender Badíʿ",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "Menampilkan tanggal hari ini dalam kalender Badíʿ (Menakjubkan), kalender resmi Agama Bahá'í.",
-        "description": "Used in the manifest"
-    },
     "Tonight": {
         "message": "Malam ini",
         "description": "Shown in the upcoming dates area"

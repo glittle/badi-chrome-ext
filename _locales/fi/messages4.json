@@ -1,75 +1,113 @@
 {
-    "startedWithSunset": {
-        "message": "Alkoi auringonlaskussa klo {0}"
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
     },
-    "suggestions": {
-        "message": "Ehdotukset"
+    "reminderNum_days": {
+        "message": "päivä(ä)",
+        "description": "unknown number of days"
     },
-    "suggestionsTitle": {
-        "message": "Kirjoita tähän ehdotuksia tämän kalenterin parantamiseksi"
+    "reminderNum_days_1_more": {
+        "message": "päivä;päivää",
+        "description": "single;plural"
     },
-    "textDirection": {
-        "message": "ltr",
-        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    "reminderNum_hours": {
+        "message": "tunti(a)"
     },
-    "title": {
-        "message": "Bahai-kalenteri",
-        "description": "The title of the extension. Shown in a number of locations."
+    "reminderNum_hours_1_more": {
+        "message": "tunti;tuntia"
     },
-    "titleDesc": {
-        "message": "Käytä Badíʿ-kalenteria",
-        "description": "Used in the manifest"
+    "reminderNum_minutes": {
+        "message": "minuutti(a)"
     },
-    "Tonight": {
-        "message": "Tänä iltana",
-        "description": "Shown in the upcoming dates area"
+    "reminderNum_minutes_1_more": {
+        "message": "minuutti;minuuttia"
     },
-    "translation": {
-        "message": "fi",
-        "description": "This needs to be the international language code for this language, shown in English letters."
+    "reminderNum_seconds": {
+        "message": "sekunti(a)"
     },
-    "translationEnglishName": {
-        "message": "Finnish",
-        "description": "The name of this language, in English"
+    "reminderNum_seconds_1_more": {
+        "message": "sekunti;sekuntia"
     },
-    "upcomingTitle": {
-        "message": "Tulevat juhlat ja pyhät päivät"
+    "remindersDefined": {
+        "message": "Muistutuksesi",
+        "description": "title on right side"
     },
-    "use24HourClock": {
-        "message": "true",
-        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    "reminderSelectTrigger": {
+        "message": "Lisää muistutus...",
+        "description": "in dropdown, when no trigger is selected"
     },
-    "Vahid": {
-        "message": "Váḥid"
+    "reminderShowAt": {
+        "message": "Näytä klo",
+        "description": "in front of time of day input"
     },
-    "VahidFormat": {
-        "message": "{bVahid}"
+    "remindersScheduled": {
+        "message": "Ajastettu tänään klo {time} alkaen keskiyöhön asti",
+        "description": "title on left side"
     },
-    "version": {
-        "message": "Versio {0}"
+    "reminderTagline": {
+        "message": "(näytetään klo {when})",
+        "description": "shown on the bottom of each reminder popoup"
     },
-    "YearOfEra": {
-        "message": "Bahá'í-aikakauden vuosi"
+    "reminderTestTagline": {
+        "message": "(näytetään klo {when})",
+        "description": "shown on the bottom of popoup when tested"
     },
-    "YearOfEraFormat": {
-        "message": "{bYear}"
+    "reminderTimeInputStructure": {
+        "message": "Näytä {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
     },
-    "YearOfVahid": {
-        "message": "Váḥidin vuosi"
+    "reminderTitle": {
+        "message": "{0} muistutus",
+        "description": "displayed as the title of each reminder shown"
     },
-    "YearOfVahidFormat": {
-        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    "reminderTrigger_bday": {
+        "message": "Badíʿ-päivä",
+        "description": "what this reminder is triggered on"
     },
-    "yearWithEra": {
-        "message": "{bYear} {bEraAbbrev}"
+    "reminderTrigger_feast": {
+        "message": "Juhlapäivä",
+        "description": "what this reminder is triggered on"
     },
-    "zapierInfo": {
-        "message": "Lisätietoja tai rekisteröintiä varten, katso <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Zap sisältää nämä kentät: title, body, tag, time",
-        "description": "info and link to Zapier"
+    "reminderTrigger_holyday": {
+        "message": "Pyhä päivä",
+        "description": "what this reminder is triggered on"
     },
-    "zapierKey": {
-        "message": "Zapier Webhook URL",
-        "description": "url for Zapier"
+    "reminderTrigger_load": {
+        "message": "Ladattaessa",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Keskiyö",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Keskipäivä",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Auringonnousu",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Auringonlasku",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Erityiset päivät",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Muut tapahtumat",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Vuorokaudenaika",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Tapahtuma",
+        "description": "in front of the trigger selector"
     },
     "sampleGroup1_1": {
         "message": "{bDay} {bMonthNamePri} {bYear}",
@@ -199,9 +237,18 @@
         "message": "Vakiomuodot",
         "description": "in the list of formats at the bottom of of the 'Custom' page"
     },
+    "startedWithSunset": {
+        "message": "Alkoi auringonlaskussa klo {0}"
+    },
     "startTimeOption": {
         "message": "Tavallinen kokoontumisaika: ",
         "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Ehdotukset"
+    },
+    "suggestionsTitle": {
+        "message": "Kirjoita tähän ehdotuksia tämän kalenterin parantamiseksi"
     },
     "sunriseFastHeading": {
         "message": "Auringonnousu",
@@ -218,6 +265,10 @@
     "suspendWorkHeading": {
         "message": "Työstä vapaa",
         "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
     },
     "timeFormat12": {
         "message": "{time} {ampm}",
@@ -236,12 +287,40 @@
     "tipsText": {
         "message": "Paina PgUp/PgDn-näppäimiä valitaksesi paneeleja.\nPaina Oikea/Vasen-nuolinäppäimiä vaihtaaksesi päiviä.\nPaina / vaihtaaksesi ennen/jälkeen auringonlaskun.\nPaina Home palataksesi tähän päivään!"
     },
+    "Tonight": {
+        "message": "Tänä iltana",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "fi",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Finnish",
+        "description": "The name of this language, in English"
+    },
     "upcomingDateFormat": {
         "message": "{bMonthNamePri} {bDay} ({gCombined})",
         "description": "upcoming list"
     },
+    "upcomingTitle": {
+        "message": "Tulevat juhlat ja pyhät päivät"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
     "VahidLocal": {
         "message": "Ykseys"
+    },
+    "version": {
+        "message": "Versio {0}"
     },
     "webstore": {
         "message": "Verkkokauppa"
@@ -249,5 +328,28 @@
     "weekDayNames": {
         "message": "Viikonpäivien nimet",
         "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Bahá'í-aikakauden vuosi"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Váḥidin vuosi"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Lisätietoja tai rekisteröintiä varten, katso <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Zap sisältää nämä kentät: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
     }
 }

@@ -291,14 +291,6 @@
         "message": "आज रात",
         "description": "Shown in the upcoming dates area"
     },
-    "title": {
-        "message": "बदी कैलेंडर",
-        "description": "The title of the extension. Shown in a number of locations."
-    },
-    "titleDesc": {
-        "message": "बदी कैलेंडर (अद्भुत) में आज की तिथि दिखाता है, जो बहाई धर्म का आधिकारिक कैलेंडर है।",
-        "description": "Used in the manifest"
-    },
     "translation": {
         "message": "hi",
         "description": "This needs to be the international language code for this language, shown in English letters."

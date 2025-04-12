@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Kalender Badíʿ",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Menampilkan tanggal hari ini dalam kalender Badíʿ (Menakjubkan), kalender resmi Agama Bahá'í.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "dalam {0} hari",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
