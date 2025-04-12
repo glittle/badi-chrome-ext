@@ -1314,7 +1314,7 @@ function startFillingLanguageInput(select) {
             code: langToLoad,
             name: name || "",
             english: english === name || english === langToLoad ? "" : english,
-            pct: Math.round((Object.keys(messages).length / _numMessagesEn) * 100),
+            pct: Math.min(100, Math.round((Object.keys(messages).length / _numMessagesEn) * 100)),
           };
           info.sort = info.english || info.name || info.code;
           langs.push(info);

@@ -132,6 +132,10 @@
     "exportWhatToInclude": {
         "message": "Alternativ"
     },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
     "fastDaysTitle": {
         "message": "Fastetider år {bYear}"
     },
@@ -150,6 +154,14 @@
         "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
         "description": "about page"
     },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
     "formatIconClick": {
         "message": "(klicka för mer information)"
     },
@@ -157,11 +169,58 @@
         "message": "{bDay} {bMonthNamePri} {bYear}",
         "description": "text when mouse is over the extension icon"
     },
+    "future_Day": {
+        "message": "börjar kl {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "kommer att vara om {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "kommer att vara om {numUnits} kl {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "kommer att börja om {numUnits} kl {time}"
+    },
+    "future_StartTime": {
+        "message": "kommer att börja kl {time}"
+    },
     "future_Time": {
         "message": "blir kl {time}"
     },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
     "gDatePickerTitle": {
         "message": "Gregorianskt datum"
+    },
+    "gDatePickerTitle2": {
+        "message": "Gå till <u>G</u>regorianskt datum",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
     },
     "gMonthLong": {
         "message": "januari,februari,mars,april,maj,juni,juli,augusti,september,oktober,november,december"
@@ -180,6 +239,10 @@
         "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
         "description": "in left panel"
     },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
     "gWeekdayLong": {
         "message": "söndag,måndag,tisdag,onsdag,torsdag,fredag,lördag",
         "description": "start with Sunday"
@@ -187,6 +250,39 @@
     "gWeekdayShort": {
         "message": "sö,må,ti,on,to,fr,lö",
         "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Bortgång av 'Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Bortgång av Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Bábs födelse"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Bahá'u'lláhs födelse"
+    },
+    "HolyDay_Covenant": {
+        "message": "Förbundets dag"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Bábs deklaration"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Bábs martyrskap"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw-Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Första dagen av Riḍván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Tolfte dagen av Riḍván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Nionde dagen av Riḍván"
     },
     "iconColor": {
         "message": "Ikonfärg",
@@ -200,7 +296,47 @@
         "message": "Manuell",
         "description": "Label for manual icon color option"
     },
+    "iftttEvent": {
+        "message": "IFTTT händelsenamn",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "För detaljer eller för att registrera dig, se <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. Händelsen kommer att innehålla dessa fält: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel-nyckel",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>ester",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>eliga dagar",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Visa",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Latitud:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Longitud:",
+        "description": "on setup page"
+    },
     "Intercalary": {
         "message": "Há-dagar"
+    },
+    "jumpTo": {
+        "message": "<u>H</u>oppa ± dagar",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
     }
 }

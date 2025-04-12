@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Badíʿ-kalender",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Visar dagens datum i Badíʿ-kalendern (Underbara kalendern), den officiella kalendern för Bahá'í-tron.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "om {0} dag",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
@@ -67,11 +75,11 @@
         "description": "tooltip"
     },
     "btnPlannerExportCsv": {
-        "message": "Exportera till CSV",
+        "message": "Exportera till Excel",
         "description": "button - export to Comma Separated Value format for import into Excel"
     },
     "btnPlannerExportICal": {
-        "message": "Exportera till iCal",
+        "message": "Exportera ICAL",
         "description": "button - export to iCalendar format"
     },
     "btnPlannerHelperFeasts": {
@@ -115,7 +123,7 @@
         "description": "Save the changes and close the edit area"
     },
     "btnReminderSaveNew": {
-        "message": "Spara som ny påminnelse",
+        "message": "Duplicera",
         "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
     },
     "btnReminderTest": {
@@ -170,7 +178,7 @@
         "description": "about page"
     },
     "Chrome_WebStore": {
-        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/",
         "description": "link to Webstore when running in Chrome"
     },
     "Chrome_WebStoreSupport": {
@@ -195,7 +203,8 @@
         "message": "Resultat (för den valda dagen - se Tips & Tangenter för att ändra dag)"
     },
     "customBuilderIntro": {
-        "message": "Skriv formatet i denna ruta. Klicka på någon 'Lägg till'-knapp i Tillgängliga datumdelar för att lägga till den datumdelen vid aktuell position. Tips: 'frag1' = solnedgång till midnatt; 'frag2' = midnatt till solnedgång."
+        "message": "Skriv formatet i denna ruta. <span class=customHint title='...NamePri = på primärt språk\n...NameSec = på sekundärt språk\nfrag1... = solnedgång till midnatt\nfrag2... = midnatt till solnedgång'>(Visa tips)</span><br>Klicka på någon 'Lägg till'-knapp i Tillgängliga datumdelar för att lägga till den datumdelen vid aktuell position.",
+        "description": "Type the format into this box. <span class=customHint title='...NamePri = in Primary language\n...NameSec = in Secondary language\nfrag1... = sunset to midnight\nfrag2... = midnight to sunset'>(View Hints)</span><br>Click an 'Add' button in the Available Date Parts to insert at the current location."
     },
     "customDefined": {
         "message": "Anpassade datumformat"
@@ -260,7 +269,7 @@
         "message": "började"
     },
     "defaultFormat": {
-        "message": "(Standard)",
+        "message": "(Standard) ",
         "description": "in the list of formats at the bottom of of the 'Custom' page"
     },
     "elements": {

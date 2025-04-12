@@ -5,6 +5,10 @@
     "KullishayFormat": {
         "message": "{bKullishay}"
     },
+    "KullishayLocal": {
+        "message": "Todas-as-Coisas",
+        "description": "Transalation of Kull-i-Shay"
+    },
     "locationError": {
         "message": "Impossível identificar localização actual .\n\nA extensão irá usar 6:30pm como hora de pôr-do-sol em todos os dias.",
         "description": "If the system cannot determine the location, this is shown in an alert window."
@@ -16,6 +20,9 @@
     "meaning": {
         "message": "Significado",
         "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
     },
     "midnight": {
         "message": "12:00 meia-noite",
@@ -42,6 +49,10 @@
     },
     "next": {
         "message": "Seg. &#8594;"
+    },
+    "nextMonth": {
+        "message": "Próximo <u>M</u>ês",
+        "description": "button to move to next month (gregorian or badi)"
     },
     "nextRefreshAlarm": {
         "message": "Próximo refrescamento previsto para após {0}: {1}",

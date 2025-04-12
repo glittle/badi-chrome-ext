@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "Badíʿ-kalenteri",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Näyttää tämän päivän päivämäärän Badíʿ (Ihmeellisessä) kalenterissa, Bahá'í-uskon virallisessa kalenterissa.",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "{0} päivän kuluttua",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"

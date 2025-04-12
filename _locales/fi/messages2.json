@@ -1,4 +1,24 @@
 {
+    "exporterItemDescDay": {
+        "message": "Päivä Badíʿ-kalenterissa.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Ajat vuosittaiselle Bahá'í-paastolle.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Kokoontuminen voi alkaa milloin tahansa tänä Badíʿ-päivänä.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Auringonnousu- ja laskuajat ovat sijainnille {location}. Luotu käyttäen http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
     "fastDaysTitle": {
         "message": "Paastoajat vuonna {bYear}"
     },

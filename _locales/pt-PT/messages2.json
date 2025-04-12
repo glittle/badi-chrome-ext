@@ -1,4 +1,137 @@
 {
+    "exporterItemDescDay": {
+        "message": "Um dia no calendário Badíʿ.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Horários para o Jejum Bahá'í anual.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "O encontro pode começar a qualquer hora neste dia Badíʿ.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Os horários de nascer e pôr-do-sol mostrados são para {location}. Gerado usando http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Exportador do Calendário Badíʿ",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Descarregar ficheiro iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Ano Gregoriano - {0} D.C."
+    },
+    "exportGregYear1": {
+        "message": "Ano Gregoriano - {0} D.C."
+    },
+    "exportHideTest": {
+        "message": "Ocultar"
+    },
+    "exportIncludeAlert": {
+        "message": "Adicionar um alerta a cada evento (pode não carregar no Google calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Informação de Localização"
+    },
+    "exportIntro": {
+        "message": "Importante! Veja <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">esta página web</a> para informações e precauções!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Título para o Calendário Exportado (pode não ser usado)"
+    },
+    "exportNumToInclude": {
+        "message": "Número de entradas de calendário incluídas (aproximadamente):"
+    },
+    "exportOption_AllDay": {
+        "message": "Evento de dia inteiro a partir da meia-noite <em>(1 dia de duração)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Apenas no início do pôr-do-sol"
+    },
+    "exportOption_Date": {
+        "message": "Dias Badíʿ <em>(365/366 dias)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Dias de Jejum <em>(19 dias)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Festas <em>(19 dias)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Dias Sagrados <em>(11 dias)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento no horário de observação designado ou horário habitual de reunião"
+    },
+    "exportOption_Sun": {
+        "message": "De pôr-do-sol a pôr-do-sol <em>(cerca de 24 horas)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Apenas ao nascer do sol"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Evento do nascer ao pôr-do-sol <em>(cerca de 12 horas)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Apenas ao pôr-do-sol"
+    },
+    "exportOption_Usual": {
+        "message": "Evento no horário habitual de reunião (ver página de Eventos)"
+    },
+    "exportOtherSettings": {
+        "message": "Outras Configurações"
+    },
+    "exportQuickDesc": {
+        "message": "Exporte cada conjunto e depois carregue-os todos no mesmo calendário!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Calendário Completo"
+    },
+    "exportQuickPick1Text": {
+        "message": "Mostrar cada dia Badíʿ, juntamente com os Dias Sagrados e horários das Festas. Sem alertas."
+    },
+    "exportQuickPick2": {
+        "message": "2. Horário do Jejum - Manhã"
+    },
+    "exportQuickPick2Text": {
+        "message": "Nascer do sol, com um alerta pouco antes."
+    },
+    "exportQuickPick3": {
+        "message": "3. Horário do Jejum - Noite"
+    },
+    "exportQuickPick3Text": {
+        "message": "Pôr-do-sol, com um alerta."
+    },
+    "exportQuickPickClearText": {
+        "message": "Repor opções"
+    },
+    "exportQuickPicks": {
+        "message": "Conjuntos de Eventos Recomendados"
+    },
+    "exportRangeFullRange": {
+        "message": "Exportar todas as entradas do calendário. (Se não estiver marcado, exportar apenas um conjunto de amostra.)"
+    },
+    "exportTest": {
+        "message": "Mo<u>s</u>trar para copiar"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Selecione o que deve ser exportado."
+    },
+    "exportWhatToInclude": {
+        "message": "Opções"
+    },
     "facebook": {
         "message": "Facebook",
         "description": "ALT for icon at bottom of page"
@@ -154,6 +287,10 @@
     "iftttEvent": {
         "message": "Nome Evento IFTTT",
         "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Para detalhes ou para se inscrever, veja <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>Canal IFTTT Maker</a>. O evento conterá estes campos: título, corpo, etiqueta",
+        "description": "info and link to ifttt page"
     },
     "iftttKey": {
         "message": "Fazer Chave Canal IFTTT",

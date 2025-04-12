@@ -1,4 +1,12 @@
 {
+    "title": {
+        "message": "ปฏิทินบะดีอ์",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "แสดงวันที่ปัจจุบันในปฏิทินบะดีอ์ (อัศจรรย์) ซึ่งเป็นปฏิทินทางการของศาสนาบาไฮ",
+        "description": "Used in the manifest"
+    },
     "1day": {
         "message": "อีก {0} วัน",
         "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"

@@ -2,6 +2,9 @@
     "Kullishay": {
         "message": "Kull-i-<u>Sh</u>ay'"
     },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
     "KullishayLocal": {
         "message": "Kaikki asiat",
         "description": "Transalation of Kull-i-Shay"

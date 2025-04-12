@@ -1,4 +1,114 @@
 {
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "நாள்(கள்)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "நாள்;நாட்கள்",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "மணிநேரம்(கள்)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "மணிநேரம்;மணிநேரங்கள்"
+    },
+    "reminderNum_minutes": {
+        "message": "நிமிடம்(கள்)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "நிமிடம்;நிமிடங்கள்"
+    },
+    "reminderNum_seconds": {
+        "message": "வினாடி(கள்)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "வினாடி;வினாடிகள்"
+    },
+    "remindersDefined": {
+        "message": "உங்கள் நினைவூட்டல்கள்",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "ஒரு நினைவூட்டலைச் சேர்க்கவும்...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "இல் காட்டு",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "{time} முதல் நள்ளிரவு வரை இன்று திட்டமிடப்பட்டது",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "({when}இல் காட்டப்படும்)",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "({when}இல் காட்டப்பட வேண்டும்)",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "{num} {units} {delta} காட்டு",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} நினைவூட்டல்",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "படீ' நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "விருந்து நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "புனித நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "ஏற்றும்போது",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "நள்ளிரவு",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "நண்பகல்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "சூரியோதயம்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "சூரியாஸ்தமனம்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "சிறப்பு நாட்கள்",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "பிற நிகழ்வுகள்",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "நாளின் நேரம்",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "நிகழ்வு",
+        "description": "in front of the trigger selector"
+    },
     "shoghiExample": {
         "message": "இது {bWeekdayNamePri} வாரநாள், {bDayNamePri} மாதநாள், {bMonthNamePri} மாதம், {bYearInVahidNamePri} வருடம், {bVahidOrdinalName} வஹீட், {bKullishayOrdinalName} குல்-இ-ஷே.",
         "description": "Example given by Shoghi Effendi"
