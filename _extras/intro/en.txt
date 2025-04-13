@@ -1,0 +1,29 @@
+This extension displays the date in the Badíʿ (Wondrous) calendar where you are, automatically determining sunset times. Days in the Badíʿ calendar start and end at sunset.
+
+The icon in the toolbar is subtle but keeps you informed of the current date in the Badíʿ calendar. By clicking on the icon, more detailed information is shown. Some things you can view or do:
+
+- Copy the current date in a variety of formats, for use in other places.
+
+- View the Badíʿ date for any day of any year - what was the date on your birthday?
+
+- Set reminders before/after sunrise and sunset. Have your computer announce them out loud!
+
+- View a list of dates for upcoming Feasts and Holy Days.
+
+- View a full calendar (in Gregorian or Badíʿ layout) appropriate for printing.
+
+- View the Fast times for your location.
+
+- Export an iCal file with Badíʿ dates, for import into any calendar system.
+
+- Get a list of special dates for planning years into the future.
+
+- Design your own custom date formats.
+
+- Trigger IFFF actions or Zapier webhooks according to Badíʿ dates or sunrise/set times.
+
+See the website linked below for complete details and history.
+
+Please view the Support tab and submit Suggestions on how this extension could be improved! If you can help translate the extension into your language, please let me know! Current languages are shown below.
+
+Author: Glen Little (Calgary, Canada)

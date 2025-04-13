@@ -1,0 +1,29 @@
+Diese Erweiterung zeigt das Datum im Badíʿ (Wunderbaren) Kalender an, wo Sie sich befinden, und bestimmt automatisch die Sonnenuntergangszeiten. Tage im Badíʿ-Kalender beginnen und enden bei Sonnenuntergang.
+
+Das Symbol in der Symbolleiste ist dezent, hält Sie aber über das aktuelle Datum im Badíʿ-Kalender informiert. Durch Klicken auf das Symbol werden detailliertere Informationen angezeigt. Einige Dinge, die Sie anzeigen oder tun können:
+
+- Kopieren Sie das aktuelle Datum in verschiedenen Formaten zur Verwendung an anderen Stellen.
+
+- Sehen Sie das Badíʿ-Datum für jeden Tag eines beliebigen Jahres - was war das Datum an Ihrem Geburtstag?
+
+- Stellen Sie Erinnerungen vor/nach Sonnenaufgang und Sonnenuntergang ein. Lassen Sie Ihren Computer sie laut ankündigen!
+
+- Sehen Sie eine Liste der Termine für kommende Feste und Feiertage.
+
+- Sehen Sie einen vollständigen Kalender (im gregorianischen oder Badíʿ-Layout) an, der zum Drucken geeignet ist.
+
+- Sehen Sie die Fastenzeiten für Ihren Standort.
+
+- Exportieren Sie eine iCal-Datei mit Badíʿ-Daten zum Import in jedes Kalendersystem.
+
+- Erhalten Sie eine Liste besonderer Termine für die Planung Jahre in die Zukunft.
+
+- Gestalten Sie Ihre eigenen benutzerdefinierten Datumsformate.
+
+- Lösen Sie IFFF-Aktionen oder Zapier-Webhooks gemäß Badíʿ-Daten oder Sonnenaufgangs-/Sonnenuntergangszeiten aus.
+
+Vollständige Details und Geschichte finden Sie auf der unten verlinkten Website.
+
+Bitte sehen Sie sich die Support-Registerkarte an und reichen Sie Vorschläge ein, wie diese Erweiterung verbessert werden könnte! Wenn Sie bei der Übersetzung der Erweiterung in Ihre Sprache helfen können, lassen Sie es mich bitte wissen! Aktuelle Sprachen werden unten angezeigt.
+
+Autor: Glen Little (Calgary, Kanada)

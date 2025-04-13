@@ -1,0 +1,29 @@
+Detta tillägg visar datumet i Badíʿ (Underbara) kalendern där du befinner dig, och bestämmer automatiskt solnedgångstider. Dagar i Badíʿ-kalendern börjar och slutar vid solnedgång.
+
+Ikonen i verktygsfältet är subtil men håller dig informerad om aktuellt datum i Badíʿ-kalendern. Genom att klicka på ikonen visas mer detaljerad information. Några saker du kan se eller göra:
+
+- Kopiera aktuellt datum i olika format, för användning på andra ställen.
+
+- Se Badíʿ-datumet för vilken dag som helst under vilket år som helst - vad var datumet på din födelsedag?
+
+- Ställ in påminnelser före/efter soluppgång och solnedgång. Låt din dator meddela dem högt!
+
+- Se en lista över datum för kommande Fester och Heliga Dagar.
+
+- Se en fullständig kalender (i gregoriansk eller Badíʿ-layout) lämplig för utskrift.
+
+- Se Fastetider för din plats.
+
+- Exportera en iCal-fil med Badíʿ-datum, för import till valfritt kalendersystem.
+
+- Få en lista över speciella datum för planering år framåt.
+
+- Designa dina egna anpassade datumformat.
+
+- Utlös IFFF-åtgärder eller Zapier-webhooks enligt Badíʿ-datum eller soluppgång/solnedgångstider.
+
+Se webbplatsen som länkas nedan för fullständiga detaljer och historia.
+
+Vänligen se fliken Support och skicka in Förslag på hur detta tillägg kan förbättras! Om du kan hjälpa till att översätta tillägget till ditt språk, vänligen meddela mig! Aktuella språk visas nedan.
+
+Författare: Glen Little (Calgary, Kanada)

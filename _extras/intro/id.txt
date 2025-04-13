@@ -1,0 +1,29 @@
+Ekstensi ini menampilkan tanggal dalam kalender Badíʿ (Menakjubkan) di lokasi Anda, secara otomatis menentukan waktu matahari terbenam. Hari-hari dalam kalender Badíʿ dimulai dan berakhir pada saat matahari terbenam.
+
+Ikon di bilah alat bersifat halus tetapi memberi tahu Anda tentang tanggal saat ini dalam kalender Badíʿ. Dengan mengklik ikon, informasi yang lebih rinci ditampilkan. Beberapa hal yang dapat Anda lihat atau lakukan:
+
+- Salin tanggal saat ini dalam berbagai format, untuk digunakan di tempat lain.
+
+- Lihat tanggal Badíʿ untuk hari apa pun dari tahun apa pun - apa tanggal pada hari ulang tahun Anda?
+
+- Atur pengingat sebelum/sesudah matahari terbit dan terbenam. Biarkan komputer Anda mengumumkannya dengan keras!
+
+- Lihat daftar tanggal untuk Pesta dan Hari Suci yang akan datang.
+
+- Lihat kalender lengkap (dalam tata letak Gregorian atau Badíʿ) yang sesuai untuk dicetak.
+
+- Lihat waktu Puasa untuk lokasi Anda.
+
+- Ekspor file iCal dengan tanggal Badíʿ, untuk diimpor ke sistem kalender apa pun.
+
+- Dapatkan daftar tanggal khusus untuk perencanaan tahun-tahun ke depan.
+
+- Rancang format tanggal kustom Anda sendiri.
+
+- Picu tindakan IFFF atau webhook Zapier sesuai dengan tanggal Badíʿ atau waktu matahari terbit/terbenam.
+
+Lihat situs web yang ditautkan di bawah untuk detail lengkap dan sejarah.
+
+Silakan lihat tab Dukungan dan kirimkan Saran tentang bagaimana ekstensi ini dapat ditingkatkan! Jika Anda dapat membantu menerjemahkan ekstensi ke dalam bahasa Anda, harap beri tahu saya! Bahasa saat ini ditampilkan di bawah.
+
+Penulis: Glen Little (Calgary, Kanada)

@@ -1,0 +1,29 @@
+Denne udvidelse viser datoen i Badíʿ (Vidunderlige) kalenderen, hvor du er, og bestemmer automatisk solnedgangstider. Dage i Badíʿ-kalenderen begynder og slutter ved solnedgang.
+
+Ikonet i værktøjslinjen er diskret, men holder dig informeret om den aktuelle dato i Badíʿ-kalenderen. Ved at klikke på ikonet vises mere detaljeret information. Nogle ting du kan se eller gøre:
+
+- Kopier den aktuelle dato i forskellige formater til brug andre steder.
+
+- Se Badíʿ-datoen for enhver dag i ethvert år - hvad var datoen på din fødselsdag?
+
+- Indstil påmindelser før/efter solopgang og solnedgang. Få din computer til at annoncere dem højt!
+
+- Se en liste over datoer for kommende Fester og Helligdage.
+
+- Se en fuld kalender (i Gregoriansk eller Badíʿ layout) egnet til udskrivning.
+
+- Se Fastetider for din placering.
+
+- Eksporter en iCal-fil med Badíʿ-datoer til import i ethvert kalendersystem.
+
+- Få en liste over særlige datoer til planlægning år ud i fremtiden.
+
+- Design dine egne tilpassede datoformater.
+
+- Udløs IFFF-handlinger eller Zapier webhooks i henhold til Badíʿ-datoer eller solopgang/solnedgangstider.
+
+Se webstedet, der er linket nedenfor, for fuldstændige detaljer og historie.
+
+Se venligst Support-fanen og indsend Forslag til, hvordan denne udvidelse kunne forbedres! Hvis du kan hjælpe med at oversætte udvidelsen til dit sprog, så lad mig det venligst vide! Aktuelle sprog er vist nedenfor.
+
+Forfatter: Glen Little (Calgary, Canada)

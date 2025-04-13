@@ -1,0 +1,29 @@
+Cette extension affiche la date dans le calendrier Badíʿ (Merveilleux) là où vous êtes, en déterminant automatiquement les heures de coucher du soleil. Les jours dans le calendrier Badíʿ commencent et se terminent au coucher du soleil.
+
+L'icône dans la barre d'outils est subtile mais vous tient informé de la date actuelle dans le calendrier Badíʿ. En cliquant sur l'icône, des informations plus détaillées sont affichées. Voici quelques choses que vous pouvez voir ou faire :
+
+- Copier la date actuelle dans une variété de formats, pour une utilisation ailleurs.
+
+- Voir la date Badíʿ pour n'importe quel jour de n'importe quelle année - quelle était la date le jour de votre anniversaire ?
+
+- Définir des rappels avant/après le lever et le coucher du soleil. Faites que votre ordinateur les annonce à haute voix !
+
+- Voir une liste de dates pour les prochaines Fêtes et Jours Saints.
+
+- Voir un calendrier complet (en disposition grégorienne ou Badíʿ) approprié pour l'impression.
+
+- Voir les heures de Jeûne pour votre emplacement.
+
+- Exporter un fichier iCal avec les dates Badíʿ, pour l'importation dans n'importe quel système de calendrier.
+
+- Obtenir une liste de dates spéciales pour la planification des années à venir.
+
+- Concevoir vos propres formats de date personnalisés.
+
+- Déclencher des actions IFFF ou des webhooks Zapier selon les dates Badíʿ ou les heures de lever/coucher du soleil.
+
+Consultez le site web lié ci-dessous pour des détails complets et l'historique.
+
+Veuillez consulter l'onglet Support et soumettre des Suggestions sur la façon dont cette extension pourrait être améliorée ! Si vous pouvez aider à traduire l'extension dans votre langue, veuillez me le faire savoir ! Les langues actuelles sont affichées ci-dessous.
+
+Auteur : Glen Little (Calgary, Canada)
