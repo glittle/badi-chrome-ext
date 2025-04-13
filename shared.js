@@ -204,6 +204,8 @@ async function prepareForBackgroundAndPopupAsync() {
     putInStorageSyncAsync(syncStorageKey.language, common.languageCode);
   }
 
+  common.numberFormatter = Intl.NumberFormat(common.languageCode, { useGrouping: false, maximumFractionDigits: 4 });
+
   await loadRawMessages(common.languageCode);
 
   common.useArNames = await getFromStorageSyncAsync(syncStorageKey.useArNames, true);
@@ -316,6 +318,7 @@ async function prepareSharedForPopup() {
   startGettingLocation();
 
   const langCode = common.languageCode.slice(0, 2);
+
   $("body")
     .addClass(common.languageCode)
     .addClass(common.languageDir)
@@ -546,22 +549,35 @@ function getDateInfo(targetTime, onlyStamp) {
     // date info
     frag1: frag1Noon,
     frag1Year: frag1Noon.getFullYear(),
+    frag1YearDisplay: common.numberFormatter.format(frag1Noon.getFullYear()),
     frag1Month: frag1Noon.getMonth(),
+    frag1MonthDisplay: common.numberFormatter.format(frag1Noon.getMonth()),
     frag1Day: frag1Noon.getDate(),
+    frag1DayDisplay: common.numberFormatter.format(frag1Noon.getDate()),
     frag1Weekday: frag1Noon.getDay(),
+    frag1WeekdayDisplay: common.numberFormatter.format(frag1Noon.getDay()),
 
     frag2: frag2Noon,
     frag2Year: frag2Noon.getFullYear(),
+    frag2YearDisplay: common.numberFormatter.format(frag2Noon.getFullYear()),
     frag2Month: frag2Noon.getMonth(), // 0 based
+    frag2MonthDisplay: common.numberFormatter.format(frag2Noon.getMonth()),
     frag2Day: frag2Noon.getDate(),
+    frag2DayDisplay: common.numberFormatter.format(frag2Noon.getDate()),
     frag2Weekday: frag2Noon.getDay(),
+    frag2WeekdayDisplay: common.numberFormatter.format(frag2Noon.getDay()),
 
     currentYear: targetTimeLocal.getFullYear(),
+    currentYearDisplay: common.numberFormatter.format(targetTimeLocal.getFullYear()),
     currentMonth: targetTimeLocal.getMonth(), // 0 based
+    currentMonthDisplay: common.numberFormatter.format(targetTimeLocal.getMonth()),
     currentMonth1: 1 + targetTimeLocal.getMonth(),
+    currentMonth01: digitPad2(1 + targetTimeLocal.getMonth()), // 0 based
     currentDay: targetTimeLocal.getDate(),
+    currentDayDisplay: common.numberFormatter.format(targetTimeLocal.getDate()),
     currentDay00: digitPad2(targetTimeLocal.getDate()),
     currentWeekday: targetTimeLocal.getDay(),
+    currentWeekdayDisplay: common.numberFormatter.format(targetTimeLocal.getDay()),
     currentTime: targetTimeLocal,
 
     startingSunsetDesc12: getTimeDisplay(frag1SunTimes.sunset),
@@ -575,11 +591,17 @@ function getDateInfo(targetTime, onlyStamp) {
     sunriseDesc24: getTimeDisplay(frag2SunTimes.sunrise, 24),
 
     bNow: bNow,
+    bNowDisplay: common.numberFormatter.format(bNow),
     bDay: bNow.d,
+    bDayDisplay: common.numberFormatter.format(bNow.d),
     bWeekday: 1 + ((frag2Noon.getDay() + 1) % 7),
+    bWeekdayDisplay: common.numberFormatter.format(1 + ((frag2Noon.getDay() + 1) % 7)),
     bMonth: bNow.m,
+    bMonthDisplay: common.numberFormatter.format(bNow.m),
     bYear: bNow.y,
+    bYearDisplay: common.numberFormatter.format(bNow.y),
     bVahid: Math.floor(1 + (bNow.y - 1) / 19),
+    bVahidDisplay: common.numberFormatter.format(Math.floor(1 + (bNow.y - 1) / 19)),
     bDateCode: `${bNow.m}.${bNow.d}`,
 
     bDayNameAr: bMonthNameAr[bNow.d],
@@ -607,8 +629,11 @@ function getDateInfo(targetTime, onlyStamp) {
   di.KullishayLabelSec = !common.useArNames ? getMessage("kullishay") : getMessage("kullishayLocal");
 
   di.bKullishay = Math.floor(1 + (di.bVahid - 1) / 19);
+  di.bKullishayDisplay = common.numberFormatter.format(di.bKullishay);
   di.bVahid = di.bVahid - (di.bKullishay - 1) * 19;
+  di.bVahidDisplay = common.numberFormatter.format(di.bVahid);
   di.bYearInVahid = di.bYear - (di.bVahid - 1) * 19 - (di.bKullishay - 1) * 19 * 19;
+  di.bYearInVahidDisplay = common.numberFormatter.format(di.bYearInVahid);
 
   di.bYearInVahidNameAr = bYearInVahidNameAr[di.bYearInVahid];
   di.bYearInVahidMeaning = bYearInVahidMeaning[di.bYearInVahid];
@@ -621,6 +646,7 @@ function getDateInfo(targetTime, onlyStamp) {
   di.bWeekdayNameSec = !common.useArNames ? di.bWeekdayNameAr : di.bWeekdayMeaning;
 
   di.elementNum = getElementNum(bNow.m);
+  di.elementNumDisplay = common.numberFormatter.format(di.elementNum);
   di.element = elements[di.elementNum - 1];
 
   di.bDayOrdinal = di.bDay + getOrdinal(di.bDay);
@@ -1285,7 +1311,12 @@ String.prototype.filledWithEach = function (arr) {
   }
   const result = [];
   for (let i = 0, max = arr.length; i < max; i++) {
-    result[result.length] = this.filledWith(arr[i]);
+    let value = arr[i];
+    if (typeof value === "number") {
+      value = common.numberFormatter.format(value);
+    }
+
+    result[result.length] = this.filledWith(value);
   }
   _nextFilledWithEach_UsesExactMatchOnly = false;
   return result.join("");
@@ -1332,15 +1363,15 @@ function getMessage(key, obj, defaultValue) {
 }
 
 function digitPad2(num) {
-  return `00${num}`.slice(-2);
+  return `00${common.numberFormatter.format(num)}`.slice(-2);
 }
 
 function getOrdinal(num) {
-  return ordinal[num] || ordinal[0] || num;
+  return ordinal[num] || ordinal[0] || common.numberFormatter.format(num);
 }
 
 function getOrdinalName(num) {
-  return ordinalNames[num] || num;
+  return ordinalNames[num] || common.numberFormatter.format(num);
 }
 
 function addEventTime(obj) {

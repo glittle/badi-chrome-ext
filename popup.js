@@ -1736,7 +1736,7 @@ function updateTabNames() {
     .filter(":visible")
     .each((i, el) => {
       const tab = $(el);
-      tab.html(`${i + 1} ${tab.html()}`);
+      tab.html(`${common.numberFormatter.format(i + 1)} ${tab.html()}`);
       _pageIdList.push(tab.data("page"));
     });
 }

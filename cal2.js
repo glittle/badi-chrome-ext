@@ -281,7 +281,7 @@ const Cal2 = () => {
     html.push(newRowEnd);
 
     for (let i = 1; i <= 19; i++) {
-      html.push('<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{0}</div></div>'.filledWith(i, getElementNum(i)));
+      html.push('<div id="monthCell{0}" class="monthShell elementNum{1}"><div class=monthNum>{2}</div></div>'.filledWith(i, getElementNum(i), common.numberFormatter.format(i)));
     }
 
     _calendarDiv.html(html.join(""));
@@ -378,7 +378,7 @@ const Cal2 = () => {
           case 14:
             dayCells.push(newRowEnd);
             dayGroup++;
-            dayCells.push(newRow.filledWith(dayGroup));
+            dayCells.push(newRow.filledWith(common.numberFormatter.format(dayGroup)));
             break;
         }
       }
