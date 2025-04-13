@@ -1,0 +1,376 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "segala sesuatu",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Tidak dapat menentukan lokasi Anda saat ini.\n\nEkstensi akan menggunakan 18:30 sebagai waktu matahari terbenam untuk setiap hari.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Arti",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 tengah malam",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Bulan"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nama Bulan/Hari",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} dengan matahari terbenam pada {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} dengan matahari terbenam pada {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Berikutnya &rarr;"
+    },
+    "nextMonth": {
+        "message": "Bulan <u>B</u>erikutnya",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Penyegaran berikutnya dijadwalkan setelah {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Tahun Berikutnya",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Tekan Shift + Panah kanan untuk melihat tahun berikutnya",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Lokasi tidak diketahui - waktu matahari terbenam 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Lokasi saat ini)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 siang",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Tambahkan Contoh Pengingat",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Sekarang",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "ke-,ke-,ke-,ke-",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",pertama,kedua,ketiga,keempat,kelima,keenam,ketujuh,kedelapan,kesembilan,kesepuluh,kesebelas,kedua belas,ketiga belas,keempat belas,kelima belas,keenam belas,ketujuh belas,kedelapan belas,kesembilan belas"
+    },
+    "otherDays": {
+        "message": "dalam {0} hari",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "dimulai pada {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "terjadi {numUnits} yang lalu"
+    },
+    "past_DeltaTime": {
+        "message": "terjadi {numUnits} yang lalu pada {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "dimulai {numUnits} yang lalu pada {time}"
+    },
+    "past_StartTime": {
+        "message": "dimulai pada {time}"
+    },
+    "past_Time": {
+        "message": "terjadi pada {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Tahun"
+    },
+    "pick_pageCal2": {
+        "message": "Tampilan Bulan (elemen)",
+        "description": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "Tampilan Bulan (minggu)",
+        "description": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Tahun Gregorian",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Roda",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Kustom",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Hari"
+    },
+    "pick_pageEvents": {
+        "message": "Acara",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Ekspor",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Puasa"
+    },
+    "pick_pageLists": {
+        "message": "Daftar"
+    },
+    "pick_pagePlanner": {
+        "message": "Perencana",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Pengingat",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Pengaturan",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Mulai dari kapan?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Awal tahun Badíʿ berikutnya",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Awal tahun Badíʿ ini",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Hari ini",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Sertakan Hari atau Malam?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Keduanya",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Hari",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Malam",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Hasil",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Tampilkan apa?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Matahari Terbenam Awal di {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Perencana Jangka Panjang",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Pemilihan Perencanaan",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Yang mana?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "beberapa Hari Suci dan Perayaan",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "satu Hari Suci atau Perayaan",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "tahun",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Untuk berapa lama?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "sore",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Tekan tombol atau ketik {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Pilih format untuk disalin ke clipboard:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Sebelumnya"
+    },
+    "prevMonth": {
+        "message": "Bulan Sebelum<u>n</u>ya",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Tahun Sebelumnya",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Tekan Shift + Panah kiri untuk melihat tahun sebelumnya",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arab",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Indonesia",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Bahasa tampilan untuk tanggal",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Tindakan Tambahan",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "tidak ada",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "memicu resep IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "baca dengan keras",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "memicu Webhook Zapier",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Tambah/Edit Pengingat",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "setelah"
+    },
+    "reminderAlarm": {
+        "message": "Pada {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Hari {num} dari bulan Badíʿ",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "sebelum"
+    },
+    "reminderCalcType": {
+        "message": "Tampilkan pengingat {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "pada waktu tertentu",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relatif terhadap <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} pada {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} pada {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Pada hari {num} dari bulan Badíʿ",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Ketika {num} hari {beforeAfter} setiap {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "Perayaan {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "Hari Suci, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "hari {num} pada {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} hari {deltaText}, pada {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} setelah",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "umumkan pada {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

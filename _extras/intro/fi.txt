@@ -1,0 +1,29 @@
+Tämä laajennus näyttää päivämäärän Badíʿ (Ihmeellinen) -kalenterissa sijaintisi mukaan, määrittäen automaattisesti auringonlaskuajat. Päivät Badíʿ-kalenterissa alkavat ja päättyvät auringonlaskuun.
+
+Työkalurivin kuvake on hienovarainen, mutta pitää sinut ajan tasalla nykyisestä päivämäärästä Badíʿ-kalenterissa. Napsauttamalla kuvaketta näytetään yksityiskohtaisempia tietoja. Joitakin asioita, joita voit tarkastella tai tehdä:
+
+- Kopioi nykyinen päivämäärä erilaisissa muodoissa käytettäväksi muualla.
+
+- Katso Badíʿ-päivämäärä mille tahansa päivälle minä tahansa vuonna - mikä oli päivämäärä syntymäpäivänäsi?
+
+- Aseta muistutuksia ennen/jälkeen auringonnousun ja -laskun. Anna tietokoneesi ilmoittaa niistä ääneen!
+
+- Katso luettelo tulevien juhlien ja pyhäpäivien päivämääristä.
+
+- Katso täysi kalenteri (gregoriaanisessa tai Badíʿ-asettelussa) tulostusta varten.
+
+- Katso paastoajat sijaintisi mukaan.
+
+- Vie iCal-tiedosto Badíʿ-päivämäärillä tuotavaksi mihin tahansa kalenterijärjestelmään.
+
+- Hanki luettelo erityisistä päivämääristä suunnittelua varten vuosiksi eteenpäin.
+
+- Suunnittele omat mukautetut päivämäärämuodot.
+
+- Laukaise IFFF-toimintoja tai Zapier-webhookeja Badíʿ-päivämäärien tai auringonnousu/-laskuaikojen mukaan.
+
+Katso alla linkitetty verkkosivusto täydellisiä tietoja ja historiaa varten.
+
+Katso Tuki-välilehti ja lähetä ehdotuksia siitä, miten tätä laajennusta voitaisiin parantaa! Jos voit auttaa laajennuksen kääntämisessä omalle kielellesi, ilmoita minulle! Nykyiset kielet on näytetty alla.
+
+Tekijä: Glen Little (Calgary, Kanada)

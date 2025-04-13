@@ -1,0 +1,376 @@
+        {
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "Alle-Dinge",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Ihr aktueller Standort konnte nicht ermittelt werden.\n\nDie Erweiterung wird für jedes Datum 18:30 Uhr als Sonnenuntergang verwenden.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Bedeutung",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "00:00 Mitternacht",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Monat"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Monats-/Tagesnamen",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} mit Sonnenuntergang um {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} mit Sonnenuntergang um {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Weiter &rarr;"
+    },
+    "nextMonth": {
+        "message": "Nächster <u>M</u>onat",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Nächste Aktualisierung geplant nach {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Nächstes Jahr",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Umschalttaste + rechte Pfeiltaste drücken um das nächste Jahr anzuzeigen",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noon": {
+        "message": "12:00 Mittag",
+        "description": "nice way to say noon"
+    },
+    "noLocationAvailable": {
+        "message": "(Unbekannt Ort - 06.30 Sonnenuntergang mal)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Aktueller Standort)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noReminders": {
+        "message": "Beispielserinnerung hinzufügen",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Jetzt",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": ".",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",erste,zweite,dritte,vierte,fünfte,sechste,siebte,achte,neunte,zehnte,elfte,zwölfte,dreizehnte,vierzehnte,fünfzehnte,sechzehnte,siebzehnte,achtzehnte,neunzehnte"
+    },
+    "otherDays": {
+        "message": "in {0} Tagen",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "begann um {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "war vor {numUnits}"
+    },
+    "past_DeltaTime": {
+        "message": "war vor {numUnits} um {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "begann vor {numUnits} um {time}"
+    },
+    "past_StartTime": {
+        "message": "begann um {time}"
+    },
+    "past_Time": {
+        "message": "war um {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Jahr"
+    },
+    "pick_pageCal2": {
+        "message": "Monatsansicht (Elemente)",
+        "description": "tab name"
+    },
+    "pick_pageCal3": {
+        "message": "Monatsansicht (Wochen)",
+        "description": "tab name"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregorianisches Jahr",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Rad",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Benutzerdefiniert",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Tag"
+    },
+    "pick_pageEvents": {
+        "message": "Ereignisse",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Export",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Fastenzeit"
+    },
+    "pick_pageLists": {
+        "message": "Listen"
+    },
+    "pick_pagePlanner": {
+        "message": "Planer",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Erinnerungen",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Einstellungen",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Ab wann?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Beginn des nächsten Badíʿ-Jahres",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Beginn dieses Badíʿ-Jahres",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Heute",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Tag oder Abend einbeziehen?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Beide",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Tag",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Abend",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Ergebnisse",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Was anzeigen?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Sonnenuntergang in {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Langfristiger Planer",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Auswahl",
+        "description": "title over inputs"
+    },
+    "pm": {
+        "message": "pm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "plannerWhatEvent": {
+        "message": "Welche?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "mehrere Feiertage und 19-Tagefeste",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "ein Feiertag oder 19-Tagefest",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "Jahre",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Für wie lange?",
+        "description": "another question"
+    },
+    "pressKeyOrClick": {
+        "message": "Button anklicken oder {0} eingeben.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Taste drücken um das formatierte Datum in die Zwischenablage zu kopieren:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Zurück"
+    },
+    "prevMonth": {
+        "message": "Voriger Mo<u>n</u>at",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Voriges Jahr",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Umschalttaste + linke Pfeiltaste drücken um das voriger Jahr anzuzeigen",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabisch",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Deutsche",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Sprache für Monate etc.",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Zusätzliche Aktion",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "keine",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "IFTTT-Rezept auslösen",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "Laut vorlesen",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "Zapier Webhook auslösen",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Erinnerung hinzufügen/bearbeiten",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "nach"
+    },
+    "reminderAlarm": {
+        "message": "Um {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Tag {num} des Badíʿ-Monats",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "vor"
+    },
+    "reminderCalcType": {
+        "message": "Erinnerung anzeigen {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "zu bestimmter Zeit",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativ zu <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} am {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} am {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Am Tag {num} des Badíʿ-Monats",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Wenn {num} Tag(e) {beforeAfter} jedes {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "Das Fest von {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "Der Feiertag, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "Tag {num} um {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} Tag(e) {deltaText}, um {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} nach",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "um {triggerTimeRawDisplay} ankündigen",
+        "description": "in list of defined reminders"
+    }
+}

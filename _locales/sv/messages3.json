@@ -1,0 +1,374 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "Alla ting",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Din plats kunde inte identifieras.\n\nTillägget kommer att använda 18:30 som solnedgångstid för alla dagar.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Betydelse",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "midnatt",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Månad"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Månads-/dagsnamn",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} med solnedgång kl {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} vid solnedgång kl {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Nästa &rarr;"
+    },
+    "nextMonth": {
+        "message": "Nästa <u>m</u>ånad",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Nästa uppdatering schemalagd efter {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Nästa år",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Tryck Shift + högerpil för att visa nästa år",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Okänd plats - 18:30 solnedgångstid)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Aktuell plats)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "middag",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Lägg till exempelpåminnelser",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Nu",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": ":a,:a,:a,:e",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",första,andra,tredje,fjärde,femte,sjätte,sjunde,åttonde,nionde,tionde,elfte,tolfte,trettonde,fjortonde,femtonde,sextonde,sjuttonde,artonde,nittonde"
+    },
+    "otherDays": {
+        "message": "om {0} dagar",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "började kl {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "var {numUnits} sedan"
+    },
+    "past_DeltaTime": {
+        "message": "var {numUnits} sedan kl {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "började {numUnits} sedan kl {time}"
+    },
+    "past_StartTime": {
+        "message": "började kl {time}"
+    },
+    "past_Time": {
+        "message": "var kl {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Årsvy"
+    },
+    "pick_pageCal2": {
+        "message": "Månadsvy (element)"
+    },
+    "pick_pageCal3": {
+        "message": "Månadsvy (veckor)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregoriansk månadsvy",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Hjul",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Anpassad",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Dag"
+    },
+    "pick_pageEvents": {
+        "message": "Händelser",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Exportera",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Fasta"
+    },
+    "pick_pageLists": {
+        "message": "Listor"
+    },
+    "pick_pagePlanner": {
+        "message": "Planerare",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Påminnelser",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Inställningar",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Från när?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Från början av nästa Badíʿ-år",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Från början av detta Badíʿ-år",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Idag",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Inkludera dag eller kväll?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Båda",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Dag",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Kväll",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Resultat",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Vad ska visas?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Solnedgång vid {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Långtidsplanerare",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Planeringsval",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Vilken?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "flera heliga dagar och fester",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "en helig dag eller fest",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "år",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "För hur länge?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "em",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Tryck på knappen eller tangenten {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Tryck på en tangent för att kopiera formaterat datum till urklipp:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Föregående"
+    },
+    "prevMonth": {
+        "message": "Föregående må<u>n</u>ad",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Föregående år",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Tryck Shift + vänsterpil för att visa föregående år",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabiska",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Svenska",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Visningsspråk för datum",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Ytterligare åtgärd",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "ingen",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "utlös IFTTT-recept",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "läs upp",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "utlös Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Lägg till/redigera påminnelse",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "efter"
+    },
+    "reminderAlarm": {
+        "message": "Vid {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Dag {num} i Badíʿ-månaden",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "före"
+    },
+    "reminderCalcType": {
+        "message": "Visa påminnelse {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "vid specifik tid",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativt till <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} på {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} den {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "På dag {num} i Badíʿ-månaden",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "När {num} dag(ar) {beforeAfter} varje {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "Festen för {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "Den heliga dagen, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "dag {num} kl {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} dag(ar) {deltaText}, kl {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} efter",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "meddela kl {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

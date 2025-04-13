@@ -1,0 +1,334 @@
+{
+    "exporterItemDescDay": {
+        "message": "Een dag in de Badíʿ kalender.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Tijden voor de jaarlijkse Bahá'í vasten.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Bijeenkomst kan op elk moment op deze Badíʿ dag beginnen.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Exporteer de Badíʿ kalender",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Download iCalendar bestand (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoriaans jaar - {0} n.Chr."
+    },
+    "exportGregYear1": {
+        "message": "Gregoriaans jaar - {0} n.Chr."
+    },
+    "exportHideTest": {
+        "message": "Verbergen"
+    },
+    "exportIncludeAlert": {
+        "message": "Voeg een waarschuwing toe aan elke gebeurtenis (wordt mogelijk niet in Google agenda geladen)"
+    },
+    "exportIncludeLocation": {
+        "message": "Locatie-informatie"
+    },
+    "exportIntro": {
+        "message": "Belangrijk! Kijk op <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">deze web pagina</a> voor informatie en waarschuwingen!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Titel voor geëxporteerde kalender (wordt mogelijk niet gebruikt)"
+    },
+    "exportNumToInclude": {
+        "message": "Aantal kalenderitems dat wordt gemaakt (bij benadering):"
+    },
+    "exportOption_AllDay": {
+        "message": "Hele dag gebeurtenis vanaf middernacht <em>(1 dag lang)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Alleen bij begin zonsondergang"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-dagen <em>(365/366 dagen)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Vastendagen <em>(19 dagen)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Feesten <em>(19-daags)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Heilige dagen <em>(11 dagen)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Gebeurtenis op aangewezen herdenkingstijd of gebruikelijke vergadertijd"
+    },
+    "exportOption_Sun": {
+        "message": "Van zonsondergang tot zonsondergang <em>(ongeveer 24 uur)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Alleen bij zonsopgang"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Gebeurtenis van zonsopgang tot zonsondergang <em>(ongeveer 12 uur)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Alleen bij zonsondergang"
+    },
+    "exportOption_Usual": {
+        "message": "Gebeurtenis op gebruikelijke vergadertijd (zie Gebeurtenissen pagina)"
+    },
+    "exportOtherSettings": {
+        "message": "Andere instellingen"
+    },
+    "exportQuickDesc": {
+        "message": "Exporteer elke set en laad ze allemaal in dezelfde kalender!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Volledige kalender"
+    },
+    "exportQuickPick1Text": {
+        "message": "Toon elke Badíʿ dag, samen met heilige dagen en feesttijden. Geen waarschuwingen."
+    },
+    "exportQuickPick2": {
+        "message": "2. Vastentijd - Ochtend"
+    },
+    "exportQuickPick2Text": {
+        "message": "Zonsopgang, met een waarschuwing vlak ervoor."
+    },
+    "exportQuickPick3": {
+        "message": "3. Vastentijd - Avond"
+    },
+    "exportQuickPick3Text": {
+        "message": "Zonsondergang, met een waarschuwing."
+    },
+    "exportQuickPickClearText": {
+        "message": "Reset opties"
+    },
+    "exportQuickPicks": {
+        "message": "Aanbevolen sets gebeurtenissen"
+    },
+    "exportRangeFullRange": {
+        "message": "Exporteer alle kalenderitems. (Indien niet aangevinkt, wordt alleen een voorbeeldset geëxporteerd.)"
+    },
+    "exportTest": {
+        "message": "We<u>e</u>rgeven om te kopiëren"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Selecteer wat geëxporteerd moet worden."
+    },
+    "exportWhatToInclude": {
+        "message": "Opties"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Tijden van de vasten in {bYear}"
+    },
+    "fastGDate": {
+        "message": "Datum",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Feest van {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Ridvánfeest"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(klik voor details)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "begint om {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "zal over {numUnits} zijn"
+    },
+    "future_DeltaTime": {
+        "message": "zal over {numUnits} zijn om {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "zal over {numUnits} beginnen om {time}"
+    },
+    "future_StartTime": {
+        "message": "zal om {time} beginnen"
+    },
+    "future_Time": {
+        "message": "zal om {time} zijn"
+    },
+    "gCombined_1": {
+        "message": "{frag1Day}/{frag2Day} {frag1MonthShort}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1Day}/{frag2Day} {frag1MonthShort} {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1Day} {frag1MonthShort}/{frag2Day} {frag2MonthShort} {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1Day} {frag1MonthShort} {frag1Year}/{frag2Day} {frag2MonthShort} {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregoriaanse Datum"
+    },
+    "gDatePickerTitle2": {
+        "message": "Kies een <u>G</u>regoriaanse Datum",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bDay} {bMonthNamePri} {bYear}"
+    },
+    "gMonthLong": {
+        "message": "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december"
+    },
+    "gMonthShort": {
+        "message": "jan,feb,maa,apr,mei,jun,jul,aug,sep,okt,nov,dec"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Nu"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} {currentDay} {currentMonthLong} {currentYear}, {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "zondag,maandag,dinsdag,woensdag,donderdag,vrijdag,zaterdag",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "zo,ma,di,wo,do,vr,za",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Heengaan van `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Hemelvaart van Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Geboortedag van de Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Geboortedag van Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Dag van het Verbond"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Verkondiging van de Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Marteldood van de Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Eerste dag van Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Twaalfde dag van Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Negende dag van Ridván"
+    },
+    "iconColor": {
+        "message": "Pictogramkleur",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automatisch (systeemthema volgen)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Handmatig",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "IFTTT Event Name",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Voot details of om in te schrijven, zie <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. De gebeurtenis bevat de volgende velden: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel Key",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>eesten",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>eilige dagen",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Toon",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Schrikkeldagen"
+    },
+    "jumpTo": {
+        "message": "<u>S</u>pring ± dagen",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

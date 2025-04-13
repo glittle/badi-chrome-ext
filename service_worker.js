@@ -117,7 +117,7 @@ browser.runtime.onInstalled.addListener((info) => {
         id: "openInTab",
         type: "normal",
         title: getMessage("browserMenuOpen"),
-        contexts: ["all"],
+        contexts: ["action"], // Changed from "all" to "action" to show on extension icon
       },
       () => {
         const msg = browser.runtime.lastError;
@@ -131,7 +131,9 @@ browser.runtime.onInstalled.addListener((info) => {
     );
     browser.contextMenus.onClicked.addListener((info) => {
       if (info.menuItemId === "openInTab") {
-        openInTab();
+        // Define the function directly here to ensure it works in the service worker context
+        browser.tabs.create({ url: "popup.html" });
+        console.log("Opening popup in a new tab");
       }
     });
   }, 1000);
@@ -168,7 +170,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
         const unknownLocation = request.unknownLocation || "Unknown location";
         console.log("getting City name... lat:", lat, "long:", long, "key:", key);
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&key=${key}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&language=${common.languageCode}&key=${key}`)
           .then((response) => response.json())
           .then((data) => {
             const error = data.error_message;
@@ -276,6 +278,48 @@ browser.runtime.onMessageExternal.addListener(
   }
 );
 
+// Add alarm listener to handle day changes
+browser.alarms.onAlarm.addListener((alarm) => {
+  console.log("Alarm triggered in service worker:", alarm.name, new Date(alarm.scheduledTime));
+  
+  // Check if this is a refresh alarm
+  if (alarm.name.startsWith(_refreshPrefix)) {
+    browser.alarms.clear(alarm.name).then((wasCleared) => {
+      console.log("Alarm cleared:", wasCleared);
+    });
+    
+    // Refresh the date info and update the icon
+    refreshDateInfoAndShowAsync(true);
+  }
+  // Handle periodic refresh
+  else if (alarm.name === "periodic_refresh") {
+    // Check if the date has changed since the last refresh
+    const currentDate = new Date();
+    const currentDateInfo = getDateInfo(currentDate, true);
+    
+    // Compare with the last known date info
+    if (_initialDiStamp && _initialDiStamp.stamp !== currentDateInfo.stamp) {
+      console.log("Date has changed, refreshing icon");
+      refreshDateInfoAndShowAsync(true);
+    } else {
+      // Just update the icon to be safe
+      showIcon();
+    }
+  }
+});
+
 (async () => {
   await prepareForBackgroundAndPopupAsync();
+  
+  // Ensure the icon is refreshed when the extension is loaded
+  refreshDateInfoAndShowAsync(true);
+  
+  // Debug: List all active alarms
+  browser.alarms.getAll().then((alarms) => {
+    console.log("Active Alarms at startup:", alarms.length);
+    for (let i = 0; i < alarms.length; i++) {
+      const alarm = alarms[i];
+      console.log("Alarm:", alarm.name, new Date(alarm.scheduledTime));
+    }
+  });
 })();

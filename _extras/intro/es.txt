@@ -1,0 +1,29 @@
+Esta extensión muestra la fecha en el calendario Badíʿ (Maravilloso) donde te encuentras, determinando automáticamente las horas de puesta del sol. Los días en el calendario Badíʿ comienzan y terminan al atardecer.
+
+El icono en la barra de herramientas es sutil pero te mantiene informado de la fecha actual en el calendario Badíʿ. Al hacer clic en el icono, se muestra información más detallada. Algunas cosas que puedes ver o hacer:
+
+- Copiar la fecha actual en una variedad de formatos, para usar en otros lugares.
+
+- Ver la fecha Badíʿ para cualquier día de cualquier año - ¿cuál era la fecha en tu cumpleaños?
+
+- Establecer recordatorios antes/después del amanecer y atardecer. ¡Haz que tu computadora los anuncie en voz alta!
+
+- Ver una lista de fechas para próximas Fiestas y Días Sagrados.
+
+- Ver un calendario completo (en diseño Gregoriano o Badíʿ) apropiado para imprimir.
+
+- Ver los horarios del Ayuno para tu ubicación.
+
+- Exportar un archivo iCal con fechas Badíʿ, para importar en cualquier sistema de calendario.
+
+- Obtener una lista de fechas especiales para planificar años en el futuro.
+
+- Diseñar tus propios formatos de fecha personalizados.
+
+- Activar acciones IFFF o webhooks de Zapier según fechas Badíʿ o horarios de amanecer/atardecer.
+
+Consulta el sitio web enlazado a continuación para obtener detalles completos e historia.
+
+¡Por favor, consulta la pestaña de Soporte y envía Sugerencias sobre cómo se podría mejorar esta extensión! Si puedes ayudar a traducir la extensión a tu idioma, ¡házmelo saber! Los idiomas actuales se muestran a continuación.
+
+Autor: Glen Little (Calgary, Canadá)

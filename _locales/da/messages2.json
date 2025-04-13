@@ -1,0 +1,342 @@
+{
+    "exporterItemDescDay": {
+        "message": "En dag i Badíʿ-kalenderen.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Tider for den årlige Bahá'í-faste.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Samling kan starte på et hvilket som helst tidspunkt på denne Badíʿ-dag.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Solopgangs- eller solnedgangstider vist er for {location}. Genereret ved hjælp af http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ-kalender eksportør",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Download iCalendar-fil (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregoriansk år - {0} e.Kr."
+    },
+    "exportGregYear1": {
+        "message": "Gregoriansk år - {0} e.Kr."
+    },
+    "exportHideTest": {
+        "message": "Skjul"
+    },
+    "exportIncludeAlert": {
+        "message": "Tilføj en påmindelse til hver begivenhed (indlæses muligvis ikke i Google-kalender)"
+    },
+    "exportIncludeLocation": {
+        "message": "Placeringsoplysninger"
+    },
+    "exportIntro": {
+        "message": "Vigtigt! Se <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">denne webside</a> for information og forbehold!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Titel for eksporteret kalender (bruges muligvis ikke)"
+    },
+    "exportNumToInclude": {
+        "message": "Antal kalenderindgange inkluderet (cirka):"
+    },
+    "exportOption_AllDay": {
+        "message": "Heldagsbegivenhed fra midnat <em>(1 dag lang)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Kun ved begyndende solnedgang"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ-dage <em>(365/366 dage)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fastedage <em>(19 dage)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Fester <em>(19 dage)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Helligdage <em>(11 dage)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Begivenhed på det angivne observationstidspunkt eller sædvanlige mødetidspunkt"
+    },
+    "exportOption_Sun": {
+        "message": "Fra solnedgang til solnedgang <em>(omkring 24 timer)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Kun ved solopgang"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Begivenhed fra solopgang til solnedgang <em>(omkring 12 timer)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Kun ved solnedgang"
+    },
+    "exportOption_Usual": {
+        "message": "Begivenhed på sædvanligt mødetidspunkt (se Begivenheder-siden)"
+    },
+    "exportOtherSettings": {
+        "message": "Andre indstillinger"
+    },
+    "exportQuickDesc": {
+        "message": "Eksportér hvert sæt, og indlæs dem derefter alle i den samme kalender!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Fuld kalender"
+    },
+    "exportQuickPick1Text": {
+        "message": "Vis hver Badíʿ-dag, sammen med helligdage og festtider. Ingen påmindelser."
+    },
+    "exportQuickPick2": {
+        "message": "2. Fastetid - Morgen"
+    },
+    "exportQuickPick2Text": {
+        "message": "Solopgang, med en påmindelse lige før."
+    },
+    "exportQuickPick3": {
+        "message": "3. Fastetid - Aften"
+    },
+    "exportQuickPick3Text": {
+        "message": "Solnedgang, med en påmindelse."
+    },
+    "exportQuickPickClearText": {
+        "message": "Nulstil indstillinger"
+    },
+    "exportQuickPicks": {
+        "message": "Anbefalede sæt af begivenheder"
+    },
+    "exportRangeFullRange": {
+        "message": "Eksportér alle kalenderindgange. (Hvis ikke markeret, eksporteres kun et prøvesæt.)"
+    },
+    "exportTest": {
+        "message": "Vi<u>s</u> til kopiering"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Vælg hvad der skal eksporteres."
+    },
+    "exportWhatToInclude": {
+        "message": "Indstillinger"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Fastetider i {bYear}"
+    },
+    "fastGDate": {
+        "message": "Dato",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Fest for {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Ridván-festivalen"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(klik for flere detaljer)"
+    },
+    "formatIconToolTip": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "starter kl. {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "vil være om {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "vil være om {numUnits} kl. {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "vil starte om {numUnits} kl. {time}"
+    },
+    "future_StartTime": {
+        "message": "vil starte kl. {time}"
+    },
+    "future_Time": {
+        "message": "vil være kl. {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregoriansk dato"
+    },
+    "gDatePickerTitle2": {
+        "message": "Gå til <u>G</u>regoriansk dato",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "Januar,Februar,Marts,April,Maj,Juni,Juli,August,September,Oktober,November,December"
+    },
+    "gMonthShort": {
+        "message": "Jan,Feb,Mar,Apr,Maj,Jun,Jul,Aug,Sep,Okt,Nov,Dec"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Nu"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Søndag,Mandag,Tirsdag,Onsdag,Torsdag,Fredag,Lørdag",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Søn,Man,Tir,Ons,Tor,Fre,Lør",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "`Abdu'l-Bahás himmelfart"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Bahá'u'lláhs himmelfart"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Bábs fødsel"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Bahá'u'lláhs fødsel"
+    },
+    "HolyDay_Covenant": {
+        "message": "Pagtens dag"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Bábs erklæring"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Bábs martyrium"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Første dag i Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Tolvte dag i Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Niende dag i Ridván"
+    },
+    "iconColor": {
+        "message": "Ikonfarve",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automatisk (følg systemtema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manuel",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "IFTTT-begivenhedsnavn",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "For detaljer eller for at tilmelde dig, se <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. Begivenheden vil indeholde disse felter: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel-nøgle",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>ester",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>elligdage",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Vis",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Breddegrad:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Længdegrad:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "Skuddage"
+    },
+    "jumpTo": {
+        "message": "<u>S</u>pring ± dage",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

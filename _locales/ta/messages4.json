@@ -1,0 +1,368 @@
+{
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "நாள்(கள்)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "நாள்;நாட்கள்",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "மணிநேரம்(கள்)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "மணிநேரம்;மணிநேரங்கள்"
+    },
+    "reminderNum_minutes": {
+        "message": "நிமிடம்(கள்)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "நிமிடம்;நிமிடங்கள்"
+    },
+    "reminderNum_seconds": {
+        "message": "வினாடி(கள்)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "வினாடி;வினாடிகள்"
+    },
+    "remindersDefined": {
+        "message": "உங்கள் நினைவூட்டல்கள்",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "ஒரு நினைவூட்டலைச் சேர்க்கவும்...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "இல் காட்டு",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "{time} முதல் நள்ளிரவு வரை இன்று திட்டமிடப்பட்டது",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "({when}இல் காட்டப்படும்)",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "({when}இல் காட்டப்பட வேண்டும்)",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "{num} {units} {delta} காட்டு",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} நினைவூட்டல்",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "படீ' நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "விருந்து நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "புனித நாள்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "ஏற்றும்போது",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "நள்ளிரவு",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "நண்பகல்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "சூரியோதயம்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "சூரியாஸ்தமனம்",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "சிறப்பு நாட்கள்",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "பிற நிகழ்வுகள்",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "நாளின் நேரம்",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "நிகழ்வு",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>இந்த வலை விரிவாக்கம் நீங்கள் இருக்கும் இடத்திற்கு உள்ளூர் படீ' நாள்காட்டி பற்றிய தற்போதைய தகவல்களை வழங்க வடிவமைக்கப்பட்டுள்ளது.</p><p>மேலும் தகவலுக்கு, கீழே உள்ள 'பதிப்பு' இணைப்பை அல்லது ஏதேனும் சின்னங்களைக் கிளிக் செய்யவும்!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "பற்றி",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "கருவிப்பட்டை சின்னத்திற்கான உரை நிறம்:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "சின்ன நிறம்",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "மொழி",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% மொழிபெயர்க்கப்பட்டது. <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>நீங்கள் உதவ முடியுமா</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% மொழிபெயர்க்கப்பட்டது!"
+    },
+    "setupOptOut": {
+        "message": "விலகுவதா?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "இந்த வலை விரிவாக்கம் எவ்வாறு பயன்படுத்தப்படுகிறது என்பதைப் புரிந்துகொள்ள உதவ, நீங்கள் பக்கங்களுக்கு இடையே மாறும்போது அல்லது பிற முக்கிய செயல்களைச் செய்யும்போது புள்ளிவிவரங்கள் பதிவு செய்யப்படுகின்றன. இது அநாமதேயமானது, மற்றும் தொடர்புடைய அறிக்கைகளை கிளென் லிட்டில் பார்க்க முடியும். நீங்கள் விலக விரும்பினால் இதை அணைக்க, இந்த பெட்டியை தேர்வு செய்யலாம்:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "பகுப்பாய்வு",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "இது {bWeekdayNamePri} வாரநாள், {bDayNamePri} மாதநாள், {bMonthNamePri} மாதம், {bYearInVahidNamePri} வருடம், {bVahidOrdinalName} வஹீட், {bKullishayOrdinalName} குல்-இ-ஷே.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "குரோம் உலவியில் எங்கிலுமிருந்து படீ' நாள்காட்டியைத் திறக்க இவ்விசையை சொடுக்கவும்"
+    },
+    "showPointer": {
+        "message": "சுட்டியைக் காட்டு"
+    },
+    "specialDaysTitle": {
+        "message": "{bYear} த்தில் விருந்துகளும் புனித நாள்களும்"
+    },
+    "specialTime_0100S": {
+        "message": "அதிகாலை 1 மணி (நியம நேரம்)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "காலை 3 மணி (நியம நேரம்)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "நன்பகல் (நியம நேரம்)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "மாலை 3 மணி (நியம நேரம்)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "அஸ்தமனத்திற்குப் பிறகு சுமார் 2 மணி நேரம் கழித்து",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "நிலையான வடிவமைப்புகள்",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "அஸ்தமனத்தில் {0} ஆரம்பித்தது",
+        "description": ""
+    },
+    "startTimeOption": {
+        "message": "வழக்கமாக ஒன்றுகூடும் நேரம்: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "பரிந்துரைகள்?"
+    },
+    "suggestionsTitle": {
+        "message": "இங்கு சொடுக்கி இவ்விரிவாக்கத்தை எவ்வாறு மேம்படுத்துவது என்பதற்கான பரிந்துரைகளைச் சமர்ப்பிக்கவும்!"
+    },
+    "sunriseFastHeading": {
+        "message": "சூர்யோதயம்",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": " சூர்யஸ்தமனம்",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "படீ' நாளின் ஆரம்பம்",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "பணி விடுப்பு",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{ampm} {time}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "உதவிக்கு",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "துல்லியம்?",
+        "description": ""
+    },
+    "tipsAboutText": {
+        "message": "221 ப.யு. (2064 கி.பி.) வரையிலான திகதிகள் அறியப்படுகின்றன. அதற்குப் பிறகு, வானியல் அவதானிப்புகள் மேம்படும்போது புதுப்பிப்புகள் தேவைப்படலாம். 50 ஆண்டுகளுக்கு மேல் எதிர்காலத்தில் உங்கள் திட்டங்களை முடிவு செய்ய இதைப் பயன்படுத்த வேண்டாம்! மேலும் விவரங்களுக்கு இணையதளத்தைப் பார்க்கவும்.",
+        "description": ""
+    },
+    "tipsText": {
+        "message": "பலகத்தைத் தேர்வு செய்ய பக்.மேல்/பக்.கீழ் விசைகளைப் பயன்படுத்துக. \nநாள்களை மாற்ற வலம்/இடம் அம்புவிசைகளைப் பயன்படுத்துக.அஸ்தமனத்திற்கு முன்/பின் \n / அம்புவிசைகளைப் பயன்படுத்துக."
+    },
+    "Tonight": {
+        "message": "இன்றிரவு",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "ta",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Tamil",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "எதிர்வரும் விருந்துகள், புனித நாள்கள் மற்றும் பிற நிகழ்ச்சிகள்"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "வஹீட்"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLabelPri": {
+        "message": "வஹீட்",
+        "description": "Label for Vahid in primary language"
+    },
+    "VahidLabelSec": {
+        "message": "Váḥid",
+        "description": "Label for Vahid in secondary language"
+    },
+    "VahidLocal": {
+        "message": "ஒற்றுமை",
+        "description": ""
+    },
+    "version": {
+        "message": "பதிப்பு {0}"
+    },
+    "webstore": {
+        "message": "குரோம் இணைய அங்காடி"
+    },
+    "weekDayNames": {
+        "message": "வாரநாள்களின் பெயர்",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "பஹாய் யுக வருடம்"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "வஹீட் வருடம்"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}",
+        "description": ""
+    },
+    "zapierInfo": {
+        "message": "விவரங்களுக்கு அல்லது பதிவு செய்ய, <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> ஐப் பார்க்கவும். Zap இல் இந்த புலங்கள் இருக்கும்: தலைப்பு, உடல், குறிச்சொல், நேரம்",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook URL",
+        "description": "url for Zapier"
+    }
+}

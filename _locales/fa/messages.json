@@ -1,358 +1,374 @@
 {
-  "1day": {
-    "message": "تا {0} روز دیگر",
-    "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
-  },
-  "afterSunset": {
-    "message": "شب - بعد از غروب آفتاب"
-  },
-  "beforeSunset": {
-    "message": "روز - قبل از غروب آفتاب"
-  },
-  "bMonthNameAr": {
-    "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
-    "description": "month names, start with Ayyam-i-Ha"
-  },
-  "browserActionTitle": {
-    "message": "بارگذاری",
-    "description": "Shown until the dynamic tip is created"
-  },
-  "btnEveOrDay": {
-    "message": "ل / بعد از غروب آفتاب"
-  },
-  "btnPlannerExportICal": {
-    "message": "تقویم iCal را اکسپورت کنید",
-    "description": "button - export to iCalendar format"
-  },
-  "btnPlannerHelperFeasts": {
-    "message": "ضیافات ",
-    "description": "helper button"
-  },
-  "btnPlannerHelperHD2": {
-    "message": "همه ی ایام محرمه ",
-    "description": "helper button"
-  },
-  "Chrome_WebStore": {
-    "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
-    "description": "link to Webstore when running in Chrome"
-  },
-  "copied": {
-    "message": "کپی شد",
-    "description": "short message that replaces sample format button text when button is clicked"
-  },
-  "customBuilderEcho": {
-    "message": "نتایج (برای روزی که انتخاب کرده اید. برای تغییر روز به قسمت کلید ها و راهنمائی مراجعه کنید)"
-  },
-  "customLoadLetters": {
-    "message": "برای شروع از یک شکل استاندارد، کلیک کنید"
-  },
-  "dayEndedFuture": {
-    "message": "پایان میابد"
-  },
-  "dayEndedPast": {
-    "message": "پایان یافت"
-  },
-  "DayOfMonth": {
-    "message": "روز ماه"
-  },
-  "DayOfWeek": {
-    "message": "روز هفته"
-  },
-  "dayStartedFuture": {
-    "message": "شروع میشود"
-  },
-  "dayStartedPast": {
-    "message": "آغاز شد"
-  },
-  "Ended": {
-    "message": "پایان",
-    "description": "Shown in the upcoming dates area"
-  },
-  "endingWithSunset": {
-    "message": "پایان در غروب ساعت {0}"
-  },
-  "eraAbbrev": {
-    "message": "د.ب."
-  },
-  "eraLong": {
-    "message": "دور بهائی"
-  },
-  "eraShort": {
-    "message": "بدیع"
-  },
-  "example2": {
-    "message": "{bMonthNamePri}{bDay}{dayStartedLower} از غروب (تقریباً) {startingSunsetDesc} در {frag1WeekdayLong}{frag1MonthShort}{frag1Day} و {dayEndedLower} غروب تقریباً {endingSunsetDesc} در {frag2WeekdayLong}{frag2MonthShort}{frag2Day}"
-  },
-  "exportAlert_B15": {
-    "message": "پانزده دقیقه قبل از "
-  },
-  "exportAlert_B5": {
-    "message": "پنج دقیقه قبل از "
-  },
-  "exportBadiYear1": {
-    "message": "سال {0} بدیع"
-  },
-  "exporterFastStart": {
-    "message": "روزه آغاز می شود ",
-    "description": "when the fast starts at sunrise"
-  },
-  "exportFile": {
-    "message": "فایل (iCalendar(.ics را دانلود کنید"
-  },
-  "exportIncludeAlert": {
-    "message": "به هر جلسه یک اخطار اضافه کنید (ممکن است در تقویم گوگل نیاید)"
-  },
-  "exportOption_Date": {
-    "message": "روز های تقیم بدیع <em>(365/366 days)</em><em>(365/366 days)</em>"
-  },
-  "exportOption_Feast": {
-    "message": "ضیافات <em>(19 days)</em>"
-  },
-  "exportOption_Usual": {
-    "message": "جلسه در همان موقع معمولی جلسه (به صفحه ی جلسه مراجعه کنید)"
-  },
-  "exportQuickPick1": {
-    "message": "تقویم کامل "
-  },
-  "exportRangeFullRange": {
-    "message": "همه ی موارد تقویم را اکسپورت کنید. (اگر چک نشده، فقط یک نمونه را اکسپورت کنید)"
-  },
-  "FeastOf": {
-    "message": "ضیافت {0}",
-    "description": "The localized name of the Feast will be put into {0}"
-  },
-  "FestivalRidvan": {
-    "message": "عید رضوان"
-  },
-  "Firefox_History": {
-    "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
-    "description": "about page"
-  },
-  "formatIconClick": {
-    "message": "ای اظلاعات بیشتر Click کنید"
-  },
-  "formatIconToolTip": {
-    "message": "{bDay}{bMonthNamePri}{bYear}",
-    "description": "text when mouse is over the extension icon"
-  },
-  "future_Time": {
-    "message": "در{time} خواهد بود"
-  },
-  "gDatePickerTitle": {
-    "message": "تاریخ میلادی"
-  },
-  "gMonthLong": {
-    "message": "ژانویه، فوریه، مارس، آوریل، مه، ژوئن، ژوئیه، اوت، سپتامبر، اکتبر، نوامبر، دسامبر"
-  },
-  "googlePlus": {
-    "message": "گوگل پلاس",
-    "description": "ALT for icon at bottom of page"
-  },
-  "gotoNow": {
-    "message": "فعلی"
-  },
-  "gregorianDateDisplay": {
-    "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
-    "description": "in left panel"
-  },
-  "gWeekdayLong": {
-    "message": "یکشنبه، دوشنبه، سه شنبه،  چهارشنبه، پنجشنبه، جمعه، شنبه",
-    "description": "start with Sunday"
-  },
-  "gWeekdayShort": {
-    "message": "یکشنبه،دوشنبه،سه شنبه،چهار شنبه،پنجشنبه،جمعه،شنبه",
-    "description": "start with Sun"
-  },
-  "HolyDay_AscAbdul": {
-    "message": "صعود حضرت عبدالبهاء"
-  },
-  "HolyDay_AscBaha": {
-    "message": "صعود حضرت بهاءالله"
-  },
-  "HolyDay_BirthBab": {
-    "message": "تولد حضرت اعلی"
-  },
-  "HolyDay_BirthBaha": {
-    "message": "تولد حضرت بهاءالله"
-  },
-  "HolyDay_Covenant": {
-    "message": "روز عهد و میثاق"
-  },
-  "HolyDay_DeclBab": {
-    "message": "اظهار امر حضرت باب"
-  },
-  "HolyDay_Martyrdom": {
-    "message": "شهادت حضرت اعلی"
-  },
-  "HolyDay_NawRuz": {
-    "message": "نوروز"
-  },
-  "HolyDay_Ridvan1": {
-    "message": "اول عیذ رضوان"
-  },
-  "HolyDay_Ridvan12": {
-    "message": "دوازدهم عید رضوان"
-  },
-  "HolyDay_Ridvan9": {
-    "message": "نهنم عید رضوان"
-  },
-  "Intercalary": {
-    "message": "ایام هاء"
-  },
-  "Kullishay": {
-    "message": "کلشیئ"
-  },
-  "KullishayLocal": {
-    "message": "کل شيئ",
-    "description": "Transalation of Kull-i-Shay"
-  },
-  "locationError": {
-    "message": "محل شما قابل شناسائی نیست. ساعت 6:30 بعذ لز ظهر برای غروب آفتاب در نظر گرفته خواهد شد.",
-    "description": "If the system cannot determine the location, this is shown in an alert window."
-  },
-  "nearestSunsetEve": {
-    "message": "{dayStarted} از غروب آفتاب {startingSunsetDesc}"
-  },
-  "next": {
-    "message": "&rarr; بعدی"
-  },
-  "noLocationAvailable": {
-    "message": "(مکان نا معلوم - ۶:۳۰ بعد از ظهر ساعات غروب)",
-    "description": "If the system does not know the location of this computer."
-  },
-  "noLocationName": {
-    "message": "(محل فعلی)",
-    "description": "If the internet is not available, to get the name of the current location."
-  },
-  "Now": {
-    "message": "هم اکنون",
-    "description": "Shown in the upcoming dates area"
-  },
-  "ordinalNames": {
-    "message": "اولین، دومین، سومین، چهارمین، پنجمین، ششمین، هفتمین، هشتمین، نهمین، دهمین، یازذهمین، دوازدهمین، سیزدهمین، چهاردهمین، پانزدهمین، شانزدهمین، هفدهمین، هیجدهمین، نوزدهمین"
-  },
-  "otherDays": {
-    "message": "در {0} روز",
-    "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
-  },
-  "past_Day": {
-    "message": "در{time} آغاز شد",
-    "description": "shown after midnight of the day"
-  },
-  "pick_pageCustom": {
-    "message": "دل خواه",
-    "description": "page tab name and page title"
-  },
-  "planFromWhenNextYear": {
-    "message": "شروع سال بعدی بديع ",
-    "description": "answer for planFromWhen"
-  },
-  "plannerShowWhat": {
-    "message": "چه چیزی را نشان بدهد؟ ",
-    "description": "First question in inputs"
-  },
-  "pressKeyOrClick": {
-    "message": "دکمه را فشار دهید یا تایپ کنید {0}",
-    "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
-  },
-  "pressToCopy": {
-    "message": "برای کُپی کردن تاریخ به کلیپبورد کمه را فشار دهید",
-    "description": "Can click button with mouse, or press matching key on keyboard"
-  },
-  "prev": {
-    "message": "قبلی\t&larr; "
-  },
-  "rbDefLang_Ar": {
-    "message": "عربی",
-    "description": "Shown on the main page (see screenshot in PhraseApp)"
-  },
-  "rbDefLang_Local": {
-    "message": "Persian",
-    "description": "put your language here, in your script"
-  },
-  "reminderAction_zapier": {
-    "message": "زاپیر وبهوک را تریگر شروع کنید",
-    "description": "in dropdown list, to choose to use Zapier"
-  },
-  "reminderAfter": {
-    "message": "بعد از"
-  },
-  "reminderCalcTypeAbsolute": {
-    "message": "در زمان مشخص و معین",
-    "description": "in dropdown"
-  },
-  "reminderDayDetailsTest": {
-    "message": "{eventTime} در {eventMonthShort}{eventDay}"
-  },
-  "reminderList_dayEvent": {
-    "message": "{num} روز(ها) {deltaText}، در{triggerTimeRawDisplay}",
-    "description": "in list of defined reminders"
-  },
-  "reminderList_onload": {
-    "message": "{num}{units} بعد از",
-    "description": "in list of defined reminders"
-  },
-  "reminderNum_seconds": {
-    "message": "ثانیه(ها)"
-  },
-  "sampleGroup1_14": {
-    "message": "{bDay}{bMonth}{bYearInVahid}{bVahid}{bKullishay}",
-    "description": "1.10.1.3.13"
-  },
-  "sampleGroup1_6": {
-    "message": "{bDay}{bMonthNamePri}{bMonthNameSec}{bYear}",
-    "description": "1 Jamal (Beauty) 172"
-  },
-  "startedWithSunset": {
-    "message": "شروع در غروب ساعت {0}"
-  },
-  "suggestions": {
-    "message": "پیشنهاد ها"
-  },
-  "suggestionsTitle": {
-    "message": "برای بهینه سازی این تقویم پیشنهادات خود را در این قسمت بنویسید"
-  },
-  "textDirection": {
-    "message": "rtl",
-    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
-  },
-  "title": {
-    "message": "تقویم بدیع",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "titleDesc": {
-    "message": "دسترسی داشته باشید",
-    "description": "Used in the manifest"
-  },
-  "Tonight": {
-    "message": "امشب",
-    "description": "Shown in the upcoming dates area"
-  },
-  "translation": {
-    "message": "fa",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Persian",
-    "description": "The name of this language, in English"
-  },
-  "upcomingTitle": {
-    "message": "ضیافات و ایام متبرکه آینده"
-  },
-  "Vahid": {
-    "message": "واحد بیانی"
-  },
-  "VahidFormat": {
-    "message": "{bVahid}"
-  },
-  "version": {
-    "message": "نسخه {0}"
-  },
-  "YearOfEra": {
-    "message": "سال دَور بهائی"
-  },
-  "zapierInfo": {
-    "message": "برای توضیح بیشتر و عضو شدن این را ببینید <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>  زپ این ها را خواهد داشت: عنوان، متن، تگ، زمان",
-    "description": "info and link to Zapier"
-  }
+    "title": {
+        "message": "تقویم بدیع",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "تاریخ امروز را در تقویم بدیع (شگفت‌انگیز)، تقویم رسمی آیین بهائی، نشان می‌دهد.",
+        "description": "Used in the manifest"
+    },
+    "1day": {
+        "message": "تا {0} روز دیگر",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future "
+    },
+    "actionSpeakDesc": {
+        "message": "یادآوری با استفاده از این صدا خوانده خواهد شد:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "شب - بعد از غروب آفتاب"
+    },
+    "am": {
+        "message": "ق.ظ",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "نام",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(س م ر) 0 = {0}",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "رفتن به تاریخ <u>ب</u>دیع",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "روز - قبل از غروب آفتاب"
+    },
+    "bMonthMeaning": {
+        "message": "ایام هاء,بهاء,جلال,جمال,عظمت,نور,رحمت,کلمات,کمال,اسماء,عزت,مشیت,علم,قدرت,قول,مسائل,شرف,سلطان,ملک,علاء",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "ایام هاء، بهاء، جلال، جمال، عظمة، نور، رحمة، کلمات، کمال، اسماء، عزّة، مشیّة، علم، قدرة، قول، مسائل، شرف، سلطان، ملک، علا",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "بارگذاری",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "باز کردن در زبانه",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "بزرگنمایی به ماه",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "بزرگنمایی به سال",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "لغو / جدید"
+    },
+    "btnEveOrDay": {
+        "message": "قبل / بعد از غروب آفتاب"
+    },
+    "btnJumpTo": {
+        "message": "برو"
+    },
+    "btnJumpToTitle": {
+        "message": "به تعداد روز مشخص شده به جلو یا عقب بروید",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "صدور به اکسل",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "تقویم iCal را اکسپورت کنید",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "ضیافات",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "ایام متبرکه (بدون کار)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "همه ی ایام محرمه",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "هیچ",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "رضوان",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "روزهای تولد دوقلو",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "لغو",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "حذف",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "ویرایش",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>ذ</u>خیره",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "ذخیره به عنوان یادآوری جدید",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "اکنون آزمایش کنید",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "اکنون بارگذاری مجدد"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",جلال,جمال,کمال,فضال,عدال,استجلال,استقلال",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",جلال,جمال,کمال,فضال,عدال,استجلال,استقلال",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",الف,ب,اب,د,باب,و,ابد,جود,بهاء,حب,بهاج,جواب,احد,وهاب,وداد,بدیع,بهی,ابهی,واحد",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",الف,باء,اب,دال,باب,واو,ابد,جاد,بهاء,حب,بهاج,جواب,احد,وهاب,وداد,بدیع,بهی,ابهی,واحد",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "رنگ‌های <u>ت</u>یره‌تر",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "همه ماه‌ها برای <u>چ</u>اپ",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "نمایش <u>ز</u>مان‌ها",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "همه ماه‌ها برای <u>چ</u>اپ",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "نمایش <u>ز</u>مان‌ها",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "کپی شد",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "روز فعلی",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "کپی"
+    },
+    "customBuilder": {
+        "message": "ساخت فرمت تاریخ سفارشی"
+    },
+    "customBuilderEcho": {
+        "message": "نتایج (برای روزی که انتخاب کرده اید. برای تغییر روز به قسمت کلید ها و راهنمائی مراجعه کنید)"
+    },
+    "customBuilderIntro": {
+        "message": "فرمت را در این جعبه تایپ کنید. <span class=customHint title='...NamePri = نام به زبان اول\n...NameSec = نام به زبان دوم\nfrag1... = غروب تا نیمه شب\nfrag2... = نیمه شب تا غروب'>(راهنمایی را ببینید)</span><br>روی دکمه 'افزودن' در بخش‌های تاریخ موجود کلیک کنید تا آن بخش تاریخ را در مکان فعلی اضافه کنید."
+    },
+    "customDefined": {
+        "message": "فرمت‌های تاریخ سفارشی"
+    },
+    "customFormats": {
+        "message": "فرمت‌های سفارشی",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "برای کپی کردن تاریخ قالب‌بندی شده در کلیپ‌بورد، روی کپی کلیک کنید."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "فرمت برای نمایش در نکته ابزار آیکون کروم:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "خط 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "خط 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "فرمت برای نمایش در بالای اکثر صفحات:"
+    },
+    "customLoadLetters": {
+        "message": "برای شروع از یک شکل استاندارد، کلیک کنید"
+    },
+    "customPartsList": {
+        "message": "بخش‌های تاریخ موجود"
+    },
+    "customSelectForFrontPage": {
+        "message": "کادر را علامت بزنید تا در صفحه {0} نمایش داده شود."
+    },
+    "customUseAsSample": {
+        "message": "به عنوان نمونه استفاده شود؟"
+    },
+    "dateHeading": {
+        "message": "روز",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "پایان میابد"
+    },
+    "dayEndedPast": {
+        "message": "پایان یافت"
+    },
+    "DayOfMonth": {
+        "message": "روز ماه"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "روز هفته"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "شروع میشود"
+    },
+    "dayStartedPast": {
+        "message": "آغاز شد"
+    },
+    "defaultFormat": {
+        "message": "(پیش‌فرض)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "آتش,هوا,آب,خاک",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "پایان",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "پایان در غروب ساعت {0}"
+    },
+    "equiv": {
+        "message": "معادل",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "د.ب."
+    },
+    "eraLong": {
+        "message": "دور بهائی"
+    },
+    "eraShort": {
+        "message": "بدیع"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}، {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "زمان معمول جلسه",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "زمان جلسه/مناسبت ویژه",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}، {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri}{bDay}{dayStartedLower} از غروب (تقریباً) {startingSunsetDesc} در {frag1WeekdayLong}{frag1MonthShort}{frag1Day} و {dayEndedLower} غروب تقریباً {endingSunsetDesc} در {frag2WeekdayLong}{frag2MonthShort}{frag2Day}"
+    },
+    "exportAlert_B0": {
+        "message": "هنگام شروع",
+        "description": "When it starts"
+    },
+    "exportAlert_B1": {
+        "message": "یک دقیقه قبل",
+        "description": "1 minute before"
+    },
+    "exportAlert_B10": {
+        "message": "ده دقیقه قبل",
+        "description": "10 minutes before"
+    },
+    "exportAlert_B15": {
+        "message": "پانزده دقیقه قبل از "
+    },
+    "exportAlert_B30": {
+        "message": "سی دقیقه قبل",
+        "description": "30 minutes before"
+    },
+    "exportAlert_B5": {
+        "message": "پنج دقیقه قبل از "
+    },
+    "exportAlert_B60": {
+        "message": "شصت دقیقه قبل",
+        "description": "60 minutes before"
+    },
+    "exportBadiYear0": {
+        "message": "سال بدیع - {0} د.ب.",
+        "description": "Badíʿ year - {0} B.E."
+    },
+    "exportBadiYear1": {
+        "message": "سال {0} بدیع"
+    },
+    "exportCalendarDescription": {
+        "message": "تاریخ‌های تقویم بدیع برای {location}",
+        "description": "title on page"
+    },
+    "exportDayFromSunset": {
+        "message": "شروع {0}",
+        "description": "Start of {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>م</u>حدوده تاریخ‌های صادر شده (بر اساس سال انتخاب شده فعلی)",
+        "description": "<u>R</u>ange of dates to Export (based on currently selected year)"
+    },
+    "exporterFastEnd": {
+        "message": "پایان روزه",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "روزه آغاز می شود ",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "روزه تا {endingSunsetDesc}",
+        "description": "Fast until {endingSunsetDesc}"
+    }
 }

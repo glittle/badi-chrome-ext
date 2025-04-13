@@ -1,0 +1,374 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "All-Things",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Unable to determine your current location.\n\nThe extension will use 6:30pm for sunset on every date.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Meaning",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 midnight",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Month"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Month/Day Names",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} with sunset at {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} with sunset at {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Next &rarr;"
+    },
+    "nextMonth": {
+        "message": "Next <u>M</u>onth",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Next refresh scheduled after {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Next Year",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Press Shift + Right Arrow to view the next Year",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Unknown Location - 6:30pm sunset times)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Current Location)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 noon",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Add Sample Reminders",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Now",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "th,st,nd,rd",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",first,second,third,fourth,fifth,sixth,seventh,eighth,nineth,tenth,eleventh,twelfth,thirteenth,fourteenth,fifteenth,sixteenth,seventeenth,eighteenth,nineteenth"
+    },
+    "otherDays": {
+        "message": "in {0} days",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "started at {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "was {numUnits} ago"
+    },
+    "past_DeltaTime": {
+        "message": "was {numUnits} ago at {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "started {numUnits} ago at {time}"
+    },
+    "past_StartTime": {
+        "message": "started at {time}"
+    },
+    "past_Time": {
+        "message": "was at {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Year View"
+    },
+    "pick_pageCal2": {
+        "message": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregorian Month View",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Wheel",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Custom",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Day"
+    },
+    "pick_pageEvents": {
+        "message": "Events",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Export",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Fast"
+    },
+    "pick_pageLists": {
+        "message": "Lists"
+    },
+    "pick_pagePlanner": {
+        "message": "Planner",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Reminders",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Setup",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Starting from when?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Start of next Badíʿ year",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Start of this Badíʿ year",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Today",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Include Day or Eve?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Both",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Day",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Eve",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Results",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Show what?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Starting Sunset at {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Long-range Planner",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Planning Selection",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Which?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "multiple Holy Days and Feasts",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "one Holy Day or Feast",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "years",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "For how long?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "pm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Click button or type {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Press key to copy formatted date to the clipboard:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Prev"
+    },
+    "prevMonth": {
+        "message": "Prev Mo<u>n</u>th",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Prev Year",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Press Shift + Left Arrow to view the previous year",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabic",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "English",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Display language for dates",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Additional Action",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "none",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "trigger IFTTT recipe",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "read aloud",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "trigger Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Add/Edit Reminder",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "after"
+    },
+    "reminderAlarm": {
+        "message": "At {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Day {num} of the Badíʿ month",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "before"
+    },
+    "reminderCalcType": {
+        "message": "Show reminder {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "at specific time",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relative to <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} on {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} on {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "On day {num} of the Badíʿ month",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "When {num} day(s) {beforeAfter} each {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "The Feast of {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "The Holy Day, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "day {num} at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} day(s) {deltaText}, at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} after",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "announce at {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

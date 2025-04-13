@@ -1,0 +1,374 @@
+{
+    "Kullishay": {
+        "message": "กุลลิ-<u>ช</u>ัย"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "ทุกสรรพสิ่ง",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "ไม่สามารถระบุตำแหน่งปัจจุบันของคุณได้\n\nส่วนขยายจะใช้เวลา 18:30 น. สำหรับพระอาทิตย์ตกในทุกวันที่",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "ความหมาย",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "เที่ยงคืน",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "เดือน"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "ชื่อเดือน/วัน",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} ด้วยพระอาทิตย์ตกเวลา {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} ด้วยพระอาทิตย์ตกเวลา {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "ถัดไป &rarr;"
+    },
+    "nextMonth": {
+        "message": "<u>เ</u>ดือนถัดไป",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "การรีเฟรชครั้งถัดไปกำหนดไว้หลัง {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "ปีหน้า",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "กด Shift + ลูกศรขวาเพื่อดูปีถัดไป",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(ตำแหน่งที่ไม่รู้จัก - เวลาพระอาทิตย์ตก 18:30 น.)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(ตำแหน่งปัจจุบัน)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "เที่ยง",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "เพิ่มการแจ้งเตือนตัวอย่าง",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "ตอนนี้",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "ที่,ที่,ที่,ที่",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",ที่หนึ่ง,ที่สอง,ที่สาม,ที่สี่,ที่ห้า,ที่หก,ที่เจ็ด,ที่แปด,ที่เก้า,ที่สิบ,ที่สิบเอ็ด,ที่สิบสอง,ที่สิบสาม,ที่สิบสี่,ที่สิบห้า,ที่สิบหก,ที่สิบเจ็ด,ที่สิบแปด,ที่สิบเก้า"
+    },
+    "otherDays": {
+        "message": "อีก {0} วัน",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "เริ่มต้นเวลา {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "เป็นเวลา {numUnits} ที่ผ่านมา"
+    },
+    "past_DeltaTime": {
+        "message": "เป็นเวลา {numUnits} ที่ผ่านมาเวลา {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "เริ่มต้น {numUnits} ที่ผ่านมาเวลา {time}"
+    },
+    "past_StartTime": {
+        "message": "เริ่มต้นเวลา {time}"
+    },
+    "past_Time": {
+        "message": "เป็นเวลา {time}"
+    },
+    "pick_pageCal1": {
+        "message": "มุมมองปี"
+    },
+    "pick_pageCal2": {
+        "message": "มุมมองเดือน (ธาตุ)"
+    },
+    "pick_pageCal3": {
+        "message": "มุมมองเดือน (สัปดาห์)"
+    },
+    "pick_pageCalGreg": {
+        "message": "มุมมองเดือนคริสต์ศักราช",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "วงล้อ",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "กำหนดเอง",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "วัน"
+    },
+    "pick_pageEvents": {
+        "message": "กิจกรรม",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "ส่งออก",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "ถือศีลอด"
+    },
+    "pick_pageLists": {
+        "message": "รายการ"
+    },
+    "pick_pagePlanner": {
+        "message": "ตัววางแผน",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "การแจ้งเตือน",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "ตั้งค่า",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "เริ่มจากเมื่อไร?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "เริ่มต้นของปีบะดีอ์ถัดไป",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "เริ่มต้นของปีบะดีอ์นี้",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "วันนี้",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "รวมวันหรือค่ำ?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "ทั้งสอง",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "วัน",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "ค่ำ",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "ผลลัพธ์",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "แสดงอะไร?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "พระอาทิตย์ตกเริ่มต้นที่ {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "ตัววางแผนระยะยาว",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "การเลือกการวางแผน",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "อันไหน?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "วันบุญและฉลองบุญหลายวัน",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "วันบุญหรือฉลองบุญหนึ่งวัน",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "ปี",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "นานแค่ไหน?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "น",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "คลิกปุ่มหรือพิมพ์ {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "กดปุ่มเพื่อคัดลอกวันที่ที่จัดรูปแบบไปยังคลิปบอร์ด:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; ก่อนหน้า"
+    },
+    "prevMonth": {
+        "message": "เดือ<u>น</u>ก่อนหน้า",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "ปีก่อน",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "กด Shift + ลูกศรซ้ายเพื่อดูปีก่อนหน้า",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "อาหรับ",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "ไทย",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "ภาษาที่แสดงสำหรับวันที่",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "การกระทำเพิ่มเติม",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "ไม่มี",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "เรียกใช้สูตร IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "อ่านออกเสียง",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "เรียกใช้ Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "เพิ่ม/แก้ไขการแจ้งเตือน",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "หลัง"
+    },
+    "reminderAlarm": {
+        "message": "ที่ {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "วันที่ {num} ของเดือนบะดีอ์",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "ก่อน"
+    },
+    "reminderCalcType": {
+        "message": "แสดงการแจ้งเตือน {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "ที่เวลาเฉพาะ",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "สัมพันธ์กับ <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} ในวัน{eventWeekdayLong}, {eventMonthLong} {eventDay}"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} ใน {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "ในวันที่ {num} ของเดือนบะดีอ์",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "เมื่อ {num} วัน {beforeAfter} แต่ละ {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "ฉลองบุญ{pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "วันบุญ \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "วันที่ {num} เวลา {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} วัน {deltaText}, เวลา {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} หลังจาก",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "ประกาศเวลา {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

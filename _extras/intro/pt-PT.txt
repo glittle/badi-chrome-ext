@@ -1,0 +1,29 @@
+Esta extensão exibe a data no calendário Badíʿ (Maravilhoso) onde você está, determinando automaticamente os horários do pôr do sol. Os dias no calendário Badíʿ começam e terminam ao pôr do sol.
+
+O ícone na barra de ferramentas é subtil, mas mantém-no informado sobre a data atual no calendário Badíʿ. Ao clicar no ícone, são mostradas informações mais detalhadas. Algumas coisas que pode ver ou fazer:
+
+- Copiar a data atual numa variedade de formatos, para uso noutros locais.
+
+- Ver a data Badíʿ para qualquer dia de qualquer ano - qual era a data no seu aniversário?
+
+- Definir lembretes antes/depois do nascer e pôr do sol. Faça o seu computador anunciá-los em voz alta!
+
+- Ver uma lista de datas para próximas Festas e Dias Sagrados.
+
+- Ver um calendário completo (em disposição Gregoriana ou Badíʿ) apropriado para impressão.
+
+- Ver os horários do Jejum para a sua localização.
+
+- Exportar um ficheiro iCal com datas Badíʿ, para importação em qualquer sistema de calendário.
+
+- Obter uma lista de datas especiais para planeamento anos no futuro.
+
+- Desenhar os seus próprios formatos de data personalizados.
+
+- Acionar ações IFFF ou webhooks do Zapier de acordo com datas Badíʿ ou horários de nascer/pôr do sol.
+
+Veja o site ligado abaixo para detalhes completos e histórico.
+
+Por favor, veja o separador Suporte e envie Sugestões sobre como esta extensão poderia ser melhorada! Se pode ajudar a traduzir a extensão para o seu idioma, por favor avise-me! Os idiomas atuais são mostrados abaixo.
+
+Autor: Glen Little (Calgary, Canadá)

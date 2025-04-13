@@ -1,0 +1,374 @@
+{
+    "Kullishay": {
+        "message": "כול-אי-<u>ש</u>יי"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "כל הדברים",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "לא ניתן לזהות את מיקומך.\n\nההרחבה תשתמש ב-18:30 כזמן שקיעה לכל הימים.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "משמעות",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 חצות",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "חודש"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "שמות חודש/יום",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} בשקיעה בשעה {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} בשקיעה בשעה {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "הבא &rarr;"
+    },
+    "nextMonth": {
+        "message": "חודש <u>ה</u>בא",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "הרענון הבא מתוכנן אחרי {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "שנה הבאה",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "לחץ Shift + חץ ימינה לצפייה בשנה הבאה",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(מיקום לא ידוע - 18:30 זמן שקיעה)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(מיקום נוכחי)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 צהריים",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "הוסף תזכורות לדוגמה",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "עכשיו",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": ",י,י,י",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",ראשון,שני,שלישי,רביעי,חמישי,שישי,שביעי,שמיני,תשיעי,עשירי,אחד עשר,שנים עשר,שלושה עשר,ארבעה עשר,חמישה עשר,שישה עשר,שבעה עשר,שמונה עשר,תשעה עשר"
+    },
+    "otherDays": {
+        "message": "בעוד {0} ימים",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "התחיל בשעה {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "היה לפני {numUnits}"
+    },
+    "past_DeltaTime": {
+        "message": "היה לפני {numUnits} בשעה {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "התחיל לפני {numUnits} בשעה {time}"
+    },
+    "past_StartTime": {
+        "message": "התחיל בשעה {time}"
+    },
+    "past_Time": {
+        "message": "היה בשעה {time}"
+    },
+    "pick_pageCal1": {
+        "message": "תצוגת שנה"
+    },
+    "pick_pageCal2": {
+        "message": "תצוגת חודש (יסודות)"
+    },
+    "pick_pageCal3": {
+        "message": "תצוגת חודש (שבועות)"
+    },
+    "pick_pageCalGreg": {
+        "message": "תצוגת חודש גרגוריאני",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "גלגל",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "מותאם אישית",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "יום"
+    },
+    "pick_pageEvents": {
+        "message": "אירועים",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "ייצוא",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "צום"
+    },
+    "pick_pageLists": {
+        "message": "רשימות"
+    },
+    "pick_pagePlanner": {
+        "message": "מתכנן",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "תזכורות",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "הגדרות",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "מתחיל ממתי?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "מתחילת השנה הבדיעית הבאה",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "מתחילת השנה הבדיעית הזו",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "היום",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "לכלול יום או ערב?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "שניהם",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "יום",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "ערב",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "תוצאות",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "מה להציג?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "שקיעה מתחילה ב-{0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "מתכנן לטווח ארוך",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "בחירת תכנון",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "איזה?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "ימים קדושים וחגיגות מרובים",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "יום קדוש או חגיגה אחת",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "שנים",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "לכמה זמן?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "אחה״צ",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "לחץ על הכפתור או הקש {0}",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "לחץ מקש כדי להעתיק תאריך מעוצב ללוח",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; הקודם"
+    },
+    "prevMonth": {
+        "message": "חודש <u>ק</u>ודם",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "שנה קודמת",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "לחץ Shift + חץ שמאלה לצפייה בשנה הקודמת",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "ערבית",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "עברית",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "שפת תצוגה לתאריכים",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "פעולה נוספת",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "אין",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "הפעל מתכון IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "קרא בקול",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "הפעל Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "הוסף/ערוך תזכורת",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "אחרי"
+    },
+    "reminderAlarm": {
+        "message": "בשעה {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "יום {num} של חודש בדיע",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "לפני"
+    },
+    "reminderCalcType": {
+        "message": "הצג תזכורת {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "בזמן מסוים",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "יחסית ל<span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} ב{eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} ב{eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "ביום {num} של חודש בדיע",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "כאשר {num} יום/ימים {beforeAfter} כל {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "חגיגת {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "היום הקדוש, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "יום {num} בשעה {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} יום/ימים {deltaText}, בשעה {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} אחרי",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "הודע בשעה {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

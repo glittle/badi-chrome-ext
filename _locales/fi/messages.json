@@ -1,78 +1,368 @@
 {
-  "bMonthMeaning": {
-    "message": ",Hán päivät,Kirkkaus,Loisto,Kauneus,Suurus,Valo,Armo,Sanat,Täydellisyys,Nimet,Mahti,Tahto,Tieto,Voima,Puhe,Kysymykset,Kunnia,Yliherruus,Valta,Ylevyys",
-    "description": "Names of days/months, with first one being Ayyam-i-ha"
-  },
-  "bMonthNameAr": {
-    "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá’,`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá’",
-    "description": "month names, start with Ayyam-i-Ha"
-  },
-  "bWeekDayMeaning": {
-    "message": ",Kunnia,Kauneus,Täydellisyys,Armo,Oikeus,Majesteettius,Itsenäisyys",
-    "description": "start with Saturday and a leading comma"
-  },
-  "bWeekdayNameAr": {
-    "message": ",Jalál,Jamál,Kamál,Fiḍál,‘Idál,Istijlál,Istiqlál",
-    "description": "weekday names, with leading , "
-  },
-  "elements": {
-    "message": "Tuli,ilma,vesi,maa",
-    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
-  },
-  "gMonthLong": {
-    "message": "Tammi-,helmi-,maalis-,huhti-,touko-,kesä-,heinä-,elo-,syys-,loka-,marras-,joulu-"
-  },
-  "gWeekdayShort": {
-    "message": "su,ma,ti,ke,to,pe,la",
-    "description": "start with Sun"
-  },
-  "HolyDay_AscAbdul": {
-    "message": "Abdu'l Baháin poismenon muistopäivä"
-  },
-  "HolyDay_AscBaha": {
-    "message": "Bahá’u'llahin poismenon muistopäivä"
-  },
-  "HolyDay_BirthBab": {
-    "message": "Babin syntymäpäivä"
-  },
-  "HolyDay_BirthBaha": {
-    "message": "Bahá’u'llahin syntymäpäivä"
-  },
-  "HolyDay_Covenant": {
-    "message": "Liiton päivä"
-  },
-  "HolyDay_DeclBab": {
-    "message": "Babin, uskon edelläkävijän, ilmoituksen päivä"
-  },
-  "HolyDay_Martyrdom": {
-    "message": "Babin marttyyrikuoleman muistopäivä"
-  },
-  "HolyDay_NawRuz": {
-    "message": "Naw-Ruz"
-  },
-  "HolyDay_Ridvan1": {
-    "message": "Ridvanin ensimmäinen päivä"
-  },
-  "HolyDay_Ridvan12": {
-    "message": "Ridvanin kahdestoista päivä"
-  },
-  "HolyDay_Ridvan9": {
-    "message": "Ridvanin yhdeksäs päivä"
-  },
-  "title": {
-    "message": "Bahai-kalenteri",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "translation": {
-    "message": "fi",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Finnish",
-    "description": "The name of this language, in English"
-  },
-  "use24HourClock": {
-    "message": "true",
-    "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
-  }
+    "title": {
+        "message": "Badíʿ-kalenteri",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "Näyttää tämän päivän päivämäärän Badíʿ (Ihmeellisessä) kalenterissa, Bahá'í-uskon virallisessa kalenterissa.",
+        "description": "Used in the manifest"
+    },
+    "1day": {
+        "message": "{0} päivän kuluttua",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "Muistutus luetaan ääneen käyttäen tätä ääntä:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "ilta - auringonlaskun jälkeen"
+    },
+    "am": {
+        "message": "ap",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "Nimi",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(V K P) 0 = Ayyám-i-Há",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "Valitse <u>B</u>adíʿ-päivämäärä",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "päivä - ennen auringonlaskua"
+    },
+    "bMonthMeaning": {
+        "message": ",Hán päivät,Kirkkaus,Loisto,Kauneus,Suurus,Valo,Armo,Sanat,Täydellisyys,Nimet,Mahti,Tahto,Tieto,Voima,Puhe,Kysymykset,Kunnia,Yliherruus,Valta,Ylevyys",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "Ayyám-i-Há,Bahá,Jalál,Jamál,`Aẓamat,Núr,Rahmat,Kalimát,Kamál,Asmá',`Izzat,Ma<u>sh</u>íyyat,`Ilm,Qudrat,Qawl,Masá'il,<u>Sh</u>araf,Sulṭán,Mulk,`Alá'",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "Ladataan...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "Avaa välilehdessä",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "Keskitä kuukauteen",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "Keskitä vuoteen",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "Peruuta / Uusi"
+    },
+    "btnEveOrDay": {
+        "message": "Ennen / jälkeen auringonlaskun"
+    },
+    "btnJumpTo": {
+        "message": "Siirry"
+    },
+    "btnJumpToTitle": {
+        "message": "Siirry tämän verran päiviä eteen- tai taaksepäin",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "Vie CSV-muodossa",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "Vie iCal-muodossa",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "Juhlat",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "Pyhät päivät (työstä vapaat)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "Kaikki pyhät päivät",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "Ei mitään",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "Ridván",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "Kaksoissynttärit",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "Peruuta",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "Poista",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "Muokkaa",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>T</u>allenna",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "Tallenna uutena muistutuksena",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "Testaa nyt",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "Lataa uudelleen nyt"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",Kunnia,Kauneus,Täydellisyys,Armo,Oikeus,Majesteettius,Itsenäisyys",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",Jalál,Jamál,Kamál,Fiḍál,'Idál,Istijlál,Istiqlál",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",A,B,Isä,D,Portti,V,Ikuisuus,Anteliaisuus,Kirkkaus,Rakkaus,Ilo,Vastaus,Yksi,Antelias,Kiintymys,Alku,Loistava,Loistavin,Ykseys",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",Alif,Bá',Ab,Dál,Báb,Váv,Abad,Jád,Bahá,Ḥubb,Bahháj,Javáb,Aḥad,Vahháb,Vidád,Badíʿ,Bahí,Abhá,Váḥid",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "<u>T</u>ummemmat värit",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "Kaikki kuukaudet <u>t</u>ulostusta varten",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "Näytä <u>a</u>jat",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "Kaikki kuukaudet <u>t</u>ulostusta varten",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "Näytä <u>a</u>jat",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "Kopioitu!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "Nykyinen päivä",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "Kopioi"
+    },
+    "customBuilder": {
+        "message": "Luo mukautettu päivämäärämuoto"
+    },
+    "customBuilderEcho": {
+        "message": "Tulokset (valitulle päivälle - katso Vinkit & Näppäimet vaihtaaksesi päivää)"
+    },
+    "customBuilderIntro": {
+        "message": "Kirjoita muoto tähän laatikkoon. Napsauta mitä tahansa 'Lisää'-painiketta Käytettävissä olevissa päivämääräosissa lisätäksesi kyseisen päivämääräosan nykyiseen sijaintiin. Vihjeet: 'frag1' = auringonlaskusta keskiyöhön; 'frag2' = keskiyöstä auringonlaskuun."
+    },
+    "customDefined": {
+        "message": "Mukautetut päivämäärämuodot"
+    },
+    "customFormats": {
+        "message": "Mukautetut muodot",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "Napsauta Kopioi kopioidaksesi muotoillun päivämäärän leikepöydälle."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "Muoto Chrome-kuvakkeen työkaluvihjeessä:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "Rivi 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "Rivi 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "Muoto useimpien sivujen yläosassa:"
+    },
+    "customLoadLetters": {
+        "message": "Napsauta aloittaaksesi vakiomuodosta:"
+    },
+    "customPartsList": {
+        "message": "Käytettävissä olevat päivämääräosat"
+    },
+    "customSelectForFrontPage": {
+        "message": "Valitse näytettäväksi {0} sivulla."
+    },
+    "customUseAsSample": {
+        "message": "Käytä esimerkkinä?"
+    },
+    "dateHeading": {
+        "message": "Päivä",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "päättyy"
+    },
+    "dayEndedPast": {
+        "message": "päättyi"
+    },
+    "DayOfMonth": {
+        "message": "Kuukauden päivä"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "Viikonpäivä"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "alkaa"
+    },
+    "dayStartedPast": {
+        "message": "alkoi"
+    },
+    "defaultFormat": {
+        "message": "(Oletus)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "Tuli,ilma,vesi,maa",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "Päättynyt",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "Päättyy auringonlaskuun klo {0}"
+    },
+    "equiv": {
+        "message": "Vastine",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "B.A."
+    },
+    "eraLong": {
+        "message": "Bahá'í Ajanjakso"
+    },
+    "eraShort": {
+        "message": "BA"
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "Tavallinen kokoontumisaika",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "Kokoontumis-/Juhla-aika",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} auringonlaskussa (noin {startingSunsetDesc}) {frag1WeekdayLong}na, {frag1MonthShort} {frag1Day} ja {dayEndedLower} auringonlaskussa (noin {endingSunsetDesc}) {frag2WeekdayLong}na, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "Kun se alkaa"
+    },
+    "exportAlert_B1": {
+        "message": "1 minuutti ennen"
+    },
+    "exportAlert_B10": {
+        "message": "10 minuuttia ennen"
+    },
+    "exportAlert_B15": {
+        "message": "15 minuuttia ennen"
+    },
+    "exportAlert_B30": {
+        "message": "30 minuuttia ennen"
+    },
+    "exportAlert_B5": {
+        "message": "5 minuuttia ennen"
+    },
+    "exportAlert_B60": {
+        "message": "60 minuuttia ennen"
+    },
+    "exportBadiYear0": {
+        "message": "Badíʿ-vuosi - {0} B.A."
+    },
+    "exportBadiYear1": {
+        "message": "Badíʿ-vuosi - {0} B.A."
+    },
+    "exportCalendarDescription": {
+        "message": "Badíʿ-kalenterin päivämäärät sijainnille {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "{0}n alku"
+    },
+    "exporterDateRange": {
+        "message": "<u>V</u>ientiajanjakso (perustuu valittuun vuoteen)"
+    },
+    "exporterFastEnd": {
+        "message": "Paasto päättyy",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "Paasto alkaa",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "Paasto klo {endingSunsetDesc} asti"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    }
 }

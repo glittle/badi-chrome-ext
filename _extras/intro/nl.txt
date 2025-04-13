@@ -1,0 +1,29 @@
+Deze extensie toont de datum in de Badíʿ (Wonderbaarlijke) kalender waar u bent, en bepaalt automatisch de zonsondergangstijden. Dagen in de Badíʿ-kalender beginnen en eindigen bij zonsondergang.
+
+Het pictogram in de werkbalk is subtiel maar houdt u op de hoogte van de huidige datum in de Badíʿ-kalender. Door op het pictogram te klikken, wordt meer gedetailleerde informatie getoond. Enkele dingen die u kunt bekijken of doen:
+
+- Kopieer de huidige datum in verschillende formaten, voor gebruik op andere plaatsen.
+
+- Bekijk de Badíʿ-datum voor elke dag van elk jaar - wat was de datum op uw verjaardag?
+
+- Stel herinneringen in voor/na zonsopgang en zonsondergang. Laat uw computer ze hardop aankondigen!
+
+- Bekijk een lijst met datums voor aankomende Feesten en Heilige Dagen.
+
+- Bekijk een volledige kalender (in Gregoriaanse of Badíʿ-indeling) geschikt voor afdrukken.
+
+- Bekijk de Vastentijden voor uw locatie.
+
+- Exporteer een iCal-bestand met Badíʿ-datums, voor import in elk kalendersysteem.
+
+- Krijg een lijst met speciale datums voor planning jaren in de toekomst.
+
+- Ontwerp uw eigen aangepaste datumformaten.
+
+- Activeer IFFF-acties of Zapier-webhooks volgens Badíʿ-datums of zonsopgang/ondergangstijden.
+
+Zie de website die hieronder is gelinkt voor volledige details en geschiedenis.
+
+Bekijk alstublieft het tabblad Ondersteuning en dien Suggesties in over hoe deze extensie verbeterd zou kunnen worden! Als u kunt helpen bij het vertalen van de extensie naar uw taal, laat het me dan weten! Huidige talen worden hieronder weergegeven.
+
+Auteur: Glen Little (Calgary, Canada)

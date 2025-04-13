@@ -1,0 +1,322 @@
+{
+    "exporterItemDescDay": {
+        "message": "Un día en el calendario Badíʿ.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Horarios para el ayuno anual Bahá'í.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "La reunión puede comenzar en cualquier momento de este día Badíʿ.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Las horas de amanecer y atardecer mostradas son para {location}. Generado con http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Exportador de calendario Badíʿ",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Descargar archivo iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Año gregoriano - {0} d.C."
+    },
+    "exportGregYear1": {
+        "message": "Año gregoriano - {0} d.C."
+    },
+    "exportHideTest": {
+        "message": "Ocultar"
+    },
+    "exportIncludeAlert": {
+        "message": "Añadir una alerta a cada evento (puede no cargarse en Google Calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Información de ubicación"
+    },
+    "exportIntro": {
+        "message": "¡Importante! Consulte <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">esta página web</a> para obtener información y advertencias.",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Título del calendario exportado (puede no utilizarse)"
+    },
+    "exportNumToInclude": {
+        "message": "Número de entradas de calendario incluidas (aproximadamente):"
+    },
+    "exportOption_AllDay": {
+        "message": "Evento de día completo desde medianoche <em>(duración de 1 día)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Solo al atardecer de inicio"
+    },
+    "exportOption_Date": {
+        "message": "Días Badíʿ <em>(365/366 días)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Días de ayuno <em>(19 días)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Fiestas <em>(19 días)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Días sagrados <em>(11 días)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Evento a la hora de observación designada o a la hora habitual de reunión"
+    },
+    "exportOption_Sun": {
+        "message": "Del atardecer al atardecer <em>(aproximadamente 24 horas)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Solo al amanecer"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Evento desde el amanecer hasta el atardecer <em>(aproximadamente 12 horas)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Solo al atardecer"
+    },
+    "exportOption_Usual": {
+        "message": "Evento a la hora habitual de reunión (ver página de Eventos)"
+    },
+    "exportOtherSettings": {
+        "message": "Otros ajustes"
+    },
+    "exportQuickDesc": {
+        "message": "¡Exporte cada conjunto y luego cárguelos todos en el mismo calendario!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Calendario completo"
+    },
+    "exportQuickPick1Text": {
+        "message": "Mostrar cada día Badíʿ, junto con los días sagrados y las horas de fiesta. Sin alertas."
+    },
+    "exportQuickPick2": {
+        "message": "2. Hora de ayuno - Mañana"
+    },
+    "exportQuickPick2Text": {
+        "message": "Amanecer, con una alerta justo antes."
+    },
+    "exportQuickPick3": {
+        "message": "3. Hora de ayuno - Tarde"
+    },
+    "exportQuickPick3Text": {
+        "message": "Atardecer, con una alerta."
+    },
+    "exportQuickPickClearText": {
+        "message": "Restablecer opciones"
+    },
+    "exportQuickPicks": {
+        "message": "Conjuntos de eventos recomendados"
+    },
+    "exportRangeFullRange": {
+        "message": "Exportar todas las entradas del calendario. (Si no está marcado, exportar solo un conjunto de ejemplos.)"
+    },
+    "exportTest": {
+        "message": "Mostrar para copiar"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Seleccione lo que debe exportarse."
+    },
+    "exportWhatToInclude": {
+        "message": "Opciones"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Horarios de ayuno en {bYear}"
+    },
+    "fastGDate": {
+        "message": "Fecha",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Fiesta de {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival de Ridván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(pulse para mas detalles)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "comienza a las {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "será en {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "será en {numUnits} a las {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "comenzará en {numUnits} a las {time}"
+    },
+    "future_StartTime": {
+        "message": "comenzará a las {time}"
+    },
+    "future_Time": {
+        "message": "será a las {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Dia del calendario Gregoriano"
+    },
+    "gDatePickerTitle2": {
+        "message": "Eligir <u>C</u>alendario gregoriano",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre"
+    },
+    "gMonthShort": {
+        "message": "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Ahora"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Dom,Lun,Mar,Miér,Jue,Vier,Sáb",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Ascension de `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Ascension de Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Nacimiento de El Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Nacimiento de Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Dia del Convenio"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Declaracion de El Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martirio de El Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Primer dia de Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Doceavo dia de Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Noveno dia de Ridván"
+    },
+    "iconColor": {
+        "message": "Color del icono",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Automático (seguir tema del sistema)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>iestas",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "Días <u>S</u>antos",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Mostrar",
+        "description": "choosing what to include in the listing"
+    },
+    "Intercalary": {
+        "message": "Dias Intercalarios"
+    },
+    "jumpTo": {
+        "message": "<u>S</u>altar ± días",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

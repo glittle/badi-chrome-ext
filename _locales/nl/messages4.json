@@ -1,0 +1,300 @@
+{
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "dag/dagen",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "dag;dagen",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "uur/uren"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "uur;uren"
+    },
+    "reminderNum_minutes": {
+        "message": "minuut/minuten"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minuut;minuten"
+    },
+    "reminderNum_seconds": {
+        "message": "seconde/seconden"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "seconde;seconden"
+    },
+    "remindersDefined": {
+        "message": "Uw herinneringen",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Stel een herinnering in...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Laat zien om",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Vandaag uit te voeren tussen {time} en middernacht",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(getoond om {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(om te worden getoond om {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Laat {num} {units} {delta} zien",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "{0} Herinnering",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Badíʿ dag",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "19-Daagsfeestdag",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Heilige dag",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "Bij het laden",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Middernacht",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Middaguur",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Zonsopkomst",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Zonsondergang",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Bijzondere dagen",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Andere gebeurtenissen",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Tijd van de dag",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Gebeurtenis",
+        "description": "in front of the trigger selector"
+    },
+    "setupAboutPara": {
+        "message": "<p>Deze extensie is ontworpen om huidige informatie over de Badíʿ-kalender weer te geven voor waar je bent.</p><p>Voor meer informatie, klik op de  'Versie'-link, of op een icoon!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "Over",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "Tekstkleur voor werkbalkicoon:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "Icoonkleur",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "Taal",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% vertaald. Kunt <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>u helpen</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% vertaald!",
+        "description": "Translation completion message"
+    },
+    "setupOptOut": {
+        "message": "Uitschrijven?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "Om te begrijpen hoe deze extensie gebruikt word worden er statistieken geregistreerd wanneer je tussen pagina's switcht of bij andere belangrijke acties. Dit is anoniem, en de gerelateerde rapporten kunnen door Glen Little worden gezien. Als je dit uit wil zetten en hier niet aan mee wilt doen, klik dit vakje aan:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "Analytics",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "Deze dag heet {bWeekdayNamePri}, de dag {bDayNamePri} van de maand {bMonthNamePri}, van het jaar {bYearInVahidNamePri}, van de {bVahidOrdinalName} {VahidLabelPri}, van de {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Druk deze toetscombinatie in om de kalender op ieder gewenst moment binnen Chrome te openen."
+    },
+    "showPointer": {
+        "message": "Toon huidige dag"
+    },
+    "specialDaysTitle": {
+        "message": "Feesten en heilige dagen in {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1:00 (Standaard Tijd)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3:00 (Standaard Tijd)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Middaguur (Standaard Tijd)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "15:00 (Standaard Tijd)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Ongeveer twee uur na zonsondergang",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "Standaardformaten",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "Begonnen met zonsondergang om {0}"
+    },
+    "startTimeOption": {
+        "message": "Gebruikelijke begintijd: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Suggesties?"
+    },
+    "suggestionsTitle": {
+        "message": "Klik hier en geef uw ideeën (in het Engels) hoe deze uitbreiding verbeterd kan worden!"
+    },
+    "sunriseFastHeading": {
+        "message": "Zonsopkomst",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Zonsondergang",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Begin van de Badíʿ Dag",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Vrij van werk",
+        "description": "heading in Events listing"
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Tips",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "Accuraatheid?"
+    },
+    "tipsAboutText": {
+        "message": "Tot 221 B.E. (2064 n.C.) staan de datums vast. Daarna zijn er mogelijk wijzigingen omdat de astronomische waarnemingen verbeteren. Het wordt aangeraden deze extensie of app niet te gebruiken om plannen vast te leggen n het jaar 221 B.E.."
+    },
+    "tipsText": {
+        "message": "Gebruik PgUp/PgDn toetsen om tussen pagina's te wisselen.\nGebruik pijl naar rechts/links om van dag te veranderen.\nGebruik / te wisselen tussen voor/na zonsondergang."
+    },
+    "Tonight": {
+        "message": "Vanavond",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "nl",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Dutch",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bDay} {bMonthNamePri} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Komende feesten, heilige dagen en andere gebeurtenissen"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Eenheid"
+    },
+    "version": {
+        "message": "Versie {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Namen van de weekdagen",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Jaar van het Bahá'í tijdperk"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Jaar van de {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Voor details of om in te schrijven, zie <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. De Zap zal de volgende velden omvatten: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,304 @@
+{
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "día(s)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "día;días",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "hora(s)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "hora;horas"
+    },
+    "reminderNum_minutes": {
+        "message": "minuto(s)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minuto;minutos"
+    },
+    "reminderNum_seconds": {
+        "message": "segundo(s)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "segundo;segundos"
+    },
+    "remindersDefined": {
+        "message": "Tus recordatorios",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Añadir un recordatorio...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Mostrar a las",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Programado hoy desde {time} hasta medianoche",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(mostrado en {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(se mostrará en {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Mostrar {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "Recordatorio de {0}",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Día Badíʿ",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Día de Fiesta",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Día Santo",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "Al cargar",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Medianoche",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Mediodía",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Amanecer",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Atardecer",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Días especiales",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Otros eventos",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Hora del día",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Evento",
+        "description": "in front of the trigger selector"
+    },
+    "shoghiExample": {
+        "message": "Este es el día de {bWeekdayNamePri}, el día de {bDayNamePri}, del mes de {bMonthNamePri}, del año {bYearInVahidNamePri}, del {bVahidOrdinalName} {VahidLabelPri}, del {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Presione esta combinacion de teclados para abrir el calendario  desde cualquier parte en Chrome."
+    },
+    "showPointer": {
+        "message": "Mostrar puntero"
+    },
+    "specialDaysTitle": {
+        "message": "Fiestas y Días Santos en {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 am (Hora estándar)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 am (Hora estándar)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Mediodía (Hora estándar)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "3 pm (Hora estándar)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Aproximadamente 2 horas después del atardecer",
+        "description": "Declaration of the Bab"
+    },
+    "startedWithSunset": {
+        "message": "Comienza al atardecer {0}"
+    },
+    "startTimeOption": {
+        "message": "Hora habitual de reunión: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Sugerencias?"
+    },
+    "suggestionsTitle": {
+        "message": "Por favor haga click aqui y envie cualquier sugerencia de como mejorar esta extension!"
+    },
+    "sunriseFastHeading": {
+        "message": "Amanecer",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Atardecer",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Inicio del día Badíʿ",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspender trabajo",
+        "description": "heading in Events listing"
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "Consejo",
+        "description": "hints of how to use the tool"
+    },
+    "tipsText": {
+        "message": "Presione las teclas PgUp/PgDn para seleccionar paneles.\nPresione las teclas de flecha derecha/izquierda para cambiar días.\nPresione / para alternar antes/después del ocaso.\nPresione Inicio para volver a hoy."
+    },
+
+    "Tonight": {
+        "message": "esta noche",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "es",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Spanish",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Proximas fiestas de 19 dias, Dias sagrados y otros eventos"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unidad"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "tipsAbout": {
+        "message": "¿Precisión?"
+    },
+    "tipsAboutText": {
+        "message": "Las fechas hasta 221 E.B. (2064 d.C.) son conocidas. Después de eso, pueden ser necesarias actualizaciones a medida que mejoren las observaciones astronómicas. ¡Por favor, no use esto para finalizar sus planes a más de 50 años en el futuro! Consulte el sitio web para más detalles."
+    },
+    "standardFormats": {
+        "message": "Formatos estándar",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "setupAboutPara": {
+        "message": "<p>Esta extensión web está diseñada para proporcionar información actualizada sobre el calendario Badíʿ, local a donde usted se encuentra.</p><p>Para más información, ¡haga clic a continuación en el enlace 'Versión' o en cualquiera de los iconos!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "Acerca de",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "Color de texto para el icono de la barra de herramientas:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "Color del icono",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "Idioma",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% traducido. ¿Puede <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>ayudar</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "¡100% traducido!"
+    },
+    "setupOptOut": {
+        "message": "¿Optar por no participar?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "Para ayudar a entender cómo se está utilizando esta extensión web, se registran estadísticas cada vez que cambia entre páginas o realiza otras acciones importantes. Esto es anónimo, y los informes asociados pueden ser vistos por Glen Little. Si desea optar por no participar y desactivar esto, puede marcar esta casilla:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "Analíticas",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "version": {
+        "message": "Versión {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Nombres de los dias de la semana",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "año de la era Bahá'í"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "año {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Para más detalles o para registrarse, vea <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. El Zap contendrá estos campos: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL de Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

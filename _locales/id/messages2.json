@@ -1,0 +1,342 @@
+{
+    "exporterItemDescDay": {
+        "message": "Sebuah hari dalam kalender Badíʿ.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Waktu untuk Puasa Bahá'í tahunan.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Pertemuan dapat dimulai kapan saja pada hari Badíʿ ini.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Waktu matahari terbit atau terbenam ditampilkan untuk {location}. Dibuat menggunakan http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Eksportir Kalender Badíʿ",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Unduh file iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Tahun Gregorian - {0} M."
+    },
+    "exportGregYear1": {
+        "message": "Tahun Gregorian - {0} M."
+    },
+    "exportHideTest": {
+        "message": "Sembunyikan"
+    },
+    "exportIncludeAlert": {
+        "message": "Tambahkan peringatan ke setiap acara (mungkin tidak dapat dimuat ke Google calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Informasi Lokasi"
+    },
+    "exportIntro": {
+        "message": "Penting! Lihat <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">halaman web ini</a> untuk informasi dan peringatan!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Judul untuk Kalender yang Diekspor (mungkin tidak digunakan)"
+    },
+    "exportNumToInclude": {
+        "message": "Jumlah entri kalender yang disertakan (kira-kira):"
+    },
+    "exportOption_AllDay": {
+        "message": "Acara sepanjang hari dari tengah malam <em>(1 hari penuh)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Hanya pada awal matahari terbenam"
+    },
+    "exportOption_Date": {
+        "message": "Hari-hari Badíʿ <em>(365/366 hari)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Hari-hari Puasa <em>(19 hari)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Perayaan <em>(19 hari)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Hari Suci <em>(11 hari)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Acara pada waktu pengamatan yang ditentukan atau waktu pertemuan biasa"
+    },
+    "exportOption_Sun": {
+        "message": "Dari matahari terbenam hingga matahari terbenam <em>(sekitar 24 jam)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Hanya pada matahari terbit"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Acara dari matahari terbit hingga matahari terbenam <em>(sekitar 12 jam)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Hanya pada matahari terbenam"
+    },
+    "exportOption_Usual": {
+        "message": "Acara pada waktu pertemuan biasa (lihat halaman Acara)"
+    },
+    "exportOtherSettings": {
+        "message": "Pengaturan Lainnya"
+    },
+    "exportQuickDesc": {
+        "message": "Ekspor setiap set, lalu muat semuanya ke dalam kalender yang sama!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Kalender Lengkap"
+    },
+    "exportQuickPick1Text": {
+        "message": "Tampilkan setiap hari Badíʿ, bersama dengan Hari Suci dan waktu Perayaan. Tanpa peringatan."
+    },
+    "exportQuickPick2": {
+        "message": "2. Waktu Puasa - Pagi"
+    },
+    "exportQuickPick2Text": {
+        "message": "Matahari terbit, dengan peringatan tepat sebelumnya."
+    },
+    "exportQuickPick3": {
+        "message": "3. Waktu Puasa - Sore"
+    },
+    "exportQuickPick3Text": {
+        "message": "Matahari terbenam, dengan peringatan."
+    },
+    "exportQuickPickClearText": {
+        "message": "Reset opsi"
+    },
+    "exportQuickPicks": {
+        "message": "Set Acara yang Direkomendasikan"
+    },
+    "exportRangeFullRange": {
+        "message": "Ekspor semua entri kalender. (Jika tidak dicentang, hanya ekspor set sampel.)"
+    },
+    "exportTest": {
+        "message": "Tampilkan untuk di<u>s</u>alin"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Pilih apa yang harus diekspor."
+    },
+    "exportWhatToInclude": {
+        "message": "Opsi"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Waktu Puasa di {bYear}"
+    },
+    "fastGDate": {
+        "message": "Tanggal",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Perayaan {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival Ridván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(klik untuk detail)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "dimulai pada {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "akan terjadi dalam {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "akan terjadi dalam {numUnits} pada {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "akan dimulai dalam {numUnits} pada {time}"
+    },
+    "future_StartTime": {
+        "message": "akan dimulai pada {time}"
+    },
+    "future_Time": {
+        "message": "akan terjadi pada {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Tanggal Gregorian"
+    },
+    "gDatePickerTitle2": {
+        "message": "Pergi ke Tanggal <u>G</u>regorian",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "Januari,Februari,Maret,April,Mei,Juni,Juli,Agustus,September,Oktober,November,Desember"
+    },
+    "gMonthShort": {
+        "message": "Jan,Feb,Mar,Apr,Mei,Jun,Jul,Agt,Sep,Okt,Nov,Des"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Sekarang"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Minggu,Senin,Selasa,Rabu,Kamis,Jumat,Sabtu",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Min,Sen,Sel,Rab,Kam,Jum,Sab",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Kenaikan Abdul-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Kenaikan Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Kelahiran Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Kelahiran Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Hari Perjanjian"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Deklarasi Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Kesyahidan Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw-Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Hari Pertama Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Hari Kedua Belas Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Hari Kesembilan Ridván"
+    },
+    "iconColor": {
+        "message": "Warna Ikon",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Otomatis (ikuti tema sistem)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "Nama Acara IFTTT",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Untuk detail atau mendaftar, lihat <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. Acara akan berisi bidang-bidang ini: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "Kunci IFTTT Maker Channel",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>P</u>erayaan",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>ari Suci",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Tampilkan",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Garis Lintang:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Garis Bujur:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "Hari Sisipan"
+    },
+    "jumpTo": {
+        "message": "<u>P</u>indah ± hari",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

@@ -1,0 +1,351 @@
+{
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "jour(s)",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "jour;jours",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "heure(s)"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "heure;heures"
+    },
+    "reminderNum_minutes": {
+        "message": "minute(s)"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "minute;minutes"
+    },
+    "reminderNum_seconds": {
+        "message": "seconde(s)"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "seconde;secondes"
+    },
+    "remindersDefined": {
+        "message": "Vos rappels",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "Ajouter un rappel...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "Afficher à",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "Programmé aujourd'hui de {time} jusqu'à minuit",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(affiché à {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(à afficher à {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "Afficher {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "Rappel {0}",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "Jour Badíʿ",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "Jour de fête",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "Jour saint",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "Au chargement",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "Minuit",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "Midi",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "Lever du soleil",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "Coucher du soleil",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "Jours spéciaux",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "Autres événements",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "Moment de la journée",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "Événement",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>Cette extension Web est conçue pour fournir des informations actuelles sur le calendrier Badíʿ, localisées à votre emplacement.</p><p>Pour plus d'informations, veuillez cliquer ci-dessous sur le lien 'Version', ou sur n'importe quelle icône !</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "À propos",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "Couleur du texte pour l'icône de la barre d'outils :",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "Couleur de l'icône",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "Langue",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% traduit. Pouvez-<a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>vous aider</a> ?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% traduit !"
+    },
+    "setupOptOut": {
+        "message": "Se désinscrire ?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "Pour aider à comprendre comment cette extension Web est utilisée, des statistiques sont enregistrées chaque fois que vous passez d'une page à l'autre ou effectuez d'autres actions importantes. C'est anonyme, et les rapports associés peuvent être consultés par Glen Little. Si vous souhaitez vous désinscrire et désactiver cette fonction, vous pouvez cocher cette case :",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "Analytique",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "Aujourd'hui est le jour de {bWeekdayNamePri}, jour de {bDayNamePri}, du mois de {bMonthNamePri}, de l'année {bYearInVahidNamePri}, du {bVahidOrdinalName} {VahidLabelPri}, du {bKullishayOrdinalName} {KullishayLabelPri}.",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "Appuyez sur cette combinaison de touches pour ouvrir le calendrier depuis n'importe où dans le navigateur."
+    },
+    "showPointer": {
+        "message": "Afficher le pointeur"
+    },
+    "specialDaysTitle": {
+        "message": "Fêtes et jours saints en {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1h du matin (heure standard)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3h du matin (heure standard)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "Midi (heure standard)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "15h (heure standard)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "Environ 2 heures après le coucher du soleil",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "Formats standard",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "Début au coucher du soleil à {0}"
+    },
+    "startTimeOption": {
+        "message": "Heure habituelle de réunion : ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "Suggestions ?"
+    },
+    "suggestionsTitle": {
+        "message": "Pour toute suggestion d'amélioration pour cette extension, prière de cliquer ici."
+    },
+    "sunriseFastHeading": {
+        "message": "Lever du soleil",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "Coucher du soleil",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "Début du jour Badíʿ",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "Suspension du travail",
+        "description": "heading in Events listing"
+    },
+    "tips": {
+        "message": "Astuces & Touches",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "Précision ?"
+    },
+    "tipsAboutText": {
+        "message": "Les dates jusqu'à 221 E.B. (2064 apr. J.-C.) sont connues. Après cela, des mises à jour peuvent être nécessaires à mesure que les observations astronomiques s'améliorent. Veuillez ne pas utiliser ceci pour finaliser vos plans à plus de 50 ans dans le futur ! Consultez le site web pour plus de détails."
+    },
+    "tipsText": {
+        "message": "Appuyez sur les touches PgUp/PgDn pour sélectionner les panneaux.\nAppuyez sur les touches flèche droite/gauche pour changer de jour.\nAppuyez sur / pour basculer avant/après le coucher du soleil.\nAppuyez sur Accueil pour revenir à aujourd'hui !"
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "Tonight": {
+        "message": "Ce soir",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "fr",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "French",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bDay} {bMonthNamePri} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "Fêtes des 19 jours, Jours Saints et autres événements à venir"
+    },
+    "use24HourClock": {
+        "message": "true",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "Váḥid"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "Unité"
+    },
+    "version": {
+        "message": "Version {0}"
+    },
+    "webstore": {
+        "message": "Chrome Web Store"
+    },
+    "weekDayNames": {
+        "message": "Noms des jours de la semaine",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "Année de l'ère Bahá'íe"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "Année de {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "Pour plus de détails ou pour vous inscrire, consultez <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a>. Le Zap contiendra ces champs : title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

@@ -1,0 +1,377 @@
+{
+    "Kullishay": {
+        "message": "Кулл-и Шай'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+
+    "KullishayLocal": {
+        "message": "всё сущее",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Невозможно определить ваше текущее местоположение.\n\nРасширение будет использовать 18:30 как время заката для каждого дня.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Значение",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 полночь",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Месяц"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Названия месяцев/дней",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} с закатом в {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} с закатом в {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Следующий &rarr;"
+    },
+    "nextMonth": {
+        "message": "Следующий <u>м</u>есяц",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Следующее обновление запланировано после {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Следующий год",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Нажмите Shift + Стрелка вправо, чтобы увидеть следующий год",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Неизвестное местоположение - время заката 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Текущее местоположение)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 полдень",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Добавить примеры напоминаний",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Сейчас",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "-й,-й,-й,-й",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",первый,второй,третий,четвертый,пятый,шестой,седьмой,восьмой,девятый,десятый,одиннадцатый,двенадцатый,тринадцатый,четырнадцатый,пятнадцатый,шестнадцатый,семнадцатый,восемнадцатый,девятнадцатый"
+    },
+    "otherDays": {
+        "message": "через {0} дней",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "начался в {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "был {numUnits} назад"
+    },
+    "past_DeltaTime": {
+        "message": "был {numUnits} назад в {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "начался {numUnits} назад в {time}"
+    },
+    "past_StartTime": {
+        "message": "начался в {time}"
+    },
+    "past_Time": {
+        "message": "был в {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Год"
+    },
+    "pick_pageCal2": {
+        "message": "Месяц (элементы)",
+        "description": "tab name"
+    },
+    "pick_pageCal3": {
+        "message": "Месяц (недели)",
+        "description": "tab name"
+    },
+    "pick_pageCalGreg": {
+        "message": "Григорианский год",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Колесо",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Пользовательский",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "День"
+    },
+    "pick_pageEvents": {
+        "message": "События",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Экспорт",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Пост"
+    },
+    "pick_pageLists": {
+        "message": "Списки"
+    },
+    "pick_pagePlanner": {
+        "message": "Планировщик",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Напоминания",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Настройка",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Начиная с какого времени?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Начало следующего года Бади'",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Начало этого года Бади'",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Сегодня",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Включить день или вечер?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Оба",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "День",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Вечер",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Результаты",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Что показать?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Начало заката в {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Долгосрочный планировщик",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Выбор планирования",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Какой?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "несколько святых дней и праздников",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "один святой день или праздник",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "лет",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "На какой срок?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "p.m.",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Нажмите кнопку или введите {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Выберите формат для копирования в буфер обмена:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Предыдущий"
+    },
+    "prevMonth": {
+        "message": "Пред<u>ы</u>дущий месяц",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Предыдущий год",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Нажмите Shift + Стрелка влево, чтобы увидеть предыдущий год",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Арабский",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Русский",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Язык отображения для дат",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Дополнительное действие",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "нет",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "запустить рецепт IFTTT",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "прочитать вслух",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "запустить Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Добавить/Редактировать напоминание",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "после"
+    },
+    "reminderAlarm": {
+        "message": "В {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "День {num} месяца Бади'",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "до"
+    },
+    "reminderCalcType": {
+        "message": "Показать напоминание {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "в определенное время",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "относительно <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} в {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} в {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "В день {num} месяца Бади'",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Когда {num} день(дней) {beforeAfter} каждого {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "Праздник {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "Святой день, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "день {num} в {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} день(дней) {deltaText}, в {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} после",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "объявить в {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

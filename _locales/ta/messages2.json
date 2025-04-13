@@ -1,0 +1,330 @@
+{
+    "exporterItemDescDay": {
+        "message": "படீ' நாள்காட்டியில் ஒரு நாள்.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "வருடாந்திர பஹாய் நோன்புக்கான நேரங்கள்.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "இந்த படீ' நாளில் எந்த நேரத்திலும் ஒன்றுகூடல் தொடங்கலாம்.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "காட்டப்படும் சூரியோதய அல்லது சூரியாஸ்தமன நேரங்கள் {location}க்கானவை. http://bit.ly/BadiChrome ஐப் பயன்படுத்தி உருவாக்கப்பட்டது.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "படீ' நாள்காட்டி ஏற்றுமதியாளர்",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "iCalendar கோப்பைப் பதிவிறக்கவும் (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "கிரேகோரிய வருடம் - {0} கி.பி."
+    },
+    "exportGregYear1": {
+        "message": "கிரேகோரிய வருடம் - {0} கி.பி."
+    },
+    "exportHideTest": {
+        "message": "மறை"
+    },
+    "exportIncludeAlert": {
+        "message": "ஒவ்வொரு நிகழ்விற்கும் ஒரு எச்சரிக்கையைச் சேர்க்கவும் (கூகிள் நாள்காட்டியில் ஏற்றப்படாமல் போகலாம்)"
+    },
+    "exportIncludeLocation": {
+        "message": "இருப்பிட தகவல்"
+    },
+    "exportIntro": {
+        "message": "முக்கியம்! தகவல்கள் மற்றும் எச்சரிக்கைகளுக்கு <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">இந்த இணையப்பக்கத்தைப்</a> பார்க்கவும்!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "ஏற்றுமதி செய்யப்பட்ட நாள்காட்டிக்கான தலைப்பு (பயன்படுத்தப்படாமல் போகலாம்)"
+    },
+    "exportNumToInclude": {
+        "message": "சேர்க்கப்பட்ட நாள்காட்டி உள்ளீடுகளின் எண்ணிக்கை (தோராயமாக):"
+    },
+    "exportOption_AllDay": {
+        "message": "நள்ளிரவு முதல் முழு நாள் நிகழ்வு <em>(1 நாள் நீளம்)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "தொடக்க அஸ்தமனத்தில் மட்டும்"
+    },
+    "exportOption_Date": {
+        "message": "படீ' நாட்கள் <em>(365/366 நாட்கள்)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "நோன்பு நாட்கள் <em>(19 நாட்கள்)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "விருந்துகள் <em>(19 நாட்கள்)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "புனித நாட்கள் <em>(11 நாட்கள்)</em>"
+    },
+    "exportOption_Start": {
+        "message": "குறிப்பிட்ட அனுசரிப்பு நேரத்தில் அல்லது வழக்கமான சந்திப்பு நேரத்தில் நிகழ்வு"
+    },
+    "exportOption_Sun": {
+        "message": "அஸ்தமனத்திலிருந்து அஸ்தமனம் வரை <em>(சுமார் 24 மணிநேரம்)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "சூரியோதயத்தில் மட்டும்"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "சூரியோதயத்திலிருந்து சூரியாஸ்தமனம் வரை நிகழ்வு <em>(சுமார் 12 மணிநேரம்)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "அஸ்தமனத்தில் மட்டும்"
+    },
+    "exportOption_Usual": {
+        "message": "வழக்கமான சந்திப்பு நேரத்தில் நிகழ்வு (நிகழ்வுகள் பக்கத்தைப் பார்க்கவும்)"
+    },
+    "exportOtherSettings": {
+        "message": "பிற அமைப்புகள்"
+    },
+    "exportQuickDesc": {
+        "message": "ஒவ்வொரு தொகுப்பையும் ஏற்றுமதி செய்து, அனைத்தையும் ஒரே நாள்காட்டியில் ஏற்றவும்!"
+    },
+    "exportQuickPick1": {
+        "message": "1. முழு நாள்காட்டி"
+    },
+    "exportQuickPick1Text": {
+        "message": "புனித நாட்கள் மற்றும் விருந்து நேரங்களுடன் ஒவ்வொரு படீ' நாளையும் காட்டவும். எச்சரிக்கைகள் இல்லை."
+    },
+    "exportQuickPick2": {
+        "message": "2. நோன்பு நேரம் - காலை"
+    },
+    "exportQuickPick2Text": {
+        "message": "சூரியோதயம், அதற்கு சற்று முன் ஒரு எச்சரிக்கையுடன்."
+    },
+    "exportQuickPick3": {
+        "message": "3. நோன்பு நேரம் - மாலை"
+    },
+    "exportQuickPick3Text": {
+        "message": "சூரியாஸ்தமனம், ஒரு எச்சரிக்கையுடன்."
+    },
+    "exportQuickPickClearText": {
+        "message": "விருப்பங்களை மீட்டமை"
+    },
+    "exportQuickPicks": {
+        "message": "பரிந்துரைக்கப்பட்ட நிகழ்வுகளின் தொகுப்புகள்"
+    },
+    "exportRangeFullRange": {
+        "message": "அனைத்து நாள்காட்டி உள்ளீடுகளையும் ஏற்றுமதி செய்யவும். (சரிபார்க்கப்படவில்லை என்றால், மாதிரி தொகுப்பை மட்டும் ஏற்றுமதி செய்யவும்.)"
+    },
+    "exportTest": {
+        "message": "நகலெடுப்பதற்கு <u>கா</u>ட்டு"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "எதை ஏற்றுமதி செய்ய வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்."
+    },
+    "exportWhatToInclude": {
+        "message": "விருப்பங்கள்"
+    },
+    "facebook": {
+        "message": "முகநூல்",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear} நோன்பு நேரங்கள்"
+    },
+    "fastGDate": {
+        "message": "திகதி",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "{0} விருந்து",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "ரித்வான் திருவிழா"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(மேலும் விவரங்களுக்குச் சொடுக்கவும்)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "{time}இல் தொடங்குகிறது",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "{numUnits}இல் இருக்கும்"
+    },
+    "future_DeltaTime": {
+        "message": "{numUnits}இல் {time}க்கு இருக்கும்"
+    },
+    "future_StartDeltaTime": {
+        "message": "{numUnits}இல் {time}க்கு தொடங்கும்"
+    },
+    "future_StartTime": {
+        "message": "{time}க்கு தொடங்கும்"
+    },
+    "future_Time": {
+        "message": "{time}க்கு இருக்கும்"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "கிரேகோரிய திகதி"
+    },
+    "gDatePickerTitle2": {
+        "message": "கிரேகோரிய திகதியைத் தேர்வு செய்க",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "ஜனவரி,பிப்ரவரி,மார்ச்,ஏப்ரல்,மே,ஜூன்,ஜூலை,ஆகஸ்ட்,செப்டம்பர்,அக்டோபர்,நவம்பர்,டிசம்பர்"
+    },
+    "gMonthShort": {
+        "message": "ஜன,பிப்,மார்,ஏப்,மே,ஜூன்,ஜூலை,ஆக,செப்,அக்,நவ,டிச"
+    },
+    "googlePlus": {
+        "message": "கூகிள்+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "இப்பொழுது"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "ஞாயிறு,திங்கள்,செவ்வாய்,புதன்,வியாழன்,வெள்ளி,சனி",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "ஞா,திங்,செவ்,புத,வியா,வெ,சனி",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "அப்துல்-பஹாவின் விண்ணேற்றம்"
+    },
+    "HolyDay_AscBaha": {
+        "message": "பஹாவுல்லாவின் விண்ணேற்றம்"
+    },
+    "HolyDay_BirthBab": {
+        "message": "பாப் பெருமானாரின் பிறப்பு"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "பஹாவுல்லாவின் பிறப்பு"
+    },
+    "HolyDay_Covenant": {
+        "message": "ஒப்பந்தத் திருநாள்"
+    },
+    "HolyDay_DeclBab": {
+        "message": "பாப் பெருமானாரின் பிரகடனம்"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "பாப் பெருமானாரின் தியாக மரணம்"
+    },
+    "HolyDay_NawRuz": {
+        "message": "நவ்-ருஸ்"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "ரித்வான் 1-வது நாள்"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "ரித்வான் 12-வது நாள்"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "ரித்வான் 9-வது நாள்"
+    },
+    "iconColor": {
+        "message": "சின்ன நிறம்",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "தானியங்கி (கணினி தீம் பின்பற்றவும்)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "கைமுறை",
+        "description": "Label for manual icon color option"
+    },
+    "includeFeasts": {
+        "message": "<u>வி</u>ருந்துகள்",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>பு</u>னித நாட்கள்",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "காட்டு",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "அட்சரேகை:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "தீர்க்கரேகை:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "உபரி நாள்கள்"
+    },
+    "jumpTo": {
+        "message": "<u>செ</u>ல் ± நாட்கள்",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

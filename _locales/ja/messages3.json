@@ -1,0 +1,383 @@
+{
+    "Kullishay": {
+        "message": "クッリ・<u>シ</u>ャイ"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "すべてのもの",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "現在地を特定できません。\n\n拡張機能は毎日の日没時間として18:30を使用します。",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "意味",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}",
+        "description": "Message body format"
+    },
+    "midnight": {
+        "message": "午前0時",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "月"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "月/日の名前",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{endingSunsetDesc}の日没で{dayEnded}"
+    },
+    "nearestSunsetEve": {
+        "message": "{startingSunsetDesc}の日没で{dayStarted}"
+    },
+    "next": {
+        "message": "次へ &rarr;"
+    },
+    "nextMonth": {
+        "message": "次の<u>月</u>",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "{0}後の次の更新予定：{1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "来年",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "来年を見るにはShift+右矢印キーを押してください",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "（場所不明 - 日没時間18:30）",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "（現在地）",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "正午",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "サンプルリマインダーを追加",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "今",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "第,第1,第2,第3",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",第1,第2,第3,第4,第5,第6,第7,第8,第9,第10,第11,第12,第13,第14,第15,第16,第17,第18,第19"
+    },
+    "otherDays": {
+        "message": "{0}日後",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "{time}に開始しました",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "{numUnits}前でした"
+    },
+    "past_DeltaTime": {
+        "message": "{numUnits}前の{time}でした"
+    },
+    "past_StartDeltaTime": {
+        "message": "{numUnits}前の{time}に開始しました"
+    },
+    "past_StartTime": {
+        "message": "{time}に開始しました"
+    },
+    "past_Time": {
+        "message": "{time}でした"
+    },
+    "pick_pageCal1": {
+        "message": "年"
+    },
+    "pick_pageCal2": {
+        "message": "月表示（元素）",
+        "description": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "月表示（週）",
+        "description": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "グレゴリオ暦年",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "ホイール",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "カスタム",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "日"
+    },
+    "pick_pageEvents": {
+        "message": "イベント",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "エクスポート",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "断食"
+    },
+    "pick_pageLists": {
+        "message": "リスト"
+    },
+    "pick_pagePlanner": {
+        "message": "プランナー",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "リマインダー",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "設定",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "いつから開始しますか？",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "次のバディーウ暦年の開始",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "今年のバディーウ暦年の開始",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "今日",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "日中または夕方を含めますか？",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "両方",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "日中",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "夕方",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "結果",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "何を表示しますか？",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "{0}での開始日没",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "長期プランナー",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "計画選択",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "どれ？",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "複数の聖日と祝宴",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "一つの聖日または祝宴",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "年",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "どのくらいの期間？",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "午後",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "キーを押すか{0}を入力してください。",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "クリップボードにコピーする形式を選択：",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; 前へ"
+    },
+    "prevMonth": {
+        "message": "前の<u>月</u>",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "前年",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "前年を見るにはShift+左矢印キーを押してください",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "アラビア語",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "日本語",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "日付の表示言語",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "追加アクション",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "なし",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "IFTTTレシピをトリガー",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "読み上げる",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "Zapier Webhookをトリガー",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "リマインダーの追加/編集",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "後",
+        "description": "after"
+    },
+    "reminderAlarm": {
+        "message": "{triggerTimeDisplay}に --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "バディーウ暦月の{num}日目",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "前",
+        "description": "before"
+    },
+    "reminderCalcType": {
+        "message": "リマインダーを{calcTypeInput}に表示",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "特定の時間",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "<span class=modelTriggerEcho></span>に関連して",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventWeekdayLong}、{eventMonthLong} {eventDay}の{eventTime}。",
+        "description": "Reminder day details"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventMonthShort} {eventDay}の{eventTime}",
+        "description": "Test reminder day details"
+    },
+    "reminderDayOfMonth": {
+        "message": "バディーウ暦月の{num}日目に",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "各{event}の{beforeAfter} {num}日の時",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "{pri}、{sec}の祝宴、",
+        "description": "Feast reminder format"
+    },
+    "reminderHolyDay": {
+        "message": "聖日「{0}」、",
+        "description": "Holy day reminder format"
+    },
+    "reminderList_bday": {
+        "message": "{num}日目 {triggerTimeRawDisplay}に",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{deltaText} {num}日、{triggerTimeRawDisplay}に",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units}後",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "{triggerTimeRawDisplay}にお知らせ",
+        "description": "in list of defined reminders"
+    }
+}

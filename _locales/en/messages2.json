@@ -1,0 +1,342 @@
+{
+    "exporterItemDescDay": {
+        "message": "A day in the Badíʿ calendar.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Times for the annual Bahá'í Fast.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Gathering may start at any time on this Badíʿ day.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Sunrise or sunset times shown are for {location}. Generated using http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Badíʿ Calendar Exporter",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Download iCalendar file (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Gregorian year - {0} A.D."
+    },
+    "exportGregYear1": {
+        "message": "Gregorian year - {0} A.D."
+    },
+    "exportHideTest": {
+        "message": "Hide"
+    },
+    "exportIncludeAlert": {
+        "message": "Add an alert to each event (may not load into Google calendar)"
+    },
+    "exportIncludeLocation": {
+        "message": "Location Information"
+    },
+    "exportIntro": {
+        "message": "Important! See <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">this web page</a> for information and cautions!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Title for Exported Calendar (may not be used)"
+    },
+    "exportNumToInclude": {
+        "message": "Number of calendar entries included (approximately):"
+    },
+    "exportOption_AllDay": {
+        "message": "All-day event from midnight <em>(1 day long)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "At beginning sunset only"
+    },
+    "exportOption_Date": {
+        "message": "Badíʿ Days <em>(365/366 days)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Fast Days <em>(19 days)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Feasts <em>(19 days)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Holy Days <em>(11 days)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Event at designated observation time or usual meeting time"
+    },
+    "exportOption_Sun": {
+        "message": "From sunset to sunset <em>(about 24 hours)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "At sunrise only"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Event from sunrise to sunset <em>(about 12 hours)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "At sunset only"
+    },
+    "exportOption_Usual": {
+        "message": "Event at usual meeting time (see Events page)"
+    },
+    "exportOtherSettings": {
+        "message": "Other Settings"
+    },
+    "exportQuickDesc": {
+        "message": "Export each set, then load them all into the same calendar!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Full Calendar"
+    },
+    "exportQuickPick1Text": {
+        "message": "Display each Badíʿ day, along with Holy Days and Feast times. No alerts."
+    },
+    "exportQuickPick2": {
+        "message": "2. Fast Time - Morning"
+    },
+    "exportQuickPick2Text": {
+        "message": "Sunrise, with an alert just before it."
+    },
+    "exportQuickPick3": {
+        "message": "3. Fast Time - Evening"
+    },
+    "exportQuickPick3Text": {
+        "message": "Sunset, with an alert."
+    },
+    "exportQuickPickClearText": {
+        "message": "Reset options"
+    },
+    "exportQuickPicks": {
+        "message": "Recommended sets of Events"
+    },
+    "exportRangeFullRange": {
+        "message": "Export all calendar entries. (If not checked, only export a sample set.)"
+    },
+    "exportTest": {
+        "message": "Di<u>s</u>play for copying"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Select what should be exported."
+    },
+    "exportWhatToInclude": {
+        "message": "Options"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Fasting Times in {bYear}"
+    },
+    "fastGDate": {
+        "message": "Date",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Feast of {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Festival of Ridván"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(click for more details)"
+    },
+    "formatIconToolTip": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "starts at {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "will be in {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "will be in {numUnits} at {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "will start in {numUnits} at {time}"
+    },
+    "future_StartTime": {
+        "message": "will start at {time}"
+    },
+    "future_Time": {
+        "message": "will be at {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Gregorian Date"
+    },
+    "gDatePickerTitle2": {
+        "message": "Go to <u>G</u>regorian Date",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "January,February,March,April,May,June,July,August,September,October,November,December"
+    },
+    "gMonthShort": {
+        "message": "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Now"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayLong}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Ascension of `Abdu'l-Bahá"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Ascension of Bahá'u'lláh"
+    },
+    "HolyDay_BirthBab": {
+        "message": "Birth of the Báb"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "Birth of Bahá'u'lláh"
+    },
+    "HolyDay_Covenant": {
+        "message": "Day of the Covenant"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Declaration of the Báb"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Martyrdom of the Báb"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Naw Rúz"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "First Day of Ridván"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Twelfth Day of Ridván"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Ninth Day of Ridván"
+    },
+    "iconColor": {
+        "message": "Icon Color",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Auto (follow system theme)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Manual",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "IFTTT Event Name",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "For details or to sign up, see <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. The event will contain these fields: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel Key",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>F</u>easts",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>H</u>oly Days",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Show",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Latitude:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Longitude:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "Intercalary Days"
+    },
+    "jumpTo": {
+        "message": "<u>J</u>ump ± days",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

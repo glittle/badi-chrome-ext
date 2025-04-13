@@ -1,81 +1,368 @@
 {
-  "bMonthMeaning": {
-    "message": "ימי הַאאְ,זוהר,תהילה,יופי,גדולה,אור,רחמים,מילים,שלמות,שמות,עוצמה,רצון,ידע,כוח,נאום,שאלות,כבוד,ריבונות,שלטון,רוממות",
-    "description": "Names of days/months, with first one being Ayyam-i-ha"
-  },
-  "bMonthNameAr": {
-    "message": "איאם-אי הא,בַּהָאאְ,ג'לאל,ג'מאל,עזמת,נור,רחמת,כַּלִמאת,כמאל,אסמאא,עִזַת,מַשִיַת,עִלְם,קֻדרַת,קול,מסַאאֶל,שרף,סֻלטאן,מֻלְכּ,עַלַאאְ",
-    "description": "month names, start with Ayyam-i-Ha"
-  },
-  "bWeekDayMeaning": {
-    "message": ",תהילה,יופי,שלמות,חסד,צדק,הדר,עצמאות",
-    "description": "start with Saturday and a leading comma"
-  },
-  "bWeekdayNameAr": {
-    "message": ",ג'לאל,ג'מאל,כמאל,פידאל,עִדאל,אִסתג'לאל,אִסתקלאל ",
-    "description": "weekday names, with leading , "
-  },
-  "elements": {
-    "message": "אש,אוויר,מים,אדמה",
-    "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
-  },
-  "gMonthLong": {
-    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
-  },
-  "gMonthShort": {
-    "message": "בינואר,בפברואר,במרץ,באפריל,במאי,ביוני,ביולי,באוגוסט,בספטמבר,באוקטובר,נובמבר,דצמבר"
-  },
-  "gWeekdayShort": {
-    "message": "א,ב,ג,ד,ה,ו,ש",
-    "description": "start with Sun"
-  },
-  "HolyDay_AscAbdul": {
-    "message": "יום פטירת עבד אלבהאא"
-  },
-  "HolyDay_AscBaha": {
-    "message": "פטירת בהאא אללאה"
-  },
-  "HolyDay_BirthBab": {
-    "message": "יום הולדת הבאב"
-  },
-  "HolyDay_BirthBaha": {
-    "message": "יום הולדת בהאא אללאה"
-  },
-  "HolyDay_Covenant": {
-    "message": "יום הברית"
-  },
-  "HolyDay_DeclBab": {
-    "message": "הכרזת הבאב על התגלותו"
-  },
-  "HolyDay_Martyrdom": {
-    "message": "הריגת הבאב"
-  },
-  "HolyDay_NawRuz": {
-    "message": "נו רוז"
-  },
-  "HolyDay_Ridvan1": {
-    "message": "היום הראשון של רזואן"
-  },
-  "HolyDay_Ridvan12": {
-    "message": "היום השנים עשר של רזואן"
-  },
-  "HolyDay_Ridvan9": {
-    "message": "היום התשיעי של רזואן"
-  },
-  "textDirection": {
-    "message": "rtl",
-    "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
-  },
-  "title": {
-    "message": "לוח השנה הבהאי",
-    "description": "The title of the extension. Shown in a number of locations."
-  },
-  "translation": {
-    "message": "he",
-    "description": "This needs to be the international language code for this language, shown in English letters."
-  },
-  "translationEnglishName": {
-    "message": "Hebrew",
-    "description": "The name of this language, in English"
-  }
+    "title": {
+        "message": "לוח השנה הבהאי",
+        "description": "The title of the extension. Shown in a number of locations."
+    },
+    "titleDesc": {
+        "message": "מציג את התאריך הנוכחי בלוח השנה הבדיע (המופלא), לוח השנה הרשמי של האמונה הבהאית.",
+        "description": "Used in the manifest"
+    },
+    "1day": {
+        "message": "בעוד {0} יום",
+        "description": "used in top left 'Upcoming' list, when the event is 1 day in the future"
+    },
+    "actionSpeakDesc": {
+        "message": "התזכורת תיקרא בקול באמצעות קול זה:",
+        "description": "in edit area when asking for a relative time"
+    },
+    "afterSunset": {
+        "message": "ערב - אחרי שקיעה"
+    },
+    "am": {
+        "message": "לפנה״צ",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "arabic": {
+        "message": "שם",
+        "description": "on List page - table heading"
+    },
+    "ayyamIs0": {
+        "message": "(ש ח י) 0 = איאם-אי-הא",
+        "description": "(updated) in Badi date picker area"
+    },
+    "bDatePickerTitle": {
+        "message": "בחר תאריך <u>ב</u>דיע",
+        "description": "added <u></u> - should have one letter between <u> and </u>"
+    },
+    "beforeSunset": {
+        "message": "יום - לפני שקיעה"
+    },
+    "bMonthMeaning": {
+        "message": "ימי הַאאְ,זוהר,תהילה,יופי,גדולה,אור,רחמים,מילים,שלמות,שמות,עוצמה,רצון,ידע,כוח,נאום,שאלות,כבוד,ריבונות,שלטון,רוממות",
+        "description": "Names of days/months, with first one being Ayyam-i-ha"
+    },
+    "bMonthNameAr": {
+        "message": "איאם-אי הא,בַּהָאאְ,ג'לאל,ג'מאל,עזמת,נור,רחמת,כַּלִמאת,כמאל,אסמאא,עִזַת,מַשִיַת,עִלְם,קֻדרַת,קול,מסַאאֶל,שרף,סֻלטאן,מֻלְכּ,עַלַאאְ",
+        "description": "month names, start with Ayyam-i-Ha"
+    },
+    "browserActionTitle": {
+        "message": "טוען...",
+        "description": "Shown until the dynamic tip is created"
+    },
+    "browserMenuOpen": {
+        "message": "פתח בלשונית",
+        "description": "shown as menu item when right-clicking on the browser icon"
+    },
+    "btnCal2M": {
+        "message": "התמקד בחודש",
+        "description": "on button"
+    },
+    "btnCal2Y": {
+        "message": "התמקד בשנה",
+        "description": "on button"
+    },
+    "btnCustomBuilderCancel": {
+        "message": "ביטול / חדש"
+    },
+    "btnEveOrDay": {
+        "message": "לפני / אחרי שקיעה"
+    },
+    "btnJumpTo": {
+        "message": "עבור"
+    },
+    "btnJumpToTitle": {
+        "message": "עבור מספר ימים קדימה או אחורה",
+        "description": "tooltip"
+    },
+    "btnPlannerExportCsv": {
+        "message": "ייצא ל-CSV",
+        "description": "button - export to Comma Separated Value format for import into Excel"
+    },
+    "btnPlannerExportICal": {
+        "message": "ייצא ל-iCal",
+        "description": "button - export to iCalendar format"
+    },
+    "btnPlannerHelperFeasts": {
+        "message": "חגיגות",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD1": {
+        "message": "ימים קדושים (פטורים מעבודה)",
+        "description": "helper button"
+    },
+    "btnPlannerHelperHD2": {
+        "message": "כל הימים הקדושים",
+        "description": "helper button"
+    },
+    "btnPlannerHelperNone": {
+        "message": "אף אחד",
+        "description": "helper button"
+    },
+    "btnPlannerHelperRid": {
+        "message": "רזואן",
+        "description": "helper button"
+    },
+    "btnPlannerHelperTHB": {
+        "message": "ימי הולדת תאומים",
+        "description": "helper button"
+    },
+    "btnReminderCancel": {
+        "message": "ביטול",
+        "description": "cancel changes and close the edit area"
+    },
+    "btnReminderDelete": {
+        "message": "מחק",
+        "description": "delete a reminder"
+    },
+    "btnReminderEdit": {
+        "message": "ערוך",
+        "description": "shown next to each reminder. Click to edit the reminder."
+    },
+    "btnReminderSave": {
+        "message": "<u>ש</u>מור",
+        "description": "Save the changes and close the edit area"
+    },
+    "btnReminderSaveNew": {
+        "message": "שמור כתזכורת חדשה",
+        "description": "Save the changes as a new reminder and close the edit area. The original reminder is not affected."
+    },
+    "btnReminderTest": {
+        "message": "בדוק עכשיו",
+        "description": "show a sample of the reminder now"
+    },
+    "btnRetry2": {
+        "message": "טען מחדש עכשיו"
+    },
+    "bTopDayDisplay": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "top right corner"
+    },
+    "bWeekDayMeaning": {
+        "message": ",תהילה,יופי,שלמות,חסד,צדק,הדר,עצמאות",
+        "description": "start with Saturday and a leading comma"
+    },
+    "bWeekdayNameAr": {
+        "message": ",ג'לאל,ג'מאל,כמאל,פידאל,עִדאל,אִסתג'לאל,אִסתקלאל ",
+        "description": "weekday names, with leading , "
+    },
+    "bYearInVahidMeaning": {
+        "message": ",א,ב,אב,ד,שער,ו,נצח,נדיבות,זוהר,אהבה,שמחה,תשובה,אחד,נדיב,חיבה,ראשית,מאיר,מזהיר,אחדות",
+        "description": "Vahid names, with leading , "
+    },
+    "bYearInVahidNameAr": {
+        "message": ",אליף,בא,אב,דאל,באב,ואו,אבד,ג'אד,בהא,חוב,בהאג',ג'ואב,אחד,והאב,וידאד,בדיע,בהי,אבהא,ואחיד",
+        "description": "Arabic names of years in a Vahid, with leading , "
+    },
+    "cal2DarkerColors": {
+        "message": "צבעים <u>כ</u>הים יותר",
+        "description": "a check box on the calendar. If checked, darker colors are used."
+    },
+    "cal2ForPrint": {
+        "message": "כל החודשים ל<u>ה</u>דפסה",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal2ShowTimes": {
+        "message": "הצג <u>ז</u>מנים",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "cal3ForPrint": {
+        "message": "כל החודשים ל<u>ה</u>דפסה",
+        "description": "a check box on the calendar. If checked, formating is improved for printing."
+    },
+    "cal3ShowTimes": {
+        "message": "הצג <u>ז</u>מנים",
+        "description": "a check box on the calendar, asking whether sunrise and sunset times should be displayed. If they are not, the calendar is generic for any location."
+    },
+    "Chrome_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Chrome_WebStore": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp",
+        "description": "link to Webstore when running in Chrome"
+    },
+    "Chrome_WebStoreSupport": {
+        "message": "https://chrome.google.com/webstore/detail/bad%C3%AD-calendar/egekinjjpolponbbfjimifpgfdmphomp/support",
+        "description": "link to Webstore support link when running in Chrome"
+    },
+    "copied": {
+        "message": "הועתק!",
+        "description": "short message that replaces sample format button text when button is clicked"
+    },
+    "currentFocus": {
+        "message": "היום הנוכחי",
+        "description": "in wheel, points to today, or whatever day is currently selected"
+    },
+    "customBtnCopy": {
+        "message": "העתק"
+    },
+    "customBuilder": {
+        "message": "בנה פורמט תאריך מותאם אישית"
+    },
+    "customBuilderEcho": {
+        "message": "תוצאות (עבור היום הנבחר - ראה טיפים ומקשים כדי לשנות את היום)"
+    },
+    "customBuilderIntro": {
+        "message": "הקלד את הפורמט בתיבה זו. לחץ על כל כפתור 'הוסף' בחלקי התאריך הזמינים כדי להוסיף את חלק התאריך הזה למיקום הנוכחי. רמזים: 'frag1' = משקיעה עד חצות; 'frag2' = מחצות עד שקיעה."
+    },
+    "customDefined": {
+        "message": "פורמטי תאריך מותאמים אישית"
+    },
+    "customFormats": {
+        "message": "פורמטים מותאמים אישית",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "customIntroClick": {
+        "message": "לחץ על העתק כדי להעתיק את התאריך המעוצב ללוח."
+    },
+    "customLoadDefaultToolTip": {
+        "message": "פורמט לטיפ כלי של אייקון כרום:"
+    },
+    "customLoadDefaultToolTip1": {
+        "message": "שורה 1"
+    },
+    "customLoadDefaultToolTip2": {
+        "message": "שורה 2"
+    },
+    "customLoadDefaultTopDay": {
+        "message": "פורמט להצגה בראש רוב הדפים:"
+    },
+    "customLoadLetters": {
+        "message": "לחץ להתחיל מפורמט סטנדרטי:"
+    },
+    "customPartsList": {
+        "message": "חלקי תאריך זמינים"
+    },
+    "customSelectForFrontPage": {
+        "message": "סמן להצגה בדף {0}."
+    },
+    "customUseAsSample": {
+        "message": "להשתמש כדוגמה?"
+    },
+    "dateHeading": {
+        "message": "יום",
+        "description": "heading in Events listing"
+    },
+    "dayEndedFuture": {
+        "message": "מסתיים"
+    },
+    "dayEndedPast": {
+        "message": "הסתיים"
+    },
+    "DayOfMonth": {
+        "message": "יום בחודש"
+    },
+    "DayOfMonthFormat": {
+        "message": "{bDay} - {bDayNamePri} ({bDayNameSec})"
+    },
+    "DayOfWeek": {
+        "message": "יום בשבוע"
+    },
+    "DayOfWeekFormat": {
+        "message": "{bWeekday} - {bWeekdayNamePri} ({bWeekdayNameSec})"
+    },
+    "dayStartedFuture": {
+        "message": "מתחיל"
+    },
+    "dayStartedPast": {
+        "message": "התחיל"
+    },
+    "defaultFormat": {
+        "message": "(ברירת מחדל)",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "elements": {
+        "message": "אש,אוויר,מים,אדמה",
+        "description": "the Bab's designations, found in 'https://books.google.ca/books?id=XTfoaK15t64C&pg=PA394&lpg=PA394&dq=get+of+the+heart+nader+bab&source=bl&ots=vyF-pWLAr8&sig=ruiuoE48sGWWgaB_AFKcSfkHvqw&hl=en&sa=X&ei=hbp0VfGwIon6oQSTk4Mg&ved=0CDAQ6AEwAw#v=snippet&q=%22air%20of%20eternity%22&f=false' "
+    },
+    "Ended": {
+        "message": "הסתיים",
+        "description": "Shown in the upcoming dates area"
+    },
+    "endingWithSunset": {
+        "message": "מסתיים בשקיעה בשעה {0}"
+    },
+    "equiv": {
+        "message": "שווה ערך",
+        "description": "on List page - table heading"
+    },
+    "eraAbbrev": {
+        "message": "ע.ב."
+    },
+    "eraLong": {
+        "message": "עידן בהאי"
+    },
+    "eraShort": {
+        "message": "ע.ב."
+    },
+    "eventTime": {
+        "message": "{eventTime} {eventWeekdayShort} {eventMonthShort} {eventDay}, {eventYear}",
+        "description": "show start time in Events listing"
+    },
+    "eventTimeHeading1": {
+        "message": "זמן מפגש רגיל",
+        "description": "heading in Events listing (if not showing Holy Days)"
+    },
+    "eventTimeHeading2": {
+        "message": "זמן מפגש/חגיגה",
+        "description": "heading in Events listing (if showing Holy Days)"
+    },
+    "evePartOfDay": {
+        "message": "{startingSunsetDesc} {frag1WeekdayShort} {frag1MonthShort} {frag1Day}, {frag1Year}",
+        "description": "show start time in Events listing"
+    },
+    "example2": {
+        "message": "{bMonthNamePri} {bDay} {dayStartedLower} בשקיעה (בערך {startingSunsetDesc}) ב{frag1WeekdayLong}, {frag1MonthShort} {frag1Day} ו{dayEndedLower} בשקיעה (בערך {endingSunsetDesc}) ב{frag2WeekdayLong}, {frag2MonthShort} {frag2Day}."
+    },
+    "exportAlert_B0": {
+        "message": "כשזה מתחיל"
+    },
+    "exportAlert_B1": {
+        "message": "דקה אחת לפני"
+    },
+    "exportAlert_B10": {
+        "message": "10 דקות לפני"
+    },
+    "exportAlert_B15": {
+        "message": "15 דקות לפני"
+    },
+    "exportAlert_B30": {
+        "message": "30 דקות לפני"
+    },
+    "exportAlert_B5": {
+        "message": "5 דקות לפני"
+    },
+    "exportAlert_B60": {
+        "message": "60 דקות לפני"
+    },
+    "exportBadiYear0": {
+        "message": "שנת בדיע - {0} ע.ב."
+    },
+    "exportBadiYear1": {
+        "message": "שנת בדיע - {0} ע.ב."
+    },
+    "exportCalendarDescription": {
+        "message": "תאריכים בלוח השנה הבדיע עבור {location}"
+    },
+    "exportDayFromSunset": {
+        "message": "תחילת {0}"
+    },
+    "exporterDateRange": {
+        "message": "<u>ט</u>ווח תאריכים לייצוא (מבוסס על השנה הנבחרת כעת)"
+    },
+    "exporterFastEnd": {
+        "message": "הצום מסתיים",
+        "description": "when the fast ends at sunset"
+    },
+    "exporterFastStart": {
+        "message": "הצום מתחיל",
+        "description": "when the fast starts at sunrise"
+    },
+    "exporterFastUntil": {
+        "message": "צום עד {endingSunsetDesc}"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayLong} - {currentRelationToSunset} - {currentDay} {currentMonthLong} {currentYear}",
+        "description": "top right corner"
+    }
 }

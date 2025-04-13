@@ -43,10 +43,49 @@ browser.tabs.getCurrent().then((tab) => {
   }
 });
 
+// Function to update the icon color controls based on the current mode
+function updateIconColorControls() {
+  const isAutoMode = common.iconTextColorMode === "auto";
+  
+  // Set the radio button states
+  $("#rbIconColor_Auto").prop("checked", isAutoMode);
+  $("#rbIconColor_Manual").prop("checked", !isAutoMode);
+  
+  // Enable/disable the color picker based on mode
+  $("#iconColorPicker").prop("disabled", isAutoMode);
+  
+  // Set the color picker value
+  $("#iconColorPicker").val(common.iconTextColor);
+}
+
 function attachHandlersInPopup() {
   $("#samples").on("click", "button", copySample);
   $(".btnChangeDay").on("click", changeDay);
   $(".btnChangeYear").on("click", changeYear);
+  
+  // Icon color mode handlers
+  $("input[name='iconColorMode']").on("change", function() {
+    const mode = $(this).val();
+    common.iconTextColorMode = mode;
+    putInStorageLocalAsync(localStorageKey.iconTextColorMode, mode);
+    
+    if (mode === "auto") {
+      // Update color based on system theme
+      updateIconColorBasedOnColorScheme();
+      showIcon(); // Refresh the icon
+    }
+    
+    // Update UI
+    updateIconColorControls();
+  });
+  
+  // Icon color picker handler
+  $("#iconColorPicker").on("change", function() {
+    const color = $(this).val();
+    common.iconTextColor = color;
+    putInStorageLocalAsync(localStorageKey.iconTextColor, color);
+    showIcon(); // Refresh the icon
+  });
 
   $(".btnJumpTo").on("click", moveDays);
   $(".btnJumpToday").on("click", () => {
@@ -1263,9 +1302,7 @@ function startFillingLanguageInput(select) {
         for (let i = 0; i < entries.length; ++i) {
           const langToLoad = entries[i].name;
 
-          const url = `/_locales/${langToLoad}/messages.json`;
-
-          const messages = await loadJsonfileAsync(url);
+          const messages = await loadLocaleMessageFileAsync(langToLoad);
 
           const langLocalMsg = messages.rbDefLang_Local;
           const name = langLocalMsg ? langLocalMsg.message : langToLoad;
@@ -1277,7 +1314,7 @@ function startFillingLanguageInput(select) {
             code: langToLoad,
             name: name || "",
             english: english === name || english === langToLoad ? "" : english,
-            pct: Math.round((Object.keys(messages).length / _numMessagesEn) * 100),
+            pct: Math.min(100, Math.round((Object.keys(messages).length / _numMessagesEn) * 100)),
           };
           info.sort = info.english || info.name || info.code;
           langs.push(info);
@@ -1676,10 +1713,22 @@ function prepareDefaultsInPopup() {
     showPointer = true;
   }
   $("#cbShowPointer").prop("checked", showPointer);
+  
+  // Initialize icon color controls
+  updateIconColorControls();
 }
 
 function UpdateLanguageBtn() {
   $(`#rbDefLang_${common.useArNames ? "Ar" : "Local"}`).prop("checked", true);
+}
+
+function updateIconColorControls() {
+  // Set the radio button based on the current mode
+  $(`#rbIconColor_${common.iconTextColorMode === "auto" ? "Auto" : "Manual"}`).prop("checked", true);
+  
+  // Set the color picker value and enable/disable based on mode
+  $("#iconColorPicker").val(common.iconTextColor);
+  $("#iconColorPicker").prop("disabled", common.iconTextColorMode === "auto");
 }
 
 function updateTabNames() {
@@ -1687,7 +1736,7 @@ function updateTabNames() {
     .filter(":visible")
     .each((i, el) => {
       const tab = $(el);
-      tab.html(`${i + 1} ${tab.html()}`);
+      tab.html(`${common.numberFormatter.format(i + 1)} ${tab.html()}`);
       _pageIdList.push(tab.data("page"));
     });
 }
@@ -1799,4 +1848,9 @@ function updateLoadProgress(comment) {
 $(async () => {
   await prepareForBackgroundAndPopupAsync();
   await prepareSharedForPopup();
+  
+  // Initialize icon color controls
+  if (typeof updateIconColorControls === 'function') {
+    updateIconColorControls();
+  }
 });

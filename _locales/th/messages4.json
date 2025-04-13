@@ -1,0 +1,355 @@
+{
+    "reminderList_timeRelative": {
+        "message": "{num} {units} {deltaText}",
+        "description": "in list of defined reminders"
+    },
+    "reminderNum_days": {
+        "message": "วัน",
+        "description": "unknown number of days"
+    },
+    "reminderNum_days_1_more": {
+        "message": "วัน;วัน",
+        "description": "single;plural"
+    },
+    "reminderNum_hours": {
+        "message": "ชั่วโมง"
+    },
+    "reminderNum_hours_1_more": {
+        "message": "ชั่วโมง;ชั่วโมง"
+    },
+    "reminderNum_minutes": {
+        "message": "นาที"
+    },
+    "reminderNum_minutes_1_more": {
+        "message": "นาที;นาที"
+    },
+    "reminderNum_seconds": {
+        "message": "วินาที"
+    },
+    "reminderNum_seconds_1_more": {
+        "message": "วินาที;วินาที"
+    },
+    "remindersDefined": {
+        "message": "การแจ้งเตือนของคุณ",
+        "description": "title on right side"
+    },
+    "reminderSelectTrigger": {
+        "message": "เพิ่มการแจ้งเตือน...",
+        "description": "in dropdown, when no trigger is selected"
+    },
+    "reminderShowAt": {
+        "message": "แสดงที่",
+        "description": "in front of time of day input"
+    },
+    "remindersScheduled": {
+        "message": "กำหนดการวันนี้จาก {time} จนถึงเที่ยงคืน",
+        "description": "title on left side"
+    },
+    "reminderTagline": {
+        "message": "(แสดงที่ {when})",
+        "description": "shown on the bottom of each reminder popoup"
+    },
+    "reminderTestTagline": {
+        "message": "(จะแสดงที่ {when})",
+        "description": "shown on the bottom of popoup when tested"
+    },
+    "reminderTimeInputStructure": {
+        "message": "แสดง {num} {units} {delta}",
+        "description": "in edit area when asking for a relative time"
+    },
+    "reminderTitle": {
+        "message": "การแจ้งเตือน{0}",
+        "description": "displayed as the title of each reminder shown"
+    },
+    "reminderTrigger_bday": {
+        "message": "วันบะดีอ์",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_feast": {
+        "message": "วันฉลองบุญ",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_holyday": {
+        "message": "วันบุญ",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_load": {
+        "message": "เมื่อโหลด",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_midnight": {
+        "message": "เที่ยงคืน",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_noon": {
+        "message": "เที่ยง",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunrise": {
+        "message": "พระอาทิตย์ขึ้น",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTrigger_sunset": {
+        "message": "พระอาทิตย์ตก",
+        "description": "what this reminder is triggered on"
+    },
+    "reminderTriggerGroup_day": {
+        "message": "วันพิเศษ",
+        "description": "a group of triggers - feast, holy day, Badi day"
+    },
+    "reminderTriggerGroup_load": {
+        "message": "กิจกรรมอื่นๆ",
+        "description": "a group of triggers - for other types of events"
+    },
+    "reminderTriggerGroup_time": {
+        "message": "เวลาของวัน",
+        "description": "a group of triggers - sunset sunrise noon midnight"
+    },
+    "reminderType": {
+        "message": "กิจกรรม",
+        "description": "in front of the trigger selector"
+    },
+    "sampleGroup1_1": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "3 Jamál 172"
+    },
+    "sampleGroup1_10": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear} - {gCombinedY}",
+        "description": "1 Jamál (Beauty) 172 - April 27/28, 2015"
+    },
+    "sampleGroup1_14": {
+        "message": "{bKullishay}.{bVahid}.{bYearInVahid}.{bMonth}.{bDay}",
+        "description": "1.10.1.3.13"
+    },
+    "sampleGroup1_15": {
+        "message": "{bYear}.{bMonth00}.{bDay00}",
+        "description": "172.03.13"
+    },
+    "sampleGroup1_2": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}",
+        "description": "Jamal 4, 172"
+    },
+    "sampleGroup1_20": {
+        "message": "{bYear}.{bMonth00}.{bDay00} {currentMonthShort} {currentDay}",
+        "description": "172.03.13 Sep 3 -- OneNote tabs"
+    },
+    "sampleGroup1_23": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNameSec} {bYear}",
+        "description": "30 April 2015 / 3 Beauty 172 -- NSA Canada"
+    },
+    "sampleGroup1_24": {
+        "message": "{currentDay} {currentMonthLong} {currentYear} / {bDay} {bMonthNamePri} {bYear}",
+        "description": "1 May 2015 / 4 Jamál 172  -- Susan Gammage"
+    },
+    "sampleGroup1_3": {
+        "message": "{bMonthNamePri} {bDay}, {bYear} ⇨ {endingSunsetDesc}",
+        "description": "Jamal 4, 172 -> 7:55pm"
+    },
+    "sampleGroup1_6": {
+        "message": "{bDay} {bMonthNamePri} ({bMonthNameSec}) {bYear}",
+        "description": "1 Jamal (Beauty) 172"
+    },
+    "sampleGroup1_7": {
+        "message": "{bDay00} {bMonthNamePri} / {bMonthNameSec} {bYear} {bEraAbbrev} ({currentWeekdayShort} {currentDay00} {currentMonthLong} {currentYear})",
+        "description": "04 Jamal / Glory 172 B.E. (Fri 01 May 2015) -- bahai-readings@bcca.org"
+    },
+    "sampleGroup1_8": {
+        "message": "{bWeekdayNamePri} / {bDayNamePri}, {bDayOrdinal} {bMonthNamePri} {bYear}",
+        "description": "Jamál / Bahá, 1st 'Aẓamat     or [weekday] / [monthday], [day no.] [month] - james@19months.com"
+    },
+    "sampleGroup1_9": {
+        "message": "{bDay} {bMonthNamePri} {bYear} / {currentDay} {currentMonthLong} {currentYear}",
+        "description": "3 Jamál 172 / 30 April 2015 -- Calgary LSA"
+    },
+    "setupAboutPara": {
+        "message": "<p>ส่วนขยายเว็บนี้ออกแบบมาเพื่อให้ข้อมูลปัจจุบันเกี่ยวกับปฏิทินบะดีอ์ ในท้องถิ่นที่คุณอยู่</p><p>สำหรับข้อมูลเพิ่มเติม โปรดคลิกด้านล่างที่ลิงก์ 'เวอร์ชัน' หรือไอคอนใดๆ!</p><p></p>",
+        "description": "explanation of "
+    },
+    "setupAboutTitle": {
+        "message": "เกี่ยวกับ",
+        "description": "title for the About section"
+    },
+    "setupColor": {
+        "message": "สีข้อความสำหรับไอคอนแถบเครื่องมือ:",
+        "description": "on setup page"
+    },
+    "setupColorH3": {
+        "message": "สีไอคอน",
+        "description": "on setup page"
+    },
+    "setupLangH3": {
+        "message": "ภาษา",
+        "description": "on setup page"
+    },
+    "setupLangPct": {
+        "message": "{0}% แปลแล้ว <a href='https://sites.google.com/site/badicalendartools/home/web-extension/translating-the-badi-calendar-extension' target=_blank>คุณช่วยได้</a>?",
+        "description": "Can leave this as English, since translators will work from the English version"
+    },
+    "setupLangPct100": {
+        "message": "100% แปลแล้ว!"
+    },
+    "setupOptOut": {
+        "message": "เลือกไม่รับ?",
+        "description": "label for checkbox"
+    },
+    "setupOptOutPara": {
+        "message": "เพื่อช่วยให้เข้าใจว่าส่วนขยายเว็บนี้ถูกใช้อย่างไร สถิติจะถูกบันทึกเมื่อใดก็ตามที่คุณสลับระหว่างหน้าหรือทำการกระทำสำคัญอื่นๆ นี่เป็นแบบไม่ระบุตัวตน และรายงานที่เกี่ยวข้องสามารถดูได้โดย Glen Little หากคุณต้องการเลือกไม่รับและปิดการใช้งานนี้ คุณอาจทำเครื่องหมายในช่องนี้:",
+        "description": "explanation of opting out of Google Analytics"
+    },
+    "setupOptOutTitle": {
+        "message": "การวิเคราะห์",
+        "description": "title for setup section about opting out of Google Analytics"
+    },
+    "shoghiExample": {
+        "message": "นี่คือวันของสัปดาห์ {bWeekdayNamePri}, วันของ {bDayNamePri}, ของเดือน {bMonthNamePri}, ของปี {bYearInVahidNamePri}, ของ {bVahidOrdinalName} {VahidLabelPri}, ของ {bKullishayOrdinalName} {KullishayLabelPri}",
+        "description": "Example given by Shoghi Effendi"
+    },
+    "shortcutKeyTitle": {
+        "message": "กดการรวมปุ่มนี้เพื่อเปิดปฏิทินจากที่ใดก็ได้ในเบราว์เซอร์"
+    },
+    "showPointer": {
+        "message": "แสดงตัวชี้"
+    },
+    "specialDaysTitle": {
+        "message": "ฉลองบุญและวันบุญใน {bYear}"
+    },
+    "specialTime_0100S": {
+        "message": "1 น. (เวลามาตรฐาน)",
+        "description": "Ascension of `Abdu'l-Bahá"
+    },
+    "specialTime_0300S": {
+        "message": "3 น. (เวลามาตรฐาน)",
+        "description": "Ascension of Baha'u'llah"
+    },
+    "specialTime_1200S": {
+        "message": "เที่ยง (เวลามาตรฐาน)",
+        "description": "Martyrdom of the Bab"
+    },
+    "specialTime_1500S": {
+        "message": "15 น. (เวลามาตรฐาน)",
+        "description": "First day of Ridvan"
+    },
+    "specialTime_SS2": {
+        "message": "ประมาณ 2 ชั่วโมงหลังพระอาทิตย์ตก",
+        "description": "Declaration of the Bab"
+    },
+    "standardFormats": {
+        "message": "รูปแบบมาตรฐาน",
+        "description": "in the list of formats at the bottom of of the 'Custom' page"
+    },
+    "startedWithSunset": {
+        "message": "เริ่มต้นด้วยพระอาทิตย์ตกเวลา {0}"
+    },
+    "startTimeOption": {
+        "message": "เวลาประชุมปกติ: ",
+        "description": "above Events listing"
+    },
+    "suggestions": {
+        "message": "ข้อเสนอแนะ?"
+    },
+    "suggestionsTitle": {
+        "message": "โปรดคลิกที่นี่และส่งข้อเสนอแนะใดๆ สำหรับวิธีการปรับปรุงส่วนขยายนี้!"
+    },
+    "sunriseFastHeading": {
+        "message": "พระอาทิตย์ขึ้น",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetFastHeading": {
+        "message": "พระอาทิตย์ตก",
+        "description": "heading in Fast days listing"
+    },
+    "sunsetHeading": {
+        "message": "เริ่มต้นของวันบะดีอ์",
+        "description": "heading in Events listing"
+    },
+    "suspendWorkHeading": {
+        "message": "งดทำงาน",
+        "description": "heading in Events listing"
+    },
+    "textDirection": {
+        "message": "ltr",
+        "description": "Do not translate. Either \"ltr\" or \"rtl\". For example, Persian and Hebrew would use \"rtl\""
+    },
+    "timeFormat12": {
+        "message": "{time} {ampm}",
+        "description": "used when use24HourClock is set to false"
+    },
+    "tips": {
+        "message": "เคล็ดลับ &amp; ปุ่ม",
+        "description": "hints of how to use the tool"
+    },
+    "tipsAbout": {
+        "message": "ความแม่นยำ?"
+    },
+    "tipsAboutText": {
+        "message": "วันที่จนถึง 221 บ.ศ. (2064 ค.ศ.) เป็นที่ทราบแล้ว หลังจากนั้น อาจต้องมีการอัปเดตเมื่อการสังเกตทางดาราศาสตร์ดีขึ้น โปรดอย่าใช้สิ่งนี้เพื่อสรุปแผนของคุณมากกว่า 50 ปีในอนาคต! ดูเว็บไซต์สำหรับรายละเอียดเพิ่มเติม"
+    },
+    "tipsText": {
+        "message": "กดปุ่ม PgUp/PgDn เพื่อเลือกแผง\nกดปุ่มลูกศรขวา/ซ้ายเพื่อเปลี่ยนวัน\nกด / เพื่อสลับก่อน/หลังพระอาทิตย์ตก\nกด Home เพื่อกลับไปยังวันนี้!"
+    },
+    "Tonight": {
+        "message": "คืนนี้",
+        "description": "Shown in the upcoming dates area"
+    },
+    "translation": {
+        "message": "th",
+        "description": "This needs to be the international language code for this language, shown in English letters."
+    },
+    "translationEnglishName": {
+        "message": "Thai",
+        "description": "The name of this language, in English"
+    },
+    "upcomingDateFormat": {
+        "message": "{bMonthNamePri} {bDay} ({gCombined})",
+        "description": "upcoming list"
+    },
+    "upcomingTitle": {
+        "message": "ฉลองบุญ วันบุญ และกิจกรรมอื่นๆ ที่กำลังจะมาถึง"
+    },
+    "use24HourClock": {
+        "message": "false",
+        "description": "Do not translate.  Use 'true' or 'false' to use 24 hour or 12 hour (am/pm) clock"
+    },
+    "Vahid": {
+        "message": "วาฮิด"
+    },
+    "VahidFormat": {
+        "message": "{bVahid}"
+    },
+    "VahidLocal": {
+        "message": "ความเป็นหนึ่ง"
+    },
+    "version": {
+        "message": "เวอร์ชัน {0}"
+    },
+    "webstore": {
+        "message": "เว็บสโตร์"
+    },
+    "weekDayNames": {
+        "message": "ชื่อวันในสัปดาห์",
+        "description": "on List page - table caption"
+    },
+    "YearOfEra": {
+        "message": "ปีของศักราชบาไฮ"
+    },
+    "YearOfEraFormat": {
+        "message": "{bYear}"
+    },
+    "YearOfVahid": {
+        "message": "ปีของ {VahidLabelPri}"
+    },
+    "YearOfVahidFormat": {
+        "message": "{bYearInVahid} - {bYearInVahidNamePri} ({bYearInVahidNameSec})"
+    },
+    "yearWithEra": {
+        "message": "{bYear} {bEraAbbrev}"
+    },
+    "zapierInfo": {
+        "message": "สำหรับรายละเอียดหรือการลงทะเบียน ดู <a href='https://zapier.com/zapbook/webhook/' target=zapier>Zapier Webhook</a> Zap จะมีฟิลด์เหล่านี้: title, body, tag, time",
+        "description": "info and link to Zapier"
+    },
+    "zapierKey": {
+        "message": "URL Zapier Webhook",
+        "description": "url for Zapier"
+    }
+}

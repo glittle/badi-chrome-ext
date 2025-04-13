@@ -1,0 +1,377 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay’"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "Alle dingen",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Niet mogelijk uw huidige locatie te bepalen.\n\nDe extensie zal voor iedere dag 18:30 gebruiken.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2Day} {frag2MonthShort} {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Betekenis",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "12:00 's nachts",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Maand"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Naam van de maand/dag",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} met zonsondergang om {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} met zonsondergang om {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Volg &rarr;"
+    },
+    "nextMonth": {
+        "message": "Volgende <u>m</u>aand",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Volgende verversing gepland na {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Jaar verder",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Toets shift + pijl naar rechts in om het volgend jaar te zien",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Locatie onbekend - zonsondergangtijd 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Huidige locatie)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 middag",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Toon voorbeeld herinneringen",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Nu",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "th,st,nd,rd",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",eerste,tweede,derde,vierde,vijfde,zesde,zevende,achtste,negende,tiende,elfde,twaalfde,dertiende,veertiende,vijftiende,zestiende,zeventiende,achttiende,negentiende"
+    },
+    "otherDays": {
+        "message": "over {0} dagen",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "begonnen om {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "was {numUnits} geleden"
+    },
+    "past_DeltaTime": {
+        "message": "was {numUnits} geleden om {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "is {numUnits} geleden begonnen om {time}"
+    },
+    "past_StartTime": {
+        "message": "begonnen om {time}"
+    },
+    "past_Time": {
+        "message": "was om {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Jaar"
+    },
+    "pick_pageCal2": {
+        "message": "Kalender"
+    },
+    "pick_pageCal3": {
+        "message": "Maandweergave (weken)",
+        "description": "tab name"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregoriaans jaar",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Rad",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Aangepast",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Dag"
+    },
+    "pick_pageEvents": {
+        "message": "Gebeurtenissen",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Exporteren",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Vasten"
+    },
+    "pick_pageLists": {
+        "message": "Lijsten"
+    },
+    "pick_pagePlanner": {
+        "message": "Planner",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Herinneringen",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Inrichting",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Met ingang van?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Begin van het volgende Badíʿ-jaar",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Begin van dit Badé'-jaar",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Vandaag",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Dag of vooravond meenemen?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Allebei",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Dag",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Avond",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Resultaten",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Wat tonen?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Beginnend op zonsondergang om {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Langetermijnsplanner",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Planning-selectie",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Welke?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "Meer heilige dagen en feesten",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "Een heilige dag of negentiendaagsfeest",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "jaren",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Tot wanneer?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "nm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Druk op de toets of klik {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Druk toets om geformatteerde datum naar klembord te kopiëren:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Vorig"
+    },
+    "prevMonth": {
+        "message": "Vorige maa<u>n</u>d",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Jaar terug",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Toets shift + pijl naar links in om het voorgaand jaar te zien",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Arabisch",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Nederlands",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Taal voor maanden, enz.",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Extra actie",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "Geen",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "trigger IFTTT recept",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "Lees voor",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "trigger Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Stel een herinnering in of wijzig deze",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "na"
+    },
+    "reminderAlarm": {
+        "message": "Om {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Dag {num} van de Badíʿ maand",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "voor"
+    },
+    "reminderCalcType": {
+        "message": "laat herinnering {calcTypeInput} zien",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "op een bepaald tijdstip",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "in relatie tot <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} op {eventWeekdayLong} {eventDay} {eventMonthLong}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} op {eventDay} {eventMonthShort}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Op dag {num} van de Badíʿ maand",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Wanneer {num} dag(en) {beforeAfter} ieder(e) {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "Het feest van {pri}, {sec},",
+        "description": "Feast reminder format"
+    },
+    "reminderHolyDay": {
+        "message": "De Heilige dag \"{0}\"",
+        "description": "Holy day reminder format"
+    },
+    "reminderList_bday": {
+        "message": "dag {num} om {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} dag(en) {deltaText}, om {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} na",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "kondig om {triggerTimeRawDisplay} aan",
+        "description": "in list of defined reminders"
+    }
+}

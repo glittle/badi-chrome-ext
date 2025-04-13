@@ -1,0 +1,342 @@
+{
+    "exporterItemDescDay": {
+        "message": "День в календаре Бади'.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "Время для ежегодного поста Бахаи.",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "Собрание может начаться в любое время в этот день Бади'.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "Время восхода и заката показано для {location}. Создано с помощью http://bit.ly/BadiChrome.",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}.",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "Экспортер календаря Бади'",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "Скачать файл iCalendar (.ics)"
+    },
+    "exportGregYear0": {
+        "message": "Григорианский год - {0} н.э."
+    },
+    "exportGregYear1": {
+        "message": "Григорианский год - {0} н.э."
+    },
+    "exportHideTest": {
+        "message": "Скрыть"
+    },
+    "exportIncludeAlert": {
+        "message": "Добавить оповещение к каждому событию (может не загрузиться в Google календарь)"
+    },
+    "exportIncludeLocation": {
+        "message": "Информация о местоположении"
+    },
+    "exportIntro": {
+        "message": "Важно! Смотрите <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">эту веб-страницу</a> для информации и предостережений!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "Название для экспортируемого календаря (может не использоваться)"
+    },
+    "exportNumToInclude": {
+        "message": "Количество включенных записей календаря (приблизительно):"
+    },
+    "exportOption_AllDay": {
+        "message": "Событие на весь день с полуночи <em>(1 день)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "Только в начале заката"
+    },
+    "exportOption_Date": {
+        "message": "Дни Бади' <em>(365/366 дней)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "Дни поста <em>(19 дней)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "Праздники <em>(19 дней)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "Святые дни <em>(11 дней)</em>"
+    },
+    "exportOption_Start": {
+        "message": "Событие в назначенное время наблюдения или обычное время встречи"
+    },
+    "exportOption_Sun": {
+        "message": "От заката до заката <em>(около 24 часов)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "Только на восходе"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "Событие от восхода до заката <em>(около 12 часов)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "Только на закате"
+    },
+    "exportOption_Usual": {
+        "message": "Событие в обычное время встречи (см. страницу События)"
+    },
+    "exportOtherSettings": {
+        "message": "Другие настройки"
+    },
+    "exportQuickDesc": {
+        "message": "Экспортируйте каждый набор, затем загрузите их все в один календарь!"
+    },
+    "exportQuickPick1": {
+        "message": "1. Полный календарь"
+    },
+    "exportQuickPick1Text": {
+        "message": "Отображать каждый день Бади', а также святые дни и время праздников. Без оповещений."
+    },
+    "exportQuickPick2": {
+        "message": "2. Время поста - утро"
+    },
+    "exportQuickPick2Text": {
+        "message": "Восход, с оповещением перед ним."
+    },
+    "exportQuickPick3": {
+        "message": "3. Время поста - вечер"
+    },
+    "exportQuickPick3Text": {
+        "message": "Закат, с оповещением."
+    },
+    "exportQuickPickClearText": {
+        "message": "Сбросить настройки"
+    },
+    "exportQuickPicks": {
+        "message": "Рекомендуемые наборы событий"
+    },
+    "exportRangeFullRange": {
+        "message": "Экспортировать все записи календаря. (Если не отмечено, экспортировать только образец.)"
+    },
+    "exportTest": {
+        "message": "По<u>к</u>азать для копирования"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "Выберите, что должно быть экспортировано."
+    },
+    "exportWhatToInclude": {
+        "message": "Опции"
+    },
+    "facebook": {
+        "message": "Facebook",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "Время поста в {bYear}"
+    },
+    "fastGDate": {
+        "message": "Дата",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "Праздник {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "Фестиваль Ридван"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(нажмите для подробностей)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "начинается в {time}",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "будет через {numUnits}"
+    },
+    "future_DeltaTime": {
+        "message": "будет через {numUnits} в {time}"
+    },
+    "future_StartDeltaTime": {
+        "message": "начнется через {numUnits} в {time}"
+    },
+    "future_StartTime": {
+        "message": "начнется в {time}"
+    },
+    "future_Time": {
+        "message": "будет в {time}"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "Григорианская дата"
+    },
+    "gDatePickerTitle2": {
+        "message": "Перейти к <u>Г</u>ригорианской дате",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "Январь,февраль,март,апрель,май,июнь,июль,август,сентябрь, октябрь,ноябрь,декабрь"
+    },
+    "gMonthShort": {
+        "message": "Янв,Фев,Мар,Апр,Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек"
+    },
+    "googlePlus": {
+        "message": "Google+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "Сейчас"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "Воскресенье,понедельник,вторник,среда,четверг,пятница,суббота",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "Вс,Пн,Вт,Ср,Чт,Пт,Сб",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "Вознесение Абдул-Баха"
+    },
+    "HolyDay_AscBaha": {
+        "message": "Вознесение Бахауллы"
+    },
+    "HolyDay_BirthBab": {
+        "message": "День рождения Баба"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "День рождения Бахауллы"
+    },
+    "HolyDay_Covenant": {
+        "message": "День Завета"
+    },
+    "HolyDay_DeclBab": {
+        "message": "Возвещение Бабa"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "Мученическая смерть Баба"
+    },
+    "HolyDay_NawRuz": {
+        "message": "Нау-Рӯз"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "Первый день Рид̣вāна"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "Двенадцатый день Рид̣вāна"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "Девятый день Рид̣вāна"
+    },
+    "iconColor": {
+        "message": "Цвет значка",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "Автоматически (следовать теме системы)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "Вручную",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "Имя события IFTTT",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "Для подробностей или регистрации, см. <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a>. Событие будет содержать эти поля: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "Ключ IFTTT Maker Channel",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>П</u>раздники",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>С</u>вятые дни",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "Показать",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "Широта:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "Долгота:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "Вставные дни"
+    },
+    "jumpTo": {
+        "message": "<u>П</u>ерейти ± дней",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

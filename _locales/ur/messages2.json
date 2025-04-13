@@ -1,0 +1,342 @@
+{
+    "exporterItemDescDay": {
+        "message": "بدیع کیلنڈر میں ایک دن۔",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescFast": {
+        "message": "سالانہ بہائی روزے کے اوقات۔",
+        "description": "Included as the description in every calendar entry"
+    },
+    "exporterItemDescGeneralTime": {
+        "message": "اجتماع اس بدیع دن پر کسی بھی وقت شروع ہو سکتا ہے۔",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterItemDescShared": {
+        "message": "طلوع آفتاب یا غروب آفتاب کے اوقات {location} کے لیے دکھائے گئے ہیں۔ http://bit.ly/BadiChrome کا استعمال کرتے ہوئے تیار کیا گیا۔",
+        "description": "Be sure the URL is not translated!"
+    },
+    "exporterItemDescSpecialTime": {
+        "message": "{SpecialTime}۔",
+        "description": "For when a Holy Day as a particular time"
+    },
+    "exporterTitle": {
+        "message": "بدیع کیلنڈر ایکسپورٹر",
+        "description": "title on page"
+    },
+    "exportFile": {
+        "message": "آئی کیلنڈر فائل (.ics) ڈاؤنلوڈ کریں"
+    },
+    "exportGregYear0": {
+        "message": "گریگوری سال - {0} عیسوی"
+    },
+    "exportGregYear1": {
+        "message": "گریگوری سال - {0} عیسوی"
+    },
+    "exportHideTest": {
+        "message": "چھپائیں"
+    },
+    "exportIncludeAlert": {
+        "message": "ہر ایونٹ میں الرٹ شامل کریں (گوگل کیلنڈر میں لوڈ نہیں ہو سکتا)"
+    },
+    "exportIncludeLocation": {
+        "message": "مقام کی معلومات"
+    },
+    "exportIntro": {
+        "message": "اہم! معلومات اور احتیاطی تدابیر کے لیے <a target=\"sitesExport\" href=\"https://sites.google.com/site/badicalendartools/home/web-extension/exporting\">یہ ویب پیج</a> دیکھیں!",
+        "description": "Be sure the URL remains in English, to find the webpage!"
+    },
+    "exportName": {
+        "message": "برآمد شدہ کیلنڈر کا عنوان (استعمال نہیں کیا جا سکتا)"
+    },
+    "exportNumToInclude": {
+        "message": "شامل کیلنڈر اندراجات کی تعداد (تقریباً):"
+    },
+    "exportOption_AllDay": {
+        "message": "آدھی رات سے پورے دن کا ایونٹ <em>(1 دن لمبا)</em>"
+    },
+    "exportOption_BeginningSunset": {
+        "message": "صرف شروعاتی غروب آفتاب پر"
+    },
+    "exportOption_Date": {
+        "message": "بدیع دن <em>(365/366 دن)</em>"
+    },
+    "exportOption_Fast": {
+        "message": "روزے کے دن <em>(19 دن)</em>"
+    },
+    "exportOption_Feast": {
+        "message": "ضیافتیں <em>(19 دن)</em>"
+    },
+    "exportOption_Hd": {
+        "message": "مقدس دن <em>(11 دن)</em>"
+    },
+    "exportOption_Start": {
+        "message": "مقررہ مشاہدہ کے وقت یا معمول کے میٹنگ ٹائم پر ایونٹ"
+    },
+    "exportOption_Sun": {
+        "message": "غروب آفتاب سے غروب آفتاب تک <em>(تقریباً 24 گھنٹے)</em>"
+    },
+    "exportOption_Sunrise": {
+        "message": "صرف طلوع آفتاب پر"
+    },
+    "exportOption_SunriseToSunset": {
+        "message": "طلوع آفتاب سے غروب آفتاب تک ایونٹ <em>(تقریباً 12 گھنٹے)</em>"
+    },
+    "exportOption_Sunset": {
+        "message": "صرف غروب آفتاب پر"
+    },
+    "exportOption_Usual": {
+        "message": "معمول کے میٹنگ ٹائم پر ایونٹ (ایونٹس پیج دیکھیں)"
+    },
+    "exportOtherSettings": {
+        "message": "دیگر ترتیبات"
+    },
+    "exportQuickDesc": {
+        "message": "ہر سیٹ برآمد کریں، پھر انہیں ایک ہی کیلنڈر میں لوڈ کریں!"
+    },
+    "exportQuickPick1": {
+        "message": "1. مکمل کیلنڈر"
+    },
+    "exportQuickPick1Text": {
+        "message": "ہر بدیع دن کو مقدس دنوں اور ضیافت کے اوقات کے ساتھ دکھائیں۔ کوئی الرٹ نہیں۔"
+    },
+    "exportQuickPick2": {
+        "message": "2. روزے کا وقت - صبح"
+    },
+    "exportQuickPick2Text": {
+        "message": "طلوع آفتاب، اس سے پہلے ایک الرٹ کے ساتھ۔"
+    },
+    "exportQuickPick3": {
+        "message": "3. روزے کا وقت - شام"
+    },
+    "exportQuickPick3Text": {
+        "message": "غروب آفتاب، ایک الرٹ کے ساتھ۔"
+    },
+    "exportQuickPickClearText": {
+        "message": "آپشنز ری سیٹ کریں"
+    },
+    "exportQuickPicks": {
+        "message": "ایونٹس کے تجویز کردہ سیٹس"
+    },
+    "exportRangeFullRange": {
+        "message": "تمام کیلنڈر اندراجات برآمد کریں۔ (اگر نشان نہیں لگایا گیا، تو صرف نمونہ سیٹ برآمد کریں۔)"
+    },
+    "exportTest": {
+        "message": "کاپی کرنے کے لیے <u>د</u>کھائیں"
+    },
+    "exportTestCsv": {
+        "message": "CSV"
+    },
+    "exportWhatTitle": {
+        "message": "منتخب کریں کہ کیا برآمد کیا جانا چاہیے۔"
+    },
+    "exportWhatToInclude": {
+        "message": "آپشنز"
+    },
+    "facebook": {
+        "message": "فیس بک",
+        "description": "ALT for icon at bottom of page"
+    },
+    "fastDaysTitle": {
+        "message": "{bYear} میں روزے کے اوقات"
+    },
+    "fastGDate": {
+        "message": "تاریخ",
+        "description": "heading in Fast days listing"
+    },
+    "FeastOf": {
+        "message": "ضیافت {0}",
+        "description": "The localized name of the Feast will be put into {0}"
+    },
+    "FestivalRidvan": {
+        "message": "رضوان کا تہوار"
+    },
+    "Firefox_History": {
+        "message": "https://sites.google.com/site/badicalendartools/home/web-extension/history",
+        "description": "about page"
+    },
+    "Firefox_WebStore": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore when running in Firefox"
+    },
+    "Firefox_WebStoreSupport": {
+        "message": "https://addons.mozilla.org/en-US/firefox/addon/wondrous-calendar/",
+        "description": "link to Webstore support link when running in Firefox"
+    },
+    "formatIconClick": {
+        "message": "(تفصیلات کے لیے کلک کریں)"
+    },
+    "formatIconToolTip": {
+        "message": "{bDay} {bMonthNamePri} {bYear}",
+        "description": "text when mouse is over the extension icon"
+    },
+    "future_Day": {
+        "message": "{time} پر شروع ہوتا ہے",
+        "description": "shown in the eve of the day"
+    },
+    "future_Delta": {
+        "message": "{numUnits} میں ہوگا"
+    },
+    "future_DeltaTime": {
+        "message": "{numUnits} میں {time} پر ہوگا"
+    },
+    "future_StartDeltaTime": {
+        "message": "{numUnits} میں {time} پر شروع ہوگا"
+    },
+    "future_StartTime": {
+        "message": "{time} پر شروع ہوگا"
+    },
+    "future_Time": {
+        "message": "{time} پر ہوگا"
+    },
+    "gCombined_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}",
+        "description": "day in same gregorian month"
+    },
+    "gCombined_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian months"
+    },
+    "gCombined_3": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}",
+        "description": "day spanning different gregorian years"
+    },
+    "gCombinedY_1": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_2": {
+        "message": "{frag1MonthShort} {frag1Day}/{frag2MonthShort} {frag2Day}, {frag1Year}",
+        "description": "with year"
+    },
+    "gCombinedY_3": {
+        "message": "{frag1MonthShort} {frag1Day}, {frag1Year}/{frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "with year"
+    },
+    "gDatePickerTitle": {
+        "message": "گریگوری تاریخ"
+    },
+    "gDatePickerTitle2": {
+        "message": "<u>گ</u>ریگوری تاریخ پر جائیں",
+        "description": "changed in 1.1.2"
+    },
+    "gMonthDayYear": {
+        "message": "{bMonthNamePri} {bDay}, {bYear}"
+    },
+    "gMonthLong": {
+        "message": "جنوری,فروری,مارچ,اپریل,مئی,جون,جولائی,اگست,ستمبر,اکتوبر,نومبر,دسمبر"
+    },
+    "gMonthShort": {
+        "message": "جن,فر,مار,اپر,مئی,جون,جول,اگس,ستم,اکت,نوم,دسم"
+    },
+    "googlePlus": {
+        "message": "گوگل+",
+        "description": "ALT for icon at bottom of page"
+    },
+    "gotoNow": {
+        "message": "ابھی"
+    },
+    "gregorianDateDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear}",
+        "description": "in left panel"
+    },
+    "gTopDayDisplay": {
+        "message": "{currentWeekdayShort}, {currentDay} {currentMonthLong} {currentYear} {currentRelationToSunset}",
+        "description": "top right corner"
+    },
+    "gWeekdayLong": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sunday"
+    },
+    "gWeekdayShort": {
+        "message": "اتوار,پیر,منگل,بدھ,جمعرات,جمعہ,ہفتہ",
+        "description": "start with Sun"
+    },
+    "HolyDay_AscAbdul": {
+        "message": "عبدالبہاء کا عروج"
+    },
+    "HolyDay_AscBaha": {
+        "message": "بہاء اللہ کا عروج"
+    },
+    "HolyDay_BirthBab": {
+        "message": "باب کی ولادت"
+    },
+    "HolyDay_BirthBaha": {
+        "message": "بہاء اللہ کی ولادت"
+    },
+    "HolyDay_Covenant": {
+        "message": "عہد کا دن"
+    },
+    "HolyDay_DeclBab": {
+        "message": "باب کا اعلان"
+    },
+    "HolyDay_Martyrdom": {
+        "message": "باب کی شہادت"
+    },
+    "HolyDay_NawRuz": {
+        "message": "نوروز"
+    },
+    "HolyDay_Ridvan1": {
+        "message": "رضوان کا پہلا دن"
+    },
+    "HolyDay_Ridvan12": {
+        "message": "رضوان کا بارہواں دن"
+    },
+    "HolyDay_Ridvan9": {
+        "message": "رضوان کا نواں دن"
+    },
+    "iconColor": {
+        "message": "آئیکن کا رنگ",
+        "description": "Title for icon color settings section"
+    },
+    "iconColorAuto": {
+        "message": "خودکار (سسٹم تھیم کی پیروی کریں)",
+        "description": "Label for automatic icon color option"
+    },
+    "iconColorManual": {
+        "message": "دستی",
+        "description": "Label for manual icon color option"
+    },
+    "iftttEvent": {
+        "message": "IFTTT ایونٹ کا نام",
+        "description": "name of 'Event' for IFTTT Maker channel"
+    },
+    "iftttInfo": {
+        "message": "تفصیلات یا سائن اپ کرنے کے لیے، <a href='https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ' target=ifttt>IFTTT Maker Channel</a> دیکھیں۔ ایونٹ میں یہ فیلڈز ہوں گی: title, body, tag",
+        "description": "info and link to ifttt page"
+    },
+    "iftttKey": {
+        "message": "IFTTT Maker Channel کی",
+        "description": "Key' for IFTTT Maker channel"
+    },
+    "includeFeasts": {
+        "message": "<u>ض</u>یافتیں",
+        "description": "choosing what to include in the listing"
+    },
+    "includeHolyDays": {
+        "message": "<u>م</u>قدس دن",
+        "description": "choosing what to include in the listing"
+    },
+    "includeThese": {
+        "message": "دکھائیں",
+        "description": "choosing what to include in the listing"
+    },
+    "inputLat": {
+        "message": "عرض البلد:",
+        "description": "on setup page"
+    },
+    "inputLng": {
+        "message": "طول البلد:",
+        "description": "on setup page"
+    },
+    "Intercalary": {
+        "message": "ایام ہا"
+    },
+    "jumpTo": {
+        "message": "<u>ج</u>ائیں ± دن",
+        "description": "user can enter a day after/before currently selected day"
+    },
+    "keyToOpenInTab": {
+        "message": "T",
+        "description": "Press Shift+(this letter) to open into a tab"
+    }
+}

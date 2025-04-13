@@ -1,0 +1,377 @@
+{
+    "Kullishay": {
+        "message": "کل <u>ش</u>ئی"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "ہر چیز",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "آپ کا موجودہ مقام تعین نہیں کیا جا سکتا۔\n\nایکسٹینشن ہر دن غروب آفتاب کے وقت کے لیے 18:30 استعمال کرے گا۔",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "معنی",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}",
+        "description": "Message body format"
+    },
+    "midnight": {
+        "message": "12:00 آدھی رات",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "مہینہ"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "مہینے/دن کے نام",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} غروب آفتاب کے ساتھ {endingSunsetDesc} پر"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} غروب آفتاب کے ساتھ {startingSunsetDesc} پر"
+    },
+    "next": {
+        "message": "اگلا &rarr;"
+    },
+    "nextMonth": {
+        "message": "اگلا <u>م</u>ہینہ",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "{0} کے بعد اگلی ریفریش شیڈول: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "اگلا سال",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "اگلا سال دیکھنے کے لیے شفٹ + دائیں تیر دبائیں",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(مقام نامعلوم - غروب آفتاب کا وقت 18:30)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(موجودہ مقام)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 دوپہر",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "نمونہ یاد دہانیاں شامل کریں",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "ابھی",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "واں,پہلا,دوسرا,تیسرا",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",پہلا,دوسرا,تیسرا,چوتھا,پانچواں,چھٹا,ساتواں,آٹھواں,نواں,دسواں,گیارہواں,بارہواں,تیرہواں,چودہواں,پندرہواں,سولہواں,سترہواں,اٹھارہواں,انیسواں"
+    },
+    "otherDays": {
+        "message": "{0} دنوں میں",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "{time} پر شروع ہوا",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "{numUnits} پہلے تھا"
+    },
+    "past_DeltaTime": {
+        "message": "{numUnits} پہلے {time} پر تھا"
+    },
+    "past_StartDeltaTime": {
+        "message": "{numUnits} پہلے {time} پر شروع ہوا"
+    },
+    "past_StartTime": {
+        "message": "{time} پر شروع ہوا"
+    },
+    "past_Time": {
+        "message": "{time} پر تھا"
+    },
+    "pick_pageCal1": {
+        "message": "سال"
+    },
+    "pick_pageCal2": {
+        "message": "مہینہ (عناصر)",
+        "description": "Month View (elements)"
+    },
+    "pick_pageCal3": {
+        "message": "مہینہ (ہفتے)",
+        "description": "Month View (weeks)"
+    },
+    "pick_pageCalGreg": {
+        "message": "گریگوری سال",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "پہیہ",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "اپنی مرضی کا",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "دن"
+    },
+    "pick_pageEvents": {
+        "message": "تقریبات",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "برآمد کریں",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "روزہ"
+    },
+    "pick_pageLists": {
+        "message": "فہرستیں"
+    },
+    "pick_pagePlanner": {
+        "message": "پلانر",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "یاد دہانیاں",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "سیٹ اپ",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "کب سے شروع کرنا ہے؟",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "اگلے بدیع سال کا آغاز",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "اس بدیع سال کا آغاز",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "آج",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "دن یا شام شامل کریں؟",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "دونوں",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "دن",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "شام",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "نتائج",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "کیا دکھانا ہے؟",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "{0} پر شروعاتی غروب آفتاب",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "طویل مدتی پلانر",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "پلاننگ سلیکشن",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "کون سا؟",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "متعدد مقدس دن اور ضیافتیں",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "ایک مقدس دن یا ضیافت",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "سال",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "کتنی دیر کے لیے؟",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "شام",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "کلید دبائیں یا {0} ٹائپ کریں۔",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "کلپ بورڈ پر کاپی کرنے کے لیے فارمیٹ منتخب کریں:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; پچھلا"
+    },
+    "prevMonth": {
+        "message": "پچھلا مہی<u>ن</u>ہ",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "پچھلا سال",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "پچھلا سال دیکھنے کے لیے شفٹ + بائیں تیر دبائیں",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "عربی",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "اردو",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "تاریخوں کے لیے ڈسپلے زبان",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "اضافی ایکشن",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "کوئی نہیں",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "IFTTT ریسپی ٹرگر کریں",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "بلند آواز میں پڑھیں",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "Zapier Webhook ٹرگر کریں",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "یاد دہانی شامل/ترمیم کریں",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "بعد"
+    },
+    "reminderAlarm": {
+        "message": "{triggerTimeDisplay} پر --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "بدیع مہینے کا دن {num}",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "پہلے"
+    },
+    "reminderCalcType": {
+        "message": "یاد دہانی دکھائیں {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "مخصوص وقت پر",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "<span class=modelTriggerEcho></span> کے نسبت سے",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventWeekdayLong}, {eventMonthLong} {eventDay} کو {eventTime}۔"
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventMonthShort} {eventDay} کو {eventTime}"
+    },
+    "reminderDayOfMonth": {
+        "message": "بدیع مہینے کے دن {num} پر",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "جب ہر {event} سے {num} دن {beforeAfter}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "{pri}، {sec} کی ضیافت،"
+    },
+    "reminderHolyDay": {
+        "message": "مقدس دن، \"{0}\"،"
+    },
+    "reminderList_bday": {
+        "message": "دن {num} {triggerTimeRawDisplay} پر",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} دن {deltaText}، {triggerTimeRawDisplay} پر",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} بعد",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "{triggerTimeRawDisplay} پر اعلان کریں",
+        "description": "in list of defined reminders"
+    }
+}

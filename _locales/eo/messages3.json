@@ -1,0 +1,374 @@
+{
+    "Kullishay": {
+        "message": "Kull-i-<u>Sh</u>ay'"
+    },
+    "KullishayFormat": {
+        "message": "{bKullishay}"
+    },
+    "KullishayLocal": {
+        "message": "Ĉio",
+        "description": "Transalation of Kull-i-Shay"
+    },
+    "locationError": {
+        "message": "Ne eblas determini vian nunan lokon.\n\nLa etendaĵo uzos 18:30 por sunsubiro je ĉiu dato.",
+        "description": "If the system cannot determine the location, this is shown in an alert window."
+    },
+    "mainPartOfDay": {
+        "message": "{frag2WeekdayShort} {frag2MonthShort} {frag2Day}, {frag2Year}",
+        "description": "show start time in Events listing"
+    },
+    "meaning": {
+        "message": "Signifo",
+        "description": "on List page - table heading"
+    },
+    "messageBody": {
+        "message": "{triggerDisplayName} {desc}"
+    },
+    "midnight": {
+        "message": "00:00 meznokto",
+        "description": "nice way to say midnight"
+    },
+    "Month": {
+        "message": "Monato"
+    },
+    "MonthFormatAyyam": {
+        "message": "{bMonthNamePri} ({bMonthNameSec})"
+    },
+    "MonthFormatNormal": {
+        "message": "{bMonth} - {bMonthNamePri} ({bMonthNameSec})"
+    },
+    "monthNames": {
+        "message": "Nomoj de monatoj/tagoj",
+        "description": "on List page - table caption"
+    },
+    "nearestSunsetDay": {
+        "message": "{dayEnded} kun sunsubiro je {endingSunsetDesc}"
+    },
+    "nearestSunsetEve": {
+        "message": "{dayStarted} kun sunsubiro je {startingSunsetDesc}"
+    },
+    "next": {
+        "message": "Sekva &rarr;"
+    },
+    "nextMonth": {
+        "message": "Sekva <u>M</u>onato",
+        "description": "button to move to next month (gregorian or badi)"
+    },
+    "nextRefreshAlarm": {
+        "message": "Sekva refreŝigo planita post {0}: {1}",
+        "description": "only shown in the debug console"
+    },
+    "nextYear": {
+        "message": "Sekva Jaro",
+        "description": "hold Shift and press right arrow key"
+    },
+    "nextYearTitle": {
+        "message": "Premu Shift + Dekstra Sago por vidi la sekvan jaron",
+        "description": "hold Shift and press right arrow key"
+    },
+    "noLocationAvailable": {
+        "message": "(Nekonata Loko - 18:30 sunsubiro-horoj)",
+        "description": "If the system does not know the location of this computer."
+    },
+    "noLocationName": {
+        "message": "(Nuna loko)",
+        "description": "If the internet is not available, to get the name of the current location."
+    },
+    "noon": {
+        "message": "12:00 tagmezo",
+        "description": "nice way to say noon"
+    },
+    "noReminders": {
+        "message": "Aldoni Ekzemplajn Memorigojn",
+        "description": "shown if there are no reminders"
+    },
+    "Now": {
+        "message": "Nun",
+        "description": "Shown in the upcoming dates area"
+    },
+    "num": {
+        "message": "#",
+        "description": "on List page - table heading"
+    },
+    "numUnits": {
+        "message": "{num} {units}",
+        "description": "eg. 5 days, 1 minute, 3 hours"
+    },
+    "ordinal": {
+        "message": "a,a,a,a",
+        "description": "x,1,2,3"
+    },
+    "ordinalNames": {
+        "message": ",unua,dua,tria,kvara,kvina,sesa,sepa,oka,naŭa,deka,dekunua,dekdua,dektria,dekkvara,dekkvina,deksesa,deksepa,dekoka,deknaŭa"
+    },
+    "otherDays": {
+        "message": "post {0} tagoj",
+        "description": "used in top left 'Upcoming' list, when the event is more than 1 day in the future (see 1day)"
+    },
+    "past_Day": {
+        "message": "komenciĝis je {time}",
+        "description": "shown after midnight of the day"
+    },
+    "past_Delta": {
+        "message": "estis antaŭ {numUnits}"
+    },
+    "past_DeltaTime": {
+        "message": "estis antaŭ {numUnits} je {time}"
+    },
+    "past_StartDeltaTime": {
+        "message": "komenciĝis antaŭ {numUnits} je {time}"
+    },
+    "past_StartTime": {
+        "message": "komenciĝis je {time}"
+    },
+    "past_Time": {
+        "message": "estis je {time}"
+    },
+    "pick_pageCal1": {
+        "message": "Jara Vido"
+    },
+    "pick_pageCal2": {
+        "message": "Monata Vido (elementoj)"
+    },
+    "pick_pageCal3": {
+        "message": "Monata Vido (semajnoj)"
+    },
+    "pick_pageCalGreg": {
+        "message": "Gregoria Monata Vido",
+        "description": "tab name"
+    },
+    "pick_pageCalWheel": {
+        "message": "Rado",
+        "description": "tab name"
+    },
+    "pick_pageCustom": {
+        "message": "Propra",
+        "description": "page tab name and page title"
+    },
+    "pick_pageDay": {
+        "message": "Tago"
+    },
+    "pick_pageEvents": {
+        "message": "Eventoj",
+        "description": "showing Feast and Holy Days"
+    },
+    "pick_pageExporter": {
+        "message": "Eksporti",
+        "description": "page tab name and page title"
+    },
+    "pick_pageFast": {
+        "message": "Fasto"
+    },
+    "pick_pageLists": {
+        "message": "Listoj"
+    },
+    "pick_pagePlanner": {
+        "message": "Planilo",
+        "description": "tab"
+    },
+    "pick_pageReminders": {
+        "message": "Memorigoj",
+        "description": "page tab name and page title"
+    },
+    "pick_pageSetup": {
+        "message": "Agordo",
+        "description": "page for setup information"
+    },
+    "planFromWhen": {
+        "message": "Ekde kiam?",
+        "description": "another input"
+    },
+    "planFromWhenNextYear": {
+        "message": "Komenco de venonta Badíʿ-jaro",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenThisYear": {
+        "message": "Komenco de ĉi tiu Badíʿ-jaro",
+        "description": "answer for planFromWhen"
+    },
+    "planFromWhenToday": {
+        "message": "Hodiaŭ",
+        "description": "answer for planFromWhen"
+    },
+    "planIncludeWhat": {
+        "message": "Inkluzivi Tagon aŭ Vesperon?",
+        "description": "include day or evening or both?"
+    },
+    "planIncludeWhatBoth": {
+        "message": "Ambaŭ",
+        "description": "answer to planIncludeWhat"
+    },
+    "planIncludeWhatDay": {
+        "message": "Tago",
+        "description": "answer to planIncludeWhat - from midnight to sunset (frag2)"
+    },
+    "planIncludeWhatEve": {
+        "message": "Vespero",
+        "description": "answer to planIncludeWhat - from sunset to midnight (frag1)"
+    },
+    "plannerResults": {
+        "message": "Rezultoj",
+        "description": "title over results"
+    },
+    "plannerShowWhat": {
+        "message": "Montri kion?",
+        "description": "First question in inputs"
+    },
+    "plannerStartSunsetForLocation": {
+        "message": "Komenca Sunsubiro je {0}",
+        "description": "title in results table - sunset at location"
+    },
+    "plannerTitle": {
+        "message": "Longtempa Planilo",
+        "description": "page title"
+    },
+    "plannerTitle2": {
+        "message": "Elekto de planado",
+        "description": "title over inputs"
+    },
+    "plannerWhatEvent": {
+        "message": "Kiu?",
+        "description": "which event or events?"
+    },
+    "plannerWhatManyEvents": {
+        "message": "pluraj Sanktaj Tagoj kaj Festoj",
+        "description": "answer to first question"
+    },
+    "plannerWhatOneEvent": {
+        "message": "unu Sankta Tago aŭ Festo",
+        "description": "answer to first question"
+    },
+    "planUntilUnitsYears": {
+        "message": "jaroj",
+        "description": "answer to planUntilWhen"
+    },
+    "planUntilWhen": {
+        "message": "Dum kiom da tempo?",
+        "description": "another question"
+    },
+    "pm": {
+        "message": "ptm",
+        "description": "displayed in 'timeFormat12' if not using 24 hours clock"
+    },
+    "pressKeyOrClick": {
+        "message": "Alklaku butonon aŭ tajpu {0}.",
+        "description": "tooltip on buttons for sample date formats. The {0} will get the letter to press"
+    },
+    "pressToCopy": {
+        "message": "Premu klavon por kopii formatitan daton al la tondujo:",
+        "description": "Can click button with mouse, or press matching key on keyboard"
+    },
+    "prev": {
+        "message": "&larr; Antaŭa"
+    },
+    "prevMonth": {
+        "message": "Antaŭa Mo<u>n</u>ato",
+        "description": "button to move to previous month (gregorian or badi)"
+    },
+    "prevYear": {
+        "message": "Antaŭa Jaro",
+        "description": "hold Shift and press left arrow key"
+    },
+    "prevYearTitle": {
+        "message": "Premu Shift + Maldekstra Sago por vidi la antaŭan jaron",
+        "description": "hold Shift and press left arrow key"
+    },
+    "rbDefLang_Ar": {
+        "message": "Araba",
+        "description": "Shown on the main page (see screenshot in PhraseApp)"
+    },
+    "rbDefLang_Local": {
+        "message": "Esperanto",
+        "description": "put your language here, in your script"
+    },
+    "rbDefLangText": {
+        "message": "Montrolingvo por datoj",
+        "description": "on first tab... show Arabic names or in your language"
+    },
+    "reminder_actions": {
+        "message": "Aldona Ago",
+        "description": "prompt for other actions"
+    },
+    "reminder_nullAction": {
+        "message": "neniu",
+        "description": "in dropdown list, for when no other action is chosen"
+    },
+    "reminderAction_ifttt": {
+        "message": "lanĉi IFTTT recepton",
+        "description": "in dropdown list, to choose to use IFTTT"
+    },
+    "reminderAction_speak": {
+        "message": "legi laŭte",
+        "description": "in dropdown list, to choose to read the alert"
+    },
+    "reminderAction_zapier": {
+        "message": "lanĉi Zapier Webhook",
+        "description": "in dropdown list, to choose to use Zapier"
+    },
+    "reminderAddEdit": {
+        "message": "Aldoni/Redakti Memorigon",
+        "description": "title on left side"
+    },
+    "reminderAfter": {
+        "message": "post"
+    },
+    "reminderAlarm": {
+        "message": "Je {triggerTimeDisplay} --> {messageBody}",
+        "description": "used when showing list of alarms scheduled today"
+    },
+    "reminderBDay": {
+        "message": "Tago {num} de la Badíʿ-monato",
+        "description": "what this reminder is triggered on (left out the the apostrophe after Badí since it breaks when displayed)"
+    },
+    "reminderBefore": {
+        "message": "antaŭ"
+    },
+    "reminderCalcType": {
+        "message": "Montri memorigon {calcTypeInput}",
+        "description": "in edit area when asking when to show the reminder"
+    },
+    "reminderCalcTypeAbsolute": {
+        "message": "je specifa horo",
+        "description": "in dropdown"
+    },
+    "reminderCalcTypeRelative": {
+        "message": "relativa al <span class=modelTriggerEcho></span>",
+        "description": "in dropdown"
+    },
+    "reminderDayDetails": {
+        "message": "{eventTime} je {eventWeekdayLong}, {eventMonthLong} {eventDay}."
+    },
+    "reminderDayDetailsTest": {
+        "message": "{eventTime} je {eventMonthShort} {eventDay}"
+    },
+    "reminderDayOfMonth": {
+        "message": "Je tago {num} de la Badíʿ-monato",
+        "description": "in list of defined reminders"
+    },
+    "reminderDayWhen": {
+        "message": "Je {num} tago(j) {beforeAfter} ĉiu {event}",
+        "description": "in list of defined reminders"
+    },
+    "reminderFeast": {
+        "message": "La festo de {pri}, {sec},"
+    },
+    "reminderHolyDay": {
+        "message": "La Sankta Tago, \"{0}\","
+    },
+    "reminderList_bday": {
+        "message": "tago {num} je {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_dayEvent": {
+        "message": "{num} tago(j) {deltaText}, je {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_onload": {
+        "message": "{num} {units} post",
+        "description": "in list of defined reminders"
+    },
+    "reminderList_timeAbsolute": {
+        "message": "anonci je {triggerTimeRawDisplay}",
+        "description": "in list of defined reminders"
+    }
+}

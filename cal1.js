@@ -102,7 +102,7 @@ const Cal1 = (originalDi, originalHost) => {
       }
 
       bMonthHtml.push('<div class="bm bm{0}">'.filledWith(bm));
-      bMonthHtml.push("<div class=bmName><span><i>{^1}</i>{0}</span></div>".filledWith(host.bMonthNamePri[bm], bm === 0 ? "" : bm));
+      bMonthHtml.push("<div class=bmName><span><i>{^1}</i>{0}</span></div>".filledWith(host.bMonthNamePri[bm], bm === 0 ? "" : common.numberFormatter.format(bm)));
 
       gMonthHtml.push("<div class=gm>");
 
@@ -134,10 +134,10 @@ const Cal1 = (originalDi, originalHost) => {
 
         const dow = gd.getDay();
 
-        bMonthHtml.push('<div class="bd bd{0} dow{1} mGroup{2}"{^4}><b>{0}</b>{^3}</div>'.filledWith(bd, dow, mGroup, holyDayMarker, bdTip));
+        bMonthHtml.push('<div class="bd bd{0} dow{2} mGroup{3}"{^5}><b>{1}</b>{^4}</div>'.filledWith(bd, common.numberFormatter.format(bd), common.numberFormatter.format(dow), common.numberFormatter.format(mGroup), holyDayMarker, bdTip));
 
         const gDayClass = gDaySerial.filledWith({
-          currentYear: gd.getFullYear(),
+          currentYear: common.numberFormatter.format(gd.getFullYear()),
           currentMonth01: digitPad2(gd.getMonth() + 1),
           currentDay00: digitPad2(gDayOfMonth),
         });
@@ -150,7 +150,7 @@ const Cal1 = (originalDi, originalHost) => {
           gMonthHtml.push(
             `<div class="gd dow${dow}${gDayOfMonth === 1 && bd !== 1 ? " gd1" : ""}${gDayOfMonth % 2 ? " gAlt" : ""} gma${gMonthAlt}${
               bd === 19 ? " gLast" : ""
-            } g${gDayClass}"><b>${gDayOfMonth}</b>${host.gWeekdayShort[dow]}</div>`
+            } g${gDayClass}"><b>${common.numberFormatter.format(gDayOfMonth)}</b>${host.gWeekdayShort[dow]}</div>`
           );
         }
       }
