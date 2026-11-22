@@ -1334,8 +1334,14 @@ function startFillingLanguageInput(select) {
         select.val(common.languageCode);
 
         if (select[0].selectedIndex === -1) {
-          // code was not in the list
-          select.val("en");
+          // UI language (for example en-US) has no _locales folder. Prefer the base language.
+          const base = (common.languageCode || "").slice(0, 2);
+          select.val(base);
+          if (select[0].selectedIndex === -1) {
+            select.val("en");
+          }
+          common.languageCode = select.val();
+          putInStorageSyncAsync(syncStorageKey.language, common.languageCode);
         }
 
         const pctSpan = $("#setupLangPct");
@@ -1403,27 +1409,25 @@ async function updateLocationAsync(immediately) {
   inputLng.removeClass("error");
 
   let updateNeeded = !common.locationNameKnown; // if we don't have the name, we need to get it
-  if (common.locationLat !== lat) {
+  if (+common.locationLat !== lat) {
     common.locationLat = lat;
-    putInStorageLocalAsync(localStorageKey.locationLat, lat);
     updateNeeded = true;
   }
-  if (common.locationLong !== lng) {
+  if (+common.locationLong !== lng) {
     common.locationLong = lng;
-    putInStorageLocalAsync(localStorageKey.locationLong, lng);
     updateNeeded = true;
   }
 
   if (updateNeeded) {
     _knownDateInfos = {};
-    putInStorageLocalAsync(localStorageKey.locationKnown, true);
     common.locationKnown = true;
-    putInStorageLocalAsync(localStorageKey.locationNameKnown, false);
-    putInStorageLocalAsync(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
+    common.locationNameKnown = false;
+    common.locationName = getMessage("browserActionTitle"); // temp until we get it
+    await persistLocationAsync();
 
+    await refreshDateInfoAndShowAsync();
+    notifyLocationChanged();
     await startGetLocationNameAsync();
-
-    // refreshDateInfoAndShowAsync();
   }
 }
 

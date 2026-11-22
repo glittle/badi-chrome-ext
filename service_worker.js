@@ -54,6 +54,13 @@ importScripts("shared.js");
 var _notificationsEnabled = false;
 var _remindersEngineLoaded = false;
 
+// Always load the reminders engine so its port listener exists on every worker start.
+// The popup connects on open; without a listener Chrome logs "Receiving end does not exist".
+// Alarms are still started only when notification permission is granted.
+importScripts("reminders_engine.js");
+_remindersEngineLoaded = true;
+_remindersEngine = new RemindersEngine();
+
 async function configureNotificationsAsync() {
   const permissionLevel = Notification.permission;
   _notificationsEnabled = permissionLevel === "granted";
@@ -61,12 +68,6 @@ async function configureNotificationsAsync() {
   // console.log("Notifications permission level:", permissionLevel);
 
   if (_notificationsEnabled) {
-    if (!_remindersEngineLoaded) {
-      importScripts("reminders_engine.js");
-      // console.log("Loaded reminders_engine.js");
-      _remindersEngineLoaded = true;
-      _remindersEngine = new RemindersEngine();
-    }
     await AddFunctionToPendingInstallFunctionsAsync(_remindersEngine.initializeAsync);
   } else {
     console.log("Notifications are disabled");
@@ -74,11 +75,26 @@ async function configureNotificationsAsync() {
 }
 
 configureNotificationsAsync();
-browser.permissions.onAdded.addListener(configureNotificationsAsync);
-browser.permissions.onRemoved.addListener(configureNotificationsAsync);
+// Host grants for IFTTT/Zapier also fire permissions.onAdded. Those must not re-run reminder setup.
+const notificationPermissionChanged = (perm) => {
+  if (perm.permissions && perm.permissions.includes("notifications")) {
+    configureNotificationsAsync();
+  }
+};
+browser.permissions.onAdded.addListener(notificationPermissionChanged);
+browser.permissions.onRemoved.addListener(notificationPermissionChanged);
 
 browser.runtime.onInstalled.addListener((info) => {
-  // console.log("onInstalled", info);
+  // Only a real install. chrome.runtime.onInstalled does not run again when the worker restarts.
+  if (info.reason === "install") {
+    AddFunctionToPendingInstallFunctionsAsync(async () => {
+      try {
+        tracker.sendEvent("installed", getVersionInfo());
+      } catch (e) {
+        console.log(e);
+      }
+    });
+  }
   if (info.reason === "update") {
     // delay this, to let everything settle before opening the page
     setTimeout(async () => {
@@ -123,20 +139,19 @@ browser.runtime.onInstalled.addListener((info) => {
         const msg = browser.runtime.lastError;
         if (msg) {
           console.error("Error in contextMenus.create", msg);
-          debugger; // stop on error in dev mode
         } else {
           // console.log("Context menu created");
         }
       }
     );
-    browser.contextMenus.onClicked.addListener((info) => {
-      if (info.menuItemId === "openInTab") {
-        // Define the function directly here to ensure it works in the service worker context
-        browser.tabs.create({ url: "popup.html" });
-        console.log("Opening popup in a new tab");
-      }
-    });
   }, 1000);
+});
+
+// Must be registered at top level. A listener added inside onInstalled is gone after the worker restarts.
+browser.contextMenus.onClicked.addListener((info) => {
+  if (info.menuItemId === "openInTab") {
+    browser.tabs.create({ url: "popup.html" });
+  }
 });
 
 //--> Keep for debugging
@@ -164,9 +179,21 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
         sendResponse({ message: "Language changed" });
         break;
 
+      case "locationChanged":
+        common.locationLat = await getFromStorageLocalAsync(localStorageKey.locationLat);
+        common.locationLong = await getFromStorageLocalAsync(localStorageKey.locationLong);
+        common.locationKnown = await getFromStorageLocalAsync(localStorageKey.locationKnown);
+        common.locationName = await getFromStorageLocalAsync(localStorageKey.locationName);
+        common.locationNameKnown = await getFromStorageLocalAsync(localStorageKey.locationNameKnown);
+        _knownDateInfos = {};
+        await refreshDateInfoAndShowAsync(true);
+        sendResponse({ ok: true });
+        break;
+
       case "getCityName":
         const lat = request.lat;
         const long = request.long;
+        // TODO: Restrict this API key in Google Cloud Console (HTTP referrer and API restrictions). Left unchanged on purpose.
         const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
         const unknownLocation = request.unknownLocation || "Unknown location";
         console.log("getting City name... lat:", lat, "long:", long, "key:", key);

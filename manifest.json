@@ -1,6 +1,6 @@
 {
   "name": "__MSG_title__",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "manifest_version": 3,
   "description": "__MSG_titleDesc__",
   "short_name": "BadiCal",
@@ -13,17 +13,13 @@
   "background": {
     "service_worker": "service_worker.js"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.google-analytics.com/mp/collect",
-        "https://maker.ifttt.com/trigger/",
-        "https://hooks.zapier.com/hooks/catch/"
-      ],
-      "css": [
-        "empty.css"
-      ]
-    }
+  "host_permissions": [
+    "https://www.google-analytics.com/*",
+    "https://maps.googleapis.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://maker.ifttt.com/*",
+    "https://hooks.zapier.com/*"
   ],
   "permissions": [
     "alarms",

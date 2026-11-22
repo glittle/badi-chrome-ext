@@ -30,6 +30,7 @@ function RemindersEngine() {
 
   const BEFORE = -1;
   const AFTER = 1;
+  let _portListenerAdded = false;
 
   async function initializeAsync() {
     // console.log("RemindersEngine initializing");
@@ -741,6 +742,10 @@ function RemindersEngine() {
   }
 
   function connectToPort() {
+    if (_portListenerAdded) {
+      return;
+    }
+    _portListenerAdded = true;
     // console.log("listening for new ports");
     browser.runtime.onConnect.addListener((port) => {
       // console.log("received on part", port.name, port.sender.id);
@@ -770,7 +775,9 @@ function RemindersEngine() {
 
         switch (msg.code) {
           case "getReminders":
-            // send back the list
+            if (!_reminderDefinitions.length) {
+              _reminderDefinitions = (await getFromStorageLocalAsync(localStorageKey.reminderDefinitions)) || [];
+            }
             msg.reminderDefinitions = _reminderDefinitions;
             port.postMessage(msg);
             break;
@@ -843,6 +850,9 @@ function RemindersEngine() {
       _ports[i].postMessage(msg);
     }
   }
+
+  // Register before initializeAsync so the popup can connect even when notifications are off.
+  connectToPort();
 
   return {
     // called from service worker
