@@ -193,7 +193,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
       case "getCityName":
         const lat = request.lat;
         const long = request.long;
-        // TODO: Restrict this API key in Google Cloud Console (HTTP referrer and API restrictions). Left unchanged on purpose.
+        // Geocoding API key. Restricted to the Geocoding API; the Cloud project has a 1,000 request/day quota.
         const key = "AIzaSyAURnmEv_3iDQNwEuqWosERggnbJhJPymc";
         const unknownLocation = request.unknownLocation || "Unknown location";
         console.log("getting City name... lat:", lat, "long:", long, "key:", key);

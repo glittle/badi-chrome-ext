@@ -14,8 +14,7 @@
     "service_worker": "service_worker.js"
   },
   "host_permissions": [
-    "https://www.google-analytics.com/*",
-    "https://maps.googleapis.com/*"
+    "https://www.google-analytics.com/*"
   ],
   "optional_host_permissions": [
     "https://maker.ifttt.com/*",
