@@ -1,0 +1,300 @@
+@import "colors.less";
+
+body.inTab {
+  #pageCal1 {
+    --day-width: 44px;
+    --month-row-height: 35px;
+    --element-height: 18px;
+    --font-size: 10pt;
+  }
+}
+
+#pageCal1 {
+  // 35.7px plus the tab rail and the popup's vertical scrollbar was wider
+  // than the window, which clipped the month names and added a horizontal scrollbar.
+  --day-width: 33.2px;
+  --month-row-height: 27px;
+  --element-height: 14px;
+  --font-size: 8.25pt;
+
+  font-size: var(--font-size);
+
+  //.months {
+  // width: 774px;
+  // }
+
+  .month {
+    // margin-top: -1px;
+    position: relative;
+    height: var(--month-row-height);
+    // padding-right: var(--element-height);
+  }
+
+  .element {
+    transform: rotate(-90deg);
+    transform-origin: top right;
+    position: absolute;
+    right: var(--element-height);
+    top: 0;
+    line-height: var(--element-height);
+    // font-size: 8.25pt;
+    text-align: center;
+  }
+
+  .bm {
+    white-space: nowrap;
+  }
+
+  .mGroup0 {
+    background-color: #fff;
+  }
+
+  .mGroup1 {
+    background-color: @lightFire;
+    /* fire of God */
+  }
+
+  .mGroup2 {
+    background-color: @lightAir;
+    /* air of eternity */
+  }
+
+  .mGroup3 {
+    background-color: @lightWater;
+    /* water of Divine Unity */
+  }
+
+  .mGroup4 {
+    background-color: @lightEarth;
+    /* earth */
+  }
+
+  .element.mGroup1 {
+    width: calc(3 * var(--month-row-height));
+    color: rgba(255, 0, 0, 0.6);
+    z-index: 1;
+    border-bottom-right-radius: 3px; // use right - this is rotated!
+  }
+
+  .element.mGroup2 {
+    width: calc(4 * var(--month-row-height));
+    color: rgba(100, 100, 100, 0.8);
+    z-index: 2;
+  }
+
+  .element.mGroup3 {
+    width: calc(6 * var(--month-row-height));
+    color: rgba(0, 0, 255, 0.6);
+    z-index: 3;
+  }
+
+  .element.mGroup4 {
+    width: calc(7 * var(--month-row-height));
+    color: rgba(0, 255, 0, 1);
+    z-index: 4;
+    border-bottom-left-radius: 3px; // use left - this is rotated!
+  }
+
+  .bd,
+  .gd {
+    display: inline-block;
+    width: var(--day-width);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .bd {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 0 1px 2px;
+    // font-size: 8.25pt;
+  }
+
+  .bd:hover {
+    background-color: #b7f59a;
+    cursor: pointer;
+  }
+
+  .bd b {
+    font-weight: normal;
+  }
+
+  .bd.dow6 {
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    /* saturday */
+  }
+
+  .bd.dow6 b {
+    font-weight: bold;
+  }
+
+  .bmName {
+    display: inline-block;
+    width: calc(2 * var(--day-width));
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: top;
+    margin-top: -1px;
+
+    span {
+      padding: 0 3px 3px 3px;
+      border-radius: 3px;
+    }
+
+    i {
+      font-style: normal;
+      margin-right: 4px;
+      font-size: 0.72em;
+    }
+  }
+
+  .gmInitial {
+    width: 93px;
+    /* bmName width + offset */
+    width: calc(2 * var(--day-width) + 2.5em);
+    padding-right: 2px;
+    text-align: right;
+    display: inline-block;
+    font-weight: 500;
+    overflow: hidden;
+  }
+
+  //.gLast {
+  //}
+
+  .gm {
+    // font-size: 6pt;
+    font-size: 0.72em;
+    margin-top: -4px;
+    white-space: nowrap;
+  }
+
+  .gd {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 1px;
+  }
+
+  .gd.gd1 {
+    font-weight: bold;
+  }
+
+  .gd b {
+    font-weight: normal;
+    padding-right: 3px;
+  }
+
+  .gd i {
+    font-style: normal;
+  }
+
+  .gd.dow6 {
+    background-color: #efefef;
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
+    /* saturday */
+  }
+
+  .gd.dow0 {
+    background-color: #efefef;
+  }
+
+  /*.gd.gAlt {
+    border-top: 2px solid rgba(0,0,0,.1);
+  }*/
+  .gma0 {
+    color: rgba(0, 0, 255, 0.8);
+  }
+
+  .gma1 {
+    color: rgba(0, 0, 255, 0.8);
+    /*color: rgba(83, 205, 0, 0.9);*/
+  }
+
+  .hdHS,
+  .hdHO {
+    margin: 0 0 2px 3px;
+    width: 14px;
+    vertical-align: bottom;
+
+    .starInner {
+      // TODO not working 
+      animation: pulse 1s infinite;
+      fill: #ffff00;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      fill: #ffff00;
+      /* Bright yellow */
+    }
+
+    50% {
+      fill: white;
+    }
+
+    100% {
+      fill: #ffff00;
+    }
+  }
+}
+
+@media screen {
+  #pageCal1 {
+    .bd.selected {
+      background-color: #77b55a;
+    }
+
+    .bd.selected b {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .bm.selected .bmName span {
+      background-color: #77b55a;
+      color: #fff;
+    }
+
+    .gd.selected {
+      background-color: #77b55a;
+      color: #fff;
+    }
+  }
+}
+
+@media print {
+  body[data-pageid="pageCal1"] {
+    #otherPageTitle {
+      display: block !important;
+    }
+
+    #show {
+      display: none !important;
+    }
+  }
+
+  #pageCal1 {
+    padding-top: 0;
+
+    .bd {
+      height: 35px;
+    }
+
+    .element.mGroup1 {
+      width: 143px;
+    }
+
+    .element.mGroup2 {
+      width: 192px;
+    }
+
+    .element.mGroup3 {
+      width: 286px;
+    }
+
+    .element.mGroup4 {
+      width: 334px;
+    }
+  }
+}

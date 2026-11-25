@@ -6,3 +6,12 @@ extension.*.zip
 .vscode
 *.code-workspace
 .vscode/settings.json
+.output
+.wxt
+# Less output. The build writes these into public/ and copies them into the package.
+public/popup.css
+public/cal1.css
+public/cal2.css
+public/cal3.css
+public/calWheel.css
+public/calGreg.css
