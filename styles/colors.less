@@ -23,3 +23,94 @@
 //@bdayBorderColor: #3D315B
 @bdayBorderColor: #5b439a;
 @todayBorderColor: lighten(@bdayBorderColor, 15%);
+
+// Runtime theme. Light is the default. Dark follows the system.
+// There is no popup theme setting, so this is the only switch.
+:root {
+  color-scheme: light;
+  --bg: #f3efe7;
+  --surface: #fffcf8;
+  --surface-muted: #f0ebe3;
+  --text: #1c1917;
+  --text-muted: #57534e;
+  --heading: #2f6b32;
+  --border: #e4ddd2;
+  --border-strong: #cfc6b8;
+  --accent: #2f6f3a;
+  --accent-hover: #24562d;
+  --accent-text: #ffffff;
+  --danger: #9f1d1d;
+  --danger-hover: #7f1515;
+  --cancel: #9a3412;
+  --cancel-hover: #7c2d12;
+  --link: #1e3a8a;
+  --focus: #1d4ed8;
+  --rail: #7a4e3a;
+  --rail-hover: #684231;
+  --rail-active: #2f6f3a;
+  --rail-text: #ffffff;
+  --today: #d9f2c6;
+  --ok-bg: #e5f3df;
+  --error-bg: #9f1239;
+  --error-text: #ffffff;
+  --grid-line: rgba(28, 25, 23, 0.18);
+  --grid-line-strong: rgba(28, 25, 23, 0.45);
+  --elem-fire: rgb(255, 230, 230);
+  --elem-air: rgb(250, 250, 250);
+  --elem-water: rgb(232, 232, 255);
+  --elem-earth: rgb(230, 255, 230);
+  --elem-ayyam: rgba(255, 20, 147, 0.2);
+  --elem-fire-ink: rgba(153, 27, 27, 0.9);
+  --elem-air-ink: rgba(68, 64, 60, 0.9);
+  --elem-water-ink: rgba(30, 64, 175, 0.85);
+  --elem-earth-ink: rgba(22, 101, 52, 0.95);
+  --holy: #92400e;
+  --month-name: #4b0a66;
+  --shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #1c1917;
+    --surface: #292524;
+    --surface-muted: #1c1917;
+    --text: #f5f5f4;
+    --text-muted: #d6d3d1;
+    --heading: #bbf7d0;
+    --border: #44403c;
+    --border-strong: #57534e;
+    --accent: #86efac;
+    --accent-hover: #bbf7d0;
+    --accent-text: #14532d;
+    --danger: #fca5a5;
+    --danger-hover: #fecaca;
+    --cancel: #fdba74;
+    --cancel-hover: #fed7aa;
+    --link: #bfdbfe;
+    --focus: #93c5fd;
+    --rail: #c4a090;
+    --rail-hover: #e7d5cc;
+    --rail-active: #86efac;
+    --rail-text: #1c1917;
+    --today: #3f5c38;
+    --ok-bg: #1e3a24;
+    --error-bg: #9f1239;
+    --error-text: #fff1f2;
+    --grid-line: rgba(245, 245, 244, 0.18);
+    --grid-line-strong: rgba(245, 245, 244, 0.45);
+    --elem-fire: #5c3030;
+    --elem-air: #3f3a36;
+    --elem-water: #2e3258;
+    --elem-earth: #23402c;
+    --elem-ayyam: rgba(244, 114, 182, 0.35);
+    --elem-fire-ink: #fecaca;
+    --elem-air-ink: #e7e5e4;
+    --elem-water-ink: #c7d2fe;
+    --elem-earth-ink: #bbf7d0;
+    --holy: #fcd34d;
+    --month-name: #e9d5ff;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}

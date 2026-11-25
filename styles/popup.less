@@ -1,10 +1,18 @@
+@import "colors.less";
+
 body {
   font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
   font-size: 0.9em; // for in popup
+  line-height: 1.35;
   margin: 0;
+  background: var(--surface);
+  color: var(--text);
 
-  button {
-    font-family: "Noto Sans", "Segoe UI", Tahoma, sans-serif;
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
   }
 
   &.rtl {
@@ -12,10 +20,17 @@ body {
   }
 
   &.inTab {
+    background: var(--bg);
+
     #mainBody {
       width: 100%; // override
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1120px;
+      margin: 16px auto 24px;
+      padding: 12px 16px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
     }
 
     #pageEvents,
@@ -48,7 +63,7 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  background-color: white;
+  background-color: var(--surface);
   z-index: 99999;
   display: flex;
   justify-content: flex-start;
@@ -58,7 +73,7 @@ body {
 
 .initialMsgArea {
   margin-top: 150px;
-  color: green;
+  color: var(--heading);
   width: 700px;
   text-align: center;
   // font-size: 1em;
@@ -112,7 +127,7 @@ body {
 #pageCalGreg,
 #pageCal3,
 #pageCal2 {
-  border: 1px solid @green;
+  border: 1px solid var(--border-strong);
   border-radius: 3px;
 }
 
@@ -132,18 +147,18 @@ body {
     margin-left: -20px;
 
     &.inEdit {
-      background: #eee;
+      background: var(--surface-muted);
     }
 
     &.tempHover {
-      background: #dfd;
+      background: var(--ok-bg);
     }
   }
 }
 
 #pageReminders {
   >div {
-    border: 1px solid @green;
+    border: 1px solid var(--border-strong);
     border-radius: 3px;
     margin-left: 4px;
     justify-content: flex-end;
@@ -204,11 +219,11 @@ body {
       }
 
       &.inEdit {
-        background: #eee;
+        background: var(--surface-muted);
       }
 
       &.tempHover {
-        background: #dfd;
+        background: var(--ok-bg);
       }
 
       >div {
@@ -223,8 +238,8 @@ body {
   }
 
   #reminderAction_ifttt {
-    border: 1px solid #ddd;
-    background-color: #eee;
+    border: 1px solid var(--border);
+    background-color: var(--surface-muted);
     padding: 1px 5px;
     margin-left: 10px;
   }
@@ -266,7 +281,7 @@ body {
 
 #pageSetup {
   >div {
-    border: 1px solid @green;
+    border: 1px solid var(--border-strong);
     border-radius: 3px;
     margin-left: 4px;
     justify-content: flex-end;
@@ -319,9 +334,9 @@ body {
 
     .place {
       // font-size: 100%;
-      color: #000;
+      color: var(--text);
       vertical-align: middle;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border-strong);
       padding: 0 4px;
       font-style: italic;
     }
@@ -351,7 +366,7 @@ body {
 
 #pageExporter {
   >div {
-    border: 1px solid @green;
+    border: 1px solid var(--border-strong);
     border-radius: 3px;
     margin-left: 4px;
     justify-content: flex-end;
@@ -371,7 +386,7 @@ body {
   }
 
   em {
-    color: #999;
+    color: var(--text-muted);
   }
 
   .exportIncludeAlert {
@@ -433,7 +448,7 @@ body {
 
     #exporterTest {
       display: none;
-      background-color: #eee;
+      background-color: var(--surface-muted);
       height: 100px;
       width: 350px;
       white-space: pre-line;
@@ -455,7 +470,7 @@ body {
 
     span.comment {
       font-weight: 700;
-      color: #000;
+      color: var(--text);
     }
   }
 
@@ -487,7 +502,7 @@ body {
   height: 100%;
 
   >div {
-    border: 1px solid @green;
+    border: 1px solid var(--border-strong);
     border-radius: 3px;
     padding: 2px 6px;
   }
@@ -502,7 +517,7 @@ body {
 
   .customHint {
     margin-left: 10px;
-    color: #999;
+    color: var(--text-muted);
     font-size: 90%;
   }
 
@@ -516,7 +531,7 @@ body {
 
     button.button {
       background: transparent;
-      color: green;
+      color: var(--heading);
     }
   }
 
@@ -530,13 +545,13 @@ body {
     button {
       margin: 0 1px;
       background: transparent;
-      color: green;
+      color: var(--heading);
     }
   }
 
   .customLoadDefaults {
     margin: 8px -5px 0px -5px;
-    background: #eee;
+    background: var(--surface-muted);
     border-radius: 3px;
     padding: 5px 5px 4px;
 
@@ -597,7 +612,7 @@ body {
 
   #customBuilderEcho {
     margin: 2px 26px 0 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-strong);
     padding: 2px;
     white-space: pre-wrap;
   }
@@ -637,11 +652,11 @@ body {
 
   .customFormats {
     clear: both;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
 
     .customFormatDiv {
       margin: 1px 0;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border);
       border-radius: 3px;
       padding: 1px 3px;
       display: flex;
@@ -649,7 +664,7 @@ body {
       justify-content: space-between;
 
       &.inEdit {
-        background-color: #efe;
+        background-color: var(--ok-bg);
       }
 
       .customFormatInfo {
@@ -671,13 +686,13 @@ body {
     }
 
     .customSample {
-      background-color: #eee;
+      background-color: var(--surface-muted);
       display: inline-block;
       padding: 0 4px 2px 3px;
     }
 
     .customFormat {
-      color: #999;
+      color: var(--text-muted);
       padding: 0 4px 2px 2px;
       margin: 0 30px 2px 0;
       display: inline-block;
@@ -707,8 +722,9 @@ body {
 
     button:disabled {
       cursor: default;
-      background: #ddd;
-      border-color: #ddd;
+      background: var(--surface-muted);
+      color: var(--text-muted);
+      border-color: var(--border);
     }
 
     .btnDelete {
@@ -719,7 +735,7 @@ body {
 
 #pagePlanner {
   >div {
-    border: 1px solid @green;
+    border: 1px solid var(--border-strong);
     border-radius: 3px;
     margin-left: 4px;
     justify-content: flex-end;
@@ -790,12 +806,12 @@ body {
     }
 
     th.plannerThTitle {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border-strong);
     }
 
     tbody {
       tr:nth-child(even) {
-        background-color: #fafdff;
+        background-color: var(--surface-muted);
       }
     }
   }
@@ -805,7 +821,7 @@ body {
       font-size: 90%;
       margin: 0 -2px 1px 0;
       background: transparent;
-      color: green;
+      color: var(--heading);
     }
   }
 }
@@ -866,13 +882,13 @@ body {
 
 #special1 {
   font-size: 1em;
-  color: blue;
+  color: var(--link);
   display: none;
 }
 
 #special2 {
   font-size: 1em;
-  color: blue;
+  color: var(--link);
   display: none;
 }
 
@@ -882,6 +898,7 @@ body.ta #sunset {
 
 div.selectPages {
   width: 20px;
+  flex: 0 0 20px;
   z-index: 100;
 }
 
@@ -890,79 +907,69 @@ div.selectPages {
   width: 20px;
   display: flex;
   flex-direction: column;
-}
-
-.selectPages .buttons.fakeHover,
-.selectPages .buttons:hover {
+  gap: 2px;
   align-items: flex-end;
-  width: auto;
 }
 
 .selectPages .buttons button {
-  background-color: #b5775a;
-  border-radius: 2px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  background-color: var(--rail);
+  border-radius: var(--radius);
   border: none;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  display: block;
-  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   cursor: pointer;
-  color: #ffffff;
-  font-size: 94%;
-  padding: 2px 2px 2px 0;
+  color: var(--rail-text);
+  font-size: 0.8rem;
+  font-weight: 650;
+  padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  width: 20px;
-  margin: -1px 0 0 0;
-  transition: width 0.2s ease-out;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  transition: width 0.15s ease-out, background-color 0.15s ease-out;
   text-decoration: none;
   white-space: nowrap;
   position: relative;
+
+  .tabNum {
+    flex: 0 0 18px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabName {
+    padding-inline-end: 8px;
+  }
 }
 
 .selectPages .buttons button.showing {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  background-color: @green;
-  margin-left: -2px;
-  padding-left: 2px;
-  width: 22px;
+  background-color: var(--rail-active);
+  width: 20px;
 }
 
-.selectPages .buttons:hover button.showing:hover {
-  background-color: @green;
-}
-
-.selectPages .buttons.fakeHover button,
-.selectPages .buttons:hover button {
-  border-radius: 2px;
-  padding: 2px 6px 2px 7px;
+.selectPages .buttons.fakeHover,
+.selectPages .buttons:hover,
+.selectPages .buttons:focus-within {
   width: auto;
 }
 
-.selectPages .buttons:hover button:hover {
-  background-color: rgb(187, 137, 114);
+.selectPages .buttons.fakeHover button,
+.selectPages .buttons:hover button,
+.selectPages .buttons button:focus-visible {
+  width: auto;
+  gap: 4px;
 }
 
-.selectPages .buttons button:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  pointer-events: none;
-  background-image: linear-gradient(to right,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 1) 100%);
-  height: 100%;
-  width: 9px;
+.selectPages .buttons button:hover,
+.selectPages .buttons button:focus-visible {
+  background-color: var(--rail-hover);
 }
 
-.selectPages .buttons.fakeHover button:after,
-.selectPages .buttons:hover button:after {
-  z-index: -1;
+.selectPages .buttons button.showing:hover,
+.selectPages .buttons button.showing:focus-visible {
+  background-color: var(--rail-active);
 }
 
 #ayyamIs0 {
@@ -971,7 +978,7 @@ div.selectPages {
 
 #shortcutKeys {
   font-size: 85%;
-  color: #999;
+  color: var(--text-muted);
   position: absolute;
   right: 100px;
   top: 0;
@@ -998,7 +1005,7 @@ div.selectPages {
   left: 2px;
   top: 0;
   font-size: 85%;
-  color: #999;
+  color: var(--text-muted);
 
   span {
     margin-right: 30px;
@@ -1007,8 +1014,8 @@ div.selectPages {
 
 #locationErrorHolder {
   display: none;
-  background: #ad0000;
-  color: white;
+  background: var(--error-bg);
+  color: var(--error-text);
   padding: 2px 2px 3px 2px;
   margin: 6px 1px 1px 3px;
   white-space: normal;
@@ -1031,8 +1038,8 @@ div.selectPages {
   padding: 0;
 
   &.button {
-    background: #ad0000;
-    border-color: #ad0000;
+    background: var(--error-bg);
+    border-color: var(--error-bg);
     margin-left: 0;
   }
 
@@ -1086,7 +1093,7 @@ tr.M {
 }
 
 tr.HS {
-  color: darkblue;
+  color: var(--link);
 }
 
 tr.OtherRange {
@@ -1106,7 +1113,7 @@ tr.OtherRange {
   }
 
   dt {
-    color: green;
+    color: var(--heading);
     opacity: 0.7;
     white-space: nowrap;
   }
@@ -1118,7 +1125,7 @@ tr.OtherRange {
 }
 
 .comment {
-  color: green;
+  color: var(--heading);
   opacity: 0.6;
   font-size: 85%;
 }
@@ -1137,7 +1144,7 @@ tr.OtherRange {
 }
 
 #sampleTitle {
-  color: green;
+  color: var(--heading);
   opacity: 0.8;
   font-size: 95%;
   white-space: normal;
@@ -1148,7 +1155,7 @@ body.pt_PT #sampleTitle {
 }
 
 #sampleFootnote {
-  color: green;
+  color: var(--heading);
   opacity: 0.7;
   margin-top: 5px;
   padding-left: 3px;
@@ -1172,7 +1179,7 @@ body.pt_PT #sampleTitle {
 }
 
 #pageLists table caption {
-  color: green;
+  color: var(--heading);
   opacity: 0.7;
   text-align: left;
 }
@@ -1192,21 +1199,21 @@ body.pt_PT #sampleTitle {
 }
 
 #pageLists table tr.selectedDay td {
-  color: blue;
+  color: var(--link);
 }
 
 #pageLists table tr.selectedDay {
-  background-color: #eee;
+  background-color: var(--surface-muted);
 }
 
 #pageLists table #monthListBody tr.selected {
-  background-color: #ddd;
-  color: green;
+  background-color: var(--border);
+  color: var(--heading);
 }
 
 #pageLists table #yearListBody tr.selected {
-  background-color: #ddd;
-  color: #9a710c;
+  background-color: var(--border);
+  color: var(--holy);
 }
 
 #otherPageTitle {
@@ -1248,7 +1255,7 @@ body.pt_PT #sampleTitle {
 
 #specialListsTable.HolyDays tbody tr.H {
   display: table-row;
-  background-color: rgb(250, 250, 250);
+  background-color: var(--surface-muted);
 }
 
 #specialListsTable .forHD {
@@ -1268,7 +1275,7 @@ body.pt_PT #sampleTitle {
 }
 
 /*#specialListsTable tr.SpecialTime td.eventTime {
-  color: blue;
+  color: var(--link);
   font-style: italic;
   padding-left: 20px;
 }*/
@@ -1288,19 +1295,19 @@ body.pt_PT #sampleTitle {
 }
 
 #specialListsTable caption {
-  color: green;
+  color: var(--heading);
   text-align: left;
   font-size: 1em;
   margin: -2px 0px 2px 2px;
 }
 
 #specialListsTable TD {
-  color: black;
-  border-top: solid 1px #ddd;
+  color: var(--text);
+  border-top: solid 1px var(--border);
 }
 
 #specialListsTable .HS td {
-  color: black;
+  color: var(--text);
 }
 
 #specialListsTable td.name {
@@ -1308,7 +1315,7 @@ body.pt_PT #sampleTitle {
 }
 
 #specialListsTable .HS .name {
-  color: blue;
+  color: var(--link);
   background-image: url(./star12c.gif);
   background-repeat: no-repeat;
   background-position: 2px 3px;
@@ -1316,11 +1323,11 @@ body.pt_PT #sampleTitle {
 }
 
 #specialListsTable .HO td {
-  color: black;
+  color: var(--text);
 }
 
 #specialListsTable .HO .name {
-  color: blue;
+  color: var(--link);
   background: url(star12b.gif);
   background-repeat: no-repeat;
   background-position: 2px 3px;
@@ -1328,11 +1335,11 @@ body.pt_PT #sampleTitle {
 }
 
 #specialListsTable .Today {
-  color: #070;
+  color: var(--heading);
 }
 
 #specialListsTable tr.Default td.eventTime {
-  color: #777;
+  color: var(--text-muted);
 }
 
 #eventStartHolder {
@@ -1378,56 +1385,62 @@ body.ta #eventStartHolder {
 }
 
 #fastListTable caption {
-  color: green;
+  color: var(--heading);
   font-size: 1em;
 }
 
 tr.FastSat td {
-  border-top: solid 1px #ddd;
+  border-top: solid 1px var(--border);
 }
 
 h2 {
-  color: green;
-  font-size: 1em;
+  color: var(--heading);
+  font-size: 1.05em;
   margin: 0 0 6px 0;
-  font-weight: normal;
+  font-weight: 650;
 }
 
 h3 {
-  color: green;
-  font-size: 10pt;
-  margin: 0 0 3px 0;
-  font-weight: normal;
+  color: var(--heading);
+  font-size: 0.95em;
+  margin: 0 0 0.2em 0;
+  font-weight: 650;
 }
 
 button.button {
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      color-stop(0.05, @green),
-      color-stop(1, #72b352));
-  background-color: @green;
-  border-radius: 4px;
-  border: 1px solid #4b8f29;
+  background: var(--accent);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
-  // font-family: Geneva, "Segoe UI";
-  font-size: 85%;
-  line-height: 1em;
-  padding: 0.25em 0.4em 0.4em;
-  transition: color 0.4s ease-out;
+  color: var(--accent-text);
+  font-size: 0.85em;
+  font-weight: 650;
+  line-height: 1.2;
+  padding: 0.2em 0.5em 0.25em;
   text-decoration: none;
   min-width: 15px;
 
+  &:hover {
+    background: var(--accent-hover);
+  }
+
   &.btnDelete {
-    background: red;
-    border-color: red;
+    background: var(--danger);
+    color: var(--accent-text);
+
+    &:hover {
+      background: var(--danger-hover);
+    }
   }
 
   &.btnCancel {
-    background: coral;
-    border-color: coral;
+    background: var(--cancel);
+    color: var(--accent-text);
+
+    &:hover {
+      background: var(--cancel-hover);
+    }
   }
 }
 
@@ -1437,47 +1450,30 @@ button.button {
 }
 
 button.today.notToday {
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      color-stop(0.05, #b5775a),
-      color-stop(1, #b37252));
-  background-color: #b5775a;
-  border: 1px solid #8f4b29;
+  background: var(--rail);
+  color: var(--rail-text);
 }
 
 #samples button {
   max-width: 100%;
   white-space: normal;
   vertical-align: text-bottom;
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      color-stop(0.05, @green),
-      color-stop(1, #72b352));
-  background-color: @green;
+  background: var(--accent);
   border-radius: 4px;
-  border: 1px solid #4b8f29;
+  border: 1px solid transparent;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
-  font-size: 85%;
-  transition: color 0.4s ease-out;
-  padding: 0 2px 1px;
+  color: var(--accent-text);
+  font-size: 0.85em;
+  font-weight: 650;
+  padding: 0 4px 1px;
   text-decoration: none;
   min-width: 1.5em;
   margin: 0.5px 0;
 }
 
 #samples button:hover {
-  background: -webkit-gradient(linear,
-      left top,
-      left bottom,
-      color-stop(0.05, #72b352),
-      color-stop(1, @green));
-  background: -webkit-linear-gradient(top, #72b352 5%, @green 100%);
-  background: linear-gradient(to bottom, #72b352 5%, @green 100%);
-  background-color: #72b352;
+  background: var(--accent-hover);
 }
 
 #samples button:active {
@@ -1486,14 +1482,14 @@ button.today.notToday {
 }
 
 #samples div.copied button {
-  background: #b2f392;
-  color: #4b8f29;
+  background: var(--today);
+  color: var(--heading);
   transition: color 0.4s ease-out;
 }
 
 #samples div.copied button:hover {
-  background: #b2f392;
-  color: #4b8f29;
+  background: var(--today);
+  color: var(--heading);
 }
 
 .iconArea {
@@ -1535,25 +1531,25 @@ button.today.notToday {
 }
 
 #gDatePicker {
-  border: 1px solid #daaaaa;
+  border: 1px solid var(--border-strong);
   border-radius: 3px;
   padding: 5px;
 }
 
 #gDatePickerTitle {
-  color: green;
+  color: var(--heading);
   opacity: 0.7;
   width: 150px;
 }
 
 #gDatePickerTitle2 {
-  color: green;
+  color: var(--heading);
   opacity: 0.7;
   margin: 6px 0 0 0;
 }
 
 .DatePickerTitle {
-  color: green;
+  color: var(--heading);
   opacity: 0.7;
   margin: 6px 0 0 0;
 }
@@ -1572,13 +1568,13 @@ button.today.notToday {
 
 #bDatePickerTitleTip {
   float: right;
-  color: #999;
+  color: var(--text-muted);
   margin: 6px 0 0 0;
   font-size: 85%;
 }
 
 #upcomingTitle {
-  color: green;
+  color: var(--heading);
   text-decoration: underline;
 }
 
@@ -1615,7 +1611,7 @@ button.today.notToday {
 }
 
 .textLink {
-  color: darkblue;
+  color: var(--link);
   vertical-align: top;
   display: inline-block;
   margin: 3px 9px 0 6px;
@@ -1804,42 +1800,25 @@ body[data-pageid="pageSetup"] {
 }
 
 @media (min-width: 900px) {
+  // Opened in a tab: keep the names visible instead of a collapsed number strip.
+  div.selectPages {
+    width: auto;
+    flex: 0 0 auto;
+  }
 
-  /*body {
-        background: url('Sea of Fog.jpg') #fff no-repeat center;
-    }*/
   .selectPages .buttons {
-    width: auto;
-    align-items: flex-start;
+    width: 14em;
+    align-items: stretch;
   }
 
-  .selectPages .buttons button:after {
-    z-index: -1;
-  }
-
-  .selectPages .buttons:hover {
-    align-items: flex-start;
-    width: auto;
-  }
-
-  .selectPages .buttons button {
-    border-radius: 2px;
-    padding: 2px 6px 2px 3px;
-    width: auto;
-  }
-
+  .selectPages .buttons button,
+  .selectPages .buttons button.showing,
   .selectPages .buttons:hover button {
-    border-radius: 2px;
-    padding: 2px 6px 2px 3px;
-  }
-
-  .selectPages .buttons button.showing {
-    width: auto;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    background-color: @green;
-    margin-left: -3px;
-    padding-left: 6px;
+    width: 100%;
+    height: auto;
+    min-height: 22px;
+    padding-block: 3px;
+    gap: 6px;
   }
 }
 
@@ -1864,4 +1843,77 @@ body.Firefox {
 
 @page myLandscape {
   size: landscape;
+}
+
+// Shared controls. One field style, one focus ring, one hidden-label pattern.
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+select,
+textarea {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 1.3;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--accent);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+#btnOpen:focus-visible,
+#btnPrint:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#btnOpen,
+#btnPrint {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  img {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+#pageCal1,
+#pageCal2,
+#pageCal3,
+#pageCalGreg,
+#pageCalWheel {
+  color: var(--text);
+}
+
+table {
+  color: inherit;
+}
+
+#specialListsTable th,
+#fastListTable th,
+#pageLists th {
+  font-weight: 650;
+  color: var(--text-muted);
 }
