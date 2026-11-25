@@ -43,6 +43,23 @@
     updateEditArea(true);
   }
 
+  const optionalReminderOrigins = {
+    ifttt: "https://maker.ifttt.com/*",
+    zapier: "https://hooks.zapier.com/*",
+  };
+
+  function requestReminderHostPermission(action) {
+    const origin = optionalReminderOrigins[action];
+    if (!origin || !browser.permissions || !browser.permissions.request) {
+      return Promise.resolve(false);
+    }
+    // Must be called from the click/change handler so Chrome still has the user gesture.
+    return browser.permissions.request({ origins: [origin] }).catch((err) => {
+      console.log("Host permission for reminder action was not granted", err);
+      return false;
+    });
+  }
+
   function save(newMode) {
     if (!_page.find("form")[0].checkValidity()) {
       return;
@@ -485,6 +502,7 @@
     });
 
     _page.find("#reminder_action").on("change", () => {
+      requestReminderHostPermission($("#reminder_action").val());
       updateEditArea();
     });
 
@@ -516,13 +534,15 @@
         }
       })
       .on("click", "#btnReminderSave", () => {
+        requestReminderHostPermission($("#reminder_action").val());
         save(saveMode.save);
       })
       .on("click", "#btnReminderSaveNew", () => {
+        requestReminderHostPermission($("#reminder_action").val());
         save(saveMode.saveNew);
       })
       .on("click", "#btnReminderTest", () => {
-        save(saveMode.test);
+        requestReminderHostPermission($("#reminder_action").val()).finally(() => save(saveMode.test));
       })
       .on("click", "#btnReminderCancel", () => {
         resetInputs();

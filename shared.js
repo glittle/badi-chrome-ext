@@ -252,6 +252,9 @@ async function prepareForBackgroundAndPopupAsync() {
   common.jumpTo = await getFromStorageSyncAsync(syncStorageKey.jumpTo, "90");
   common.ifttt = await getFromStorageSyncAsync(syncStorageKey.iftttKey, "");
   common.zapierWebhook = await getFromStorageSyncAsync(syncStorageKey.zapierWebhook, "");
+  // Loaded here (not only in the popup) so the service worker honours the opt-out
+  // before any analytics event, including "installed", is sent.
+  common.optedOutOfGoogleAnalytics = await getFromStorageSyncAsync(syncStorageKey.optOutGa, -1);
   common.firstPopup = await getFromStorageLocalAsync(localStorageKey.firstPopup, false);
   common.includeFeasts = await getFromStorageSyncAsync(syncStorageKey.includeFeasts, true);
   common.includeHolyDays = await getFromStorageSyncAsync(syncStorageKey.includeHolyDays, true);
@@ -304,7 +307,6 @@ async function prepareSharedForPopup() {
   common.exporter_exporterDateRange = await getFromStorageSyncAsync(syncStorageKey.exporter_exporterDateRange);
   common.exporter_alertMinutes = await getFromStorageSyncAsync(syncStorageKey.exporter_alertMinutes, "B0");
 
-  common.optedOutOfGoogleAnalytics = await getFromStorageSyncAsync(syncStorageKey.optOutGa, -1);
   common.rememberFocusTimeMinutes = 5; // show on settings page?
   //  integrateIntoGoogleCalendar: await getFromStorageLocalAsync(localStorageKey.enableGCal, true),
 
@@ -423,16 +425,47 @@ async function loadLocaleMessageFileAsync(langToLoad, fileCount = 4) {
   return combinedMessages;
 }
 
+// Keep in sync with the folders under _locales. Chrome UI languages such as en-US
+// have no folder; fetching them only produces 404s.
+const knownLocaleFolders = {
+  da: true,
+  de: true,
+  en: true,
+  eo: true,
+  es: true,
+  fa: true,
+  fi: true,
+  fr: true,
+  he: true,
+  hi: true,
+  id: true,
+  ja: true,
+  nl: true,
+  "pt-BR": true,
+  "pt-PT": true,
+  ru: true,
+  sv: true,
+  ta: true,
+  th: true,
+  ur: true,
+  "zh-CN": true,
+};
+
 async function loadRawMessages(langCode, cb) {
   // load base English, then overwrite with base for language, then with full lang code
   // console.log("loading", langCode);
 
-  const rawLangCodes = { en: true };
-  if (langCode.length > 2) {
-    rawLangCodes[langCode.slice(0, 2)] = true;
+  const langsToLoad = [];
+  const addLocale = (code) => {
+    if (code && knownLocaleFolders[code] && !langsToLoad.includes(code)) {
+      langsToLoad.push(code);
+    }
+  };
+  addLocale("en");
+  if (langCode && langCode.length > 2) {
+    addLocale(langCode.slice(0, 2));
   }
-  rawLangCodes[langCode] = true;
-  const langsToLoad = Object.keys(rawLangCodes);
+  addLocale(langCode);
 
   _numMessagesEn = 0;
   let numMessagesOther = -1;
@@ -956,28 +989,41 @@ function startGettingLocation() {
   navigator.geolocation.getCurrentPosition(setLocationAsync, noLocationAsync, positionOptions); // this triggers immediately
 }
 
+function notifyLocationChanged() {
+  // The popup and the service worker each keep their own `common` object.
+  // After coordinates are stored, the worker must reload them so sunset alarms and the icon update.
+  if (typeof _inPopupPage === "undefined") {
+    return;
+  }
+  browser.runtime.sendMessage({ action: "locationChanged" }).catch(() => {});
+}
+
+async function persistLocationAsync() {
+  await putInStorageLocalAsync(localStorageKey.locationLat, common.locationLat);
+  await putInStorageLocalAsync(localStorageKey.locationLong, common.locationLong);
+  await putInStorageLocalAsync(localStorageKey.locationKnown, common.locationKnown);
+  await putInStorageLocalAsync(localStorageKey.locationNameKnown, common.locationNameKnown);
+  await putInStorageLocalAsync(localStorageKey.locationName, common.locationName);
+}
+
 async function setLocationAsync(position) {
-  if (+common.locationLat === position.coords.latitude && +common.locationLong === position.coords.longitude && common.locationNameKnown) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
+  if (+common.locationLat === lat && +common.locationLong === lng && common.locationNameKnown) {
     // no changes
     // console.log("Location:", common.locationName, common.locationNameKnown);
     return;
   }
 
-  putInStorageLocalAsync(localStorageKey.locationLat, common.locationLat);
-  common.locationLat = position.coords.latitude;
-
-  putInStorageLocalAsync(localStorageKey.locationLong, common.locationLong);
-  common.locationLong = position.coords.longitude;
-
+  // Assign first, then store. Writing the previous (often missing) values removed the keys.
+  common.locationLat = lat;
+  common.locationLong = lng;
+  common.locationKnown = true;
+  common.locationNameKnown = false;
+  common.locationName = getMessage("browserActionTitle"); // temp until we get it
   _knownDateInfos = {};
 
-  common.locationKnown = true;
-  putInStorageLocalAsync(localStorageKey.locationKnown, true);
-
-  common.locationNameKnown = false;
-  putInStorageLocalAsync(localStorageKey.locationNameKnown, false);
-
-  putInStorageLocalAsync(localStorageKey.locationName, getMessage("browserActionTitle")); // temp until we get it
+  await persistLocationAsync();
 
   if (typeof _inPopupPage !== "undefined") {
     $("#inputLat").val(common.locationLat);
@@ -985,6 +1031,8 @@ async function setLocationAsync(position) {
     await updateLocationAsync(true);
   } else {
     await refreshDateInfoAndShowAsync();
+    notifyLocationChanged();
+    await startGetLocationNameAsync();
   }
 }
 
@@ -995,24 +1043,19 @@ async function noLocationAsync(err) {
 
   common.locationLat = 0;
   common.locationLong = 0;
-
-  putInStorageLocalAsync(localStorageKey.locationLat, common.locationLong);
-  putInStorageLocalAsync(localStorageKey.locationLong, common.locationLong);
-
+  common.locationKnown = false;
+  common.locationNameKnown = false;
+  common.locationName = getMessage("noLocationAvailable");
   _knownDateInfos = {};
 
   console.warn(err);
 
-  putInStorageLocalAsync(localStorageKey.locationKnown, false);
-  common.locationKnown = false;
-
-  const noLocAvail = getMessage("noLocationAvailable");
-  putInStorageLocalAsync(localStorageKey.locationName, noLocAvail);
-  common.locationName = noLocAvail;
+  await persistLocationAsync();
 
   stopLoaderButton();
 
   await refreshDateInfoAndShowAsync();
+  notifyLocationChanged();
 }
 
 async function recallFocusAndSettingsAsync() {
@@ -1560,7 +1603,7 @@ const prepareAnalyticsTracker = () => {
   }
 
   // make a new session id when file is loaded
-  let googleSessionId = new Date().getTime();
+  googleSessionId = new Date().getTime();
 
   // const baseParams = {
   //   ds: "app",
@@ -1572,16 +1615,11 @@ const prepareAnalyticsTracker = () => {
   //   aid: browserHostType,
   //   av: browser.runtime.getManifest().version,
   // };
+  // client_id is a stable per-install id. A new events array is built per hit so
+  // earlier events are not resent (Measurement Protocol allows 25 events per request).
   const baseParams = {
     user_id: uid,
-    user_properties: {
-      language: {
-        // will also set language on each usage
-        value: common.languageCode,
-      },
-    },
-    client_id: "Chrome Badi Extension",
-    events: [],
+    client_id: uid,
   };
 
   const send = (event, useValidation) => {
@@ -1590,16 +1628,25 @@ const prepareAnalyticsTracker = () => {
       return;
     }
 
-    const data = { ...baseParams };
-
-    event.params = {
-      ...event.params,
-      session_id: googleSessionId,
-      engagement_time_msec: 100, // TODO make this more meaningful
+    const data = {
+      user_id: baseParams.user_id,
+      client_id: baseParams.client_id,
+      user_properties: {
+        language: {
+          value: common.languageCode,
+        },
+      },
+      events: [
+        {
+          name: event.name,
+          params: {
+            ...event.params,
+            session_id: googleSessionId,
+            engagement_time_msec: 100, // TODO make this more meaningful
+          },
+        },
+      ],
     };
-
-    data.events.push(event);
-    data.user_properties.language.value = common.languageCode;
 
     const body = JSON.stringify(data);
 
@@ -1652,8 +1699,7 @@ const prepareAnalyticsTracker = () => {
     sendPageId: sendPageId,
   };
 
-  // tracker.sendEvent("installed", getVersionInfo(), true);
-  tracker.sendEvent("installed", getVersionInfo());
+  // "installed" is sent only from the service worker on runtime.onInstalled reason "install".
 };
 
 function createGuid() {
