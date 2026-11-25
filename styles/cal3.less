@@ -158,7 +158,7 @@
     .dayRow.elementNum0 {
         // margin-top: 150px;
         .dayCell {
-            background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-ayyam), @endColor @gradientEnd);
             width: 100px;
         }
         .dayName {
@@ -169,35 +169,35 @@
     @endColor: rgba(255, 255, 255, 0);
     .elementNum1 {
         &.dayCell {
-            background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-fire), @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum1 {
-        background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-fire), @endColor @gradientEnd);
     }
     .elementNum2 {
         &.dayCell {
-            background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-air), @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum2 {
-        background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-air), @endColor @gradientEnd);
     }
     .elementNum3 {
         &.dayCell {
-            background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-water), @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum3 {
-        background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-water), @endColor @gradientEnd);
     }
     .elementNum4 {
         &.dayCell {
-            background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-earth), @endColor @gradientEnd);
         }
     }
     .monthShell.elementNum4 {
-        background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-earth), @endColor @gradientEnd);
     }
     .monthRow {
         white-space: nowrap;
@@ -212,25 +212,25 @@
     .month.elementNum1 {
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightFire;
+            background-color: var(--elem-fire);
         }
     }
     .month.elementNum2 {
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightAir;
+            background-color: var(--elem-air);
         }
     }
     .month.elementNum3 {
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightWater;
+            background-color: var(--elem-water);
         }
     }
     .month.elementNum4 {
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightEarth;
+            background-color: var(--elem-earth);
         }
     }
     .monthElement {
@@ -244,7 +244,7 @@
         box-sizing: border-box;
         outline: 1px solid #ddd;
         white-space: normal;
-        background-color: #fff;
+        background-color: var(--surface);
         height: 95px;
         &.hdDayHS {
             background-image: linear-gradient(lighten(red, 30%), lighten(red, 45%) 100%) !important;
@@ -270,7 +270,7 @@
     .sunrise,
     .sunsetStart,
     .sunsetEnd {
-        color: #000;
+        color: var(--text);
         font-size: .55rem;
     }
     .top {
@@ -325,7 +325,7 @@
         }
     }
     .bWeekDay {
-        color: #000;
+        color: var(--text);
         text-align: left;
         font-size: 9px; //font-style: italic;
         word-break: break-all;
@@ -342,7 +342,7 @@
     .wd6 {
         .bWeekDay {
             font-weight: bold; // background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-            background: #eee;
+            background: var(--surface-muted);
             padding: 1px 2px 1px;
             border-radius: 1.5px;
         }
@@ -420,7 +420,7 @@ body[data-pageid=pageCal3] {
             }
             .selected.dayCell {
                 outline: 1px solid @bdayBorderColor;
-                background-color: #EAEAEA;
+                background-color: var(--surface-muted);
                 z-index: 2;
             }
         }
@@ -451,7 +451,7 @@ body[data-pageid=pageCal3] {
         .dayCell {
             &.hdDayHS,
             &.hdDayHO {
-                background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, #fff 100%) !important;
+                background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, var(--surface) 100%) !important;
             }
         }
         .dayRow.elementNum0 {

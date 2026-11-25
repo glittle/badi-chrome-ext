@@ -31,21 +31,21 @@
         <div id="yearSelector">
           <div class="vahidInputs">
             <div>
-              <span data-msg="Kullishay,extractAccessKeyFor:kullishayPicker"></span>
+              <label for="kullishayPicker" data-msg="Kullishay,extractAccessKeyFor:kullishayPicker"></label>
               <input class="bKullishayPicker" id="kullishayPicker" type="number" min="1" max="3" />
             </div>
             <div>
-              <span data-msg="Vahid"></span>
-              <input class="bVahidPicker" type="number" max="20" min="0" />
+              <label for="vahidPicker" data-msg="Vahid"></label>
+              <input class="bVahidPicker" id="vahidPicker" type="number" max="20" min="0" />
             </div>
             <div>
-              <span data-msg="YearOfVahid" data-msg-di="true"></span>
-              <input class="bYearInVahidPicker" type="number" max="20" min="0" />
+              <label for="yearInVahidPicker" data-msg="YearOfVahid" data-msg-di="true"></label>
+              <input class="bYearInVahidPicker" id="yearInVahidPicker" type="number" max="20" min="0" />
             </div>
           </div>
 
           <div class="JumpDays">
-            <div data-msg="jumpTo,extractAccessKeyFor:jumpTo"></div>
+            <label for="jumpTo" data-msg="jumpTo,extractAccessKeyFor:jumpTo"></label>
             <input class="jumpTo" id="jumpTo" type="number" min="-9999" max="9999" />
             <button type="button" class="btnJumpTo button" data-msg="btnJumpTo,title:btnJumpToTitle"></button>
           </div>
@@ -53,7 +53,8 @@
           <div>
             <div class="yearPicker">
               <button type="button" class="btnChangeYear button" data-delta="-1" data-msg="prevYear,title:prevYearTitle"></button>
-              <input class="bYearPicker" type="number" max="1000" min="1" />
+              <label class="vh" for="topYearPicker" data-msg="fieldBYear"></label>
+              <input class="bYearPicker" id="topYearPicker" type="number" max="1000" min="1" />
               <button type="button" class="btnChangeYear button" data-delta="1" data-msg="nextYear,title:nextYearTitle"></button>
             </div>
 
@@ -90,7 +91,7 @@
           <div class="normal place"></div>
           <!--<div id=gDayWithSunset></div>-->
           <div id="locationErrorHolder">
-            <button type="button" class="btnRetry">
+            <button type="button" class="btnRetry" data-msg="aria-label:retryLocation">
               <span class="btnRetryImg"></span>
             </button>
             <span id="locationError" data-msg="_id_"></span>
@@ -103,7 +104,7 @@
             <div id="gDatePickerTitle" data-msg="_id_"></div>
             <div id="gDate"></div>
             <div id="gDateDesc"></div>
-            <div id="gDatePickerTitle2" data-msg="_id_,extractAccessKeyFor:datePicker"></div>
+            <label id="gDatePickerTitle2" for="datePicker" data-msg="_id_,extractAccessKeyFor:datePicker"></label>
             <input type="date" id="datePicker" min="1844-03-21" max="2843-03-19" />
             <div class="gDateButtons">
               <button type="button" class="button btnChangeDay" data-delta="-1" data-msg="prev"></button>
@@ -113,8 +114,11 @@
             </div>
             <div class="DatePickerTitle" data-msg="bDatePickerTitle,extractAccessKeyFor:bYearPicker"></div>
             <div class="bDatePickerInputs">
+              <label class="vh" for="bYearPicker" data-msg="fieldBYear"></label>
               <input class="bYearPicker" id="bYearPicker" type="number" max="1000" min="1" />
+              <label class="vh" for="bMonthPicker" data-msg="fieldBMonth"></label>
               <input id="bMonthPicker" type="number" max="19" min="0" />
+              <label class="vh" for="bDayPicker" data-msg="fieldBDay"></label>
               <input id="bDayPicker" type="number" max="19" min="1" />
               <div class="comment" id="ayyamIs0"></div>
             </div>
@@ -152,7 +156,7 @@
                 </label>
               </span>
 
-              <span data-msg="startTimeOption"></span>
+              <label for="eventStart" data-msg="startTimeOption"></label>
               <select id="eventStart"></select>
             </div>
             <table id="specialListsTable">
@@ -776,7 +780,7 @@
                 <div class="setupColorOption">
                   <input type="radio" name="iconColorMode" value="manual" id="rbIconColor_Manual" />
                   <label for="rbIconColor_Manual" data-msg="iconColorManual"></label>
-                  <input type="color" id="iconColorPicker" />
+                  <input type="color" id="iconColorPicker" data-msg="aria-label:fieldIconColor" />
                 </div>
               </div>
             </div>
@@ -791,7 +795,7 @@
             </div>
             <h3 class="setupPlace">
               <span data-msg="exportIncludeLocation"></span>
-              <button type="button" class="btnRetry">
+              <button type="button" class="btnRetry" data-msg="aria-label:retryLocation">
                 <span class="btnRetryImg"></span>
               </button>
             </h3>
@@ -821,7 +825,7 @@
         </div>
 
         <div class="selectPages">
-          <div class="buttons">
+          <div class="buttons" role="tablist" aria-orientation="vertical">
             <button data-page="pageDay" data-msg="pick_pageDay"></button>
             <button data-page="pageEvents" data-msg="pick_pageEvents"></button>
             <button data-page="pageCal2" data-msg="pick_pageCal2"></button>
@@ -842,7 +846,7 @@
       <div class="mainBottom">
         <div id="explain" class="explains"></div>
         <div id="explain2" class="explains"></div>
-        <textarea id="sampleCopy"></textarea>
+        <textarea id="sampleCopy" aria-hidden="true"></textarea>
         <div class="iconArea">
           <div id="tips">
             <span data-msg="tips,title:tipsText"></span>
@@ -855,8 +859,12 @@
 
           <a id="linkWebStoreSupport" class="textLink" href="" target="webstore" data-msg="suggestions,title:suggestionsTitle"></a>
 
-          <img id="btnOpen" src="/popout.png" />
-          <img id="btnPrint" src="/print.png" />
+          <button type="button" id="btnOpen" data-msg="title:browserMenuOpen,aria-label:browserMenuOpen">
+            <img src="/popout.png" alt="" />
+          </button>
+          <button type="button" id="btnPrint" data-msg="title:printPage,aria-label:printPage">
+            <img src="/print.png" alt="" />
+          </button>
 
           <span id="shortcutKeys" data-msg="title:shortcutKeyTitle"></span>
         </div>

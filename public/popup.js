@@ -507,8 +507,8 @@ function showPage(id) {
       break;
   }
 
-  btns.removeClass("showing");
-  btns.filter('*[data-page="{0}"]'.filledWith(id)).addClass("showing");
+  btns.removeClass("showing").attr("aria-selected", "false");
+  btns.filter('*[data-page="{0}"]'.filledWith(id)).addClass("showing").attr("aria-selected", "true");
 
   thisPage.show();
   pages.not(thisPage).hide();
@@ -1783,12 +1783,29 @@ function updateIconColorControls() {
 }
 
 function updateTabNames() {
+  $(".selectPages .buttons").attr({ role: "tablist", "aria-orientation": "vertical" });
   $(".selectPages button")
     .filter(":visible")
     .each((i, el) => {
       const tab = $(el);
-      tab.html(`${common.numberFormatter.format(i + 1)} ${tab.html()}`);
-      _pageIdList.push(tab.data("page"));
+      const pageId = tab.data("page");
+      const name = tab.text();
+      const n = common.numberFormatter.format(i + 1);
+      tab.empty();
+      tab.append($("<span>", { class: "tabNum", "aria-hidden": "true", text: n }));
+      tab.append($("<span>", { class: "tabName", text: name }));
+      tab.attr({
+        role: "tab",
+        id: `tab_${pageId}`,
+        "aria-controls": pageId,
+        "aria-selected": "false",
+        "aria-label": `${n} ${name}`,
+      });
+      $(`#${pageId}`).attr({
+        role: "tabpanel",
+        "aria-labelledby": `tab_${pageId}`,
+      });
+      _pageIdList.push(pageId);
     });
 }
 

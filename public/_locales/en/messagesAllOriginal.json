@@ -1280,6 +1280,24 @@
     "shortcutKeyNoneTitle": {
         "message": "Choose a keyboard shortcut to open the Calendar from anywhere in the browser."
     },
+    "fieldBYear": {
+        "message": "Badíʿ year"
+    },
+    "fieldBMonth": {
+        "message": "Badíʿ month"
+    },
+    "fieldBDay": {
+        "message": "Badíʿ day"
+    },
+    "fieldIconColor": {
+        "message": "Icon text color"
+    },
+    "retryLocation": {
+        "message": "Try again to find this location"
+    },
+    "printPage": {
+        "message": "Print"
+    },
     "showPointer": {
         "message": "Show pointer"
     },

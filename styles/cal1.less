@@ -46,51 +46,51 @@ body.inTab {
   }
 
   .mGroup0 {
-    background-color: #fff;
+    background-color: var(--surface);
   }
 
   .mGroup1 {
-    background-color: @lightFire;
+    background-color: var(--elem-fire);
     /* fire of God */
   }
 
   .mGroup2 {
-    background-color: @lightAir;
+    background-color: var(--elem-air);
     /* air of eternity */
   }
 
   .mGroup3 {
-    background-color: @lightWater;
+    background-color: var(--elem-water);
     /* water of Divine Unity */
   }
 
   .mGroup4 {
-    background-color: @lightEarth;
+    background-color: var(--elem-earth);
     /* earth */
   }
 
   .element.mGroup1 {
     width: calc(3 * var(--month-row-height));
-    color: rgba(255, 0, 0, 0.6);
+    color: var(--elem-fire-ink);
     z-index: 1;
     border-bottom-right-radius: 3px; // use right - this is rotated!
   }
 
   .element.mGroup2 {
     width: calc(4 * var(--month-row-height));
-    color: rgba(100, 100, 100, 0.8);
+    color: var(--elem-air-ink);
     z-index: 2;
   }
 
   .element.mGroup3 {
     width: calc(6 * var(--month-row-height));
-    color: rgba(0, 0, 255, 0.6);
+    color: var(--elem-water-ink);
     z-index: 3;
   }
 
   .element.mGroup4 {
     width: calc(7 * var(--month-row-height));
-    color: rgba(0, 255, 0, 1);
+    color: var(--elem-earth-ink);
     z-index: 4;
     border-bottom-left-radius: 3px; // use left - this is rotated!
   }
@@ -105,14 +105,14 @@ body.inTab {
   }
 
   .bd {
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid var(--grid-line);
+    border-bottom: 1px solid var(--grid-line);
     padding: 0 0 1px 2px;
     // font-size: 8.25pt;
   }
 
   .bd:hover {
-    background-color: #b7f59a;
+    background-color: var(--today);
     cursor: pointer;
   }
 
@@ -121,8 +121,8 @@ body.inTab {
   }
 
   .bd.dow6 {
-    border-left: 1px solid rgba(0, 0, 0, 0.6);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    border-left: 1px solid var(--grid-line-strong);
+    border-bottom: 1px solid var(--grid-line-strong);
     /* saturday */
   }
 
@@ -172,7 +172,7 @@ body.inTab {
   }
 
   .gd {
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid var(--grid-line);
     padding-left: 1px;
   }
 
@@ -190,24 +190,24 @@ body.inTab {
   }
 
   .gd.dow6 {
-    background-color: #efefef;
+    background-color: var(--surface-muted);
     border-left: 1px solid rgba(0, 0, 0, 0.6);
     /* saturday */
   }
 
   .gd.dow0 {
-    background-color: #efefef;
+    background-color: var(--surface-muted);
   }
 
   /*.gd.gAlt {
     border-top: 2px solid rgba(0,0,0,.1);
   }*/
   .gma0 {
-    color: rgba(0, 0, 255, 0.8);
+    color: var(--elem-water-ink);
   }
 
   .gma1 {
-    color: rgba(0, 0, 255, 0.8);
+    color: var(--elem-water-ink);
     /*color: rgba(83, 205, 0, 0.9);*/
   }
 
@@ -243,22 +243,22 @@ body.inTab {
 @media screen {
   #pageCal1 {
     .bd.selected {
-      background-color: #77b55a;
+      background-color: var(--accent);
     }
 
     .bd.selected b {
-      color: #fff;
+      color: var(--accent-text);
       font-weight: bold;
     }
 
     .bm.selected .bmName span {
-      background-color: #77b55a;
-      color: #fff;
+      background-color: var(--accent);
+      color: var(--accent-text);
     }
 
     .gd.selected {
-      background-color: #77b55a;
-      color: #fff;
+      background-color: var(--accent);
+      color: var(--accent-text);
     }
   }
 }

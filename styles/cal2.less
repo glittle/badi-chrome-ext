@@ -164,7 +164,7 @@
 
         // margin-top: 150px;
         .dayCell {
-            background-image: linear-gradient(@lightAyyamiHa, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-ayyam), @endColor @gradientEnd);
             width: 100px;
         }
 
@@ -178,42 +178,42 @@
 
     .dayRow.elementNum1 {
         .dayCell {
-            background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-fire), @endColor @gradientEnd);
         }
     }
 
     .monthShell.elementNum1 {
-        background-image: linear-gradient(@lightFire, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-fire), @endColor @gradientEnd);
     }
 
     .dayRow.elementNum2 {
         .dayCell {
-            background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-air), @endColor @gradientEnd);
         }
     }
 
     .monthShell.elementNum2 {
-        background-image: linear-gradient(@lightAir, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-air), @endColor @gradientEnd);
     }
 
     .dayRow.elementNum3 {
         .dayCell {
-            background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-water), @endColor @gradientEnd);
         }
     }
 
     .monthShell.elementNum3 {
-        background-image: linear-gradient(@lightWater, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-water), @endColor @gradientEnd);
     }
 
     .dayRow.elementNum4 {
         .dayCell {
-            background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+            background-image: linear-gradient(var(--elem-earth), @endColor @gradientEnd);
         }
     }
 
     .monthShell.elementNum4 {
-        background-image: linear-gradient(@lightEarth, @endColor @gradientEnd);
+        background-image: linear-gradient(var(--elem-earth), @endColor @gradientEnd);
     }
 
     .monthRow {
@@ -239,7 +239,7 @@
 
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightFire;
+            background-color: var(--elem-fire);
         }
     }
 
@@ -247,7 +247,7 @@
 
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightAir;
+            background-color: var(--elem-air);
         }
     }
 
@@ -255,7 +255,7 @@
 
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightWater;
+            background-color: var(--elem-water);
         }
     }
 
@@ -263,7 +263,7 @@
 
         // .monthNameDay .dayName,
         .monthElement {
-            background-color: @lightEarth;
+            background-color: var(--elem-earth);
         }
     }
 
@@ -282,7 +282,7 @@
         border: 1px solid #ddd;
         margin: 0 0 3px -1px;
         white-space: normal;
-        background-color: #fff;
+        background-color: var(--surface);
 
         &.hdDayHS {
             background-image: linear-gradient(lighten(red, 30%), lighten(red, 45%) 100%) !important;
@@ -317,7 +317,7 @@
     .sunrise,
     .sunsetStart,
     .sunsetEnd {
-        color: #000;
+        color: var(--text);
         font-size: .55rem;
     }
 
@@ -384,7 +384,7 @@
     }
 
     .bWeekDay {
-        color: #000;
+        color: var(--text);
         text-align: left;
         font-size: 9px; //font-style: italic;
         word-break: break-all;
@@ -403,7 +403,7 @@
     .wd6 {
         .bWeekDay {
             font-weight: bold; // background: linear-gradient(#ccc, rgba(255, 255, 255, 0) 26px);
-            background: #eee;
+            background: var(--surface-muted);
             padding: 1px 2px 1px;
             border-radius: 1.5px;
         }
@@ -496,7 +496,7 @@ body[data-pageid=pageCal2] {
 
             .selected.dayCell {
                 border: 1px solid @bdayBorderColor;
-                background-color: #EAEAEA;
+                background-color: var(--surface-muted);
                 z-index: 1;
             }
         }
@@ -544,7 +544,7 @@ body[data-pageid=pageCal2] {
 
             &.hdDayHS,
             &.hdDayHO {
-                background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, #fff 100%) !important;
+                background-image: linear-gradient(lighten(@color1, 20%), lighten(@color1, 45%) 66%, var(--surface) 100%) !important;
             }
         }
 
