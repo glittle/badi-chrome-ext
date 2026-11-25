@@ -104,7 +104,7 @@ function attachHandlersInPopup() {
     common.eventStart = value;
     _lastSpecialDaysYear = 0;
     BuildSpecialDaysTable(_di);
-    $(".eventTime").effect("highlight", 1000);
+    highlightElements($(".eventTime"), 1000);
   });
   $(".includeThis").on("change, click", SetFiltersForSpecialDaysTable);
 

@@ -81,7 +81,7 @@
       option.text(getMessage(`Export${type}Year${offset}`, year));
     });
     if (highlight) {
-      select.effect("highlight", 1000);
+      highlightElements(select, 1000);
     }
   };
   const calFormat = (date, addHours, addMinutes) => {

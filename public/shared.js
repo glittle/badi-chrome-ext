@@ -1110,6 +1110,26 @@ function highlightGDay() {
   //  }
 }
 
+// jQuery UI's .effect("highlight", ms) used #ffff99 and then restored the
+// previous background. Web Animations does the same flash without that library.
+function highlightElements(elements, duration) {
+  const nodes = elements && elements.jquery ? elements.get() : elements ? [].concat(elements) : [];
+  const ms = typeof duration === "number" ? duration : 1000;
+  for (let i = 0; i < nodes.length; i++) {
+    const el = nodes[i];
+    if (!el || typeof el.animate !== "function") continue;
+    const running = typeof el.getAnimations === "function" ? el.getAnimations() : [];
+    for (let a = 0; a < running.length; a++) {
+      if (running[a].id === "badiHighlight") running[a].cancel();
+    }
+    el.animate([{ backgroundColor: "#ffff99" }, { backgroundColor: "transparent" }], {
+      duration: ms,
+      easing: "ease",
+      id: "badiHighlight",
+    });
+  }
+}
+
 async function refreshDateInfoAndShowAsync(resetToNow) {
   // also called from alarm, to update to the next day
   if (resetToNow) {
