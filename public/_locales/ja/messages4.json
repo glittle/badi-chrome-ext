@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Chromeのどこからでもカレンダーを開くには、このキーの組み合わせを押してください。"
     },
+    "shortcutKeyNone": {
+        "message": "ショートカットを設定"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "ブラウザのどこからでもカレンダーを開くキーボードショートカットを選びます。"
+    },
     "showPointer": {
         "message": "ポインターを表示"
     },

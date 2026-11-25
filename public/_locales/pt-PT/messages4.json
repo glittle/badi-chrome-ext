@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Prima esta combinação de teclas para abrir o calendário em qualquer área do Chrome."
     },
+    "shortcutKeyNone": {
+        "message": "Definir um atalho"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Escolha um atalho de teclado para abrir o calendário em qualquer área do navegador."
+    },
     "showPointer": {
         "message": "mostrar ponteiro"
     },

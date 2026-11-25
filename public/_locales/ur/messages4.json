@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "کروم میں کہیں سے بھی کیلنڈر کھولنے کے لیے یہ کی کمبینیشن دبائیں۔"
     },
+    "shortcutKeyNone": {
+        "message": "شارٹ کٹ سیٹ کریں"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "براؤزر میں کہیں سے بھی کیلنڈر کھولنے کے لیے ایک کی بورڈ شارٹ کٹ منتخب کریں۔"
+    },
     "showPointer": {
         "message": "پوائنٹر دکھائیں"
     },

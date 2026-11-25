@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Appuyez sur cette combinaison de touches pour ouvrir le calendrier depuis n'importe où dans le navigateur."
     },
+    "shortcutKeyNone": {
+        "message": "Définir un raccourci"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Choisissez un raccourci clavier pour ouvrir le calendrier depuis n'importe où dans le navigateur."
+    },
     "showPointer": {
         "message": "Afficher le pointeur"
     },

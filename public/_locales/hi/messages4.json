@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "क्रोम में कहीं से भी कैलेंडर खोलने के लिए इस कुंजी संयोजन को दबाएँ।"
     },
+    "shortcutKeyNone": {
+        "message": "शॉर्टकट सेट करें"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "ब्राउज़र में कहीं से भी कैलेंडर खोलने के लिए एक कुंजी संयोजन चुनें।"
+    },
     "showPointer": {
         "message": "संकेतक दिखाएँ"
     },

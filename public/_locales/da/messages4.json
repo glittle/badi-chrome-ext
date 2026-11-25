@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Tryk på denne tastekombination for at åbne kalenderen fra hvor som helst i browseren."
     },
+    "shortcutKeyNone": {
+        "message": "Angiv en genvej"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Vælg en tastaturgenvej for at åbne kalenderen fra hvor som helst i browseren."
+    },
     "showPointer": {
         "message": "Vis markør"
     },

@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Tekan kombinasi tombol ini untuk membuka kalender dari mana saja di browser."
     },
+    "shortcutKeyNone": {
+        "message": "Atur pintasan"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Pilih pintasan keyboard untuk membuka kalender dari mana saja di browser."
+    },
     "showPointer": {
         "message": "Tampilkan penunjuk"
     },

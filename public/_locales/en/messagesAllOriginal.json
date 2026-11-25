@@ -1274,6 +1274,12 @@
     "shortcutKeyTitle": {
         "message": "Press this key combination to open the Calendar from anywhere in the browser."
     },
+    "shortcutKeyNone": {
+        "message": "Set a shortcut"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Choose a keyboard shortcut to open the Calendar from anywhere in the browser."
+    },
     "showPointer": {
         "message": "Show pointer"
     },

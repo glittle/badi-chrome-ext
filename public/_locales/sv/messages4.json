@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Tryck på denna tangentkombination för att öppna kalendern från var som helst i webbläsaren."
     },
+    "shortcutKeyNone": {
+        "message": "Ange en genväg"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Välj en tangentbordsgenväg för att öppna kalendern från var som helst i webbläsaren."
+    },
     "showPointer": {
         "message": "Visa pekare"
     },

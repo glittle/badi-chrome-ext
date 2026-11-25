@@ -311,6 +311,12 @@
     "shortcutKeyTitle": {
         "message": "Premu ĉi tiun klavkombinon por malfermi la Kalendaron de ie ajn en la retumilo."
     },
+    "shortcutKeyNone": {
+        "message": "Agordu klavkombinon"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Elektu klavkombinon por malfermi la Kalendaron de ie ajn en la retumilo."
+    },
     "showPointer": {
         "message": "Montri montrilon"
     },

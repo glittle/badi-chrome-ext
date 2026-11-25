@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "לחץ על צירוף מקשים זה כדי לפתוח את לוח השנה מכל מקום בדפדפן."
     },
+    "shortcutKeyNone": {
+        "message": "הגדר קיצור דרך"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "בחרו קיצור מקשים כדי לפתוח את לוח השנה מכל מקום בדפדפן."
+    },
     "showPointer": {
         "message": "הצג מצביע"
     },

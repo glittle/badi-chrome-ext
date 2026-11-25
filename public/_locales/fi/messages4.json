@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Paina tätä näppäinyhdistelmää avataksesi kalenterin mistä tahansa selaimessa."
     },
+    "shortcutKeyNone": {
+        "message": "Aseta pikanäppäin"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Valitse pikanäppäin, jolla avaat kalenterin mistä tahansa selaimessa."
+    },
     "showPointer": {
         "message": "Näytä osoitin"
     },

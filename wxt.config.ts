@@ -54,12 +54,16 @@ const sharedManifest = {
   host_permissions: ["https://www.google-analytics.com/*"],
   optional_host_permissions: ["https://maker.ifttt.com/*", "https://hooks.zapier.com/*"],
   commands: {
+    // Opens the action popup. Chrome applies suggested_key only on a fresh
+    // install, and skips it when the keys are already a browser shortcut.
+    // Ctrl+Shift+D / Command+Shift+D is "Save all open tabs as bookmarks",
+    // so that suggestion was often never assigned. Ctrl+Shift+Y is unused by
+    // Chrome (it is the sample shortcut in the commands API docs). Alt+Shift+B
+    // is also taken: it focuses the bookmarks bar on Windows and Linux.
     _execute_action: {
       suggested_key: {
-        windows: "Ctrl+Shift+D",
-        mac: "Command+Shift+D",
-        chromeos: "Ctrl+Shift+D",
-        linux: "Ctrl+Shift+D",
+        default: "Ctrl+Shift+Y",
+        mac: "Command+Shift+Y",
       },
     },
   },

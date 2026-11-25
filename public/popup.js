@@ -1656,17 +1656,64 @@ function BuildSpecialDaysTable(di) {
   $("#fastDaysTitle").html(getMessage("fastDaysTitle", di));
 }
 
-function showShortcutKeys() {
-  if (browser.commands && browserHostType === browserType.Chrome) {
-    browser.commands.getAll().then((commands) => {
-      for (let i = 0; i < commands.length; i++) {
-        const a = commands[i];
-        if (a.shortcut) {
-          $("#shortcutKeys").text(a.shortcut);
-        }
-      }
-    });
+// chrome:// and edge:// shortcut pages. Firefox has no equivalent page; about:addons
+// is where its shortcut manager is opened from.
+function shortcutSettingsUrl(userAgent) {
+  const ua = userAgent || navigator.userAgent || "";
+  if (/\bEdg\//.test(ua)) {
+    return "edge://extensions/shortcuts";
   }
+  if (/\bFirefox\//.test(ua)) {
+    return "about:addons";
+  }
+  return "chrome://extensions/shortcuts";
+}
+
+function showSetShortcutLink(el) {
+  const url = shortcutSettingsUrl();
+  const label = getMessage("shortcutKeyNone");
+  const tip = getMessage("shortcutKeyNoneTitle");
+  el.empty();
+  el.attr("title", tip);
+  const link = $("<a>", {
+    href: url,
+    text: label,
+    title: tip,
+  });
+  link.on("click", (event) => {
+    event.preventDefault();
+    browser.tabs.create({ url: url });
+  });
+  el.append(link);
+}
+
+function showShortcutKeys() {
+  const el = $("#shortcutKeys");
+  if (!el.length) {
+    return;
+  }
+  // Only the shortcut that opens this popup. Dev builds also register
+  // wxt:reload-extension (Alt+R); showing that made the hint look assigned
+  // while the key did not open the calendar.
+  if (!browser.commands || !browser.commands.getAll) {
+    showSetShortcutLink(el);
+    return;
+  }
+  browser.commands
+    .getAll()
+    .then((commands) => {
+      const openPopup = (commands || []).find((command) => command.name === "_execute_action");
+      const shortcut = openPopup && openPopup.shortcut;
+      if (shortcut) {
+        el.empty().text(shortcut);
+        el.attr("title", getMessage("shortcutKeyTitle"));
+        return;
+      }
+      showSetShortcutLink(el);
+    })
+    .catch(() => {
+      showSetShortcutLink(el);
+    });
 }
 
 function showLocation() {

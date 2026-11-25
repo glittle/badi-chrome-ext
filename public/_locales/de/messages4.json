@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Drücken Sie diese Tastenkombination, um den Kalender von überall im Browser zu öffnen."
     },
+    "shortcutKeyNone": {
+        "message": "Tastenkürzel festlegen"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Wählen Sie ein Tastenkürzel, um den Kalender von überall im Browser zu öffnen."
+    },
     "showPointer": {
         "message": "Zeiger anzeigen"
     },

@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "按此键组合可从Chrome中的任何位置打开日历。"
     },
+    "shortcutKeyNone": {
+        "message": "设置快捷键"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "选择一个键盘快捷键，以便从浏览器的任何位置打开日历。"
+    },
     "showPointer": {
         "message": "显示指针"
     },

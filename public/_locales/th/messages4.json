@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "กดการรวมปุ่มนี้เพื่อเปิดปฏิทินจากที่ใดก็ได้ในเบราว์เซอร์"
     },
+    "shortcutKeyNone": {
+        "message": "ตั้งทางลัด"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "เลือกแป้นพิมพ์ลัดเพื่อเปิดปฏิทินจากที่ใดก็ได้ในเบราว์เซอร์"
+    },
     "showPointer": {
         "message": "แสดงตัวชี้"
     },

@@ -207,6 +207,12 @@
     "shortcutKeyTitle": {
         "message": "Pressione esta combinação de teclas para abrir o Calendário de qualquer lugar no navegador."
     },
+    "shortcutKeyNone": {
+        "message": "Definir um atalho"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Escolha um atalho de teclado para abrir o Calendário de qualquer lugar no navegador."
+    },
     "showPointer": {
         "message": "Mostrar ponteiro"
     },

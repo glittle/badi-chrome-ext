@@ -156,6 +156,12 @@
     "shortcutKeyTitle": {
         "message": "Druk deze toetscombinatie in om de kalender op ieder gewenst moment binnen Chrome te openen."
     },
+    "shortcutKeyNone": {
+        "message": "Sneltoets instellen"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Kies een sneltoets om de kalender overal in de browser te openen."
+    },
     "showPointer": {
         "message": "Toon huidige dag"
     },

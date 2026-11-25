@@ -116,6 +116,12 @@
     "shortcutKeyTitle": {
         "message": "Presione esta combinacion de teclados para abrir el calendario  desde cualquier parte en Chrome."
     },
+    "shortcutKeyNone": {
+        "message": "Definir un atajo"
+    },
+    "shortcutKeyNoneTitle": {
+        "message": "Elija un atajo de teclado para abrir el calendario desde cualquier parte del navegador."
+    },
     "showPointer": {
         "message": "Mostrar puntero"
     },
