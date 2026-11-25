@@ -10,7 +10,9 @@ body.inTab {
 }
 
 #pageCal1 {
-  --day-width: 35.7px;
+  // 35.7px plus the tab rail and the popup's vertical scrollbar was wider
+  // than the window, which clipped the month names and added a horizontal scrollbar.
+  --day-width: 33.2px;
   --month-row-height: 27px;
   --element-height: 14px;
   --font-size: 8.25pt;

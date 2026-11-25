@@ -39,6 +39,7 @@ body {
 #mainBody {
   margin: 0 auto;
   width: 800px; // for popup
+  max-width: 100%; // stay inside the viewport when a vertical scrollbar is present
   box-sizing: border-box;
 }
 
@@ -75,7 +76,10 @@ body {
 
 .mainMiddle {
   display: flex;
-  justify-content: flex-end;
+  // flex-end put the tab rail's extra width off the left edge, so the
+  // first letters of pages 1 and 5 were clipped and a scrollbar appeared.
+  justify-content: flex-start;
+  min-width: 0;
 }
 
 .mainBottom {
@@ -95,7 +99,9 @@ body {
 #pagePlanner {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 #pageEvents,
@@ -114,7 +120,9 @@ body {
 #pageCalGreg,
 #pageCal3,
 #pageCal2 {
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .alarms {
@@ -802,11 +810,22 @@ body {
   }
 }
 
+#pageDay,
+#pageCal1 {
+  // Pack toward the tab rail only when there is spare room. flex-end with
+  // content wider than the page pushed the overflow off the left edge.
+  justify-content: flex-start;
+}
+
 #pageDay {
   >div {
     margin-left: 4px;
-    justify-content: flex-end;
-    flex: 0 1 100%;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  #samples {
+    flex: 1 1 auto;
   }
 }
 
@@ -827,6 +846,8 @@ body {
   text-align: center;
   padding-right: 30px;
   min-height: 4em; // enough to show with special row too
+  min-width: 0;
+  overflow: hidden;
 }
 
 #day {
@@ -1103,7 +1124,6 @@ tr.OtherRange {
   position: relative;
   /*display: table-cell;*/
   vertical-align: top;
-  white-space: nowrap;
 }
 
 #samplesList div {
@@ -1421,6 +1441,8 @@ button.today.notToday {
 }
 
 #samples button {
+  max-width: 100%;
+  white-space: normal;
   vertical-align: text-bottom;
   background: -webkit-gradient(linear,
       left top,
